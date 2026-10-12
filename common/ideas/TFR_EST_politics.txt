@@ -1,0 +1,8 @@
+ideas = { country = {
+ TFR_EST_constitutional_presidency = { picture = political_loyalty_spirit allowed = { original_tag = EST } removal_cost = -1 modifier = { stability_factor = 0.02 } }
+ TFR_EST_presidency_karis = { picture = political_loyalty_spirit allowed = { original_tag = EST } removal_cost = -1 modifier = { stability_factor = 0.02 } }
+ TFR_EST_caretaker_cabinet = { picture = NEG_coalitiongoverment allowed = { original_tag = EST } removal_cost = -1 modifier = { political_power_gain = -0.15 } }
+ TFR_EST_coalition_narrow = { picture = NEG_coalitiongoverment allowed = { original_tag = EST } removal_cost = -1 modifier = { political_power_gain = 0.03 } }
+ TFR_EST_coalition_working = { picture = NEG_coalitiongoverment allowed = { original_tag = EST } removal_cost = -1 modifier = { political_power_gain = 0.06 } }
+ TFR_EST_coalition_broad = { picture = NEG_coalitiongoverment allowed = { original_tag = EST } removal_cost = -1 modifier = { political_power_gain = 0.09 } }
+} }

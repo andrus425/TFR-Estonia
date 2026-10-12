@@ -1,0 +1,214 @@
+	capital = 13
+
+	oob = "EST_2020"
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+			set_naval_oob = "EST_2000_naval_mtg"
+		else = {
+			set_naval_oob = "EST_2000_naval_legacy"
+		}
+	}
+	
+	if = {
+		limit = { has_dlc = "Together for Victory" }
+
+		add_to_tech_sharing_group = nato_research
+	}
+
+	set_variable = { Russian_Influence = 0.10 }
+	set_variable = { Chinese_Influence = 0.10 }
+	set_variable = { American_Influence = 0.00 }
+	set_variable = { European_Influence = 0.60 }
+	set_variable = { PDO_Influence = 0.00 }
+	set_variable = { Sovereign_Influence = 0.20 }
+
+	recruit_character = EST_kersti_kaljulaid_char
+	recruit_character = EST_julia_lindvall_char
+	recruit_character = EST_yana_toom_char
+	recruit_character = EST_robert_kurvitz_char
+
+	set_research_slots = 4
+	set_convoys = 100
+	set_stability = 0.55
+
+	set_country_flag = developed_country
+	set_country_flag = global_ass_lol
+
+	set_technology = {
+		## Infantry ##
+		infantry_weapons1 = 1
+		infantry_weapons2 = 1
+		motorised_infantry = 1
+		infantry_rifle_upgrade = 1
+		support_weapons = 1
+		night_vision = 1
+		body_armor = 1
+		camouflage = 1
+		marines = 1
+		tech_mountaineers = 1
+		paratroopers = 1
+		
+		## Support Companies ##
+		tech_support = 1
+		tech_engineers = 1
+		tech_recon = 1
+		tech_military_police = 1
+		tech_maintenance_company = 1
+		tech_field_hospital = 1
+		tech_logistics_company = 1
+		tech_signal_company = 1
+		
+		## Armor ##
+		main_battle_tank1 = 1
+		main_battle_tank2 = 1
+		main_battle_tank3 = 1
+		light_tank1 = 1
+		light_tank2 = 1
+		mechanised_infantry1 = 1
+		light_mechanized_infantry1 = 1
+		
+		## Artillery ##
+		gw_artillery = 1
+		interwar_antitank = 1
+		interwar_antiair = 1
+		tank_destroyer1 = 1
+		self_propelled_aa1 = 1
+		
+		## Engineering ##
+		electronic_mechanical_engineering = 1
+		radio = 1
+		
+		## Industry ##
+		basic_machine_tools = 1
+		fuel_silos = 1
+		fuel_refining = 1
+		
+		## Doctrines ##
+		#mobile_warfare = 1
+		#formation_flying = 1
+	}
+	
+	if = {
+		limit = { has_dlc = "By Blood Alone" }
+			set_technology = {
+				aa_lmg = 1
+				aa_cannon_1 = 1
+				aa_hmg = 1
+				engines_1 = 1
+				engines_2 = 1
+				early_bombs = 1
+				guided_bombs = 1
+				aircraft_construction = 1
+				survivability_studies = 1
+				iw_small_airframe = 1
+				basic_small_airframe = 1
+				iw_medium_airframe = 1
+				basic_medium_airframe = 1
+				iw_large_airframe = 1
+			}
+		else = {
+			set_technology = {
+				CAS1 = 1
+				CAS2 = 1
+				fighter1 = 1
+				fighter2 = 1
+				fighter3 = 1
+				naval_bomber1 = 1
+				naval_bomber2 = 1
+				strategic_bomber1 = 1
+				tactical_bomber1 = 1
+			}
+		}
+	}
+
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		set_technology = {
+			early_destroyer = 1
+			basic_destroyer = 1
+			early_light_cruiser = 1
+			early_submarine = 1
+			transport = 1
+		}
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		set_technology = {
+			early_ship_hull_light = 1
+			basic_ship_hull_light = 1
+			early_ship_hull_cruiser = 1
+			early_ship_hull_submarine = 1
+			smoke_generator = 1
+			sonar = 1
+			basic_depth_charges = 1
+			improved_airplane_launcher = 1
+			basic_cruiser_armor_scheme = 1
+			basic_torpedo = 1
+			basic_battery = 1
+			basic_light_battery = 1
+			basic_medium_battery = 1
+			#basic_secondary_battery = 1
+			mtg_transport = 1
+			basic_naval_mines = 1
+			submarine_mine_laying = 1
+		}
+	}
+
+	add_ideas = {
+		EST_gdp_fix
+		EU_euro_idea
+		low_conscription
+		higher_poverty
+	}
+
+	set_politics = {		
+		ruling_party = social_liberal
+		last_election = "2019.3.3"
+		election_frequency = 48
+		elections_allowed = no # The Riigikogu ledger owns elections.
+	}
+	set_popularities = {
+		authoritarian_democrat = 16
+		conservative = 7
+		market_liberal = 33
+		social_liberal = 30
+		social_democrat = 14 
+	}
+
+	### VARIANTS ###
+	# 2000 Start #
+	if = {
+		limit = { not = { has_dlc = "Man the Guns" } }
+		
+	}
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+		## Frigates ##
+		create_equipment_variant = { #Frigate 1
+			name = "Beskytteren class"
+			type = ship_hull_cruiser_1
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_medium_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = cruiser_ship_engine_1
+				fixed_ship_armor_slot = ship_armor_cruiser_1
+				fixed_ship_secondaries_slot = ship_secondaries_1
+				mid_1_custom_slot = ship_airplane_launcher_1
+				mid_2_custom_slot = ship_anti_air_1
+				rear_1_custom_slot = empty
+			}
+		}
+	}
+# Estonia submod: prime ministers are country leaders; the presidency is separate.
+recruit_character = TFR_EST_kaja_kallas
+recruit_character = TFR_EST_juri_ratas
+recruit_character = TFR_EST_mart_helme
+recruit_character = TFR_EST_helir_valdor_seeder
+recruit_character = TFR_EST_indrek_saar
+recruit_character = TFR_EST_kristina_kallas
+recruit_character = TFR_EST_lavly_perling
+promote_character = TFR_EST_juri_ratas
+add_ideas = TFR_EST_constitutional_presidency

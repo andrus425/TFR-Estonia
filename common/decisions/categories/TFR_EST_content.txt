@@ -1,0 +1,14 @@
+TFR_EST_national_programmes = {
+ icon = generic_economy
+ priority = 85
+ allowed = { original_tag = EST }
+ visible = { NOT = { has_country_flag = TFR_EST_occupied } }
+ visible_when_empty = yes
+}
+TFR_EST_defence_programmes = {
+ icon = army_reform
+ priority = 84
+ allowed = { original_tag = EST }
+ visible = { NOT = { has_country_flag = TFR_EST_occupied } }
+ visible_when_empty = yes
+}

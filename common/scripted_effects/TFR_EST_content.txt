@@ -1,0 +1,113 @@
+TFR_EST_refresh_programme = {
+if = {
+ limit = { check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } has_country_flag = TFR_EST_reform_programme NOT = { has_country_flag = TFR_EST_occupied } NOT = { has_country_flag = TFR_EST_caretaker } }
+ if = { limit = { NOT = { has_idea = TFR_EST_reform_cabinet } } add_ideas = TFR_EST_reform_cabinet }
+} else = { if = { limit = { has_idea = TFR_EST_reform_cabinet } remove_ideas = TFR_EST_reform_cabinet } }
+if = {
+ limit = { check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } has_country_flag = TFR_EST_centre_programme NOT = { has_country_flag = TFR_EST_occupied } NOT = { has_country_flag = TFR_EST_caretaker } }
+ if = { limit = { NOT = { has_idea = TFR_EST_centre_cabinet } } add_ideas = TFR_EST_centre_cabinet }
+} else = { if = { limit = { has_idea = TFR_EST_centre_cabinet } remove_ideas = TFR_EST_centre_cabinet } }
+if = {
+ limit = { check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } has_country_flag = TFR_EST_ekre_programme NOT = { has_country_flag = TFR_EST_occupied } NOT = { has_country_flag = TFR_EST_caretaker } }
+ if = { limit = { NOT = { has_idea = TFR_EST_ekre_cabinet } } add_ideas = TFR_EST_ekre_cabinet }
+} else = { if = { limit = { has_idea = TFR_EST_ekre_cabinet } remove_ideas = TFR_EST_ekre_cabinet } }
+if = {
+ limit = { check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } has_country_flag = TFR_EST_isamaa_programme NOT = { has_country_flag = TFR_EST_occupied } NOT = { has_country_flag = TFR_EST_caretaker } }
+ if = { limit = { NOT = { has_idea = TFR_EST_isamaa_cabinet } } add_ideas = TFR_EST_isamaa_cabinet }
+} else = { if = { limit = { has_idea = TFR_EST_isamaa_cabinet } remove_ideas = TFR_EST_isamaa_cabinet } }
+if = {
+ limit = { check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } has_country_flag = TFR_EST_sde_programme NOT = { has_country_flag = TFR_EST_occupied } NOT = { has_country_flag = TFR_EST_caretaker } }
+ if = { limit = { NOT = { has_idea = TFR_EST_sde_cabinet } } add_ideas = TFR_EST_sde_cabinet }
+} else = { if = { limit = { has_idea = TFR_EST_sde_cabinet } remove_ideas = TFR_EST_sde_cabinet } }
+if = {
+ limit = { check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } has_country_flag = TFR_EST_e200_programme NOT = { has_country_flag = TFR_EST_occupied } NOT = { has_country_flag = TFR_EST_caretaker } }
+ if = { limit = { NOT = { has_idea = TFR_EST_e200_cabinet } } add_ideas = TFR_EST_e200_cabinet }
+} else = { if = { limit = { has_idea = TFR_EST_e200_cabinet } remove_ideas = TFR_EST_e200_cabinet } }
+if = {
+ limit = { check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } has_country_flag = TFR_EST_pp_programme NOT = { has_country_flag = TFR_EST_occupied } NOT = { has_country_flag = TFR_EST_caretaker } }
+ if = { limit = { NOT = { has_idea = TFR_EST_pp_cabinet } } add_ideas = TFR_EST_pp_cabinet }
+} else = { if = { limit = { has_idea = TFR_EST_pp_cabinet } remove_ideas = TFR_EST_pp_cabinet } }
+}
+
+TFR_EST_content_tick = {
+ TFR_EST_refresh_programme = yes
+ if = {
+  limit = { OR = { has_country_flag = TFR_EST_occupied check_variable = { TFR_EST_campaign_stage > 3 } } }
+  remove_ideas = TFR_EST_wartime_transport
+  remove_ideas = TFR_EST_second_war_logistics
+ }
+ if = {
+  limit = { date > 2021.1.1 }
+  remove_ideas = TFR_EST_pandemic_support
+ }
+ if = {
+ limit = { check_variable = { var = TFR_EST_campaign_stage value = 1 compare = equals } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_occupied } NOT = { has_country_flag = TFR_EST_caretaker } NOT = { has_country_flag = TFR_EST_reform_war1_response } }
+ set_country_flag = TFR_EST_reform_war1_response
+ country_event = { id = tfr_estonia_content.81 }
+ }
+ if = {
+ limit = { check_variable = { var = TFR_EST_campaign_stage value = 3 compare = equals } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_occupied } NOT = { has_country_flag = TFR_EST_caretaker } NOT = { has_country_flag = TFR_EST_reform_war2_response } }
+ set_country_flag = TFR_EST_reform_war2_response
+ country_event = { id = tfr_estonia_content.91 }
+ }
+ if = {
+ limit = { check_variable = { var = TFR_EST_campaign_stage value = 1 compare = equals } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_occupied } NOT = { has_country_flag = TFR_EST_caretaker } NOT = { has_country_flag = TFR_EST_centre_war1_response } }
+ set_country_flag = TFR_EST_centre_war1_response
+ country_event = { id = tfr_estonia_content.82 }
+ }
+ if = {
+ limit = { check_variable = { var = TFR_EST_campaign_stage value = 3 compare = equals } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_occupied } NOT = { has_country_flag = TFR_EST_caretaker } NOT = { has_country_flag = TFR_EST_centre_war2_response } }
+ set_country_flag = TFR_EST_centre_war2_response
+ country_event = { id = tfr_estonia_content.92 }
+ }
+ if = {
+ limit = { check_variable = { var = TFR_EST_campaign_stage value = 1 compare = equals } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_occupied } NOT = { has_country_flag = TFR_EST_caretaker } NOT = { has_country_flag = TFR_EST_ekre_war1_response } }
+ set_country_flag = TFR_EST_ekre_war1_response
+ country_event = { id = tfr_estonia_content.83 }
+ }
+ if = {
+ limit = { check_variable = { var = TFR_EST_campaign_stage value = 3 compare = equals } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_occupied } NOT = { has_country_flag = TFR_EST_caretaker } NOT = { has_country_flag = TFR_EST_ekre_war2_response } }
+ set_country_flag = TFR_EST_ekre_war2_response
+ country_event = { id = tfr_estonia_content.93 }
+ }
+ if = {
+ limit = { check_variable = { var = TFR_EST_campaign_stage value = 1 compare = equals } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_occupied } NOT = { has_country_flag = TFR_EST_caretaker } NOT = { has_country_flag = TFR_EST_isamaa_war1_response } }
+ set_country_flag = TFR_EST_isamaa_war1_response
+ country_event = { id = tfr_estonia_content.84 }
+ }
+ if = {
+ limit = { check_variable = { var = TFR_EST_campaign_stage value = 3 compare = equals } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_occupied } NOT = { has_country_flag = TFR_EST_caretaker } NOT = { has_country_flag = TFR_EST_isamaa_war2_response } }
+ set_country_flag = TFR_EST_isamaa_war2_response
+ country_event = { id = tfr_estonia_content.94 }
+ }
+ if = {
+ limit = { check_variable = { var = TFR_EST_campaign_stage value = 1 compare = equals } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_occupied } NOT = { has_country_flag = TFR_EST_caretaker } NOT = { has_country_flag = TFR_EST_sde_war1_response } }
+ set_country_flag = TFR_EST_sde_war1_response
+ country_event = { id = tfr_estonia_content.85 }
+ }
+ if = {
+ limit = { check_variable = { var = TFR_EST_campaign_stage value = 3 compare = equals } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_occupied } NOT = { has_country_flag = TFR_EST_caretaker } NOT = { has_country_flag = TFR_EST_sde_war2_response } }
+ set_country_flag = TFR_EST_sde_war2_response
+ country_event = { id = tfr_estonia_content.95 }
+ }
+ if = {
+ limit = { check_variable = { var = TFR_EST_campaign_stage value = 1 compare = equals } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_occupied } NOT = { has_country_flag = TFR_EST_caretaker } NOT = { has_country_flag = TFR_EST_e200_war1_response } }
+ set_country_flag = TFR_EST_e200_war1_response
+ country_event = { id = tfr_estonia_content.86 }
+ }
+ if = {
+ limit = { check_variable = { var = TFR_EST_campaign_stage value = 3 compare = equals } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_occupied } NOT = { has_country_flag = TFR_EST_caretaker } NOT = { has_country_flag = TFR_EST_e200_war2_response } }
+ set_country_flag = TFR_EST_e200_war2_response
+ country_event = { id = tfr_estonia_content.96 }
+ }
+ if = {
+ limit = { check_variable = { var = TFR_EST_campaign_stage value = 1 compare = equals } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_occupied } NOT = { has_country_flag = TFR_EST_caretaker } NOT = { has_country_flag = TFR_EST_pp_war1_response } }
+ set_country_flag = TFR_EST_pp_war1_response
+ country_event = { id = tfr_estonia_content.87 }
+ }
+ if = {
+ limit = { check_variable = { var = TFR_EST_campaign_stage value = 3 compare = equals } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_occupied } NOT = { has_country_flag = TFR_EST_caretaker } NOT = { has_country_flag = TFR_EST_pp_war2_response } }
+ set_country_flag = TFR_EST_pp_war2_response
+ country_event = { id = tfr_estonia_content.97 }
+ }
+}

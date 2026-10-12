@@ -1,0 +1,236 @@
+add_namespace = tfr_estonia_occupation
+
+country_event = {
+    id = tfr_estonia_occupation.1
+    hidden = yes
+    is_triggered_only = yes
+    immediate = {
+        clr_country_flag = TFR_EST_occupation_reconciliation_queued
+        # Resolve the current patron here; queued targets may already be stale.
+        TFR_EST_reconcile_occupation = yes
+    }
+}
+
+country_event = {
+    id = tfr_estonia_occupation.2
+    title = tfr_estonia_occupation.2.t
+    desc = tfr_estonia_occupation.2.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { original_tag = EST has_country_flag = TFR_EST_occupied is_subject = yes }
+    option = { name = tfr_estonia_occupation.2.a ai_chance = { factor = 1 } }
+}
+
+country_event = {
+    id = tfr_estonia_occupation.3
+    title = tfr_estonia_occupation.3.t
+    desc = tfr_estonia_occupation.3.d
+    picture = GFX_report_event_generic_riot
+    is_triggered_only = yes
+    trigger = { original_tag = EST has_country_flag = TFR_EST_occupied is_subject = yes has_idea = TFR_EST_occupation_clandestine_network }
+    option = {
+        name = tfr_estonia_occupation.3.a
+        ai_chance = { factor = 3 }
+        TFR_EST_change_occupation_resistance = { AMOUNT = -8 }
+        TFR_EST_change_cohesion = { AMOUNT = -2 }
+    }
+    option = {
+        name = tfr_estonia_occupation.3.b
+        ai_chance = { factor = 1 }
+        add_political_power = -30
+        TFR_EST_change_cohesion = { AMOUNT = -5 }
+        TFR_EST_change_occupation_resistance = { AMOUNT = 3 }
+    }
+}
+
+country_event = {
+    id = tfr_estonia_occupation.4
+    title = tfr_estonia_occupation.4.t
+    desc = tfr_estonia_occupation.4.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    immediate = { clr_country_flag = TFR_EST_petition_pending }
+    option = {
+        name = tfr_estonia_occupation.4.a
+        trigger = { TFR_EST_can_restore_sovereignty = yes }
+        ai_chance = { factor = 100 }
+        TFR_EST_restore_sovereignty = yes
+    }
+    option = {
+        name = tfr_estonia_occupation.4.b
+        trigger = { NOT = { TFR_EST_can_restore_sovereignty = yes } }
+        ai_chance = { factor = 1 }
+        add_political_power = 25
+    }
+}
+
+country_event = {
+    id = tfr_estonia_occupation.5
+    title = tfr_estonia_occupation.5.t
+    desc = tfr_estonia_occupation.5.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } is_subject = no }
+    option = { name = tfr_estonia_occupation.5.a ai_chance = { factor = 1 } }
+}
+
+country_event = {
+    id = tfr_estonia_occupation.11
+    title = tfr_estonia_occupation.11.t
+    desc = tfr_estonia_occupation.11.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { has_country_flag = TFR_EST_occupied is_subject = yes check_variable = { var = TFR_EST_occupation_type value = 1 compare = equals } }
+    option = {
+        name = tfr_estonia_occupation.11.a
+        ai_chance = { factor = 2 }
+        TFR_EST_change_cohesion = { AMOUNT = 4 }
+        TFR_EST_change_occupation_cooperation = { AMOUNT = -6 }
+        TFR_EST_spend_budget = { AMOUNT = 25 }
+    }
+    option = {
+        name = tfr_estonia_occupation.11.b
+        ai_chance = { factor = 1 }
+        TFR_EST_change_cohesion = { AMOUNT = -3 }
+        TFR_EST_change_readiness = { AMOUNT = 4 }
+        TFR_EST_change_occupation_cooperation = { AMOUNT = 10 }
+    }
+}
+
+country_event = {
+    id = tfr_estonia_occupation.12
+    title = tfr_estonia_occupation.12.t
+    desc = tfr_estonia_occupation.12.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { has_country_flag = TFR_EST_occupied is_subject = yes check_variable = { var = TFR_EST_occupation_type value = 2 compare = equals } }
+    option = {
+        name = tfr_estonia_occupation.12.a
+        ai_chance = { factor = 2 }
+        TFR_EST_change_cohesion = { AMOUNT = 4 }
+        TFR_EST_change_occupation_cooperation = { AMOUNT = -6 }
+        TFR_EST_spend_budget = { AMOUNT = 25 }
+    }
+    option = {
+        name = tfr_estonia_occupation.12.b
+        ai_chance = { factor = 1 }
+        TFR_EST_change_cohesion = { AMOUNT = -3 }
+        TFR_EST_change_readiness = { AMOUNT = 4 }
+        TFR_EST_change_occupation_cooperation = { AMOUNT = 10 }
+    }
+}
+
+country_event = {
+    id = tfr_estonia_occupation.13
+    title = tfr_estonia_occupation.13.t
+    desc = tfr_estonia_occupation.13.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { has_country_flag = TFR_EST_occupied is_subject = yes check_variable = { var = TFR_EST_occupation_type value = 3 compare = equals } }
+    option = {
+        name = tfr_estonia_occupation.13.a
+        ai_chance = { factor = 2 }
+        TFR_EST_change_cohesion = { AMOUNT = 4 }
+        TFR_EST_change_occupation_cooperation = { AMOUNT = -6 }
+        TFR_EST_spend_budget = { AMOUNT = 25 }
+    }
+    option = {
+        name = tfr_estonia_occupation.13.b
+        ai_chance = { factor = 1 }
+        TFR_EST_change_cohesion = { AMOUNT = -3 }
+        TFR_EST_change_readiness = { AMOUNT = 4 }
+        TFR_EST_change_occupation_cooperation = { AMOUNT = 10 }
+    }
+}
+
+country_event = {
+    id = tfr_estonia_occupation.14
+    title = tfr_estonia_occupation.14.t
+    desc = tfr_estonia_occupation.14.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { has_country_flag = TFR_EST_occupied is_subject = yes check_variable = { var = TFR_EST_occupation_type value = 4 compare = equals } }
+    option = {
+        name = tfr_estonia_occupation.14.a
+        ai_chance = { factor = 2 }
+        TFR_EST_change_cohesion = { AMOUNT = 4 }
+        TFR_EST_change_occupation_cooperation = { AMOUNT = -6 }
+        TFR_EST_spend_budget = { AMOUNT = 25 }
+    }
+    option = {
+        name = tfr_estonia_occupation.14.b
+        ai_chance = { factor = 1 }
+        TFR_EST_change_cohesion = { AMOUNT = -3 }
+        TFR_EST_change_readiness = { AMOUNT = 4 }
+        TFR_EST_change_occupation_cooperation = { AMOUNT = 10 }
+    }
+}
+
+country_event = {
+    id = tfr_estonia_occupation.15
+    title = tfr_estonia_occupation.15.t
+    desc = tfr_estonia_occupation.15.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { has_country_flag = TFR_EST_occupied is_subject = yes check_variable = { var = TFR_EST_occupation_type value = 5 compare = equals } }
+    option = {
+        name = tfr_estonia_occupation.15.a
+        ai_chance = { factor = 2 }
+        TFR_EST_change_cohesion = { AMOUNT = 4 }
+        TFR_EST_change_occupation_cooperation = { AMOUNT = -6 }
+        TFR_EST_spend_budget = { AMOUNT = 25 }
+    }
+    option = {
+        name = tfr_estonia_occupation.15.b
+        ai_chance = { factor = 1 }
+        TFR_EST_change_cohesion = { AMOUNT = -3 }
+        TFR_EST_change_readiness = { AMOUNT = 4 }
+        TFR_EST_change_occupation_cooperation = { AMOUNT = 10 }
+    }
+}
+
+country_event = {
+    id = tfr_estonia_occupation.16
+    title = tfr_estonia_occupation.16.t
+    desc = tfr_estonia_occupation.16.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { has_country_flag = TFR_EST_occupied is_subject = yes check_variable = { var = TFR_EST_occupation_type value = 6 compare = equals } }
+    option = {
+        name = tfr_estonia_occupation.16.a
+        ai_chance = { factor = 2 }
+        TFR_EST_change_cohesion = { AMOUNT = 4 }
+        TFR_EST_change_occupation_cooperation = { AMOUNT = -6 }
+        TFR_EST_spend_budget = { AMOUNT = 25 }
+    }
+    option = {
+        name = tfr_estonia_occupation.16.b
+        ai_chance = { factor = 1 }
+        TFR_EST_change_cohesion = { AMOUNT = -3 }
+        TFR_EST_change_readiness = { AMOUNT = 4 }
+        TFR_EST_change_occupation_cooperation = { AMOUNT = 10 }
+    }
+}
+
+country_event = {
+    id = tfr_estonia_occupation.17
+    title = tfr_estonia_occupation.17.t
+    desc = tfr_estonia_occupation.17.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { has_country_flag = TFR_EST_occupied is_subject = yes check_variable = { var = TFR_EST_occupation_type value = 7 compare = equals } }
+    option = {
+        name = tfr_estonia_occupation.17.a
+        ai_chance = { factor = 2 }
+        TFR_EST_change_cohesion = { AMOUNT = 4 }
+        TFR_EST_change_occupation_cooperation = { AMOUNT = -6 }
+        TFR_EST_spend_budget = { AMOUNT = 25 }
+    }
+    option = {
+        name = tfr_estonia_occupation.17.b
+        ai_chance = { factor = 1 }
+        TFR_EST_change_cohesion = { AMOUNT = -3 }
+        TFR_EST_change_readiness = { AMOUNT = 4 }
+        TFR_EST_change_occupation_cooperation = { AMOUNT = 10 }
+    }
+}

@@ -1,0 +1,339 @@
+# These helpers execute before any destructive parent annex/anchor transfer.
+# Caller: intended recipient/annexer country. The local targets are consumed
+# immediately and are never used by delayed events.
+TFR_EST_change_occupation_cooperation = {
+    add_to_variable = { var = TFR_EST_occupation_cooperation value = $AMOUNT$ }
+    clamp_variable = { var = TFR_EST_occupation_cooperation min = 0 max = 100 }
+}
+
+TFR_EST_change_occupation_resistance = {
+    add_to_variable = { var = TFR_EST_occupation_resistance value = $AMOUNT$ }
+    clamp_variable = { var = TFR_EST_occupation_resistance min = 0 max = 100 }
+}
+
+# One occupation wave spans a war and its peace settlement. Advancing from
+# wartime to reconstruction must not apply defeat penalties a second time.
+TFR_EST_current_occupation_wave = {
+    set_temp_variable = { var = TFR_EST_current_occupation_wave value = 1 }
+    if = {
+        limit = { OR = { has_global_flag = second_nato_war_flag has_country_flag = TFR_EST_second_war_seen } }
+        set_temp_variable = { var = TFR_EST_current_occupation_wave value = 2 }
+    }
+}
+
+TFR_EST_select_settlement_patron = {
+    save_event_target_as = TFR_EST_settlement_patron
+    if = {
+        limit = { OR = { original_tag = SOV is_puppet_of = SOV is_in_faction_with = SOV } }
+        SOV = { save_event_target_as = TFR_EST_settlement_patron }
+    }
+    else_if = {
+        limit = { OR = { original_tag = GER original_tag = TTS is_puppet_of = GER is_in_faction_with = GER } }
+        GER = { save_event_target_as = TFR_EST_settlement_patron }
+    }
+}
+
+TFR_EST_preserve_annexation = {
+    save_event_target_as = TFR_EST_settlement_receiver
+    TFR_EST_select_settlement_patron = yes
+    $TARGET$ = {
+        # The anchor never leaves EST. Transfer the intended remainder without
+        # issuing annex_country, which would end the human campaign.
+        every_owned_state = {
+            limit = { NOT = { state = 13 } }
+            transfer_state_to = event_target:TFR_EST_settlement_receiver
+        }
+        TFR_EST_current_occupation_wave = yes
+        if = {
+            limit = { NOT = { check_variable = { var = TFR_EST_occupation_wave value = TFR_EST_current_occupation_wave compare = equals } } }
+            set_country_flag = TFR_EST_force_new_occupation_generation
+        }
+        TFR_EST_enter_occupation = { PATRON = event_target:TFR_EST_settlement_patron }
+    }
+}
+
+TFR_EST_protect_anchor = {
+    TFR_EST_select_settlement_patron = yes
+    EST = {
+        TFR_EST_current_occupation_wave = yes
+        if = {
+            limit = { NOT = { check_variable = { var = TFR_EST_occupation_wave value = TFR_EST_current_occupation_wave compare = equals } } }
+            set_country_flag = TFR_EST_force_new_occupation_generation
+        }
+        TFR_EST_enter_occupation = { PATRON = event_target:TFR_EST_settlement_patron }
+    }
+}
+
+TFR_EST_queue_occupation_reconciliation = {
+    if = {
+        limit = { NOT = { has_country_flag = TFR_EST_occupation_reconciliation_queued } }
+        set_country_flag = TFR_EST_occupation_reconciliation_queued
+        country_event = { id = tfr_estonia_occupation.1 hours = 6 }
+    }
+}
+
+# Scope EST. PATRON must be a resolved country scope, not an old delayed target.
+TFR_EST_enter_occupation = {
+    if = {
+        limit = { original_tag = EST has_country_flag = TFR_EST_initialized exists = yes }
+        set_temp_variable = { var = TFR_EST_new_settlement value = 0 }
+        TFR_EST_current_occupation_wave = yes
+        if = {
+            limit = {
+                OR = {
+                    NOT = { has_country_flag = TFR_EST_occupied }
+                    NOT = { check_variable = { var = TFR_EST_occupation_patron_id value = $PATRON$.id compare = equals } }
+                    AND = {
+                        NOT = { check_variable = { var = TFR_EST_occupation_wave value = TFR_EST_current_occupation_wave compare = equals } }
+                        NOT = { has_autonomy_state = TFR_EST_autonomy_occupation }
+                    }
+                    has_country_flag = TFR_EST_force_new_occupation_generation
+                }
+            }
+            set_country_flag = TFR_EST_occupied
+            TFR_EST_suspend_parliament = yes
+            clr_country_flag = TFR_EST_force_new_occupation_generation
+            set_temp_variable = { var = TFR_EST_new_settlement value = 1 }
+            set_variable = { var = TFR_EST_occupation_patron_id value = $PATRON$.id }
+            set_variable = { var = TFR_EST_occupation_campaign_stage value = TFR_EST_campaign_stage }
+            set_variable = { var = TFR_EST_occupation_wave value = TFR_EST_current_occupation_wave }
+            add_to_variable = { var = TFR_EST_occupation_generation value = 1 }
+            set_variable = { var = TFR_EST_occupation_weeks value = 0 }
+            set_variable = { var = TFR_EST_occupation_cooperation value = 10 }
+            set_variable = { var = TFR_EST_occupation_resistance value = 15 }
+            clr_country_flag = TFR_EST_restoration_announced
+            clr_country_flag = TFR_EST_petition_pending
+            # Material reconstruction survives tree switches; the political
+            # choice is renewed under each genuinely new occupation mandate.
+            clr_country_flag = TFR_EST_occupation_accommodation_done
+            clr_country_flag = TFR_EST_occupation_clandestine_done
+            clr_country_flag = TFR_EST_occupation_guarantees_done
+            clr_country_flag = TFR_EST_occupation_exile_charter_done
+            clr_country_flag = TFR_EST_occupation_restoration_compact_done
+            clr_country_flag = TFR_EST_occupation_constitutional_return_done
+            remove_ideas = TFR_EST_occupation_collaboration
+            remove_ideas = TFR_EST_occupation_clandestine_network
+            TFR_EST_change_cohesion = { AMOUNT = -15 }
+            TFR_EST_change_readiness = { AMOUNT = -20 }
+            EU_leave_effect = yes
+            leave_faction = yes
+            # TFR's actual NATO membership marker in Estonia's history.
+            clr_country_flag = global_ass_lol
+            clr_country_flag = NATO_member
+            clr_country_flag = nato_member
+            remove_ideas = TFR_EST_coalition_narrow
+            remove_ideas = TFR_EST_coalition_working
+            remove_ideas = TFR_EST_coalition_broad
+            remove_ideas = TFR_EST_caretaker_cabinet
+            set_politics = { elections_allowed = no }
+            country_event = { id = tfr_estonia_occupation.2 days = 2 }
+            TFR_EST_queue_occupation_reconciliation = yes
+        }
+        $PATRON$ = {
+            if = {
+                limit = { NOT = { EST = { is_puppet_of = PREV has_autonomy_state = TFR_EST_autonomy_occupation } } }
+                set_autonomy = {
+                    target = EST
+                    autonomy_state = TFR_EST_autonomy_occupation
+                    freedom_level = 0.5
+                    end_wars = yes
+                }
+                EST = { TFR_EST_queue_occupation_reconciliation = yes }
+            }
+        }
+        if = {
+            # Do this once at the settlement, never on the daily repair path:
+            # subsequent enemies must still be able to capture Tallinn.
+            limit = { owns_state = 13 check_variable = { var = TFR_EST_new_settlement value = 1 compare = equals } }
+            13 = { set_state_controller_to = EST }
+            set_capital = { state = 13 }
+        }
+    }
+}
+
+TFR_EST_determine_occupation_type = {
+    set_variable = { var = TFR_EST_occupation_type value = 6 }
+    if = {
+        limit = { is_puppet_of = SOV }
+        if = {
+            limit = { has_global_flag = SOV_dugin_russia_flag }
+            set_variable = { var = TFR_EST_occupation_type value = 4 }
+        }
+        else_if = {
+            limit = { has_global_flag = SOV_navalny_russia_flag }
+            set_variable = { var = TFR_EST_occupation_type value = 5 }
+        }
+        else_if = {
+            limit = { SOV = { OR = { has_government = communist has_government = libertarian_socialist has_government = totalitarian_socialist } } }
+            set_variable = { var = TFR_EST_occupation_type value = 1 }
+        }
+        else_if = {
+            limit = { SOV = { OR = { has_government = nationalist has_government = fascist has_government = national_socialist } } }
+            set_variable = { var = TFR_EST_occupation_type value = 3 }
+        }
+        else = { set_variable = { var = TFR_EST_occupation_type value = 2 } }
+    }
+    else_if = {
+        limit = { overlord = { OR = { has_government = nationalist has_government = fascist has_government = national_socialist has_government = communist has_government = totalitarian_socialist } } }
+        set_variable = { var = TFR_EST_occupation_type value = 7 }
+    }
+}
+
+TFR_EST_install_occupation_government = {
+    # Named local leaders already appointed by parent content remain in office.
+    if = {
+        limit = {
+            NOT = {
+                OR = {
+                    has_country_leader = { character = EST_julia_lindvall_char ruling_only = yes }
+                    has_country_leader = { character = EST_robert_kurvitz_char ruling_only = yes }
+                    has_country_leader = { character = EST_yana_toom_char ruling_only = yes }
+                }
+            }
+        }
+        if = {
+            limit = { check_variable = { var = TFR_EST_occupation_type value = 1 compare = equals } }
+            create_country_leader = { name = TFR_EST_communist_council picture = "gfx/leaders/Europe/Portrait_Europe_Generic_1.dds" ideology = marxism_leninism expire = "2040.1.1" }
+            set_politics = { ruling_party = communist elections_allowed = no }
+        }
+        else_if = {
+            limit = { check_variable = { var = TFR_EST_occupation_type value = 3 compare = equals } }
+            create_country_leader = { name = TFR_EST_military_council picture = "gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds" ideology = military_junta expire = "2040.1.1" }
+            set_politics = { ruling_party = nationalist elections_allowed = no }
+        }
+        else_if = {
+            limit = { check_variable = { var = TFR_EST_occupation_type value = 4 compare = equals } }
+            create_country_leader = { name = TFR_EST_eurasian_council picture = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds" ideology = eurasianism expire = "2040.1.1" }
+            set_politics = { ruling_party = national_socialist elections_allowed = no }
+        }
+        else_if = {
+            limit = { check_variable = { var = TFR_EST_occupation_type value = 5 compare = equals } }
+            create_country_leader = { name = TFR_EST_baltic_council picture = "gfx/leaders/Europe/Portrait_Europe_Generic_3.dds" ideology = social_patriotism expire = "2040.1.1" }
+            set_politics = { ruling_party = social_democrat elections_allowed = no }
+        }
+        else_if = {
+            limit = { check_variable = { var = TFR_EST_occupation_type value = 7 compare = equals } }
+            create_country_leader = { name = TFR_EST_european_authority picture = "gfx/leaders/Europe/Portrait_Europe_Generic_4.dds" ideology = oligarchist expire = "2040.1.1" }
+            set_politics = { ruling_party = authoritarian_democrat elections_allowed = no }
+        }
+        else = {
+            create_country_leader = { name = TFR_EST_civil_administration picture = "gfx/leaders/Europe/portrait_europe_generic_5.dds" ideology = oligarchist expire = "2040.1.1" }
+            set_politics = { ruling_party = authoritarian_democrat elections_allowed = no }
+        }
+    }
+}
+
+TFR_EST_reconcile_occupation = {
+    if = {
+        limit = { original_tag = EST has_country_flag = TFR_EST_initialized }
+        TFR_EST_repair_occupation_reforms = yes
+        if = {
+            limit = { is_subject = yes }
+            overlord = { save_event_target_as = TFR_EST_current_patron }
+            TFR_EST_enter_occupation = { PATRON = event_target:TFR_EST_current_patron }
+            TFR_EST_determine_occupation_type = yes
+            if = {
+                limit = {
+                    OR = {
+                        NOT = { has_country_flag = TFR_EST_occupation_government_installed }
+                        NOT = { check_variable = { var = TFR_EST_installed_occupation_generation value = TFR_EST_occupation_generation compare = equals } }
+                        NOT = { check_variable = { var = TFR_EST_installed_occupation_type value = TFR_EST_occupation_type compare = equals } }
+                    }
+                }
+                TFR_EST_install_occupation_government = yes
+                set_country_flag = TFR_EST_occupation_government_installed
+                set_variable = { var = TFR_EST_installed_occupation_generation value = TFR_EST_occupation_generation }
+                set_variable = { var = TFR_EST_installed_occupation_type value = TFR_EST_occupation_type }
+                mark_focus_tree_layout_dirty = yes
+            }
+            if = {
+                limit = {
+                    OR = {
+                        NOT = { has_focus_tree = TFR_EST_occupation_tree }
+                        NOT = { check_variable = { var = TFR_EST_loaded_occupation_generation value = TFR_EST_occupation_generation compare = equals } }
+                    }
+                }
+                # Persistent bypass flags restore completed projects without
+                # running their rewards, while political choices reset.
+                load_focus_tree = { tree = TFR_EST_occupation_tree keep_completed = no }
+                set_variable = { var = TFR_EST_loaded_occupation_generation value = TFR_EST_occupation_generation }
+            }
+            add_ideas = TFR_EST_occupation_mandate
+            TFR_EST_suspend_parliament = yes
+            set_politics = { elections_allowed = no }
+        }
+        else_if = {
+            limit = { has_country_flag = TFR_EST_occupied }
+            TFR_EST_restore_occupation_government = yes
+        }
+    }
+}
+
+TFR_EST_repair_occupation_reforms = {
+    if = { limit = { has_country_flag = TFR_EST_occupation_municipal_services_done } add_ideas = TFR_EST_occupation_local_services }
+    if = { limit = { has_country_flag = TFR_EST_occupation_rebuild_done } add_ideas = TFR_EST_occupation_recovery }
+    if = { limit = { has_country_flag = TFR_EST_occupation_local_forces_done } add_ideas = TFR_EST_occupation_limited_forces }
+    if = {
+        limit = { has_country_flag = TFR_EST_occupied }
+        if = { limit = { has_country_flag = TFR_EST_occupation_security_done } add_ideas = TFR_EST_occupation_security_compact }
+        if = { limit = { has_country_flag = TFR_EST_occupation_accommodation_done } add_ideas = TFR_EST_occupation_collaboration }
+        if = { limit = { has_country_flag = TFR_EST_occupation_clandestine_done } add_ideas = TFR_EST_occupation_clandestine_network }
+    }
+}
+
+TFR_EST_restore_occupation_government = {
+    clr_country_flag = TFR_EST_occupied
+    clr_country_flag = TFR_EST_occupation_government_installed
+    clr_country_flag = TFR_EST_petition_pending
+    clr_country_flag = TFR_EST_occupation_reconciliation_queued
+    remove_ideas = TFR_EST_occupation_mandate
+    remove_ideas = TFR_EST_occupation_collaboration
+    remove_ideas = TFR_EST_occupation_clandestine_network
+    remove_ideas = TFR_EST_occupation_security_compact
+    remove_ideas = TFR_EST_occupation_civilian_compact
+    remove_ideas = TFR_EST_occupation_social_guarantees
+    set_country_flag = TFR_EST_restoration_pending
+    drop_cosmetic_tag = yes
+    TFR_EST_change_cohesion = { AMOUNT = 10 }
+    TFR_EST_restore_parliament = yes
+    load_focus_tree = { tree = TFR_EST_main_tree keep_completed = yes }
+    if = {
+        limit = { NOT = { has_country_flag = TFR_EST_restoration_announced } }
+        set_country_flag = TFR_EST_restoration_announced
+        country_event = { id = tfr_estonia_occupation.5 days = 1 }
+    }
+}
+
+TFR_EST_restore_sovereignty = {
+    if = {
+        limit = { TFR_EST_can_restore_sovereignty = yes }
+        overlord = { end_puppet = EST }
+        TFR_EST_restore_occupation_government = yes
+    }
+}
+
+TFR_EST_occupation_weekly = {
+    if = {
+        limit = { has_country_flag = TFR_EST_occupied is_subject = yes }
+        add_to_variable = { var = TFR_EST_occupation_weeks value = 1 }
+        if = {
+            limit = { has_idea = TFR_EST_occupation_collaboration }
+            TFR_EST_change_occupation_cooperation = { AMOUNT = 0.5 }
+        }
+        if = {
+            limit = { has_idea = TFR_EST_occupation_clandestine_network }
+            TFR_EST_change_occupation_resistance = { AMOUNT = 0.5 }
+        }
+        clamp_variable = { var = TFR_EST_occupation_cooperation min = 0 max = 100 }
+        clamp_variable = { var = TFR_EST_occupation_resistance min = 0 max = 100 }
+        if = {
+            limit = {
+                has_idea = TFR_EST_occupation_clandestine_network
+                check_variable = { var = TFR_EST_occupation_resistance value = 40 compare = greater_than_or_equals }
+                NOT = { has_country_flag = TFR_EST_occupation_security_cycle }
+            }
+            set_country_flag = { flag = TFR_EST_occupation_security_cycle days = 120 }
+            country_event = { id = tfr_estonia_occupation.3 days = 2 }
+        }
+    }
+}

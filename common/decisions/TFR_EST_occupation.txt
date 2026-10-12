@@ -1,0 +1,47 @@
+TFR_EST_occupation_category = {
+    TFR_EST_occupation_service_relief = {
+        icon = generic_political_discourse
+        visible = { has_country_flag = TFR_EST_occupied }
+        available = { has_country_flag = TFR_EST_occupied has_completed_focus = TFR_EST_occupation_municipal_services }
+        cost = 35
+        days_re_enable = 60
+        complete_effect = { TFR_EST_spend_budget = { AMOUNT = 50 } TFR_EST_change_cohesion = { AMOUNT = 3 } TFR_EST_change_occupation_cooperation = { AMOUNT = 5 } }
+        ai_will_do = { factor = 1 }
+    }
+    TFR_EST_occupation_training = {
+        icon = generic_political_discourse
+        visible = { has_country_flag = TFR_EST_occupied }
+        available = { has_country_flag = TFR_EST_occupied has_completed_focus = TFR_EST_occupation_local_forces }
+        cost = 40
+        days_re_enable = 90
+        complete_effect = { TFR_EST_spend_budget = { AMOUNT = 60 } TFR_EST_change_readiness = { AMOUNT = 4 } }
+        ai_will_do = { factor = 1 }
+    }
+    TFR_EST_occupation_cooperation = {
+        icon = generic_political_discourse
+        visible = { has_country_flag = TFR_EST_occupied }
+        available = { has_country_flag = TFR_EST_occupied has_idea = TFR_EST_occupation_collaboration }
+        cost = 35
+        days_re_enable = 60
+        complete_effect = { TFR_EST_change_occupation_cooperation = { AMOUNT = 8 } TFR_EST_change_cohesion = { AMOUNT = -2 } }
+        ai_will_do = { factor = 1 }
+    }
+    TFR_EST_occupation_network = {
+        icon = generic_political_discourse
+        visible = { has_country_flag = TFR_EST_occupied }
+        available = { has_country_flag = TFR_EST_occupied has_idea = TFR_EST_occupation_clandestine_network }
+        cost = 40
+        days_re_enable = 60
+        complete_effect = { TFR_EST_spend_budget = { AMOUNT = 20 } TFR_EST_change_occupation_resistance = { AMOUNT = 8 } TFR_EST_change_cohesion = { AMOUNT = 2 } }
+        ai_will_do = { factor = 1 }
+    }
+    TFR_EST_occupation_petition = {
+        icon = generic_political_discourse
+        visible = { has_country_flag = TFR_EST_occupied }
+        available = { has_country_flag = TFR_EST_occupied TFR_EST_can_restore_sovereignty = yes NOT = { has_country_flag = TFR_EST_petition_pending } }
+        cost = 75
+        days_re_enable = 90
+        complete_effect = { set_country_flag = TFR_EST_petition_pending country_event = { id = tfr_estonia_occupation.4 days = 7 } }
+        ai_will_do = { factor = 1 }
+    }
+}

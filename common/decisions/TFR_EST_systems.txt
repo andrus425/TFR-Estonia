@@ -1,0 +1,90 @@
+TFR_EST_cohesion_category = {
+
+        TFR_EST_community_consultation = {
+            icon = generic_political_discourse
+            cost = 35
+            days_remove = 28
+            days_re_enable = 56
+            visible = {  }
+            available = { NOT = { has_country_flag = TFR_EST_consultation_active } }
+            complete_effect = {
+                TFR_EST_spend_budget = { AMOUNT = 25 }
+                set_country_flag = { flag = TFR_EST_consultation_active days = 28 }
+            }
+            remove_effect = { clr_country_flag = TFR_EST_consultation_active }
+            ai_will_do = { factor = 10 }
+        }
+
+
+        TFR_EST_emergency_relief = {
+            icon = generic_political_discourse
+            cost = 40
+            days_remove = 28
+            days_re_enable = 90
+            visible = { OR = { has_war = yes has_country_flag = TFR_EST_occupied } }
+            available = { NOT = { has_country_flag = TFR_EST_relief_active } }
+            complete_effect = {
+                TFR_EST_spend_budget = { AMOUNT = 40 }
+                set_country_flag = { flag = TFR_EST_relief_active days = 28 }
+            }
+            remove_effect = { clr_country_flag = TFR_EST_relief_active }
+            ai_will_do = { factor = 8 }
+        }
+
+}
+TFR_EST_readiness_category = {
+
+        TFR_EST_reserve_drills = {
+            icon = generic_political_discourse
+            cost = 40
+            days_remove = 28
+            days_re_enable = 56
+            visible = { NOT = { has_country_flag = TFR_EST_occupied } }
+            available = { NOT = { has_country_flag = TFR_EST_exercises_active } }
+            complete_effect = {
+                TFR_EST_spend_budget = { AMOUNT = 30 }
+                set_country_flag = { flag = TFR_EST_exercises_active days = 28 }
+            }
+            remove_effect = { clr_country_flag = TFR_EST_exercises_active }
+            ai_will_do = { factor = 12 }
+        }
+
+
+    TFR_EST_authorize_reserves = {
+        icon = generic_military
+        cost = 60
+        fire_only_once = yes
+        visible = { NOT = { has_country_flag = TFR_EST_reserves_mobilized } NOT = { has_country_flag = TFR_EST_occupied } }
+        available = { TFR_EST_can_mobilize = yes }
+        complete_effect = { TFR_EST_spend_budget = { AMOUNT = 50 } TFR_EST_mobilize_reserves = yes }
+        ai_will_do = { factor = 30 }
+    }
+    TFR_EST_defense_procurement = {
+        icon = generic_military_support
+        cost = 45
+        days_re_enable = 180
+        visible = { NOT = { has_country_flag = TFR_EST_occupied } }
+        available = { 13 = { is_owned_by = EST is_controlled_by = EST } }
+        complete_effect = {
+            TFR_EST_spend_budget = { AMOUNT = 90 }
+            TFR_EST_change_readiness = { AMOUNT = 3 }
+            add_equipment_to_stockpile = { type = infantry_equipment amount = 500 producer = EST }
+            add_equipment_to_stockpile = { type = support_equipment amount = 50 producer = EST }
+        }
+        ai_will_do = { factor = 12 modifier = { factor = 2 has_war = yes } }
+    }
+    TFR_EST_fortify_tallinn = {
+        icon = generic_military
+        cost = 50
+        fire_only_once = yes
+        visible = { NOT = { has_country_flag = TFR_EST_occupied } }
+        available = { 13 = { is_owned_by = EST is_controlled_by = EST } }
+        complete_effect = {
+            TFR_EST_spend_budget = { AMOUNT = 75 }
+            TFR_EST_change_readiness = { AMOUNT = 5 }
+            13 = { add_building_construction = { type = bunker level = 1 province = 3152 instant_build = yes } }
+        }
+        ai_will_do = { factor = 15 }
+    }
+
+}

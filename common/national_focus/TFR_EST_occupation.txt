@@ -1,0 +1,484 @@
+focus_tree = {
+    id = TFR_EST_occupation_tree
+    country = { factor = 0 modifier = { add = 100 original_tag = EST has_country_flag = TFR_EST_occupied } }
+    default = no
+    continuous_focus_position = { x = 1400 y = 1350 }
+    focus = {
+        id = TFR_EST_occupation_transition
+        icon = GFX_goal_generic_political_pressure
+        x = 18
+        y = 0
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_transition_done }
+        available = { has_country_flag = TFR_EST_occupied  }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_transition_done } } add_political_power = 50 TFR_EST_change_cohesion = { AMOUNT = 3 } set_country_flag = TFR_EST_occupation_transition_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_municipal_services
+        icon = GFX_goal_generic_national_unity
+        x = 12
+        y = 1
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_municipal_services_done }
+        prerequisite = { focus = TFR_EST_occupation_transition }
+        available = { has_country_flag = TFR_EST_occupied  }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_municipal_services_done } } add_ideas = TFR_EST_occupation_local_services TFR_EST_change_cohesion = { AMOUNT = 5 } TFR_EST_spend_budget = { AMOUNT = 100 } set_country_flag = TFR_EST_occupation_municipal_services_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_rebuild
+        icon = GFX_goal_generic_construction
+        x = 12
+        y = 2
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_rebuild_done }
+        prerequisite = { focus = TFR_EST_occupation_municipal_services }
+        available = { has_country_flag = TFR_EST_occupied  }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_rebuild_done } } add_ideas = TFR_EST_occupation_recovery TFR_EST_spend_budget = { AMOUNT = 250 } set_country_flag = TFR_EST_occupation_rebuild_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_employment
+        icon = GFX_goal_generic_construction2
+        x = 12
+        y = 3
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_employment_done }
+        prerequisite = { focus = TFR_EST_occupation_rebuild }
+        available = { has_country_flag = TFR_EST_occupied  }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_employment_done } } TFR_EST_spend_budget = { AMOUNT = 350 } 13 = { if = { limit = { is_owned_by = EST is_controlled_by = EST } add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } } TFR_EST_change_cohesion = { AMOUNT = 4 } set_country_flag = TFR_EST_occupation_employment_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_security
+        icon = GFX_goal_generic_defence
+        x = 24
+        y = 1
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_security_done }
+        prerequisite = { focus = TFR_EST_occupation_transition }
+        available = { has_country_flag = TFR_EST_occupied  }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_security_done } } TFR_EST_change_readiness = { AMOUNT = 5 } add_ideas = TFR_EST_occupation_security_compact set_country_flag = TFR_EST_occupation_security_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_local_forces
+        icon = GFX_goal_generic_army_doctrines
+        x = 24
+        y = 2
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_local_forces_done }
+        prerequisite = { focus = TFR_EST_occupation_security }
+        available = { has_country_flag = TFR_EST_occupied  }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_local_forces_done } } add_ideas = TFR_EST_occupation_limited_forces TFR_EST_change_readiness = { AMOUNT = 8 } TFR_EST_spend_budget = { AMOUNT = 150 } set_country_flag = TFR_EST_occupation_local_forces_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_returned_officers
+        icon = GFX_goal_generic_military_sphere
+        x = 24
+        y = 3
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_returned_officers_done }
+        prerequisite = { focus = TFR_EST_occupation_local_forces }
+        available = { has_country_flag = TFR_EST_occupied  }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_returned_officers_done } } TFR_EST_change_readiness = { AMOUNT = 8 } TFR_EST_spend_budget = { AMOUNT = 100 } set_country_flag = TFR_EST_occupation_returned_officers_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_assembly
+        icon = GFX_goal_generic_political_pressure
+        x = 18
+        y = 4
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_assembly_done }
+        prerequisite = { focus = TFR_EST_occupation_employment }
+        prerequisite = { focus = TFR_EST_occupation_returned_officers }
+        available = { has_country_flag = TFR_EST_occupied  }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_assembly_done } } TFR_EST_change_cohesion = { AMOUNT = 6 } add_political_power = 50 set_country_flag = TFR_EST_occupation_assembly_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_communist_mandate
+        icon = GFX_goal_generic_political_pressure
+        x = 0
+        y = 5
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_communist_mandate_done }
+        prerequisite = { focus = TFR_EST_occupation_assembly }
+        available = { has_country_flag = TFR_EST_occupied check_variable = { var = TFR_EST_occupation_type value = 1 compare = equals } }
+        allow_branch = { check_variable = { var = TFR_EST_occupation_type value = 1 compare = equals } }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_communist_mandate_done } } add_political_power = 40 TFR_EST_change_cohesion = { AMOUNT = 2 } set_country_flag = TFR_EST_occupation_communist_mandate_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_communist_program
+        icon = GFX_goal_generic_construction
+        x = 0
+        y = 6
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_communist_program_done }
+        prerequisite = { focus = TFR_EST_occupation_communist_mandate }
+        available = { has_country_flag = TFR_EST_occupied check_variable = { var = TFR_EST_occupation_type value = 1 compare = equals } }
+        allow_branch = { check_variable = { var = TFR_EST_occupation_type value = 1 compare = equals } }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_communist_program_done } } add_ideas = TFR_EST_occupation_social_guarantees TFR_EST_change_cohesion = { AMOUNT = 8 } TFR_EST_change_readiness = { AMOUNT = 4 } TFR_EST_spend_budget = { AMOUNT = 150 } country_event = { id = tfr_estonia_occupation.11 days = 7 } set_country_flag = TFR_EST_occupation_communist_program_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_communist_charter
+        icon = GFX_goal_generic_political_pressure
+        x = 0
+        y = 7
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_communist_charter_done }
+        prerequisite = { focus = TFR_EST_occupation_communist_program }
+        available = { has_country_flag = TFR_EST_occupied check_variable = { var = TFR_EST_occupation_type value = 1 compare = equals } }
+        allow_branch = { check_variable = { var = TFR_EST_occupation_type value = 1 compare = equals } }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_communist_charter_done } } TFR_EST_change_occupation_cooperation = { AMOUNT = 10 } TFR_EST_change_cohesion = { AMOUNT = 3 } set_country_flag = TFR_EST_occupation_communist_charter_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_civilian_mandate
+        icon = GFX_goal_generic_political_pressure
+        x = 6
+        y = 5
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_civilian_mandate_done }
+        prerequisite = { focus = TFR_EST_occupation_assembly }
+        available = { has_country_flag = TFR_EST_occupied check_variable = { var = TFR_EST_occupation_type value = 2 compare = equals } }
+        allow_branch = { check_variable = { var = TFR_EST_occupation_type value = 2 compare = equals } }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_civilian_mandate_done } } add_political_power = 40 TFR_EST_change_cohesion = { AMOUNT = 2 } set_country_flag = TFR_EST_occupation_civilian_mandate_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_civilian_program
+        icon = GFX_goal_generic_construction
+        x = 6
+        y = 6
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_civilian_program_done }
+        prerequisite = { focus = TFR_EST_occupation_civilian_mandate }
+        available = { has_country_flag = TFR_EST_occupied check_variable = { var = TFR_EST_occupation_type value = 2 compare = equals } }
+        allow_branch = { check_variable = { var = TFR_EST_occupation_type value = 2 compare = equals } }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_civilian_program_done } } add_ideas = TFR_EST_occupation_civilian_compact TFR_EST_change_cohesion = { AMOUNT = 6 } TFR_EST_change_readiness = { AMOUNT = 6 } TFR_EST_spend_budget = { AMOUNT = 150 } country_event = { id = tfr_estonia_occupation.12 days = 7 } set_country_flag = TFR_EST_occupation_civilian_program_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_civilian_charter
+        icon = GFX_goal_generic_political_pressure
+        x = 6
+        y = 7
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_civilian_charter_done }
+        prerequisite = { focus = TFR_EST_occupation_civilian_program }
+        available = { has_country_flag = TFR_EST_occupied check_variable = { var = TFR_EST_occupation_type value = 2 compare = equals } }
+        allow_branch = { check_variable = { var = TFR_EST_occupation_type value = 2 compare = equals } }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_civilian_charter_done } } TFR_EST_change_occupation_cooperation = { AMOUNT = 10 } TFR_EST_change_cohesion = { AMOUNT = 3 } set_country_flag = TFR_EST_occupation_civilian_charter_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_military_mandate
+        icon = GFX_goal_generic_political_pressure
+        x = 12
+        y = 5
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_military_mandate_done }
+        prerequisite = { focus = TFR_EST_occupation_assembly }
+        available = { has_country_flag = TFR_EST_occupied check_variable = { var = TFR_EST_occupation_type value = 3 compare = equals } }
+        allow_branch = { check_variable = { var = TFR_EST_occupation_type value = 3 compare = equals } }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_military_mandate_done } } add_political_power = 40 TFR_EST_change_cohesion = { AMOUNT = 2 } set_country_flag = TFR_EST_occupation_military_mandate_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_military_program
+        icon = GFX_goal_generic_construction
+        x = 12
+        y = 6
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_military_program_done }
+        prerequisite = { focus = TFR_EST_occupation_military_mandate }
+        available = { has_country_flag = TFR_EST_occupied check_variable = { var = TFR_EST_occupation_type value = 3 compare = equals } }
+        allow_branch = { check_variable = { var = TFR_EST_occupation_type value = 3 compare = equals } }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_military_program_done } } add_ideas = TFR_EST_occupation_security_compact TFR_EST_change_cohesion = { AMOUNT = 3 } TFR_EST_change_readiness = { AMOUNT = 12 } TFR_EST_spend_budget = { AMOUNT = 150 } country_event = { id = tfr_estonia_occupation.13 days = 7 } set_country_flag = TFR_EST_occupation_military_program_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_military_charter
+        icon = GFX_goal_generic_political_pressure
+        x = 12
+        y = 7
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_military_charter_done }
+        prerequisite = { focus = TFR_EST_occupation_military_program }
+        available = { has_country_flag = TFR_EST_occupied check_variable = { var = TFR_EST_occupation_type value = 3 compare = equals } }
+        allow_branch = { check_variable = { var = TFR_EST_occupation_type value = 3 compare = equals } }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_military_charter_done } } TFR_EST_change_occupation_cooperation = { AMOUNT = 10 } TFR_EST_change_cohesion = { AMOUNT = 3 } set_country_flag = TFR_EST_occupation_military_charter_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_eurasian_mandate
+        icon = GFX_goal_generic_political_pressure
+        x = 18
+        y = 5
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_eurasian_mandate_done }
+        prerequisite = { focus = TFR_EST_occupation_assembly }
+        available = { has_country_flag = TFR_EST_occupied check_variable = { var = TFR_EST_occupation_type value = 4 compare = equals } }
+        allow_branch = { check_variable = { var = TFR_EST_occupation_type value = 4 compare = equals } }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_eurasian_mandate_done } } add_political_power = 40 TFR_EST_change_cohesion = { AMOUNT = 2 } set_country_flag = TFR_EST_occupation_eurasian_mandate_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_eurasian_program
+        icon = GFX_goal_generic_construction
+        x = 18
+        y = 6
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_eurasian_program_done }
+        prerequisite = { focus = TFR_EST_occupation_eurasian_mandate }
+        available = { has_country_flag = TFR_EST_occupied check_variable = { var = TFR_EST_occupation_type value = 4 compare = equals } }
+        allow_branch = { check_variable = { var = TFR_EST_occupation_type value = 4 compare = equals } }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_eurasian_program_done } } add_ideas = TFR_EST_occupation_social_guarantees TFR_EST_change_cohesion = { AMOUNT = 6 } TFR_EST_change_readiness = { AMOUNT = 7 } TFR_EST_spend_budget = { AMOUNT = 150 } country_event = { id = tfr_estonia_occupation.14 days = 7 } set_country_flag = TFR_EST_occupation_eurasian_program_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_eurasian_charter
+        icon = GFX_goal_generic_political_pressure
+        x = 18
+        y = 7
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_eurasian_charter_done }
+        prerequisite = { focus = TFR_EST_occupation_eurasian_program }
+        available = { has_country_flag = TFR_EST_occupied check_variable = { var = TFR_EST_occupation_type value = 4 compare = equals } }
+        allow_branch = { check_variable = { var = TFR_EST_occupation_type value = 4 compare = equals } }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_eurasian_charter_done } } TFR_EST_change_occupation_cooperation = { AMOUNT = 10 } TFR_EST_change_cohesion = { AMOUNT = 3 } set_country_flag = TFR_EST_occupation_eurasian_charter_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_baltic_mandate
+        icon = GFX_goal_generic_political_pressure
+        x = 24
+        y = 5
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_baltic_mandate_done }
+        prerequisite = { focus = TFR_EST_occupation_assembly }
+        available = { has_country_flag = TFR_EST_occupied check_variable = { var = TFR_EST_occupation_type value = 5 compare = equals } }
+        allow_branch = { check_variable = { var = TFR_EST_occupation_type value = 5 compare = equals } }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_baltic_mandate_done } } add_political_power = 40 TFR_EST_change_cohesion = { AMOUNT = 2 } set_country_flag = TFR_EST_occupation_baltic_mandate_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_baltic_program
+        icon = GFX_goal_generic_construction
+        x = 24
+        y = 6
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_baltic_program_done }
+        prerequisite = { focus = TFR_EST_occupation_baltic_mandate }
+        available = { has_country_flag = TFR_EST_occupied check_variable = { var = TFR_EST_occupation_type value = 5 compare = equals } }
+        allow_branch = { check_variable = { var = TFR_EST_occupation_type value = 5 compare = equals } }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_baltic_program_done } } add_ideas = TFR_EST_occupation_civilian_compact TFR_EST_change_cohesion = { AMOUNT = 9 } TFR_EST_change_readiness = { AMOUNT = 6 } TFR_EST_spend_budget = { AMOUNT = 150 } country_event = { id = tfr_estonia_occupation.15 days = 7 } set_country_flag = TFR_EST_occupation_baltic_program_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_baltic_charter
+        icon = GFX_goal_generic_political_pressure
+        x = 24
+        y = 7
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_baltic_charter_done }
+        prerequisite = { focus = TFR_EST_occupation_baltic_program }
+        available = { has_country_flag = TFR_EST_occupied check_variable = { var = TFR_EST_occupation_type value = 5 compare = equals } }
+        allow_branch = { check_variable = { var = TFR_EST_occupation_type value = 5 compare = equals } }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_baltic_charter_done } } TFR_EST_change_occupation_cooperation = { AMOUNT = 10 } TFR_EST_change_cohesion = { AMOUNT = 3 } set_country_flag = TFR_EST_occupation_baltic_charter_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_supervised_mandate
+        icon = GFX_goal_generic_political_pressure
+        x = 30
+        y = 5
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_supervised_mandate_done }
+        prerequisite = { focus = TFR_EST_occupation_assembly }
+        available = { has_country_flag = TFR_EST_occupied check_variable = { var = TFR_EST_occupation_type value = 6 compare = equals } }
+        allow_branch = { check_variable = { var = TFR_EST_occupation_type value = 6 compare = equals } }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_supervised_mandate_done } } add_political_power = 40 TFR_EST_change_cohesion = { AMOUNT = 2 } set_country_flag = TFR_EST_occupation_supervised_mandate_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_supervised_program
+        icon = GFX_goal_generic_construction
+        x = 30
+        y = 6
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_supervised_program_done }
+        prerequisite = { focus = TFR_EST_occupation_supervised_mandate }
+        available = { has_country_flag = TFR_EST_occupied check_variable = { var = TFR_EST_occupation_type value = 6 compare = equals } }
+        allow_branch = { check_variable = { var = TFR_EST_occupation_type value = 6 compare = equals } }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_supervised_program_done } } add_ideas = TFR_EST_occupation_civilian_compact TFR_EST_change_cohesion = { AMOUNT = 10 } TFR_EST_change_readiness = { AMOUNT = 5 } TFR_EST_spend_budget = { AMOUNT = 150 } country_event = { id = tfr_estonia_occupation.16 days = 7 } set_country_flag = TFR_EST_occupation_supervised_program_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_supervised_charter
+        icon = GFX_goal_generic_political_pressure
+        x = 30
+        y = 7
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_supervised_charter_done }
+        prerequisite = { focus = TFR_EST_occupation_supervised_program }
+        available = { has_country_flag = TFR_EST_occupied check_variable = { var = TFR_EST_occupation_type value = 6 compare = equals } }
+        allow_branch = { check_variable = { var = TFR_EST_occupation_type value = 6 compare = equals } }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_supervised_charter_done } } TFR_EST_change_occupation_cooperation = { AMOUNT = 10 } TFR_EST_change_cohesion = { AMOUNT = 3 } set_country_flag = TFR_EST_occupation_supervised_charter_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_european_authoritarian_mandate
+        icon = GFX_goal_generic_political_pressure
+        x = 36
+        y = 5
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_european_authoritarian_mandate_done }
+        prerequisite = { focus = TFR_EST_occupation_assembly }
+        available = { has_country_flag = TFR_EST_occupied check_variable = { var = TFR_EST_occupation_type value = 7 compare = equals } }
+        allow_branch = { check_variable = { var = TFR_EST_occupation_type value = 7 compare = equals } }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_european_authoritarian_mandate_done } } add_political_power = 40 TFR_EST_change_cohesion = { AMOUNT = 2 } set_country_flag = TFR_EST_occupation_european_authoritarian_mandate_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_european_authoritarian_program
+        icon = GFX_goal_generic_construction
+        x = 36
+        y = 6
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_european_authoritarian_program_done }
+        prerequisite = { focus = TFR_EST_occupation_european_authoritarian_mandate }
+        available = { has_country_flag = TFR_EST_occupied check_variable = { var = TFR_EST_occupation_type value = 7 compare = equals } }
+        allow_branch = { check_variable = { var = TFR_EST_occupation_type value = 7 compare = equals } }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_european_authoritarian_program_done } } add_ideas = TFR_EST_occupation_security_compact TFR_EST_change_cohesion = { AMOUNT = 4 } TFR_EST_change_readiness = { AMOUNT = 10 } TFR_EST_spend_budget = { AMOUNT = 150 } country_event = { id = tfr_estonia_occupation.17 days = 7 } set_country_flag = TFR_EST_occupation_european_authoritarian_program_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_european_authoritarian_charter
+        icon = GFX_goal_generic_political_pressure
+        x = 36
+        y = 7
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_european_authoritarian_charter_done }
+        prerequisite = { focus = TFR_EST_occupation_european_authoritarian_program }
+        available = { has_country_flag = TFR_EST_occupied check_variable = { var = TFR_EST_occupation_type value = 7 compare = equals } }
+        allow_branch = { check_variable = { var = TFR_EST_occupation_type value = 7 compare = equals } }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_european_authoritarian_charter_done } } TFR_EST_change_occupation_cooperation = { AMOUNT = 10 } TFR_EST_change_cohesion = { AMOUNT = 3 } set_country_flag = TFR_EST_occupation_european_authoritarian_charter_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_accommodation
+        icon = GFX_goal_generic_political_pressure
+        x = 12
+        y = 8
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_accommodation_done }
+        prerequisite = { focus = TFR_EST_occupation_communist_charter focus = TFR_EST_occupation_civilian_charter focus = TFR_EST_occupation_military_charter focus = TFR_EST_occupation_eurasian_charter focus = TFR_EST_occupation_baltic_charter focus = TFR_EST_occupation_supervised_charter focus = TFR_EST_occupation_european_authoritarian_charter }
+        mutually_exclusive = { focus = TFR_EST_occupation_clandestine }
+        available = { has_country_flag = TFR_EST_occupied  }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_accommodation_done } } add_ideas = TFR_EST_occupation_collaboration TFR_EST_change_occupation_cooperation = { AMOUNT = 10 } TFR_EST_change_cohesion = { AMOUNT = -3 } set_country_flag = TFR_EST_occupation_accommodation_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_clandestine
+        icon = GFX_goal_generic_secret_weapon
+        x = 24
+        y = 8
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_clandestine_done }
+        prerequisite = { focus = TFR_EST_occupation_communist_charter focus = TFR_EST_occupation_civilian_charter focus = TFR_EST_occupation_military_charter focus = TFR_EST_occupation_eurasian_charter focus = TFR_EST_occupation_baltic_charter focus = TFR_EST_occupation_supervised_charter focus = TFR_EST_occupation_european_authoritarian_charter }
+        mutually_exclusive = { focus = TFR_EST_occupation_accommodation }
+        available = { has_country_flag = TFR_EST_occupied  }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_clandestine_done } } add_ideas = TFR_EST_occupation_clandestine_network TFR_EST_change_occupation_resistance = { AMOUNT = 10 } TFR_EST_change_cohesion = { AMOUNT = 4 } set_country_flag = TFR_EST_occupation_clandestine_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_guarantees
+        icon = GFX_goal_generic_political_pressure
+        x = 12
+        y = 9
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_guarantees_done }
+        prerequisite = { focus = TFR_EST_occupation_accommodation }
+        available = { has_country_flag = TFR_EST_occupied  }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_guarantees_done } } TFR_EST_change_occupation_cooperation = { AMOUNT = 15 } TFR_EST_change_cohesion = { AMOUNT = 8 } set_country_flag = TFR_EST_occupation_guarantees_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_exile_charter
+        icon = GFX_goal_generic_national_unity
+        x = 24
+        y = 9
+        cost = 4
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_exile_charter_done }
+        prerequisite = { focus = TFR_EST_occupation_clandestine }
+        available = { has_country_flag = TFR_EST_occupied  }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_exile_charter_done } } TFR_EST_change_occupation_resistance = { AMOUNT = 15 } TFR_EST_change_cohesion = { AMOUNT = 8 } TFR_EST_change_readiness = { AMOUNT = 5 } set_country_flag = TFR_EST_occupation_exile_charter_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_restoration_compact
+        icon = GFX_goal_generic_national_unity
+        x = 18
+        y = 10
+        cost = 6
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_restoration_compact_done }
+        prerequisite = { focus = TFR_EST_occupation_guarantees focus = TFR_EST_occupation_exile_charter }
+        available = { has_country_flag = TFR_EST_occupied  }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_restoration_compact_done } } TFR_EST_change_cohesion = { AMOUNT = 6 } TFR_EST_change_readiness = { AMOUNT = 5 } custom_effect_tooltip = TFR_EST_occupation_can_restore_tt set_country_flag = TFR_EST_occupation_restoration_compact_done } }
+        ai_will_do = { factor = 1 }
+    }
+    focus = {
+        id = TFR_EST_occupation_constitutional_return
+        icon = GFX_goal_generic_national_unity
+        x = 18
+        y = 11
+        cost = 2
+        cancel_if_invalid = yes
+        bypass = { has_country_flag = TFR_EST_occupation_constitutional_return_done }
+        prerequisite = { focus = TFR_EST_occupation_restoration_compact }
+        available = { has_country_flag = TFR_EST_occupied TFR_EST_can_restore_sovereignty = yes }
+        completion_reward = { if = { limit = { NOT = { has_country_flag = TFR_EST_occupation_constitutional_return_done } } TFR_EST_restore_sovereignty = yes set_country_flag = TFR_EST_occupation_constitutional_return_done } }
+        ai_will_do = { factor = 1 }
+    }
+}

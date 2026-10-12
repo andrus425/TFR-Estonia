@@ -1,0 +1,52 @@
+add_namespace = tfr_estonia_parliament
+
+country_event = {
+ id = tfr_estonia_parliament.1
+ title = TFR_EST_election_event_title
+ desc = TFR_EST_election_event_desc
+ picture = GFX_report_event_generic_parliament
+ is_triggered_only = yes
+ trigger = { TFR_EST_independent_parliament = yes }
+ option = { name = TFR_EST_election_event_option }
+}
+
+country_event = {
+ id = tfr_estonia_parliament.2
+ title = TFR_EST_parempoolsed_event_title
+ desc = TFR_EST_parempoolsed_event_desc
+ picture = GFX_report_event_generic_parliament
+ is_triggered_only = yes
+ trigger = { TFR_EST_independent_parliament = yes }
+ option = { name = TFR_EST_parempoolsed_event_option }
+}
+
+country_event = {
+ id = tfr_estonia_parliament.3
+ title = TFR_EST_president_event_title
+ desc = TFR_EST_president_event_desc
+ picture = GFX_report_event_generic_parliament
+ is_triggered_only = yes
+ trigger = { TFR_EST_independent_parliament = yes }
+ option = { name = TFR_EST_president_event_option }
+}
+
+country_event = {
+ id = tfr_estonia_parliament.4
+ title = TFR_EST_confidence_event_title
+ desc = TFR_EST_confidence_event_desc
+ picture = GFX_report_event_generic_parliament
+ is_triggered_only = yes
+ trigger = { TFR_EST_independent_parliament = yes }
+ option = { name = TFR_EST_confidence_event_option }
+}
+
+country_event = {
+ id = tfr_estonia_parliament.5
+ title = TFR_EST_cabinet_event_title
+ desc = TFR_EST_cabinet_event_desc
+ picture = GFX_report_event_generic_parliament
+ is_triggered_only = yes
+ trigger = { TFR_EST_independent_parliament = yes }
+ option = { name = TFR_EST_cabinet_event_option }
+}
+

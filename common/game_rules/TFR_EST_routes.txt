@@ -1,0 +1,12 @@
+TFR_EST_AI_ROUTE = {
+ name = TFR_EST_AI_ROUTE
+ group = RULE_GROUP_AI_BEHAVIOR
+ default = { name = DEFAULT text = TFR_EST_RULE_DEFAULT desc = TFR_EST_RULE_DEFAULT_DESC }
+ option = { name = REFORM text = TFR_EST_RULE_REFORM desc = TFR_EST_RULE_REFORM_DESC }
+ option = { name = CENTRE text = TFR_EST_RULE_CENTRE desc = TFR_EST_RULE_CENTRE_DESC }
+ option = { name = EKRE text = TFR_EST_RULE_EKRE desc = TFR_EST_RULE_EKRE_DESC }
+ option = { name = ISAMAA text = TFR_EST_RULE_ISAMAA desc = TFR_EST_RULE_ISAMAA_DESC }
+ option = { name = SDE text = TFR_EST_RULE_SDE desc = TFR_EST_RULE_SDE_DESC }
+ option = { name = E200 text = TFR_EST_RULE_E200 desc = TFR_EST_RULE_E200_DESC }
+ option = { name = PP text = TFR_EST_RULE_PP desc = TFR_EST_RULE_PP_DESC }
+}

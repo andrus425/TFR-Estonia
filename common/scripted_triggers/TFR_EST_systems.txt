@@ -1,0 +1,14 @@
+TFR_EST_can_mobilize = {
+    original_tag = EST
+    is_subject = no
+    NOT = { has_country_flag = TFR_EST_occupied }
+    NOT = { has_country_flag = TFR_EST_reserves_mobilized }
+    13 = { is_owned_by = EST is_controlled_by = EST }
+    OR = { has_war = yes check_variable = { TFR_EST_readiness > 49 } }
+}
+TFR_EST_independent_politics = {
+    original_tag = EST
+    has_country_flag = TFR_EST_initialized
+    is_subject = no
+    NOT = { has_country_flag = TFR_EST_occupied }
+}

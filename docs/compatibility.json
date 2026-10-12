@@ -1,0 +1,1028 @@
+{
+  "parent": "The Fire Rises",
+  "version": "1.0.9.1c",
+  "supported_game_version": "1.19.*",
+  "protection": "EST survives supported scripted settlements with state 13; no post-annex recreation",
+  "excluded_mutations": [
+    {
+      "path": "common/decisions/TFR_decisions_ZZZ_generic_debug.txt",
+      "reason": "Developer-only map construction/console paths are outside supported campaign settlements"
+    }
+  ],
+  "overrides": [
+    {
+      "path": "common/decisions/TFR_decisions_GER.txt",
+      "upstream_sha256": "a0934351becba65f54f948a94de165affdf93dade67020fcd4d66d0c0b0cb5a0",
+      "generated_sha256": "a12af4b18121192feb9dcfc757ace5bdba954b5a57a416171dab8ba2b18dfd37",
+      "changes": [
+        {
+          "line": 19717,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 19819,
+          "reason": "pre-annex Estonia guard"
+        }
+      ]
+    },
+    {
+      "path": "common/decisions/TFR_decisions_SOV.txt",
+      "upstream_sha256": "f4e691f57d3e1efd4b6a1c4e7ba85bf125ff4d6e2fcddc09581e19f65b86106f",
+      "generated_sha256": "4156d019d1dc161c5c8b89588762ef2bf1590ba2c0ee5cb1d806209034753ee9",
+      "changes": [
+        {
+          "line": 13073,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 15024,
+          "reason": "pre-annex Estonia guard"
+        }
+      ]
+    },
+    {
+      "path": "common/national_focus/TFR_national_focus_SOV_communist_new.txt",
+      "upstream_sha256": "95d1939ee88abcd4a19c9efc7ed99ec1d314f069a72f1cf8dc41e36329f4ec77",
+      "generated_sha256": "34a45bbeb57950442106cb1feb4539b64351af536ec3187916365dafecce218d",
+      "changes": [
+        {
+          "line": 7366,
+          "reason": "Russian occupation/pacification predicate"
+        }
+      ]
+    },
+    {
+      "path": "common/on_actions/TFR_on_actions_ZZZ_peace.txt",
+      "upstream_sha256": "81dbb654285bb216debbeac8eb584992255ea2c68620e7da180dad5874cb2ea6",
+      "generated_sha256": "f6e63f6abab1a369bc42ae574d7ff6ebb11a419cbc79b1c98936a92a235f8d1d",
+      "changes": [
+        {
+          "line": 121,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 147,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 171,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 195,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 229,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 259,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 318,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 377,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 405,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 446,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 532,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 567,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 593,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 637,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 672,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 701,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 729,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 906,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 935,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 964,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 993,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 1139,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 1153,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 1220,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 1465,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 1703,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 1857,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 1880,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 1908,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 1950,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 2013,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 2080,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 2214,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 2238,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 2262,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 2281,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 2328,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 2359,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 2385,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 2437,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 2478,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 2509,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 2536,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 2563,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 2582,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 2610,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 2635,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 2660,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 2700,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 2740,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 2781,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 2785,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 2868,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 3202,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 3265,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 3399,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 3472,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 3532,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 3592,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 3646,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 3777,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 3838,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 3897,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 3905,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 3954,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 3976,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 3984,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 4005,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 4287,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 5128,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 5162,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 5195,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 5229,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 5263,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 5378,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 5418,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 5441,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 5464,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 5487,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 5510,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 5555,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 5596,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 5741,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 5784,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 5846,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 5885,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 5908,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 6030,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 6077,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 6096,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 6125,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 6145,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 6168,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 6206,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 6228,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 6275,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 6309,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 6329,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 6356,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 6375,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 7073,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 7454,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 7514,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 7617,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 7919,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 8024,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 8048,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 8177,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 8271,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 8299,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 8420,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 8445,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 8505,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 8567,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 8666,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 8750,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 8803,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 8825,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 8970,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 8993,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9115,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9152,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9160,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9202,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9260,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9284,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9301,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9326,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9366,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9374,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9400,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9430,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9463,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9491,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9530,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9539,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 9564,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9584,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9618,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9625,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9645,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9707,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9739,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9765,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9800,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9832,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9864,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9899,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9922,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 10151,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 10198,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 10274,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 10320,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 10359,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 10423,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 10458,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 10596,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 10768,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 10809,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 10843,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 10877,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 10912,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 10937,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 10962,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 10987,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 10988,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 11013,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 11014,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 11026,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 11049,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 11482,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 11490,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 11532,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 11560,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 11593,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 11651,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 11759,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 11808,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 11838,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 11913,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 11962,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 12067,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 12089,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 12102,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 12141,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 12172,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 12271,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 12370,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 12401,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 12448,
+          "reason": "pre-annex Estonia guard"
+        }
+      ]
+    },
+    {
+      "path": "common/scripted_effects/00_TFR_scripted_effects_ZZZ_generic.txt",
+      "upstream_sha256": "e6b6273e47d65523585638830aa36f458de4ae52b1f19d115c7444f354f10e84",
+      "generated_sha256": "6d7d81eb2dcf5a35e20bc50c45d66d7b426f50c18e4b7f84ae238102487e8b76",
+      "changes": [
+        {
+          "line": 5182,
+          "reason": "pre-annex Estonia guard"
+        }
+      ]
+    },
+    {
+      "path": "common/scripted_effects/TFR_scripted_effects_GER.txt",
+      "upstream_sha256": "062617b6d49d13791fa495ee45a2d78bd7aef0813f3b3a1d1a4edd9ccec7f960",
+      "generated_sha256": "33035a0c3e77b5fe2e0544d91065ee6ff58d62dfd25873d9197b97559467e7ec",
+      "changes": [
+        {
+          "line": 4428,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 4582,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 4746,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 4858,
+          "reason": "prevent generic tree replacing occupation"
+        }
+      ]
+    },
+    {
+      "path": "common/scripted_effects/TFR_scripted_effects_SOV.txt",
+      "upstream_sha256": "0fec3681f158c546f5df6056a5ac5580ddb0d5adbebba3105696f8c5a5ff02d1",
+      "generated_sha256": "3ef3d6f710a05cfb71f4210d5bf8e04f95891cddd605701babdefa5854ed418b",
+      "changes": [
+        {
+          "line": 665,
+          "reason": "protect Northern Estonia before transfer"
+        },
+        {
+          "line": 1612,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 1618,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 1624,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 1630,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 1636,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 1642,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 1648,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 1660,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 1675,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 1682,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 1699,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 1714,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 1727,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 1742,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 1755,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 1890,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 3280,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 3936,
+          "reason": "protect Northern Estonia before transfer"
+        },
+        {
+          "line": 4251,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 13404,
+          "reason": "protect Northern Estonia before transfer"
+        },
+        {
+          "line": 13697,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 14667,
+          "reason": "protect Northern Estonia before transfer"
+        },
+        {
+          "line": 14780,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 14871,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 14933,
+          "reason": "protect Northern Estonia before transfer"
+        },
+        {
+          "line": 14949,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 15241,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 15272,
+          "reason": "prevent generic tree replacing occupation"
+        }
+      ]
+    },
+    {
+      "path": "common/scripted_triggers/00_TFR_scripted_triggers_ZZZ_generic.txt",
+      "upstream_sha256": "d98ddcaaed791ccc42b09d94ea3b6f8de855ec80ba12485b75e1574af130a5f8",
+      "generated_sha256": "98c626d242558ebf3301494f84de07b8fc314a6e22ae523b7d0a823d1303232f",
+      "changes": [
+        {
+          "line": 13,
+          "reason": "register Estonia as full content"
+        }
+      ]
+    },
+    {
+      "path": "events/TFR_events_BLR.txt",
+      "upstream_sha256": "3dbf158e944dc3345986788950f650949a0f53a00dc3c13f45b37fdb509069ba",
+      "generated_sha256": "998c2f0c5c072774a9f94d474ff78a0a4f925cef04cf5396eaf440502da8a9c2",
+      "changes": [
+        {
+          "line": 340,
+          "reason": "pre-annex Estonia guard"
+        }
+      ]
+    },
+    {
+      "path": "events/TFR_events_SOV.txt",
+      "upstream_sha256": "5e1bbb93a4e5b5ddad46068d71713346868c852971b436f20e5f677c4c635f80",
+      "generated_sha256": "755387734a3c58898e8b76fb34a21ec6f82843155d018ef0a1a2a68098de78a0",
+      "changes": [
+        {
+          "line": 556,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 611,
+          "reason": "pre-annex Estonia guard"
+        },
+        {
+          "line": 9747,
+          "reason": "Russian occupation/pacification predicate"
+        },
+        {
+          "line": 9831,
+          "reason": "Russian occupation/pacification predicate"
+        },
+        {
+          "line": 9898,
+          "reason": "Russian occupation/pacification predicate"
+        }
+      ]
+    }
+  ]
+}

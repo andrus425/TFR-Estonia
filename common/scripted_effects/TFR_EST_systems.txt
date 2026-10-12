@@ -1,0 +1,235 @@
+# Public API. All callers operate in EST country scope.
+    TFR_EST_change_cohesion = {
+        add_to_variable = { var = TFR_EST_cohesion value = $AMOUNT$ }
+        clamp_variable = { var = TFR_EST_cohesion min = 0 max = 100 }
+        TFR_EST_refresh_meters = yes
+    }
+    TFR_EST_change_readiness = {
+        add_to_variable = { var = TFR_EST_readiness value = $AMOUNT$ }
+        clamp_variable = { var = TFR_EST_readiness min = 0 max = 100 }
+        TFR_EST_refresh_meters = yes
+    }
+    TFR_EST_spend_budget = {
+        custom_effect_tooltip = TFR_EST_budget_cost_tt
+        hidden_effect = {
+            set_temp_variable = { var = debt_var_temp value = $AMOUNT$ }
+            multiply_temp_variable = { var = debt_var_temp value = 0.001 }
+            add_debt_with_inflation = yes
+        }
+    }
+    TFR_EST_initialize_systems = {
+        if = {
+            limit = { NOT = { has_country_flag = TFR_EST_initialized } }
+            set_country_flag = TFR_EST_initialized
+            clr_country_flag = TFR_EST_init_pending
+            set_variable = { TFR_EST_cohesion = 55 }
+            set_variable = { TFR_EST_readiness = 25 }
+            set_variable = { TFR_EST_campaign_stage = 0 }
+            set_variable = { TFR_EST_cohesion_weekly = 0 }
+            set_variable = { TFR_EST_readiness_weekly = 0 }
+            TFR_EST_initialize_parliament = yes
+            TFR_EST_refresh_meters = yes
+            TFR_EST_reconcile_campaign = yes
+            log = "TFR Estonia: initialized 2020 government, parliament and national systems."
+            if = {
+                limit = { is_ai = no }
+                country_event = { id = tfr_estonia_systems.2 days = 1 }
+            }
+        }
+    }
+    TFR_EST_reconcile_campaign = {
+        # Occupation owns tree selection while the occupied flag is present.
+        if = {
+            limit = { has_global_flag = SOV_nato_war_begins_global }
+            set_country_flag = TFR_EST_first_war_seen
+        }
+        if = {
+            limit = { has_global_flag = second_nato_war_flag }
+            set_country_flag = TFR_EST_second_war_seen
+        }
+        if = {
+            limit = { has_country_flag = TFR_EST_second_war_seen }
+            if = {
+                limit = { OR = { has_war = yes SOV = { has_war_with = GER } GER = { has_war_with = SOV } } }
+                set_variable = { TFR_EST_campaign_stage = 3 }
+            }
+            else = { set_variable = { TFR_EST_campaign_stage = 4 } }
+        }
+        else_if = {
+            limit = { has_country_flag = TFR_EST_first_war_seen }
+            if = {
+                limit = { OR = { has_war = yes SOV = { has_war_with = GER } GER = { has_war_with = SOV } } }
+                set_variable = { TFR_EST_campaign_stage = 1 }
+            }
+            else = { set_variable = { TFR_EST_campaign_stage = 2 } }
+        }
+        if = {
+            limit = {
+                NOT = { has_country_flag = TFR_EST_occupied }
+                is_subject = no
+                NOT = { has_focus_tree = TFR_EST_main_tree }
+            }
+            load_focus_tree = { tree = TFR_EST_main_tree keep_completed = yes }
+        }
+    }
+    TFR_EST_weekly_systems = {
+        set_variable = { TFR_EST_cohesion_weekly = 0 }
+        set_variable = { TFR_EST_readiness_weekly = 0 }
+        if = {
+            limit = { has_country_flag = TFR_EST_caretaker }
+            add_to_variable = { TFR_EST_cohesion_weekly = -0.5 }
+        }
+        if = {
+            limit = { has_war = yes }
+            add_to_variable = { TFR_EST_cohesion_weekly = -0.15 }
+            add_to_variable = { TFR_EST_readiness_weekly = -0.20 }
+        }
+        if = {
+            limit = { has_country_flag = TFR_EST_consultation_active }
+            add_to_variable = { TFR_EST_cohesion_weekly = 0.75 }
+        }
+        if = {
+            limit = { has_country_flag = TFR_EST_exercises_active }
+            add_to_variable = { TFR_EST_readiness_weekly = 1.25 }
+        }
+        if = {
+            limit = { has_country_flag = TFR_EST_relief_active }
+            add_to_variable = { TFR_EST_cohesion_weekly = 0.50 }
+        }
+        add_to_variable = { var = TFR_EST_cohesion value = TFR_EST_cohesion_weekly }
+        add_to_variable = { var = TFR_EST_readiness value = TFR_EST_readiness_weekly }
+        clamp_variable = { var = TFR_EST_cohesion min = 0 max = 100 }
+        clamp_variable = { var = TFR_EST_readiness min = 0 max = 100 }
+        TFR_EST_refresh_meters = yes
+        TFR_EST_parliament_tick = yes
+        TFR_EST_content_tick = yes
+        if = {
+            limit = { has_country_flag = TFR_EST_occupied }
+            TFR_EST_occupation_weekly = yes
+        }
+        if = {
+            limit = { is_ai = yes TFR_EST_can_mobilize = yes }
+            TFR_EST_mobilize_reserves = yes
+        }
+    }
+    TFR_EST_lift_nato_restrictions = {
+        if = {
+            limit = {
+                NOT = { has_country_flag = TFR_EST_nato_restrictions_lifted }
+                NOT = { has_country_flag = TFR_EST_occupied }
+                OR = { has_war = yes check_variable = { TFR_EST_readiness > 49 } }
+            }
+            set_country_flag = TFR_EST_nato_restrictions_lifted
+            remove_ideas = NATO_anti_militarists_idea
+            remove_ideas = NATO_anti_militarists_idea1
+            add_ideas = TFR_EST_defense_commitment
+            custom_effect_tooltip = TFR_EST_nato_restrictions_tt
+        }
+    }
+    TFR_EST_mobilize_reserves = {
+        if = {
+            limit = { TFR_EST_can_mobilize = yes }
+            set_country_flag = TFR_EST_reserves_mobilized
+            division_template = {
+                name = "Kaitseliidu reservbrigaad"
+                regiments = {
+                    militia = { x = 0 y = 0 }
+                    militia = { x = 0 y = 1 }
+                }
+            }
+            add_timed_idea = { idea = TFR_EST_reserve_training days = 90 }
+            TFR_EST_lift_nato_restrictions = yes
+            custom_effect_tooltip = TFR_EST_reserve_template_tt
+        }
+    }
+
+TFR_EST_refresh_meters = {
+    if = {
+        limit = { check_variable = { TFR_EST_cohesion < 25 } }
+        if = {
+            limit = { NOT = { has_idea = TFR_EST_cohesion_fragile } }
+            remove_ideas = TFR_EST_cohesion_fragile
+            remove_ideas = TFR_EST_cohesion_divided
+            remove_ideas = TFR_EST_cohesion_functional
+            remove_ideas = TFR_EST_cohesion_united
+            add_ideas = TFR_EST_cohesion_fragile
+        }
+    }
+    if = {
+        limit = { check_variable = { TFR_EST_cohesion > 24 } check_variable = { TFR_EST_cohesion < 50 } }
+        if = {
+            limit = { NOT = { has_idea = TFR_EST_cohesion_divided } }
+            remove_ideas = TFR_EST_cohesion_fragile
+            remove_ideas = TFR_EST_cohesion_divided
+            remove_ideas = TFR_EST_cohesion_functional
+            remove_ideas = TFR_EST_cohesion_united
+            add_ideas = TFR_EST_cohesion_divided
+        }
+    }
+    if = {
+        limit = { check_variable = { TFR_EST_cohesion > 49 } check_variable = { TFR_EST_cohesion < 75 } }
+        if = {
+            limit = { NOT = { has_idea = TFR_EST_cohesion_functional } }
+            remove_ideas = TFR_EST_cohesion_fragile
+            remove_ideas = TFR_EST_cohesion_divided
+            remove_ideas = TFR_EST_cohesion_functional
+            remove_ideas = TFR_EST_cohesion_united
+            add_ideas = TFR_EST_cohesion_functional
+        }
+    }
+    if = {
+        limit = { check_variable = { TFR_EST_cohesion > 74 } }
+        if = {
+            limit = { NOT = { has_idea = TFR_EST_cohesion_united } }
+            remove_ideas = TFR_EST_cohesion_fragile
+            remove_ideas = TFR_EST_cohesion_divided
+            remove_ideas = TFR_EST_cohesion_functional
+            remove_ideas = TFR_EST_cohesion_united
+            add_ideas = TFR_EST_cohesion_united
+        }
+    }
+    if = {
+        limit = { check_variable = { TFR_EST_readiness < 25 } }
+        if = {
+            limit = { NOT = { has_idea = TFR_EST_readiness_unprepared } }
+            remove_ideas = TFR_EST_readiness_unprepared
+            remove_ideas = TFR_EST_readiness_developing
+            remove_ideas = TFR_EST_readiness_prepared
+            remove_ideas = TFR_EST_readiness_resilient
+            add_ideas = TFR_EST_readiness_unprepared
+        }
+    }
+    if = {
+        limit = { check_variable = { TFR_EST_readiness > 24 } check_variable = { TFR_EST_readiness < 50 } }
+        if = {
+            limit = { NOT = { has_idea = TFR_EST_readiness_developing } }
+            remove_ideas = TFR_EST_readiness_unprepared
+            remove_ideas = TFR_EST_readiness_developing
+            remove_ideas = TFR_EST_readiness_prepared
+            remove_ideas = TFR_EST_readiness_resilient
+            add_ideas = TFR_EST_readiness_developing
+        }
+    }
+    if = {
+        limit = { check_variable = { TFR_EST_readiness > 49 } check_variable = { TFR_EST_readiness < 75 } }
+        if = {
+            limit = { NOT = { has_idea = TFR_EST_readiness_prepared } }
+            remove_ideas = TFR_EST_readiness_unprepared
+            remove_ideas = TFR_EST_readiness_developing
+            remove_ideas = TFR_EST_readiness_prepared
+            remove_ideas = TFR_EST_readiness_resilient
+            add_ideas = TFR_EST_readiness_prepared
+        }
+    }
+    if = {
+        limit = { check_variable = { TFR_EST_readiness > 74 } }
+        if = {
+            limit = { NOT = { has_idea = TFR_EST_readiness_resilient } }
+            remove_ideas = TFR_EST_readiness_unprepared
+            remove_ideas = TFR_EST_readiness_developing
+            remove_ideas = TFR_EST_readiness_prepared
+            remove_ideas = TFR_EST_readiness_resilient
+            add_ideas = TFR_EST_readiness_resilient
+        }
+    }
+}

@@ -1,0 +1,372 @@
+﻿###########################
+# Belarussian Events
+###########################
+
+add_namespace = belarus
+
+# Election Results
+country_event = {
+	id = belarus.1
+	title = belarus.1.t
+	desc = belarus.1.d
+	picture = GFX_lukashenko
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BLR
+	}
+
+	option = {
+	name = belarus.1.a
+		hidden_effect = {
+			random_list = {
+				9 = {
+					modifier = {
+						factor = 0
+				    		has_game_rule = {
+					    		rule = BLR_20_election
+					    		option = BLR_20_election_2
+					    }
+					}
+				    remove_ideas = BLR_Rising_Zmagars_idea
+				    add_timed_idea = {
+						idea = BLR_Crushing_Zmagar_Opposition_idea
+						days = 150
+				    }
+					set_politics = {
+						ruling_party = nationalist
+						elections_allowed = no
+					}
+					add_popularity = {
+						ideology = nationalist
+						popularity = 0.36
+					}
+					news_event = {
+						id = news.318
+						hours = 8
+			        }
+					set_party_name = {
+						ideology = authoritarian_democrat
+						name = BLR_authoritarian_democrat_2_party
+						long_name = BLR_authoritarian_democrat_2_party_long
+					}
+					set_portraits = {
+						character = BLR_alexander_lukashenko
+						civilian = { large ="GFX_BLR_Lykashenko_despot" }
+					}
+				}
+				2 = {
+					modifier = {
+						factor = 0
+				    		has_game_rule = {
+					    		rule = BLR_20_election
+					    		option = BLR_20_election_1
+					    }
+					}
+					country_event = { id = belarus.2 days = 30 }
+					news_event = {
+						id = news.176
+						hours = 8
+			        }
+				}
+			}
+		}
+	}
+}
+
+# Zmagar takeover 
+country_event = {
+	id = belarus.2
+	title = belarus.2.t
+	desc = belarus.2.d
+	picture = GFX_lukashenko
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = BLR
+	}
+
+	option = {
+	name = belarus.2.a
+		remove_ideas = BLR_Rising_Zmagars_idea
+		remove_ideas = BLR_Lukashenko_rule_idea
+		remove_ideas = BLR_Lukashenkonomics_idea
+		clr_country_flag = csto_member
+		add_stability = -0.2
+		set_party_name = { ideology = social_democrat long_name = BLR_Cordination_Council_party name = BLR_Cordination_Council_party_short }
+		set_politics = {	
+			ruling_party = social_democrat
+			last_election = "2020.1.1"
+			election_frequency = 48
+			elections_allowed = yes
+		}
+		add_timed_idea = {
+		    idea = BLR_Democratization_of_Belarus_idea
+            days = 200 
+		}
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.25
+		}
+		set_country_flag = BLR_maidan
+		SOV = {
+			remove_from_faction = BLR
+		    set_country_flag = BLR_maidan
+		}
+	}
+}
+
+#Lukashenko becomes a communist
+country_event = {
+	id = belarus.3
+	title = belarus.3.t
+	desc = belarus.3.d
+	picture = GFX_lukashenko
+	is_triggered_only = yes
+
+	option = {
+	name = belarus.3.a
+		set_politics = {	
+			ruling_party = communist
+			elections_allowed = no
+		}
+		set_popularities = {
+			fascist = 4
+			authoritarian_democrat = 3
+			conservative = 12
+			market_liberal = 11
+			social_liberal = 10
+			social_democrat = 9
+			libertarian_socialist = 6
+			communist = 42
+			totalitarian_socialist = 3
+		}
+		retire_character = BLR_alexei_sokol
+		set_party_name = { ideology = nationalist long_name = BLR_nationalist_party_com_long name = BLR_nationalist_party_com }
+		if = {
+			limit = {
+				is_puppet = no
+			}
+			set_cosmetic_tag = BLR_commie
+		}
+	}
+}
+
+#Debug Lykashenko Rise - April Fools
+
+country_event = {
+	id = belarus.666
+	title = belarus.666.t
+	desc = belarus.666.d
+	picture = GFX_BLR_Lykashenko
+	is_triggered_only = yes
+
+	option = {
+	name = belarus.666.a
+	remove_ideas = BLR_Rising_Zmagars_idea
+	
+	set_country_flag = BLR_lykashenko_fools
+	
+	activate_mission  = BLR_candy_production
+	
+		set_politics = {	
+			ruling_party = totalitarian_socialist
+			elections_allowed = no
+		}
+		set_popularities = {
+			totalitarian_socialist = 100
+		}
+		
+		retire_character = BLR_alexei_sokol
+		
+	    create_country_leader = {
+	       name = BLR_Lykashenko
+	       picture = GFX_BLR_Lykashenko_drip
+	       expire = "2999.1.1"
+	       ideology = totalism
+	       traits = {
+	       }
+        }
+		add_to_variable = {
+			var = BLR_candies_april_fools_var
+			value = 2500
+		}
+		add_to_variable = {
+			var = BLR_candies_amount_var
+			value = 100
+		}
+		set_party_name = { ideology = totalitarian_socialist long_name = BLR_totsoc_april_fools name = BLR_totsoc_april_fools_short }
+	}
+}
+country_event = {
+	id = belarus.667
+	title = belarus.667.t
+	desc = belarus.667.d
+	picture = GFX_Generic_NATO
+	is_triggered_only = yes
+
+	option = {
+	name = belarus.667.a
+	
+	    UKR = {
+		set_cosmetic_tag = UKR_Bandera
+		    add_country_leader_role = {
+            character = UKR_volodymyr_zelensky
+			promote_leader = yes
+                country_leader = {
+                ideology = neonazism
+                expire = "2999.1.1.1"
+                }
+		    }
+		create_faction = NATO_2
+		hidden_effect = {
+			remove_faction_goal = faction_goal_the_atomic_race
+			add_faction_goal = faction_goal_placeholder_long_term
+			remove_faction_goal = faction_goal_a_military_base
+			add_faction_goal = faction_goal_placeholder_medium_term
+			add_faction_goal = faction_goal_placeholder_short_term
+		}
+		
+		add_to_faction = MOL
+		
+		    set_politics = {	
+			ruling_party = national_socialist
+			elections_allowed = no
+		    }
+		    set_popularities = {
+			national_socialist = 60
+			social_liberal = 40
+		    }
+		set_party_name = { ideology = national_socialist long_name = BLR_UKR_real_party name = BLR_UKR_real_party_short }
+	    }
+    }
+}
+country_event = {
+	id = belarus.668
+	title = belarus.668.t
+	desc = belarus.668.d
+	picture = GFX_Navalny_Protests_Country
+	is_triggered_only = yes
+
+	option = {
+	name = belarus.668.a
+	
+	    SOV = {
+		    set_politics = {
+			ruling_party = social_democrat
+			elections_allowed = no
+		    }
+		    set_popularities = {
+			social_democrat = 43
+			social_liberal = 15
+			conservative = 22
+			market_liberal = 20
+		    }
+	    }
+		hidden_effect = {
+		country_event = { id = belarus.669 days = 5 }
+		}
+    }
+}
+country_event = {
+	id = belarus.669
+	title = belarus.669.t
+	desc = belarus.669.d
+	picture = GFX_Generic_Tank_column
+	is_triggered_only = yes
+
+	option = {
+	name = belarus.669.a
+	
+	    SOV = {
+		    set_cosmetic_tag = UIN_Russia
+		    set_politics = {
+			ruling_party = nationalist
+			elections_allowed = no
+		    }
+		    set_popularities = {
+			nationalist = 100
+		    }
+			
+		   create_country_leader = {
+	       name = BLR_Kommunarka_Directorate
+	       picture = GFX_BLR_Kommunarka_Directorate
+	       expire = "2999.1.1"
+	       ideology = military_junta
+           }
+	    }
+		hidden_effect = {
+		}
+    }
+}
+country_event = {
+	id = belarus.700
+	title = belarus.700.t
+	desc = belarus.700.d
+	picture = GFX_Generic_Tank_column
+	is_triggered_only = yes
+
+	option = {
+	name = belarus.700.a
+	
+	    BLR = {
+		   set_cosmetic_tag = UIN_greater_union_state
+	    }
+		hidden_effect = {
+		   annex_country = {
+           target = UKR
+           transfer_troops = no
+           }
+		   annex_country = {
+           target = SOV
+           transfer_troops = no
+           }
+		   annex_country = {
+           target = KAZ
+           transfer_troops = no
+           }
+		   annex_country = {
+           target = PLD
+           transfer_troops = no
+           }
+		   annex_country = {
+           target = LIT
+           transfer_troops = no
+           }
+		   if = {
+		   	limit = { EST = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+		   	TFR_EST_preserve_annexation = { TARGET = EST }
+		   }
+		   else = {
+		   	annex_country = {
+	           target = EST
+	           transfer_troops = no
+	           }
+		   }
+		   annex_country = {
+           target = LAT
+           transfer_troops = no
+           }
+		   annex_country = {
+           target = ROM
+           transfer_troops = no
+           }
+		   annex_country = {
+           target = MOL
+           transfer_troops = no
+           }
+		   annex_country = {
+           target = SLO
+           transfer_troops = no
+           }
+		   annex_country = {
+           target = HUN
+           transfer_troops = no
+           }
+		}
+    }
+}

@@ -1,0 +1,15 @@
+add_namespace = tfr_estonia_systems
+country_event = {
+    id = tfr_estonia_systems.1
+    hidden = yes
+    is_triggered_only = yes
+    immediate = { TFR_EST_initialize_systems = yes }
+}
+country_event = {
+    id = tfr_estonia_systems.2
+    title = TFR_EST_welcome_title
+    desc = TFR_EST_welcome_desc
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    option = { name = TFR_EST_welcome_option }
+}

@@ -1,0 +1,30 @@
+on_actions = {
+    on_startup = {
+        effect = {
+            EST = {
+                if = {
+                    limit = { country_exists = EST NOT = { has_country_flag = TFR_EST_initialized } }
+                    set_country_flag = TFR_EST_init_pending
+                    country_event = { id = tfr_estonia_systems.1 days = 1 }
+                }
+            }
+        }
+    }
+    on_daily_EST = {
+        effect = {
+            if = {
+                limit = { has_country_flag = TFR_EST_initialized }
+                TFR_EST_reconcile_occupation = yes
+                TFR_EST_reconcile_campaign = yes
+            }
+        }
+    }
+    on_weekly_EST = {
+        effect = {
+            if = {
+                limit = { has_country_flag = TFR_EST_initialized }
+                TFR_EST_weekly_systems = yes
+            }
+        }
+    }
+}

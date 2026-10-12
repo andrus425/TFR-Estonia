@@ -1,0 +1,8 @@
+TFR_EST_territorial_force = {
+ enable = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ abort = { has_country_flag = TFR_EST_occupied }
+ ai_strategy = { type = unit_ratio id = infantry value = 30 }
+ ai_strategy = { type = unit_ratio id = artillery value = 10 }
+ ai_strategy = { type = unit_ratio id = anti_air value = 10 }
+ ai_strategy = { type = unit_ratio id = armor value = -50 }
+}

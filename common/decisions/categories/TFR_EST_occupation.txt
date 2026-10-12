@@ -1,0 +1,6 @@
+TFR_EST_occupation_category = {
+    icon = generic_political_actions
+    allowed = { original_tag = EST }
+    visible = { has_country_flag = TFR_EST_occupied }
+    priority = 250
+}

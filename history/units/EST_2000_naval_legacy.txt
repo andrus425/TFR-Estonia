@@ -1,0 +1,17 @@
+# The parent Estonia history references this missing no-Man-the-Guns file.
+# Mirror the parent's single Admiral Pitka frigate with legacy equipment.
+units = {
+    fleet = {
+        name = "Eesti Merevägi"
+        naval_base = 3152
+        task_force = {
+            name = "Eesti Merevägi"
+            location = 3152
+            ship = {
+                name = "Admiral Pitka"
+                definition = light_cruiser
+                equipment = { light_cruiser_1 = { amount = 1 owner = EST } }
+            }
+        }
+    }
+}

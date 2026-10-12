@@ -1,0 +1,286 @@
+TFR_EST_parliament_category = {
+ TFR_EST_open_parliament = { icon = generic_political_rally cost = 0 visible = { is_ai = no TFR_EST_independent_parliament = yes } complete_effect = { set_country_flag = TFR_EST_parliament_open } ai_will_do = { factor = 0 } }
+ TFR_EST_campaign_reform_decision = {
+ icon = generic_political_rally
+ cost = 35
+ days_re_enable = 45
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_active_reform value = 1 compare = equals } }
+ available = { NOT = { has_country_flag = TFR_EST_restoration_election } }
+ complete_effect = { TFR_EST_campaign_reform = yes }
+ ai_will_do = { factor = 1 modifier = { factor = 3 has_game_rule = { rule = TFR_EST_AI_ROUTE option = REFORM } } modifier = { factor = 0 NOT = { OR = { has_game_rule = { rule = TFR_EST_AI_ROUTE option = REFORM } AND = { has_game_rule = { rule = TFR_EST_AI_ROUTE option = DEFAULT } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } } } } } }
+ }
+ TFR_EST_nominate_reform_decision = {
+ icon = generic_political_rally
+ cost = 50
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_active_reform value = 1 compare = equals } check_variable = { var = TFR_EST_seats_reform value = 0 compare = greater_than } is_ai = no }
+ available = { NOT = { has_country_flag = TFR_EST_restoration_election } OR = { NOT = { check_variable = { var = TFR_EST_nominee_party value = 1 compare = equals } } NOT = { has_country_flag = TFR_EST_caretaker } } }
+ complete_effect = { TFR_EST_nominate_reform = yes }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_invite_reform_decision = {
+ icon = generic_political_rally
+ cost = 20
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_reform value = 0 compare = greater_than } check_variable = { var = TFR_EST_coalition_reform value = 0 compare = equals } is_ai = no }
+ complete_effect = { set_variable = { TFR_EST_coalition_reform = 1 } set_variable = { TFR_EST_supply_reform = 0 } TFR_EST_recount_confidence = yes TFR_EST_change_cohesion = { AMOUNT = -1 } }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_supply_reform_decision = {
+ icon = generic_political_rally
+ cost = 15
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_reform value = 0 compare = greater_than } check_variable = { var = TFR_EST_coalition_reform value = 0 compare = equals } check_variable = { var = TFR_EST_supply_reform value = 0 compare = equals } is_ai = no }
+ complete_effect = { set_variable = { TFR_EST_supply_reform = 1 } TFR_EST_recount_confidence = yes }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_withdraw_reform_decision = {
+ icon = generic_political_rally
+ cost = 10
+ visible = { TFR_EST_independent_parliament = yes OR = { check_variable = { var = TFR_EST_coalition_reform value = 1 compare = equals } check_variable = { var = TFR_EST_supply_reform value = 1 compare = equals } } NOT = { check_variable = { var = TFR_EST_nominee_party value = 1 compare = equals } } is_ai = no }
+ complete_effect = { set_variable = { TFR_EST_coalition_reform = 0 } set_variable = { TFR_EST_supply_reform = 0 } TFR_EST_recount_confidence = yes if = { limit = { NOT = { TFR_EST_has_confidence = yes } } TFR_EST_enter_caretaker = yes } }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_campaign_centre_decision = {
+ icon = generic_political_rally
+ cost = 35
+ days_re_enable = 45
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_active_centre value = 1 compare = equals } }
+ available = { NOT = { has_country_flag = TFR_EST_restoration_election } }
+ complete_effect = { TFR_EST_campaign_centre = yes }
+ ai_will_do = { factor = 1 modifier = { factor = 3 has_game_rule = { rule = TFR_EST_AI_ROUTE option = CENTRE } } modifier = { factor = 0 NOT = { OR = { has_game_rule = { rule = TFR_EST_AI_ROUTE option = CENTRE } AND = { has_game_rule = { rule = TFR_EST_AI_ROUTE option = DEFAULT } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } } } } } }
+ }
+ TFR_EST_nominate_centre_decision = {
+ icon = generic_political_rally
+ cost = 50
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_active_centre value = 1 compare = equals } check_variable = { var = TFR_EST_seats_centre value = 0 compare = greater_than } is_ai = no }
+ available = { NOT = { has_country_flag = TFR_EST_restoration_election } OR = { NOT = { check_variable = { var = TFR_EST_nominee_party value = 2 compare = equals } } NOT = { has_country_flag = TFR_EST_caretaker } } }
+ complete_effect = { TFR_EST_nominate_centre = yes }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_invite_centre_decision = {
+ icon = generic_political_rally
+ cost = 20
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_centre value = 0 compare = greater_than } check_variable = { var = TFR_EST_coalition_centre value = 0 compare = equals } is_ai = no }
+ complete_effect = { set_variable = { TFR_EST_coalition_centre = 1 } set_variable = { TFR_EST_supply_centre = 0 } TFR_EST_recount_confidence = yes TFR_EST_change_cohesion = { AMOUNT = -1 } }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_supply_centre_decision = {
+ icon = generic_political_rally
+ cost = 15
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_centre value = 0 compare = greater_than } check_variable = { var = TFR_EST_coalition_centre value = 0 compare = equals } check_variable = { var = TFR_EST_supply_centre value = 0 compare = equals } is_ai = no }
+ complete_effect = { set_variable = { TFR_EST_supply_centre = 1 } TFR_EST_recount_confidence = yes }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_withdraw_centre_decision = {
+ icon = generic_political_rally
+ cost = 10
+ visible = { TFR_EST_independent_parliament = yes OR = { check_variable = { var = TFR_EST_coalition_centre value = 1 compare = equals } check_variable = { var = TFR_EST_supply_centre value = 1 compare = equals } } NOT = { check_variable = { var = TFR_EST_nominee_party value = 2 compare = equals } } is_ai = no }
+ complete_effect = { set_variable = { TFR_EST_coalition_centre = 0 } set_variable = { TFR_EST_supply_centre = 0 } TFR_EST_recount_confidence = yes if = { limit = { NOT = { TFR_EST_has_confidence = yes } } TFR_EST_enter_caretaker = yes } }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_campaign_ekre_decision = {
+ icon = generic_political_rally
+ cost = 35
+ days_re_enable = 45
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_active_ekre value = 1 compare = equals } }
+ available = { NOT = { has_country_flag = TFR_EST_restoration_election } }
+ complete_effect = { TFR_EST_campaign_ekre = yes }
+ ai_will_do = { factor = 1 modifier = { factor = 3 has_game_rule = { rule = TFR_EST_AI_ROUTE option = EKRE } } modifier = { factor = 0 NOT = { OR = { has_game_rule = { rule = TFR_EST_AI_ROUTE option = EKRE } AND = { has_game_rule = { rule = TFR_EST_AI_ROUTE option = DEFAULT } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } } } } } }
+ }
+ TFR_EST_nominate_ekre_decision = {
+ icon = generic_political_rally
+ cost = 50
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_active_ekre value = 1 compare = equals } check_variable = { var = TFR_EST_seats_ekre value = 0 compare = greater_than } is_ai = no }
+ available = { NOT = { has_country_flag = TFR_EST_restoration_election } OR = { NOT = { check_variable = { var = TFR_EST_nominee_party value = 3 compare = equals } } NOT = { has_country_flag = TFR_EST_caretaker } } }
+ complete_effect = { TFR_EST_nominate_ekre = yes }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_invite_ekre_decision = {
+ icon = generic_political_rally
+ cost = 20
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_ekre value = 0 compare = greater_than } check_variable = { var = TFR_EST_coalition_ekre value = 0 compare = equals } is_ai = no }
+ complete_effect = { set_variable = { TFR_EST_coalition_ekre = 1 } set_variable = { TFR_EST_supply_ekre = 0 } TFR_EST_recount_confidence = yes TFR_EST_change_cohesion = { AMOUNT = -1 } }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_supply_ekre_decision = {
+ icon = generic_political_rally
+ cost = 15
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_ekre value = 0 compare = greater_than } check_variable = { var = TFR_EST_coalition_ekre value = 0 compare = equals } check_variable = { var = TFR_EST_supply_ekre value = 0 compare = equals } is_ai = no }
+ complete_effect = { set_variable = { TFR_EST_supply_ekre = 1 } TFR_EST_recount_confidence = yes }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_withdraw_ekre_decision = {
+ icon = generic_political_rally
+ cost = 10
+ visible = { TFR_EST_independent_parliament = yes OR = { check_variable = { var = TFR_EST_coalition_ekre value = 1 compare = equals } check_variable = { var = TFR_EST_supply_ekre value = 1 compare = equals } } NOT = { check_variable = { var = TFR_EST_nominee_party value = 3 compare = equals } } is_ai = no }
+ complete_effect = { set_variable = { TFR_EST_coalition_ekre = 0 } set_variable = { TFR_EST_supply_ekre = 0 } TFR_EST_recount_confidence = yes if = { limit = { NOT = { TFR_EST_has_confidence = yes } } TFR_EST_enter_caretaker = yes } }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_campaign_isamaa_decision = {
+ icon = generic_political_rally
+ cost = 35
+ days_re_enable = 45
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_active_isamaa value = 1 compare = equals } }
+ available = { NOT = { has_country_flag = TFR_EST_restoration_election } }
+ complete_effect = { TFR_EST_campaign_isamaa = yes }
+ ai_will_do = { factor = 1 modifier = { factor = 3 has_game_rule = { rule = TFR_EST_AI_ROUTE option = ISAMAA } } modifier = { factor = 0 NOT = { OR = { has_game_rule = { rule = TFR_EST_AI_ROUTE option = ISAMAA } AND = { has_game_rule = { rule = TFR_EST_AI_ROUTE option = DEFAULT } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } } } } } }
+ }
+ TFR_EST_nominate_isamaa_decision = {
+ icon = generic_political_rally
+ cost = 50
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_active_isamaa value = 1 compare = equals } check_variable = { var = TFR_EST_seats_isamaa value = 0 compare = greater_than } is_ai = no }
+ available = { NOT = { has_country_flag = TFR_EST_restoration_election } OR = { NOT = { check_variable = { var = TFR_EST_nominee_party value = 4 compare = equals } } NOT = { has_country_flag = TFR_EST_caretaker } } }
+ complete_effect = { TFR_EST_nominate_isamaa = yes }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_invite_isamaa_decision = {
+ icon = generic_political_rally
+ cost = 20
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_isamaa value = 0 compare = greater_than } check_variable = { var = TFR_EST_coalition_isamaa value = 0 compare = equals } is_ai = no }
+ complete_effect = { set_variable = { TFR_EST_coalition_isamaa = 1 } set_variable = { TFR_EST_supply_isamaa = 0 } TFR_EST_recount_confidence = yes TFR_EST_change_cohesion = { AMOUNT = -1 } }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_supply_isamaa_decision = {
+ icon = generic_political_rally
+ cost = 15
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_isamaa value = 0 compare = greater_than } check_variable = { var = TFR_EST_coalition_isamaa value = 0 compare = equals } check_variable = { var = TFR_EST_supply_isamaa value = 0 compare = equals } is_ai = no }
+ complete_effect = { set_variable = { TFR_EST_supply_isamaa = 1 } TFR_EST_recount_confidence = yes }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_withdraw_isamaa_decision = {
+ icon = generic_political_rally
+ cost = 10
+ visible = { TFR_EST_independent_parliament = yes OR = { check_variable = { var = TFR_EST_coalition_isamaa value = 1 compare = equals } check_variable = { var = TFR_EST_supply_isamaa value = 1 compare = equals } } NOT = { check_variable = { var = TFR_EST_nominee_party value = 4 compare = equals } } is_ai = no }
+ complete_effect = { set_variable = { TFR_EST_coalition_isamaa = 0 } set_variable = { TFR_EST_supply_isamaa = 0 } TFR_EST_recount_confidence = yes if = { limit = { NOT = { TFR_EST_has_confidence = yes } } TFR_EST_enter_caretaker = yes } }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_campaign_sde_decision = {
+ icon = generic_political_rally
+ cost = 35
+ days_re_enable = 45
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_active_sde value = 1 compare = equals } }
+ available = { NOT = { has_country_flag = TFR_EST_restoration_election } }
+ complete_effect = { TFR_EST_campaign_sde = yes }
+ ai_will_do = { factor = 1 modifier = { factor = 3 has_game_rule = { rule = TFR_EST_AI_ROUTE option = SDE } } modifier = { factor = 0 NOT = { OR = { has_game_rule = { rule = TFR_EST_AI_ROUTE option = SDE } AND = { has_game_rule = { rule = TFR_EST_AI_ROUTE option = DEFAULT } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } } } } } }
+ }
+ TFR_EST_nominate_sde_decision = {
+ icon = generic_political_rally
+ cost = 50
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_active_sde value = 1 compare = equals } check_variable = { var = TFR_EST_seats_sde value = 0 compare = greater_than } is_ai = no }
+ available = { NOT = { has_country_flag = TFR_EST_restoration_election } OR = { NOT = { check_variable = { var = TFR_EST_nominee_party value = 5 compare = equals } } NOT = { has_country_flag = TFR_EST_caretaker } } }
+ complete_effect = { TFR_EST_nominate_sde = yes }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_invite_sde_decision = {
+ icon = generic_political_rally
+ cost = 20
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_sde value = 0 compare = greater_than } check_variable = { var = TFR_EST_coalition_sde value = 0 compare = equals } is_ai = no }
+ complete_effect = { set_variable = { TFR_EST_coalition_sde = 1 } set_variable = { TFR_EST_supply_sde = 0 } TFR_EST_recount_confidence = yes TFR_EST_change_cohesion = { AMOUNT = -1 } }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_supply_sde_decision = {
+ icon = generic_political_rally
+ cost = 15
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_sde value = 0 compare = greater_than } check_variable = { var = TFR_EST_coalition_sde value = 0 compare = equals } check_variable = { var = TFR_EST_supply_sde value = 0 compare = equals } is_ai = no }
+ complete_effect = { set_variable = { TFR_EST_supply_sde = 1 } TFR_EST_recount_confidence = yes }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_withdraw_sde_decision = {
+ icon = generic_political_rally
+ cost = 10
+ visible = { TFR_EST_independent_parliament = yes OR = { check_variable = { var = TFR_EST_coalition_sde value = 1 compare = equals } check_variable = { var = TFR_EST_supply_sde value = 1 compare = equals } } NOT = { check_variable = { var = TFR_EST_nominee_party value = 5 compare = equals } } is_ai = no }
+ complete_effect = { set_variable = { TFR_EST_coalition_sde = 0 } set_variable = { TFR_EST_supply_sde = 0 } TFR_EST_recount_confidence = yes if = { limit = { NOT = { TFR_EST_has_confidence = yes } } TFR_EST_enter_caretaker = yes } }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_campaign_e200_decision = {
+ icon = generic_political_rally
+ cost = 35
+ days_re_enable = 45
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_active_e200 value = 1 compare = equals } }
+ available = { NOT = { has_country_flag = TFR_EST_restoration_election } }
+ complete_effect = { TFR_EST_campaign_e200 = yes }
+ ai_will_do = { factor = 1 modifier = { factor = 3 has_game_rule = { rule = TFR_EST_AI_ROUTE option = E200 } } modifier = { factor = 0 NOT = { OR = { has_game_rule = { rule = TFR_EST_AI_ROUTE option = E200 } AND = { has_game_rule = { rule = TFR_EST_AI_ROUTE option = DEFAULT } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } } } } } }
+ }
+ TFR_EST_nominate_e200_decision = {
+ icon = generic_political_rally
+ cost = 50
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_active_e200 value = 1 compare = equals } check_variable = { var = TFR_EST_seats_e200 value = 0 compare = greater_than } is_ai = no }
+ available = { NOT = { has_country_flag = TFR_EST_restoration_election } OR = { NOT = { check_variable = { var = TFR_EST_nominee_party value = 6 compare = equals } } NOT = { has_country_flag = TFR_EST_caretaker } } }
+ complete_effect = { TFR_EST_nominate_e200 = yes }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_invite_e200_decision = {
+ icon = generic_political_rally
+ cost = 20
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_e200 value = 0 compare = greater_than } check_variable = { var = TFR_EST_coalition_e200 value = 0 compare = equals } is_ai = no }
+ complete_effect = { set_variable = { TFR_EST_coalition_e200 = 1 } set_variable = { TFR_EST_supply_e200 = 0 } TFR_EST_recount_confidence = yes TFR_EST_change_cohesion = { AMOUNT = -1 } }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_supply_e200_decision = {
+ icon = generic_political_rally
+ cost = 15
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_e200 value = 0 compare = greater_than } check_variable = { var = TFR_EST_coalition_e200 value = 0 compare = equals } check_variable = { var = TFR_EST_supply_e200 value = 0 compare = equals } is_ai = no }
+ complete_effect = { set_variable = { TFR_EST_supply_e200 = 1 } TFR_EST_recount_confidence = yes }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_withdraw_e200_decision = {
+ icon = generic_political_rally
+ cost = 10
+ visible = { TFR_EST_independent_parliament = yes OR = { check_variable = { var = TFR_EST_coalition_e200 value = 1 compare = equals } check_variable = { var = TFR_EST_supply_e200 value = 1 compare = equals } } NOT = { check_variable = { var = TFR_EST_nominee_party value = 6 compare = equals } } is_ai = no }
+ complete_effect = { set_variable = { TFR_EST_coalition_e200 = 0 } set_variable = { TFR_EST_supply_e200 = 0 } TFR_EST_recount_confidence = yes if = { limit = { NOT = { TFR_EST_has_confidence = yes } } TFR_EST_enter_caretaker = yes } }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_campaign_pp_decision = {
+ icon = generic_political_rally
+ cost = 35
+ days_re_enable = 45
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+ available = { NOT = { has_country_flag = TFR_EST_restoration_election } }
+ complete_effect = { TFR_EST_campaign_pp = yes }
+ ai_will_do = { factor = 1 modifier = { factor = 3 has_game_rule = { rule = TFR_EST_AI_ROUTE option = PP } } modifier = { factor = 0 NOT = { OR = { has_game_rule = { rule = TFR_EST_AI_ROUTE option = PP } AND = { has_game_rule = { rule = TFR_EST_AI_ROUTE option = DEFAULT } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } } } } } }
+ }
+ TFR_EST_nominate_pp_decision = {
+ icon = generic_political_rally
+ cost = 50
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } check_variable = { var = TFR_EST_seats_pp value = 0 compare = greater_than } is_ai = no }
+ available = { NOT = { has_country_flag = TFR_EST_restoration_election } OR = { NOT = { check_variable = { var = TFR_EST_nominee_party value = 7 compare = equals } } NOT = { has_country_flag = TFR_EST_caretaker } } }
+ complete_effect = { TFR_EST_nominate_pp = yes }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_invite_pp_decision = {
+ icon = generic_political_rally
+ cost = 20
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_pp value = 0 compare = greater_than } check_variable = { var = TFR_EST_coalition_pp value = 0 compare = equals } is_ai = no }
+ complete_effect = { set_variable = { TFR_EST_coalition_pp = 1 } set_variable = { TFR_EST_supply_pp = 0 } TFR_EST_recount_confidence = yes TFR_EST_change_cohesion = { AMOUNT = -1 } }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_supply_pp_decision = {
+ icon = generic_political_rally
+ cost = 15
+ visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_pp value = 0 compare = greater_than } check_variable = { var = TFR_EST_coalition_pp value = 0 compare = equals } check_variable = { var = TFR_EST_supply_pp value = 0 compare = equals } is_ai = no }
+ complete_effect = { set_variable = { TFR_EST_supply_pp = 1 } TFR_EST_recount_confidence = yes }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_withdraw_pp_decision = {
+ icon = generic_political_rally
+ cost = 10
+ visible = { TFR_EST_independent_parliament = yes OR = { check_variable = { var = TFR_EST_coalition_pp value = 1 compare = equals } check_variable = { var = TFR_EST_supply_pp value = 1 compare = equals } } NOT = { check_variable = { var = TFR_EST_nominee_party value = 7 compare = equals } } is_ai = no }
+ complete_effect = { set_variable = { TFR_EST_coalition_pp = 0 } set_variable = { TFR_EST_supply_pp = 0 } TFR_EST_recount_confidence = yes if = { limit = { NOT = { TFR_EST_has_confidence = yes } } TFR_EST_enter_caretaker = yes } }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_confirm_cabinet_decision = {
+ icon = generic_political_rally
+ cost = 25
+ visible = { TFR_EST_independent_parliament = yes has_country_flag = TFR_EST_caretaker is_ai = no }
+ available = { TFR_EST_has_confidence = yes TFR_EST_valid_nominee = yes NOT = { has_country_flag = TFR_EST_restoration_election } }
+ complete_effect = { TFR_EST_confirm_cabinet = yes country_event = { id = tfr_estonia_parliament.5 days = 1 } }
+ ai_will_do = { factor = 0 }
+ }
+ TFR_EST_snap_election_decision = {
+ icon = generic_political_rally
+ cost = 100
+ days_re_enable = 180
+ visible = { TFR_EST_independent_parliament = yes }
+ available = { NOT = { has_country_flag = TFR_EST_restoration_election } }
+ complete_effect = { TFR_EST_change_cohesion = { AMOUNT = -3 } TFR_EST_hold_election = yes }
+ ai_will_do = { factor = 0 }
+ }
+}

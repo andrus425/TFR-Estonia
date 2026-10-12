@@ -1,0 +1,481 @@
+add_namespace = tfr_estonia_content
+
+country_event = {
+ id = tfr_estonia_content.1
+ title = tfr_estonia_content.1.t
+ desc = tfr_estonia_content.1.d
+ picture = GFX_report_event_generic_handshake
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.1.a ai_chance = { factor = 70 } TFR_EST_change_cohesion = { AMOUNT = 2 }
+add_political_power = 25 }
+ option = { name = tfr_estonia_content.1.b ai_chance = { factor = 30 } TFR_EST_change_cohesion = { AMOUNT = 4 }
+add_political_power = -25 }
+}
+
+country_event = {
+ id = tfr_estonia_content.2
+ title = tfr_estonia_content.2.t
+ desc = tfr_estonia_content.2.d
+ picture = GFX_report_event_generic_research_lab
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.2.a ai_chance = { factor = 65 } TFR_EST_spend_budget = { AMOUNT = 75 }
+TFR_EST_change_cohesion = { AMOUNT = 5 }
+add_ideas = TFR_EST_pandemic_support }
+ option = { name = tfr_estonia_content.2.b ai_chance = { factor = 35 } TFR_EST_spend_budget = { AMOUNT = 35 }
+TFR_EST_change_cohesion = { AMOUNT = 2 }
+add_political_power = 25 }
+}
+
+country_event = {
+ id = tfr_estonia_content.3
+ title = tfr_estonia_content.3.t
+ desc = tfr_estonia_content.3.d
+ picture = GFX_report_event_generic_sign_treaty1
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.3.a ai_chance = { factor = 75 } TFR_EST_change_cohesion = { AMOUNT = 4 }
+add_political_power = -20 }
+ option = { name = tfr_estonia_content.3.b ai_chance = { factor = 25 } TFR_EST_change_cohesion = { AMOUNT = 2 }
+add_political_power = 15 }
+}
+
+country_event = {
+ id = tfr_estonia_content.10
+ title = tfr_estonia_content.10.t
+ desc = tfr_estonia_content.10.d
+ picture = GFX_report_event_generic_rally
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.10.a ai_chance = { factor = 65 } TFR_EST_spend_budget = { AMOUNT = 30 }
+TFR_EST_change_cohesion = { AMOUNT = 4 } }
+ option = { name = tfr_estonia_content.10.b ai_chance = { factor = 35 } TFR_EST_spend_budget = { AMOUNT = 20 }
+TFR_EST_change_cohesion = { AMOUNT = 2 }
+add_political_power = 20 }
+}
+
+country_event = {
+ id = tfr_estonia_content.11
+ title = tfr_estonia_content.11.t
+ desc = tfr_estonia_content.11.d
+ picture = GFX_report_event_generic_read_write
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.11.a ai_chance = { factor = 65 } TFR_EST_spend_budget = { AMOUNT = 25 }
+TFR_EST_change_cohesion = { AMOUNT = 3 }
+add_political_power = -20 }
+ option = { name = tfr_estonia_content.11.b ai_chance = { factor = 35 } TFR_EST_change_cohesion = { AMOUNT = -4 }
+add_political_power = 60 }
+}
+
+country_event = {
+ id = tfr_estonia_content.12
+ title = tfr_estonia_content.12.t
+ desc = tfr_estonia_content.12.d
+ picture = GFX_report_event_generic_sign_treaty2
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.12.a ai_chance = { factor = 70 } TFR_EST_change_cohesion = { AMOUNT = 2 }
+TFR_EST_change_readiness = { AMOUNT = 2 }
+add_political_power = 10 }
+ option = { name = tfr_estonia_content.12.b ai_chance = { factor = 30 } TFR_EST_change_cohesion = { AMOUNT = -3 }
+add_political_power = 60
+TFR_EST_change_readiness = { AMOUNT = -2 } }
+}
+
+country_event = {
+ id = tfr_estonia_content.13
+ title = tfr_estonia_content.13.t
+ desc = tfr_estonia_content.13.d
+ picture = GFX_report_event_generic_factory
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.13.a ai_chance = { factor = 65 } TFR_EST_spend_budget = { AMOUNT = 65 }
+TFR_EST_change_cohesion = { AMOUNT = 4 }
+TFR_EST_change_readiness = { AMOUNT = 2 } }
+ option = { name = tfr_estonia_content.13.b ai_chance = { factor = 35 } TFR_EST_spend_budget = { AMOUNT = 85 }
+TFR_EST_change_cohesion = { AMOUNT = -2 }
+TFR_EST_change_readiness = { AMOUNT = 5 } }
+}
+
+country_event = {
+ id = tfr_estonia_content.14
+ title = tfr_estonia_content.14.t
+ desc = tfr_estonia_content.14.d
+ picture = GFX_report_event_generic_read_write
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.14.a ai_chance = { factor = 65 } TFR_EST_spend_budget = { AMOUNT = 40 }
+TFR_EST_change_cohesion = { AMOUNT = 3 }
+add_political_power = -20 }
+ option = { name = tfr_estonia_content.14.b ai_chance = { factor = 35 } TFR_EST_spend_budget = { AMOUNT = 100 }
+TFR_EST_change_cohesion = { AMOUNT = 5 }
+add_political_power = -40 }
+}
+
+country_event = {
+ id = tfr_estonia_content.15
+ title = tfr_estonia_content.15.t
+ desc = tfr_estonia_content.15.d
+ picture = GFX_report_event_generic_read_write
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.15.a ai_chance = { factor = 70 } TFR_EST_spend_budget = { AMOUNT = 30 }
+TFR_EST_change_cohesion = { AMOUNT = 3 } }
+ option = { name = tfr_estonia_content.15.b ai_chance = { factor = 30 } add_political_power = 50
+TFR_EST_change_cohesion = { AMOUNT = -3 } }
+}
+
+country_event = {
+ id = tfr_estonia_content.16
+ title = tfr_estonia_content.16.t
+ desc = tfr_estonia_content.16.d
+ picture = GFX_report_event_generic_read_write
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.16.a ai_chance = { factor = 65 } TFR_EST_spend_budget = { AMOUNT = 25 }
+TFR_EST_change_cohesion = { AMOUNT = 3 }
+add_political_power = -20 }
+ option = { name = tfr_estonia_content.16.b ai_chance = { factor = 35 } add_political_power = 55
+TFR_EST_change_cohesion = { AMOUNT = -4 } }
+}
+
+country_event = {
+ id = tfr_estonia_content.17
+ title = tfr_estonia_content.17.t
+ desc = tfr_estonia_content.17.d
+ picture = GFX_report_event_generic_sign_treaty1
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.17.a ai_chance = { factor = 70 } TFR_EST_change_cohesion = { AMOUNT = 3 }
+add_political_power = 25 }
+ option = { name = tfr_estonia_content.17.b ai_chance = { factor = 30 } TFR_EST_change_readiness = { AMOUNT = 2 }
+add_political_power = 40 }
+}
+
+country_event = {
+ id = tfr_estonia_content.20
+ title = tfr_estonia_content.20.t
+ desc = tfr_estonia_content.20.d
+ picture = GFX_report_event_generic_research_lab
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.20.a ai_chance = { factor = 75 } TFR_EST_spend_budget = { AMOUNT = 15 }
+TFR_EST_change_cohesion = { AMOUNT = 4 } }
+ option = { name = tfr_estonia_content.20.b ai_chance = { factor = 25 } add_political_power = 50
+TFR_EST_change_cohesion = { AMOUNT = -3 }
+TFR_EST_change_readiness = { AMOUNT = 1 } }
+}
+
+country_event = {
+ id = tfr_estonia_content.30
+ title = tfr_estonia_content.30.t
+ desc = tfr_estonia_content.30.d
+ picture = GFX_report_event_generic_army
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.30.a ai_chance = { factor = 65 } TFR_EST_change_cohesion = { AMOUNT = 4 }
+add_political_power = -20 }
+ option = { name = tfr_estonia_content.30.b ai_chance = { factor = 35 } add_political_power = 60
+TFR_EST_change_cohesion = { AMOUNT = -2 } }
+}
+
+country_event = {
+ id = tfr_estonia_content.31
+ title = tfr_estonia_content.31.t
+ desc = tfr_estonia_content.31.d
+ picture = GFX_report_event_generic_read_write
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.31.a ai_chance = { factor = 65 } TFR_EST_change_cohesion = { AMOUNT = 4 }
+add_timed_idea = { idea = TFR_EST_rights_review days = 180 } }
+ option = { name = tfr_estonia_content.31.b ai_chance = { factor = 35 } TFR_EST_change_cohesion = { AMOUNT = -3 }
+add_timed_idea = { idea = TFR_EST_emergency_authority days = 180 } }
+}
+
+country_event = {
+ id = tfr_estonia_content.40
+ title = tfr_estonia_content.40.t
+ desc = tfr_estonia_content.40.d
+ picture = GFX_report_event_generic_ruins
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.40.a ai_chance = { factor = 55 } TFR_EST_spend_budget = { AMOUNT = 55 }
+TFR_EST_change_cohesion = { AMOUNT = 5 } }
+ option = { name = tfr_estonia_content.40.b ai_chance = { factor = 45 } TFR_EST_spend_budget = { AMOUNT = 65 }
+TFR_EST_change_readiness = { AMOUNT = 4 }
+TFR_EST_change_cohesion = { AMOUNT = 1 } }
+}
+
+country_event = {
+ id = tfr_estonia_content.50
+ title = tfr_estonia_content.50.t
+ desc = tfr_estonia_content.50.d
+ picture = GFX_report_event_generic_army
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.50.a ai_chance = { factor = 65 } TFR_EST_change_cohesion = { AMOUNT = 4 }
+add_political_power = -20 }
+ option = { name = tfr_estonia_content.50.b ai_chance = { factor = 35 } add_political_power = 50
+TFR_EST_change_readiness = { AMOUNT = 2 }
+TFR_EST_change_cohesion = { AMOUNT = -2 } }
+}
+
+country_event = {
+ id = tfr_estonia_content.51
+ title = tfr_estonia_content.51.t
+ desc = tfr_estonia_content.51.d
+ picture = GFX_report_event_generic_read_write
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.51.a ai_chance = { factor = 70 } TFR_EST_change_cohesion = { AMOUNT = 4 }
+add_timed_idea = { idea = TFR_EST_rights_review days = 180 } }
+ option = { name = tfr_estonia_content.51.b ai_chance = { factor = 30 } TFR_EST_change_cohesion = { AMOUNT = -3 }
+add_timed_idea = { idea = TFR_EST_emergency_authority days = 180 } }
+}
+
+country_event = {
+ id = tfr_estonia_content.60
+ title = tfr_estonia_content.60.t
+ desc = tfr_estonia_content.60.d
+ picture = GFX_report_event_generic_sign_treaty2
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.60.a ai_chance = { factor = 70 } TFR_EST_change_cohesion = { AMOUNT = 5 }
+remove_ideas = TFR_EST_wartime_transport
+remove_ideas = TFR_EST_second_war_logistics }
+ option = { name = tfr_estonia_content.60.b ai_chance = { factor = 30 } TFR_EST_change_readiness = { AMOUNT = 3 }
+add_political_power = 40 }
+}
+
+country_event = {
+ id = tfr_estonia_content.70
+ title = tfr_estonia_content.70.t
+ desc = tfr_estonia_content.70.d
+ picture = GFX_report_event_generic_rally
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.70.a ai_chance = { factor = 75 } TFR_EST_change_cohesion = { AMOUNT = 5 }
+add_political_power = -20 }
+ option = { name = tfr_estonia_content.70.b ai_chance = { factor = 25 } add_political_power = 50
+TFR_EST_change_cohesion = { AMOUNT = 2 } }
+}
+
+country_event = {
+ id = tfr_estonia_content.71
+ title = tfr_estonia_content.71.t
+ desc = tfr_estonia_content.71.d
+ picture = GFX_report_event_generic_read_write
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.71.a ai_chance = { factor = 75 } TFR_EST_spend_budget = { AMOUNT = 25 }
+TFR_EST_change_cohesion = { AMOUNT = 5 } }
+ option = { name = tfr_estonia_content.71.b ai_chance = { factor = 25 } TFR_EST_change_cohesion = { AMOUNT = 2 }
+add_political_power = 25 }
+}
+
+country_event = {
+ id = tfr_estonia_content.81
+ title = tfr_estonia_content.81.t
+ desc = tfr_estonia_content.81.d
+ picture = GFX_report_event_generic_army
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.81.a ai_chance = { factor = 60 } TFR_EST_spend_budget = { AMOUNT = 30 }
+TFR_EST_change_cohesion = { AMOUNT = 4 }
+add_political_power = -10 }
+ option = { name = tfr_estonia_content.81.b ai_chance = { factor = 40 } TFR_EST_spend_budget = { AMOUNT = 25 }
+TFR_EST_change_readiness = { AMOUNT = 4 }
+army_experience = 10 }
+}
+
+country_event = {
+ id = tfr_estonia_content.91
+ title = tfr_estonia_content.91.t
+ desc = tfr_estonia_content.91.d
+ picture = GFX_report_event_generic_army
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.91.a ai_chance = { factor = 55 } TFR_EST_spend_budget = { AMOUNT = 35 }
+TFR_EST_change_cohesion = { AMOUNT = 5 } }
+ option = { name = tfr_estonia_content.91.b ai_chance = { factor = 45 } TFR_EST_spend_budget = { AMOUNT = 40 }
+TFR_EST_change_readiness = { AMOUNT = 4 }
+army_experience = 15 }
+}
+
+country_event = {
+ id = tfr_estonia_content.82
+ title = tfr_estonia_content.82.t
+ desc = tfr_estonia_content.82.d
+ picture = GFX_report_event_generic_army
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.82.a ai_chance = { factor = 65 } TFR_EST_spend_budget = { AMOUNT = 40 }
+TFR_EST_change_cohesion = { AMOUNT = 5 } }
+ option = { name = tfr_estonia_content.82.b ai_chance = { factor = 35 } TFR_EST_spend_budget = { AMOUNT = 25 }
+TFR_EST_change_readiness = { AMOUNT = 4 }
+TFR_EST_change_cohesion = { AMOUNT = 1 } }
+}
+
+country_event = {
+ id = tfr_estonia_content.92
+ title = tfr_estonia_content.92.t
+ desc = tfr_estonia_content.92.d
+ picture = GFX_report_event_generic_army
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.92.a ai_chance = { factor = 60 } TFR_EST_spend_budget = { AMOUNT = 45 }
+TFR_EST_change_cohesion = { AMOUNT = 5 } }
+ option = { name = tfr_estonia_content.92.b ai_chance = { factor = 40 } TFR_EST_spend_budget = { AMOUNT = 35 }
+TFR_EST_change_readiness = { AMOUNT = 4 }
+army_experience = 10 }
+}
+
+country_event = {
+ id = tfr_estonia_content.83
+ title = tfr_estonia_content.83.t
+ desc = tfr_estonia_content.83.d
+ picture = GFX_report_event_generic_army
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.83.a ai_chance = { factor = 55 } TFR_EST_spend_budget = { AMOUNT = 30 }
+TFR_EST_change_readiness = { AMOUNT = 3 }
+TFR_EST_change_cohesion = { AMOUNT = 3 } }
+ option = { name = tfr_estonia_content.83.b ai_chance = { factor = 45 } TFR_EST_change_readiness = { AMOUNT = 4 }
+army_experience = 15
+add_political_power = -15 }
+}
+
+country_event = {
+ id = tfr_estonia_content.93
+ title = tfr_estonia_content.93.t
+ desc = tfr_estonia_content.93.d
+ picture = GFX_report_event_generic_army
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.93.a ai_chance = { factor = 55 } TFR_EST_spend_budget = { AMOUNT = 40 }
+TFR_EST_change_readiness = { AMOUNT = 4 }
+TFR_EST_change_cohesion = { AMOUNT = 2 } }
+ option = { name = tfr_estonia_content.93.b ai_chance = { factor = 45 } TFR_EST_change_readiness = { AMOUNT = 3 }
+army_experience = 20
+TFR_EST_change_cohesion = { AMOUNT = 2 } }
+}
+
+country_event = {
+ id = tfr_estonia_content.84
+ title = tfr_estonia_content.84.t
+ desc = tfr_estonia_content.84.d
+ picture = GFX_report_event_generic_army
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.84.a ai_chance = { factor = 60 } TFR_EST_spend_budget = { AMOUNT = 25 }
+TFR_EST_change_cohesion = { AMOUNT = 4 }
+TFR_EST_change_readiness = { AMOUNT = 1 } }
+ option = { name = tfr_estonia_content.84.b ai_chance = { factor = 40 } TFR_EST_spend_budget = { AMOUNT = 30 }
+TFR_EST_change_readiness = { AMOUNT = 4 }
+army_experience = 10 }
+}
+
+country_event = {
+ id = tfr_estonia_content.94
+ title = tfr_estonia_content.94.t
+ desc = tfr_estonia_content.94.d
+ picture = GFX_report_event_generic_army
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.94.a ai_chance = { factor = 60 } TFR_EST_spend_budget = { AMOUNT = 35 }
+TFR_EST_change_cohesion = { AMOUNT = 5 } }
+ option = { name = tfr_estonia_content.94.b ai_chance = { factor = 40 } TFR_EST_spend_budget = { AMOUNT = 30 }
+TFR_EST_change_readiness = { AMOUNT = 4 }
+army_experience = 15 }
+}
+
+country_event = {
+ id = tfr_estonia_content.85
+ title = tfr_estonia_content.85.t
+ desc = tfr_estonia_content.85.d
+ picture = GFX_report_event_generic_army
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.85.a ai_chance = { factor = 65 } TFR_EST_spend_budget = { AMOUNT = 45 }
+TFR_EST_change_cohesion = { AMOUNT = 5 } }
+ option = { name = tfr_estonia_content.85.b ai_chance = { factor = 35 } TFR_EST_spend_budget = { AMOUNT = 30 }
+TFR_EST_change_readiness = { AMOUNT = 3 }
+TFR_EST_change_cohesion = { AMOUNT = 3 } }
+}
+
+country_event = {
+ id = tfr_estonia_content.95
+ title = tfr_estonia_content.95.t
+ desc = tfr_estonia_content.95.d
+ picture = GFX_report_event_generic_army
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.95.a ai_chance = { factor = 65 } TFR_EST_spend_budget = { AMOUNT = 55 }
+TFR_EST_change_cohesion = { AMOUNT = 5 } }
+ option = { name = tfr_estonia_content.95.b ai_chance = { factor = 35 } TFR_EST_spend_budget = { AMOUNT = 40 }
+TFR_EST_change_readiness = { AMOUNT = 3 }
+TFR_EST_change_cohesion = { AMOUNT = 3 } }
+}
+
+country_event = {
+ id = tfr_estonia_content.86
+ title = tfr_estonia_content.86.t
+ desc = tfr_estonia_content.86.d
+ picture = GFX_report_event_generic_army
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.86.a ai_chance = { factor = 55 } TFR_EST_spend_budget = { AMOUNT = 35 }
+TFR_EST_change_cohesion = { AMOUNT = 4 }
+TFR_EST_change_readiness = { AMOUNT = 1 } }
+ option = { name = tfr_estonia_content.86.b ai_chance = { factor = 45 } TFR_EST_spend_budget = { AMOUNT = 25 }
+TFR_EST_change_readiness = { AMOUNT = 4 }
+army_experience = 10 }
+}
+
+country_event = {
+ id = tfr_estonia_content.96
+ title = tfr_estonia_content.96.t
+ desc = tfr_estonia_content.96.d
+ picture = GFX_report_event_generic_army
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.96.a ai_chance = { factor = 55 } TFR_EST_spend_budget = { AMOUNT = 40 }
+TFR_EST_change_cohesion = { AMOUNT = 5 }
+add_political_power = 10 }
+ option = { name = tfr_estonia_content.96.b ai_chance = { factor = 45 } TFR_EST_spend_budget = { AMOUNT = 35 }
+TFR_EST_change_readiness = { AMOUNT = 4 }
+army_experience = 15 }
+}
+
+country_event = {
+ id = tfr_estonia_content.87
+ title = tfr_estonia_content.87.t
+ desc = tfr_estonia_content.87.d
+ picture = GFX_report_event_generic_army
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.87.a ai_chance = { factor = 60 } TFR_EST_spend_budget = { AMOUNT = 20 }
+TFR_EST_change_cohesion = { AMOUNT = 4 }
+add_political_power = -10 }
+ option = { name = tfr_estonia_content.87.b ai_chance = { factor = 40 } TFR_EST_spend_budget = { AMOUNT = 25 }
+TFR_EST_change_readiness = { AMOUNT = 4 }
+army_experience = 10 }
+}
+
+country_event = {
+ id = tfr_estonia_content.97
+ title = tfr_estonia_content.97.t
+ desc = tfr_estonia_content.97.d
+ picture = GFX_report_event_generic_army
+ is_triggered_only = yes
+ trigger = { original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } }
+ option = { name = tfr_estonia_content.97.a ai_chance = { factor = 60 } TFR_EST_spend_budget = { AMOUNT = 20 }
+TFR_EST_change_cohesion = { AMOUNT = 5 }
+add_political_power = -10 }
+ option = { name = tfr_estonia_content.97.b ai_chance = { factor = 40 } TFR_EST_spend_budget = { AMOUNT = 35 }
+TFR_EST_change_readiness = { AMOUNT = 4 }
+army_experience = 15 }
+}
+

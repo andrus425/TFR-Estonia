@@ -1,0 +1,8 @@
+scripted_gui = {
+ TFR_EST_parliament_panel = {
+ context_type = player_context
+ window_name = "TFR_EST_parliament_window"
+ visible = { TFR_EST_independent_parliament = yes has_country_flag = TFR_EST_parliament_open }
+ effects = { TFR_EST_close_click = { clr_country_flag = TFR_EST_parliament_open } }
+ }
+}

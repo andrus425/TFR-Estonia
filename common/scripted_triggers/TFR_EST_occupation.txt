@@ -1,0 +1,48 @@
+TFR_EST_has_independent_estonia = {
+    EST = { exists = yes is_subject = no NOT = { has_country_flag = TFR_EST_occupied } }
+}
+
+# Used in EST scope by parent decisions/events and the rebuild focus gate.
+# A puppet retaining all four regions does not need Soviet pacification.
+TFR_EST_russian_occupation_or_absent = {
+    OR = {
+        exists = no
+        AND = {
+            has_country_flag = TFR_EST_occupied
+            is_puppet_of = SOV
+            SOV = { any_owned_state = { is_core_of = EST } }
+        }
+    }
+}
+
+TFR_EST_occupation_liberal = {
+    OR = {
+        check_variable = { var = TFR_EST_occupation_type value = 5 compare = equals }
+        check_variable = { var = TFR_EST_occupation_type value = 6 compare = equals }
+    }
+}
+
+TFR_EST_can_restore_sovereignty = {
+    original_tag = EST
+    has_country_flag = TFR_EST_occupied
+    is_subject = yes
+    owns_state = 13
+    controls_state = 13
+    OR = {
+        overlord = { has_capitulated = yes }
+        AND = {
+            has_completed_focus = TFR_EST_occupation_restoration_compact
+            overlord = { surrender_progress > 0.5 }
+            check_variable = { var = TFR_EST_occupation_resistance value = 60 compare = greater_than_or_equals }
+        }
+        AND = {
+            TFR_EST_occupation_liberal = yes
+            has_completed_focus = TFR_EST_occupation_restoration_compact
+            has_war = no
+            check_variable = { var = TFR_EST_occupation_weeks value = 52 compare = greater_than_or_equals }
+            check_variable = { var = TFR_EST_occupation_cooperation value = 60 compare = greater_than_or_equals }
+            check_variable = { var = TFR_EST_cohesion value = 60 compare = greater_than_or_equals }
+            check_variable = { var = TFR_EST_readiness value = 40 compare = greater_than_or_equals }
+        }
+    }
+}

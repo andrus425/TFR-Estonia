@@ -1,0 +1,34 @@
+ideas = { country = {
+TFR_EST_government_continuity = { picture = generic_military_org removal_cost = -1 allowed = { original_tag = EST } allowed_civil_war = { always = yes } modifier = { political_power_gain = 0.05 } }
+TFR_EST_open_administration = { picture = generic_military_org removal_cost = -1 allowed = { original_tag = EST } allowed_civil_war = { always = yes } modifier = { stability_factor = 0.03 } }
+TFR_EST_secure_digital_state = { picture = generic_military_org removal_cost = -1 allowed = { original_tag = EST } allowed_civil_war = { always = yes } modifier = { political_power_gain = 0.04 } }
+TFR_EST_research_partnerships = { picture = generic_military_org removal_cost = -1 allowed = { original_tag = EST } allowed_civil_war = { always = yes } modifier = { research_speed_factor = 0.03 } }
+TFR_EST_maintenance_network = { picture = generic_military_org removal_cost = -1 allowed = { original_tag = EST } allowed_civil_war = { always = yes } modifier = { production_factory_efficiency_gain_factor = 0.04 } }
+TFR_EST_kaitseliit_network = { picture = generic_military_org removal_cost = -1 allowed = { original_tag = EST } allowed_civil_war = { always = yes } modifier = { training_time_army_factor = -0.03 } }
+TFR_EST_total_defence = { picture = generic_military_org removal_cost = -1 allowed = { original_tag = EST } allowed_civil_war = { always = yes } modifier = { army_defence_factor = 0.03
+army_org_factor = 0.02 } }
+TFR_EST_field_repair_network = { picture = generic_military_org removal_cost = -1 allowed = { original_tag = EST } allowed_civil_war = { always = yes } modifier = { attrition = -0.03 } }
+TFR_EST_joint_logistics = { picture = generic_military_org removal_cost = -1 allowed = { original_tag = EST } allowed_civil_war = { always = yes } modifier = { supply_consumption_factor = -0.03 } }
+TFR_EST_wartime_transport = { picture = generic_military_org removal_cost = -1 allowed = { original_tag = EST } allowed_civil_war = { always = yes } modifier = { supply_consumption_factor = -0.02 } }
+TFR_EST_national_endurance = { picture = generic_military_org removal_cost = -1 allowed = { original_tag = EST } allowed_civil_war = { always = yes } modifier = { war_support_factor = 0.03 } }
+TFR_EST_second_war_logistics = { picture = generic_military_org removal_cost = -1 allowed = { original_tag = EST } allowed_civil_war = { always = yes } modifier = { supply_consumption_factor = -0.02 } }
+TFR_EST_sustainable_security = { picture = generic_military_org removal_cost = -1 allowed = { original_tag = EST } allowed_civil_war = { always = yes } modifier = { army_org_factor = 0.02 } }
+TFR_EST_pandemic_support = { picture = generic_military_org removal_cost = -1 allowed = { original_tag = EST } allowed_civil_war = { always = yes } modifier = { stability_factor = 0.03 } }
+TFR_EST_rights_review = { picture = generic_military_org removal_cost = -1 allowed = { original_tag = EST } allowed_civil_war = { always = yes } modifier = { stability_factor = 0.02 } }
+TFR_EST_emergency_authority = { picture = generic_military_org removal_cost = -1 allowed = { original_tag = EST } allowed_civil_war = { always = yes } modifier = { political_power_gain = 0.08
+stability_factor = -0.02 } }
+TFR_EST_centre_cabinet = { picture = generic_military_org removal_cost = -1 allowed = { original_tag = EST } allowed_civil_war = { always = yes } modifier = { stability_factor = 0.03
+political_power_gain = 0.05 } }
+TFR_EST_reform_cabinet = { picture = generic_military_org removal_cost = -1 allowed = { original_tag = EST } allowed_civil_war = { always = yes } modifier = { research_speed_factor = 0.02
+production_speed_buildings_factor = 0.03 } }
+TFR_EST_ekre_cabinet = { picture = generic_military_org removal_cost = -1 allowed = { original_tag = EST } allowed_civil_war = { always = yes } modifier = { mobilization_speed = 0.05
+army_defence_factor = 0.03 } }
+TFR_EST_isamaa_cabinet = { picture = generic_military_org removal_cost = -1 allowed = { original_tag = EST } allowed_civil_war = { always = yes } modifier = { stability_factor = 0.02
+army_org_factor = 0.03 } }
+TFR_EST_sde_cabinet = { picture = generic_military_org removal_cost = -1 allowed = { original_tag = EST } allowed_civil_war = { always = yes } modifier = { stability_factor = 0.04
+war_support_factor = 0.02 } }
+TFR_EST_e200_cabinet = { picture = generic_military_org removal_cost = -1 allowed = { original_tag = EST } allowed_civil_war = { always = yes } modifier = { research_speed_factor = 0.03
+political_power_gain = 0.04 } }
+TFR_EST_pp_cabinet = { picture = generic_military_org removal_cost = -1 allowed = { original_tag = EST } allowed_civil_war = { always = yes } modifier = { production_speed_buildings_factor = 0.04
+production_factory_efficiency_gain_factor = 0.03 } }
+} }

@@ -1,0 +1,7 @@
+TFR_EST_parliament_category = {
+ icon = generic_political_actions
+ priority = 110
+ allowed = { original_tag = EST }
+ visible = { TFR_EST_independent_parliament = yes }
+ visible_when_empty = yes
+}

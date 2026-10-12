@@ -1,0 +1,58 @@
+ideas = {
+    country = {
+        TFR_EST_occupation_mandate = {
+            picture = generic_oppression
+            allowed = { original_tag = EST }
+            removal_cost = -1
+            modifier = { political_power_gain = -0.15 stability_factor = -0.05 conscription_factor = -0.1 }
+        }
+        TFR_EST_occupation_local_services = {
+            picture = generic_local_self_management
+            allowed = { original_tag = EST }
+            removal_cost = -1
+            modifier = { stability_factor = 0.05 consumer_goods_factor = -0.01 }
+        }
+        TFR_EST_occupation_recovery = {
+            picture = generic_build_infrastructure
+            allowed = { original_tag = EST }
+            removal_cost = -1
+            modifier = { production_speed_industrial_complex_factor = 0.05 repair_speed_infrastructure_factor = 0.1 }
+        }
+        TFR_EST_occupation_limited_forces = {
+            picture = generic_reserve_divisions
+            allowed = { original_tag = EST }
+            removal_cost = -1
+            modifier = { army_org_factor = 0.03 training_time_army_factor = -0.05 }
+        }
+        TFR_EST_occupation_collaboration = {
+            picture = generic_constitutional_guarantees
+            allowed = { original_tag = EST }
+            removal_cost = -1
+            modifier = { political_power_gain = 0.1 stability_factor = 0.02 }
+        }
+        TFR_EST_occupation_clandestine_network = {
+            picture = generic_secret_police
+            allowed = { original_tag = EST }
+            removal_cost = -1
+            modifier = { political_power_gain = -0.05 surrender_limit = 0.03 }
+        }
+        TFR_EST_occupation_civilian_compact = {
+            picture = generic_constitutional_guarantees
+            allowed = { original_tag = EST }
+            removal_cost = -1
+            modifier = { political_power_gain = 0.05 stability_factor = 0.03 }
+        }
+        TFR_EST_occupation_social_guarantees = {
+            picture = generic_local_self_management
+            allowed = { original_tag = EST }
+            removal_cost = -1
+            modifier = { stability_factor = 0.04 consumer_goods_factor = 0.01 }
+        }
+        TFR_EST_occupation_security_compact = {
+            picture = generic_fortify_the_borders
+            allowed = { original_tag = EST }
+            removal_cost = -1
+            modifier = { army_defence_factor = 0.03 stability_factor = -0.02 }
+        }
+    }
+}

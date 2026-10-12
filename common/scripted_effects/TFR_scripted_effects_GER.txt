@@ -1,0 +1,4900 @@
+#GER_upgrade_template_and_divisions = { #this is meant to upgrade the militia division linearly, create the division if it hasn't been created already. 
+#	if = {
+#		limit = {
+#			NOT = { has_variable = GER_militia_template_level }  
+#		}
+#		add_units_to_division_template = {
+#			template_name = "Heimatschutzbrigade"
+#			regiments = {
+#				motorized = { x = 0 y = 3 }
+#				light_mechanized = { x = 1 y = 0 }
+#			}
+#		}
+#		set_variable = { GER_militia_template_level = 1 }
+#	}
+#	else_if = {
+#		limit = {
+#			has_variable = GER_militia_template_level
+#			check_variable =  { GER_militia_template_level < 2 }
+#		}
+#		add_units_to_division_template = {
+#			template_name = "Heimatschutzbrigade"
+#			regiments = {
+#				light_mechanized = { x = 1 y = 1 }
+#				light_mechanized = { x = 1 y = 2 }
+#			}
+#		}
+#	}
+#	else_if = {
+#		limit = {
+#			has_variable = GER_militia_template_level
+#			check_variable =  { GER_militia_template_level < 4 }
+#		}
+#		add_units_to_division_template = {
+#			template_name = "Heimatschutzbrigade"
+#			regiments = {
+#				artillery_brigade = { x = 2 y = 0 }
+#				artillery_brigade = { x = 2 y = 1 }
+#			}
+#		}
+#	}
+#	else_if = {
+#		limit = {
+#			has_variable = GER_militia_template_level
+#			check_variable =  { GER_militia_template_level < 6 }
+#		}
+#		add_units_to_division_template = {
+#			template_name = "Heimatschutzbrigade"
+#			regiments = {
+#				artillery_brigade = { x = 2 y = 2 }
+#				artillery_brigade = { x = 2 y = 3 }
+#			}
+#		}
+#	}
+#	else_if = {
+#		limit = {
+#			has_variable = GER_militia_template_level
+#			check_variable =  { GER_militia_template_level < 8 }
+#		}
+#		add_units_to_division_template = {
+#			template_name = "Heimatschutzbrigade"
+#			support = {
+#				mot_recon = { x = 0 y = 2 }
+#				artillery = { x = 0 y = 2 }
+#			}
+#		}
+#	}
+#else_if = {
+#	limit = {
+#		has_variable = GER_militia_template_level
+#		check_variable =  { GER_militia_template_level < 10 }
+#	}
+#	add_units_to_division_template = {
+#		template_name = "Heimatschutzbrigade"
+#		regiments = {
+#			artillery_brigade = { x = 3 y = 0 }
+#			artillery_brigade = { x = 3 y = 1 }
+#		}
+#	}
+#}
+#if = { #Increasing the Militia Level variable 
+#	limit = {
+#		has_variable = GER_militia_template_level
+#		check_variable = { GER_militia_template_level < 10 }
+#	}
+#	add_to_variable = { GER_militia_template_level = 1 }
+#}
+#}
+GER_decrease_corona = {
+	if = {
+		limit = {
+			has_idea = higher_covid_cases
+		}
+		swap_ideas = {
+			remove_idea = higher_covid_cases
+			add_idea = high_covid_cases
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = high_covid_cases
+		}
+		swap_ideas = {
+			remove_idea = high_covid_cases
+			add_idea = medium_covid_cases
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = medium_covid_cases
+		}
+		swap_ideas = {
+			remove_idea = medium_covid_cases
+			add_idea = low_covid_cases
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = low_covid_cases
+		}
+		swap_ideas = {
+			remove_idea = low_covid_cases
+			add_idea = lower_covid_cases
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = lower_covid_cases
+		}
+		remove_ideas = lower_covid_cases
+	}
+}
+
+GER_increase_militarism = {
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					has_idea = GER_militarism
+					has_idea = GER_militarism2
+					has_idea = GER_militarism3
+					has_idea = GER_militarism4
+				}
+			}
+		}
+		add_ideas = GER_militarism
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_militarism
+		}
+		swap_ideas = {
+			remove_idea = GER_militarism
+			add_idea = GER_militarism2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_militarism2
+		}
+		swap_ideas = {
+			remove_idea = GER_militarism2
+			add_idea = GER_militarism3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_militarism3
+		}
+		swap_ideas = {
+			remove_idea = GER_militarism3
+			add_idea = GER_militarism4
+		}
+	}
+}
+
+GER_decrease_militarism = {
+	if = {
+		limit = {
+			has_idea = GER_militarism4
+		}
+		swap_ideas = {
+			remove_idea = GER_militarism4
+			add_idea = GER_militarism3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_militarism3
+		}
+		swap_ideas = {
+			remove_idea = GER_militarism3
+			add_idea = GER_militarism2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_militarism2
+		}
+		swap_ideas = {
+			remove_idea = GER_militarism2
+			add_idea = GER_militarism
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_militarism2
+		}
+		remove_ideas = GER_militarism
+	}
+}
+
+GER_increase_catharsis = {
+	add_to_variable = {
+		var = GER_mass_catharsis_society_development_monthly_dynamic_var
+		value = -0.01
+	}
+	add_to_variable = {
+		var = GER_mass_catharsis_stability_weekly_dynamic_var
+		value = -0.001
+	}
+	add_to_variable = {
+		var = GER_mass_catharsis_war_support_weekly_dynamic_var
+		value = -0.001
+	}
+	add_to_variable = {
+		var = GER_mass_catharsis_production_factory_max_efficiency_factor_dynamic_var
+		value = -0.05
+	}
+	add_to_variable = {
+		var = GER_mass_catharsis_production_factory_efficiency_gain_factor_dynamic_var
+		value = -0.05
+	}
+	add_to_variable = {
+		var = GER_mass_catharsis_resistance_growth_dynamic_var
+		value = 0.05
+	}
+	add_to_variable = {
+		var = GER_mass_catharsis_compliance_growth_dynamic_var
+		value = -0.05
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_dynamic_modifier = {
+					modifier = GER_mass_catharsis_dynamic
+				}
+			}
+		}
+		effect_tooltip = {
+			add_ideas = GER_catharsis1
+		}
+		hidden_effect = {
+			add_dynamic_modifier = {
+				modifier = GER_mass_catharsis_dynamic
+			}
+		}
+	}
+	else = {
+		effect_tooltip = {
+			swap_ideas = {
+				remove_idea = GER_catharsis_empty_dummy_idea
+				add_idea = GER_catharsis1
+			}
+		}
+	}
+}
+
+GER_decrease_catharsis_big = {
+	effect_tooltip = {
+		swap_ideas = {
+			remove_idea = GER_catharsis_empty_dummy_idea
+			add_idea = GER_catharsis_decrease_big_dummy_idea
+		}
+	}
+	add_to_variable = {
+		var = GER_mass_catharsis_society_development_monthly_dynamic_var
+		value = 0.01
+	}
+	add_to_variable = {
+		var = GER_mass_catharsis_stability_weekly_dynamic_var
+		value = 0.001
+	}
+	add_to_variable = {
+		var = GER_mass_catharsis_war_support_weekly_dynamic_var
+		value = 0.001
+	}
+	add_to_variable = {
+		var = GER_mass_catharsis_production_factory_max_efficiency_factor_dynamic_var
+		value = 0.05
+	}
+	add_to_variable = {
+		var = GER_mass_catharsis_production_factory_efficiency_gain_factor_dynamic_var
+		value = 0.05
+	}
+	add_to_variable = {
+		var = GER_mass_catharsis_resistance_growth_dynamic_var
+		value = -0.05
+	}
+	add_to_variable = {
+		var = GER_mass_catharsis_compliance_growth_dynamic_var
+		value = 0.05
+	}
+}
+
+GER_decrease_catharsis_small = {
+	effect_tooltip = {
+		swap_ideas = {
+			remove_idea = GER_catharsis_empty_dummy_idea
+			add_idea = GER_catharsis_decrease_small_dummy_idea
+		}
+	}
+	add_to_variable = {
+		var = GER_mass_catharsis_society_development_monthly_dynamic_var
+		value = 0.002
+	}
+	add_to_variable = {
+		var = GER_mass_catharsis_production_factory_max_efficiency_factor_dynamic_var
+		value = 0.02
+	}
+	add_to_variable = {
+		var = GER_mass_catharsis_production_factory_efficiency_gain_factor_dynamic_var
+		value = 0.02
+	}
+	add_to_variable = {
+		var = GER_mass_catharsis_resistance_growth_dynamic_var
+		value = -0.02
+	}
+	add_to_variable = {
+		var = GER_mass_catharsis_compliance_growth_dynamic_var
+		value = 0.02
+	}
+}
+
+GER_decrease_unrest = {
+	if = {
+		limit = {
+			has_idea = GER_mass_unrest1
+		}
+		swap_ideas = {
+			remove_idea = GER_mass_unrest1
+			add_idea = GER_mass_unrest2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_mass_unrest2
+		}
+		swap_ideas = {
+			remove_idea = GER_mass_unrest2
+			add_idea = GER_mass_unrest3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_mass_unrest3
+		}
+		swap_ideas = {
+			remove_idea = GER_mass_unrest3
+			add_idea = GER_mass_unrest4
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_mass_unrest4
+		}
+		remove_ideas = GER_mass_unrest4
+	}
+}
+
+GER_increase_scars = {
+	if = {
+		limit = {
+			has_idea = GER_scars_of_nato_war
+		}
+		swap_ideas = {
+			remove_idea = GER_scars_of_nato_war
+			add_idea = GER_scars_of_nato_war2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_scars_of_nato_war2
+		}
+		remove_ideas = GER_scars_of_nato_war2
+	}
+}
+
+GER_increase_covid = {
+	if = {
+		limit = {
+			has_idea = lower_covid_cases
+		}
+		swap_ideas = {
+			remove_idea = lower_covid_cases
+			add_idea = low_covid_cases
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = low_covid_cases
+		}
+		swap_ideas = {
+			remove_idea = low_covid_cases
+			add_idea = medium_covid_cases
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = medium_covid_cases
+		}
+		swap_ideas = {
+			remove_idea = medium_covid_cases
+			add_idea = high_covid_cases
+		}
+	}
+}
+
+GER_increase_administration = {
+	if = {
+		limit = {
+			has_idea = GER_over_extended_administration
+		}
+		swap_ideas = {
+			remove_idea = GER_over_extended_administration
+			add_idea = GER_over_extended_administration2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_over_extended_administration2
+		}
+		swap_ideas = {
+			remove_idea = GER_over_extended_administration2
+			add_idea = GER_over_extended_administration3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_over_extended_administration3
+		}
+		swap_ideas = {
+			remove_idea = GER_over_extended_administration3
+			add_idea = GER_over_extended_administration4
+		}
+	}
+}
+
+GER_set_templates = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = GER_motorised_division
+			}
+		}
+		GER_motorised_division = yes
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = GER_mechanised_division
+			}
+		}
+		GER_mechanised_division = yes
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = GER_armor_division
+			}
+		}
+		GER_armor_division = yes
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = GER_infantry_division
+			}
+		}
+		GER_infantry_division = yes
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = GER_air_assault_division
+			}
+		}
+		GER_air_assault_division = yes
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = GER_sof_division
+			}
+		}
+		GER_sof_division = yes
+	}
+}
+
+GER_motorised_division = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = GER_motorised_division
+			}
+		}
+		division_template = {
+			name = "Legion Motorisierte Division"
+			priority = 2
+			is_locked = yes
+			regiments = {
+				motorized = {
+					x = 0
+					y = 0
+				}
+				motorized = {
+					x = 0
+					y = 1
+				}
+				motorized = {
+					x = 0
+					y = 2
+				}
+				motorized = {
+					x = 1
+					y = 0
+				}
+				motorized = {
+					x = 1
+					y = 1
+				}
+				motorized = {
+					x = 1
+					y = 2
+				}
+				motorized = {
+					x = 2
+					y = 0
+				}
+				motorized = {
+					x = 2
+					y = 1
+				}
+				motorized = {
+					x = 2
+					y = 2
+				}
+			}
+			support = {
+				artillery = {
+					x = 0
+					y = 0
+				}
+				engineer = {
+					x = 0
+					y = 1
+				}
+				mot_recon = {
+					x = 0
+					y = 2
+				}
+			}
+		}
+	}
+}
+
+GER_mechanised_division = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = GER_mechanised_division
+			}
+		}
+		division_template = {
+			name = "Legion Panzergrenadier Division"
+			priority = 2
+			is_locked = yes
+			regiments = {
+				mechanized = {
+					x = 0
+					y = 0
+				}
+				mechanized = {
+					x = 0
+					y = 1
+				}
+				mechanized = {
+					x = 0
+					y = 2
+				}
+				mechanized = {
+					x = 1
+					y = 0
+				}
+				mechanized = {
+					x = 1
+					y = 1
+				}
+				mechanized = {
+					x = 1
+					y = 2
+				}
+				mechanized = {
+					x = 2
+					y = 0
+				}
+				mechanized = {
+					x = 2
+					y = 1
+				}
+				mechanized = {
+					x = 2
+					y = 2
+				}
+			}
+			support = {
+				artillery = {
+					x = 0
+					y = 0
+				}
+				engineer = {
+					x = 0
+					y = 1
+				}
+				mot_recon = {
+					x = 0
+					y = 2
+				}
+			}
+		}
+	}
+}
+
+GER_armor_division = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = GER_armor_division
+			}
+		}
+		division_template = {
+			name = "Legion Panzer-Division"
+			priority = 2
+			is_locked = yes
+			regiments = {
+				modern_armor = {
+					x = 0
+					y = 0
+				}
+				modern_armor = {
+					x = 0
+					y = 1
+				}
+				modern_armor = {
+					x = 0
+					y = 2
+				}
+				mechanized = {
+					x = 1
+					y = 0
+				}
+				mechanized = {
+					x = 1
+					y = 1
+				}
+				mechanized = {
+					x = 1
+					y = 2
+				}
+				modern_sp_artillery_brigade = {
+					x = 2
+					y = 0
+				}
+				modern_sp_artillery_brigade = {
+					x = 2
+					y = 1
+				}
+				spaa_brigade = {
+					x = 2
+					y = 2
+				}
+			}
+			support = {
+				artillery = {
+					x = 0
+					y = 0
+				}
+				engineer = {
+					x = 0
+					y = 1
+				}
+				mot_recon = {
+					x = 0
+					y = 2
+				}
+			}
+		}
+	}
+}
+
+GER_infantry_division = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = GER_infantry_division
+			}
+		}
+		division_template = {
+			name = "Legion Infanterie-Division"
+			priority = 2
+			is_locked = yes
+			regiments = {
+				infantry = {
+					x = 0
+					y = 0
+				}
+				infantry = {
+					x = 0
+					y = 1
+				}
+				infantry = {
+					x = 0
+					y = 2
+				}
+				infantry = {
+					x = 0
+					y = 3
+				}
+				recce = {
+					x = 0
+					y = 4
+				}
+				artillery_brigade = {
+					x = 1
+					y = 0
+				}
+				artillery_brigade = {
+					x = 1
+					y = 1
+				}
+				artillery_brigade = {
+					x = 1
+					y = 2
+				}
+			}
+			support = {
+				anti_tank = {
+					x = 0
+					y = 0
+				}
+				engineer = {
+					x = 0
+					y = 1
+				}
+				mot_recon = {
+					x = 0
+					y = 2
+				}
+			}
+		}
+	}
+}
+
+GER_air_assault_division = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = GER_air_assault_division
+			}
+		}
+		division_template = {
+			name = "Legion Luftangriffsabteilung"
+			priority = 2
+			is_locked = yes
+			regiments = {
+				paratrooper = {
+					x = 0
+					y = 0
+				}
+				paratrooper = {
+					x = 0
+					y = 1
+				}
+				paratrooper = {
+					x = 0
+					y = 2
+				}
+				paratrooper = {
+					x = 0
+					y = 3
+				}
+				paratrooper = {
+					x = 0
+					y = 4
+				}
+				paratrooper = {
+					x = 1
+					y = 0
+				}
+				paratrooper = {
+					x = 1
+					y = 1
+				}
+				paratrooper = {
+					x = 1
+					y = 2
+				}
+				paratrooper = {
+					x = 1
+					y = 3
+				}
+				paratrooper = {
+					x = 1
+					y = 4
+				}
+			}
+			support = {
+				helicopter_recon = {
+					x = 0
+					y = 0
+				}
+				signal_company = {
+					x = 0
+					y = 1
+				}
+				anti_tank = {
+					x = 0
+					y = 2
+				}
+			}
+		}
+	}
+}
+
+GER_sof_division = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = GER_sof_division
+			}
+		}
+		division_template = {
+			name = "Legion Spezialeinsatzkräfte-Division"
+			priority = 2
+			is_locked = yes
+			regiments = {
+				special_forces = {
+					x = 0
+					y = 0
+				}
+				special_forces = {
+					x = 0
+					y = 1
+				}
+				special_forces = {
+					x = 0
+					y = 2
+				}
+				special_forces = {
+					x = 0
+					y = 3
+				}
+				special_forces = {
+					x = 0
+					y = 4
+				}
+				artillery_brigade = {
+					x = 1
+					y = 0
+				}
+				artillery_brigade = {
+					x = 1
+					y = 1
+				}
+			}
+			support = {
+				anti_tank = {
+					x = 0
+					y = 0
+				}
+				signal_company = {
+					x = 0
+					y = 1
+				}
+				air_mechanized = {
+					x = 0
+					y = 2
+				}
+			}
+		}
+	}
+}
+
+GER_increase_catastrophe = {
+	if = {
+		limit = {
+			has_idea = GER_national_catastrophe
+		}
+		swap_ideas = {
+			remove_idea = GER_national_catastrophe
+			add_idea = GER_national_catastrophe2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_national_catastrophe2
+		}
+		swap_ideas = {
+			remove_idea = GER_national_catastrophe2
+			add_idea = GER_national_catastrophe3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_national_catastrophe3
+		}
+		remove_ideas = GER_national_catastrophe3
+	}
+}
+
+GER_increase_green = {
+	if = {
+		limit = {
+			has_idea = GER_eu_green_deal
+		}
+		swap_ideas = {
+			remove_idea = GER_eu_green_deal
+			add_idea = GER_eu_green_deal2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_eu_green_deal2
+		}
+		swap_ideas = {
+			remove_idea = GER_eu_green_deal2
+			add_idea = GER_eu_green_deal3
+		}
+	}
+}
+
+GER_depression_recovery_effect = {
+	if = {
+		limit = {
+			has_country_flag = GER_depression_ongoing_flag
+			NOT = {
+				has_country_flag = GER_european_green_deal_flag
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = GER_wholesale_bailout_flag1
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = GER_economic_devastation_dummy_idea
+					add_idea = GER_wholesale_bailout_idea
+				}
+			}
+			hidden_effect = {
+				set_country_flag = GER_wholesale_bailout_flag
+				add_to_variable = {
+					var = GER_economy_consumer_goods_factor_dynamic_var
+					value = -0.1
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = GER_finance_bailout_flag1
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = GER_economic_devastation_dummy_idea
+					add_idea = GER_finance_bailout_idea1
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = GER_economy_min_export_dynamic_var
+					value = 0.05
+				}
+				add_to_variable = {
+					var = GER_economy_poverty_development_monthly_dynamic_var
+					value = 0.01
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = GER_automotive_bailout_flag1
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = GER_economic_devastation_dummy_idea
+					add_idea = GER_automotive_bailout_idea1
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = GER_economy_production_factory_max_efficiency_factor_dynamic_var
+					value = 0.05
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = GER_shipping_bailout_flag1
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = GER_economic_devastation_dummy_idea
+					add_idea = GER_shipping_bailout_idea1
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = GER_economy_industrial_capacity_dockyard_dynamic_var
+					value = 0.1
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = GER_small_business_bailout_flag1
+			}
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = GER_economic_devastation_dummy_idea
+					add_idea = GER_small_business_bailout_idea1
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = GER_economy_production_factory_max_efficiency_factor_dynamic_var
+					value = 0.05
+				}
+				add_to_variable = {
+					var = GER_economy_consumer_goods_factor_dynamic_var
+					value = -0.1
+				}
+				add_to_variable = {
+					var = GER_economy_min_export_dynamic_var
+					value = 0.05
+				}
+				add_to_variable = {
+					var = GER_economy_industrial_capacity_dockyard_dynamic_var
+					value = 0.1
+				}
+				add_to_variable = {
+					var = GER_economy_poverty_development_monthly_dynamic_var
+					value = 0.01
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = GER_wholesale_bailout_flag
+					has_country_flag = GER_wholesale_bailout_flag1
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = GER_economy_consumer_goods_factor_dynamic_var
+					value = -0.2
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = GER_finance_bailout_flag
+					has_country_flag = GER_finance_bailout_flag1
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = GER_economy_min_export_dynamic_var
+					value = 0.1
+				}
+				add_to_variable = {
+					var = GER_economy_poverty_development_monthly_dynamic_var
+					value = 0.02
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = GER_automotive_bailout_flag
+					has_country_flag = GER_automotive_bailout_flag1
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = GER_economy_production_factory_max_efficiency_factor_dynamic_var
+					value = 0.1
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = GER_shipping_bailout_flag
+					has_country_flag = GER_shipping_bailout_flag1
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = GER_economy_industrial_capacity_dockyard_dynamic_var
+					value = 0.2
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = GER_small_business_bailout_flag1
+					has_country_flag = GER_small_business_bailout_flag11
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = GER_economy_production_factory_max_efficiency_factor_dynamic_var
+					value = 0.1
+				}
+				add_to_variable = {
+					var = GER_economy_consumer_goods_factor_dynamic_var
+					value = -0.2
+				}
+				add_to_variable = {
+					var = GER_economy_min_export_dynamic_var
+					value = 0.1
+				}
+				add_to_variable = {
+					var = GER_economy_industrial_capacity_dockyard_dynamic_var
+					value = 0.2
+				}
+				add_to_variable = {
+					var = GER_economy_poverty_development_monthly_dynamic_var
+					value = 0.02
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = GER_depression_ongoing_flag
+			has_country_flag = GER_european_green_deal_flag
+		}
+		if = {
+			limit = {
+				check_variable = {
+					var = GER_budget_sustainment_var
+					value = 0
+					compare = equals
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = GER_economy_min_export_dynamic_var
+					value = 0.2
+				}
+				add_to_variable = {
+					var = GER_economy_industrial_capacity_dockyard_dynamic_var
+					value = 0.4
+				}
+				add_to_variable = {
+					var = GER_economy_production_factory_max_efficiency_factor_dynamic_var
+					value = 0.2
+				}
+				add_to_variable = {
+					var = GER_economy_consumer_goods_factor_dynamic_var
+					value = -0.4
+				}
+				add_to_variable = {
+					var = GER_economy_poverty_development_monthly_dynamic_var
+					value = 0.04
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					var = GER_budget_sustainment_var
+					value = 1
+					compare = equals
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = GER_economy_min_export_dynamic_var
+					value = 0.15
+				}
+				add_to_variable = {
+					var = GER_economy_industrial_capacity_dockyard_dynamic_var
+					value = 0.3
+				}
+				add_to_variable = {
+					var = GER_economy_production_factory_max_efficiency_factor_dynamic_var
+					value = 0.15
+				}
+				add_to_variable = {
+					var = GER_economy_consumer_goods_factor_dynamic_var
+					value = -0.3
+				}
+				add_to_variable = {
+					var = GER_economy_poverty_development_monthly_dynamic_var
+					value = 0.03
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					var = GER_budget_sustainment_var
+					value = 2
+					compare = equals
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = GER_economy_min_export_dynamic_var
+					value = 0.1
+				}
+				add_to_variable = {
+					var = GER_economy_industrial_capacity_dockyard_dynamic_var
+					value = 0.2
+				}
+				add_to_variable = {
+					var = GER_economy_production_factory_max_efficiency_factor_dynamic_var
+					value = 0.1
+				}
+				add_to_variable = {
+					var = GER_economy_consumer_goods_factor_dynamic_var
+					value = -0.2
+				}
+				add_to_variable = {
+					var = GER_economy_poverty_development_monthly_dynamic_var
+					value = 0.02
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					var = GER_budget_sustainment_var
+					value = 3
+					compare = equals
+				}
+			}
+			hidden_effect = {
+				add_to_variable = {
+					var = GER_economy_min_export_dynamic_var
+					value = 0.05
+				}
+				add_to_variable = {
+					var = GER_economy_industrial_capacity_dockyard_dynamic_var
+					value = 0.1
+				}
+				add_to_variable = {
+					var = GER_economy_production_factory_max_efficiency_factor_dynamic_var
+					value = 0.05
+				}
+				add_to_variable = {
+					var = GER_economy_consumer_goods_factor_dynamic_var
+					value = -0.1
+				}
+				add_to_variable = {
+					var = GER_economy_poverty_development_monthly_dynamic_var
+					value = 0.01
+				}
+			}
+		}
+	}
+}
+
+GER_increase_gott = {
+	if = {
+		limit = {
+			has_idea = GER_gotterdammerung_1_idea
+		}
+		swap_ideas = {
+			remove_idea = GER_gotterdammerung_1_idea
+			add_idea = GER_gotterdammerung_2_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_gotterdammerung_2_idea
+		}
+		swap_ideas = {
+			remove_idea = GER_gotterdammerung_2_idea
+			add_idea = GER_gotterdammerung_3_idea
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_gotterdammerung_3_idea
+		}
+		swap_ideas = {
+			remove_idea = GER_gotterdammerung_3_idea
+			add_idea = GER_gotterdammerung_4_idea
+		}
+	}
+}
+
+#Decision Cost
+GER_update_agenda_decision_cost = {
+	set_variable = {
+		var = GER_good_agenda_decision_cost_var
+		value = 150
+	}
+	set_variable = {
+		var = GER_bad_agenda_decision_cost_var
+		value = 150
+	}
+	if = {
+		limit = {
+			NOT = {
+				is_power_balance_in_range = {
+					id = GER_trust_bop
+					range < GER_high_trust_range
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_power_balance_in_range = {
+					id = GER_trust_bop
+					range = GER_very_high_trust_range
+				}
+			}
+			set_variable = {
+				var = GER_good_agenda_decision_cost_var
+				value = 100
+			}
+		}
+		if = {
+			limit = {
+				is_power_balance_in_range = {
+					id = GER_trust_bop
+					range = GER_overwhelmingly_high_trust_range
+				}
+			}
+			set_variable = {
+				var = GER_good_agenda_decision_cost_var
+				value = 50
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			NOT = {
+				is_power_balance_in_range = {
+					id = GER_trust_bop
+					range > GER_low_trust_range
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_power_balance_in_range = {
+					id = GER_trust_bop
+					range = GER_very_low_trust_range
+				}
+			}
+			set_variable = {
+				var = GER_bad_agenda_decision_cost_var
+				value = 100
+			}
+		}
+		if = {
+			limit = {
+				is_power_balance_in_range = {
+					id = GER_trust_bop
+					range = GER_overwhelmingly_low_trust_range
+				}
+			}
+			set_variable = {
+				var = GER_bad_agenda_decision_cost_var
+				value = 50
+			}
+		}
+	}
+}
+
+#Popularity Effects
+GER_disable_die_linke = {
+	custom_effect_tooltip = GER_disable_die_linke_tooltip
+	hidden_effect = {
+		remove_dynamic_modifier = {
+			modifier = GER_die_linke_dynamic
+		}
+		set_temp_variable = {
+			var = GER_faction_removal_var_temp
+			value = party_popularity@libertarian_socialist
+		}
+		multiply_temp_variable = {
+			var = GER_faction_removal_var_temp
+			value = -1
+		}
+		add_popularity = {
+			ideology = libertarian_socialist
+			popularity = GER_faction_removal_var_temp
+		}
+		clr_country_flag = GER_die_linke_enable_flag
+		clear_variable = GER_support_die_linke_var
+		GER_popularity_change = yes
+	}
+}
+
+GER_disable_greens = {
+	custom_effect_tooltip = GER_disable_greens_tooltip
+	hidden_effect = {
+		remove_dynamic_modifier = {
+			modifier = GER_greens_dynamic
+		}
+		set_temp_variable = {
+			var = GER_faction_removal_var_temp
+			value = party_popularity@social_liberal
+		}
+		multiply_temp_variable = {
+			var = GER_faction_removal_var_temp
+			value = -1
+		}
+		add_popularity = {
+			ideology = social_liberal
+			popularity = GER_faction_removal_var_temp
+		}
+		clr_country_flag = GER_greens_enable_flag
+		clear_variable = GER_support_greens_var
+		GER_popularity_change = yes
+	}
+}
+
+GER_disable_spd = {
+	custom_effect_tooltip = GER_disable_spd_tooltip
+	hidden_effect = {
+		remove_dynamic_modifier = {
+			modifier = GER_spd_dynamic
+		}
+		set_temp_variable = {
+			var = GER_faction_removal_var_temp
+			value = party_popularity@social_democrat
+		}
+		multiply_temp_variable = {
+			var = GER_faction_removal_var_temp
+			value = -1
+		}
+		add_popularity = {
+			ideology = social_democrat
+			popularity = GER_faction_removal_var_temp
+		}
+		clr_country_flag = GER_spd_enable_flag
+		clear_variable = GER_support_spd_var
+		GER_popularity_change = yes
+	}
+}
+
+GER_disable_fdp = {
+	custom_effect_tooltip = GER_disable_fdp_tooltip
+	hidden_effect = {
+		remove_dynamic_modifier = {
+			modifier = GER_fdp_dynamic
+		}
+		set_temp_variable = {
+			var = GER_faction_removal_var_temp
+			value = party_popularity@market_liberal
+		}
+		multiply_temp_variable = {
+			var = GER_faction_removal_var_temp
+			value = -1
+		}
+		add_popularity = {
+			ideology = market_liberal
+			popularity = GER_faction_removal_var_temp
+		}
+		clr_country_flag = GER_fdp_enable_flag
+		clear_variable = GER_support_fdp_var
+		GER_popularity_change = yes
+	}
+}
+
+GER_disable_cdu = {
+	custom_effect_tooltip = GER_disable_cdu_tooltip
+	hidden_effect = {
+		remove_dynamic_modifier = {
+			modifier = GER_cdu_dynamic
+		}
+		set_temp_variable = {
+			var = GER_faction_removal_var_temp
+			value = party_popularity@conservative
+		}
+		multiply_temp_variable = {
+			var = GER_faction_removal_var_temp
+			value = -1
+		}
+		add_popularity = {
+			ideology = conservative
+			popularity = GER_faction_removal_var_temp
+		}
+		clr_country_flag = GER_cdu_enable_flag
+		clear_variable = GER_support_cdu_var
+		GER_popularity_change = yes
+	}
+}
+
+GER_disable_afd = {
+	custom_effect_tooltip = GER_disable_afd_tooltip
+	hidden_effect = {
+		remove_dynamic_modifier = {
+			modifier = GER_afd_dynamic
+		}
+		set_temp_variable = {
+			var = GER_faction_removal_var_temp
+			value = party_popularity@authoritarian_democrat
+		}
+		multiply_temp_variable = {
+			var = GER_faction_removal_var_temp
+			value = -1
+		}
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = GER_faction_removal_var_temp
+		}
+		clr_country_flag = GER_afd_enable_flag
+		clear_variable = GER_support_afd_var
+		GER_popularity_change = yes
+	}
+}
+
+GER_add_die_linke = {
+	if = {
+		limit = {
+			check_variable = {
+				var = GER_die_linke_popularity_var_temp
+				value = 0
+				compare = greater_than
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					libertarian_socialist < 0.33
+					libertarian_socialist > 0.5
+				}
+			}
+			multiply_temp_variable = {
+				var = GER_die_linke_popularity_var_temp
+				value = 0.66
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					libertarian_socialist < 0.5
+					libertarian_socialist > 0.66
+				}
+			}
+			multiply_temp_variable = {
+				var = GER_die_linke_popularity_var_temp
+				value = 0.5
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					libertarian_socialist < 0.66
+					libertarian_socialist > 0.75
+				}
+			}
+			multiply_temp_variable = {
+				var = GER_die_linke_popularity_var_temp
+				value = 0.34
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					libertarian_socialist < 0.75
+				}
+			}
+			multiply_temp_variable = {
+				var = GER_die_linke_popularity_var_temp
+				value = 0.25
+			}
+		}
+	}
+	custom_effect_tooltip = GER_add_die_linke_tt
+	hidden_effect = {
+		add_popularity = {
+			ideology = libertarian_socialist
+			popularity = GER_die_linke_popularity_var_temp
+		}
+		GER_popularity_change = yes
+	}
+}
+
+GER_add_greens = {
+	if = {
+		limit = {
+			check_variable = {
+				var = GER_greens_popularity_var_temp
+				value = 0
+				compare = greater_than
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					social_liberal < 0.33
+					social_liberal > 0.5
+				}
+			}
+			multiply_temp_variable = {
+				var = GER_greens_popularity_var_temp
+				value = 0.66
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					social_liberal < 0.5
+					social_liberal > 0.66
+				}
+			}
+			multiply_temp_variable = {
+				var = GER_greens_popularity_var_temp
+				value = 0.5
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					social_liberal < 0.66
+					social_liberal > 0.75
+				}
+			}
+			multiply_temp_variable = {
+				var = GER_greens_popularity_var_temp
+				value = 0.34
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					social_liberal < 0.75
+				}
+			}
+			multiply_temp_variable = {
+				var = GER_greens_popularity_var_temp
+				value = 0.25
+			}
+		}
+	}
+	custom_effect_tooltip = GER_add_greens_tt
+	hidden_effect = {
+		add_popularity = {
+			ideology = social_liberal
+			popularity = GER_greens_popularity_var_temp
+		}
+		GER_popularity_change = yes
+	}
+}
+
+GER_add_spd = {
+	if = {
+		limit = {
+			check_variable = {
+				var = GER_spd_popularity_var_temp
+				value = 0
+				compare = greater_than
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					social_democrat < 0.33
+					social_democrat > 0.5
+				}
+			}
+			multiply_temp_variable = {
+				var = GER_spd_popularity_var_temp
+				value = 0.66
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					social_democrat < 0.5
+					social_democrat > 0.66
+				}
+			}
+			multiply_temp_variable = {
+				var = GER_spd_popularity_var_temp
+				value = 0.5
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					social_democrat < 0.66
+					social_democrat > 0.75
+				}
+			}
+			multiply_temp_variable = {
+				var = GER_spd_popularity_var_temp
+				value = 0.34
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					social_democrat < 0.75
+				}
+			}
+			multiply_temp_variable = {
+				var = GER_spd_popularity_var_temp
+				value = 0.25
+			}
+		}
+	}
+	custom_effect_tooltip = GER_add_spd_tt
+	hidden_effect = {
+		add_popularity = {
+			ideology = social_democrat
+			popularity = GER_spd_popularity_var_temp
+		}
+		GER_popularity_change = yes
+	}
+}
+
+GER_add_fdp = {
+	if = {
+		limit = {
+			check_variable = {
+				var = GER_fdp_popularity_var_temp
+				value = 0
+				compare = greater_than
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					market_liberal < 0.33
+					market_liberal > 0.5
+				}
+			}
+			multiply_temp_variable = {
+				var = GER_fdp_popularity_var_temp
+				value = 0.66
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					market_liberal < 0.5
+					market_liberal > 0.66
+				}
+			}
+			multiply_temp_variable = {
+				var = GER_fdp_popularity_var_temp
+				value = 0.5
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					market_liberal < 0.66
+					market_liberal > 0.75
+				}
+			}
+			multiply_temp_variable = {
+				var = GER_fdp_popularity_var_temp
+				value = 0.34
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					market_liberal < 0.75
+				}
+			}
+			multiply_temp_variable = {
+				var = GER_fdp_popularity_var_temp
+				value = 0.25
+			}
+		}
+	}
+	custom_effect_tooltip = GER_add_fdp_tt
+	hidden_effect = {
+		add_popularity = {
+			ideology = market_liberal
+			popularity = GER_fdp_popularity_var_temp
+		}
+		GER_popularity_change = yes
+	}
+}
+
+GER_add_cdu = {
+	if = {
+		limit = {
+			check_variable = {
+				var = GER_cdu_popularity_var_temp
+				value = 0
+				compare = greater_than
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					conservative < 0.33
+					conservative > 0.5
+				}
+			}
+			multiply_temp_variable = {
+				var = GER_cdu_popularity_var_temp
+				value = 0.66
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					conservative < 0.5
+					conservative > 0.66
+				}
+			}
+			multiply_temp_variable = {
+				var = GER_cdu_popularity_var_temp
+				value = 0.5
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					conservative < 0.66
+					conservative > 0.75
+				}
+			}
+			multiply_temp_variable = {
+				var = GER_cdu_popularity_var_temp
+				value = 0.34
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					conservative < 0.75
+				}
+			}
+			multiply_temp_variable = {
+				var = GER_cdu_popularity_var_temp
+				value = 0.25
+			}
+		}
+	}
+	custom_effect_tooltip = GER_add_cdu_tt
+	hidden_effect = {
+		add_popularity = {
+			ideology = conservative
+			popularity = GER_cdu_popularity_var_temp
+		}
+		GER_popularity_change = yes
+	}
+}
+
+GER_add_afd = {
+	if = {
+		limit = {
+			check_variable = {
+				var = GER_afd_popularity_var_temp
+				value = 0
+				compare = greater_than
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					authoritarian_democrat < 0.33
+					authoritarian_democrat > 0.5
+				}
+			}
+			multiply_temp_variable = {
+				var = GER_afd_popularity_var_temp
+				value = 0.66
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					authoritarian_democrat < 0.5
+					authoritarian_democrat > 0.66
+				}
+			}
+			multiply_temp_variable = {
+				var = GER_afd_popularity_var_temp
+				value = 0.5
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					authoritarian_democrat < 0.66
+					authoritarian_democrat > 0.75
+				}
+			}
+			multiply_temp_variable = {
+				var = GER_afd_popularity_var_temp
+				value = 0.34
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					authoritarian_democrat < 0.75
+				}
+			}
+			multiply_temp_variable = {
+				var = GER_afd_popularity_var_temp
+				value = 0.25
+			}
+		}
+	}
+	custom_effect_tooltip = GER_add_afd_tt
+	hidden_effect = {
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = GER_afd_popularity_var_temp
+		}
+		GER_popularity_change = yes
+	}
+}
+
+GER_add_ruling_party = {
+	if = {
+		limit = {
+			has_government = libertarian_socialist
+		}
+		set_temp_variable = {
+			var = GER_die_linke_popularity_var_temp
+			value = GER_ruling_popularity_var_temp
+		}
+		GER_add_die_linke = yes
+	}
+	else_if = {
+		limit = {
+			has_government = social_liberal
+		}
+		set_temp_variable = {
+			var = GER_greens_popularity_var_temp
+			value = GER_ruling_popularity_var_temp
+		}
+		GER_add_greens = yes
+	}
+	else_if = {
+		limit = {
+			has_government = social_democrat
+		}
+		set_temp_variable = {
+			var = GER_spd_popularity_var_temp
+			value = GER_ruling_popularity_var_temp
+		}
+		GER_add_spd = yes
+	}
+	else_if = {
+		limit = {
+			has_government = market_liberal
+		}
+		set_temp_variable = {
+			var = GER_fdp_popularity_var_temp
+			value = GER_ruling_popularity_var_temp
+		}
+		GER_add_fdp = yes
+	}
+	else_if = {
+		limit = {
+			has_government = conservative
+		}
+		set_temp_variable = {
+			var = GER_cdu_popularity_var_temp
+			value = GER_ruling_popularity_var_temp
+		}
+		GER_add_cdu = yes
+	}
+	else_if = {
+		limit = {
+			has_government = authoritarian_democrat
+		}
+		set_temp_variable = {
+			var = GER_afd_popularity_var_temp
+			value = GER_ruling_popularity_var_temp
+		}
+		GER_add_afd = yes
+	}
+}
+
+GER_add_support_die_linke = {
+	custom_effect_tooltip = GER_add_support_die_linke_tooltip
+	add_to_variable = {
+		var = GER_support_die_linke_var
+		value = GER_support_die_linke_var_temp
+	}
+	clamp_variable = {
+		var = GER_support_die_linke_var
+		min = 0
+		max = 1
+	}
+	GER_popularity_change = yes
+}
+
+GER_add_support_greens = {
+	custom_effect_tooltip = GER_add_support_greens_tooltip
+	add_to_variable = {
+		var = GER_support_greens_var
+		value = GER_support_greens_var_temp
+	}
+	clamp_variable = {
+		var = GER_support_greens_var
+		min = 0
+		max = 1
+	}
+	GER_popularity_change = yes
+}
+
+GER_add_support_spd = {
+	custom_effect_tooltip = GER_add_support_spd_tooltip
+	add_to_variable = {
+		var = GER_support_spd_var
+		value = GER_support_spd_var_temp
+	}
+	clamp_variable = {
+		var = GER_support_spd_var
+		min = 0
+		max = 1
+	}
+	GER_popularity_change = yes
+}
+
+GER_add_support_fdp = {
+	custom_effect_tooltip = GER_add_support_fdp_tooltip
+	add_to_variable = {
+		var = GER_support_fdp_var
+		value = GER_support_fdp_var_temp
+	}
+	clamp_variable = {
+		var = GER_support_fdp_var
+		min = 0
+		max = 1
+	}
+	GER_popularity_change = yes
+}
+
+GER_add_support_cdu = {
+	custom_effect_tooltip = GER_add_support_cdu_tooltip
+	add_to_variable = {
+		var = GER_support_cdu_var
+		value = GER_support_cdu_var_temp
+	}
+	clamp_variable = {
+		var = GER_support_cdu_var
+		min = 0
+		max = 1
+	}
+	GER_popularity_change = yes
+}
+
+GER_add_support_afd = {
+	custom_effect_tooltip = GER_add_support_afd_tooltip
+	add_to_variable = {
+		var = GER_support_afd_var
+		value = GER_support_afd_var_temp
+	}
+	clamp_variable = {
+		var = GER_support_afd_var
+		min = 0
+		max = 1
+	}
+	GER_popularity_change = yes
+}
+
+GER_add_support_ruling_party = {
+	if = {
+		limit = {
+			has_government = libertarian_socialist
+		}
+		set_temp_variable = {
+			var = GER_support_die_linke_var_temp
+			value = GER_support_ruling_var_temp
+		}
+		GER_add_support_die_linke = yes
+	}
+	else_if = {
+		limit = {
+			has_government = social_liberal
+		}
+		set_temp_variable = {
+			var = GER_support_greens_var_temp
+			value = GER_support_ruling_var_temp
+		}
+		GER_add_support_greens = yes
+	}
+	else_if = {
+		limit = {
+			has_government = social_democrat
+		}
+		set_temp_variable = {
+			var = GER_support_spd_var_temp
+			value = GER_support_ruling_var_temp
+		}
+		GER_add_support_spd = yes
+	}
+	else_if = {
+		limit = {
+			has_government = market_liberal
+		}
+		set_temp_variable = {
+			var = GER_support_fdp_var_temp
+			value = GER_support_ruling_var_temp
+		}
+		GER_add_support_fdp = yes
+	}
+	else_if = {
+		limit = {
+			has_government = conservative
+		}
+		set_temp_variable = {
+			var = GER_support_cdu_var_temp
+			value = GER_support_ruling_var_temp
+		}
+		GER_add_support_cdu = yes
+	}
+	else_if = {
+		limit = {
+			has_government = authoritarian_democrat
+		}
+		set_temp_variable = {
+			var = GER_support_afd_var_temp
+			value = GER_support_ruling_var_temp
+		}
+		GER_add_support_afd = yes
+	}
+}
+
+GER_add_green_economy_points = {
+	custom_effect_tooltip = GER_add_green_economy_points_tooltip
+	add_to_variable = {
+		var = GER_green_economy_points_var
+		value = GER_green_economy_points_var_temp
+	}
+}
+
+GER_add_blue_economy_points = {
+	custom_effect_tooltip = GER_add_blue_economy_points_tooltip
+	add_to_variable = {
+		var = GER_blue_economy_points_var
+		value = GER_blue_economy_points_var_temp
+	}
+}
+
+GER_add_rearm_progress = {
+	custom_effect_tooltip = GER_add_rearm_progress_tooltip
+	add_to_variable = {
+		var = GER_rearm_europe_plan_tracker
+		value = GER_rearm_europe_plan_temp_tracker
+	}
+}
+
+GER_popularity_change = {
+	#Adjusts Party Popularity
+	#Die Linke
+	set_variable = {
+		var = GER_die_linke_popularity_var
+		value = party_popularity@libertarian_socialist
+	}
+	set_variable = {
+		var = GER_die_linke_popularity_dynamic_var
+		value = GER_die_linke_popularity_var
+	}
+	multiply_variable = {
+		#Makes 100% popularity with 80% support or more, 40%
+		var = GER_die_linke_popularity_dynamic_var
+		value = 0.4
+	}
+	if = {
+		#Very Adversive
+		limit = {
+			check_variable = {
+				var = GER_support_die_linke_var
+				value = 0.2
+				compare = less_than
+			}
+		}
+		multiply_variable = {
+			var = GER_die_linke_popularity_dynamic_var
+			value = -1
+		}
+	}
+	else_if = {
+		#Adversive
+		limit = {
+			check_variable = {
+				var = GER_support_die_linke_var
+				value = 0.2
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = GER_support_die_linke_var
+				value = 0.4
+				compare = less_than
+			}
+		}
+		multiply_variable = {
+			var = GER_die_linke_popularity_dynamic_var
+			value = -0.5
+		}
+	}
+	else_if = {
+		#Indifferent
+		limit = {
+			check_variable = {
+				var = GER_support_die_linke_var
+				value = 0.4
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = GER_support_die_linke_var
+				value = 0.6
+				compare = less_than
+			}
+		}
+		multiply_variable = {
+			var = GER_die_linke_popularity_dynamic_var
+			value = 0
+		}
+	}
+	else_if = {
+		#Supportive
+		limit = {
+			check_variable = {
+				var = GER_support_die_linke_var
+				value = 0.6
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = GER_support_die_linke_var
+				value = 0.8
+				compare = less_than
+			}
+		}
+		multiply_variable = {
+			var = GER_die_linke_popularity_dynamic_var
+			value = 0.5
+		}
+	}
+	#Greens
+	set_variable = {
+		var = GER_greens_popularity_var
+		value = party_popularity@social_liberal
+	}
+	set_variable = {
+		var = GER_greens_popularity_dynamic_var
+		value = GER_greens_popularity_var
+	}
+	multiply_variable = {
+		#Makes 100% popularity with 80% support or more, 40%
+		var = GER_greens_popularity_dynamic_var
+		value = 0.4
+	}
+	if = {
+		#Very Adversive
+		limit = {
+			check_variable = {
+				var = GER_support_greens_var
+				value = 0.2
+				compare = less_than
+			}
+		}
+		multiply_variable = {
+			var = GER_greens_popularity_dynamic_var
+			value = -1
+		}
+	}
+	else_if = {
+		#Adversive
+		limit = {
+			check_variable = {
+				var = GER_support_greens_var
+				value = 0.2
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = GER_support_greens_var
+				value = 0.4
+				compare = less_than
+			}
+		}
+		multiply_variable = {
+			var = GER_greens_popularity_dynamic_var
+			value = -0.5
+		}
+	}
+	else_if = {
+		#Indifferent
+		limit = {
+			check_variable = {
+				var = GER_support_greens_var
+				value = 0.4
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = GER_support_greens_var
+				value = 0.6
+				compare = less_than
+			}
+		}
+		multiply_variable = {
+			var = GER_greens_popularity_dynamic_var
+			value = 0
+		}
+	}
+	else_if = {
+		#Supportive
+		limit = {
+			check_variable = {
+				var = GER_support_greens_var
+				value = 0.6
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = GER_support_greens_var
+				value = 0.8
+				compare = less_than
+			}
+		}
+		multiply_variable = {
+			var = GER_greens_popularity_dynamic_var
+			value = 0.5
+		}
+	}
+	#SPD
+	set_variable = {
+		var = GER_spd_popularity_var
+		value = party_popularity@social_democrat
+	}
+	set_variable = {
+		var = GER_spd_popularity_dynamic_var
+		value = GER_spd_popularity_var
+	}
+	multiply_variable = {
+		#Makes 100% popularity with 80% support or more, 20%
+		var = GER_spd_popularity_dynamic_var
+		value = 0.2
+	}
+	if = {
+		#Very Adversive
+		limit = {
+			check_variable = {
+				var = GER_support_spd_var
+				value = 0.2
+				compare = less_than
+			}
+		}
+		multiply_variable = {
+			var = GER_spd_popularity_dynamic_var
+			value = -1
+		}
+	}
+	else_if = {
+		#Adversive
+		limit = {
+			check_variable = {
+				var = GER_support_spd_var
+				value = 0.2
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = GER_support_spd_var
+				value = 0.4
+				compare = less_than
+			}
+		}
+		multiply_variable = {
+			var = GER_spd_popularity_dynamic_var
+			value = -0.5
+		}
+	}
+	else_if = {
+		#Indifferent
+		limit = {
+			check_variable = {
+				var = GER_support_spd_var
+				value = 0.4
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = GER_support_spd_var
+				value = 0.6
+				compare = less_than
+			}
+		}
+		multiply_variable = {
+			var = GER_spd_popularity_dynamic_var
+			value = 0
+		}
+	}
+	else_if = {
+		#Supportive
+		limit = {
+			check_variable = {
+				var = GER_support_spd_var
+				value = 0.6
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = GER_support_spd_var
+				value = 0.8
+				compare = less_than
+			}
+		}
+		multiply_variable = {
+			var = GER_spd_popularity_dynamic_var
+			value = 0.5
+		}
+	}
+	#FDP
+	set_variable = {
+		var = GER_fdp_popularity_var
+		value = party_popularity@market_liberal
+	}
+	set_variable = {
+		var = GER_fdp_popularity_dynamic_var
+		value = GER_fdp_popularity_var
+	}
+	multiply_variable = {
+		#Makes 100% popularity with 80% support or more, 40%
+		var = GER_fdp_popularity_dynamic_var
+		value = 0.4
+	}
+	if = {
+		#Very Adversive
+		limit = {
+			check_variable = {
+				var = GER_support_fdp_var
+				value = 0.2
+				compare = less_than
+			}
+		}
+		multiply_variable = {
+			var = GER_fdp_popularity_dynamic_var
+			value = -1
+		}
+	}
+	else_if = {
+		#Adversive
+		limit = {
+			check_variable = {
+				var = GER_support_fdp_var
+				value = 0.2
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = GER_support_fdp_var
+				value = 0.4
+				compare = less_than
+			}
+		}
+		multiply_variable = {
+			var = GER_fdp_popularity_dynamic_var
+			value = -0.5
+		}
+	}
+	else_if = {
+		#Indifferent
+		limit = {
+			check_variable = {
+				var = GER_support_fdp_var
+				value = 0.4
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = GER_support_fdp_var
+				value = 0.6
+				compare = less_than
+			}
+		}
+		multiply_variable = {
+			var = GER_fdp_popularity_dynamic_var
+			value = 0
+		}
+	}
+	else_if = {
+		#Supportive
+		limit = {
+			check_variable = {
+				var = GER_support_fdp_var
+				value = 0.6
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = GER_support_fdp_var
+				value = 0.8
+				compare = less_than
+			}
+		}
+		multiply_variable = {
+			var = GER_fdp_popularity_dynamic_var
+			value = 0.5
+		}
+	}
+	#CDU
+	set_variable = {
+		var = GER_cdu_popularity_var
+		value = party_popularity@conservative
+	}
+	set_variable = {
+		var = GER_cdu_popularity_dynamic_var
+		value = GER_cdu_popularity_var
+	}
+	multiply_variable = {
+		var = GER_cdu_popularity_dynamic_var
+		value = 0.5
+	}
+	if = {
+		#Very Adversive
+		limit = {
+			check_variable = {
+				var = GER_support_cdu_var
+				value = 0.2
+				compare = less_than
+			}
+		}
+		multiply_variable = {
+			var = GER_cdu_popularity_dynamic_var
+			value = -1
+		}
+	}
+	else_if = {
+		#Adversive
+		limit = {
+			check_variable = {
+				var = GER_support_cdu_var
+				value = 0.2
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = GER_support_cdu_var
+				value = 0.4
+				compare = less_than
+			}
+		}
+		multiply_variable = {
+			var = GER_cdu_popularity_dynamic_var
+			value = -0.5
+		}
+	}
+	else_if = {
+		#Indifferent
+		limit = {
+			check_variable = {
+				var = GER_support_cdu_var
+				value = 0.4
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = GER_support_cdu_var
+				value = 0.6
+				compare = less_than
+			}
+		}
+		multiply_variable = {
+			var = GER_cdu_popularity_dynamic_var
+			value = 0
+		}
+	}
+	else_if = {
+		#Supportive
+		limit = {
+			check_variable = {
+				var = GER_support_cdu_var
+				value = 0.6
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = GER_support_cdu_var
+				value = 0.8
+				compare = less_than
+			}
+		}
+		multiply_variable = {
+			var = GER_cdu_popularity_dynamic_var
+			value = 0.5
+		}
+	}
+	#AfD
+	set_variable = {
+		var = GER_afd_popularity_var
+		value = party_popularity@authoritarian_democrat
+	}
+	set_variable = {
+		var = GER_afd_popularity_dynamic_var
+		value = GER_afd_popularity_var
+	}
+	multiply_variable = {
+		#Makes 100% popularity with 80% support or more, 20%
+		var = GER_afd_popularity_dynamic_var
+		value = 0.2
+	}
+	if = {
+		#Very Adversive
+		limit = {
+			check_variable = {
+				var = GER_support_afd_var
+				value = 0.2
+				compare = less_than
+			}
+		}
+		multiply_variable = {
+			var = GER_afd_popularity_dynamic_var
+			value = -1
+		}
+	}
+	else_if = {
+		#Adversive
+		limit = {
+			check_variable = {
+				var = GER_support_afd_var
+				value = 0.2
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = GER_support_afd_var
+				value = 0.4
+				compare = less_than
+			}
+		}
+		multiply_variable = {
+			var = GER_afd_popularity_dynamic_var
+			value = -0.5
+		}
+	}
+	else_if = {
+		#Indifferent
+		limit = {
+			check_variable = {
+				var = GER_support_afd_var
+				value = 0.4
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = GER_support_afd_var
+				value = 0.6
+				compare = less_than
+			}
+		}
+		multiply_variable = {
+			var = GER_afd_popularity_dynamic_var
+			value = 0
+		}
+	}
+	else_if = {
+		#Supportive
+		limit = {
+			check_variable = {
+				var = GER_support_afd_var
+				value = 0.6
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = GER_support_afd_var
+				value = 0.8
+				compare = less_than
+			}
+		}
+		multiply_variable = {
+			var = GER_afd_popularity_dynamic_var
+			value = 0.5
+		}
+	}
+	GER_bundestag_support_change = yes
+}
+
+GER_bundestag_support_change = {
+	#Updates Bundestag Total Support
+	set_temp_variable = {
+		var = GER_support_bundestag_total_var_temp
+		value = 0
+	}
+	#Die Linke
+	set_temp_variable = {
+		var = GER_die_linke_support_bundestag_var_temp
+		value = party_popularity@libertarian_socialist
+	}
+	if = {
+		#Indifferent Or Lower
+		limit = {
+			check_variable = {
+				var = GER_support_die_linke_var
+				value = 0.6
+				compare = less_than
+			}
+		}
+		multiply_temp_variable = {
+			var = GER_die_linke_support_bundestag_var_temp
+			value = 0
+		}
+	}
+	else_if = {
+		#Supportive
+		limit = {
+			check_variable = {
+				var = GER_support_die_linke_var
+				value = 0.6
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = GER_support_die_linke_var
+				value = 0.8
+				compare = less_than
+			}
+		}
+		multiply_temp_variable = {
+			var = GER_die_linke_support_bundestag_var_temp
+			value = 0.5
+		}
+	}
+	add_to_temp_variable = {
+		var = GER_support_bundestag_total_var_temp
+		value = GER_die_linke_support_bundestag_var_temp
+	}
+	#Greens
+	set_temp_variable = {
+		var = GER_greens_support_bundestag_var_temp
+		value = party_popularity@social_liberal
+	}
+	if = {
+		#Indifferent Or Lower
+		limit = {
+			check_variable = {
+				var = GER_support_greens_var
+				value = 0.6
+				compare = less_than
+			}
+		}
+		multiply_temp_variable = {
+			var = GER_greens_support_bundestag_var_temp
+			value = 0
+		}
+	}
+	else_if = {
+		#Supportive
+		limit = {
+			check_variable = {
+				var = GER_support_greens_var
+				value = 0.6
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = GER_support_greens_var
+				value = 0.8
+				compare = less_than
+			}
+		}
+		multiply_temp_variable = {
+			var = GER_greens_support_bundestag_var_temp
+			value = 0.5
+		}
+	}
+	add_to_temp_variable = {
+		var = GER_support_bundestag_total_var_temp
+		value = GER_greens_support_bundestag_var_temp
+	}
+	#SPD
+	set_temp_variable = {
+		var = GER_spd_support_bundestag_var_temp
+		value = party_popularity@social_democrat
+	}
+	if = {
+		#Indifferent Or Lower
+		limit = {
+			check_variable = {
+				var = GER_support_spd_var
+				value = 0.6
+				compare = less_than
+			}
+		}
+		multiply_temp_variable = {
+			var = GER_spd_support_bundestag_var_temp
+			value = 0
+		}
+	}
+	else_if = {
+		#Supportive
+		limit = {
+			check_variable = {
+				var = GER_support_spd_var
+				value = 0.6
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = GER_support_spd_var
+				value = 0.8
+				compare = less_than
+			}
+		}
+		multiply_temp_variable = {
+			var = GER_spd_support_bundestag_var_temp
+			value = 0.5
+		}
+	}
+	add_to_temp_variable = {
+		var = GER_support_bundestag_total_var_temp
+		value = GER_spd_support_bundestag_var_temp
+	}
+	#FDP
+	set_temp_variable = {
+		var = GER_fdp_support_bundestag_var_temp
+		value = party_popularity@market_liberal
+	}
+	if = {
+		#Indifferent Or Lower
+		limit = {
+			check_variable = {
+				var = GER_support_fdp_var
+				value = 0.6
+				compare = less_than
+			}
+		}
+		multiply_temp_variable = {
+			var = GER_fdp_support_bundestag_var_temp
+			value = 0
+		}
+	}
+	else_if = {
+		#Supportive
+		limit = {
+			check_variable = {
+				var = GER_support_fdp_var
+				value = 0.6
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = GER_support_fdp_var
+				value = 0.8
+				compare = less_than
+			}
+		}
+		multiply_temp_variable = {
+			var = GER_fdp_support_bundestag_var_temp
+			value = 0.5
+		}
+	}
+	add_to_temp_variable = {
+		var = GER_support_bundestag_total_var_temp
+		value = GER_fdp_support_bundestag_var_temp
+	}
+	#CDU
+	set_temp_variable = {
+		var = GER_cdu_support_bundestag_var_temp
+		value = party_popularity@conservative
+	}
+	if = {
+		#Indifferent Or Lower
+		limit = {
+			check_variable = {
+				var = GER_support_cdu_var
+				value = 0.6
+				compare = less_than
+			}
+		}
+		multiply_temp_variable = {
+			var = GER_cdu_support_bundestag_var_temp
+			value = 0
+		}
+	}
+	else_if = {
+		#Supportive
+		limit = {
+			check_variable = {
+				var = GER_support_cdu_var
+				value = 0.6
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = GER_support_cdu_var
+				value = 0.8
+				compare = less_than
+			}
+		}
+		multiply_temp_variable = {
+			var = GER_cdu_support_bundestag_var_temp
+			value = 0.5
+		}
+	}
+	add_to_temp_variable = {
+		var = GER_support_bundestag_total_var_temp
+		value = GER_cdu_support_bundestag_var_temp
+	}
+	#AfD
+	set_temp_variable = {
+		var = GER_afd_support_bundestag_var_temp
+		value = party_popularity@authoritarian_democrat
+	}
+	if = {
+		#Indifferent Or Lower
+		limit = {
+			check_variable = {
+				var = GER_support_afd_var
+				value = 0.6
+				compare = less_than
+			}
+		}
+		multiply_temp_variable = {
+			var = GER_afd_support_bundestag_var_temp
+			value = 0
+		}
+	}
+	else_if = {
+		#Supportive
+		limit = {
+			check_variable = {
+				var = GER_support_afd_var
+				value = 0.6
+				compare = greater_than_or_equals
+			}
+			check_variable = {
+				var = GER_support_afd_var
+				value = 0.8
+				compare = less_than
+			}
+		}
+		multiply_temp_variable = {
+			var = GER_afd_support_bundestag_var_temp
+			value = 0.5
+		}
+	}
+	add_to_temp_variable = {
+		var = GER_support_bundestag_total_var_temp
+		value = GER_afd_support_bundestag_var_temp
+	}
+	#Total
+	set_variable = {
+		var = GER_support_bundestag_total_var
+		value = GER_support_bundestag_total_var_temp
+	}
+}
+
+#Old
+GER_balance_influence = {
+	if = {
+		#Die Linke
+		limit = {
+			check_variable = {
+				target_var_temp = 1
+			}
+		}
+		divide_temp_variable = {
+			GER_fdp_popularity_var_temp = 4
+		}
+		multiply_temp_variable = {
+			GER_fdp_popularity_var_temp = -1
+		}
+		add_to_variable = {
+			GER_greens_popularity_var = GER_fdp_popularity_var_temp
+		}
+		add_to_variable = {
+			GER_spd_popularity_var = GER_fdp_popularity_var_temp
+		}
+		add_to_variable = {
+			GER_cdu_popularity_var = GER_fdp_popularity_var_temp
+		}
+		add_to_variable = {
+			GER_afd_popularity_var = GER_fdp_popularity_var_temp
+		}
+	}
+	else_if = {
+		#Greens
+		limit = {
+			check_variable = {
+				target_var_temp = 2
+			}
+		}
+		divide_temp_variable = {
+			GER_greens_popularity_var_temp = 4
+		}
+		multiply_temp_variable = {
+			GER_greens_popularity_var_temp = -1
+		}
+		add_to_variable = {
+			GER_fdp_popularity_var = GER_greens_popularity_var_temp
+		}
+		add_to_variable = {
+			GER_spd_popularity_var = GER_greens_popularity_var_temp
+		}
+		add_to_variable = {
+			GER_cdu_popularity_var = GER_greens_popularity_var_temp
+		}
+		add_to_variable = {
+			GER_afd_popularity_var = GER_greens_popularity_var_temp
+		}
+	}
+	else_if = {
+		#SPD
+		limit = {
+			check_variable = {
+				target_var_temp = 3
+			}
+		}
+		divide_temp_variable = {
+			GER_spd_popularity_var_temp = 4
+		}
+		multiply_temp_variable = {
+			GER_spd_popularity_var_temp = -1
+		}
+		add_to_variable = {
+			GER_greens_popularity_var = GER_spd_popularity_var_temp
+		}
+		add_to_variable = {
+			GER_fdp_popularity_var = GER_spd_popularity_var_temp
+		}
+		add_to_variable = {
+			GER_cdu_popularity_var = GER_spd_popularity_var_temp
+		}
+		add_to_variable = {
+			GER_afd_popularity_var = GER_spd_popularity_var_temp
+		}
+	}
+	else_if = {
+		#CDU
+		limit = {
+			check_variable = {
+				target_var_temp = 4
+			}
+		}
+		divide_temp_variable = {
+			GER_cdu_popularity_var_temp = 4
+		}
+		multiply_temp_variable = {
+			GER_cdu_popularity_var_temp = -1
+		}
+		add_to_variable = {
+			GER_greens_popularity_var = GER_cdu_popularity_var_temp
+		}
+		add_to_variable = {
+			GER_spd_popularity_var = GER_cdu_popularity_var_temp
+		}
+		add_to_variable = {
+			GER_fdp_popularity_var = GER_cdu_popularity_var_temp
+		}
+		add_to_variable = {
+			GER_afd_popularity_var = GER_cdu_popularity_var_temp
+		}
+	}
+	else_if = {
+		#AFD
+		limit = {
+			check_variable = {
+				target_var_temp = 5
+			}
+		}
+		divide_temp_variable = {
+			GER_afd_popularity_var_temp = 4
+		}
+		multiply_temp_variable = {
+			GER_afd_popularity_var_temp = -1
+		}
+		add_to_variable = {
+			GER_greens_popularity_var = GER_afd_popularity_var_temp
+		}
+		add_to_variable = {
+			GER_spd_popularity_var = GER_afd_popularity_var_temp
+		}
+		add_to_variable = {
+			GER_cdu_popularity_var = GER_afd_popularity_var_temp
+		}
+		add_to_variable = {
+			GER_fdp_popularity_var = GER_afd_popularity_var_temp
+		}
+	}
+	set_temp_variable = {
+		total_popularity = 0
+	}
+	clamp_variable = {
+		var = GER_fdp_popularity_var
+		min = 0
+		max = 1
+	}
+	add_to_temp_variable = {
+		total_popularity = GER_fdp_popularity_var
+	}
+	clamp_variable = {
+		var = GER_greens_popularity_var
+		min = 0
+		max = 1
+	}
+	add_to_temp_variable = {
+		total_popularity = GER_greens_popularity_var
+	}
+	clamp_variable = {
+		var = GER_spd_popularity_var
+		min = 0
+		max = 1
+	}
+	add_to_temp_variable = {
+		total_popularity = GER_spd_popularity_var
+	}
+	clamp_variable = {
+		var = GER_afd_popularity_var
+		min = 0
+		max = 1
+	}
+	add_to_temp_variable = {
+		total_popularity = GER_afd_popularity_var
+	}
+	clamp_variable = {
+		var = GER_cdu_popularity_var
+		min = 0
+		max = 1
+	}
+	add_to_temp_variable = {
+		total_popularity = GER_cdu_popularity_var
+	}
+	if = {
+		limit = {
+			check_variable = {
+				total_popularity > 1
+			}
+		}
+		subtract_from_temp_variable = {
+			total_popularity = 1
+		}
+		hidden_effect = {
+			random_list = {
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							check_variable = {
+								target_var_temp = 1
+							}
+							check_variable = {
+								GER_fdp_popularity_var < total_popularity
+							}
+						}
+					}
+					modifier = {
+						factor = 2
+						check_variable = {
+							GER_fdp_popularity_var > GER_afd_popularity_var
+						}
+						check_variable = {
+							GER_fdp_popularity_var > GER_greens_popularity_var
+						}
+						check_variable = {
+							GER_fdp_popularity_var > GER_spd_popularity_var
+						}
+						check_variable = {
+							GER_fdp_popularity_var > GER_cdu_popularity_var
+						}
+					}
+					subtract_from_variable = {
+						GER_fdp_popularity_var = total_popularity
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							check_variable = {
+								target_var_temp = 2
+							}
+							check_variable = {
+								GER_greens_popularity_var < total_popularity
+							}
+						}
+					}
+					modifier = {
+						factor = 2
+						check_variable = {
+							GER_greens_popularity_var > GER_fdp_popularity_var
+						}
+						check_variable = {
+							GER_greens_popularity_var > GER_afd_popularity_var
+						}
+						check_variable = {
+							GER_greens_popularity_var > GER_spd_popularity_var
+						}
+						check_variable = {
+							GER_greens_popularity_var > GER_cdu_popularity_var
+						}
+					}
+					subtract_from_variable = {
+						GER_greens_popularity_var = total_popularity
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							check_variable = {
+								target_var_temp = 3
+							}
+							check_variable = {
+								GER_spd_popularity_var < total_popularity
+							}
+						}
+					}
+					modifier = {
+						factor = 2
+						check_variable = {
+							GER_spd_popularity_var > GER_fdp_popularity_var
+						}
+						check_variable = {
+							GER_spd_popularity_var > GER_greens_popularity_var
+						}
+						check_variable = {
+							GER_spd_popularity_var > GER_afd_popularity_var
+						}
+						check_variable = {
+							GER_spd_popularity_var > GER_cdu_popularity_var
+						}
+					}
+					subtract_from_variable = {
+						GER_spd_popularity_var = total_popularity
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							check_variable = {
+								target_var_temp = 4
+							}
+							check_variable = {
+								GER_cdu_popularity_var < total_popularity
+							}
+						}
+					}
+					modifier = {
+						factor = 2
+						check_variable = {
+							GER_cdu_popularity_var > GER_fdp_popularity_var
+						}
+						check_variable = {
+							GER_cdu_popularity_var > GER_greens_popularity_var
+						}
+						check_variable = {
+							GER_cdu_popularity_var > GER_spd_popularity_var
+						}
+						check_variable = {
+							GER_cdu_popularity_var > GER_afd_popularity_var
+						}
+					}
+					subtract_from_variable = {
+						GER_cdu_popularity_var = total_popularity
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						OR = {
+							check_variable = {
+								target_var_temp = 5
+							}
+							check_variable = {
+								GER_afd_popularity_var < total_popularity
+							}
+						}
+					}
+					modifier = {
+						factor = 2
+						check_variable = {
+							GER_afd_popularity_var > GER_fdp_popularity_var
+						}
+						check_variable = {
+							GER_afd_popularity_var > GER_greens_popularity_var
+						}
+						check_variable = {
+							GER_afd_popularity_var > GER_spd_popularity_var
+						}
+						check_variable = {
+							GER_afd_popularity_var > GER_cdu_popularity_var
+						}
+					}
+					subtract_from_variable = {
+						GER_afd_popularity_var = total_popularity
+					}
+				}
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			check_variable = {
+				total_popularity < 1
+			}
+		}
+		subtract_from_temp_variable = {
+			total_popularity = 1
+		}
+		multiply_temp_variable = {
+			total_popularity = -1
+		}
+		hidden_effect = {
+			random_list = {
+				10 = {
+					modifier = {
+						factor = 0
+						check_variable = {
+							target_var_temp = 1
+						}
+					}
+					modifier = {
+						factor = 2
+						check_variable = {
+							GER_fdp_popularity_var < GER_afd_popularity_var
+						}
+						check_variable = {
+							GER_fdp_popularity_var < GER_greens_popularity_var
+						}
+						check_variable = {
+							GER_fdp_popularity_var < GER_spd_popularity_var
+						}
+						check_variable = {
+							GER_fdp_popularity_var < GER_cdu_popularity_var
+						}
+					}
+					add_to_variable = {
+						GER_fdp_popularity_var = total_popularity
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						check_variable = {
+							target_var_temp = 2
+						}
+					}
+					modifier = {
+						factor = 2
+						check_variable = {
+							GER_greens_popularity_var < GER_afd_popularity_var
+						}
+						check_variable = {
+							GER_greens_popularity_var < GER_fdp_popularity_var
+						}
+						check_variable = {
+							GER_greens_popularity_var < GER_spd_popularity_var
+						}
+						check_variable = {
+							GER_greens_popularity_var < GER_cdu_popularity_var
+						}
+					}
+					add_to_variable = {
+						GER_greens_popularity_var = total_popularity
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						check_variable = {
+							target_var_temp = 3
+						}
+					}
+					modifier = {
+						factor = 2
+						check_variable = {
+							GER_spd_popularity_var < GER_afd_popularity_var
+						}
+						check_variable = {
+							GER_spd_popularity_var < GER_greens_popularity_var
+						}
+						check_variable = {
+							GER_spd_popularity_var < GER_fdp_popularity_var
+						}
+						check_variable = {
+							GER_spd_popularity_var < GER_cdu_popularity_var
+						}
+					}
+					add_to_variable = {
+						GER_spd_popularity_var = total_popularity
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						check_variable = {
+							target_var_temp = 4
+						}
+					}
+					modifier = {
+						factor = 2
+						check_variable = {
+							GER_cdu_popularity_var < GER_afd_popularity_var
+						}
+						check_variable = {
+							GER_cdu_popularity_var < GER_greens_popularity_var
+						}
+						check_variable = {
+							GER_cdu_popularity_var < GER_spd_popularity_var
+						}
+						check_variable = {
+							GER_cdu_popularity_var < GER_fdp_popularity_var
+						}
+					}
+					add_to_variable = {
+						GER_cdu_popularity_var = total_popularity
+					}
+				}
+				10 = {
+					modifier = {
+						factor = 0
+						check_variable = {
+							target_var_temp = 5
+						}
+					}
+					modifier = {
+						factor = 2
+						check_variable = {
+							GER_afd_popularity_var < GER_fdp_popularity_var
+						}
+						check_variable = {
+							GER_afd_popularity_var < GER_greens_popularity_var
+						}
+						check_variable = {
+							GER_afd_popularity_var < GER_spd_popularity_var
+						}
+						check_variable = {
+							GER_afd_popularity_var < GER_cdu_popularity_var
+						}
+					}
+					add_to_variable = {
+						GER_afd_popularity_var = total_popularity
+					}
+				}
+			}
+		}
+	}
+	#Modifiers
+	set_variable = {
+		var = GER_fdp_popularity_dynamic_var
+		value = GER_fdp_popularity_var
+	}
+	set_variable = {
+		var = GER_greens_popularity_dynamic_var
+		value = GER_greens_popularity_var
+	}
+	set_variable = {
+		#Stability
+		var = GER_spd_popularity_dynamic_var
+		value = GER_spd_popularity_var
+	}
+	multiply_variable = {
+		var = GER_spd_popularity_dynamic_var
+		value = 0.25
+	}
+	set_variable = {
+		#Political Power
+		var = GER_cdu_popularity_dynamic_var
+		value = GER_cdu_popularity_var
+	}
+	set_variable = {
+		#Manpower
+		var = GER_afd_popularity_dynamic_var
+		value = GER_afd_popularity_var
+	}
+	multiply_variable = {
+		var = GER_afd_popularity_dynamic_var
+		value = 0.5
+	}
+}
+
+#Elections
+GER_remove_president = {
+	remove_country_leader_role = {
+		ideology = constitutionalist
+	}
+	remove_country_leader_role = {
+		ideology = social_democracy
+	}
+	remove_country_leader_role = {
+		ideology = classical_liberalism
+	}
+	remove_country_leader_role = {
+		ideology = neoliberalism
+	}
+	remove_country_leader_role = {
+		ideology = green_liberalism
+	}
+	remove_country_leader_role = {
+		ideology = eco_socialism
+	}
+	remove_country_leader_role = {
+		ideology = ultra_conservatism
+	}
+	remove_country_leader_role = {
+		ideology = left_nationalism
+	}
+}
+
+GER_add_president = {
+	add_country_leader_role = {
+		country_leader = {
+			ideology = constitutionalist
+		}
+	}
+	add_country_leader_role = {
+		country_leader = {
+			ideology = social_democracy
+		}
+	}
+	add_country_leader_role = {
+		country_leader = {
+			ideology = classical_liberalism
+		}
+	}
+	add_country_leader_role = {
+		country_leader = {
+			ideology = green_liberalism
+		}
+	}
+	add_country_leader_role = {
+		country_leader = {
+			ideology = neoliberalism
+		}
+	}
+	add_country_leader_role = {
+		country_leader = {
+			ideology = ultra_conservatism
+		}
+	}
+	add_country_leader_role = {
+		country_leader = {
+			ideology = left_nationalism
+		}
+	}
+	if = {
+		limit = {
+			is_character = GER_max_otte_char
+		}
+		add_country_leader_trait = {
+			ideology = constitutionalist
+			trait = hos_economic_populist
+		}
+		add_country_leader_trait = {
+			ideology = social_democracy
+			trait = hos_economic_populist
+		}
+		add_country_leader_trait = {
+			ideology = classical_liberalism
+			trait = hos_economic_populist
+		}
+		add_country_leader_trait = {
+			ideology = neoliberalism
+			trait = hos_economic_populist
+		}
+		add_country_leader_trait = {
+			ideology = green_liberalism
+			trait = hos_economic_populist
+		}
+		add_country_leader_trait = {
+			ideology = ultra_conservatism
+			trait = hos_economic_populist
+		}
+		add_country_leader_trait = {
+			ideology = post_leftism
+			trait = hos_economic_populist
+		}
+	}
+}
+
+GER_who_won_elections = {
+	GER_popularity_change = yes
+	random_list = {
+		10 = {
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = {
+						has_country_flag = GER_die_linke_enable_flag
+					}
+					check_variable = {
+						GER_die_linke_popularity_var < GER_greens_popularity_var
+					}
+					check_variable = {
+						GER_die_linke_popularity_var < GER_spd_popularity_var
+					}
+					check_variable = {
+						GER_die_linke_popularity_var < GER_fdp_popularity_var
+					}
+					check_variable = {
+						GER_die_linke_popularity_var < GER_cdu_popularity_var
+					}
+					check_variable = {
+						GER_die_linke_popularity_var < GER_afd_popularity_var
+					}
+				}
+			}
+			modifier = {
+				add = 9999
+				has_game_rule = {
+					rule = GER_ai_behavior
+					option = LEFT_AI_BEHAVIOR
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_government = libertarian_socialist
+					}
+				}
+				set_country_flag = GER_new_government_flag
+			}
+			set_country_flag = GER_die_linke_won_flag
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = {
+						has_country_flag = GER_greens_enable_flag
+					}
+					check_variable = {
+						GER_greens_popularity_var < GER_die_linke_popularity_var
+					}
+					check_variable = {
+						GER_greens_popularity_var < GER_spd_popularity_var
+					}
+					check_variable = {
+						GER_greens_popularity_var < GER_fdp_popularity_var
+					}
+					check_variable = {
+						GER_greens_popularity_var < GER_cdu_popularity_var
+					}
+					check_variable = {
+						GER_greens_popularity_var < GER_afd_popularity_var
+					}
+				}
+			}
+			modifier = {
+				add = 9999
+				has_game_rule = {
+					rule = GER_ai_behavior
+					option = GREENS_AI_BEHAVIOR
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_government = social_liberal
+					}
+				}
+				set_country_flag = GER_new_government_flag
+			}
+			set_country_flag = GER_greens_won_flag
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = {
+						has_country_flag = GER_spd_enable_flag
+					}
+					check_variable = {
+						GER_spd_popularity_var < GER_greens_popularity_var
+					}
+					check_variable = {
+						GER_spd_popularity_var < GER_die_linke_popularity_var
+					}
+					check_variable = {
+						GER_spd_popularity_var < GER_fdp_popularity_var
+					}
+					check_variable = {
+						GER_spd_popularity_var < GER_cdu_popularity_var
+					}
+					check_variable = {
+						GER_spd_popularity_var < GER_afd_popularity_var
+					}
+				}
+			}
+			modifier = {
+				add = 9999
+				has_game_rule = {
+					rule = GER_ai_behavior
+					option = SPD_AI_BEHAVIOR
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_government = social_democrat
+					}
+				}
+				set_country_flag = GER_new_government_flag
+			}
+			set_country_flag = GER_spd_won_flag
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = {
+						has_country_flag = GER_fdp_enable_flag
+					}
+					check_variable = {
+						GER_fdp_popularity_var < GER_greens_popularity_var
+					}
+					check_variable = {
+						GER_fdp_popularity_var < GER_spd_popularity_var
+					}
+					check_variable = {
+						GER_fdp_popularity_var < GER_die_linke_popularity_var
+					}
+					check_variable = {
+						GER_fdp_popularity_var < GER_cdu_popularity_var
+					}
+					check_variable = {
+						GER_fdp_popularity_var < GER_afd_popularity_var
+					}
+				}
+			}
+			modifier = {
+				add = 9999
+				has_game_rule = {
+					rule = GER_ai_behavior
+					option = FDP_AI_BEHAVIOR
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_government = market_liberal
+					}
+				}
+				set_country_flag = GER_new_government_flag
+			}
+			set_country_flag = GER_fdp_won_flag
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = {
+						has_country_flag = GER_cdu_enable_flag
+					}
+					check_variable = {
+						GER_cdu_popularity_var < GER_greens_popularity_var
+					}
+					check_variable = {
+						GER_cdu_popularity_var < GER_spd_popularity_var
+					}
+					check_variable = {
+						GER_cdu_popularity_var < GER_fdp_popularity_var
+					}
+					check_variable = {
+						GER_cdu_popularity_var < GER_die_linke_popularity_var
+					}
+					check_variable = {
+						GER_cdu_popularity_var < GER_afd_popularity_var
+					}
+				}
+			}
+			modifier = {
+				add = 9999
+				has_game_rule = {
+					rule = GER_ai_behavior
+					option = CDU_AI_BEHAVIOR
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_government = conservative
+					}
+				}
+				set_country_flag = GER_new_government_flag
+			}
+			set_country_flag = GER_cdu_won_flag
+		}
+		10 = {
+			modifier = {
+				factor = 0
+				OR = {
+					NOT = {
+						has_country_flag = GER_afd_enable_flag
+					}
+					check_variable = {
+						GER_afd_popularity_var < GER_greens_popularity_var
+					}
+					check_variable = {
+						GER_afd_popularity_var < GER_spd_popularity_var
+					}
+					check_variable = {
+						GER_afd_popularity_var < GER_fdp_popularity_var
+					}
+					check_variable = {
+						GER_afd_popularity_var < GER_cdu_popularity_var
+					}
+					check_variable = {
+						GER_afd_popularity_var < GER_die_linke_popularity_var
+					}
+				}
+			}
+			modifier = {
+				add = 9999
+				has_game_rule = {
+					rule = GER_ai_behavior
+					option = AFD_AI_BEHAVIOR
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_government = authoritarian_democrat
+					}
+				}
+				set_country_flag = GER_new_government_flag
+			}
+			set_country_flag = GER_afd_won_flag
+		}
+	}
+}
+
+# EU Unity
+GER_subtract_euroskepticism = {
+	custom_effect_tooltip = ER_subtract_euroskepticism_tt
+	add_to_variable = {
+		var = eu_euroskepticism_var
+		value = GER_euroskepticism_temp
+	}
+	clamp_variable = {
+		var = eu_euroskepticism_var
+		min = 0
+		max = 100
+	}
+}
+
+# Turkish Gamble
+GER_add_german_influence = {
+	custom_effect_tooltip = GER_add_german_influence_tooltip
+	add_to_variable = {
+		var = GER_Turkish_Influence
+		value = GER_Turkish_Influence_Temp
+	}
+	clamp_variable = {
+		var = GER_Turkish_Influence
+		min = 0
+		max = 110
+	}
+}
+
+GER_subtract_german_influence = {
+	custom_effect_tooltip = GER_subtract_german_influence_tooltip
+	add_to_variable = {
+		var = GER_Turkish_Influence
+		value = GER_Turkish_Influence_Temp
+	}
+	clamp_variable = {
+		var = GER_Turkish_Influence
+		min = 0
+		max = 110
+	}
+}
+
+GER_add_eu_fed = {
+	custom_effect_tooltip = eu_fed_var_tooltip
+	add_to_variable = {
+		var = eu_fed_var
+		value = eu_fed_var_temp
+	}
+	clamp_variable = {
+		var = eu_fed_var
+		min = 0
+		max = 1
+	}
+	set_variable = {
+		var = eu_fed_var_dynamic_var
+		value = eu_fed_var
+	}
+	multiply_variable = {
+		var = eu_fed_var_dynamic_var
+		value = 0.2
+	}
+}
+
+GER_add_eu_euroskepticism = {
+	custom_effect_tooltip = eu_euroskepticism_var_tooltip
+	add_to_variable = {
+		var = eu_euroskepticism_var
+		value = eu_euroskepticism_var_temp
+	}
+	clamp_variable = {
+		var = eu_euroskepticism_var
+		min = 0
+		max = 1
+	}
+}
+
+GER_add_eu_visregard_sepratism = {
+	custom_effect_tooltip = eu_visregard_sepratism_var_tooltip
+	add_to_variable = {
+		var = eu_visregard_sepratism_var
+		value = eu_visregard_sepratism_var_temp
+	}
+	clamp_variable = {
+		var = eu_visregard_sepratism_var
+		min = -1
+		max = 1
+	}
+	set_variable = {
+		var = eu_visregard_sepratism_dynamic_var
+		value = eu_visregard_sepratism_var
+	}
+	multiply_variable = {
+		var = eu_visregard_sepratism_dynamic_var
+		value = -0.25
+	}
+}
+
+UFA_increase_divisions = {
+	custom_effect_tooltip = UFA_bring_units_tt
+	add_to_variable = {
+		UFA_uprise_units = 2
+	}
+}
+
+BFW_increase_divisions = {
+	custom_effect_tooltip = BFW_bring_units_tt
+	add_to_variable = {
+		BFW_uprise_units = 2
+	}
+}
+
+BDM_increase_divisions = {
+	custom_effect_tooltip = BDM_bring_units_tt
+	add_to_variable = {
+		BDM_uprise_units = 2
+	}
+}
+
+PRA_increase_divisions = {
+	custom_effect_tooltip = PRA_bring_units_tt
+	add_to_variable = {
+		PRA_uprise_units = 2
+	}
+}
+
+GER_join_csw = {
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = GER_CSW_member_flag
+			}
+		}
+		set_country_flag = GER_CSW_member_flag
+		add_timed_idea = {
+			idea = GER_european_community_idea
+			days = 180
+		}
+		GER = {
+			add_to_variable = {
+				GER_CSW_number_of_members = 1
+			}
+			add_to_variable = {
+				GER_opinion_gain_monthly_same_ideology_factor_workers_dynamic_var = 0.005
+			}
+			add_to_variable = {
+				GER_lend_lease_tension_workers_dynamic_var = -0.005
+			}
+			add_to_variable = {
+				GER_war_stability_factor_workers_dynamic_var = 0.005
+			}
+			add_to_variable = {
+				GER_income_growth_factor_workers_dynamic_var = 0.015
+			}
+			add_to_variable = {
+				GER_industrial_development_monthly_workers_dynamic_var = 0.005
+			}
+			add_to_variable = {
+				GER_consumer_goods_factor_workers_dynamic_var = -0.005
+			}
+		}
+	}
+}
+
+GER_increase_ostalgie = {
+	#NIKITA NIKITA
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					has_idea = GER_ostalgie_idea
+					has_idea = GER_ostalgie_idea2
+					has_idea = GER_ostalgie_idea3
+					has_idea = GER_ostalgie_idea4
+				}
+			}
+		}
+		custom_effect_tooltip = GER_ostalgie_tt_no_idea
+	}
+	if = {
+		limit = {
+			has_idea = GER_ostalgie_idea
+		}
+		swap_ideas = {
+			remove_idea = GER_ostalgie_idea
+			add_idea = GER_ostalgie_idea2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_ostalgie_idea2
+		}
+		swap_ideas = {
+			remove_idea = GER_ostalgie_idea2
+			add_idea = GER_ostalgie_idea3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_ostalgie_idea3
+		}
+		swap_ideas = {
+			remove_idea = GER_ostalgie_idea3
+			add_idea = GER_ostalgie_idea4
+		}
+	}
+}
+
+GER_increase_acceleration = {
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					has_idea = GER_left_acceleration_idea
+					has_idea = GER_left_acceleration_idea2
+					has_idea = GER_left_acceleration_idea3
+					has_idea = GER_left_acceleration_idea4
+				}
+			}
+		}
+		custom_effect_tooltip = GER_left_acceleration_tt_no_idea
+	}
+	if = {
+		limit = {
+			has_idea = GER_left_acceleration_idea
+		}
+		swap_ideas = {
+			remove_idea = GER_left_acceleration_idea
+			add_idea = GER_left_acceleration_idea2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_left_acceleration_idea2
+		}
+		swap_ideas = {
+			remove_idea = GER_left_acceleration_idea2
+			add_idea = GER_left_acceleration_idea3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_left_acceleration_idea3
+		}
+		swap_ideas = {
+			remove_idea = GER_left_acceleration_idea3
+			add_idea = GER_left_acceleration_idea4
+		}
+	}
+}
+
+GER_decrease_chaos = {
+	if = {
+		limit = {
+			has_idea = GER_chaotic_revolution
+		}
+		swap_ideas = {
+			remove_idea = GER_chaotic_revolution
+			add_idea = GER_chaotic_revolution2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_chaotic_revolution2
+		}
+		swap_ideas = {
+			remove_idea = GER_chaotic_revolution2
+			add_idea = GER_chaotic_revolution3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_chaotic_revolution3
+		}
+		swap_ideas = {
+			remove_idea = GER_chaotic_revolution3
+			add_idea = GER_chaotic_revolution4
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_chaotic_revolution4
+		}
+		remove_ideas = GER_chaotic_revolution4
+	}
+}
+
+GER_decrease_nationalist = {
+	if = {
+		limit = {
+			has_idea = GER_nationalist_resistance4
+		}
+		swap_ideas = {
+			remove_idea = GER_nationalist_resistance4
+			add_idea = GER_nationalist_resistance3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_nationalist_resistance3
+		}
+		swap_ideas = {
+			remove_idea = GER_nationalist_resistance3
+			add_idea = GER_nationalist_resistance2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_nationalist_resistance2
+		}
+		swap_ideas = {
+			remove_idea = GER_nationalist_resistance2
+			add_idea = GER_nationalist_resistance1
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_nationalist_resistance1
+		}
+		remove_ideas = GER_nationalist_resistance1
+	}
+}
+
+GER_increase_nationalist = {
+	if = {
+		limit = {
+			has_idea = GER_nationalist_resistance1
+		}
+		swap_ideas = {
+			remove_idea = GER_nationalist_resistance1
+			add_idea = GER_nationalist_resistance2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_nationalist_resistance2
+		}
+		swap_ideas = {
+			remove_idea = GER_nationalist_resistance2
+			add_idea = GER_nationalist_resistance3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_nationalist_resistance3
+		}
+		swap_ideas = {
+			remove_idea = GER_nationalist_resistance3
+			add_idea = GER_nationalist_resistance4
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_nationalist_resistance4
+		}
+		remove_ideas = GER_nationalist_resistance4
+	}
+}
+
+GER_increase_steadfast = {
+	if = {
+		limit = {
+			has_idea = GER_europa_steadfast
+		}
+		swap_ideas = {
+			remove_idea = GER_europa_steadfast
+			add_idea = GER_europa_steadfast2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_europa_steadfast2
+		}
+		swap_ideas = {
+			remove_idea = GER_europa_steadfast2
+			add_idea = GER_europa_steadfast3
+		}
+	}
+}
+
+GER_increase_liberalization = {
+	if = {
+		limit = {
+			has_idea = GER_european_liberalization
+		}
+		swap_ideas = {
+			remove_idea = GER_european_liberalization
+			add_idea = GER_european_liberalization2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_european_liberalization2
+		}
+		swap_ideas = {
+			remove_idea = GER_european_liberalization2
+			add_idea = GER_european_liberalization3
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_european_liberalization3
+		}
+		swap_ideas = {
+			remove_idea = GER_european_liberalization3
+			add_idea = GER_european_liberalization4
+		}
+	}
+}
+
+GER_increase_legacy = {
+	if = {
+		limit = {
+			has_idea = GER_german_legacy_idea
+		}
+		swap_ideas = {
+			remove_idea = GER_german_legacy_idea
+			add_idea = GER_german_legacy_idea1
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_german_legacy_idea1
+		}
+		swap_ideas = {
+			remove_idea = GER_german_legacy_idea1
+			add_idea = GER_german_legacy_idea2
+		}
+	}
+}
+
+GER_add_peoples_chamber_rating = {
+	custom_effect_tooltip = GER_add_peoples_chamber_rating_tooltip
+	add_to_variable = {
+		var = GER_peoples_chamber_dynamic_var
+		value = GER_peoples_chamber_dynamic_var_temp
+	}
+	multiply_temp_variable = {
+		var = GER_peoples_chamber_dynamic_var_temp
+		value = 0.05
+	}
+	add_to_variable = {
+		var = GER_peoples_chamber_support_dynamic_var
+		value = GER_peoples_chamber_dynamic_var_temp
+	}
+	clamp_variable = {
+		var = GER_peoples_chamber_dynamic_var
+		min = 0
+		max = 1
+	}
+	clamp_variable = {
+		var = GER_peoples_chamber_support_dynamic_var
+		min = 0
+		max = 1
+	}
+}
+
+GER_increase_spd_welfare = {
+	if = {
+		limit = {
+			has_idea = GER_spd_welfare
+		}
+		swap_ideas = {
+			remove_idea = GER_spd_welfare
+			add_idea = GER_spd_welfare1
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_spd_welfare1
+		}
+		swap_ideas = {
+			remove_idea = GER_spd_welfare1
+			add_idea = GER_spd_welfare2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_spd_welfare2
+		}
+		swap_ideas = {
+			remove_idea = GER_spd_welfare2
+			add_idea = GER_spd_welfare3
+		}
+	}
+}
+
+GER_increase_invisible_hand = {
+	if = {
+		limit = {
+			has_idea = GER_invisible_hand
+		}
+		swap_ideas = {
+			remove_idea = GER_invisible_hand
+			add_idea = GER_invisible_hand1
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_invisible_hand1
+		}
+		swap_ideas = {
+			remove_idea = GER_invisible_hand1
+			add_idea = GER_invisible_hand2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_invisible_hand2
+		}
+		swap_ideas = {
+			remove_idea = GER_invisible_hand2
+			add_idea = GER_invisible_hand3
+		}
+	}
+}
+
+GER_increase_german_nostalgia = {
+	if = {
+		limit = {
+			NOT = {
+				has_idea = GER_german_nostalgia_1
+				has_idea = GER_german_nostalgia_2
+				has_idea = GER_german_nostalgia_3
+			}
+		}
+		add_ideas = GER_german_nostalgia_1
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_german_nostalgia_1
+		}
+		swap_ideas = {
+			remove_idea = GER_german_nostalgia_1
+			add_idea = GER_german_nostalgia_2
+		}
+	}
+	else_if = {
+		limit = {
+			has_idea = GER_german_nostalgia_2
+		}
+		swap_ideas = {
+			remove_idea = GER_german_nostalgia_2
+			add_idea = GER_german_nostalgia_3
+		}
+	}
+}
+
+GER_strengthen_juche = {
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					has_country_flag = GER_querfront_germany_flag
+					has_country_flag = GER_juche_germany_flag
+					has_country_flag = GER_horst_mahler_flag
+				}
+			}
+		}
+		custom_effect_tooltip = GER_juche_tt
+	}
+	add_to_variable = {
+		var = GER_juche_points_var
+		value = 1
+	}
+}
+
+GER_strengthen_querfront = {
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					has_country_flag = GER_querfront_germany_flag
+					has_country_flag = GER_juche_germany_flag
+					has_country_flag = GER_horst_mahler_flag
+				}
+			}
+		}
+		custom_effect_tooltip = GER_querfront_tt
+	}
+	add_to_variable = {
+		var = GER_querfront_points_var
+		value = 1
+	}
+}
+
+GER_gunther_decolonize_russia = {
+	every_state = {
+		limit = {
+			OR = {
+				is_core_of = FIN
+				is_core_of = SWE
+				is_core_of = DEN
+				is_core_of = NOR
+				is_core_of = LAT
+				is_core_of = LIT
+				is_core_of = EST
+				is_core_of = BLR
+				is_core_of = MLD
+				is_core_of = HUN
+				is_core_of = ROM
+				is_core_of = GRE
+				is_core_of = UKR
+				is_core_of = NOV
+			}
+		}
+		if = {
+			limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } GER = { original_tag = EST } } }
+			transfer_state_to = GER
+		}
+		else = {
+			GER = { TFR_EST_protect_anchor = yes }
+		}
+	}
+	FIN = {
+		transfer_state = 213
+		transfer_state = 722
+		set_cosmetic_tag = GUN_kolandia
+	}
+	SWE = {
+		transfer_state = 147
+		transfer_state = 215
+		transfer_state = 216
+		set_capital = {
+			state = 216
+		}
+		set_cosmetic_tag = GUN_karelia
+	}
+	DEN = {
+		transfer_state = 146
+		transfer_state = 208
+		transfer_state = 195
+		transfer_state = 244
+		set_capital = {
+			state = 195
+		}
+		set_cosmetic_tag = GUN_ingria
+	}
+	NOR = {
+		transfer_state = 214
+		transfer_state = 351
+		set_cosmetic_tag = GUN_pomorie_bjarma
+	}
+	LAT = {
+		transfer_state = 263
+		set_cosmetic_tag = GUN_novgorod
+	}
+	LIT = {
+		transfer_state = 246
+		transfer_state = 247
+		set_capital = {
+			state = 247
+		}
+		set_cosmetic_tag = GUN_tver
+	}
+	EST = {
+		transfer_state = 209
+		transfer_state = 210
+		set_capital = {
+			state = 209
+		}
+		set_cosmetic_tag = GUN_pskov
+	}
+	BLR = {
+		transfer_state = 242
+		set_cosmetic_tag = GUN_smolensk
+	}
+	MLD = {
+		transfer_state = 243
+		transfer_state = 224
+		transfer_state = 222
+		transfer_state = 220
+		transfer_state = 257
+		transfer_state = 258
+		transfer_state = 260
+		transfer_state = 240
+		transfer_state = 1283
+		set_cosmetic_tag = GUN_chernozemye_yugorussiya
+	}
+	NOV = {
+		transfer_state = 853
+		transfer_state = 1396
+		transfer_state = 218
+		set_cosmetic_tag = GUN_cossack
+	}
+	DPR = {
+		transfer_state = 217
+		transfer_state = 265
+		set_cosmetic_tag = GUN_nogai
+	}
+	NOA = {
+		transfer_state = 236
+		transfer_state = 237
+	}
+	KUB = {
+		transfer_state = 234
+		transfer_state = 238
+		set_cosmetic_tag = FER
+	}
+	DON = {
+		transfer_state = 235
+		set_cosmetic_tag = GUN_karachay_balkaria
+	}
+	CHE = {
+		transfer_state = 233
+		transfer_state = 1330
+		transfer_state = 232
+		transfer_state = 828
+		transfer_state = 1284
+	}
+	SOV = {
+		set_cosmetic_tag = GUN_zalesye
+		annex_country = {
+			target = PUR
+			transfer_troops = no
+		}
+		set_capital = {
+			state = 253
+		}
+	}
+	HNG = {
+		set_cosmetic_tag = GUN_volga
+	}
+	HUN = {
+		transfer_state = 651
+		transfer_state = 652
+		set_cosmetic_tag = GUN_bashkortostan
+	}
+	SOL = {
+		transfer_state = 252
+	}
+	YAK = {
+		set_cosmetic_tag = GUN_komi
+	}
+	GEO = {
+		transfer_state = 796
+		transfer_state = 797
+	}
+	every_country = {
+		limit = {
+			OR = {
+				tag = FIN
+				tag = SWE
+				tag = DEN
+				tag = LAT
+				tag = EST
+				tag = LIT
+				tag = BLR
+				tag = MLD
+				tag = DPR
+				tag = NOV
+				tag = KUB
+				tag = NOA
+				tag = DON
+				tag = CHE
+				tag = NOR
+				tag = SOL
+				tag = HNG
+				tag = HUN
+				tag = YAK
+			}
+		}
+		GER = {
+			puppet = PREV
+		}
+		remove_all_national_spirits = yes
+		if = {
+			limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+			TFR_EST_queue_occupation_reconciliation = yes
+		}
+		else = { load_focus_tree = generic_focus }
+		add_ideas = {
+			SOV_eu_dominated_economy_idea
+			SOV_nato_peacekeepers_idea
+			SOV_destroyed_country_idea
+			SOV_own_peoples_hate_idea
+		}
+		add_popularity = {
+			ideology = social_liberal
+			popularity = 0.8
+		}
+		set_politics = {
+			ruling_party = social_liberal
+			elections_allowed = no 
+		}
+		set_party_name = {
+			ideology = social_liberal
+			name = GER_nato_administration_party
+			long_name = GER_nato_administration_party_long
+		}
+		create_country_leader = {
+			name = GER_NATO_administration_char
+			picture = "gfx/Leaders/SYR/NATO Mandate Council.dds"
+			ideology = supervised_democracy_liberal
+		}
+	}
+	if = {
+		limit = {
+			GER = { has_completed_focus = GER_asian_gamble }
+		}
+		GER_gunther_decolonize_siberia = yes
+	}
+}
+
+GER_gunther_decolonize_siberia = {
+	KAZ = {
+		transfer_state = 583
+		transfer_state = 588
+		transfer_state = 590
+		#reloading siberia
+		transfer_state = 398
+		transfer_state = 653
+		transfer_state = 572
+		transfer_state = 582
+		transfer_state = 403
+		transfer_state = 577
+		transfer_state = 579
+		transfer_state = 580
+		transfer_state = 570
+		transfer_state = 571
+		transfer_state = 578
+		transfer_state = 569
+		transfer_state = 568
+		transfer_state = 576
+		transfer_state = 516
+		transfer_state = 567
+		transfer_state = 566
+		transfer_state = 565
+		transfer_state = 40
+		transfer_state = 654
+		transfer_state = 575
+		transfer_state = 329
+		transfer_state = 563
+		transfer_state = 564
+		transfer_state = 408
+		transfer_state = 409
+		transfer_state = 560
+		transfer_state = 657
+		transfer_state = 1328
+		transfer_state = 1293
+		transfer_state = 561
+		transfer_state = 637
+		transfer_state = 655
+	}
+	JAP = {
+		transfer_state = 537
+		transfer_state = 555
+	}
+	FLN = {
+		transfer_state = 398
+		transfer_state = 653
+		transfer_state = 572
+		transfer_state = 582
+		set_cosmetic_tag = GUN_ural
+	}
+	KIR = {
+		transfer_state = 403
+		transfer_state = 577
+		transfer_state = 579
+		transfer_state = 580
+		set_cosmetic_tag = GUN_ugra_tyumen
+	}
+	NAU = {
+		transfer_state = 570
+		transfer_state = 571
+		transfer_state = 578
+		transfer_state = 569
+		transfer_state = 568
+		transfer_state = 576
+		transfer_state = 516
+		transfer_state = 567
+		transfer_state = 566
+		transfer_state = 565
+		set_capital = {
+			state = 570
+		}
+		set_cosmetic_tag = GUN_USS
+	}
+	KKP = {
+		transfer_state = 40
+		transfer_state = 654
+		set_cosmetic_tag = GUN_altai
+	}
+	CHU = {
+		transfer_state = 575
+		drop_cosmetic_tag = yes
+	}
+	TAN = {
+		transfer_state = 329
+	}
+	OCC = {
+		transfer_state = 563
+		transfer_state = 564
+	}
+	CKK = {
+		transfer_state = 408
+		transfer_state = 409
+		transfer_state = 560
+		transfer_state = 657
+		transfer_state = 1328
+		transfer_state = 1293
+		transfer_state = 561
+		set_capital = {
+			state = 409
+		}
+		set_cosmetic_tag = GUN_pacific_federation
+	}
+	YAM = {
+		transfer_state = 637
+		transfer_state = 655
+		set_cosmetic_tag = GUN_kamchatka_chukotka
+	}
+	SEY = {
+		set_cosmetic_tag = GUN_sakha
+	}
+	every_country = {
+		limit = {
+			OR = {
+				tag = FLN
+				tag = KIR
+				tag = NAU
+				tag = KKP
+				tag = CHU
+				tag = TAN
+				tag = OCC
+				tag = CKK
+				tag = YAM
+				tag = SEY
+			}
+		}
+		GER = {
+			puppet = PREV
+		}
+		remove_all_national_spirits = yes
+		if = {
+			limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+			TFR_EST_queue_occupation_reconciliation = yes
+		}
+		else = { load_focus_tree = generic_focus }
+		add_ideas = {
+			SOV_eu_dominated_economy_idea
+			SOV_nato_peacekeepers_idea
+			SOV_destroyed_country_idea
+			SOV_own_peoples_hate_idea
+		}
+		add_popularity = {
+			ideology = social_liberal
+			popularity = 0.8
+		}
+		set_politics = {
+			ruling_party = social_liberal
+			elections_allowed = no 
+		}
+		set_party_name = {
+			ideology = social_liberal
+			name = GER_nato_administration_party
+			long_name = GER_nato_administration_party_long
+		}
+		create_country_leader = {
+			name = GER_NATO_administration_char
+			picture = "gfx/Leaders/SYR/NATO Mandate Council.dds"
+			ideology = supervised_democracy_liberal
+		}
+	}
+}
+
+GER_ultralib_eu_puppet = {
+	remove_all_national_spirits = yes
+	if = {
+		limit = {
+			GER = { has_government = social_liberal }
+		}
+		add_popularity = {
+			ideology = social_liberal
+			popularity = 0.2
+		}
+		set_politics = {
+			ruling_party = social_liberal
+			elections_allowed = no 
+		}
+		set_party_name = {
+			ideology = social_liberal
+			name = GER_volt_europa
+			long_name = GER_volt_europa
+		}
+		create_country_leader = {
+			name = GER_european_commission_char
+			picture = "gfx/leaders/GER/European Commission.dds"
+			ideology = supervised_democracy_liberal
+			traits = {
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			GER = { has_government = conservative }
+		}
+		add_popularity = {
+			ideology = conservative
+			popularity = 0.2
+		}
+		set_politics = {
+			ruling_party = conservative
+			elections_allowed = no 
+		}
+		set_party_name = {
+			ideology = conservative
+			name = GER_eu_conservative_short
+			long_name = GER_eu_conservative
+		}
+		create_country_leader = {
+			name = GER_european_commission_char
+			picture = "gfx/leaders/GER/European Commission.dds"
+			ideology = neoconservative
+			traits = {
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			GER = { has_government = authoritarian_democrat }
+		}
+		add_popularity = {
+			ideology = authoritarian_democrat
+			popularity = 0.2
+		}
+		set_politics = {
+			ruling_party = authoritarian_democrat
+			elections_allowed = no 
+		}
+		set_party_name = {
+			ideology = authoritarian_democrat
+			name = GER_volt_europa_corp
+			long_name = GER_volt_europa_corp_long
+		}
+		create_country_leader = {
+			name = GER_european_commission_char
+			picture = "gfx/leaders/GER/European Commission.dds"
+			ideology = corporatocracy
+			traits = {
+			}
+		}
+	}
+}
+
+GER_nato_mandate_puppet_PREV = {
+	GER = {
+		puppet = PREV
+	}
+	remove_all_national_spirits = yes
+	if = {
+		limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+		TFR_EST_queue_occupation_reconciliation = yes
+	}
+	else = { load_focus_tree = generic_focus }
+	add_ideas = {
+		SOV_nato_peacekeepers_idea
+	}
+	add_popularity = {
+		ideology = social_liberal
+		popularity = 0.8
+	}
+	set_politics = {
+		ruling_party = social_liberal
+		elections_allowed = no 
+	}
+	set_party_name = {
+		ideology = social_liberal
+		name = GER_nato_administration_party
+		long_name = GER_nato_administration_party_long
+	}
+	drop_cosmetic_tag = yes 
+	set_cosmetic_tag = GER_nato_administration_cosmetic
+	create_country_leader = {
+		name = GER_NATO_administration_char
+		picture = "gfx/Leaders/SYR/NATO Mandate Council.dds"
+		ideology = supervised_democracy_liberal
+	}
+}

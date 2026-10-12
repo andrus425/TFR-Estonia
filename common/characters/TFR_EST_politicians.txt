@@ -1,0 +1,37 @@
+characters = {
+ TFR_EST_kaja_kallas = {
+ name = TFR_EST_kaja_kallas
+ portraits = { civilian = { large = "gfx/leaders/Europe/portrait_europe_generic_4.dds" } }
+ country_leader = { ideology = classical_liberalism expire = "2100.1.1" desc = TFR_EST_kaja_kallas_desc }
+ }
+ TFR_EST_juri_ratas = {
+ name = TFR_EST_juri_ratas
+ portraits = { civilian = { large = "gfx/leaders/Europe/portrait_europe_generic_5.dds" } }
+ country_leader = { ideology = centrist expire = "2100.1.1" desc = TFR_EST_juri_ratas_desc }
+ }
+ TFR_EST_mart_helme = {
+ name = TFR_EST_mart_helme
+ portraits = { civilian = { large = "gfx/leaders/Europe/portrait_europe_generic_6.dds" } }
+ country_leader = { ideology = ultra_conservatism expire = "2100.1.1" desc = TFR_EST_mart_helme_desc }
+ }
+ TFR_EST_helir_valdor_seeder = {
+ name = TFR_EST_helir_valdor_seeder
+ portraits = { civilian = { large = "gfx/leaders/Europe/portrait_europe_generic_4.dds" } }
+ country_leader = { ideology = christian_conservatism expire = "2100.1.1" desc = TFR_EST_helir_valdor_seeder_desc }
+ }
+ TFR_EST_indrek_saar = {
+ name = TFR_EST_indrek_saar
+ portraits = { civilian = { large = "gfx/leaders/Europe/portrait_europe_generic_5.dds" } }
+ country_leader = { ideology = left_centrist expire = "2100.1.1" desc = TFR_EST_indrek_saar_desc }
+ }
+ TFR_EST_kristina_kallas = {
+ name = TFR_EST_kristina_kallas
+ portraits = { civilian = { large = "gfx/leaders/Europe/portrait_europe_generic_6.dds" } }
+ country_leader = { ideology = centrist expire = "2100.1.1" desc = TFR_EST_kristina_kallas_desc }
+ }
+ TFR_EST_lavly_perling = {
+ name = TFR_EST_lavly_perling
+ portraits = { civilian = { large = "gfx/leaders/Europe/portrait_europe_generic_4.dds" } }
+ country_leader = { ideology = classical_liberalism expire = "2100.1.1" desc = TFR_EST_lavly_perling_desc }
+ }
+}

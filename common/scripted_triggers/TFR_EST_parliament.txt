@@ -1,0 +1,62 @@
+TFR_EST_independent_parliament = {
+ tag = EST
+ has_country_flag = TFR_EST_initialized
+ NOT = { has_country_flag = TFR_EST_occupied }
+ is_subject = no
+}
+TFR_EST_has_confidence = { check_variable = { var = TFR_EST_confidence_seats value = 51 compare = greater_than_or_equals } }
+TFR_EST_confirmed_cabinet = { TFR_EST_independent_parliament = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_has_confidence = yes }
+TFR_EST_valid_polling = {
+ check_variable = { var = TFR_EST_vote_total value = 10000 compare = equals }
+ check_variable = { var = TFR_EST_vote_eligible value = 0 compare = greater_than }
+ check_variable = { var = TFR_EST_support_other value = 0 compare = greater_than_or_equals }
+ check_variable = { var = TFR_EST_support_other value = 10000 compare = less_than_or_equals }
+ check_variable = { var = TFR_EST_fraction_other value = 0 compare = equals }
+ check_variable = { var = TFR_EST_support_reform value = 0 compare = greater_than_or_equals }
+ check_variable = { var = TFR_EST_support_reform value = 10000 compare = less_than_or_equals }
+ check_variable = { var = TFR_EST_fraction_reform value = 0 compare = equals }
+ OR = { check_variable = { var = TFR_EST_active_reform value = 0 compare = equals } check_variable = { var = TFR_EST_active_reform value = 1 compare = equals } }
+ OR = { check_variable = { var = TFR_EST_active_reform value = 1 compare = equals } check_variable = { var = TFR_EST_support_reform value = 0 compare = equals } }
+ check_variable = { var = TFR_EST_support_centre value = 0 compare = greater_than_or_equals }
+ check_variable = { var = TFR_EST_support_centre value = 10000 compare = less_than_or_equals }
+ check_variable = { var = TFR_EST_fraction_centre value = 0 compare = equals }
+ OR = { check_variable = { var = TFR_EST_active_centre value = 0 compare = equals } check_variable = { var = TFR_EST_active_centre value = 1 compare = equals } }
+ OR = { check_variable = { var = TFR_EST_active_centre value = 1 compare = equals } check_variable = { var = TFR_EST_support_centre value = 0 compare = equals } }
+ check_variable = { var = TFR_EST_support_ekre value = 0 compare = greater_than_or_equals }
+ check_variable = { var = TFR_EST_support_ekre value = 10000 compare = less_than_or_equals }
+ check_variable = { var = TFR_EST_fraction_ekre value = 0 compare = equals }
+ OR = { check_variable = { var = TFR_EST_active_ekre value = 0 compare = equals } check_variable = { var = TFR_EST_active_ekre value = 1 compare = equals } }
+ OR = { check_variable = { var = TFR_EST_active_ekre value = 1 compare = equals } check_variable = { var = TFR_EST_support_ekre value = 0 compare = equals } }
+ check_variable = { var = TFR_EST_support_isamaa value = 0 compare = greater_than_or_equals }
+ check_variable = { var = TFR_EST_support_isamaa value = 10000 compare = less_than_or_equals }
+ check_variable = { var = TFR_EST_fraction_isamaa value = 0 compare = equals }
+ OR = { check_variable = { var = TFR_EST_active_isamaa value = 0 compare = equals } check_variable = { var = TFR_EST_active_isamaa value = 1 compare = equals } }
+ OR = { check_variable = { var = TFR_EST_active_isamaa value = 1 compare = equals } check_variable = { var = TFR_EST_support_isamaa value = 0 compare = equals } }
+ check_variable = { var = TFR_EST_support_sde value = 0 compare = greater_than_or_equals }
+ check_variable = { var = TFR_EST_support_sde value = 10000 compare = less_than_or_equals }
+ check_variable = { var = TFR_EST_fraction_sde value = 0 compare = equals }
+ OR = { check_variable = { var = TFR_EST_active_sde value = 0 compare = equals } check_variable = { var = TFR_EST_active_sde value = 1 compare = equals } }
+ OR = { check_variable = { var = TFR_EST_active_sde value = 1 compare = equals } check_variable = { var = TFR_EST_support_sde value = 0 compare = equals } }
+ check_variable = { var = TFR_EST_support_e200 value = 0 compare = greater_than_or_equals }
+ check_variable = { var = TFR_EST_support_e200 value = 10000 compare = less_than_or_equals }
+ check_variable = { var = TFR_EST_fraction_e200 value = 0 compare = equals }
+ OR = { check_variable = { var = TFR_EST_active_e200 value = 0 compare = equals } check_variable = { var = TFR_EST_active_e200 value = 1 compare = equals } }
+ OR = { check_variable = { var = TFR_EST_active_e200 value = 1 compare = equals } check_variable = { var = TFR_EST_support_e200 value = 0 compare = equals } }
+ check_variable = { var = TFR_EST_support_pp value = 0 compare = greater_than_or_equals }
+ check_variable = { var = TFR_EST_support_pp value = 10000 compare = less_than_or_equals }
+ check_variable = { var = TFR_EST_fraction_pp value = 0 compare = equals }
+ OR = { check_variable = { var = TFR_EST_active_pp value = 0 compare = equals } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+ OR = { check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } check_variable = { var = TFR_EST_support_pp value = 0 compare = equals } }
+}
+
+TFR_EST_valid_nominee = {
+ OR = {
+ AND = { check_variable = { var = TFR_EST_nominee_party value = 1 compare = equals } check_variable = { var = TFR_EST_coalition_reform value = 1 compare = equals } check_variable = { var = TFR_EST_seats_reform value = 0 compare = greater_than } }
+ AND = { check_variable = { var = TFR_EST_nominee_party value = 2 compare = equals } check_variable = { var = TFR_EST_coalition_centre value = 1 compare = equals } check_variable = { var = TFR_EST_seats_centre value = 0 compare = greater_than } }
+ AND = { check_variable = { var = TFR_EST_nominee_party value = 3 compare = equals } check_variable = { var = TFR_EST_coalition_ekre value = 1 compare = equals } check_variable = { var = TFR_EST_seats_ekre value = 0 compare = greater_than } }
+ AND = { check_variable = { var = TFR_EST_nominee_party value = 4 compare = equals } check_variable = { var = TFR_EST_coalition_isamaa value = 1 compare = equals } check_variable = { var = TFR_EST_seats_isamaa value = 0 compare = greater_than } }
+ AND = { check_variable = { var = TFR_EST_nominee_party value = 5 compare = equals } check_variable = { var = TFR_EST_coalition_sde value = 1 compare = equals } check_variable = { var = TFR_EST_seats_sde value = 0 compare = greater_than } }
+ AND = { check_variable = { var = TFR_EST_nominee_party value = 6 compare = equals } check_variable = { var = TFR_EST_coalition_e200 value = 1 compare = equals } check_variable = { var = TFR_EST_seats_e200 value = 0 compare = greater_than } }
+ AND = { check_variable = { var = TFR_EST_nominee_party value = 7 compare = equals } check_variable = { var = TFR_EST_coalition_pp value = 1 compare = equals } check_variable = { var = TFR_EST_seats_pp value = 0 compare = greater_than } }
+ }
+}

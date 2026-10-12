@@ -1,0 +1,23 @@
+ideas = { country = {
+    TFR_EST_cohesion_fragile = { picture = generic_political_disaster allowed = { original_tag = EST } removal_cost = -1 modifier = { stability_factor = -0.1 political_power_gain = -0.1 } }
+    TFR_EST_cohesion_divided = { picture = generic_political_disaster allowed = { original_tag = EST } removal_cost = -1 modifier = { stability_factor = -0.04 } }
+    TFR_EST_cohesion_functional = { picture = generic_political_disaster allowed = { original_tag = EST } removal_cost = -1 modifier = { political_power_gain = 0.05 } }
+    TFR_EST_cohesion_united = { picture = generic_political_disaster allowed = { original_tag = EST } removal_cost = -1 modifier = { stability_factor = 0.05 political_power_gain = 0.1 } }
+    TFR_EST_readiness_unprepared = { picture = generic_political_disaster allowed = { original_tag = EST } removal_cost = -1 modifier = { mobilization_speed = -0.15 } }
+    TFR_EST_readiness_developing = { picture = generic_political_disaster allowed = { original_tag = EST } removal_cost = -1 modifier = { mobilization_speed = 0.05 } }
+    TFR_EST_readiness_prepared = { picture = generic_political_disaster allowed = { original_tag = EST } removal_cost = -1 modifier = { mobilization_speed = 0.1 army_core_defence_factor = 0.03 } }
+    TFR_EST_readiness_resilient = { picture = generic_political_disaster allowed = { original_tag = EST } removal_cost = -1 modifier = { mobilization_speed = 0.15 army_core_defence_factor = 0.06 dig_in_speed_factor = 0.1 } }
+    TFR_EST_defense_commitment = {
+        picture = generic_military_org
+        allowed = { original_tag = EST }
+        removal_cost = -1
+        modifier = { mobilization_speed = 0.05 }
+    }
+    TFR_EST_reserve_training = {
+        picture = generic_military_org
+        allowed = { original_tag = EST }
+        removal_cost = -1
+        modifier = { training_time_army_factor = -0.10 }
+    }
+
+} }
