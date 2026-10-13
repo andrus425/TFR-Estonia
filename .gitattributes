@@ -5,3 +5,16 @@
 *.md text eol=lf
 *.py text eol=lf
 *.json text eol=lf
+
+# Generated overrides use canonical LF and retain the parent BOM. Keep their
+# docs/compatibility.json output hashes reproducible after a Git checkout.
+common/decisions/TFR_decisions_GER.txt text eol=lf
+common/decisions/TFR_decisions_SOV.txt text eol=lf
+common/national_focus/TFR_national_focus_SOV_communist_new.txt text eol=lf
+common/on_actions/TFR_on_actions_ZZZ_peace.txt text eol=lf
+common/scripted_effects/00_TFR_scripted_effects_ZZZ_generic.txt text eol=lf
+common/scripted_effects/TFR_scripted_effects_GER.txt text eol=lf
+common/scripted_effects/TFR_scripted_effects_SOV.txt text eol=lf
+common/scripted_triggers/00_TFR_scripted_triggers_ZZZ_generic.txt text eol=lf
+events/TFR_events_BLR.txt text eol=lf
+events/TFR_events_SOV.txt text eol=lf

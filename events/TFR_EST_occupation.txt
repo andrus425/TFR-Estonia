@@ -31,15 +31,19 @@ country_event = {
     option = {
         name = tfr_estonia_occupation.3.a
         ai_chance = { factor = 3 }
-        TFR_EST_change_occupation_resistance = { AMOUNT = -8 }
-        TFR_EST_change_cohesion = { AMOUNT = -2 }
+        set_temp_variable = { var = TFR_EST_occupation_resistance_delta value = -8 }
+        TFR_EST_change_occupation_resistance = yes
+        set_temp_variable = { var = TFR_EST_cohesion_delta value = -2 }
+        TFR_EST_change_cohesion = yes
     }
     option = {
         name = tfr_estonia_occupation.3.b
         ai_chance = { factor = 1 }
         add_political_power = -30
-        TFR_EST_change_cohesion = { AMOUNT = -5 }
-        TFR_EST_change_occupation_resistance = { AMOUNT = 3 }
+        set_temp_variable = { var = TFR_EST_cohesion_delta value = -5 }
+        TFR_EST_change_cohesion = yes
+        set_temp_variable = { var = TFR_EST_occupation_resistance_delta value = 3 }
+        TFR_EST_change_occupation_resistance = yes
     }
 }
 
@@ -84,16 +88,22 @@ country_event = {
     option = {
         name = tfr_estonia_occupation.11.a
         ai_chance = { factor = 2 }
-        TFR_EST_change_cohesion = { AMOUNT = 4 }
-        TFR_EST_change_occupation_cooperation = { AMOUNT = -6 }
-        TFR_EST_spend_budget = { AMOUNT = 25 }
+        set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+        TFR_EST_change_cohesion = yes
+        set_temp_variable = { var = TFR_EST_occupation_cooperation_delta value = -6 }
+        TFR_EST_change_occupation_cooperation = yes
+        set_temp_variable = { var = TFR_EST_budget_cost value = 25 }
+        TFR_EST_spend_budget = yes
     }
     option = {
         name = tfr_estonia_occupation.11.b
         ai_chance = { factor = 1 }
-        TFR_EST_change_cohesion = { AMOUNT = -3 }
-        TFR_EST_change_readiness = { AMOUNT = 4 }
-        TFR_EST_change_occupation_cooperation = { AMOUNT = 10 }
+        set_temp_variable = { var = TFR_EST_cohesion_delta value = -3 }
+        TFR_EST_change_cohesion = yes
+        set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+        TFR_EST_change_readiness = yes
+        set_temp_variable = { var = TFR_EST_occupation_cooperation_delta value = 10 }
+        TFR_EST_change_occupation_cooperation = yes
     }
 }
 
@@ -107,16 +117,22 @@ country_event = {
     option = {
         name = tfr_estonia_occupation.12.a
         ai_chance = { factor = 2 }
-        TFR_EST_change_cohesion = { AMOUNT = 4 }
-        TFR_EST_change_occupation_cooperation = { AMOUNT = -6 }
-        TFR_EST_spend_budget = { AMOUNT = 25 }
+        set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+        TFR_EST_change_cohesion = yes
+        set_temp_variable = { var = TFR_EST_occupation_cooperation_delta value = -6 }
+        TFR_EST_change_occupation_cooperation = yes
+        set_temp_variable = { var = TFR_EST_budget_cost value = 25 }
+        TFR_EST_spend_budget = yes
     }
     option = {
         name = tfr_estonia_occupation.12.b
         ai_chance = { factor = 1 }
-        TFR_EST_change_cohesion = { AMOUNT = -3 }
-        TFR_EST_change_readiness = { AMOUNT = 4 }
-        TFR_EST_change_occupation_cooperation = { AMOUNT = 10 }
+        set_temp_variable = { var = TFR_EST_cohesion_delta value = -3 }
+        TFR_EST_change_cohesion = yes
+        set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+        TFR_EST_change_readiness = yes
+        set_temp_variable = { var = TFR_EST_occupation_cooperation_delta value = 10 }
+        TFR_EST_change_occupation_cooperation = yes
     }
 }
 
@@ -130,16 +146,22 @@ country_event = {
     option = {
         name = tfr_estonia_occupation.13.a
         ai_chance = { factor = 2 }
-        TFR_EST_change_cohesion = { AMOUNT = 4 }
-        TFR_EST_change_occupation_cooperation = { AMOUNT = -6 }
-        TFR_EST_spend_budget = { AMOUNT = 25 }
+        set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+        TFR_EST_change_cohesion = yes
+        set_temp_variable = { var = TFR_EST_occupation_cooperation_delta value = -6 }
+        TFR_EST_change_occupation_cooperation = yes
+        set_temp_variable = { var = TFR_EST_budget_cost value = 25 }
+        TFR_EST_spend_budget = yes
     }
     option = {
         name = tfr_estonia_occupation.13.b
         ai_chance = { factor = 1 }
-        TFR_EST_change_cohesion = { AMOUNT = -3 }
-        TFR_EST_change_readiness = { AMOUNT = 4 }
-        TFR_EST_change_occupation_cooperation = { AMOUNT = 10 }
+        set_temp_variable = { var = TFR_EST_cohesion_delta value = -3 }
+        TFR_EST_change_cohesion = yes
+        set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+        TFR_EST_change_readiness = yes
+        set_temp_variable = { var = TFR_EST_occupation_cooperation_delta value = 10 }
+        TFR_EST_change_occupation_cooperation = yes
     }
 }
 
@@ -153,16 +175,22 @@ country_event = {
     option = {
         name = tfr_estonia_occupation.14.a
         ai_chance = { factor = 2 }
-        TFR_EST_change_cohesion = { AMOUNT = 4 }
-        TFR_EST_change_occupation_cooperation = { AMOUNT = -6 }
-        TFR_EST_spend_budget = { AMOUNT = 25 }
+        set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+        TFR_EST_change_cohesion = yes
+        set_temp_variable = { var = TFR_EST_occupation_cooperation_delta value = -6 }
+        TFR_EST_change_occupation_cooperation = yes
+        set_temp_variable = { var = TFR_EST_budget_cost value = 25 }
+        TFR_EST_spend_budget = yes
     }
     option = {
         name = tfr_estonia_occupation.14.b
         ai_chance = { factor = 1 }
-        TFR_EST_change_cohesion = { AMOUNT = -3 }
-        TFR_EST_change_readiness = { AMOUNT = 4 }
-        TFR_EST_change_occupation_cooperation = { AMOUNT = 10 }
+        set_temp_variable = { var = TFR_EST_cohesion_delta value = -3 }
+        TFR_EST_change_cohesion = yes
+        set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+        TFR_EST_change_readiness = yes
+        set_temp_variable = { var = TFR_EST_occupation_cooperation_delta value = 10 }
+        TFR_EST_change_occupation_cooperation = yes
     }
 }
 
@@ -176,16 +204,22 @@ country_event = {
     option = {
         name = tfr_estonia_occupation.15.a
         ai_chance = { factor = 2 }
-        TFR_EST_change_cohesion = { AMOUNT = 4 }
-        TFR_EST_change_occupation_cooperation = { AMOUNT = -6 }
-        TFR_EST_spend_budget = { AMOUNT = 25 }
+        set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+        TFR_EST_change_cohesion = yes
+        set_temp_variable = { var = TFR_EST_occupation_cooperation_delta value = -6 }
+        TFR_EST_change_occupation_cooperation = yes
+        set_temp_variable = { var = TFR_EST_budget_cost value = 25 }
+        TFR_EST_spend_budget = yes
     }
     option = {
         name = tfr_estonia_occupation.15.b
         ai_chance = { factor = 1 }
-        TFR_EST_change_cohesion = { AMOUNT = -3 }
-        TFR_EST_change_readiness = { AMOUNT = 4 }
-        TFR_EST_change_occupation_cooperation = { AMOUNT = 10 }
+        set_temp_variable = { var = TFR_EST_cohesion_delta value = -3 }
+        TFR_EST_change_cohesion = yes
+        set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+        TFR_EST_change_readiness = yes
+        set_temp_variable = { var = TFR_EST_occupation_cooperation_delta value = 10 }
+        TFR_EST_change_occupation_cooperation = yes
     }
 }
 
@@ -199,16 +233,22 @@ country_event = {
     option = {
         name = tfr_estonia_occupation.16.a
         ai_chance = { factor = 2 }
-        TFR_EST_change_cohesion = { AMOUNT = 4 }
-        TFR_EST_change_occupation_cooperation = { AMOUNT = -6 }
-        TFR_EST_spend_budget = { AMOUNT = 25 }
+        set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+        TFR_EST_change_cohesion = yes
+        set_temp_variable = { var = TFR_EST_occupation_cooperation_delta value = -6 }
+        TFR_EST_change_occupation_cooperation = yes
+        set_temp_variable = { var = TFR_EST_budget_cost value = 25 }
+        TFR_EST_spend_budget = yes
     }
     option = {
         name = tfr_estonia_occupation.16.b
         ai_chance = { factor = 1 }
-        TFR_EST_change_cohesion = { AMOUNT = -3 }
-        TFR_EST_change_readiness = { AMOUNT = 4 }
-        TFR_EST_change_occupation_cooperation = { AMOUNT = 10 }
+        set_temp_variable = { var = TFR_EST_cohesion_delta value = -3 }
+        TFR_EST_change_cohesion = yes
+        set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+        TFR_EST_change_readiness = yes
+        set_temp_variable = { var = TFR_EST_occupation_cooperation_delta value = 10 }
+        TFR_EST_change_occupation_cooperation = yes
     }
 }
 
@@ -222,15 +262,21 @@ country_event = {
     option = {
         name = tfr_estonia_occupation.17.a
         ai_chance = { factor = 2 }
-        TFR_EST_change_cohesion = { AMOUNT = 4 }
-        TFR_EST_change_occupation_cooperation = { AMOUNT = -6 }
-        TFR_EST_spend_budget = { AMOUNT = 25 }
+        set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+        TFR_EST_change_cohesion = yes
+        set_temp_variable = { var = TFR_EST_occupation_cooperation_delta value = -6 }
+        TFR_EST_change_occupation_cooperation = yes
+        set_temp_variable = { var = TFR_EST_budget_cost value = 25 }
+        TFR_EST_spend_budget = yes
     }
     option = {
         name = tfr_estonia_occupation.17.b
         ai_chance = { factor = 1 }
-        TFR_EST_change_cohesion = { AMOUNT = -3 }
-        TFR_EST_change_readiness = { AMOUNT = 4 }
-        TFR_EST_change_occupation_cooperation = { AMOUNT = 10 }
+        set_temp_variable = { var = TFR_EST_cohesion_delta value = -3 }
+        TFR_EST_change_cohesion = yes
+        set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+        TFR_EST_change_readiness = yes
+        set_temp_variable = { var = TFR_EST_occupation_cooperation_delta value = 10 }
+        TFR_EST_change_occupation_cooperation = yes
     }
 }

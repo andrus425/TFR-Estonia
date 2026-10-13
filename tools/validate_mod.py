@@ -124,13 +124,19 @@ def validate(tfr, game):
 
     # Effective sprite catalog: a TFR file of the same name shadows vanilla.
     sprites = set()
+    fonts = set()
     for path in effective_files(roots, "interface", ".gfx").values():
         text = path.read_text(encoding="utf-8-sig", errors="replace")
         sprites.update(re.findall(r'\bname\s*=\s*"?(GFX_[^\s"{}]+)', text))
+        # Font names are declared in bitmapfont blocks (including definitions
+        # in TFR_fonts.gfx), independently of the sprite name catalog. A typo
+        # here is accepted by the Clausewitz parser but rejected by the engine.
+        fonts.update(re.findall(r'\bbitmapfont\s*=\s*\{\s*name\s*=\s*"([^"\r\n]+)"', text))
     # Some DLC portrait and focus assets are exposed from their own interface.
     for path in (game / "dlc").rglob("*.gfx"):
         text = path.read_text(encoding="utf-8-sig", errors="replace")
         sprites.update(re.findall(r'\bname\s*=\s*"?(GFX_[^\s"{}]+)', text))
+        fonts.update(re.findall(r'\bbitmapfont\s*=\s*\{\s*name\s*=\s*"([^"\r\n]+)"', text))
 
     def missing(kind, ref, rel, line):
         if isinstance(ref, str) and ref.startswith("TFR_EST_") and ref not in catalogs[kind]:
@@ -147,6 +153,22 @@ def validate(tfr, game):
 
     for rel, tree in custom.items():
         for parents, e in tree.walk():
+            is_effect_definition = rel.startswith("common/scripted_effects/") and not parents
+            is_decision_definition = rel.startswith("common/decisions/") and not rel.startswith("common/decisions/categories/") and len(parents) == 1
+            if e.key in catalogs["effect"] and isinstance(e.value, Block) and not is_effect_definition and not is_decision_definition:
+                errors.append(f"{rel}:{e.line}: scripted effect {e.key} cannot accept an argument block; set its native temporary input and call = yes")
+            if e.key == "set_politics" and isinstance(e.value, Block) and e.value.get("ruling_party") is None:
+                errors.append(f"{rel}:{e.line}: set_politics requires ruling_party")
+            if e.key == "overlord" and isinstance(e.value, Block):
+                errors.append(f"{rel}:{e.line}: bare overlord scope is invalid; use var:overlord")
+            if isinstance(e.value, str) and re.search(r'\$[A-Z_]+\$', e.value):
+                errors.append(f"{rel}:{e.line}: unsupported scripted-effect parameter {e.value}")
+            if rel.startswith("interface/") and e.key in {"font", "buttonFont"} and isinstance(e.value, str):
+                if e.value not in fonts:
+                    errors.append(f"{rel}:{e.line}: missing GUI font {e.value}")
+            if rel.startswith("interface/") and e.key == "quadTextureSprite" and isinstance(e.value, str):
+                if e.value not in sprites:
+                    errors.append(f"{rel}:{e.line}: missing GUI texture sprite {e.value}")
             if (e.key.startswith("TFR_EST_") and e.op == "=" and
                     (e.value in ("yes", "no") if isinstance(e.value, str) else isinstance(e.value, Block)) and
                     parents and parents[-1] not in {"ideas", "country", "hidden_ideas", "characters"} and

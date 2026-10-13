@@ -5,7 +5,10 @@ TFR_EST_occupation_category = {
         available = { has_country_flag = TFR_EST_occupied has_completed_focus = TFR_EST_occupation_municipal_services }
         cost = 35
         days_re_enable = 60
-        complete_effect = { TFR_EST_spend_budget = { AMOUNT = 50 } TFR_EST_change_cohesion = { AMOUNT = 3 } TFR_EST_change_occupation_cooperation = { AMOUNT = 5 } }
+        complete_effect = { set_temp_variable = { var = TFR_EST_budget_cost value = 50 }
+        TFR_EST_spend_budget = yes set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+        TFR_EST_change_cohesion = yes set_temp_variable = { var = TFR_EST_occupation_cooperation_delta value = 5 }
+        TFR_EST_change_occupation_cooperation = yes }
         ai_will_do = { factor = 1 }
     }
     TFR_EST_occupation_training = {
@@ -14,7 +17,9 @@ TFR_EST_occupation_category = {
         available = { has_country_flag = TFR_EST_occupied has_completed_focus = TFR_EST_occupation_local_forces }
         cost = 40
         days_re_enable = 90
-        complete_effect = { TFR_EST_spend_budget = { AMOUNT = 60 } TFR_EST_change_readiness = { AMOUNT = 4 } }
+        complete_effect = { set_temp_variable = { var = TFR_EST_budget_cost value = 60 }
+        TFR_EST_spend_budget = yes set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+        TFR_EST_change_readiness = yes }
         ai_will_do = { factor = 1 }
     }
     TFR_EST_occupation_cooperation = {
@@ -23,7 +28,9 @@ TFR_EST_occupation_category = {
         available = { has_country_flag = TFR_EST_occupied has_idea = TFR_EST_occupation_collaboration }
         cost = 35
         days_re_enable = 60
-        complete_effect = { TFR_EST_change_occupation_cooperation = { AMOUNT = 8 } TFR_EST_change_cohesion = { AMOUNT = -2 } }
+        complete_effect = { set_temp_variable = { var = TFR_EST_occupation_cooperation_delta value = 8 }
+        TFR_EST_change_occupation_cooperation = yes set_temp_variable = { var = TFR_EST_cohesion_delta value = -2 }
+        TFR_EST_change_cohesion = yes }
         ai_will_do = { factor = 1 }
     }
     TFR_EST_occupation_network = {
@@ -32,7 +39,10 @@ TFR_EST_occupation_category = {
         available = { has_country_flag = TFR_EST_occupied has_idea = TFR_EST_occupation_clandestine_network }
         cost = 40
         days_re_enable = 60
-        complete_effect = { TFR_EST_spend_budget = { AMOUNT = 20 } TFR_EST_change_occupation_resistance = { AMOUNT = 8 } TFR_EST_change_cohesion = { AMOUNT = 2 } }
+        complete_effect = { set_temp_variable = { var = TFR_EST_budget_cost value = 20 }
+        TFR_EST_spend_budget = yes set_temp_variable = { var = TFR_EST_occupation_resistance_delta value = 8 }
+        TFR_EST_change_occupation_resistance = yes set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+        TFR_EST_change_cohesion = yes }
         ai_will_do = { factor = 1 }
     }
     TFR_EST_occupation_petition = {

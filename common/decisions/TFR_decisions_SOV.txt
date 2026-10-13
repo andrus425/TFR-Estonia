@@ -13071,15 +13071,19 @@ SOV_socialist_politics_category = {
 		}
 		remove_effect = {
 			if = {
-				limit = { EST = { original_tag = EST has_country_flag = TFR_EST_initialized } }
-				TFR_EST_preserve_annexation = { TARGET = EST }
-			}
-			else = {
-				annex_country = {
-					target = EST
-					transfer_troops = yes
-				}
-			}
+                limit = { EST = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                EST = {
+                    save_event_target_as = TFR_EST_settlement_target
+                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 1 }
+                }
+                TFR_EST_preserve_annexation = yes
+            }
+            else = {
+                annex_country = {
+                    target = EST
+                    transfer_troops = yes
+                }
+            }
 			annex_country = {
 				target = LIT
 				transfer_troops = yes
@@ -15028,15 +15032,19 @@ SOV_derzhavnik_politics_category = {
 		remove_effect = {
 			SOV = {
 				if = {
-					limit = { EST = { original_tag = EST has_country_flag = TFR_EST_initialized } }
-					TFR_EST_preserve_annexation = { TARGET = EST }
-				}
-				else = {
-					annex_country = {
-						target = EST
-						transfer_troops = yes
-					}
-				}
+                    limit = { EST = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                    EST = {
+                        save_event_target_as = TFR_EST_settlement_target
+                        set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 1 }
+                    }
+                    TFR_EST_preserve_annexation = yes
+                }
+                else = {
+                    annex_country = {
+                        target = EST
+                        transfer_troops = yes
+                    }
+                }
 			}		
 			SOV = {
 				annex_country = {

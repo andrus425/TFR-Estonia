@@ -21,7 +21,8 @@ TFR_EST_parliament_category = {
  icon = generic_political_rally
  cost = 20
  visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_reform value = 0 compare = greater_than } check_variable = { var = TFR_EST_coalition_reform value = 0 compare = equals } is_ai = no }
- complete_effect = { set_variable = { TFR_EST_coalition_reform = 1 } set_variable = { TFR_EST_supply_reform = 0 } TFR_EST_recount_confidence = yes TFR_EST_change_cohesion = { AMOUNT = -1 } }
+ complete_effect = { set_variable = { TFR_EST_coalition_reform = 1 } set_variable = { TFR_EST_supply_reform = 0 } TFR_EST_recount_confidence = yes set_temp_variable = { var = TFR_EST_cohesion_delta value = -1 }
+ TFR_EST_change_cohesion = yes }
  ai_will_do = { factor = 0 }
  }
  TFR_EST_supply_reform_decision = {
@@ -59,7 +60,8 @@ TFR_EST_parliament_category = {
  icon = generic_political_rally
  cost = 20
  visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_centre value = 0 compare = greater_than } check_variable = { var = TFR_EST_coalition_centre value = 0 compare = equals } is_ai = no }
- complete_effect = { set_variable = { TFR_EST_coalition_centre = 1 } set_variable = { TFR_EST_supply_centre = 0 } TFR_EST_recount_confidence = yes TFR_EST_change_cohesion = { AMOUNT = -1 } }
+ complete_effect = { set_variable = { TFR_EST_coalition_centre = 1 } set_variable = { TFR_EST_supply_centre = 0 } TFR_EST_recount_confidence = yes set_temp_variable = { var = TFR_EST_cohesion_delta value = -1 }
+ TFR_EST_change_cohesion = yes }
  ai_will_do = { factor = 0 }
  }
  TFR_EST_supply_centre_decision = {
@@ -97,7 +99,8 @@ TFR_EST_parliament_category = {
  icon = generic_political_rally
  cost = 20
  visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_ekre value = 0 compare = greater_than } check_variable = { var = TFR_EST_coalition_ekre value = 0 compare = equals } is_ai = no }
- complete_effect = { set_variable = { TFR_EST_coalition_ekre = 1 } set_variable = { TFR_EST_supply_ekre = 0 } TFR_EST_recount_confidence = yes TFR_EST_change_cohesion = { AMOUNT = -1 } }
+ complete_effect = { set_variable = { TFR_EST_coalition_ekre = 1 } set_variable = { TFR_EST_supply_ekre = 0 } TFR_EST_recount_confidence = yes set_temp_variable = { var = TFR_EST_cohesion_delta value = -1 }
+ TFR_EST_change_cohesion = yes }
  ai_will_do = { factor = 0 }
  }
  TFR_EST_supply_ekre_decision = {
@@ -135,7 +138,8 @@ TFR_EST_parliament_category = {
  icon = generic_political_rally
  cost = 20
  visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_isamaa value = 0 compare = greater_than } check_variable = { var = TFR_EST_coalition_isamaa value = 0 compare = equals } is_ai = no }
- complete_effect = { set_variable = { TFR_EST_coalition_isamaa = 1 } set_variable = { TFR_EST_supply_isamaa = 0 } TFR_EST_recount_confidence = yes TFR_EST_change_cohesion = { AMOUNT = -1 } }
+ complete_effect = { set_variable = { TFR_EST_coalition_isamaa = 1 } set_variable = { TFR_EST_supply_isamaa = 0 } TFR_EST_recount_confidence = yes set_temp_variable = { var = TFR_EST_cohesion_delta value = -1 }
+ TFR_EST_change_cohesion = yes }
  ai_will_do = { factor = 0 }
  }
  TFR_EST_supply_isamaa_decision = {
@@ -173,7 +177,8 @@ TFR_EST_parliament_category = {
  icon = generic_political_rally
  cost = 20
  visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_sde value = 0 compare = greater_than } check_variable = { var = TFR_EST_coalition_sde value = 0 compare = equals } is_ai = no }
- complete_effect = { set_variable = { TFR_EST_coalition_sde = 1 } set_variable = { TFR_EST_supply_sde = 0 } TFR_EST_recount_confidence = yes TFR_EST_change_cohesion = { AMOUNT = -1 } }
+ complete_effect = { set_variable = { TFR_EST_coalition_sde = 1 } set_variable = { TFR_EST_supply_sde = 0 } TFR_EST_recount_confidence = yes set_temp_variable = { var = TFR_EST_cohesion_delta value = -1 }
+ TFR_EST_change_cohesion = yes }
  ai_will_do = { factor = 0 }
  }
  TFR_EST_supply_sde_decision = {
@@ -211,7 +216,8 @@ TFR_EST_parliament_category = {
  icon = generic_political_rally
  cost = 20
  visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_e200 value = 0 compare = greater_than } check_variable = { var = TFR_EST_coalition_e200 value = 0 compare = equals } is_ai = no }
- complete_effect = { set_variable = { TFR_EST_coalition_e200 = 1 } set_variable = { TFR_EST_supply_e200 = 0 } TFR_EST_recount_confidence = yes TFR_EST_change_cohesion = { AMOUNT = -1 } }
+ complete_effect = { set_variable = { TFR_EST_coalition_e200 = 1 } set_variable = { TFR_EST_supply_e200 = 0 } TFR_EST_recount_confidence = yes set_temp_variable = { var = TFR_EST_cohesion_delta value = -1 }
+ TFR_EST_change_cohesion = yes }
  ai_will_do = { factor = 0 }
  }
  TFR_EST_supply_e200_decision = {
@@ -249,7 +255,8 @@ TFR_EST_parliament_category = {
  icon = generic_political_rally
  cost = 20
  visible = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_pp value = 0 compare = greater_than } check_variable = { var = TFR_EST_coalition_pp value = 0 compare = equals } is_ai = no }
- complete_effect = { set_variable = { TFR_EST_coalition_pp = 1 } set_variable = { TFR_EST_supply_pp = 0 } TFR_EST_recount_confidence = yes TFR_EST_change_cohesion = { AMOUNT = -1 } }
+ complete_effect = { set_variable = { TFR_EST_coalition_pp = 1 } set_variable = { TFR_EST_supply_pp = 0 } TFR_EST_recount_confidence = yes set_temp_variable = { var = TFR_EST_cohesion_delta value = -1 }
+ TFR_EST_change_cohesion = yes }
  ai_will_do = { factor = 0 }
  }
  TFR_EST_supply_pp_decision = {
@@ -280,7 +287,8 @@ TFR_EST_parliament_category = {
  days_re_enable = 180
  visible = { TFR_EST_independent_parliament = yes }
  available = { NOT = { has_country_flag = TFR_EST_restoration_election } }
- complete_effect = { TFR_EST_change_cohesion = { AMOUNT = -3 } TFR_EST_hold_election = yes }
+ complete_effect = { set_temp_variable = { var = TFR_EST_cohesion_delta value = -3 }
+ TFR_EST_change_cohesion = yes TFR_EST_hold_election = yes }
  ai_will_do = { factor = 0 }
  }
 }

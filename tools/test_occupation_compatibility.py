@@ -61,7 +61,16 @@ class SettlementProtectionTests(unittest.TestCase):
                     helper = entry_child(prior, "TFR_EST_preserve_annexation") if prior and prior.key == "if" else None
                     if not helper:
                         continue
-                    self.assertEqual(scalar(helper, "TARGET"), target, path)
+                    self.assertEqual(helper.value, "yes", path)
+                    captured = entry_child(prior, target)
+                    self.assertIsNotNone(captured, path)
+                    self.assertEqual(scalar(captured, "save_event_target_as"), "TFR_EST_settlement_target", path)
+                    policy = entry_child(captured, "set_temp_variable")
+                    self.assertIsNotNone(policy, path)
+                    self.assertEqual(scalar(policy, "var"), "TFR_EST_settlement_transfer_troops", path)
+                    expected_policy = "0" if scalar(annex, "transfer_troops") == "no" else "1"
+                    self.assertEqual(scalar(policy, "value"), expected_policy, path)
+                    self.assertLess(prior.children.index(captured), prior.children.index(helper), path)
                     limit = entry_child(prior, "limit")
                     scope = entry_child(limit, target)
                     self.assertIsNotNone(scope, path)
@@ -88,10 +97,34 @@ class SettlementProtectionTests(unittest.TestCase):
         helper = next(e for e in effects if e.key == "TFR_EST_preserve_annexation")
         self.assertFalse(nodes_with(helper.children, "annex_country"))
         self.assertFalse(nodes_with(helper.children, "release"))
-        target_scope = entry_child(helper, "$TARGET$")
+        target_scope = entry_child(helper, "event_target:TFR_EST_settlement_target")
         sweep = entry_child(target_scope, "every_owned_state")
         self.assertEqual(scalar(entry_child(entry_child(sweep, "limit"), "NOT"), "state"), "13")
         self.assertEqual(scalar(sweep, "transfer_state_to"), "event_target:TFR_EST_settlement_receiver")
+
+    def test_converted_annexes_settle_original_forces_once_per_mandate(self):
+        effects = parse((ROOT / "common/scripted_effects/TFR_EST_occupation.txt").read_text(encoding="utf-8"))
+        helper = next(e for e in effects if e.key == "TFR_EST_settle_annexed_forces")
+        guard = entry_child(helper, "if")
+        check = entry_child(entry_child(entry_child(guard, "limit"), "NOT"), "check_variable")
+        self.assertEqual(scalar(check, "var"), "TFR_EST_annexed_forces_generation")
+        self.assertEqual(scalar(check, "value"), "TFR_EST_occupation_generation")
+        completion = entry_child(guard, "set_variable")
+        self.assertEqual(scalar(completion, "var"), "TFR_EST_annexed_forces_generation")
+        self.assertEqual(scalar(completion, "value"), "TFR_EST_occupation_generation")
+        destroy_branch = entry_child(guard, "if")
+        deletion = entry_child(destroy_branch, "delete_unit")
+        self.assertEqual(scalar(deletion, "disband"), "no", "No free equipment/manpower refund after destructive annexation.")
+        transfer_branch = entry_child(guard, "else")
+        self.assertIsNone(entry_child(transfer_branch, "delete_unit"))
+        for branch, army in ((destroy_branch, "0"), (transfer_branch, "1")):
+            transfer = entry_child(branch, "transfer_units_fraction")
+            self.assertEqual(scalar(transfer, "target"), "event_target:TFR_EST_settlement_receiver")
+            self.assertEqual(scalar(transfer, "army_ratio"), army)
+            for field in ("stockpile_ratio", "navy_ratio", "air_ratio"):
+                self.assertEqual(scalar(transfer, field), "1")
+        callers = [e.key for e in effects if nodes_with(e.children, "TFR_EST_settle_annexed_forces")]
+        self.assertEqual(callers, ["TFR_EST_preserve_annexation"], "Ordinary puppeting and daily reconciliation must retain their forces.")
 
     def test_medvedev_partition_and_tts_remainder_are_retained(self):
         for path, (upstream, patched) in self.pairs.items():

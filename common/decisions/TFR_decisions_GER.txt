@@ -19715,15 +19715,19 @@ european_union_category = {
 					}
 					GER = {
 						if = {
-							limit = { FROM = { original_tag = EST has_country_flag = TFR_EST_initialized } }
-							TFR_EST_preserve_annexation = { TARGET = FROM }
-						}
-						else = {
-							annex_country = {
-								target = FROM
-								transfer_troops = yes
-							}
-						}
+                            limit = { FROM = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            FROM = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 1 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = FROM
+                                transfer_troops = yes
+                            }
+                        }
 					}
 					every_state = {
 						limit = {
@@ -19823,15 +19827,19 @@ european_union_category = {
 				}
 				GER = {
 					if = {
-						limit = { PREV = { original_tag = EST has_country_flag = TFR_EST_initialized } }
-						TFR_EST_preserve_annexation = { TARGET = PREV }
-					}
-					else = {
-						annex_country = {
-							target = PREV
-							transfer_troops = yes
-						}
-					}
+                        limit = { PREV = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                        PREV = {
+                            save_event_target_as = TFR_EST_settlement_target
+                            set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 1 }
+                        }
+                        TFR_EST_preserve_annexation = yes
+                    }
+                    else = {
+                        annex_country = {
+                            target = PREV
+                            transfer_troops = yes
+                        }
+                    }
 				}
 			}
 			every_controlled_state = {

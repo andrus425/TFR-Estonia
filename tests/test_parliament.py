@@ -89,6 +89,23 @@ class ParliamentTests(unittest.TestCase):
         r.call("TFR_EST_hold_election")
         self.assertEqual([r.variables[f"TFR_EST_seats_{p}"] for p in PARTIES], list(START_SEATS))
 
+    def test_negative_polling_uses_invalid_sentinel_and_preserves_assembly(self):
+        # Keep the total valid so the negative component itself must cause rejection.
+        # Integer and fractional negatives both previously reached native modulo.
+        for party in (*PARTIES, "other"):
+            for negative in (Fraction(-1), Fraction(-1, 2)):
+                with self.subTest(party=party, support=negative):
+                    r = self.runtime()
+                    support = f"TFR_EST_support_{party}"
+                    compensation = "TFR_EST_support_reform" if party == "other" else "TFR_EST_support_other"
+                    r.variables[compensation] += r.variables[support] - negative
+                    r.variables[support] = negative
+                    r.call("TFR_EST_hold_election")
+                    self.assertEqual(r.variables["TFR_EST_vote_total"], 10000)
+                    self.assertEqual(r.variables[f"TFR_EST_fraction_{party}"], -1)
+                    self.assertEqual([r.variables[f"TFR_EST_seats_{p}"] for p in PARTIES], list(START_SEATS))
+                    self.assertTrue(r.messages, "Negative polling must be diagnosed")
+
     def test_supply_is_not_double_counted(self):
         r = self.runtime()
         for p in PARTIES:

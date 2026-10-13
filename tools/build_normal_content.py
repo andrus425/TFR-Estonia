@@ -1,5 +1,6 @@
 from pathlib import Path
 import json, re
+from native_script_interface import amount_call, native_amount_calls
 
 ROOT = Path(__file__).resolve().parents[1]
 P = 'TFR_EST_'
@@ -11,9 +12,9 @@ def L(key, text):
     loc[key] = text
     return key
 
-def co(n): return f'TFR_EST_change_cohesion = {{ AMOUNT = {n} }}'
-def rd(n): return f'TFR_EST_change_readiness = {{ AMOUNT = {n} }}'
-def budget(n): return f'TFR_EST_spend_budget = {{ AMOUNT = {n} }}'
+def co(n): return amount_call('TFR_EST_change_cohesion', n)
+def rd(n): return amount_call('TFR_EST_change_readiness', n)
+def budget(n): return amount_call('TFR_EST_spend_budget', n)
 def pp(n): return f'add_political_power = {n}'
 def xp(n): return f'army_experience = {n}'
 def idea(s): return f'add_ideas = TFR_EST_{s}'
@@ -582,6 +583,7 @@ strategy='''TFR_EST_territorial_force = {
 '''
 
 def write(rel,text,bom=False):
+    text = native_amount_calls(text)
     # Explicit equality gates avoid relying on shorthand compare defaults in the engine.
     text = re.sub(r'check_variable\s*=\s*\{\s*(TFR_EST_\w+)\s*=\s*(-?\d+(?:\.\d+)?)\s*\}',
                   lambda m: f'check_variable = {{ var = {m.group(1)} value = {m.group(2)} compare = equals }}', text)

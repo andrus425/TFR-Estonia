@@ -24,12 +24,49 @@ TFR_EST_reconcile_presidency = {
     }
 }
 
+# Native elections are disabled because the party ledger schedules elections.
+# HOI4 requires ruling_party even when only changing elections_allowed.
+# Keep the confirmed PM's ideology, including during caretaker government.
+TFR_EST_sync_native_cabinet_politics = {
+    if = {
+        limit = { TFR_EST_independent_parliament = yes }
+        if = {
+            limit = { check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } }
+            set_politics = { ruling_party = market_liberal elections_allowed = no name = TFR_EST_party_reform long_name = TFR_EST_party_reform }
+        }
+        if = {
+            limit = { check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } }
+            set_politics = { ruling_party = social_liberal elections_allowed = no name = TFR_EST_party_centre long_name = TFR_EST_party_centre }
+        }
+        if = {
+            limit = { check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } }
+            set_politics = { ruling_party = authoritarian_democrat elections_allowed = no name = TFR_EST_party_ekre long_name = TFR_EST_party_ekre }
+        }
+        if = {
+            limit = { check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } }
+            set_politics = { ruling_party = conservative elections_allowed = no name = TFR_EST_party_isamaa long_name = TFR_EST_party_isamaa }
+        }
+        if = {
+            limit = { check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } }
+            set_politics = { ruling_party = social_democrat elections_allowed = no name = TFR_EST_party_sde long_name = TFR_EST_party_sde }
+        }
+        if = {
+            limit = { check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } }
+            set_politics = { ruling_party = social_liberal elections_allowed = no name = TFR_EST_party_e200 long_name = TFR_EST_party_e200 }
+        }
+        if = {
+            limit = { check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } }
+            set_politics = { ruling_party = market_liberal elections_allowed = no name = TFR_EST_party_pp long_name = TFR_EST_party_pp }
+        }
+    }
+}
+
 # The confirmed party ledger owns independent Estonia's head of government.
 # Parent settlement scripts can replace leaders, so repair only a mismatched leader.
 TFR_EST_reconcile_cabinet_leadership = {
     if = {
         limit = { TFR_EST_independent_parliament = yes }
-        set_politics = { elections_allowed = no }
+        TFR_EST_sync_native_cabinet_politics = yes
         if = {
             limit = { check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } }
             if = {
@@ -463,53 +500,85 @@ if = {
 
 set_variable = { TFR_EST_vote_total = TFR_EST_support_other }
 set_variable = { TFR_EST_vote_eligible = 0 }
-set_variable = { TFR_EST_fraction_other = TFR_EST_support_other }
-modulo_variable = { TFR_EST_fraction_other = 1 }
+if = {
+ limit = { check_variable = { var = TFR_EST_support_other value = 0 compare = greater_than_or_equals } }
+ set_variable = { TFR_EST_fraction_other = TFR_EST_support_other }
+ modulo_variable = { TFR_EST_fraction_other = 1 }
+}
+else = { set_variable = { TFR_EST_fraction_other = -1 } }
 add_to_variable = { TFR_EST_vote_total = TFR_EST_support_reform }
-set_variable = { TFR_EST_fraction_reform = TFR_EST_support_reform }
-modulo_variable = { TFR_EST_fraction_reform = 1 }
+if = {
+ limit = { check_variable = { var = TFR_EST_support_reform value = 0 compare = greater_than_or_equals } }
+ set_variable = { TFR_EST_fraction_reform = TFR_EST_support_reform }
+ modulo_variable = { TFR_EST_fraction_reform = 1 }
+}
+else = { set_variable = { TFR_EST_fraction_reform = -1 } }
 if = {
  limit = { check_variable = { var = TFR_EST_active_reform value = 1 compare = equals } check_variable = { var = TFR_EST_support_reform value = 500 compare = greater_than_or_equals } }
  add_to_variable = { TFR_EST_vote_eligible = TFR_EST_support_reform }
 }
 add_to_variable = { TFR_EST_vote_total = TFR_EST_support_centre }
-set_variable = { TFR_EST_fraction_centre = TFR_EST_support_centre }
-modulo_variable = { TFR_EST_fraction_centre = 1 }
+if = {
+ limit = { check_variable = { var = TFR_EST_support_centre value = 0 compare = greater_than_or_equals } }
+ set_variable = { TFR_EST_fraction_centre = TFR_EST_support_centre }
+ modulo_variable = { TFR_EST_fraction_centre = 1 }
+}
+else = { set_variable = { TFR_EST_fraction_centre = -1 } }
 if = {
  limit = { check_variable = { var = TFR_EST_active_centre value = 1 compare = equals } check_variable = { var = TFR_EST_support_centre value = 500 compare = greater_than_or_equals } }
  add_to_variable = { TFR_EST_vote_eligible = TFR_EST_support_centre }
 }
 add_to_variable = { TFR_EST_vote_total = TFR_EST_support_ekre }
-set_variable = { TFR_EST_fraction_ekre = TFR_EST_support_ekre }
-modulo_variable = { TFR_EST_fraction_ekre = 1 }
+if = {
+ limit = { check_variable = { var = TFR_EST_support_ekre value = 0 compare = greater_than_or_equals } }
+ set_variable = { TFR_EST_fraction_ekre = TFR_EST_support_ekre }
+ modulo_variable = { TFR_EST_fraction_ekre = 1 }
+}
+else = { set_variable = { TFR_EST_fraction_ekre = -1 } }
 if = {
  limit = { check_variable = { var = TFR_EST_active_ekre value = 1 compare = equals } check_variable = { var = TFR_EST_support_ekre value = 500 compare = greater_than_or_equals } }
  add_to_variable = { TFR_EST_vote_eligible = TFR_EST_support_ekre }
 }
 add_to_variable = { TFR_EST_vote_total = TFR_EST_support_isamaa }
-set_variable = { TFR_EST_fraction_isamaa = TFR_EST_support_isamaa }
-modulo_variable = { TFR_EST_fraction_isamaa = 1 }
+if = {
+ limit = { check_variable = { var = TFR_EST_support_isamaa value = 0 compare = greater_than_or_equals } }
+ set_variable = { TFR_EST_fraction_isamaa = TFR_EST_support_isamaa }
+ modulo_variable = { TFR_EST_fraction_isamaa = 1 }
+}
+else = { set_variable = { TFR_EST_fraction_isamaa = -1 } }
 if = {
  limit = { check_variable = { var = TFR_EST_active_isamaa value = 1 compare = equals } check_variable = { var = TFR_EST_support_isamaa value = 500 compare = greater_than_or_equals } }
  add_to_variable = { TFR_EST_vote_eligible = TFR_EST_support_isamaa }
 }
 add_to_variable = { TFR_EST_vote_total = TFR_EST_support_sde }
-set_variable = { TFR_EST_fraction_sde = TFR_EST_support_sde }
-modulo_variable = { TFR_EST_fraction_sde = 1 }
+if = {
+ limit = { check_variable = { var = TFR_EST_support_sde value = 0 compare = greater_than_or_equals } }
+ set_variable = { TFR_EST_fraction_sde = TFR_EST_support_sde }
+ modulo_variable = { TFR_EST_fraction_sde = 1 }
+}
+else = { set_variable = { TFR_EST_fraction_sde = -1 } }
 if = {
  limit = { check_variable = { var = TFR_EST_active_sde value = 1 compare = equals } check_variable = { var = TFR_EST_support_sde value = 500 compare = greater_than_or_equals } }
  add_to_variable = { TFR_EST_vote_eligible = TFR_EST_support_sde }
 }
 add_to_variable = { TFR_EST_vote_total = TFR_EST_support_e200 }
-set_variable = { TFR_EST_fraction_e200 = TFR_EST_support_e200 }
-modulo_variable = { TFR_EST_fraction_e200 = 1 }
+if = {
+ limit = { check_variable = { var = TFR_EST_support_e200 value = 0 compare = greater_than_or_equals } }
+ set_variable = { TFR_EST_fraction_e200 = TFR_EST_support_e200 }
+ modulo_variable = { TFR_EST_fraction_e200 = 1 }
+}
+else = { set_variable = { TFR_EST_fraction_e200 = -1 } }
 if = {
  limit = { check_variable = { var = TFR_EST_active_e200 value = 1 compare = equals } check_variable = { var = TFR_EST_support_e200 value = 500 compare = greater_than_or_equals } }
  add_to_variable = { TFR_EST_vote_eligible = TFR_EST_support_e200 }
 }
 add_to_variable = { TFR_EST_vote_total = TFR_EST_support_pp }
-set_variable = { TFR_EST_fraction_pp = TFR_EST_support_pp }
-modulo_variable = { TFR_EST_fraction_pp = 1 }
+if = {
+ limit = { check_variable = { var = TFR_EST_support_pp value = 0 compare = greater_than_or_equals } }
+ set_variable = { TFR_EST_fraction_pp = TFR_EST_support_pp }
+ modulo_variable = { TFR_EST_fraction_pp = 1 }
+}
+else = { set_variable = { TFR_EST_fraction_pp = -1 } }
 if = {
  limit = { check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } check_variable = { var = TFR_EST_support_pp value = 500 compare = greater_than_or_equals } }
  add_to_variable = { TFR_EST_vote_eligible = TFR_EST_support_pp }

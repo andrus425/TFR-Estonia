@@ -1,0 +1,100 @@
+# Validation results — 13 October 2026
+
+This is an implemented **development build**, not a declaration that the public
+v1 campaign matrix has passed. The pinned parent is **The Fire Rises 1.0.9.1c**.
+The installed executable reports **HOI4 Operation Postern 1.19.3.0.c01a**.
+
+## Automated source and behavior checks
+
+| Check | Observed result |
+|---|---|
+| `tools/validate_mod.py` | 45 additive/override script files; 192 focuses, 53 events, 66 decisions, 902 English localization keys; **0 errors** |
+| `python -m unittest discover -s tests -v` | **26 tests passed**, including 500 randomized election allocations checked against an independent integer reference |
+| `tools/test_occupation_compatibility.py` | **10 structural regression tests passed** |
+| `tools/patch_tfr_compatibility.py --check` | **10 reproducible overrides and 236 audited protections verified** against the installed parent |
+| `tools/native_script_interface.py --check` | **0 files with legacy argument-block interfaces** |
+| Portable packaging tests | Deterministic archive, exclusions, portable descriptors and metadata rejection passed as part of the 26-test suite |
+
+The tests cover historical seats and confidence, threshold/tie behavior, invalid
+poll recovery, negative and fractional inputs, inactive parties, independent
+party identity, supply agreements, meter limits and tiers, economic unit conversion,
+reserve authorization, programme selection, formation, initialization, campaign
+stages and persistence through tree changes.
+
+Settlement checks compare actual generated scripts with upstream semantics.
+They cover guarded explicit and dynamic annexation, the retained anchor, partition
+remainders, original non-Estonia annex actions, parent war flags and follow-up
+events, autonomy restrictions, once-per-mandate force cleanup, all seven occupation
+gates and repeat-safe repair. They do not execute combat or a live peace conference.
+
+## Native engine observations
+
+The final Estonia run is captured locally under
+`test-output/engine-estonia-qa-20261013-095041/`.
+It loaded TFR, Estonia and an isolated arithmetic QA overlay, reached the frontend
+in approximately **101 seconds**, and passed all seven native assertions:
+
+1. Historical assembly and the 57-seat Ratas coalition.
+2. Equal polling allocates 51/50 according to the fixed tie order.
+3. Exactly 5% qualifies; 4.99% is excluded; the total is 101 seats.
+4. Invalid polling preserves the prior assembly.
+5. Seven equal qualifying parties allocate the remainders correctly.
+6. Occupation suspends election allocation.
+7. Cohesion/readiness changes clamp to 0/100 using native temporary inputs.
+
+The TFR-only comparison run is captured under
+`test-output/engine-parent-20261013-095435/` and reached the frontend in
+approximately **111 seconds**. The smoke-test processes were stopped and the
+original mod/DLC configuration was restored byte-for-byte after each run.
+
+`tools/compare_engine_logs.py` compared the two captured error logs after removing
+timestamps and source line numbers. Both contained **2,062 unique parent error
+messages**, with **0 new unique messages**, **0 removed messages**, and **0 messages
+containing the new `TFR_EST_` or `tfr_estonia` identifiers**. This establishes
+startup parity with this parent build; it does not make the parent error-free.
+The compact comparison is saved locally as `test-output/final-engine-comparison.json`.
+
+The QA overlay is not shipped or enabled in ordinary play. It executes arithmetic
+within a single hidden-effect context during frontend history construction.
+Temporary input and consumer statements must remain in the same context.
+
+An earlier experiment invoking occupation/diplomatic transitions during country
+history construction crashed before reaching the frontend. That fixture was
+removed. A history-time crash does not establish whether a live campaign
+settlement succeeds; protected occupations still require the active-campaign
+checks below. Earlier failed or incomplete runs remain in ignored local test
+outputs and are not counted as passes.
+
+## Acceptance checks still open
+
+No ordinary campaign was started by the smoke-test tool. Native application UI
+control is unavailable in this environment, so rendered interface acceptance and
+interactive campaign observations were not performed.
+
+- Ordinary campaigns for all seven parties, including legitimate route entry.
+- Every supported Russian and European defeat settlement in a running campaign,
+  with original force handling, a second defeat and restoration.
+- Parent pacification/integration and both-war progression under protected EST.
+- Save/reload around elections, delayed settlements and restoration.
+- AI research, production, recruitment, coalition behavior and focus progression.
+- DLC combinations, UI scales, full text/tooltip display and actual focus layout.
+- Long-term economy, preparation, military growth and occupation balance.
+- Custom portraits for characters currently using generic likenesses, plus actual
+  campaign screenshots for a public Workshop release.
+
+Use [the manual matrix](TEST_MATRIX.md) to record these observations. Public v1
+acceptance requires completing that matrix; successful source, startup and
+isolated arithmetic tests are the current evidence.
+
+## Reproduction
+
+Run the source checks in the README. Close any active HOI4 session before using
+the smoke-test tool. Prepare the isolated fixture with
+`python tools/prepare_engine_qa.py`, then run
+`tools/run_engine_smoke.ps1 -ArithmeticQA -Seconds 600`. Use `-ParentOnly` for
+the clean baseline. The tool stops early on frontend completion and checks every
+expected QA assertion. Compare captured logs with `tools/compare_engine_logs.py`.
+
+Rebuild the ZIP after changing documentation or source, then use
+`python tools/package_mod.py --check` to verify it exactly matches current inputs.
+The archive manifest records each packaged file's byte size and SHA-256 hash.

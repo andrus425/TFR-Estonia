@@ -99,6 +99,7 @@ python tools/validate_mod.py
 python -m unittest discover -s tests -v
 python tools/patch_tfr_compatibility.py --check
 python tools/test_occupation_compatibility.py
+python tools/native_script_interface.py --check
 ```
 
 On this Codex host, Python is also available at:
@@ -112,8 +113,10 @@ using `--write` after a TFR update.
 For a controlled startup parser check, close any existing HOI4 session and run:
 
 ```powershell
-.\tools\run_engine_smoke.ps1 -ParentOnly -Seconds 180
-.\tools\run_engine_smoke.ps1 -Seconds 180
+.\tools\run_engine_smoke.ps1 -ParentOnly -Seconds 600
+.\tools\run_engine_smoke.ps1 -Seconds 600
+python tools/prepare_engine_qa.py
+.\tools\run_engine_smoke.ps1 -ArithmeticQA -Seconds 600
 ```
 
 This tool temporarily selects a clean mod configuration, launches only its own
@@ -121,8 +124,15 @@ game process, copies logs into ignored `test-output`, stops that process, and
 restores the original mod-load configuration. It does **not** start or validate
 a campaign. Do not use it while playing an existing game.
 
+The 600-second limit allows cold startup; the tool finishes early when the game
+reports the frontend ready. The optional isolated QA overlay executes native
+election and meter assertions while constructing the initial
+country snapshot, and is excluded from releases. These checks do not exercise
+combat, natural war progression, interface rendering or save/reload.
+
 See [the architecture](docs/ARCHITECTURE.md), [manual test matrix](docs/TEST_MATRIX.md),
-and [validation results](docs/TEST_RESULTS.md) for the implementation contracts
+the [content specification](docs/CONTENT_SPEC.md) and
+[validation results](docs/TEST_RESULTS.md) for the implementation contracts
 and the distinction between automated checks and in-game verification.
 
 ## Assets and release status
@@ -137,6 +147,19 @@ interface inspection, DLC combinations and balance testing are release gates
 recorded in the manual matrix. A public Workshop release must not be presented
 as fully playtested until those gates are completed.
 
+## Packaging
+
+Run `python tools/package_mod.py` to create the portable development ZIP in
+`dist/`; `python tools/package_mod.py --check` verifies it against the current
+sources. Identical inputs produce an identical ZIP. The package includes the
+gameplay files, documentation, tools, tests, original flag thumbnail and a hash
+manifest; Git data, caches, logs and test outputs are excluded.
+
+Extract the ZIP into your HOI4 user-data `mod` directory. It contains
+`tfr-estonia/` and the adjacent `tfr-estonia.mod` with portable
+`path="mod/tfr-estonia"`. Enable **TFR Estonia (Development)** alongside
+**The Fire Rises**. This is a development artifact, not a Workshop publication.
+
 ## Updating TFR
 
 The parent remains untouched. Shared-file overrides are necessary to stop
@@ -146,7 +169,9 @@ individual protections are recorded in `docs/compatibility.json`.
 After a TFR update, compare each overridden file against the new parent version,
 review changed war/occupation assumptions, regenerate only after review, and rerun
 the automated and settlement tests. Reusing stale overrides can discard upstream
-fixes. The default supported baseline is 1.0.9.1c, not an unrestricted future version.
+fixes. Generated overrides retain the upstream BOM and use canonical LF line
+endings, enforced by Git attributes so output hashes survive checkout. Raw parent
+hashes are recorded separately. The supported baseline is 1.0.9.1c.
 
 Credits: The Fire Rises team and Paradox Interactive for the referenced parent
 content and game assets; Estonia's official election and government records for

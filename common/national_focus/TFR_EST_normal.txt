@@ -38,7 +38,8 @@ country_event = { id = tfr_estonia_content.1 }
         ai_will_do = { factor = 50 }
         completion_reward = {
             set_country_flag = TFR_EST_done_coalition_contract
-            TFR_EST_change_cohesion = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
 add_political_power = 40
         }
     }
@@ -57,7 +58,8 @@ add_political_power = 40
         ai_will_do = { factor = 50 }
         completion_reward = {
             set_country_flag = TFR_EST_done_public_health_contingency
-            TFR_EST_spend_budget = { AMOUNT = 25 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 25 }
+TFR_EST_spend_budget = yes
 country_event = { id = tfr_estonia_content.2 }
         }
     }
@@ -76,9 +78,11 @@ country_event = { id = tfr_estonia_content.2 }
         ai_will_do = { factor = 30 }
         completion_reward = {
             set_country_flag = TFR_EST_done_remote_government
-            TFR_EST_spend_budget = { AMOUNT = 20 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 20 }
+TFR_EST_spend_budget = yes
 add_ideas = TFR_EST_government_continuity
-TFR_EST_change_cohesion = { AMOUNT = 3 }
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -96,7 +100,8 @@ TFR_EST_change_cohesion = { AMOUNT = 3 }
         ai_will_do = { factor = 20 }
         completion_reward = {
             set_country_flag = TFR_EST_done_presidential_reserve
-            TFR_EST_change_cohesion = { AMOUNT = 5 }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = 5 }
+TFR_EST_change_cohesion = yes
 country_event = { id = tfr_estonia_content.3 }
         }
     }
@@ -115,8 +120,10 @@ country_event = { id = tfr_estonia_content.3 }
         ai_will_do = { factor = 25 }
         completion_reward = {
             set_country_flag = TFR_EST_done_protect_livelihoods
-            TFR_EST_spend_budget = { AMOUNT = 65 }
-TFR_EST_change_cohesion = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 65 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
 add_political_power = -25
         }
     }
@@ -135,7 +142,8 @@ add_political_power = -25
         ai_will_do = { factor = 20 }
         completion_reward = {
             set_country_flag = TFR_EST_done_credible_institutions
-            TFR_EST_change_cohesion = { AMOUNT = 5 }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = 5 }
+TFR_EST_change_cohesion = yes
 add_ideas = TFR_EST_open_administration
         }
     }
@@ -155,7 +163,8 @@ prerequisite = { focus = TFR_EST_credible_institutions }
         ai_will_do = { factor = 40 }
         completion_reward = {
             set_country_flag = TFR_EST_done_national_security_review
-            TFR_EST_change_readiness = { AMOUNT = 5 }
+            set_temp_variable = { var = TFR_EST_readiness_delta value = 5 }
+TFR_EST_change_readiness = yes
 army_experience = 10
 set_country_flag = TFR_EST_security_review
         }
@@ -175,7 +184,8 @@ set_country_flag = TFR_EST_security_review
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_reform_cabinet
-            TFR_EST_change_cohesion = { AMOUNT = 2 }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
 add_political_power = 60
         }
     }
@@ -194,8 +204,10 @@ add_political_power = 60
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_reform_digital_services
-            TFR_EST_spend_budget = { AMOUNT = 35 }
-TFR_EST_change_cohesion = { AMOUNT = 3 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 35 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -213,7 +225,8 @@ TFR_EST_change_cohesion = { AMOUNT = 3 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_reform_investment
-            TFR_EST_spend_budget = { AMOUNT = 50 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 50 }
+TFR_EST_spend_budget = yes
 add_political_power = 40
         }
     }
@@ -251,7 +264,8 @@ country_event = { id = tfr_estonia_content.11 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_reform_tartu_innovation
-            TFR_EST_spend_budget = { AMOUNT = 180 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 180 }
+TFR_EST_spend_budget = yes
 1329 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
 add_extra_state_shared_building_slots = 1
 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
@@ -272,8 +286,10 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_reform_school_access
-            TFR_EST_spend_budget = { AMOUNT = 45 }
-TFR_EST_change_cohesion = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 45 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -292,7 +308,8 @@ TFR_EST_change_cohesion = { AMOUNT = 4 }
         completion_reward = {
             set_country_flag = TFR_EST_done_reform_european_networks
             add_political_power = 45
-TFR_EST_change_cohesion = { AMOUNT = 2 }
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -310,8 +327,10 @@ TFR_EST_change_cohesion = { AMOUNT = 2 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_reform_precision_defence
-            TFR_EST_spend_budget = { AMOUNT = 60 }
-TFR_EST_change_readiness = { AMOUNT = 5 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 60 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 5 }
+TFR_EST_change_readiness = yes
 army_experience = 15
         }
     }
@@ -330,8 +349,10 @@ army_experience = 15
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_reform_crisis_transparency
-            TFR_EST_change_cohesion = { AMOUNT = 4 }
-TFR_EST_change_readiness = { AMOUNT = 2 }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 2 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -369,7 +390,8 @@ country_event = { id = tfr_estonia_content.17 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_centre_cabinet
-            TFR_EST_change_cohesion = { AMOUNT = 3 }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
 add_political_power = 50
         }
     }
@@ -388,8 +410,10 @@ add_political_power = 50
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_centre_municipal_compact
-            TFR_EST_spend_budget = { AMOUNT = 50 }
-TFR_EST_change_cohesion = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 50 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -407,7 +431,8 @@ TFR_EST_change_cohesion = { AMOUNT = 4 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_centre_regional_transport
-            TFR_EST_spend_budget = { AMOUNT = 100 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 100 }
+TFR_EST_spend_budget = yes
 191 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
 add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
         }
@@ -427,8 +452,10 @@ add_building_construction = { type = infrastructure level = 1 instant_build = ye
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_centre_family_security
-            TFR_EST_spend_budget = { AMOUNT = 55 }
-TFR_EST_change_cohesion = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 55 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
 add_political_power = -20
         }
     }
@@ -447,8 +474,10 @@ add_political_power = -20
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_centre_integration
-            TFR_EST_spend_budget = { AMOUNT = 35 }
-TFR_EST_change_cohesion = { AMOUNT = 5 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 35 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 5 }
+TFR_EST_change_cohesion = yes
 country_event = { id = tfr_estonia_content.10 }
         }
     }
@@ -467,7 +496,8 @@ country_event = { id = tfr_estonia_content.10 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_centre_fair_procurement
-            TFR_EST_change_cohesion = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
 add_political_power = -25
         }
     }
@@ -486,7 +516,8 @@ add_political_power = -25
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_centre_urban_industry
-            TFR_EST_spend_budget = { AMOUNT = 200 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 200 }
+TFR_EST_spend_budget = yes
 13 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
 add_extra_state_shared_building_slots = 1
 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
@@ -507,9 +538,12 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_centre_broad_defence
-            TFR_EST_spend_budget = { AMOUNT = 40 }
-TFR_EST_change_readiness = { AMOUNT = 5 }
-TFR_EST_change_cohesion = { AMOUNT = 2 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 40 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 5 }
+TFR_EST_change_readiness = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -527,9 +561,12 @@ TFR_EST_change_cohesion = { AMOUNT = 2 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_centre_social_war_compact
-            TFR_EST_spend_budget = { AMOUNT = 40 }
-TFR_EST_change_cohesion = { AMOUNT = 4 }
-TFR_EST_change_readiness = { AMOUNT = 2 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 40 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 2 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -568,7 +605,8 @@ country_event = { id = tfr_estonia_content.17 }
         completion_reward = {
             set_country_flag = TFR_EST_done_ekre_cabinet
             add_political_power = 60
-TFR_EST_change_cohesion = { AMOUNT = 1 }
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 1 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -586,8 +624,10 @@ TFR_EST_change_cohesion = { AMOUNT = 1 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_ekre_local_voice
-            TFR_EST_spend_budget = { AMOUNT = 40 }
-TFR_EST_change_cohesion = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 40 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -624,8 +664,10 @@ country_event = { id = tfr_estonia_content.12 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_ekre_border_service
-            TFR_EST_spend_budget = { AMOUNT = 55 }
-TFR_EST_change_readiness = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 55 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
 840 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
 add_building_construction = { type = anti_air_building level = 1 instant_build = yes } } }
         }
@@ -645,7 +687,8 @@ add_building_construction = { type = anti_air_building level = 1 instant_build =
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_ekre_rural_enterprise
-            TFR_EST_spend_budget = { AMOUNT = 160 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 160 }
+TFR_EST_spend_budget = yes
 191 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
 add_extra_state_shared_building_slots = 1
 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
@@ -666,8 +709,10 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_ekre_family_policy
-            TFR_EST_spend_budget = { AMOUNT = 50 }
-TFR_EST_change_cohesion = { AMOUNT = 3 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 50 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -685,9 +730,12 @@ TFR_EST_change_cohesion = { AMOUNT = 3 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_ekre_civil_duty
-            TFR_EST_spend_budget = { AMOUNT = 35 }
-TFR_EST_change_readiness = { AMOUNT = 5 }
-TFR_EST_change_cohesion = { AMOUNT = 2 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 35 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 5 }
+TFR_EST_change_readiness = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -705,7 +753,8 @@ TFR_EST_change_cohesion = { AMOUNT = 2 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_ekre_domestic_workshops
-            TFR_EST_spend_budget = { AMOUNT = 220 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 220 }
+TFR_EST_spend_budget = yes
 191 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
 add_extra_state_shared_building_slots = 1
 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } }
@@ -726,9 +775,11 @@ add_building_construction = { type = arms_factory level = 1 instant_build = yes 
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_ekre_wartime_sovereignty
-            TFR_EST_change_readiness = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
 army_experience = 15
-TFR_EST_change_cohesion = { AMOUNT = 2 }
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -767,7 +818,8 @@ country_event = { id = tfr_estonia_content.17 }
         completion_reward = {
             set_country_flag = TFR_EST_done_isamaa_cabinet
             add_political_power = 55
-TFR_EST_change_cohesion = { AMOUNT = 2 }
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -785,8 +837,10 @@ TFR_EST_change_cohesion = { AMOUNT = 2 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_isamaa_language
-            TFR_EST_spend_budget = { AMOUNT = 35 }
-TFR_EST_change_cohesion = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 35 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -804,8 +858,10 @@ TFR_EST_change_cohesion = { AMOUNT = 4 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_isamaa_family_housing
-            TFR_EST_spend_budget = { AMOUNT = 60 }
-TFR_EST_change_cohesion = { AMOUNT = 3 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 60 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -823,7 +879,8 @@ TFR_EST_change_cohesion = { AMOUNT = 3 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_isamaa_energy_security
-            TFR_EST_spend_budget = { AMOUNT = 55 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 55 }
+TFR_EST_spend_budget = yes
 country_event = { id = tfr_estonia_content.13 }
         }
     }
@@ -842,8 +899,10 @@ country_event = { id = tfr_estonia_content.13 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_isamaa_county_institutions
-            TFR_EST_spend_budget = { AMOUNT = 35 }
-TFR_EST_change_cohesion = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 35 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -861,7 +920,8 @@ TFR_EST_change_cohesion = { AMOUNT = 4 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_isamaa_national_industry
-            TFR_EST_spend_budget = { AMOUNT = 180 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 180 }
+TFR_EST_spend_budget = yes
 1329 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
 add_extra_state_shared_building_slots = 1
 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
@@ -882,8 +942,10 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_isamaa_territorial_defence
-            TFR_EST_spend_budget = { AMOUNT = 45 }
-TFR_EST_change_readiness = { AMOUNT = 5 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 45 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 5 }
+TFR_EST_change_readiness = yes
 army_experience = 15
         }
     }
@@ -902,10 +964,12 @@ army_experience = 15
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_isamaa_strategic_routes
-            TFR_EST_spend_budget = { AMOUNT = 80 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 80 }
+TFR_EST_spend_budget = yes
 1329 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
 add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
-TFR_EST_change_readiness = { AMOUNT = 2 }
+set_temp_variable = { var = TFR_EST_readiness_delta value = 2 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -923,8 +987,10 @@ TFR_EST_change_readiness = { AMOUNT = 2 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_isamaa_constitutional_continuity
-            TFR_EST_change_cohesion = { AMOUNT = 4 }
-TFR_EST_change_readiness = { AMOUNT = 3 }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -962,7 +1028,8 @@ country_event = { id = tfr_estonia_content.17 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_sde_cabinet
-            TFR_EST_change_cohesion = { AMOUNT = 3 }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
 add_political_power = 50
         }
     }
@@ -981,8 +1048,10 @@ add_political_power = 50
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_sde_labour_compact
-            TFR_EST_spend_budget = { AMOUNT = 35 }
-TFR_EST_change_cohesion = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 35 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -1000,8 +1069,10 @@ TFR_EST_change_cohesion = { AMOUNT = 4 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_sde_health_network
-            TFR_EST_spend_budget = { AMOUNT = 80 }
-TFR_EST_change_cohesion = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 80 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -1038,7 +1109,8 @@ country_event = { id = tfr_estonia_content.14 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_sde_training_jobs
-            TFR_EST_spend_budget = { AMOUNT = 160 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 160 }
+TFR_EST_spend_budget = yes
 191 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
 add_extra_state_shared_building_slots = 1
 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
@@ -1059,8 +1131,10 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_sde_inclusive_republic
-            TFR_EST_spend_budget = { AMOUNT = 30 }
-TFR_EST_change_cohesion = { AMOUNT = 5 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 30 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 5 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -1078,9 +1152,12 @@ TFR_EST_change_cohesion = { AMOUNT = 5 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_sde_civil_resilience
-            TFR_EST_spend_budget = { AMOUNT = 50 }
-TFR_EST_change_readiness = { AMOUNT = 4 }
-TFR_EST_change_cohesion = { AMOUNT = 2 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 50 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -1098,9 +1175,12 @@ TFR_EST_change_cohesion = { AMOUNT = 2 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_sde_service_families
-            TFR_EST_spend_budget = { AMOUNT = 45 }
-TFR_EST_change_readiness = { AMOUNT = 4 }
-TFR_EST_change_cohesion = { AMOUNT = 3 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 45 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -1118,7 +1198,8 @@ TFR_EST_change_cohesion = { AMOUNT = 3 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_sde_fair_requisition
-            TFR_EST_change_cohesion = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
 army_experience = 10
         }
     }
@@ -1158,7 +1239,8 @@ country_event = { id = tfr_estonia_content.17 }
         completion_reward = {
             set_country_flag = TFR_EST_done_e200_cabinet
             add_political_power = 55
-TFR_EST_change_cohesion = { AMOUNT = 2 }
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -1176,7 +1258,8 @@ TFR_EST_change_cohesion = { AMOUNT = 2 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_e200_long_plan
-            TFR_EST_change_cohesion = { AMOUNT = 3 }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
 add_political_power = 35
         }
     }
@@ -1195,8 +1278,10 @@ add_political_power = 35
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_e200_teachers
-            TFR_EST_spend_budget = { AMOUNT = 70 }
-TFR_EST_change_cohesion = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 70 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -1233,7 +1318,8 @@ country_event = { id = tfr_estonia_content.15 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_e200_university_industry
-            TFR_EST_spend_budget = { AMOUNT = 180 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 180 }
+TFR_EST_spend_budget = yes
 1329 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
 add_extra_state_shared_building_slots = 1
 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
@@ -1254,8 +1340,10 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_e200_shared_schools
-            TFR_EST_spend_budget = { AMOUNT = 50 }
-TFR_EST_change_cohesion = { AMOUNT = 5 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 50 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 5 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -1273,8 +1361,10 @@ TFR_EST_change_cohesion = { AMOUNT = 5 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_e200_future_services
-            TFR_EST_spend_budget = { AMOUNT = 30 }
-TFR_EST_change_cohesion = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 30 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -1292,8 +1382,10 @@ TFR_EST_change_cohesion = { AMOUNT = 4 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_e200_adaptive_defence
-            TFR_EST_spend_budget = { AMOUNT = 45 }
-TFR_EST_change_readiness = { AMOUNT = 5 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 45 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 5 }
+TFR_EST_change_readiness = yes
 army_experience = 15
         }
     }
@@ -1312,8 +1404,10 @@ army_experience = 15
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_e200_future_after_war
-            TFR_EST_change_cohesion = { AMOUNT = 3 }
-TFR_EST_change_readiness = { AMOUNT = 3 }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
 add_political_power = 30
         }
     }
@@ -1353,7 +1447,8 @@ country_event = { id = tfr_estonia_content.17 }
         completion_reward = {
             set_country_flag = TFR_EST_done_pp_cabinet
             add_political_power = 60
-TFR_EST_change_cohesion = { AMOUNT = 1 }
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 1 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -1372,7 +1467,8 @@ TFR_EST_change_cohesion = { AMOUNT = 1 }
         completion_reward = {
             set_country_flag = TFR_EST_done_pp_audit
             add_political_power = 35
-TFR_EST_change_cohesion = { AMOUNT = 2 }
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -1390,7 +1486,8 @@ TFR_EST_change_cohesion = { AMOUNT = 2 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_pp_enterprise_rules
-            TFR_EST_spend_budget = { AMOUNT = 35 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 35 }
+TFR_EST_spend_budget = yes
 add_political_power = 40
         }
     }
@@ -1428,7 +1525,8 @@ country_event = { id = tfr_estonia_content.16 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_pp_industrial_sites
-            TFR_EST_spend_budget = { AMOUNT = 170 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 170 }
+TFR_EST_spend_budget = yes
 13 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
 add_extra_state_shared_building_slots = 1
 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
@@ -1449,8 +1547,10 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_pp_justice_capacity
-            TFR_EST_spend_budget = { AMOUNT = 25 }
-TFR_EST_change_cohesion = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 25 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -1468,8 +1568,10 @@ TFR_EST_change_cohesion = { AMOUNT = 4 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_pp_targeted_services
-            TFR_EST_spend_budget = { AMOUNT = 25 }
-TFR_EST_change_cohesion = { AMOUNT = 3 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 25 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -1487,8 +1589,10 @@ TFR_EST_change_cohesion = { AMOUNT = 3 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_pp_procurement_discipline
-            TFR_EST_spend_budget = { AMOUNT = 35 }
-TFR_EST_change_readiness = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 35 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
 army_experience = 15
         }
     }
@@ -1507,9 +1611,12 @@ army_experience = 15
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_pp_crisis_reserves
-            TFR_EST_spend_budget = { AMOUNT = 40 }
-TFR_EST_change_readiness = { AMOUNT = 3 }
-TFR_EST_change_cohesion = { AMOUNT = 2 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 40 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -1547,7 +1654,8 @@ country_event = { id = tfr_estonia_content.17 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_secure_records
-            TFR_EST_spend_budget = { AMOUNT = 35 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 35 }
+TFR_EST_spend_budget = yes
 add_ideas = TFR_EST_secure_digital_state
         }
     }
@@ -1566,8 +1674,10 @@ add_ideas = TFR_EST_secure_digital_state
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_technical_training
-            TFR_EST_spend_budget = { AMOUNT = 45 }
-TFR_EST_change_cohesion = { AMOUNT = 2 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 45 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -1585,7 +1695,8 @@ TFR_EST_change_cohesion = { AMOUNT = 2 }
         ai_will_do = { factor = 5 }
         completion_reward = {
             set_country_flag = TFR_EST_done_tartu_research
-            TFR_EST_spend_budget = { AMOUNT = 50 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 50 }
+TFR_EST_spend_budget = yes
 add_ideas = TFR_EST_research_partnerships
         }
     }
@@ -1604,9 +1715,12 @@ add_ideas = TFR_EST_research_partnerships
         ai_will_do = { factor = 5 }
         completion_reward = {
             set_country_flag = TFR_EST_done_rural_broadband
-            TFR_EST_spend_budget = { AMOUNT = 50 }
-TFR_EST_change_cohesion = { AMOUNT = 3 }
-TFR_EST_change_readiness = { AMOUNT = 1 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 50 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 1 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -1624,8 +1738,10 @@ TFR_EST_change_readiness = { AMOUNT = 1 }
         ai_will_do = { factor = 5 }
         completion_reward = {
             set_country_flag = TFR_EST_done_cyber_exercises
-            TFR_EST_spend_budget = { AMOUNT = 25 }
-TFR_EST_change_readiness = { AMOUNT = 3 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 25 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
 add_political_power = 25
         }
     }
@@ -1644,7 +1760,8 @@ add_political_power = 25
         ai_will_do = { factor = 5 }
         completion_reward = {
             set_country_flag = TFR_EST_done_digital_civic_compact
-            TFR_EST_change_cohesion = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
 country_event = { id = tfr_estonia_content.20 }
         }
     }
@@ -1682,7 +1799,8 @@ set_country_flag = TFR_EST_industrial_survey
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_tallinn_industry
-            TFR_EST_spend_budget = { AMOUNT = 220 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 220 }
+TFR_EST_spend_budget = yes
 13 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
 add_extra_state_shared_building_slots = 1
 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
@@ -1703,10 +1821,12 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         ai_will_do = { factor = 5 }
         completion_reward = {
             set_country_flag = TFR_EST_done_livonia_logistics
-            TFR_EST_spend_budget = { AMOUNT = 100 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 100 }
+TFR_EST_spend_budget = yes
 191 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
 add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
-TFR_EST_change_readiness = { AMOUNT = 1 }
+set_temp_variable = { var = TFR_EST_readiness_delta value = 1 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -1724,7 +1844,8 @@ TFR_EST_change_readiness = { AMOUNT = 1 }
         ai_will_do = { factor = 5 }
         completion_reward = {
             set_country_flag = TFR_EST_done_defence_contracts
-            TFR_EST_spend_budget = { AMOUNT = 260 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 260 }
+TFR_EST_spend_budget = yes
 191 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
 add_extra_state_shared_building_slots = 1
 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } }
@@ -1745,9 +1866,11 @@ add_building_construction = { type = arms_factory level = 1 instant_build = yes 
         ai_will_do = { factor = 5 }
         completion_reward = {
             set_country_flag = TFR_EST_done_maintenance_network
-            TFR_EST_spend_budget = { AMOUNT = 45 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 45 }
+TFR_EST_spend_budget = yes
 add_ideas = TFR_EST_maintenance_network
-TFR_EST_change_readiness = { AMOUNT = 2 }
+set_temp_variable = { var = TFR_EST_readiness_delta value = 2 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -1766,7 +1889,8 @@ TFR_EST_change_readiness = { AMOUNT = 2 }
         completion_reward = {
             set_country_flag = TFR_EST_done_productive_republic
             add_political_power = 50
-TFR_EST_change_cohesion = { AMOUNT = 3 }
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -1785,7 +1909,8 @@ TFR_EST_change_cohesion = { AMOUNT = 3 }
         completion_reward = {
             set_country_flag = TFR_EST_done_energy_audit
             add_political_power = 35
-TFR_EST_change_readiness = { AMOUNT = 2 }
+set_temp_variable = { var = TFR_EST_readiness_delta value = 2 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -1803,11 +1928,13 @@ TFR_EST_change_readiness = { AMOUNT = 2 }
         ai_will_do = { factor = 8 }
         completion_reward = {
             set_country_flag = TFR_EST_done_ida_viru_transition
-            TFR_EST_spend_budget = { AMOUNT = 240 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 240 }
+TFR_EST_spend_budget = yes
 840 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
 add_extra_state_shared_building_slots = 1
 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
-TFR_EST_change_cohesion = { AMOUNT = 3 }
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -1825,10 +1952,12 @@ TFR_EST_change_cohesion = { AMOUNT = 3 }
         ai_will_do = { factor = 5 }
         completion_reward = {
             set_country_flag = TFR_EST_done_grid_resilience
-            TFR_EST_spend_budget = { AMOUNT = 100 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 100 }
+TFR_EST_spend_budget = yes
 840 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
 add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
-TFR_EST_change_readiness = { AMOUNT = 2 }
+set_temp_variable = { var = TFR_EST_readiness_delta value = 2 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -1846,8 +1975,10 @@ TFR_EST_change_readiness = { AMOUNT = 2 }
         ai_will_do = { factor = 5 }
         completion_reward = {
             set_country_flag = TFR_EST_done_emergency_energy
-            TFR_EST_spend_budget = { AMOUNT = 65 }
-TFR_EST_change_readiness = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 65 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -1865,8 +1996,10 @@ TFR_EST_change_readiness = { AMOUNT = 4 }
         ai_will_do = { factor = 5 }
         completion_reward = {
             set_country_flag = TFR_EST_done_affordable_heat
-            TFR_EST_spend_budget = { AMOUNT = 50 }
-TFR_EST_change_cohesion = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 50 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -1884,9 +2017,12 @@ TFR_EST_change_cohesion = { AMOUNT = 4 }
         ai_will_do = { factor = 5 }
         completion_reward = {
             set_country_flag = TFR_EST_done_resilient_utilities
-            TFR_EST_spend_budget = { AMOUNT = 25 }
-TFR_EST_change_readiness = { AMOUNT = 3 }
-TFR_EST_change_cohesion = { AMOUNT = 2 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 25 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -1904,8 +2040,10 @@ TFR_EST_change_cohesion = { AMOUNT = 2 }
         ai_will_do = { factor = 15 }
         completion_reward = {
             set_country_flag = TFR_EST_done_reserve_register
-            TFR_EST_spend_budget = { AMOUNT = 20 }
-TFR_EST_change_readiness = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 20 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -1923,8 +2061,10 @@ TFR_EST_change_readiness = { AMOUNT = 4 }
         ai_will_do = { factor = 15 }
         completion_reward = {
             set_country_flag = TFR_EST_done_kaitseliit_training
-            TFR_EST_spend_budget = { AMOUNT = 35 }
-TFR_EST_change_readiness = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 35 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
 army_experience = 15
 add_ideas = TFR_EST_kaitseliit_network
         }
@@ -1944,8 +2084,10 @@ add_ideas = TFR_EST_kaitseliit_network
         ai_will_do = { factor = 15 }
         completion_reward = {
             set_country_flag = TFR_EST_done_reserve_training_exercise
-            TFR_EST_spend_budget = { AMOUNT = 50 }
-TFR_EST_change_readiness = { AMOUNT = 6 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 50 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 6 }
+TFR_EST_change_readiness = yes
 army_experience = 20
         }
     }
@@ -1964,8 +2106,10 @@ army_experience = 20
         ai_will_do = { factor = 10 }
         completion_reward = {
             set_country_flag = TFR_EST_done_reserve_depots
-            TFR_EST_spend_budget = { AMOUNT = 45 }
-TFR_EST_change_readiness = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 45 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -1983,7 +2127,8 @@ TFR_EST_change_readiness = { AMOUNT = 4 }
         ai_will_do = { factor = 10 }
         completion_reward = {
             set_country_flag = TFR_EST_done_mobilization_plans
-            TFR_EST_change_readiness = { AMOUNT = 3 }
+            set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
 set_country_flag = TFR_EST_reserve_plan
 custom_effect_tooltip = TFR_EST_reserve_plan_tt
         }
@@ -2003,8 +2148,10 @@ custom_effect_tooltip = TFR_EST_reserve_plan_tt
         ai_will_do = { factor = 10 }
         completion_reward = {
             set_country_flag = TFR_EST_done_total_defence
-            TFR_EST_spend_budget = { AMOUNT = 35 }
-TFR_EST_change_readiness = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 35 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
 add_ideas = TFR_EST_total_defence
         }
     }
@@ -2023,8 +2170,10 @@ add_ideas = TFR_EST_total_defence
         ai_will_do = { factor = 15 }
         completion_reward = {
             set_country_flag = TFR_EST_done_logistics_audit
-            TFR_EST_spend_budget = { AMOUNT = 20 }
-TFR_EST_change_readiness = { AMOUNT = 3 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 20 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
 army_experience = 10
         }
     }
@@ -2043,10 +2192,12 @@ army_experience = 10
         ai_will_do = { factor = 15 }
         completion_reward = {
             set_country_flag = TFR_EST_done_northern_routes
-            TFR_EST_spend_budget = { AMOUNT = 110 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 110 }
+TFR_EST_spend_budget = yes
 13 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
 add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
-TFR_EST_change_readiness = { AMOUNT = 2 }
+set_temp_variable = { var = TFR_EST_readiness_delta value = 2 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -2064,10 +2215,12 @@ TFR_EST_change_readiness = { AMOUNT = 2 }
         ai_will_do = { factor = 15 }
         completion_reward = {
             set_country_flag = TFR_EST_done_tartu_distribution
-            TFR_EST_spend_budget = { AMOUNT = 90 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 90 }
+TFR_EST_spend_budget = yes
 1329 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
 add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
-TFR_EST_change_readiness = { AMOUNT = 2 }
+set_temp_variable = { var = TFR_EST_readiness_delta value = 2 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -2085,7 +2238,8 @@ TFR_EST_change_readiness = { AMOUNT = 2 }
         ai_will_do = { factor = 10 }
         completion_reward = {
             set_country_flag = TFR_EST_done_field_repair
-            TFR_EST_spend_budget = { AMOUNT = 45 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 45 }
+TFR_EST_spend_budget = yes
 add_ideas = TFR_EST_field_repair_network
 army_experience = 15
         }
@@ -2105,10 +2259,12 @@ army_experience = 15
         ai_will_do = { factor = 10 }
         completion_reward = {
             set_country_flag = TFR_EST_done_air_defence_sites
-            TFR_EST_spend_budget = { AMOUNT = 80 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 80 }
+TFR_EST_spend_budget = yes
 13 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
 add_building_construction = { type = anti_air_building level = 2 instant_build = yes } } }
-TFR_EST_change_readiness = { AMOUNT = 3 }
+set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -2126,8 +2282,10 @@ TFR_EST_change_readiness = { AMOUNT = 3 }
         ai_will_do = { factor = 10 }
         completion_reward = {
             set_country_flag = TFR_EST_done_national_supply_plan
-            TFR_EST_spend_budget = { AMOUNT = 25 }
-TFR_EST_change_readiness = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 25 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
 add_ideas = TFR_EST_joint_logistics
         }
     }
@@ -2147,7 +2305,8 @@ add_ideas = TFR_EST_joint_logistics
         completion_reward = {
             set_country_flag = TFR_EST_done_allied_liaison
             add_political_power = 45
-TFR_EST_change_readiness = { AMOUNT = 2 }
+set_temp_variable = { var = TFR_EST_readiness_delta value = 2 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -2165,8 +2324,10 @@ TFR_EST_change_readiness = { AMOUNT = 2 }
         ai_will_do = { factor = 15 }
         completion_reward = {
             set_country_flag = TFR_EST_done_interoperability
-            TFR_EST_spend_budget = { AMOUNT = 50 }
-TFR_EST_change_readiness = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 50 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
 army_experience = 15
         }
     }
@@ -2185,8 +2346,10 @@ army_experience = 15
         ai_will_do = { factor = 15 }
         completion_reward = {
             set_country_flag = TFR_EST_done_allied_receiving
-            TFR_EST_spend_budget = { AMOUNT = 55 }
-TFR_EST_change_readiness = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 55 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
 army_experience = 10
         }
     }
@@ -2225,10 +2388,12 @@ custom_effect_tooltip = TFR_EST_procurement_plan_tt
         ai_will_do = { factor = 10 }
         completion_reward = {
             set_country_flag = TFR_EST_done_air_warning
-            TFR_EST_spend_budget = { AMOUNT = 70 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 70 }
+TFR_EST_spend_budget = yes
 13 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
 add_building_construction = { type = radar_station level = 1 instant_build = yes } } }
-TFR_EST_change_readiness = { AMOUNT = 3 }
+set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -2246,7 +2411,8 @@ TFR_EST_change_readiness = { AMOUNT = 3 }
         ai_will_do = { factor = 10 }
         completion_reward = {
             set_country_flag = TFR_EST_done_prepared_alliance
-            TFR_EST_change_readiness = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
 army_experience = 20
 set_country_flag = TFR_EST_alliance_prepared
         }
@@ -2266,10 +2432,12 @@ set_country_flag = TFR_EST_alliance_prepared
         ai_will_do = { factor = 10 }
         completion_reward = {
             set_country_flag = TFR_EST_done_prepared_positions
-            TFR_EST_spend_budget = { AMOUNT = 60 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 60 }
+TFR_EST_spend_budget = yes
 13 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT ROOT = { controls_province = 3152 } } add_building_construction = { type = bunker province = 3152 level = 1 instant_build = yes } } }
 840 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT ROOT = { controls_province = 4640 } } add_building_construction = { type = bunker province = 4640 level = 1 instant_build = yes } } }
-TFR_EST_change_readiness = { AMOUNT = 3 }
+set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -2287,9 +2455,11 @@ TFR_EST_change_readiness = { AMOUNT = 3 }
         ai_will_do = { factor = 10 }
         completion_reward = {
             set_country_flag = TFR_EST_done_artillery_observers
-            TFR_EST_spend_budget = { AMOUNT = 40 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 40 }
+TFR_EST_spend_budget = yes
 army_experience = 25
-TFR_EST_change_readiness = { AMOUNT = 3 }
+set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -2307,9 +2477,11 @@ TFR_EST_change_readiness = { AMOUNT = 3 }
         ai_will_do = { factor = 10 }
         completion_reward = {
             set_country_flag = TFR_EST_done_air_defence_integration
-            TFR_EST_spend_budget = { AMOUNT = 45 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 45 }
+TFR_EST_spend_budget = yes
 air_experience = 20
-TFR_EST_change_readiness = { AMOUNT = 3 }
+set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -2327,8 +2499,10 @@ TFR_EST_change_readiness = { AMOUNT = 3 }
         ai_will_do = { factor = 40 }
         completion_reward = {
             set_country_flag = TFR_EST_done_first_emergency
-            TFR_EST_change_cohesion = { AMOUNT = 3 }
-TFR_EST_change_readiness = { AMOUNT = 3 }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
 country_event = { id = tfr_estonia_content.30 }
         }
     }
@@ -2347,9 +2521,12 @@ country_event = { id = tfr_estonia_content.30 }
         ai_will_do = { factor = 40 }
         completion_reward = {
             set_country_flag = TFR_EST_done_first_civil_protection
-            TFR_EST_spend_budget = { AMOUNT = 50 }
-TFR_EST_change_cohesion = { AMOUNT = 4 }
-TFR_EST_change_readiness = { AMOUNT = 2 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 50 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 2 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -2387,7 +2564,8 @@ if = { limit = { TFR_EST_can_mobilize = yes } TFR_EST_mobilize_reserves = yes }
         completion_reward = {
             set_country_flag = TFR_EST_done_first_command
             army_experience = 25
-TFR_EST_change_readiness = { AMOUNT = 4 }
+set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -2405,8 +2583,10 @@ TFR_EST_change_readiness = { AMOUNT = 4 }
         ai_will_do = { factor = 40 }
         completion_reward = {
             set_country_flag = TFR_EST_done_first_supply
-            TFR_EST_spend_budget = { AMOUNT = 40 }
-TFR_EST_change_readiness = { AMOUNT = 3 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 40 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
 add_ideas = TFR_EST_wartime_transport
         }
     }
@@ -2426,7 +2606,8 @@ add_ideas = TFR_EST_wartime_transport
         completion_reward = {
             set_country_flag = TFR_EST_done_first_allied_staff
             army_experience = 20
-TFR_EST_change_readiness = { AMOUNT = 3 }
+set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -2463,9 +2644,12 @@ country_event = { id = tfr_estonia_content.31 }
         ai_will_do = { factor = 40 }
         completion_reward = {
             set_country_flag = TFR_EST_done_first_defend_capital
-            TFR_EST_spend_budget = { AMOUNT = 40 }
-TFR_EST_change_cohesion = { AMOUNT = 3 }
-TFR_EST_change_readiness = { AMOUNT = 3 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 40 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -2483,7 +2667,8 @@ TFR_EST_change_readiness = { AMOUNT = 3 }
         ai_will_do = { factor = 40 }
         completion_reward = {
             set_country_flag = TFR_EST_done_first_endurance
-            TFR_EST_change_cohesion = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
 add_ideas = TFR_EST_national_endurance
         }
     }
@@ -2503,7 +2688,8 @@ add_ideas = TFR_EST_national_endurance
         completion_reward = {
             set_country_flag = TFR_EST_done_first_lessons
             army_experience = 30
-TFR_EST_change_readiness = { AMOUNT = 4 }
+set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
 set_country_flag = TFR_EST_first_lessons
         }
     }
@@ -2541,8 +2727,10 @@ country_event = { id = tfr_estonia_content.40 }
         ai_will_do = { factor = 25 }
         completion_reward = {
             set_country_flag = TFR_EST_done_reconstruction_services
-            TFR_EST_spend_budget = { AMOUNT = 60 }
-TFR_EST_change_cohesion = { AMOUNT = 5 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 60 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 5 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -2560,8 +2748,10 @@ TFR_EST_change_cohesion = { AMOUNT = 5 }
         ai_will_do = { factor = 25 }
         completion_reward = {
             set_country_flag = TFR_EST_done_returning_families
-            TFR_EST_spend_budget = { AMOUNT = 50 }
-TFR_EST_change_cohesion = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 50 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -2579,7 +2769,8 @@ TFR_EST_change_cohesion = { AMOUNT = 4 }
         ai_will_do = { factor = 25 }
         completion_reward = {
             set_country_flag = TFR_EST_done_reconstruction_industry
-            TFR_EST_spend_budget = { AMOUNT = 180 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 180 }
+TFR_EST_spend_budget = yes
 13 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
 add_extra_state_shared_building_slots = 1
 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
@@ -2601,7 +2792,8 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         completion_reward = {
             set_country_flag = TFR_EST_done_reconstruction_accounts
             add_political_power = 35
-TFR_EST_change_cohesion = { AMOUNT = 4 }
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -2619,8 +2811,10 @@ TFR_EST_change_cohesion = { AMOUNT = 4 }
         ai_will_do = { factor = 25 }
         completion_reward = {
             set_country_flag = TFR_EST_done_reconstruction_defence
-            TFR_EST_spend_budget = { AMOUNT = 45 }
-TFR_EST_change_readiness = { AMOUNT = 5 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 45 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 5 }
+TFR_EST_change_readiness = yes
 army_experience = 25
         }
     }
@@ -2640,7 +2834,8 @@ army_experience = 25
         completion_reward = {
             set_country_flag = TFR_EST_done_reconstruction_partners
             add_political_power = 60
-TFR_EST_change_readiness = { AMOUNT = 2 }
+set_temp_variable = { var = TFR_EST_readiness_delta value = 2 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -2658,8 +2853,10 @@ TFR_EST_change_readiness = { AMOUNT = 2 }
         ai_will_do = { factor = 25 }
         completion_reward = {
             set_country_flag = TFR_EST_done_interwar_watch
-            TFR_EST_change_readiness = { AMOUNT = 4 }
-TFR_EST_change_cohesion = { AMOUNT = 3 }
+            set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
 set_country_flag = TFR_EST_interwar_watch
         }
     }
@@ -2678,8 +2875,10 @@ set_country_flag = TFR_EST_interwar_watch
         ai_will_do = { factor = 45 }
         completion_reward = {
             set_country_flag = TFR_EST_done_second_emergency
-            TFR_EST_change_cohesion = { AMOUNT = 3 }
-TFR_EST_change_readiness = { AMOUNT = 3 }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
 country_event = { id = tfr_estonia_content.50 }
         }
     }
@@ -2699,7 +2898,8 @@ country_event = { id = tfr_estonia_content.50 }
         completion_reward = {
             set_country_flag = TFR_EST_done_second_readiness
             army_experience = 25
-TFR_EST_change_readiness = { AMOUNT = 4 }
+set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -2717,9 +2917,12 @@ TFR_EST_change_readiness = { AMOUNT = 4 }
         ai_will_do = { factor = 45 }
         completion_reward = {
             set_country_flag = TFR_EST_done_second_local_networks
-            TFR_EST_spend_budget = { AMOUNT = 40 }
-TFR_EST_change_cohesion = { AMOUNT = 4 }
-TFR_EST_change_readiness = { AMOUNT = 2 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 40 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 2 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -2737,7 +2940,8 @@ TFR_EST_change_readiness = { AMOUNT = 2 }
         ai_will_do = { factor = 45 }
         completion_reward = {
             set_country_flag = TFR_EST_done_second_reserve_renewal
-            TFR_EST_change_readiness = { AMOUNT = 3 }
+            set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
 set_country_flag = TFR_EST_reserve_plan
 if = { limit = { TFR_EST_can_mobilize = yes } TFR_EST_mobilize_reserves = yes }
         }
@@ -2757,9 +2961,11 @@ if = { limit = { TFR_EST_can_mobilize = yes } TFR_EST_mobilize_reserves = yes }
         ai_will_do = { factor = 45 }
         completion_reward = {
             set_country_flag = TFR_EST_done_second_maintenance
-            TFR_EST_spend_budget = { AMOUNT = 65 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 65 }
+TFR_EST_spend_budget = yes
 army_experience = 20
-TFR_EST_change_readiness = { AMOUNT = 3 }
+set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -2778,7 +2984,8 @@ TFR_EST_change_readiness = { AMOUNT = 3 }
         completion_reward = {
             set_country_flag = TFR_EST_done_second_common_command
             army_experience = 25
-TFR_EST_change_readiness = { AMOUNT = 3 }
+set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -2815,8 +3022,10 @@ country_event = { id = tfr_estonia_content.51 }
         ai_will_do = { factor = 45 }
         completion_reward = {
             set_country_flag = TFR_EST_done_second_supply_resilience
-            TFR_EST_spend_budget = { AMOUNT = 50 }
-TFR_EST_change_readiness = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 50 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
 add_ideas = TFR_EST_second_war_logistics
         }
     }
@@ -2835,8 +3044,10 @@ add_ideas = TFR_EST_second_war_logistics
         ai_will_do = { factor = 45 }
         completion_reward = {
             set_country_flag = TFR_EST_done_second_social_endurance
-            TFR_EST_spend_budget = { AMOUNT = 55 }
-TFR_EST_change_cohesion = { AMOUNT = 5 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 55 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 5 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -2854,8 +3065,10 @@ TFR_EST_change_cohesion = { AMOUNT = 5 }
         ai_will_do = { factor = 45 }
         completion_reward = {
             set_country_flag = TFR_EST_done_second_republic_survives
-            TFR_EST_change_cohesion = { AMOUNT = 4 }
-TFR_EST_change_readiness = { AMOUNT = 3 }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
 set_country_flag = TFR_EST_second_lessons
         }
     }
@@ -2874,7 +3087,8 @@ set_country_flag = TFR_EST_second_lessons
         ai_will_do = { factor = 30 }
         completion_reward = {
             set_country_flag = TFR_EST_done_second_settlement
-            TFR_EST_change_cohesion = { AMOUNT = 3 }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
 add_political_power = 60
 country_event = { id = tfr_estonia_content.60 }
         }
@@ -2894,10 +3108,12 @@ country_event = { id = tfr_estonia_content.60 }
         ai_will_do = { factor = 30 }
         completion_reward = {
             set_country_flag = TFR_EST_done_postwar_repairs
-            TFR_EST_spend_budget = { AMOUNT = 100 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 100 }
+TFR_EST_spend_budget = yes
 13 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
 add_building_construction = { type = infrastructure level = 1 instant_build = yes } } }
-TFR_EST_change_cohesion = { AMOUNT = 3 }
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -2915,7 +3131,8 @@ TFR_EST_change_cohesion = { AMOUNT = 3 }
         ai_will_do = { factor = 30 }
         completion_reward = {
             set_country_flag = TFR_EST_done_postwar_industry
-            TFR_EST_spend_budget = { AMOUNT = 200 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 200 }
+TFR_EST_spend_budget = yes
 13 = { if = { limit = { is_owned_by = ROOT is_controlled_by = ROOT }
 add_extra_state_shared_building_slots = 1
 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } }
@@ -2936,7 +3153,8 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         ai_will_do = { factor = 30 }
         completion_reward = {
             set_country_flag = TFR_EST_done_postwar_accountability
-            TFR_EST_change_cohesion = { AMOUNT = 5 }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = 5 }
+TFR_EST_change_cohesion = yes
 add_political_power = 40
         }
     }
@@ -2956,7 +3174,8 @@ add_political_power = 40
         completion_reward = {
             set_country_flag = TFR_EST_done_postwar_security
             army_experience = 25
-TFR_EST_change_readiness = { AMOUNT = 4 }
+set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
 add_ideas = TFR_EST_sustainable_security
         }
     }
@@ -2975,7 +3194,8 @@ add_ideas = TFR_EST_sustainable_security
         ai_will_do = { factor = 30 }
         completion_reward = {
             set_country_flag = TFR_EST_done_postwar_future
-            TFR_EST_change_cohesion = { AMOUNT = 5 }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = 5 }
+TFR_EST_change_cohesion = yes
 add_political_power = 100
 set_country_flag = TFR_EST_campaign_complete
         }
@@ -2995,7 +3215,8 @@ set_country_flag = TFR_EST_campaign_complete
         ai_will_do = { factor = 35 }
         completion_reward = {
             set_country_flag = TFR_EST_done_restored_authority
-            TFR_EST_change_cohesion = { AMOUNT = 3 }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
 add_political_power = 60
 country_event = { id = tfr_estonia_content.70 }
         }
@@ -3015,8 +3236,10 @@ country_event = { id = tfr_estonia_content.70 }
         ai_will_do = { factor = 35 }
         completion_reward = {
             set_country_flag = TFR_EST_done_restore_civic_rights
-            TFR_EST_spend_budget = { AMOUNT = 25 }
-TFR_EST_change_cohesion = { AMOUNT = 5 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 25 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 5 }
+TFR_EST_change_cohesion = yes
         }
     }
 
@@ -3034,7 +3257,8 @@ TFR_EST_change_cohesion = { AMOUNT = 5 }
         ai_will_do = { factor = 35 }
         completion_reward = {
             set_country_flag = TFR_EST_done_review_occupation_records
-            TFR_EST_change_cohesion = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
 country_event = { id = tfr_estonia_content.71 }
         }
     }
@@ -3053,9 +3277,12 @@ country_event = { id = tfr_estonia_content.71 }
         ai_will_do = { factor = 35 }
         completion_reward = {
             set_country_flag = TFR_EST_done_restore_local_services
-            TFR_EST_spend_budget = { AMOUNT = 50 }
-TFR_EST_change_cohesion = { AMOUNT = 4 }
-TFR_EST_change_readiness = { AMOUNT = 2 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 50 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 2 }
+TFR_EST_change_readiness = yes
         }
     }
 
@@ -3073,8 +3300,10 @@ TFR_EST_change_readiness = { AMOUNT = 2 }
         ai_will_do = { factor = 35 }
         completion_reward = {
             set_country_flag = TFR_EST_done_restore_defence_command
-            TFR_EST_spend_budget = { AMOUNT = 40 }
-TFR_EST_change_readiness = { AMOUNT = 4 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 40 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
 army_experience = 20
         }
     }
@@ -3093,7 +3322,8 @@ army_experience = 20
         ai_will_do = { factor = 35 }
         completion_reward = {
             set_country_flag = TFR_EST_done_restoration_compact
-            TFR_EST_change_cohesion = { AMOUNT = 5 }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = 5 }
+TFR_EST_change_cohesion = yes
 add_political_power = 60
 set_country_flag = TFR_EST_restoration_compact
         }

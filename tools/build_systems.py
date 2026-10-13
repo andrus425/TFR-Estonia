@@ -1,10 +1,11 @@
 """Generate Estonia's shared mechanics, lifecycle and native decisions.
 
 Run from any directory with Python 3. This only writes our additive systems files.
-Budget AMOUNT arguments are millions; TFR's debt ledger uses billions.
+Budget temporary-variable inputs are millions; TFR's debt ledger uses billions.
 """
 from pathlib import Path
 import textwrap
+from native_script_interface import native_amount_calls
 
 ROOT = Path(__file__).resolve().parents[1]
 LOC = {}
@@ -13,7 +14,7 @@ LOC = {}
 def write(path, content):
     target = ROOT / path
     target.parent.mkdir(parents=True, exist_ok=True)
-    target.write_text(textwrap.dedent(content).strip() + "\n", encoding="utf-8")
+    target.write_text(native_amount_calls(textwrap.dedent(content).strip()) + "\n", encoding="utf-8")
 
 
 def loc(key, title, desc=None):
@@ -26,19 +27,19 @@ def main():
     effects = '''
     # Public API. All callers operate in EST country scope.
     TFR_EST_change_cohesion = {
-        add_to_variable = { var = TFR_EST_cohesion value = $AMOUNT$ }
+        add_to_variable = { var = TFR_EST_cohesion value = TFR_EST_cohesion_delta }
         clamp_variable = { var = TFR_EST_cohesion min = 0 max = 100 }
         TFR_EST_refresh_meters = yes
     }
     TFR_EST_change_readiness = {
-        add_to_variable = { var = TFR_EST_readiness value = $AMOUNT$ }
+        add_to_variable = { var = TFR_EST_readiness value = TFR_EST_readiness_delta }
         clamp_variable = { var = TFR_EST_readiness min = 0 max = 100 }
         TFR_EST_refresh_meters = yes
     }
     TFR_EST_spend_budget = {
         custom_effect_tooltip = TFR_EST_budget_cost_tt
         hidden_effect = {
-            set_temp_variable = { var = debt_var_temp value = $AMOUNT$ }
+            set_temp_variable = { var = debt_var_temp value = TFR_EST_budget_cost }
             multiply_temp_variable = { var = debt_var_temp value = 0.001 }
             add_debt_with_inflation = yes
         }

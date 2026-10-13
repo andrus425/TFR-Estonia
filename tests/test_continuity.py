@@ -38,7 +38,7 @@ class ContinuityTests(unittest.TestCase):
         # Examine the actual generation predicate. PATRON.id is substituted
         # with its fixed country ID for this arithmetic-only scope check.
         text = (ROOT / "common/scripted_effects/TFR_EST_occupation.txt").read_text(encoding="utf-8-sig")
-        text = text.replace("$PATRON$.id", "1")
+        text = text.replace("event_target:TFR_EST_requested_patron.id", "1")
         replaced = parse(text).get("TFR_EST_enter_occupation").get("if").get("if")
         self.assertFalse(r.condition(replaced.get("limit")))
         r.global_flags.add("second_nato_war_flag")

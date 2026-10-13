@@ -8,7 +8,8 @@ TFR_EST_cohesion_category = {
             visible = {  }
             available = { NOT = { has_country_flag = TFR_EST_consultation_active } }
             complete_effect = {
-                TFR_EST_spend_budget = { AMOUNT = 25 }
+                set_temp_variable = { var = TFR_EST_budget_cost value = 25 }
+                TFR_EST_spend_budget = yes
                 set_country_flag = { flag = TFR_EST_consultation_active days = 28 }
             }
             remove_effect = { clr_country_flag = TFR_EST_consultation_active }
@@ -24,7 +25,8 @@ TFR_EST_cohesion_category = {
             visible = { OR = { has_war = yes has_country_flag = TFR_EST_occupied } }
             available = { NOT = { has_country_flag = TFR_EST_relief_active } }
             complete_effect = {
-                TFR_EST_spend_budget = { AMOUNT = 40 }
+                set_temp_variable = { var = TFR_EST_budget_cost value = 40 }
+                TFR_EST_spend_budget = yes
                 set_country_flag = { flag = TFR_EST_relief_active days = 28 }
             }
             remove_effect = { clr_country_flag = TFR_EST_relief_active }
@@ -42,7 +44,8 @@ TFR_EST_readiness_category = {
             visible = { NOT = { has_country_flag = TFR_EST_occupied } }
             available = { NOT = { has_country_flag = TFR_EST_exercises_active } }
             complete_effect = {
-                TFR_EST_spend_budget = { AMOUNT = 30 }
+                set_temp_variable = { var = TFR_EST_budget_cost value = 30 }
+                TFR_EST_spend_budget = yes
                 set_country_flag = { flag = TFR_EST_exercises_active days = 28 }
             }
             remove_effect = { clr_country_flag = TFR_EST_exercises_active }
@@ -56,7 +59,8 @@ TFR_EST_readiness_category = {
         fire_only_once = yes
         visible = { NOT = { has_country_flag = TFR_EST_reserves_mobilized } NOT = { has_country_flag = TFR_EST_occupied } }
         available = { TFR_EST_can_mobilize = yes }
-        complete_effect = { TFR_EST_spend_budget = { AMOUNT = 50 } TFR_EST_mobilize_reserves = yes }
+        complete_effect = { set_temp_variable = { var = TFR_EST_budget_cost value = 50 }
+        TFR_EST_spend_budget = yes TFR_EST_mobilize_reserves = yes }
         ai_will_do = { factor = 30 }
     }
     TFR_EST_defense_procurement = {
@@ -66,8 +70,10 @@ TFR_EST_readiness_category = {
         visible = { NOT = { has_country_flag = TFR_EST_occupied } }
         available = { 13 = { is_owned_by = EST is_controlled_by = EST } }
         complete_effect = {
-            TFR_EST_spend_budget = { AMOUNT = 90 }
-            TFR_EST_change_readiness = { AMOUNT = 3 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 90 }
+            TFR_EST_spend_budget = yes
+            set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+            TFR_EST_change_readiness = yes
             add_equipment_to_stockpile = { type = infantry_equipment amount = 500 producer = EST }
             add_equipment_to_stockpile = { type = support_equipment amount = 50 producer = EST }
         }
@@ -80,8 +86,10 @@ TFR_EST_readiness_category = {
         visible = { NOT = { has_country_flag = TFR_EST_occupied } }
         available = { 13 = { is_owned_by = EST is_controlled_by = EST } }
         complete_effect = {
-            TFR_EST_spend_budget = { AMOUNT = 75 }
-            TFR_EST_change_readiness = { AMOUNT = 5 }
+            set_temp_variable = { var = TFR_EST_budget_cost value = 75 }
+            TFR_EST_spend_budget = yes
+            set_temp_variable = { var = TFR_EST_readiness_delta value = 5 }
+            TFR_EST_change_readiness = yes
             13 = { add_building_construction = { type = bunker level = 1 province = 3152 instant_build = yes } }
         }
         ai_will_do = { factor = 15 }

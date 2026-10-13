@@ -4426,12 +4426,12 @@ GER_gunther_decolonize_russia = {
 			}
 		}
 		if = {
-			limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } GER = { original_tag = EST } } }
-			transfer_state_to = GER
-		}
-		else = {
-			GER = { TFR_EST_protect_anchor = yes }
-		}
+            limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } GER = { original_tag = EST } } }
+            transfer_state_to = GER
+        }
+        else = {
+            GER = { TFR_EST_protect_anchor = yes }
+        }
 	}
 	FIN = {
 		transfer_state = 213
@@ -4586,10 +4586,10 @@ GER_gunther_decolonize_russia = {
 		}
 		remove_all_national_spirits = yes
 		if = {
-			limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
-			TFR_EST_queue_occupation_reconciliation = yes
-		}
-		else = { load_focus_tree = generic_focus }
+            limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+            TFR_EST_queue_occupation_reconciliation = yes
+        }
+        else = { load_focus_tree = generic_focus }
 		add_ideas = {
 			SOV_eu_dominated_economy_idea
 			SOV_nato_peacekeepers_idea
@@ -4754,10 +4754,10 @@ GER_gunther_decolonize_siberia = {
 		}
 		remove_all_national_spirits = yes
 		if = {
-			limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
-			TFR_EST_queue_occupation_reconciliation = yes
-		}
-		else = { load_focus_tree = generic_focus }
+            limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+            TFR_EST_queue_occupation_reconciliation = yes
+        }
+        else = { load_focus_tree = generic_focus }
 		add_ideas = {
 			SOV_eu_dominated_economy_idea
 			SOV_nato_peacekeepers_idea
@@ -4870,10 +4870,10 @@ GER_nato_mandate_puppet_PREV = {
 	}
 	remove_all_national_spirits = yes
 	if = {
-		limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
-		TFR_EST_queue_occupation_reconciliation = yes
-	}
-	else = { load_focus_tree = generic_focus }
+        limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+        TFR_EST_queue_occupation_reconciliation = yes
+    }
+    else = { load_focus_tree = generic_focus }
 	add_ideas = {
 		SOV_nato_peacekeepers_idea
 	}

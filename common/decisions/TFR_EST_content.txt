@@ -6,8 +6,10 @@ TFR_EST_national_programmes = {
  
  visible = { NOT = { has_country_flag = TFR_EST_occupied }  }
  available = { NOT = { has_country_flag = TFR_EST_occupied } NOT = { has_country_flag = TFR_EST_caretaker } }
- complete_effect = { TFR_EST_spend_budget = { AMOUNT = 15 }
-TFR_EST_change_cohesion = { AMOUNT = 2 } }
+ complete_effect = { set_temp_variable = { var = TFR_EST_budget_cost value = 15 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes }
  ai_will_do = { factor = 2 }
  }
  TFR_EST_publish_accounts = {
@@ -17,7 +19,8 @@ TFR_EST_change_cohesion = { AMOUNT = 2 } }
  
  visible = { NOT = { has_country_flag = TFR_EST_occupied }  }
  available = { NOT = { has_country_flag = TFR_EST_occupied }  }
- complete_effect = { TFR_EST_change_cohesion = { AMOUNT = 1 } }
+ complete_effect = { set_temp_variable = { var = TFR_EST_cohesion_delta value = 1 }
+TFR_EST_change_cohesion = yes }
  ai_will_do = { factor = 2 }
  }
  TFR_EST_service_rehearsal = {
@@ -27,9 +30,12 @@ TFR_EST_change_cohesion = { AMOUNT = 2 } }
  
  visible = { NOT = { has_country_flag = TFR_EST_occupied }  }
  available = { NOT = { has_country_flag = TFR_EST_occupied } has_completed_focus = TFR_EST_remote_government }
- complete_effect = { TFR_EST_spend_budget = { AMOUNT = 20 }
-TFR_EST_change_readiness = { AMOUNT = 2 }
-TFR_EST_change_cohesion = { AMOUNT = 1 } }
+ complete_effect = { set_temp_variable = { var = TFR_EST_budget_cost value = 20 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 2 }
+TFR_EST_change_readiness = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 1 }
+TFR_EST_change_cohesion = yes }
  ai_will_do = { factor = 2 }
  }
  TFR_EST_regional_training = {
@@ -39,8 +45,10 @@ TFR_EST_change_cohesion = { AMOUNT = 1 } }
  
  visible = { NOT = { has_country_flag = TFR_EST_occupied }  }
  available = { NOT = { has_country_flag = TFR_EST_occupied } has_completed_focus = TFR_EST_technical_training }
- complete_effect = { TFR_EST_spend_budget = { AMOUNT = 30 }
-TFR_EST_change_cohesion = { AMOUNT = 2 }
+ complete_effect = { set_temp_variable = { var = TFR_EST_budget_cost value = 30 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
 army_experience = 5 }
  ai_will_do = { factor = 1 }
  }
@@ -51,8 +59,10 @@ army_experience = 5 }
  
  visible = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } }
  available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
- complete_effect = { TFR_EST_spend_budget = { AMOUNT = 10 }
-TFR_EST_change_cohesion = { AMOUNT = 1 }
+ complete_effect = { set_temp_variable = { var = TFR_EST_budget_cost value = 10 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 1 }
+TFR_EST_change_cohesion = yes
 TFR_EST_campaign_reform = yes }
  ai_will_do = { factor = 1 }
  }
@@ -63,8 +73,10 @@ TFR_EST_campaign_reform = yes }
  
  visible = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } }
  available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
- complete_effect = { TFR_EST_spend_budget = { AMOUNT = 10 }
-TFR_EST_change_cohesion = { AMOUNT = 1 }
+ complete_effect = { set_temp_variable = { var = TFR_EST_budget_cost value = 10 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 1 }
+TFR_EST_change_cohesion = yes
 TFR_EST_campaign_centre = yes }
  ai_will_do = { factor = 1 }
  }
@@ -75,8 +87,10 @@ TFR_EST_campaign_centre = yes }
  
  visible = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } }
  available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
- complete_effect = { TFR_EST_spend_budget = { AMOUNT = 10 }
-TFR_EST_change_cohesion = { AMOUNT = 1 }
+ complete_effect = { set_temp_variable = { var = TFR_EST_budget_cost value = 10 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 1 }
+TFR_EST_change_cohesion = yes
 TFR_EST_campaign_ekre = yes }
  ai_will_do = { factor = 1 }
  }
@@ -87,8 +101,10 @@ TFR_EST_campaign_ekre = yes }
  
  visible = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } }
  available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
- complete_effect = { TFR_EST_spend_budget = { AMOUNT = 10 }
-TFR_EST_change_cohesion = { AMOUNT = 1 }
+ complete_effect = { set_temp_variable = { var = TFR_EST_budget_cost value = 10 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 1 }
+TFR_EST_change_cohesion = yes
 TFR_EST_campaign_isamaa = yes }
  ai_will_do = { factor = 1 }
  }
@@ -99,8 +115,10 @@ TFR_EST_campaign_isamaa = yes }
  
  visible = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } }
  available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
- complete_effect = { TFR_EST_spend_budget = { AMOUNT = 10 }
-TFR_EST_change_cohesion = { AMOUNT = 1 }
+ complete_effect = { set_temp_variable = { var = TFR_EST_budget_cost value = 10 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 1 }
+TFR_EST_change_cohesion = yes
 TFR_EST_campaign_sde = yes }
  ai_will_do = { factor = 1 }
  }
@@ -111,8 +129,10 @@ TFR_EST_campaign_sde = yes }
  
  visible = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } }
  available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
- complete_effect = { TFR_EST_spend_budget = { AMOUNT = 10 }
-TFR_EST_change_cohesion = { AMOUNT = 1 }
+ complete_effect = { set_temp_variable = { var = TFR_EST_budget_cost value = 10 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 1 }
+TFR_EST_change_cohesion = yes
 TFR_EST_campaign_e200 = yes }
  ai_will_do = { factor = 1 }
  }
@@ -123,8 +143,10 @@ TFR_EST_campaign_e200 = yes }
  
  visible = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } }
  available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
- complete_effect = { TFR_EST_spend_budget = { AMOUNT = 10 }
-TFR_EST_change_cohesion = { AMOUNT = 1 }
+ complete_effect = { set_temp_variable = { var = TFR_EST_budget_cost value = 10 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 1 }
+TFR_EST_change_cohesion = yes
 TFR_EST_campaign_pp = yes }
  ai_will_do = { factor = 1 }
  }
@@ -148,8 +170,10 @@ TFR_EST_defence_programmes = {
  
  visible = { NOT = { has_country_flag = TFR_EST_occupied }  }
  available = { NOT = { has_country_flag = TFR_EST_occupied } has_completed_focus = TFR_EST_reserve_register check_variable = { TFR_EST_readiness < 90 } }
- complete_effect = { TFR_EST_spend_budget = { AMOUNT = 30 }
-TFR_EST_change_readiness = { AMOUNT = 3 }
+ complete_effect = { set_temp_variable = { var = TFR_EST_budget_cost value = 30 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
 army_experience = 8 }
  ai_will_do = { factor = 3 }
  }
@@ -160,9 +184,12 @@ army_experience = 8 }
  
  visible = { NOT = { has_country_flag = TFR_EST_occupied }  }
  available = { NOT = { has_country_flag = TFR_EST_occupied } has_completed_focus = TFR_EST_kaitseliit_training }
- complete_effect = { TFR_EST_spend_budget = { AMOUNT = 15 }
-TFR_EST_change_readiness = { AMOUNT = 2 }
-TFR_EST_change_cohesion = { AMOUNT = 1 } }
+ complete_effect = { set_temp_variable = { var = TFR_EST_budget_cost value = 15 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 2 }
+TFR_EST_change_readiness = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 1 }
+TFR_EST_change_cohesion = yes }
  ai_will_do = { factor = 2 }
  }
  TFR_EST_lift_nato_restrictions = {
@@ -182,7 +209,8 @@ TFR_EST_change_cohesion = { AMOUNT = 1 } }
  
  visible = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_procurement_plan }
  available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_procurement_plan num_of_military_factories > 0 }
- complete_effect = { TFR_EST_spend_budget = { AMOUNT = 40 }
+ complete_effect = { set_temp_variable = { var = TFR_EST_budget_cost value = 40 }
+TFR_EST_spend_budget = yes
 add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 500 producer = EST } }
  ai_will_do = { factor = 2 }
  }
@@ -193,8 +221,10 @@ add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 500 producer
  
  visible = { NOT = { has_country_flag = TFR_EST_occupied }  }
  available = { NOT = { has_country_flag = TFR_EST_occupied } has_completed_focus = TFR_EST_logistics_audit }
- complete_effect = { TFR_EST_spend_budget = { AMOUNT = 25 }
-TFR_EST_change_readiness = { AMOUNT = 2 }
+ complete_effect = { set_temp_variable = { var = TFR_EST_budget_cost value = 25 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 2 }
+TFR_EST_change_readiness = yes
 army_experience = 5 }
  ai_will_do = { factor = 2 }
  }

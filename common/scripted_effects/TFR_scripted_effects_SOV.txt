@@ -663,12 +663,12 @@ SOV_russian_defeat = {
 						add_to_faction = EST
 					}
 					if = {
-						limit = { OR = { original_tag = EST NOT = { EST = { has_country_flag = TFR_EST_initialized } } } }
-						transfer_state = 13
-					}
-					else = {
-						TFR_EST_protect_anchor = yes
-					}
+                        limit = { OR = { original_tag = EST NOT = { EST = { has_country_flag = TFR_EST_initialized } } } }
+                        transfer_state = 13
+                    }
+                    else = {
+                        TFR_EST_protect_anchor = yes
+                    }
 					transfer_state = 191
 					transfer_state = 840
 					transfer_state = 1329
@@ -1616,84 +1616,84 @@ SOV_second_defeat = {
 			is_core_of = KAZ
 		}
 		if = {
-			limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } KAZ = { original_tag = EST } } }
-			transfer_state_to = KAZ
-		}
-		else = {
-			KAZ = { TFR_EST_protect_anchor = yes }
-		}
+            limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } KAZ = { original_tag = EST } } }
+            transfer_state_to = KAZ
+        }
+        else = {
+            KAZ = { TFR_EST_protect_anchor = yes }
+        }
 	}
 	every_state = {
 		limit = {
 			is_core_of = TMS
 		}
 		if = {
-			limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } TMS = { original_tag = EST } } }
-			transfer_state_to = TMS
-		}
-		else = {
-			TMS = { TFR_EST_protect_anchor = yes }
-		}
+            limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } TMS = { original_tag = EST } } }
+            transfer_state_to = TMS
+        }
+        else = {
+            TMS = { TFR_EST_protect_anchor = yes }
+        }
 	}
 	every_state = {
 		limit = {
 			is_core_of = KYR
 		}
 		if = {
-			limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } KYR = { original_tag = EST } } }
-			transfer_state_to = KYR
-		}
-		else = {
-			KYR = { TFR_EST_protect_anchor = yes }
-		}
+            limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } KYR = { original_tag = EST } } }
+            transfer_state_to = KYR
+        }
+        else = {
+            KYR = { TFR_EST_protect_anchor = yes }
+        }
 	}
 	every_state = {
 		limit = {
 			is_core_of = TAJ
 		}
 		if = {
-			limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } TAJ = { original_tag = EST } } }
-			transfer_state_to = TAJ
-		}
-		else = {
-			TAJ = { TFR_EST_protect_anchor = yes }
-		}
+            limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } TAJ = { original_tag = EST } } }
+            transfer_state_to = TAJ
+        }
+        else = {
+            TAJ = { TFR_EST_protect_anchor = yes }
+        }
 	}
 	every_state = {
 		limit = {
 			is_core_of = UZB
 		}
 		if = {
-			limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } UZB = { original_tag = EST } } }
-			transfer_state_to = UZB
-		}
-		else = {
-			UZB = { TFR_EST_protect_anchor = yes }
-		}
+            limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } UZB = { original_tag = EST } } }
+            transfer_state_to = UZB
+        }
+        else = {
+            UZB = { TFR_EST_protect_anchor = yes }
+        }
 	}
 	every_state = {
 		limit = {
 			is_core_of = CHE
 		}
 		if = {
-			limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } CHE = { original_tag = EST } } }
-			transfer_state_to = CHE
-		}
-		else = {
-			CHE = { TFR_EST_protect_anchor = yes }
-		}
+            limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } CHE = { original_tag = EST } } }
+            transfer_state_to = CHE
+        }
+        else = {
+            CHE = { TFR_EST_protect_anchor = yes }
+        }
 	}
 	every_state = {
 		limit = {
 			is_core_of = CHE
 		}
 		if = {
-			limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } CHE = { original_tag = EST } } }
-			transfer_state_to = CHE
-		}
-		else = {
-			CHE = { TFR_EST_protect_anchor = yes }
-		}
+            limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } CHE = { original_tag = EST } } }
+            transfer_state_to = CHE
+        }
+        else = {
+            CHE = { TFR_EST_protect_anchor = yes }
+        }
 	}
 	if = {
 		limit = {
@@ -1706,12 +1706,12 @@ SOV_second_defeat = {
 				is_core_of = UKR
 			}
 			if = {
-				limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } GER = { original_tag = EST } } }
-				transfer_state_to = GER
-			}
-			else = {
-				GER = { TFR_EST_protect_anchor = yes }
-			}
+                limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } GER = { original_tag = EST } } }
+                transfer_state_to = GER
+            }
+            else = {
+                GER = { TFR_EST_protect_anchor = yes }
+            }
 		}		
 	}
 	else_if = {
@@ -1727,12 +1727,12 @@ SOV_second_defeat = {
 				is_core_of = UKR
 			}
 			if = {
-				limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } UKR = { original_tag = EST } } }
-				transfer_state_to = UKR
-			}
-			else = {
-				UKR = { TFR_EST_protect_anchor = yes }
-			}
+                limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } UKR = { original_tag = EST } } }
+                transfer_state_to = UKR
+            }
+            else = {
+                UKR = { TFR_EST_protect_anchor = yes }
+            }
 		}		
 	}
 	every_state = {
@@ -1740,12 +1740,12 @@ SOV_second_defeat = {
 			is_core_of = FER
 		}
 		if = {
-			limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } FER = { original_tag = EST } } }
-			transfer_state_to = FER
-		}
-		else = {
-			FER = { TFR_EST_protect_anchor = yes }
-		}
+            limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } FER = { original_tag = EST } } }
+            transfer_state_to = FER
+        }
+        else = {
+            FER = { TFR_EST_protect_anchor = yes }
+        }
 	}
 	TTS = {
 		release = EST
@@ -1763,12 +1763,12 @@ SOV_second_defeat = {
 				is_core_of = LIT
 			}
 			if = {
-				limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } GER = { original_tag = EST } } }
-				transfer_state_to = GER
-			}
-			else = {
-				GER = { TFR_EST_protect_anchor = yes }
-			}
+                limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } GER = { original_tag = EST } } }
+                transfer_state_to = GER
+            }
+            else = {
+                GER = { TFR_EST_protect_anchor = yes }
+            }
 		}		
 	}
 	else_if = {
@@ -1784,12 +1784,12 @@ SOV_second_defeat = {
 				is_core_of = LIT
 			}
 			if = {
-				limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } LIT = { original_tag = EST } } }
-				transfer_state_to = LIT
-			}
-			else = {
-				LIT = { TFR_EST_protect_anchor = yes }
-			}
+                limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } LIT = { original_tag = EST } } }
+                transfer_state_to = LIT
+            }
+            else = {
+                LIT = { TFR_EST_protect_anchor = yes }
+            }
 		}		
 	}
 	if = {
@@ -1803,12 +1803,12 @@ SOV_second_defeat = {
 				is_core_of = LAT
 			}
 			if = {
-				limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } GER = { original_tag = EST } } }
-				transfer_state_to = GER
-			}
-			else = {
-				GER = { TFR_EST_protect_anchor = yes }
-			}
+                limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } GER = { original_tag = EST } } }
+                transfer_state_to = GER
+            }
+            else = {
+                GER = { TFR_EST_protect_anchor = yes }
+            }
 		}		
 	}
 	else_if = {
@@ -1824,12 +1824,12 @@ SOV_second_defeat = {
 				is_core_of = LAT
 			}
 			if = {
-				limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } LAT = { original_tag = EST } } }
-				transfer_state_to = LAT
-			}
-			else = {
-				LAT = { TFR_EST_protect_anchor = yes }
-			}
+                limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } LAT = { original_tag = EST } } }
+                transfer_state_to = LAT
+            }
+            else = {
+                LAT = { TFR_EST_protect_anchor = yes }
+            }
 		}		
 	}
 	if = {
@@ -1843,12 +1843,12 @@ SOV_second_defeat = {
 				is_core_of = EST
 			}
 			if = {
-				limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } GER = { original_tag = EST } } }
-				transfer_state_to = GER
-			}
-			else = {
-				GER = { TFR_EST_protect_anchor = yes }
-			}
+                limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } GER = { original_tag = EST } } }
+                transfer_state_to = GER
+            }
+            else = {
+                GER = { TFR_EST_protect_anchor = yes }
+            }
 		}		
 	}
 	else_if = {
@@ -1984,10 +1984,10 @@ SOV_second_defeat = {
 		SOV = {
 			set_cosmetic_tag = SOV_nato
 			if = {
-				limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
-				TFR_EST_queue_occupation_reconciliation = yes
-			}
-			else = { load_focus_tree = generic_focus }
+                limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+                TFR_EST_queue_occupation_reconciliation = yes
+            }
+            else = { load_focus_tree = generic_focus }
 			set_politics = {
 				ruling_party = social_liberal
 				last_election = "2013.5.12"
@@ -3378,10 +3378,10 @@ SOV_russian_victory = {
 				SOV = {
 					white_peace = EST
 					puppet = EST
-					if = {
-						limit = { EST = { original_tag = EST has_country_flag = TFR_EST_initialized } }
-						EST = { TFR_EST_queue_occupation_reconciliation = yes }
-					}
+                    if = {
+                        limit = { EST = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                        EST = { TFR_EST_queue_occupation_reconciliation = yes }
+                    }
 					transfer_state = 840
 					transfer_state = 1329
 				}
@@ -4038,12 +4038,12 @@ SOV_russian_victory = {
 					transfer_state = 189
 					transfer_state = 191
 					if = {
-						limit = { OR = { original_tag = EST NOT = { EST = { has_country_flag = TFR_EST_initialized } } } }
-						transfer_state = 13
-					}
-					else = {
-						TFR_EST_protect_anchor = yes
-					}
+                        limit = { OR = { original_tag = EST NOT = { EST = { has_country_flag = TFR_EST_initialized } } } }
+                        transfer_state = 13
+                    }
+                    else = {
+                        TFR_EST_protect_anchor = yes
+                    }
 					transfer_state = 96
 					transfer_state = 1329
 					set_cosmetic_tag = BLT_zhir
@@ -4359,15 +4359,19 @@ SOV_russian_victory = {
 			}
 			SOV = {
 				if = {
-					limit = { EST = { original_tag = EST has_country_flag = TFR_EST_initialized } }
-					TFR_EST_preserve_annexation = { TARGET = EST }
-				}
-				else = {
-					annex_country = {
-						target = EST
-						transfer_troops = no
-					}
-				}
+                    limit = { EST = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                    EST = {
+                        save_event_target_as = TFR_EST_settlement_target
+                        set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                    }
+                    TFR_EST_preserve_annexation = yes
+                }
+                else = {
+                    annex_country = {
+                        target = EST
+                        transfer_troops = no
+                    }
+                }
 			}
 			EST = {
 				SOV_leave_ADS = yes
@@ -13518,12 +13522,12 @@ SOV_USSR_defeat_in_2nd_European_War = {
 		transfer_state = 191
 		transfer_state = 840
 		if = {
-			limit = { OR = { original_tag = EST NOT = { EST = { has_country_flag = TFR_EST_initialized } } } }
-			transfer_state = 13
-		}
-		else = {
-			TFR_EST_protect_anchor = yes
-		}
+            limit = { OR = { original_tag = EST NOT = { EST = { has_country_flag = TFR_EST_initialized } } } }
+            transfer_state = 13
+        }
+        else = {
+            TFR_EST_protect_anchor = yes
+        }
 		transfer_state = 1329
 		transfer_state = 209
 		transfer_state = 210
@@ -13817,10 +13821,10 @@ SOV_USSR_defeat_in_2nd_European_War = {
 	SOV = {
 		set_cosmetic_tag = SOV_RDK
 		if = {
-			limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
-			TFR_EST_queue_occupation_reconciliation = yes
-		}
-		else = { load_focus_tree = generic_focus }
+            limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+            TFR_EST_queue_occupation_reconciliation = yes
+        }
+        else = { load_focus_tree = generic_focus }
 		remove_ideas = {
 			SOV_The_Petrol_Economy
 			SOV_The_Petrol_Economy2
@@ -14791,12 +14795,12 @@ SOV_Zhir_defeat_in_2nd_European_War = {
 		transfer_state = 191
 		transfer_state = 840
 		if = {
-			limit = { OR = { original_tag = EST NOT = { EST = { has_country_flag = TFR_EST_initialized } } } }
-			transfer_state = 13
-		}
-		else = {
-			TFR_EST_protect_anchor = yes
-		}
+            limit = { OR = { original_tag = EST NOT = { EST = { has_country_flag = TFR_EST_initialized } } } }
+            transfer_state = 13
+        }
+        else = {
+            TFR_EST_protect_anchor = yes
+        }
 		transfer_state = 1329
 		set_politics = {
 			ruling_party = communist
@@ -14910,10 +14914,10 @@ SOV_Zhir_defeat_in_2nd_European_War = {
 	}
 	SOV = {
 		if = {
-			limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
-			TFR_EST_queue_occupation_reconciliation = yes
-		}
-		else = { load_focus_tree = generic_focus }
+            limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+            TFR_EST_queue_occupation_reconciliation = yes
+        }
+        else = { load_focus_tree = generic_focus }
 		set_politics = {
 			ruling_party = libertarian_socialist
 			elections_allowed = no
@@ -15005,12 +15009,12 @@ SOV_Zhir_defeat_in_2nd_European_War = {
 			is_core_of = PLD
 		}
 		if = {
-			limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } PLD = { original_tag = EST } } }
-			transfer_state_to = PLD
-		}
-		else = {
-			PLD = { TFR_EST_protect_anchor = yes }
-		}
+            limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } PLD = { original_tag = EST } } }
+            transfer_state_to = PLD
+        }
+        else = {
+            PLD = { TFR_EST_protect_anchor = yes }
+        }
 	}
 	SOV = {
 		transfer_state = 263
@@ -15073,12 +15077,12 @@ SOV_Navalny_victory_in_2nd_European_War = {
 	LAT = {
 		drop_cosmetic_tag = yes
 		if = {
-			limit = { OR = { original_tag = EST NOT = { EST = { has_country_flag = TFR_EST_initialized } } } }
-			transfer_state = 13
-		}
-		else = {
-			TFR_EST_protect_anchor = yes
-		}
+            limit = { OR = { original_tag = EST NOT = { EST = { has_country_flag = TFR_EST_initialized } } } }
+            transfer_state = 13
+        }
+        else = {
+            TFR_EST_protect_anchor = yes
+        }
 		transfer_state = 191
 		transfer_state = 12
 		transfer_state = 190
@@ -15095,15 +15099,19 @@ SOV_Navalny_victory_in_2nd_European_War = {
 			add_state_core = 1329
 		}
 		if = {
-			limit = { EST = { original_tag = EST has_country_flag = TFR_EST_initialized } }
-			TFR_EST_preserve_annexation = { TARGET = EST }
-		}
-		else = {
-			annex_country = {
-				target = EST
-				transfer_troops = no
-			}
-		}	
+            limit = { EST = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+            EST = {
+                save_event_target_as = TFR_EST_settlement_target
+                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+            }
+            TFR_EST_preserve_annexation = yes
+        }
+        else = {
+            annex_country = {
+                target = EST
+                transfer_troops = no
+            }
+        }
 		annex_country = {
 			target = LIT
 			transfer_troops = no
@@ -15393,10 +15401,10 @@ SOV_Navalny_victory_in_2nd_European_War = {
 	}
 	GER = {
 		if = {
-			limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
-			TFR_EST_queue_occupation_reconciliation = yes
-		}
-		else = { load_focus_tree = generic_focus }
+            limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+            TFR_EST_queue_occupation_reconciliation = yes
+        }
+        else = { load_focus_tree = generic_focus }
 		drop_cosmetic_tag = yes
 		SOV = {
 			puppet = GER
@@ -15428,10 +15436,10 @@ SOV_Navalny_victory_in_2nd_European_War = {
 	}
 	FRA = {
 		if = {
-			limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
-			TFR_EST_queue_occupation_reconciliation = yes
-		}
-		else = { load_focus_tree = generic_focus }
+            limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+            TFR_EST_queue_occupation_reconciliation = yes
+        }
+        else = { load_focus_tree = generic_focus }
 		drop_cosmetic_tag = yes
 		SOV = {
 			puppet = FRA

@@ -338,15 +338,19 @@ country_event = {
            transfer_troops = no
            }
 		   if = {
-		   	limit = { EST = { original_tag = EST has_country_flag = TFR_EST_initialized } }
-		   	TFR_EST_preserve_annexation = { TARGET = EST }
-		   }
-		   else = {
-		   	annex_country = {
-	           target = EST
-	           transfer_troops = no
-	           }
-		   }
+            limit = { EST = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+            EST = {
+                save_event_target_as = TFR_EST_settlement_target
+                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+            }
+            TFR_EST_preserve_annexation = yes
+           }
+           else = {
+            annex_country = {
+               target = EST
+               transfer_troops = no
+               }
+           }
 		   annex_country = {
            target = LAT
            transfer_troops = no

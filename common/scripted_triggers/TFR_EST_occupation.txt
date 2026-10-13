@@ -29,10 +29,10 @@ TFR_EST_can_restore_sovereignty = {
     owns_state = 13
     controls_state = 13
     OR = {
-        overlord = { has_capitulated = yes }
+        var:overlord = { has_capitulated = yes }
         AND = {
             has_completed_focus = TFR_EST_occupation_restoration_compact
-            overlord = { surrender_progress > 0.5 }
+            var:overlord = { surrender_progress > 0.5 }
             check_variable = { var = TFR_EST_occupation_resistance value = 60 compare = greater_than_or_equals }
         }
         AND = {

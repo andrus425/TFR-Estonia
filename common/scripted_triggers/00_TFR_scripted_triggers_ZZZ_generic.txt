@@ -11,7 +11,7 @@ has_content_tag = {
 	#Has Full Content Available
 	OR = {
 		tag = EST
-		tag = SOV
+        tag = SOV
 		tag = USA
 		USA_is_civil_war_faction = yes
 		tag = JAP

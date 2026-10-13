@@ -5180,14 +5180,18 @@ annex_faction = {
 		}
 		ROOT = {
 			if = {
-				limit = { PREV = { original_tag = EST has_country_flag = TFR_EST_initialized } }
-				TFR_EST_preserve_annexation = { TARGET = PREV }
-			}
-			else = {
-				annex_country = {
-					target = PREV
-				}
-			}
+                limit = { PREV = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                PREV = {
+                    save_event_target_as = TFR_EST_settlement_target
+                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 1 }
+                }
+                TFR_EST_preserve_annexation = yes
+            }
+            else = {
+                annex_country = {
+                    target = PREV
+                }
+            }
 		}
 	}
 }

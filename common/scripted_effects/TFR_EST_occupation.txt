@@ -2,12 +2,12 @@
 # Caller: intended recipient/annexer country. The local targets are consumed
 # immediately and are never used by delayed events.
 TFR_EST_change_occupation_cooperation = {
-    add_to_variable = { var = TFR_EST_occupation_cooperation value = $AMOUNT$ }
+    add_to_variable = { var = TFR_EST_occupation_cooperation value = TFR_EST_occupation_cooperation_delta }
     clamp_variable = { var = TFR_EST_occupation_cooperation min = 0 max = 100 }
 }
 
 TFR_EST_change_occupation_resistance = {
-    add_to_variable = { var = TFR_EST_occupation_resistance value = $AMOUNT$ }
+    add_to_variable = { var = TFR_EST_occupation_resistance value = TFR_EST_occupation_resistance_delta }
     clamp_variable = { var = TFR_EST_occupation_resistance min = 0 max = 100 }
 }
 
@@ -36,7 +36,9 @@ TFR_EST_select_settlement_patron = {
 TFR_EST_preserve_annexation = {
     save_event_target_as = TFR_EST_settlement_receiver
     TFR_EST_select_settlement_patron = yes
-    $TARGET$ = {
+    # The caller captures the annex target before this helper enters any other
+    # scope. In particular a PREV target must retain its original meaning.
+    event_target:TFR_EST_settlement_target = {
         # The anchor never leaves EST. Transfer the intended remainder without
         # issuing annex_country, which would end the human campaign.
         every_owned_state = {
@@ -48,7 +50,44 @@ TFR_EST_preserve_annexation = {
             limit = { NOT = { check_variable = { var = TFR_EST_occupation_wave value = TFR_EST_current_occupation_wave compare = equals } } }
             set_country_flag = TFR_EST_force_new_occupation_generation
         }
-        TFR_EST_enter_occupation = { PATRON = event_target:TFR_EST_settlement_patron }
+        event_target:TFR_EST_settlement_patron = { save_event_target_as = TFR_EST_requested_patron }
+        TFR_EST_enter_occupation = yes
+        TFR_EST_settle_annexed_forces = yes
+    }
+}
+
+# Converted annexations preserve the parent army-transfer choice. The original
+# army is seized or destroyed; the rump administration must raise new forces.
+# Stockpiles, fuel, air wings and navy pass to the intended annex recipient.
+# This helper is never called by existing puppet settlements or daily repair.
+TFR_EST_settle_annexed_forces = {
+    if = {
+        limit = {
+            NOT = { check_variable = { var = TFR_EST_annexed_forces_generation value = TFR_EST_occupation_generation compare = equals } }
+        }
+        if = {
+            limit = { check_variable = { var = TFR_EST_settlement_transfer_troops value = 0 compare = equals } }
+            delete_unit = { disband = no }
+            transfer_units_fraction = {
+                target = event_target:TFR_EST_settlement_receiver
+                size = 1
+                army_ratio = 0
+                stockpile_ratio = 1
+                navy_ratio = 1
+                air_ratio = 1
+            }
+        }
+        else = {
+            transfer_units_fraction = {
+                target = event_target:TFR_EST_settlement_receiver
+                size = 1
+                army_ratio = 1
+                stockpile_ratio = 1
+                navy_ratio = 1
+                air_ratio = 1
+            }
+        }
+        set_variable = { var = TFR_EST_annexed_forces_generation value = TFR_EST_occupation_generation }
     }
 }
 
@@ -60,7 +99,8 @@ TFR_EST_protect_anchor = {
             limit = { NOT = { check_variable = { var = TFR_EST_occupation_wave value = TFR_EST_current_occupation_wave compare = equals } } }
             set_country_flag = TFR_EST_force_new_occupation_generation
         }
-        TFR_EST_enter_occupation = { PATRON = event_target:TFR_EST_settlement_patron }
+        event_target:TFR_EST_settlement_patron = { save_event_target_as = TFR_EST_requested_patron }
+        TFR_EST_enter_occupation = yes
     }
 }
 
@@ -72,7 +112,57 @@ TFR_EST_queue_occupation_reconciliation = {
     }
 }
 
-# Scope EST. PATRON must be a resolved country scope, not an old delayed target.
+# set_politics requires ruling_party even when only changing election rules.
+# Reuse the current ideology so a parent-appointed local leader stays in office.
+TFR_EST_disable_occupation_elections = {
+    if = {
+        limit = { has_government = totalitarian_socialist }
+        set_politics = { ruling_party = totalitarian_socialist elections_allowed = no }
+    }
+    else_if = {
+        limit = { has_government = communist }
+        set_politics = { ruling_party = communist elections_allowed = no }
+    }
+    else_if = {
+        limit = { has_government = libertarian_socialist }
+        set_politics = { ruling_party = libertarian_socialist elections_allowed = no }
+    }
+    else_if = {
+        limit = { has_government = social_democrat }
+        set_politics = { ruling_party = social_democrat elections_allowed = no }
+    }
+    else_if = {
+        limit = { has_government = social_liberal }
+        set_politics = { ruling_party = social_liberal elections_allowed = no }
+    }
+    else_if = {
+        limit = { has_government = market_liberal }
+        set_politics = { ruling_party = market_liberal elections_allowed = no }
+    }
+    else_if = {
+        limit = { has_government = conservative }
+        set_politics = { ruling_party = conservative elections_allowed = no }
+    }
+    else_if = {
+        limit = { has_government = authoritarian_democrat }
+        set_politics = { ruling_party = authoritarian_democrat elections_allowed = no }
+    }
+    else_if = {
+        limit = { has_government = nationalist }
+        set_politics = { ruling_party = nationalist elections_allowed = no }
+    }
+    else_if = {
+        limit = { has_government = fascist }
+        set_politics = { ruling_party = fascist elections_allowed = no }
+    }
+    else_if = {
+        limit = { has_government = national_socialist }
+        set_politics = { ruling_party = national_socialist elections_allowed = no }
+    }
+}
+
+# Scope EST. Caller saves the immediate patron as TFR_EST_requested_patron.
+# Delayed events resolve a fresh var:overlord; they never reuse this target.
 TFR_EST_enter_occupation = {
     if = {
         limit = { original_tag = EST has_country_flag = TFR_EST_initialized exists = yes }
@@ -82,7 +172,7 @@ TFR_EST_enter_occupation = {
             limit = {
                 OR = {
                     NOT = { has_country_flag = TFR_EST_occupied }
-                    NOT = { check_variable = { var = TFR_EST_occupation_patron_id value = $PATRON$.id compare = equals } }
+                    NOT = { check_variable = { var = TFR_EST_occupation_patron_id value = event_target:TFR_EST_requested_patron.id compare = equals } }
                     AND = {
                         NOT = { check_variable = { var = TFR_EST_occupation_wave value = TFR_EST_current_occupation_wave compare = equals } }
                         NOT = { has_autonomy_state = TFR_EST_autonomy_occupation }
@@ -94,7 +184,7 @@ TFR_EST_enter_occupation = {
             TFR_EST_suspend_parliament = yes
             clr_country_flag = TFR_EST_force_new_occupation_generation
             set_temp_variable = { var = TFR_EST_new_settlement value = 1 }
-            set_variable = { var = TFR_EST_occupation_patron_id value = $PATRON$.id }
+            set_variable = { var = TFR_EST_occupation_patron_id value = event_target:TFR_EST_requested_patron.id }
             set_variable = { var = TFR_EST_occupation_campaign_stage value = TFR_EST_campaign_stage }
             set_variable = { var = TFR_EST_occupation_wave value = TFR_EST_current_occupation_wave }
             add_to_variable = { var = TFR_EST_occupation_generation value = 1 }
@@ -113,8 +203,10 @@ TFR_EST_enter_occupation = {
             clr_country_flag = TFR_EST_occupation_constitutional_return_done
             remove_ideas = TFR_EST_occupation_collaboration
             remove_ideas = TFR_EST_occupation_clandestine_network
-            TFR_EST_change_cohesion = { AMOUNT = -15 }
-            TFR_EST_change_readiness = { AMOUNT = -20 }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = -15 }
+            TFR_EST_change_cohesion = yes
+            set_temp_variable = { var = TFR_EST_readiness_delta value = -20 }
+            TFR_EST_change_readiness = yes
             EU_leave_effect = yes
             leave_faction = yes
             # TFR's actual NATO membership marker in Estonia's history.
@@ -125,11 +217,11 @@ TFR_EST_enter_occupation = {
             remove_ideas = TFR_EST_coalition_working
             remove_ideas = TFR_EST_coalition_broad
             remove_ideas = TFR_EST_caretaker_cabinet
-            set_politics = { elections_allowed = no }
+            TFR_EST_disable_occupation_elections = yes
             country_event = { id = tfr_estonia_occupation.2 days = 2 }
             TFR_EST_queue_occupation_reconciliation = yes
         }
-        $PATRON$ = {
+        event_target:TFR_EST_requested_patron = {
             if = {
                 limit = { NOT = { EST = { is_puppet_of = PREV has_autonomy_state = TFR_EST_autonomy_occupation } } }
                 set_autonomy = {
@@ -174,7 +266,7 @@ TFR_EST_determine_occupation_type = {
         else = { set_variable = { var = TFR_EST_occupation_type value = 2 } }
     }
     else_if = {
-        limit = { overlord = { OR = { has_government = nationalist has_government = fascist has_government = national_socialist has_government = communist has_government = totalitarian_socialist } } }
+        limit = { var:overlord = { OR = { has_government = nationalist has_government = fascist has_government = national_socialist has_government = communist has_government = totalitarian_socialist } } }
         set_variable = { var = TFR_EST_occupation_type value = 7 }
     }
 }
@@ -229,8 +321,8 @@ TFR_EST_reconcile_occupation = {
         TFR_EST_repair_occupation_reforms = yes
         if = {
             limit = { is_subject = yes }
-            overlord = { save_event_target_as = TFR_EST_current_patron }
-            TFR_EST_enter_occupation = { PATRON = event_target:TFR_EST_current_patron }
+            var:overlord = { save_event_target_as = TFR_EST_requested_patron }
+            TFR_EST_enter_occupation = yes
             TFR_EST_determine_occupation_type = yes
             if = {
                 limit = {
@@ -260,7 +352,7 @@ TFR_EST_reconcile_occupation = {
             }
             add_ideas = TFR_EST_occupation_mandate
             TFR_EST_suspend_parliament = yes
-            set_politics = { elections_allowed = no }
+            TFR_EST_disable_occupation_elections = yes
         }
         else_if = {
             limit = { has_country_flag = TFR_EST_occupied }
@@ -294,7 +386,8 @@ TFR_EST_restore_occupation_government = {
     remove_ideas = TFR_EST_occupation_social_guarantees
     set_country_flag = TFR_EST_restoration_pending
     drop_cosmetic_tag = yes
-    TFR_EST_change_cohesion = { AMOUNT = 10 }
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 10 }
+    TFR_EST_change_cohesion = yes
     TFR_EST_restore_parliament = yes
     load_focus_tree = { tree = TFR_EST_main_tree keep_completed = yes }
     if = {
@@ -307,7 +400,7 @@ TFR_EST_restore_occupation_government = {
 TFR_EST_restore_sovereignty = {
     if = {
         limit = { TFR_EST_can_restore_sovereignty = yes }
-        overlord = { end_puppet = EST }
+        var:overlord = { end_puppet = EST }
         TFR_EST_restore_occupation_government = yes
     }
 }
@@ -318,11 +411,13 @@ TFR_EST_occupation_weekly = {
         add_to_variable = { var = TFR_EST_occupation_weeks value = 1 }
         if = {
             limit = { has_idea = TFR_EST_occupation_collaboration }
-            TFR_EST_change_occupation_cooperation = { AMOUNT = 0.5 }
+            set_temp_variable = { var = TFR_EST_occupation_cooperation_delta value = 0.5 }
+            TFR_EST_change_occupation_cooperation = yes
         }
         if = {
             limit = { has_idea = TFR_EST_occupation_clandestine_network }
-            TFR_EST_change_occupation_resistance = { AMOUNT = 0.5 }
+            set_temp_variable = { var = TFR_EST_occupation_resistance_delta value = 0.5 }
+            TFR_EST_change_occupation_resistance = yes
         }
         clamp_variable = { var = TFR_EST_occupation_cooperation min = 0 max = 100 }
         clamp_variable = { var = TFR_EST_occupation_resistance min = 0 max = 100 }

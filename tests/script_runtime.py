@@ -12,6 +12,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 from clausewitz import Block, parse
+from native_script_interface import AMOUNT_INPUTS, amount_call
 
 
 class Runtime:
@@ -123,6 +124,13 @@ class Runtime:
     def call(self, name, arguments=None):
         if name not in self.effects:
             raise AssertionError(f"Undefined effect {name}")
+        if arguments:
+            if name not in AMOUNT_INPUTS or set(arguments) != {"AMOUNT"}:
+                raise AssertionError("HOI4 scripted effects do not accept argument blocks")
+            # Convenience for test fixtures: execute the actual native two-
+            # statement authoring interface rather than emulating parameters.
+            self.run(parse(amount_call(name, arguments["AMOUNT"])))
+            return
         self.run(self.effects[name], arguments)
 
     def run(self, block, args=None):
@@ -192,8 +200,9 @@ class Runtime:
                     count += 1
                     if count > 1000: raise AssertionError("Unbounded while loop")
             elif key in self.effects:
-                parameters = {x.key: self.num(x.value, args) for x in value.entries} if isinstance(value, Block) else None
-                self.call(key, parameters)
+                if isinstance(value, Block):
+                    raise AssertionError(f"HOI4 scripted effect {key} cannot accept an argument block")
+                self.call(key)
             elif key in {"country_event", "news_event"}:
                 self.events.append(value.get("id") if isinstance(value, Block) else value)
             elif key == "log": self.messages.append(value)

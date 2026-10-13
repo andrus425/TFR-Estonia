@@ -554,13 +554,17 @@ country_event = {
         }
         SOV = {
             if = {
-            	limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
-            	TFR_EST_preserve_annexation = { TARGET = ROOT }
+                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                ROOT = {
+                    save_event_target_as = TFR_EST_settlement_target
+                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 1 }
+                }
+                TFR_EST_preserve_annexation = yes
             }
             else = {
-            	annex_country = {
-	                target = ROOT
-	            }
+                annex_country = {
+                    target = ROOT
+                }
             }
         }
     }
@@ -615,13 +619,17 @@ country_event = {
         name = russia.29.a
         SOV = {
             if = {
-            	limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
-            	TFR_EST_preserve_annexation = { TARGET = ROOT }
+                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                ROOT = {
+                    save_event_target_as = TFR_EST_settlement_target
+                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 1 }
+                }
+                TFR_EST_preserve_annexation = yes
             }
             else = {
-            	annex_country = {
-	                target = ROOT
-	            }
+                annex_country = {
+                    target = ROOT
+                }
             }
         }
     }

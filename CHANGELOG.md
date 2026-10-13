@@ -15,6 +15,9 @@
 - Added the missing parent no-Man-the-Guns Estonian naval OOB reference.
 - Added reproducible compatibility overrides, structural checks and actual-script
   election/mechanics regression tests.
+- Verified native engine startup and isolated election/meter assertions; converted
+  all effect inputs to HOI4's native temporary-variable interfaces.
+- Preserved annex settlement force handling with once-per-mandate cleanup.
 
 Natural campaign, graphical and balance verification remains a release gate;
 see `docs/TEST_RESULTS.md`.

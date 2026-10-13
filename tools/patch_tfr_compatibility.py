@@ -75,11 +75,19 @@ def parent_patch(text: str, relative: str) -> tuple[str, list[dict]]:
             if target == "EST" or (target and (target in ("ROOT", "PREV", "FROM", "THIS") or target.startswith(("event_target:", "var:"))) and (peace or "SOV" in relative or "GER" in relative or relative.endswith("00_TFR_scripted_effects_ZZZ_generic.txt"))):
                 # Guard all scope/array-derived targets in these war scripts. Their
                 # non-Estonia execution retains the original annex verbatim.
+                transfer_troops = next((c.value for c in e.children if c.key == "transfer_troops"), "yes")
+                if transfer_troops not in ("yes", "no"):
+                    raise ValueError(f"Unsupported dynamic troop policy in {relative}: {transfer_troops}")
+                transfer_troops_value = 0 if transfer_troops == "no" else 1
                 guard = f"{target} = {{ original_tag = EST has_country_flag = TFR_EST_initialized }}"
                 replacement = (f"if = {{\n{indent}\tlimit = {{ {guard} }}\n"
-                               f"{indent}\tTFR_EST_preserve_annexation = {{ TARGET = {target} }}\n"
+                               f"{indent}\t{target} = {{\n"
+                               f"{indent}\t\tsave_event_target_as = TFR_EST_settlement_target\n"
+                               f"{indent}\t\tset_temp_variable = {{ var = TFR_EST_settlement_transfer_troops value = {transfer_troops_value} }}\n"
+                               f"{indent}\t}}\n"
+                               f"{indent}\tTFR_EST_preserve_annexation = yes\n"
                                f"{indent}}}\n{indent}else = {{\n{indent}\t" + raw.replace("\n", "\n\t") + f"\n{indent}}}")
-                edits.append((e.start, e.end, replacement, "pre-annex Estonia guard"))
+                edits.append((e.start, e.end, replacement, "pre-annex Estonia guard preserving troop policy"))
         elif e.key == "transfer_state" and e.value == "13":
             replacement = (f"if = {{\n{indent}\tlimit = {{ OR = {{ original_tag = EST NOT = {{ EST = {{ has_country_flag = TFR_EST_initialized }} }} }} }}\n"
                            f"{indent}\ttransfer_state = 13\n{indent}}}\n{indent}else = {{\n"
@@ -150,7 +158,11 @@ def parent_patch(text: str, relative: str) -> tuple[str, list[dict]]:
             raise ValueError(f"Overlapping protections in {relative}: {a[3]}, {b[3]}")
     audit = [{"line": text.count("\n", 0, a) + 1, "reason": reason} for a, _, _, reason in edits]
     for a, b, replacement, _ in reversed(edits):
-        text = text[:a] + replacement + text[b:]
+        # New guard indentation can surround parent code indented with spaces.
+        # Expand only replacement prefixes so no space-before-tab is introduced.
+        replacement = re.sub(r"(?m)^[ \t]+", lambda m: m.group().expandtabs(4), replacement)
+        tail = re.sub(r"^[ \t]+(?=\r?\n)", "", text[b:])
+        text = text[:a] + replacement + tail
     return text, audit
 
 
@@ -183,8 +195,10 @@ def main() -> None:
         patched, audit = parent_patch(text, relative)
         if not audit:
             continue
-        # Match the source BOM and newline style.
+        # Hash upstream bytes verbatim, retain its BOM, and emit canonical LF
+        # so Git checkout normalization cannot invalidate generated hashes.
         bom = source_bytes.startswith(b"\xef\xbb\xbf")
+        patched = patched.replace("\r\n", "\n").replace("\r", "\n")
         generated = ((b"\xef\xbb\xbf" if bom else b"") + patched.encode("utf-8"))
         destination = ROOT / relative
         manifest["overrides"].append({"path": relative, "upstream_sha256": hashlib.sha256(source_bytes).hexdigest(), "generated_sha256": hashlib.sha256(generated).hexdigest(), "changes": audit})
