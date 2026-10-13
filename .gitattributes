@@ -15,6 +15,7 @@ common/on_actions/TFR_on_actions_ZZZ_peace.txt text eol=lf
 common/scripted_effects/00_TFR_scripted_effects_ZZZ_generic.txt text eol=lf
 common/scripted_effects/TFR_scripted_effects_GER.txt text eol=lf
 common/scripted_effects/TFR_scripted_effects_SOV.txt text eol=lf
+common/scripted_localisation/00_TFR_scripted_loc_ZZZ_hog_tt.txt text eol=lf
 common/scripted_triggers/00_TFR_scripted_triggers_ZZZ_generic.txt text eol=lf
 events/TFR_events_BLR.txt text eol=lf
 events/TFR_events_SOV.txt text eol=lf

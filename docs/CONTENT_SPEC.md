@@ -17,6 +17,12 @@ investments persist through elections and occupation. Only the current cabinet's
 programme modifier applies. Restoration resumes the saved party ledger under a
 provisional caretaker and schedules an election within 90 days.
 
+Following TFR's German model, the president occupies the main native country
+portrait, while the prime minister appears in the head-minister slot and shared
+head-of-government tooltip. The president remains separate through changes of
+ruling party; the seven PM identities come directly from the parliamentary
+ledger. Caretakers retain the incumbent PM, and occupation suspends the display.
+
 | Party and leader | Entry and programme | Conflict and defense priorities |
 |---|---|---|
 | Keskerakond — Jüri Ratas | Starts as prime minister with the Centre–EKRE–Isamaa coalition. Municipal finance, regional transport, social guarantees, integration and coalition delivery. | Regional and social commitments compete for the budget. War choices emphasize municipal continuity, public support and organized reserves. |

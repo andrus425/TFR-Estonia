@@ -27834,9 +27834,19 @@ country_event = {
     option = { #accept
         name = russia.589.a
         SOV = {
-            annex_country = {
-                target = ROOT
-                transfer_troops = no
+            if = {
+                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                ROOT = {
+                    save_event_target_as = TFR_EST_settlement_target
+                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                }
+                TFR_EST_preserve_annexation = yes
+            }
+            else = {
+                annex_country = {
+                    target = ROOT
+                    transfer_troops = no
+                }
             }
         }
         ai_chance = {

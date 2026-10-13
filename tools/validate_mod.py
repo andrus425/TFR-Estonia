@@ -77,6 +77,7 @@ def validate(tfr, game):
 
     catalogs = collections.defaultdict(set)
     owners = {}
+    character_roles = {}
 
     def register(kind, name, rel):
         if not isinstance(name, str):
@@ -99,6 +100,8 @@ def validate(tfr, game):
             if isinstance(chars, Block):
                 for e in chars.entries:
                     register("character", e.key, rel)
+                    if isinstance(e.value, Block):
+                        character_roles[e.key] = len(e.value.all("country_leader"))
         if rel.startswith("common/ideas/"):
             ideas = tree.get("ideas")
             if isinstance(ideas, Block):
@@ -186,6 +189,12 @@ def validate(tfr, game):
                 missing("tree", e.value.get("tree") if isinstance(e.value, Block) else e.value, rel, e.line)
             if e.key in {"recruit_character", "promote_character", "retire_character"}:
                 missing("character", e.value.get("character") if isinstance(e.value, Block) else e.value, rel, e.line)
+                if e.key == "promote_character":
+                    character = e.value.get("character") if isinstance(e.value, Block) else e.value
+                    if character_roles.get(character, 0) > 1 and (not isinstance(e.value, Block) or e.value.get("ideology") is None):
+                        errors.append(f"{rel}:{e.line}: multi-role character {character} needs explicit promotion ideology")
+            if e.key == "localization_key" and isinstance(e.value, str) and e.value not in loc:
+                errors.append(f"{rel}:{e.line}: missing scripted localization {e.value}")
             if e.key in {"has_idea", "remove_ideas", "add_ideas"}:
                 refs = [x.key if x.op is None else x.value for x in e.value.entries] if isinstance(e.value, Block) else [e.value]
                 for ref in refs:

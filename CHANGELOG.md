@@ -1,5 +1,18 @@
 # Changelog
 
+## Executive display integration
+
+- Adopted TFR's Germany-style president and head-of-government presentation.
+  Kaljulaid/Karis occupy the main portrait; the parliament selects the PM in the
+  locked head-minister slot and shared diplomacy tooltip.
+- Updated cabinet confirmation, caretaker, succession, occupation and restoration
+  handling, including prime-minister labels in the Riigikogu interface.
+- Added a reproducible shared-localization adapter preserving 139 upstream selectors.
+- Repaired compact punctuation parsing in the compatibility generator, recovering
+  384 missed later-file safeguards; added independent parser regressions.
+- Compatibility inventory now has 11 overrides, 620 settlement safeguards and
+  seven head-of-government selectors.
+
 ## 1.0.0 — implementation build
 
 - Added seven distinct governing routes and a simulated 101-seat Riigikogu.

@@ -202,7 +202,7 @@
 			}
 		}
 	}
-# Estonia submod: prime ministers are country leaders; the presidency is separate.
+# Estonia submod: president is the native country leader; PM uses TFR's head_minister display.
 recruit_character = TFR_EST_kaja_kallas
 recruit_character = TFR_EST_juri_ratas
 recruit_character = TFR_EST_mart_helme
@@ -210,5 +210,8 @@ recruit_character = TFR_EST_helir_valdor_seeder
 recruit_character = TFR_EST_indrek_saar
 recruit_character = TFR_EST_kristina_kallas
 recruit_character = TFR_EST_lavly_perling
-promote_character = TFR_EST_juri_ratas
+recruit_character = TFR_EST_kersti_kaljulaid
+recruit_character = TFR_EST_alar_karis
+set_variable = { TFR_EST_pm_party = 2 }
+TFR_EST_reconcile_executive_display = yes
 add_ideas = TFR_EST_constitutional_presidency

@@ -73,6 +73,28 @@ path="{base.as_posix()}"
             "set_variable = { TFR_EST_cohesion = 55 }\nset_variable = { TFR_EST_readiness = 25 }\nTFR_EST_refresh_meters = yes\nTFR_EST_initialize_parliament = yes\n",
             ]
     assertions = ["historical_101_and_57", "tie_51_50", "threshold_exact_five", "invalid_preserves_assembly", "seven_party_remainders", "occupied_election_noop", "meter_clamps"]
+    # Presentation effects are valid at history time: unlike diplomacy or unit
+    # transfers, these only select already-recruited characters and minister ideas.
+    body.append(check("president_and_opening_pm", "has_country_leader = { character = TFR_EST_kersti_kaljulaid ruling_only = yes } has_idea = TFR_EST_pm_centre has_country_flag = head_of_gov_ui_enabled " + eq("TFR_EST_pm_party", 2)))
+    assertions.append("president_and_opening_pm")
+    groups = ("market_liberal", "social_liberal", "authoritarian_democrat", "conservative", "social_democrat", "social_liberal", "market_liberal")
+    for index, (party, group) in enumerate(zip(PARTIES, groups), 1):
+        body.append(f"set_variable = {{ TFR_EST_pm_party = {index} }}\nTFR_EST_reconcile_cabinet_leadership = yes\n")
+        name = "president_with_pm_" + party
+        body.append(check(name, f"has_country_leader = {{ character = TFR_EST_kersti_kaljulaid ruling_only = yes }} has_idea = TFR_EST_pm_{party} has_government = {group}"))
+        assertions.append(name)
+    body.extend([
+        "set_country_flag = TFR_EST_karis_president\nTFR_EST_reconcile_presidency = yes\n",
+        check("presidential_handover_keeps_pm", "has_country_leader = { character = TFR_EST_alar_karis ruling_only = yes } has_idea = TFR_EST_pm_pp " + eq("TFR_EST_pm_party", 7)),
+        "TFR_EST_enter_caretaker = yes\nTFR_EST_reconcile_executive_display = yes\n",
+        check("caretaker_keeps_executive", "has_country_leader = { character = TFR_EST_alar_karis ruling_only = yes } has_idea = TFR_EST_pm_pp has_country_flag = TFR_EST_caretaker"),
+        "set_country_flag = TFR_EST_occupied\nTFR_EST_suspend_parliament = yes\nTFR_EST_reconcile_presidency = yes\n",
+        check("occupation_hides_hog", "NOT = { has_country_flag = head_of_gov_ui_enabled } " + " ".join(f"NOT = {{ has_idea = TFR_EST_pm_{party} }}" for party in PARTIES) + " " + eq("TFR_EST_pm_party", 7)),
+        "TFR_EST_restore_parliament = yes\n",
+        check("restoration_restores_saved_executive", "has_country_leader = { character = TFR_EST_alar_karis ruling_only = yes } has_idea = TFR_EST_pm_pp has_country_flag = head_of_gov_ui_enabled has_country_flag = TFR_EST_caretaker"),
+        "clr_country_flag = TFR_EST_karis_president\nclr_country_flag = TFR_EST_restoration_election\nclr_country_flag = TFR_EST_caretaker\nTFR_EST_initialize_parliament = yes\nTFR_EST_reconcile_presidency = yes\n",
+    ])
+    assertions.extend(["presidential_handover_keeps_pm", "caretaker_keeps_executive", "occupation_hides_hog", "restoration_restores_saved_executive"])
     body.append("log = \"TFR_EST_ENGINE_QA_END\"\n")
     source = (ROOT / "history/countries/EST - Estonia.txt").read_text(encoding="utf-8-sig")
     # Country history executes top-level commands independently. Keep native

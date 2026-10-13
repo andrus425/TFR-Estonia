@@ -28,7 +28,7 @@
     {
       "path": "common/decisions/TFR_decisions_SOV.txt",
       "upstream_sha256": "f4e691f57d3e1efd4b6a1c4e7ba85bf125ff4d6e2fcddc09581e19f65b86106f",
-      "generated_sha256": "96c01b6ac04f37cfe9294b1fad335582c24b05215308fb486087ae2891f8a5b4",
+      "generated_sha256": "30f23994c7e2b67958a5e53e0a303cdefec2b57036d3faa82a64bd6b2f8850b7",
       "changes": [
         {
           "line": 13073,
@@ -37,6 +37,278 @@
         {
           "line": 15024,
           "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 41470,
+          "reason": "Russian occupation/pacification predicate"
+        },
+        {
+          "line": 41501,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41503,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41504,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41506,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41507,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41509,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41510,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41512,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41519,
+          "reason": "Russian occupation/pacification predicate"
+        },
+        {
+          "line": 41548,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41550,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41551,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41553,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41554,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41556,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41557,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41559,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41566,
+          "reason": "Russian occupation/pacification predicate"
+        },
+        {
+          "line": 41596,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41599,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41600,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41603,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41604,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41607,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41608,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41611,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41618,
+          "reason": "Russian occupation/pacification predicate"
+        },
+        {
+          "line": 41646,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41649,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41650,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41653,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41654,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41657,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41658,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41661,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41668,
+          "reason": "Russian occupation/pacification predicate"
+        },
+        {
+          "line": 41703,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41705,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41706,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41708,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41709,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41711,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41712,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41714,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41721,
+          "reason": "Russian occupation/pacification predicate"
+        },
+        {
+          "line": 41754,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41756,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41757,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41759,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41760,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41762,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41763,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41765,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41772,
+          "reason": "Russian occupation/pacification predicate"
+        },
+        {
+          "line": 41778,
+          "reason": "require occupied Estonian territory before pacification"
+        },
+        {
+          "line": 41783,
+          "reason": "pacify only Soviet-owned Estonian states"
+        },
+        {
+          "line": 41787,
+          "reason": "pacify only Soviet-owned Estonian states"
+        },
+        {
+          "line": 41791,
+          "reason": "pacify only Soviet-owned Estonian states"
+        },
+        {
+          "line": 41795,
+          "reason": "pacify only Soviet-owned Estonian states"
+        },
+        {
+          "line": 41813,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41815,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41816,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41818,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41819,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41821,
+          "reason": "close Soviet-held territory guard"
+        },
+        {
+          "line": 41822,
+          "reason": "limit occupation decisions to Soviet-held territory"
+        },
+        {
+          "line": 41824,
+          "reason": "close Soviet-held territory guard"
         }
       ]
     },
@@ -54,7 +326,7 @@
     {
       "path": "common/on_actions/TFR_on_actions_ZZZ_peace.txt",
       "upstream_sha256": "81dbb654285bb216debbeac8eb584992255ea2c68620e7da180dad5874cb2ea6",
-      "generated_sha256": "30debd7e35899ed90d21160cdd05be7424c4fd9c936488742cfcab8e353c5b9b",
+      "generated_sha256": "9afeae41c771d4fc0267cb43e5111edb0eb3d49f04c2403e1e97c8104ee93d79",
       "changes": [
         {
           "line": 121,
@@ -815,6 +1087,1102 @@
         {
           "line": 12448,
           "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 12492,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 12520,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 12539,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 12570,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 12593,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 12638,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 12682,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 12753,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 12788,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 12801,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 12817,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 12848,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 12981,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 13072,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 13087,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 13111,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 13202,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 13221,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 13273,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 13390,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 13431,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 13514,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 13571,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 13643,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 13670,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 13691,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 13719,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 13733,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 13801,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 13804,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 13812,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 14040,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 14399,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 14455,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 14923,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 14943,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 14968,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 14995,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 15103,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 15107,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 15137,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 15138,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 15139,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 15409,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 15471,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 15475,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 15510,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 15511,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 15512,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 15637,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 15654,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 15655,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 15656,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 15677,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 15866,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 16034,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 16050,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 16051,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 16052,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 16067,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 16131,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 16148,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 16149,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 16150,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 16164,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 16165,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 16166,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 16180,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 16181,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 16182,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 16187,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 16310,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 16578,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 16595,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 16596,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 16597,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 16604,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 16798,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 16882,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 16973,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 16990,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 16991,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 16992,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 16998,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 17201,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 17216,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 17248,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 17252,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 17287,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 17288,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 17289,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 17309,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 17331,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 17353,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 17411,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 17427,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 17437,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 17443,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 17449,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 17473,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 17502,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 17542,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 17543,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 17544,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 17617,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 17621,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 17640,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 17641,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 17642,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 17937,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 17982,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 17986,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 18015,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18016,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18017,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 18102,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 18160,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 18176,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18186,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18192,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18198,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18222,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 18251,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 18291,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18292,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18293,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 18334,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 18338,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 18373,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18374,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18375,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 18395,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 18552,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 18615,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 18687,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 18725,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 18754,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18755,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18756,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 18857,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 18880,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18881,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18882,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 19108,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 19178,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 19276,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 19292,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 19350,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 19365,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 19381,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 19470,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 19533,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 19555,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 19576,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 19585,
+          "reason": "defeated Estonia remains present"
+        },
+        {
+          "line": 19671,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 19760,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 19826,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 19881,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 19933,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 20218,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 20254,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 20276,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 20302,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 20310,
+          "reason": "defeated Estonia remains present"
+        },
+        {
+          "line": 20393,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 20415,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 20437,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 20742,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 20773,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 20820,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 20892,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 20903,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 20952,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 20968,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 21011,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 21030,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 21044,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 21062,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 21105,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 21117,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 21133,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 21161,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 21171,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 21404,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 21421,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 21422,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 21423,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 21429,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 21632,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 21647,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 21737,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 21754,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 21755,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 21756,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 21763,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 21957,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 22041,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 22131,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 22148,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 22149,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 22150,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 22157,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 22347,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 22390,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 22458,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 22475,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 22476,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 22477,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 22483,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 22606,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 22855,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 22872,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 22873,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 22874,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 22895,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 23086,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 23254,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 23270,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 23271,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 23272,
+          "reason": "keep occupation anchor controller"
+        },
+        {
+          "line": 23287,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 23334,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 23367,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 23378,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 23391,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 23429,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 23475,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 23513,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 23526,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 23556,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 23718,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 23960,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 24138,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 24235,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 24286,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 24307,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 24322,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 24370,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 24410,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 24520,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 24543,
+          "reason": "defer occupation setup after parent puppet"
+        },
+        {
+          "line": 24606,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 24655,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 24749,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 25017,
+          "reason": "protect Northern Estonia before transfer"
+        },
+        {
+          "line": 25098,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 25626,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 25660,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 25683,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 25706,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 25997,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 26016,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 26362,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 26447,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 26514,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 26546,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 26565,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 26594,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 26639,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 26696,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 26725,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 26774,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 26824,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 26874,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 26924,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 26973,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 27068,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 27117,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 27167,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 27235,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 27262,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 27308,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 27351,
+          "reason": "pre-annex Estonia guard preserving troop policy"
         }
       ]
     },
@@ -855,7 +2223,7 @@
     {
       "path": "common/scripted_effects/TFR_scripted_effects_SOV.txt",
       "upstream_sha256": "0fec3681f158c546f5df6056a5ac5580ddb0d5adbebba3105696f8c5a5ff02d1",
-      "generated_sha256": "6cacda0ebfbcc1b022f8bd7611d0857f67422621fa94172d5bb764a456ce176e",
+      "generated_sha256": "54e6a3443d67cb69dc6c0097b9892c21a7377f7f123849e447c6677ff4d023c8",
       "changes": [
         {
           "line": 665,
@@ -972,13 +2340,212 @@
         {
           "line": 15272,
           "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 16055,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 16167,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 16798,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 17260,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 17372,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 18515,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18541,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18557,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18578,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18589,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18599,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18610,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18620,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18631,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18652,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18672,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18811,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18839,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 18882,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 19182,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 19211,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 19624,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 19650,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 19665,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 19683,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 19694,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 19704,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 19715,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 19725,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 19736,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 19757,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 19777,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 20057,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 20093,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 20686,
+          "reason": "pre-annex Estonia guard preserving troop policy"
+        },
+        {
+          "line": 21611,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 22542,
+          "reason": "protect Northern Estonia before transfer"
+        },
+        {
+          "line": 22647,
+          "reason": "prevent generic tree replacing occupation"
+        },
+        {
+          "line": 22932,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 23280,
+          "reason": "guard state iterator ownership transfer"
+        },
+        {
+          "line": 23295,
+          "reason": "guard state iterator ownership transfer"
+        }
+      ]
+    },
+    {
+      "path": "common/scripted_localisation/00_TFR_scripted_loc_ZZZ_hog_tt.txt",
+      "upstream_sha256": "388fd27ee4aee0062e84e22a56d6239d6b736b199590916e7ee79fd7079eeb60",
+      "generated_sha256": "d70f5080a7adf831eb4c88cb8729c6894d9b6d6080426912a50df48898903517",
+      "changes": [
+        {
+          "line": 1125,
+          "reason": "Estonia head-of-government selector for reform"
+        },
+        {
+          "line": 1125,
+          "reason": "Estonia head-of-government selector for centre"
+        },
+        {
+          "line": 1125,
+          "reason": "Estonia head-of-government selector for ekre"
+        },
+        {
+          "line": 1125,
+          "reason": "Estonia head-of-government selector for isamaa"
+        },
+        {
+          "line": 1125,
+          "reason": "Estonia head-of-government selector for sde"
+        },
+        {
+          "line": 1125,
+          "reason": "Estonia head-of-government selector for e200"
+        },
+        {
+          "line": 1125,
+          "reason": "Estonia head-of-government selector for pp"
         }
       ]
     },
     {
       "path": "common/scripted_triggers/00_TFR_scripted_triggers_ZZZ_generic.txt",
       "upstream_sha256": "d98ddcaaed791ccc42b09d94ea3b6f8de855ec80ba12485b75e1574af130a5f8",
-      "generated_sha256": "dfcdbc31ba1ce69daa6d8c60e0d16e0c2486e5d40f89f962904fbc6857f3a9f0",
+      "generated_sha256": "5114bc93db0d7190e2a7f193fd45ade8083c0af57cf92fe0576e07180828c06a",
       "changes": [
         {
           "line": 13,
@@ -1000,7 +2567,7 @@
     {
       "path": "events/TFR_events_SOV.txt",
       "upstream_sha256": "5e1bbb93a4e5b5ddad46068d71713346868c852971b436f20e5f677c4c635f80",
-      "generated_sha256": "3d5a1c580d314d241f7016601310b99414ddedb9c172bc5b1aa5369c1793a786",
+      "generated_sha256": "c1047d8c3e793fe78b2ea85d5a35dd779f3002f9b01baed4568ea5f467575826",
       "changes": [
         {
           "line": 556,
@@ -1021,6 +2588,10 @@
         {
           "line": 9898,
           "reason": "Russian occupation/pacification predicate"
+        },
+        {
+          "line": 27817,
+          "reason": "pre-annex Estonia guard preserving troop policy"
         }
       ]
     }

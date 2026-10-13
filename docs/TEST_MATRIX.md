@@ -6,7 +6,8 @@ to the parent-only baseline. Completion is not implied by the presence of script
 
 | Scenario | Required observation |
 |---|---|
-| Player EST / AI Russia | Ratas leader, 57-seat coalition, 101 total seats, working tree, no no-content warning, EU/NATO/economy retained |
+| Player EST / AI Russia | Kaljulaid main portrait, Ratas head-minister/HoG tooltip, 57-seat coalition, 101 total seats, working tree, no no-content warning, EU/NATO/economy retained |
+| Executive display | All seven PMs update through valid cabinet confirmation; president persists across five ideology groups; caretaker status shown; Karis succession updates immediately |
 | AI EST / observer country | Research, production, recruiting, focuses and decisions remain active |
 | Player Russia / AI EST | Stronger parent NATO penalty works initially; preparation lifts it once for EST |
 | Seven party routes | Each reaches government through valid confidence; ten policy focuses and both-war choices are accessible |

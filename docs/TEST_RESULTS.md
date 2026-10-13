@@ -8,18 +8,30 @@ The installed executable reports **HOI4 Operation Postern 1.19.3.0.c01a**.
 
 | Check | Observed result |
 |---|---|
-| `tools/validate_mod.py` | 45 additive/override script files; 192 focuses, 53 events, 66 decisions, 902 English localization keys; **0 errors** |
-| `python -m unittest discover -s tests -v` | **26 tests passed**, including 500 randomized election allocations checked against an independent integer reference |
+| `tools/validate_mod.py` | 51 additive/override script files; 192 focuses, 53 events, 66 decisions, 930 English localization keys; **0 errors** |
+| `python -m unittest discover -s tests -v` | **41 tests passed**, including 500 randomized election allocations checked against an independent integer reference |
 | `tools/test_occupation_compatibility.py` | **10 structural regression tests passed** |
-| `tools/patch_tfr_compatibility.py --check` | **10 reproducible overrides and 236 audited protections verified** against the installed parent |
+| `tools/patch_tfr_compatibility.py --check` | **11 reproducible overrides and 627 audited changes verified**: 620 settlement safeguards and seven head-of-government selectors |
 | `tools/native_script_interface.py --check` | **0 files with legacy argument-block interfaces** |
-| Portable packaging tests | Deterministic archive, exclusions, portable descriptors and metadata rejection passed as part of the 26-test suite |
+| Portable packaging tests | Deterministic archive, exclusions, portable descriptors and metadata rejection passed as part of the 41-test suite |
 
 The tests cover historical seats and confidence, threshold/tie behavior, invalid
 poll recovery, negative and fractional inputs, inactive parties, independent
 party identity, supply agreements, meter limits and tiers, economic unit conversion,
 reserve authorization, programme selection, formation, initialization, campaign
 stages and persistence through tree changes.
+
+Executive tests cover valid confirmation of all seven PMs without changing the
+president, caretaker continuity, immediate Karis succession, occupation hiding,
+restoration, repeat-safe display repair, locked minister slots and explicit
+ideology selection when promoting multi-role presidential characters. The shared
+localization adapter preserves all 139 upstream selectors. Independent parser
+tests verify all upstream script trees, retained annex actions and parent story
+dispatches, including compact punctuation and late-file Estonia paths.
+
+The tokenizer repair recovered 384 safeguards previously omitted after compact
+`NOT ={` syntax. The compatibility manifest contains the expanded inventory;
+live settlement acceptance remains open.
 
 Settlement checks compare actual generated scripts with upstream semantics.
 They cover guarded explicit and dynamic annexation, the retained anchor, partition
@@ -29,7 +41,7 @@ gates and repeat-safe repair. They do not execute combat or a live peace confere
 
 ## Native engine observations
 
-The final Estonia run is captured locally under
+The earlier implementation run is captured locally under
 `test-output/engine-estonia-qa-20261013-095041/`.
 It loaded TFR, Estonia and an isolated arithmetic QA overlay, reached the frontend
 in approximately **101 seconds**, and passed all seven native assertions:
@@ -53,6 +65,28 @@ messages**, with **0 new unique messages**, **0 removed messages**, and **0 mess
 containing the new `TFR_EST_` or `tfr_estonia` identifiers**. This establishes
 startup parity with this parent build; it does not make the parent error-free.
 The compact comparison is saved locally as `test-output/final-engine-comparison.json`.
+
+The latest executive-display run is captured under
+`test-output/engine-estonia-qa-20261013-123825/`. It reached the frontend in about
+154 seconds and passed **all 19 native assertions**, comprising the seven earlier
+arithmetic cases and 12 executive cases: the opening Kaljulaid/Ratas pairing,
+each of the seven PM identities across five ruling ideology groups, the Karis
+handover, caretaker continuity, occupation hiding and restoration of the saved
+executive. These occupation/restoration cases exercise display effects and ledger
+suspension only, without invoking diplomatic settlements or unit transfers.
+
+The successful run contains **no errors naming `TFR_EST_` or `tfr_estonia`**.
+Comparison with the earlier parent baseline found eight additional missing
+nationalist flag messages for GBA, KHA, LBV, ORO, PAP, SID, SPM and TOS. They
+reference parent flag assets; the reason for their additional loading was not
+isolated. They are recorded rather than counted as resolved or silently ignored.
+The comparison is `test-output/executive-engine-comparison.json`.
+
+An initial executive QA run failed because `promote_character` requires an
+explicit ideology for characters with several leader roles. The implementation
+now supplies the appropriate sub-ideology in all five government groups, and
+both static checks and a regression prevent reintroducing the ambiguous call.
+The later 19-case run is the accepted result.
 
 The QA overlay is not shipped or enabled in ordinary play. It executes arithmetic
 within a single hidden-effect context during frontend history construction.

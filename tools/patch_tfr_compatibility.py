@@ -15,7 +15,9 @@ from pathlib import Path
 
 DEFAULT_PARENT = Path(r"C:\Program Files (x86)\Steam\steamapps\workshop\content\394360\3350890356")
 ROOT = Path(__file__).resolve().parents[1]
-TOKEN = re.compile(r'#[^\n]*|"(?:\\.|[^"\\])*"|[{}=<>]+|[^\s{}=<>#]+')
+HOG_LOCALISATION_PATH = "common/scripted_localisation/00_TFR_scripted_loc_ZZZ_hog_tt.txt"
+ESTONIA_PARTIES = ("reform", "centre", "ekre", "isamaa", "sde", "e200", "pp")
+TOKEN = re.compile(r'#[^\r\n]*|"(?:\\.|[^"\\])*"|[{}]|[<>!=]=?|[^\s{}<>!="#]+')
 
 
 @dataclass
@@ -28,6 +30,8 @@ class Entry:
 
 
 def parse(text: str) -> list[Entry]:
+    # Operators and braces must remain separate even in compact `NOT ={` or
+    # `}}` source, otherwise an enclosing block can end at the wrong position.
     tokens = [(m.group(), m.start(), m.end()) for m in TOKEN.finditer(text) if not m.group().startswith("#")]
     def block(i: int) -> tuple[list[Entry], int]:
         out = []
@@ -132,6 +136,26 @@ def parent_patch(text: str, relative: str) -> tuple[str, list[dict]]:
         start = text.index(marker)
         pos = text.index("tag = SOV", start)
         edits.append((pos, pos, "tag = EST\n\t\t", "register Estonia as full content"))
+    # Reuse TFR's existing head-of-government icon and tooltip. The shared
+    # definition is extended in place because repeating its name in another
+    # file replaces, rather than safely extends, other countries' selectors.
+    if relative == HOG_LOCALISATION_PATH:
+        definitions = [e for e in entries if e.key == "defined_text" and
+                       any(c.key == "name" and c.value == "head_of_gov_dynamic_loc" for c in e.children)]
+        if len(definitions) != 1:
+            raise ValueError("Expected one upstream head_of_gov_dynamic_loc definition")
+        pos = definitions[0].end - 1
+        if text[pos] != "}":
+            raise ValueError("Expected the outer head-of-government closing brace")
+        for party_id, party in enumerate(ESTONIA_PARTIES, 1):
+            selector = ("\n    text = {\n"
+                        "        trigger = {\n"
+                        "            TFR_EST_constitutional_executive = yes\n"
+                        f"            check_variable = {{ var = TFR_EST_pm_party value = {party_id} compare = equals }}\n"
+                        "        }\n"
+                        f"        localization_key = TFR_EST_hog_{party}\n"
+                        "    }\n")
+            edits.append((pos, pos, selector, f"Estonia head-of-government selector for {party}"))
     # Pacification applies only to Soviet-owned occupied territory. The retained
     # anchor and any remaining Estonian region are not resistance states.
     if relative == "common/decisions/TFR_decisions_SOV.txt":
@@ -161,8 +185,14 @@ def parent_patch(text: str, relative: str) -> tuple[str, list[dict]]:
         # New guard indentation can surround parent code indented with spaces.
         # Expand only replacement prefixes so no space-before-tab is introduced.
         replacement = re.sub(r"(?m)^[ \t]+", lambda m: m.group().expandtabs(4), replacement)
+        replacement = re.sub(r"(?m)^[ \t]+(?=\r?$)", "", replacement)
         tail = re.sub(r"^[ \t]+(?=\r?\n)", "", text[b:])
-        text = text[:a] + replacement + tail
+        prefix = text[:a]
+        if replacement.startswith("\n"):
+            line_start = text.rfind("\n", 0, a) + 1
+            if not text[line_start:a].strip():
+                prefix = text[:line_start]
+        text = prefix + replacement + tail
     return text, audit
 
 
@@ -174,6 +204,7 @@ def main() -> None:
     mode.add_argument("--check", action="store_true")
     args = ap.parse_args()
     candidates = ["common/scripted_triggers/00_TFR_scripted_triggers_ZZZ_generic.txt",
+                  HOG_LOCALISATION_PATH,
                   "common/on_actions/TFR_on_actions_ZZZ_peace.txt",
                   "common/scripted_effects/TFR_scripted_effects_SOV.txt",
                   "common/scripted_effects/TFR_scripted_effects_GER.txt",

@@ -102,6 +102,8 @@ class Runtime:
             return self.props["focus_tree"] == value
         if key == "has_country_leader":
             return value.get("character") == self.leader
+        if key == "has_government":
+            return self.politics.get("ruling_party") == value
         if key == "has_autonomy_state":
             return self.props.get("autonomy_state") == value
         if key in {"SOV", "GER"} and isinstance(value, Block):

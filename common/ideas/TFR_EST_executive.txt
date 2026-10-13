@@ -1,0 +1,72 @@
+ideas = { head_minister = {
+ TFR_EST_pm_reform = {
+  picture = TFR_EST_pm_reform
+  allowed = { original_tag = EST }
+  visible = { TFR_EST_constitutional_executive = yes check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } }
+  available = { always = no }
+  allowed_to_remove = { always = no }
+  cost = 0
+  removal_cost = -1
+  modifier = { }
+ }
+ TFR_EST_pm_centre = {
+  picture = TFR_EST_pm_centre
+  allowed = { original_tag = EST }
+  visible = { TFR_EST_constitutional_executive = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } }
+  available = { always = no }
+  allowed_to_remove = { always = no }
+  cost = 0
+  removal_cost = -1
+  modifier = { }
+ }
+ TFR_EST_pm_ekre = {
+  picture = TFR_EST_pm_ekre
+  allowed = { original_tag = EST }
+  visible = { TFR_EST_constitutional_executive = yes check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } }
+  available = { always = no }
+  allowed_to_remove = { always = no }
+  cost = 0
+  removal_cost = -1
+  modifier = { }
+ }
+ TFR_EST_pm_isamaa = {
+  picture = TFR_EST_pm_isamaa
+  allowed = { original_tag = EST }
+  visible = { TFR_EST_constitutional_executive = yes check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } }
+  available = { always = no }
+  allowed_to_remove = { always = no }
+  cost = 0
+  removal_cost = -1
+  modifier = { }
+ }
+ TFR_EST_pm_sde = {
+  picture = TFR_EST_pm_sde
+  allowed = { original_tag = EST }
+  visible = { TFR_EST_constitutional_executive = yes check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } }
+  available = { always = no }
+  allowed_to_remove = { always = no }
+  cost = 0
+  removal_cost = -1
+  modifier = { }
+ }
+ TFR_EST_pm_e200 = {
+  picture = TFR_EST_pm_e200
+  allowed = { original_tag = EST }
+  visible = { TFR_EST_constitutional_executive = yes check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } }
+  available = { always = no }
+  allowed_to_remove = { always = no }
+  cost = 0
+  removal_cost = -1
+  modifier = { }
+ }
+ TFR_EST_pm_pp = {
+  picture = TFR_EST_pm_pp
+  allowed = { original_tag = EST }
+  visible = { TFR_EST_constitutional_executive = yes check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } }
+  available = { always = no }
+  allowed_to_remove = { always = no }
+  cost = 0
+  removal_cost = -1
+  modifier = { }
+ }
+} }

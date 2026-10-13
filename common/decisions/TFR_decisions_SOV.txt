@@ -41487,7 +41487,7 @@ SOV_western_states_terrorists_category = {
 		visible = {
 			hidden_trigger = {
 				EST = {
-					exists = no
+					TFR_EST_russian_occupation_or_absent = yes
 				}
 				NOT = {
 					has_country_flag = SOV_pacified_estonia
@@ -41519,24 +41519,32 @@ SOV_western_states_terrorists_category = {
 		remove_effect = {
 			add_manpower = -500
 			13 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_resistance = -15
-			}
+
+                }}
 			191 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_resistance = -15
-			}
+
+                }}
 			840 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_resistance = -15
-			}
+
+                }}
 			1329 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_resistance = -15
-			}
+
+                }}
 		}
 	}
 	SOV_raid_estonia1 = {
 		visible = {
 			hidden_trigger = {
 				EST = {
-					exists = no
+					TFR_EST_russian_occupation_or_absent = yes
 				}
 				NOT = {
 					has_country_flag = SOV_pacified_estonia
@@ -41566,24 +41574,32 @@ SOV_western_states_terrorists_category = {
 		remove_effect = {
 			add_manpower = -500
 			13 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_resistance = -15
-			}
+
+                }}
 			191 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_resistance = -15
-			}
+
+                }}
 			840 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_resistance = -15
-			}
+
+                }}
 			1329 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_resistance = -15
-			}
+
+                }}
 		}
 	}
 	SOV_step_up_patrolling_estonia = {
 		visible = {
 			hidden_trigger = {
 				EST = {
-					exists = no
+					TFR_EST_russian_occupation_or_absent = yes
 				}
 				NOT = {
 					has_country_flag = SOV_pacified_estonia
@@ -41614,28 +41630,36 @@ SOV_western_states_terrorists_category = {
 		}
 		remove_effect = {
 			13 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_resistance = -7
 				add_compliance = 5
-			}
+
+                }}
 			191 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_resistance = -7
 				add_compliance = 5
-			}
+
+                }}
 			840 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_resistance = -7
 				add_compliance = 5
-			}
+
+                }}
 			1329 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_resistance = -7
 				add_compliance = 5
-			}
+
+                }}
 		}
 	}
 	SOV_step_up_patrolling_estonia1 = {
 		visible = {
 			hidden_trigger = {
 				EST = {
-					exists = no
+					TFR_EST_russian_occupation_or_absent = yes
 				}
 				NOT = {
 					has_country_flag = SOV_pacified_estonia
@@ -41664,28 +41688,36 @@ SOV_western_states_terrorists_category = {
 		}
 		remove_effect = {
 			13 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_resistance = -7
 				add_compliance = 5
-			}
+
+                }}
 			191 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_resistance = -7
 				add_compliance = 5
-			}
+
+                }}
 			840 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_resistance = -7
 				add_compliance = 5
-			}
+
+                }}
 			1329 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_resistance = -7
 				add_compliance = 5
-			}
+
+                }}
 		}
 	}
 	SOV_humaid_estonia = {
 		visible = {
 			hidden_trigger = {
 				EST = {
-					exists = no
+					TFR_EST_russian_occupation_or_absent = yes
 				}
 				NOT = {
 					has_country_flag = SOV_pacified_estonia
@@ -41721,24 +41753,32 @@ SOV_western_states_terrorists_category = {
 			}
 			add_debt = yes
 			13 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_compliance = 15
-			}
+
+                }}
 			191 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_compliance = 15
-			}
+
+                }}
 			840 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_compliance = 15
-			}
+
+                }}
 			1329 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_compliance = 15
-			}
+
+                }}
 		}
 	}
 	SOV_humaid_estonia1 = {
 		visible = {
 			hidden_trigger = {
 				EST = {
-					exists = no
+					TFR_EST_russian_occupation_or_absent = yes
 				}
 				NOT = {
 					has_country_flag = SOV_pacified_estonia
@@ -41772,50 +41812,47 @@ SOV_western_states_terrorists_category = {
 			}
 			add_debt = yes
 			13 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_compliance = 15
-			}
+
+                }}
 			191 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_compliance = 15
-			}
+
+                }}
 			840 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_compliance = 15
-			}
+
+                }}
 			1329 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_compliance = 15
-			}
+
+                }}
 		}
 	}
 	SOV_restore_order_estonia = {
 		visible = {
 			hidden_trigger = {
 				EST = {
-					exists = no
+					TFR_EST_russian_occupation_or_absent = yes
 				}
 				tag = SOV
 			}
 		}
 		icon = GFX_SOV_decision_estonia_cto
 		available = {
+            any_owned_state = { is_core_of = EST }
 			if = {
 				limit = {
 					is_ai = no
 				}
-				13 = {
-					compliance > 80
-					resistance < 10
-				}
-				191 = {
-					compliance > 80
-					resistance < 10
-				}
-				840 = {
-					compliance > 80
-					resistance < 10
-				}
-				1329 = {
-					compliance > 80
-					resistance < 10
-				}
+				13 = { OR = { NOT = { is_owned_by = SOV } AND = { compliance > 80 resistance < 10 } } }
+				191 = { OR = { NOT = { is_owned_by = SOV } AND = { compliance > 80 resistance < 10 } } }
+				840 = { OR = { NOT = { is_owned_by = SOV } AND = { compliance > 80 resistance < 10 } } }
+				1329 = { OR = { NOT = { is_owned_by = SOV } AND = { compliance > 80 resistance < 10 } } }
 			}
 		}
 		cancel_if_not_visible = yes
@@ -41831,17 +41868,25 @@ SOV_western_states_terrorists_category = {
 				set_country_flag = SOV_pacified_estonia
 			}
 			13 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_core_of = SOV
-			}
+
+                }}
 			191 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_core_of = SOV
-			}
+
+                }}
 			840 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_core_of = SOV
-			}
+
+                }}
 			1329 = {
+                if = { limit = { is_owned_by = SOV is_controlled_by = SOV }
 				add_core_of = SOV
-			}
+
+                }}
 		}
 	}
 	SOV_raid_latvia = {

@@ -1,0 +1,6 @@
+# Also valid in the initial country snapshot, before the day-one ledger init.
+TFR_EST_constitutional_executive = {
+    original_tag = EST
+    is_subject = no
+    NOT = { has_country_flag = TFR_EST_occupied }
+}

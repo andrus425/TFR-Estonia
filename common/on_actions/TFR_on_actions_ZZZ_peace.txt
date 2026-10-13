@@ -14223,10 +14223,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 						every_state = {
 							limit = {
 								is_core_of = ROOT
@@ -14252,6 +14262,10 @@ on_actions = {
 					FROM = {
 						white_peace = ROOT
 						puppet = ROOT
+                        if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                        }
 					}
 					ROOT = {
 						EU_leave_effect = yes
@@ -14270,10 +14284,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 						random_list = {
 							50 = {
 
@@ -14301,10 +14325,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 					}
 					set_global_flag = skip_default_capitulation
 				}
@@ -14325,6 +14359,10 @@ on_actions = {
 						white_peace = ROOT
 						GER = {
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							transfer_state = 124
 						}
 						ROOT = {
@@ -14370,6 +14408,10 @@ on_actions = {
 						white_peace = ROOT
 						GER = {
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 						}
 						ROOT = {
 							if = {
@@ -14414,6 +14456,10 @@ on_actions = {
 						white_peace = ROOT
 						GER = {
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 						}
 						ROOT = {
 							if = {
@@ -14484,10 +14530,20 @@ on_actions = {
 								}
 							}
 							SWE = {
-								annex_country = {
-									target = ROOT
-									transfer_troops = no
-								}
+								if = {
+                                    limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                    ROOT = {
+                                        save_event_target_as = TFR_EST_settlement_target
+                                        set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                    }
+                                    TFR_EST_preserve_annexation = yes
+                                }
+                                else = {
+                                    annex_country = {
+                                        target = ROOT
+                                        transfer_troops = no
+                                    }
+                                }
 							}
 						}
 					}
@@ -14519,10 +14575,20 @@ on_actions = {
 								}
 							}
 							GER = {
-								annex_country = {
-									target = ROOT
-									transfer_troops = no
-								}
+								if = {
+                                    limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                    ROOT = {
+                                        save_event_target_as = TFR_EST_settlement_target
+                                        set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                    }
+                                    TFR_EST_preserve_annexation = yes
+                                }
+                                else = {
+                                    annex_country = {
+                                        target = ROOT
+                                        transfer_troops = no
+                                    }
+                                }
 							}
 						}
 						else_if = {
@@ -14533,6 +14599,10 @@ on_actions = {
 							}
 							GER = {
 								puppet = ROOT
+                                if = {
+                                    limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                    ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                                }
 							}
 						}
 						else_if = {
@@ -14549,6 +14619,10 @@ on_actions = {
 							}
 							GER = {
 								puppet = ROOT
+                                if = {
+                                    limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                    ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                                }
 							}
 						}
 					}
@@ -14579,10 +14653,20 @@ on_actions = {
 								}
 							}
 							GER = {
-								annex_country = {
-									target = ROOT
-									transfer_troops = no
-								}
+								if = {
+                                    limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                    ROOT = {
+                                        save_event_target_as = TFR_EST_settlement_target
+                                        set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                    }
+                                    TFR_EST_preserve_annexation = yes
+                                }
+                                else = {
+                                    annex_country = {
+                                        target = ROOT
+                                        transfer_troops = no
+                                    }
+                                }
 							}
 							FRA = {
 								transfer_state = 3
@@ -14712,10 +14796,20 @@ on_actions = {
 								transfer_state = 838
 							}
 							GER = {
-								annex_country = {
-									target = ROOT
-									transfer_troops = no
-								}
+								if = {
+                                    limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                    ROOT = {
+                                        save_event_target_as = TFR_EST_settlement_target
+                                        set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                    }
+                                    TFR_EST_preserve_annexation = yes
+                                }
+                                else = {
+                                    annex_country = {
+                                        target = ROOT
+                                        transfer_troops = no
+                                    }
+                                }
 							}
 						}
 					}
@@ -14803,10 +14897,20 @@ on_actions = {
 								}
 							}
 							white_peace = ROOT
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 						else_if = {
 							limit = {
@@ -14819,6 +14923,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							transfer_state = 850
 							transfer_state = 848
 							transfer_state = 849
@@ -14842,10 +14950,20 @@ on_actions = {
 								}
 							}
 							white_peace = ROOT
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 					}
 					set_global_flag = skip_default_capitulation
@@ -14933,10 +15051,20 @@ on_actions = {
 								id = news.292
 								days = 1
 							}
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 							annex_country = {
 								target = SLV
 								transfer_troops = no
@@ -14953,6 +15081,10 @@ on_actions = {
 							white_peace = ROOT
 							white_peace = SLV
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							puppet = SLV
 							ROOT = {
 								set_politics = {
@@ -15005,6 +15137,10 @@ on_actions = {
 							white_peace = ROOT
 							white_peace = SLV
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							puppet = SLV
 							transfer_state = 1306
 							transfer_state = 103
@@ -15122,6 +15258,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							SOV = {
 								country_event = {
 									id = russia.115
@@ -15163,6 +15303,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							annex_country = {
 								target = BLR
 								transfer_troops = no
@@ -15246,6 +15390,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							if = {
 								limit = {
 									ROOT = {
@@ -15303,6 +15451,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							transfer_state = 583
 							transfer_state = 590
 							transfer_state = 588
@@ -15374,10 +15526,20 @@ on_actions = {
 								}
 							}
 							white_peace = ROOT
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 						else_if = {
 							limit = {
@@ -15402,6 +15564,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 						}
 						else_if = {
 							limit = {
@@ -15423,6 +15589,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							ROOT = {
 								set_politics = {
 									ruling_party = social_liberal
@@ -15451,6 +15621,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							if = {
 								limit = {
 									has_global_flag = SOV_cprf_won
@@ -15464,10 +15638,20 @@ on_actions = {
 						}
 						else = {
 							white_peace = ROOT
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 					}
 					set_global_flag = skip_default_capitulation
@@ -15533,20 +15717,44 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							else = {
 								white_peace = ROOT
-								annex_country = {
-									target = ROOT
-									transfer_troops = no
-								}
+								if = {
+                                    limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                    ROOT = {
+                                        save_event_target_as = TFR_EST_settlement_target
+                                        set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                    }
+                                    TFR_EST_preserve_annexation = yes
+                                }
+                                else = {
+                                    annex_country = {
+                                        target = ROOT
+                                        transfer_troops = no
+                                    }
+                                }
 							}
 						}
 						else = {
 							white_peace = ROOT
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 					}
 					ROOT = {
@@ -15771,10 +15979,20 @@ on_actions = {
 							}
 						}
 						else = {
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 							PAK = {
 								if = {
 									limit = {
@@ -16130,10 +16348,20 @@ on_actions = {
 						}
 					}
 					BUL = {
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 					}
 					set_global_flag = skip_default_capitulation
 				}
@@ -16186,10 +16414,20 @@ on_actions = {
 							}
 							FROM = {
 								white_peace = PREV
-								annex_country = {
-									target = PREV
-									transfer_troops = no
-								}
+								if = {
+                                    limit = { PREV = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                    PREV = {
+                                        save_event_target_as = TFR_EST_settlement_target
+                                        set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                    }
+                                    TFR_EST_preserve_annexation = yes
+                                }
+                                else = {
+                                    annex_country = {
+                                        target = PREV
+                                        transfer_troops = no
+                                    }
+                                }
 							}
 						}
 					}
@@ -16654,10 +16892,20 @@ on_actions = {
 					FROM = {
 						white_peace = ROOT
 						PHI = {
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 					}
 					set_global_flag = skip_default_capitulation
@@ -16674,10 +16922,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 					}
 					every_state = {
 						limit = {
@@ -16699,10 +16957,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 					}
 					set_global_flag = skip_default_capitulation
 				}
@@ -16726,10 +16994,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 					}
 					set_global_flag = skip_default_capitulation
 					if = {
@@ -16835,10 +17113,18 @@ on_actions = {
 					}
 					FROM = {
 						puppet = ROOT
+                        if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                        }
 						white_peace = ROOT
 					}
 					ROOT = {
-						load_focus_tree = generic_focus
+						if = {
+                            limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+                            TFR_EST_queue_occupation_reconciliation = yes
+                        }
+                        else = { load_focus_tree = generic_focus }
 						add_ideas = PRC_unwilling_ally
 						clr_country_flag = pdto_member
 						set_country_flag = eadi_member
@@ -16868,9 +17154,24 @@ on_actions = {
 									is_core_of = ROOT
 									NOT = { is_core_of = PREV }
 								}
-								transfer_state_to = ROOT
-								set_state_owner_to = ROOT
-								set_state_controller_to = ROOT
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    transfer_state_to = ROOT
+                                }
+                                else = {
+                                    ROOT = { TFR_EST_protect_anchor = yes }
+                                }
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    set_state_owner_to = ROOT
+                                }
+                                else = {
+                                    ROOT = { TFR_EST_protect_anchor = yes }
+                                }
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    set_state_controller_to = ROOT
+                                }
 							}
 						}
 					}
@@ -17140,10 +17441,20 @@ on_actions = {
 							}
 						}
 						PRC = {
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 					}
 					if = {
@@ -17203,10 +17514,18 @@ on_actions = {
 					}
 					FROM = {
 						puppet = ROOT
+                        if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                        }
 						white_peace = ROOT
 					}
 					ROOT = {
-						load_focus_tree = generic_focus
+						if = {
+                            limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+                            TFR_EST_queue_occupation_reconciliation = yes
+                        }
+                        else = { load_focus_tree = generic_focus }
 						clr_country_flag = eadi_member
 						set_country_flag = pdto_member
 						if = {
@@ -17241,9 +17560,24 @@ on_actions = {
 									is_core_of = ROOT
 									NOT = { is_core_of = PREV }
 								}
-								transfer_state_to = ROOT
-								set_state_owner_to = ROOT
-								set_state_controller_to = ROOT
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    transfer_state_to = ROOT
+                                }
+                                else = {
+                                    ROOT = { TFR_EST_protect_anchor = yes }
+                                }
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    set_state_owner_to = ROOT
+                                }
+                                else = {
+                                    ROOT = { TFR_EST_protect_anchor = yes }
+                                }
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    set_state_controller_to = ROOT
+                                }
 							}
 						}
 					}
@@ -17369,6 +17703,10 @@ on_actions = {
 								has_global_flag = second_nato_war_flag
 							}
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							white_peace = ROOT
 							every_country = {
 								limit = {
@@ -17385,9 +17723,24 @@ on_actions = {
 										is_core_of = ROOT
 										NOT = { is_core_of = PREV }
 									}
-									transfer_state_to = ROOT
-									set_state_owner_to = ROOT
-									set_state_controller_to = ROOT
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        transfer_state_to = ROOT
+                                    }
+                                    else = {
+                                        ROOT = { TFR_EST_protect_anchor = yes }
+                                    }
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        set_state_owner_to = ROOT
+                                    }
+                                    else = {
+                                        ROOT = { TFR_EST_protect_anchor = yes }
+                                    }
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        set_state_controller_to = ROOT
+                                    }
 								}
 							}
 							ROOT = {
@@ -17408,7 +17761,11 @@ on_actions = {
 								else = {
 									set_country_flag = csto_member
 								}
-								load_focus_tree = generic_focus
+								if = {
+                                    limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+                                    TFR_EST_queue_occupation_reconciliation = yes
+                                }
+                                else = { load_focus_tree = generic_focus }
 								set_popularities = {
 									authoritarian_democrat = 37.5
 									fascist = 17.5
@@ -17597,7 +17954,13 @@ on_actions = {
 									limit = {
 										is_core_of = CZE
 									}
-									transfer_state_to = CZE
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } CZE = { original_tag = EST } } }
+                                        transfer_state_to = CZE
+                                    }
+                                    else = {
+                                        CZE = { TFR_EST_protect_anchor = yes }
+                                    }
 								}
 								SOV = {
 									puppet = CZE
@@ -17766,6 +18129,10 @@ on_actions = {
 					GER = {
 						white_peace = ROOT
 						puppet = ROOT
+                        if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                        }
 						every_country = {
 							limit = {
 								is_in_faction_with = ROOT
@@ -17781,9 +18148,24 @@ on_actions = {
 									is_core_of = ROOT
 									NOT = { is_core_of = PREV }
 								}
-								transfer_state_to = ROOT
-								set_state_owner_to = ROOT
-								set_state_controller_to = ROOT
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    transfer_state_to = ROOT
+                                }
+                                else = {
+                                    ROOT = { TFR_EST_protect_anchor = yes }
+                                }
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    set_state_owner_to = ROOT
+                                }
+                                else = {
+                                    ROOT = { TFR_EST_protect_anchor = yes }
+                                }
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    set_state_controller_to = ROOT
+                                }
 							}
 						}
 					}
@@ -17798,7 +18180,11 @@ on_actions = {
 							limit = {
 								tag = FPR
 							}
-							FPR = { load_focus_tree = generic_focus }
+							FPR = { if = {
+        limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+        TFR_EST_queue_occupation_reconciliation = yes
+    }
+    else = { load_focus_tree = generic_focus } }
 							800 = { transfer_state_to = GER }
 						}
 						if = {
@@ -17863,6 +18249,10 @@ on_actions = {
 								has_global_flag = SOV_first_nato_war_victory
 							}
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							white_peace = ROOT
 							every_country = {
 								limit = {
@@ -17879,9 +18269,24 @@ on_actions = {
 										is_core_of = ROOT
 										NOT = { is_core_of = PREV }
 									}
-									transfer_state_to = ROOT
-									set_state_owner_to = ROOT
-									set_state_controller_to = ROOT
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        transfer_state_to = ROOT
+                                    }
+                                    else = {
+                                        ROOT = { TFR_EST_protect_anchor = yes }
+                                    }
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        set_state_owner_to = ROOT
+                                    }
+                                    else = {
+                                        ROOT = { TFR_EST_protect_anchor = yes }
+                                    }
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        set_state_controller_to = ROOT
+                                    }
 								}
 							}
 							ROOT = {
@@ -17895,9 +18300,24 @@ on_actions = {
 											is_core_of = ROOT
 											is_controlled_by = FAF
 										}
-										transfer_state_to = FAF
-										set_state_owner_to = FAF
-										set_state_controller_to = FAF
+										if = {
+                                            limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } FAF = { original_tag = EST } } }
+                                            transfer_state_to = FAF
+                                        }
+                                        else = {
+                                            FAF = { TFR_EST_protect_anchor = yes }
+                                        }
+										if = {
+                                            limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } FAF = { original_tag = EST } } }
+                                            set_state_owner_to = FAF
+                                        }
+                                        else = {
+                                            FAF = { TFR_EST_protect_anchor = yes }
+                                        }
+										if = {
+                                            limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } FAF = { original_tag = EST } } }
+                                            set_state_controller_to = FAF
+                                        }
 									}
 								}
 								IF = {
@@ -17911,14 +18331,33 @@ on_actions = {
 										limit = {
 											is_core_of = ROOT
 										}
-										transfer_state_to = ROOT
-										set_state_owner_to = ROOT
-										set_state_controller_to = ROOT
+										if = {
+                                            limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                            transfer_state_to = ROOT
+                                        }
+                                        else = {
+                                            ROOT = { TFR_EST_protect_anchor = yes }
+                                        }
+										if = {
+                                            limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                            set_state_owner_to = ROOT
+                                        }
+                                        else = {
+                                            ROOT = { TFR_EST_protect_anchor = yes }
+                                        }
+										if = {
+                                            limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                            set_state_controller_to = ROOT
+                                        }
 									}
 								}
 								EU_leave_effect = yes
 								set_country_flag = mto_member
-								load_focus_tree = generic_focus
+								if = {
+                                    limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+                                    TFR_EST_queue_occupation_reconciliation = yes
+                                }
+                                else = { load_focus_tree = generic_focus }
 								set_popularities = {
 									authoritarian_democrat = 37.5
 									fascist = 17.5
@@ -18041,7 +18480,13 @@ on_actions = {
 								limit = {
 									is_core_of = CZE
 								}
-								transfer_state_to = CZE
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } CZE = { original_tag = EST } } }
+                                    transfer_state_to = CZE
+                                }
+                                else = {
+                                    CZE = { TFR_EST_protect_anchor = yes }
+                                }
 							}
 							SOV = {
 								puppet = CZE
@@ -18310,6 +18755,10 @@ on_actions = {
 								has_global_flag = second_nato_war_flag
 							}
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							white_peace = ROOT
 							every_country = {
 								limit = {
@@ -18326,16 +18775,35 @@ on_actions = {
 										is_core_of = ROOT
 										NOT = { is_core_of = PREV }
 									}
-									transfer_state_to = ROOT
-									set_state_owner_to = ROOT
-									set_state_controller_to = ROOT
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        transfer_state_to = ROOT
+                                    }
+                                    else = {
+                                        ROOT = { TFR_EST_protect_anchor = yes }
+                                    }
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        set_state_owner_to = ROOT
+                                    }
+                                    else = {
+                                        ROOT = { TFR_EST_protect_anchor = yes }
+                                    }
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        set_state_controller_to = ROOT
+                                    }
 								}
 							}
 							ROOT = {
 								clr_country_flag = global_ass_lol
 								EU_leave_effect = yes
 								set_country_flag = BTO_member
-								load_focus_tree = generic_focus
+								if = {
+                                    limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+                                    TFR_EST_queue_occupation_reconciliation = yes
+                                }
+                                else = { load_focus_tree = generic_focus }
 								set_popularities = {
 									authoritarian_democrat = 37.5
 									fascist = 17.5
@@ -18529,10 +18997,20 @@ on_actions = {
 									}
 								}
 							}
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 						if = {
 							limit = {
@@ -18613,7 +19091,10 @@ on_actions = {
 								limit = {
 									is_core_of = ICE
 								}
-								set_state_controller_to = SOV
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } SOV = { original_tag = EST } } }
+                                    set_state_controller_to = SOV
+                                }
 							}
 						}
 						if = {
@@ -18705,6 +19186,10 @@ on_actions = {
 								has_global_flag = second_nato_war_flag
 							}
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							white_peace = ROOT
 							every_country = {
 								limit = {
@@ -18721,15 +19206,34 @@ on_actions = {
 										is_core_of = ROOT
 										NOT = { is_core_of = PREV }
 									}
-									transfer_state_to = ROOT
-									set_state_owner_to = ROOT
-									set_state_controller_to = ROOT
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        transfer_state_to = ROOT
+                                    }
+                                    else = {
+                                        ROOT = { TFR_EST_protect_anchor = yes }
+                                    }
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        set_state_owner_to = ROOT
+                                    }
+                                    else = {
+                                        ROOT = { TFR_EST_protect_anchor = yes }
+                                    }
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        set_state_controller_to = ROOT
+                                    }
 								}
 							}
 							ROOT = {
 								clr_country_flag = global_ass_lol
 								EU_leave_effect = yes
-								load_focus_tree = generic_focus
+								if = {
+                                    limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+                                    TFR_EST_queue_occupation_reconciliation = yes
+                                }
+                                else = { load_focus_tree = generic_focus }
 								set_popularities = {
 									authoritarian_democrat = 37.5
 									fascist = 17.5
@@ -18932,10 +19436,20 @@ on_actions = {
 									}
 								}
 							}
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 						if = {
 							limit = {
@@ -18947,7 +19461,10 @@ on_actions = {
 								limit = {
 									is_core_of = ICE
 								}
-								set_state_controller_to = SOV
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } SOV = { original_tag = EST } } }
+                                    set_state_controller_to = SOV
+                                }
 							}
 						}
 						if = {
@@ -18980,10 +19497,18 @@ on_actions = {
 					}
 					FROM = {
 						puppet = ROOT
+                        if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                        }
 						white_peace = ROOT
 					}
 					ROOT = {
-						load_focus_tree = generic_focus
+						if = {
+                            limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+                            TFR_EST_queue_occupation_reconciliation = yes
+                        }
+                        else = { load_focus_tree = generic_focus }
 						add_popularity = {
 							ideology = nationalist
 							popularity = 0.5
@@ -19018,9 +19543,24 @@ on_actions = {
 									is_core_of = ROOT
 									NOT = { is_core_of = PREV }
 								}
-								transfer_state_to = ROOT
-								set_state_owner_to = ROOT
-								set_state_controller_to = ROOT
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    transfer_state_to = ROOT
+                                }
+                                else = {
+                                    ROOT = { TFR_EST_protect_anchor = yes }
+                                }
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    set_state_owner_to = ROOT
+                                }
+                                else = {
+                                    ROOT = { TFR_EST_protect_anchor = yes }
+                                }
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    set_state_controller_to = ROOT
+                                }
 							}
 						}
 					}
@@ -19040,10 +19580,20 @@ on_actions = {
 							}
 						}
 						FROM = {
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 					}
 					set_global_flag = skip_default_capitulation
@@ -19062,10 +19612,20 @@ on_actions = {
 						}
 					}
 					FROM = {
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 					}
 					set_global_flag = skip_default_capitulation
 				}
@@ -19085,6 +19645,10 @@ on_actions = {
 					}
 					FROM = {
 						puppet = ROOT
+                        if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                        }
 						white_peace = ROOT
 					}
 					if = {
@@ -19142,10 +19706,20 @@ on_actions = {
 							}
 						}
 						FROM = {
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 					}
 					else_if = {
@@ -19158,7 +19732,13 @@ on_actions = {
 							limit = {
 								is_core_of = ALG
 							}
-							transfer_state_to = ALG
+							if = {
+                                limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ALG = { original_tag = EST } } }
+                                transfer_state_to = ALG
+                            }
+                            else = {
+                                ALG = { TFR_EST_protect_anchor = yes }
+                            }
 						}
 						every_state = {
 							limit = {
@@ -19168,19 +19748,37 @@ on_actions = {
 									state = 699
 								}
 							}
-							transfer_state_to = MOR
+							if = {
+                                limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } MOR = { original_tag = EST } } }
+                                transfer_state_to = MOR
+                            }
+                            else = {
+                                MOR = { TFR_EST_protect_anchor = yes }
+                            }
 						}
 						every_state = {
 							limit = {
 								is_core_of = TUN
 							}
-							transfer_state_to = TUN
+							if = {
+                                limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } TUN = { original_tag = EST } } }
+                                transfer_state_to = TUN
+                            }
+                            else = {
+                                TUN = { TFR_EST_protect_anchor = yes }
+                            }
 						}
 						every_state = {
 							limit = {
 								is_core_of = LBA
 							}
-							transfer_state_to = LBA
+							if = {
+                                limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } LBA = { original_tag = EST } } }
+                                transfer_state_to = LBA
+                            }
+                            else = {
+                                LBA = { TFR_EST_protect_anchor = yes }
+                            }
 						}
 						every_country = {
 							limit = {
@@ -19204,7 +19802,11 @@ on_actions = {
 									tag = LBA
 								}
 							}
-							load_focus_tree = generic_focus
+							if = {
+                                limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+                                TFR_EST_queue_occupation_reconciliation = yes
+                            }
+                            else = { load_focus_tree = generic_focus }
 							remove_all_national_spirits = yes
 							add_ideas = {
 								SOV_eu_dominated_economy_idea
@@ -19233,7 +19835,11 @@ on_actions = {
 					}
 					else = {
 						ROOT = {
-							load_focus_tree = generic_focus
+							if = {
+                                limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+                                TFR_EST_queue_occupation_reconciliation = yes
+                            }
+                            else = { load_focus_tree = generic_focus }
 							remove_all_national_spirits = yes
 							add_ideas = {
 								SOV_eu_dominated_economy_idea
@@ -19273,9 +19879,24 @@ on_actions = {
 										is_core_of = ROOT
 										NOT = { is_core_of = PREV }
 									}
-									transfer_state_to = ROOT
-									set_state_owner_to = ROOT
-									set_state_controller_to = ROOT
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        transfer_state_to = ROOT
+                                    }
+                                    else = {
+                                        ROOT = { TFR_EST_protect_anchor = yes }
+                                    }
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        set_state_owner_to = ROOT
+                                    }
+                                    else = {
+                                        ROOT = { TFR_EST_protect_anchor = yes }
+                                    }
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        set_state_controller_to = ROOT
+                                    }
 								}
 							}
 						}
@@ -19349,10 +19970,18 @@ on_actions = {
 					}
 					FROM = {
 						puppet = ROOT
+                        if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                        }
 						white_peace = ROOT
 					}
 					ROOT = {
-						load_focus_tree = generic_focus
+						if = {
+                            limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+                            TFR_EST_queue_occupation_reconciliation = yes
+                        }
+                        else = { load_focus_tree = generic_focus }
 						add_ideas = PRC_unwilling_ally
 						clr_country_flag = pdto_member
 						set_country_flag = eadi_member
@@ -19371,9 +20000,24 @@ on_actions = {
 									is_core_of = ROOT
 									NOT = { is_core_of = PREV }
 								}
-								transfer_state_to = ROOT
-								set_state_owner_to = ROOT
-								set_state_controller_to = ROOT
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    transfer_state_to = ROOT
+                                }
+                                else = {
+                                    ROOT = { TFR_EST_protect_anchor = yes }
+                                }
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    set_state_owner_to = ROOT
+                                }
+                                else = {
+                                    ROOT = { TFR_EST_protect_anchor = yes }
+                                }
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    set_state_controller_to = ROOT
+                                }
 							}
 						}
 					}
@@ -19668,10 +20312,20 @@ on_actions = {
 							}
 						}
 						PRC = {
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 					}
 					if = {
@@ -19714,10 +20368,18 @@ on_actions = {
 					}
 					FROM = {
 						puppet = ROOT
+                        if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                        }
 						white_peace = ROOT
 					}
 					ROOT = {
-						load_focus_tree = generic_focus
+						if = {
+                            limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+                            TFR_EST_queue_occupation_reconciliation = yes
+                        }
+                        else = { load_focus_tree = generic_focus }
 						clr_country_flag = eadi_member
 						set_country_flag = pdto_member
 						if = {
@@ -19746,9 +20408,24 @@ on_actions = {
 									is_core_of = ROOT
 									NOT = { is_core_of = PREV }
 								}
-								transfer_state_to = ROOT
-								set_state_owner_to = ROOT
-								set_state_controller_to = ROOT
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    transfer_state_to = ROOT
+                                }
+                                else = {
+                                    ROOT = { TFR_EST_protect_anchor = yes }
+                                }
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    set_state_owner_to = ROOT
+                                }
+                                else = {
+                                    ROOT = { TFR_EST_protect_anchor = yes }
+                                }
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    set_state_controller_to = ROOT
+                                }
 							}
 						}
 					}
@@ -19834,6 +20511,10 @@ on_actions = {
 					}
 					FROM = {
 						puppet = ROOT
+                        if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                        }
 						white_peace = ROOT
 					}
 					if = {
@@ -19891,10 +20572,20 @@ on_actions = {
 							}
 						}
 						FROM = {
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 					}
 					else_if = {
@@ -19907,7 +20598,13 @@ on_actions = {
 							limit = {
 								is_core_of = ALG
 							}
-							transfer_state_to = ALG
+							if = {
+                                limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ALG = { original_tag = EST } } }
+                                transfer_state_to = ALG
+                            }
+                            else = {
+                                ALG = { TFR_EST_protect_anchor = yes }
+                            }
 						}
 						every_state = {
 							limit = {
@@ -19917,19 +20614,37 @@ on_actions = {
 									state = 699
 								}
 							}
-							transfer_state_to = MOR
+							if = {
+                                limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } MOR = { original_tag = EST } } }
+                                transfer_state_to = MOR
+                            }
+                            else = {
+                                MOR = { TFR_EST_protect_anchor = yes }
+                            }
 						}
 						every_state = {
 							limit = {
 								is_core_of = TUN
 							}
-							transfer_state_to = TUN
+							if = {
+                                limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } TUN = { original_tag = EST } } }
+                                transfer_state_to = TUN
+                            }
+                            else = {
+                                TUN = { TFR_EST_protect_anchor = yes }
+                            }
 						}
 						every_state = {
 							limit = {
 								is_core_of = LBA
 							}
-							transfer_state_to = LBA
+							if = {
+                                limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } LBA = { original_tag = EST } } }
+                                transfer_state_to = LBA
+                            }
+                            else = {
+                                LBA = { TFR_EST_protect_anchor = yes }
+                            }
 						}
 						every_country = {
 							limit = {
@@ -19953,7 +20668,11 @@ on_actions = {
 									tag = LBA
 								}
 							}
-							load_focus_tree = generic_focus
+							if = {
+                                limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+                                TFR_EST_queue_occupation_reconciliation = yes
+                            }
+                            else = { load_focus_tree = generic_focus }
 							remove_all_national_spirits = yes
 							add_ideas = {
 								SOV_eu_dominated_economy_idea
@@ -19982,7 +20701,11 @@ on_actions = {
 					}
 					else = {
 						ROOT = {
-							load_focus_tree = generic_focus
+							if = {
+                                limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+                                TFR_EST_queue_occupation_reconciliation = yes
+                            }
+                            else = { load_focus_tree = generic_focus }
 							remove_all_national_spirits = yes
 							add_ideas = {
 								SOV_eu_dominated_economy_idea
@@ -20022,9 +20745,24 @@ on_actions = {
 										is_core_of = ROOT
 										NOT = { is_core_of = PREV }
 									}
-									transfer_state_to = ROOT
-									set_state_owner_to = ROOT
-									set_state_controller_to = ROOT
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        transfer_state_to = ROOT
+                                    }
+                                    else = {
+                                        ROOT = { TFR_EST_protect_anchor = yes }
+                                    }
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        set_state_owner_to = ROOT
+                                    }
+                                    else = {
+                                        ROOT = { TFR_EST_protect_anchor = yes }
+                                    }
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        set_state_controller_to = ROOT
+                                    }
 								}
 							}
 						}
@@ -20066,10 +20804,18 @@ on_actions = {
 					}
 					FROM = {
 						puppet = ROOT
+                        if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                        }
 						white_peace = ROOT
 					}
 					ROOT = {
-						load_focus_tree = generic_focus
+						if = {
+                            limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+                            TFR_EST_queue_occupation_reconciliation = yes
+                        }
+                        else = { load_focus_tree = generic_focus }
 						add_popularity = {
 							ideology = nationalist
 							popularity = 0.5
@@ -20104,9 +20850,24 @@ on_actions = {
 									is_core_of = ROOT
 									NOT = { is_core_of = PREV }
 								}
-								transfer_state_to = ROOT
-								set_state_owner_to = ROOT
-								set_state_controller_to = ROOT
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    transfer_state_to = ROOT
+                                }
+                                else = {
+                                    ROOT = { TFR_EST_protect_anchor = yes }
+                                }
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    set_state_owner_to = ROOT
+                                }
+                                else = {
+                                    ROOT = { TFR_EST_protect_anchor = yes }
+                                }
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    set_state_controller_to = ROOT
+                                }
 							}
 						}
 					}
@@ -20126,10 +20887,20 @@ on_actions = {
 							}
 						}
 						FROM = {
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 					}
 					set_global_flag = skip_default_capitulation
@@ -20284,6 +21055,10 @@ on_actions = {
 					FROM = {
 						NIC = {
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 						}
 						white_peace = ROOT
 					}
@@ -20347,6 +21122,10 @@ on_actions = {
 					FROM = {
 						ELS = {
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 						}
 						white_peace = ROOT
 					}
@@ -20418,10 +21197,20 @@ on_actions = {
 					FROM = {
 						remove_from_faction = ROOT
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 					}
 					set_global_flag = skip_default_capitulation
 				}
@@ -20457,6 +21246,10 @@ on_actions = {
 					}
 					FROM = {
 						puppet = ROOT
+                        if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                        }
 						white_peace = ROOT
 					}
 					ROOT = {
@@ -20485,9 +21278,24 @@ on_actions = {
 									is_core_of = ROOT
 									NOT = { is_core_of = PREV }
 								}
-								transfer_state_to = ROOT
-								set_state_owner_to = ROOT
-								set_state_controller_to = ROOT
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    transfer_state_to = ROOT
+                                }
+                                else = {
+                                    ROOT = { TFR_EST_protect_anchor = yes }
+                                }
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    set_state_owner_to = ROOT
+                                }
+                                else = {
+                                    ROOT = { TFR_EST_protect_anchor = yes }
+                                }
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    set_state_controller_to = ROOT
+                                }
 							}
 						}
 					}
@@ -20589,6 +21397,10 @@ on_actions = {
 					}
 					FROM = {
 						puppet = ROOT
+                        if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                        }
 						white_peace = ROOT
 					}
 					ROOT = {
@@ -20611,9 +21423,24 @@ on_actions = {
 									is_core_of = ROOT
 									NOT = { is_core_of = PREV }
 								}
-								transfer_state_to = ROOT
-								set_state_owner_to = ROOT
-								set_state_controller_to = ROOT
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    transfer_state_to = ROOT
+                                }
+                                else = {
+                                    ROOT = { TFR_EST_protect_anchor = yes }
+                                }
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    set_state_owner_to = ROOT
+                                }
+                                else = {
+                                    ROOT = { TFR_EST_protect_anchor = yes }
+                                }
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    set_state_controller_to = ROOT
+                                }
 							}
 						}
 						add_ideas = FRA_CFA_Franc
@@ -20840,6 +21667,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							set_province_name = {
 								id = 11405
 								name = aleksandrovsk_city
@@ -20910,6 +21741,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							NOV = {
 								add_state_core = 1184
 								add_state_core = 200
@@ -21008,6 +21843,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							annex_country = {
 								target = UKR
 								transfer_troops = no
@@ -21024,6 +21863,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							annex_country = {
 								target = UKR
 								transfer_troops = no
@@ -21082,6 +21925,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							ROOT = {
 								country_event = {
 									id = russia.127
@@ -21097,6 +21944,10 @@ on_actions = {
 								}
 								white_peace = ROOT
 								puppet = ROOT
+                                if = {
+                                    limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                    ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                                }
 								BUL = {
 									set_politics = {
 										ruling_party = fascist
@@ -21113,6 +21964,10 @@ on_actions = {
 							else = {
 								white_peace = ROOT
 								puppet = ROOT
+                                if = {
+                                    limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                    ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                                }
 								BUL = {
 									set_politics = {
 										ruling_party = authoritarian_democrat
@@ -21202,6 +22057,10 @@ on_actions = {
 					SOV = {
 						white_peace = ROOT
 						puppet = ROOT
+                        if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                        }
 						TRA = {
 							if = {
 								limit = {
@@ -21265,6 +22124,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							ROOT = {
 								EU_leave_effect = yes
 								country_event = {
@@ -21287,6 +22150,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							ROOT = {
 								EU_leave_effect = yes
 								set_party_name = {
@@ -21307,16 +22174,26 @@ on_actions = {
 								}
 							}
 							white_peace = ROOT
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 						if = {
 							limit = {
 								NOT = {
 									country_exists = LAT
-									country_exists = EST
+									TFR_EST_has_independent_estonia = yes
 								}
 								has_global_flag = SOV_nato_war_begins_global
 							}
@@ -21403,6 +22280,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							ROOT = {
 								EU_leave_effect = yes
 								country_event = {
@@ -21492,6 +22373,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							ROOT = {
 								EU_leave_effect = yes
 								add_country_leader_role = {
@@ -21558,6 +22443,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							HUN = {
 								EU_leave_effect = yes
 								set_cosmetic_tag = HUN_Government_of_National_Unity
@@ -21613,6 +22502,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							BAS = {
 								add_state_core = 155
 								add_state_core = 854
@@ -21665,6 +22558,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							country_event = {
 								id = russia.218
 								days = 10
@@ -21949,10 +22846,20 @@ on_actions = {
 								}
 							}
 							white_peace = ROOT
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 					}
 					set_global_flag = skip_default_capitulation
@@ -21986,6 +22893,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							ROOT = {
 								EU_leave_effect = yes
 								country_event = { 
@@ -22008,6 +22919,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							SOV = {
 								transfer_state = 1182
 							}
@@ -22033,15 +22948,25 @@ on_actions = {
 								}
 							}
 							white_peace = ROOT
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 						if = {
 							limit = {
 								NOT = {
-									country_exists = EST
+									TFR_EST_has_independent_estonia = yes
 									country_exists = LIT
 								}
 								has_global_flag = SOV_nato_war_begins_global
@@ -22125,6 +23050,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							ROOT = {
 								EU_leave_effect = yes
 								country_event = {
@@ -22147,6 +23076,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							SOV = {
 								transfer_state = 840
 								transfer_state = 1329
@@ -22168,10 +23101,20 @@ on_actions = {
 								}
 							}
 							white_peace = ROOT
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 						if = {
 							limit = {
@@ -22474,6 +23417,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							ROOT = {
 								country_event = {
 									id = russia.127
@@ -22505,6 +23452,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							ROOT = {
 								EU_leave_effect = yes
 								if = {
@@ -22552,6 +23503,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							ROOT = {
 								set_politics = {
 									ruling_party = nationalist
@@ -22624,6 +23579,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 						}
 						else_if = {
 							limit = {
@@ -22635,6 +23594,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 						}
 						else_if = {
 							limit = {
@@ -22684,6 +23647,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							ROOT = {
 								country_event = {
 									id = russia.127
@@ -22700,6 +23667,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 						}
 						else_if = {
 							limit = {
@@ -22743,6 +23714,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							ROOT = {
 								EU_leave_effect = yes
 							}
@@ -22762,6 +23737,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							ROOT = {
 								EU_leave_effect = yes
 								set_party_name = { ideology = authoritarian_democrat long_name = SLO_social_democrat_party_long name = SLO_social_democrat_party }
@@ -22776,6 +23755,10 @@ on_actions = {
 							}
 							white_peace = ROOT
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							ROOT = {
 								EU_leave_effect = yes
 								set_politics = {
@@ -22793,10 +23776,20 @@ on_actions = {
 								}
 							}
 							white_peace = ROOT
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 						if = {
 							limit = {
@@ -22836,10 +23829,20 @@ on_actions = {
 									}
 								}
 							}
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 						else_if = {
 							limit = {
@@ -22849,6 +23852,10 @@ on_actions = {
 							}
 							GER = {
 								puppet = ROOT
+                                if = {
+                                    limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                    ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                                }
 							}
 						}
 						else_if = {
@@ -22865,6 +23872,10 @@ on_actions = {
 							}
 							GER = {
 								puppet = ROOT
+                                if = {
+                                    limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                    ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                                }
 							}
 						}
 					}
@@ -22893,6 +23904,10 @@ on_actions = {
 								has_global_flag = SOV_first_nato_war_victory
 							}
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							if = {
 								limit = {
 									has_global_flag = ENG_british_ireland
@@ -22902,7 +23917,13 @@ on_actions = {
 										is_core_of = IRE
 									}
 									add_core_of = IRA
-									transfer_state_to = IRA
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } IRA = { original_tag = EST } } }
+                                        transfer_state_to = IRA
+                                    }
+                                    else = {
+                                        IRA = { TFR_EST_protect_anchor = yes }
+                                    }
 								}
 								IRA = {
 									annex_country = {
@@ -23136,6 +24157,10 @@ on_actions = {
 								has_global_flag = second_nato_war_flag
 							}
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							white_peace = ROOT
 							every_country = {
 								limit = {
@@ -23152,15 +24177,34 @@ on_actions = {
 										is_core_of = ROOT
 										NOT = { is_core_of = PREV }
 									}
-									transfer_state_to = ROOT
-									set_state_owner_to = ROOT
-									set_state_controller_to = ROOT
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        transfer_state_to = ROOT
+                                    }
+                                    else = {
+                                        ROOT = { TFR_EST_protect_anchor = yes }
+                                    }
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        set_state_owner_to = ROOT
+                                    }
+                                    else = {
+                                        ROOT = { TFR_EST_protect_anchor = yes }
+                                    }
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        set_state_controller_to = ROOT
+                                    }
 								}
 							}
 							ROOT = {
 								clr_country_flag = global_ass_lol
 								EU_leave_effect = yes
-								load_focus_tree = generic_focus
+								if = {
+                                    limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+                                    TFR_EST_queue_occupation_reconciliation = yes
+                                }
+                                else = { load_focus_tree = generic_focus }
 								set_popularities = {
 									authoritarian_democrat = 37.5
 									fascist = 17.5
@@ -23363,10 +24407,20 @@ on_actions = {
 									}
 								}
 							}
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 						if = {
 							limit = {
@@ -23378,7 +24432,10 @@ on_actions = {
 								limit = {
 									is_core_of = ICE
 								}
-								set_state_controller_to = SOV
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } SOV = { original_tag = EST } } }
+                                    set_state_controller_to = SOV
+                                }
 							}
 						}
 						if = {
@@ -23469,6 +24526,10 @@ on_actions = {
 								has_global_flag = second_nato_war_flag
 							}
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							white_peace = ROOT
 							every_country = {
 								limit = {
@@ -23485,16 +24546,35 @@ on_actions = {
 										is_core_of = ROOT
 										NOT = { is_core_of = PREV }
 									}
-									transfer_state_to = ROOT
-									set_state_owner_to = ROOT
-									set_state_controller_to = ROOT
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        transfer_state_to = ROOT
+                                    }
+                                    else = {
+                                        ROOT = { TFR_EST_protect_anchor = yes }
+                                    }
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        set_state_owner_to = ROOT
+                                    }
+                                    else = {
+                                        ROOT = { TFR_EST_protect_anchor = yes }
+                                    }
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        set_state_controller_to = ROOT
+                                    }
 								}
 							}
 							ROOT = {
 								clr_country_flag = global_ass_lol
 								EU_leave_effect = yes
 								set_country_flag = BTO_member
-								load_focus_tree = generic_focus
+								if = {
+                                    limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+                                    TFR_EST_queue_occupation_reconciliation = yes
+                                }
+                                else = { load_focus_tree = generic_focus }
 								set_popularities = {
 									authoritarian_democrat = 37.5
 									fascist = 17.5
@@ -23688,10 +24768,20 @@ on_actions = {
 									}
 								}
 							}
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 						if = {
 							limit = {
@@ -23772,7 +24862,10 @@ on_actions = {
 								limit = {
 									is_core_of = ICE
 								}
-								set_state_controller_to = SOV
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } SOV = { original_tag = EST } } }
+                                    set_state_controller_to = SOV
+                                }
 							}
 						}
 						if = {
@@ -23863,6 +24956,10 @@ on_actions = {
 								has_global_flag = second_nato_war_flag
 							}
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							white_peace = ROOT
 							every_country = {
 								limit = {
@@ -23879,16 +24976,35 @@ on_actions = {
 										is_core_of = ROOT
 										NOT = { is_core_of = PREV }
 									}
-									transfer_state_to = ROOT
-									set_state_owner_to = ROOT
-									set_state_controller_to = ROOT
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        transfer_state_to = ROOT
+                                    }
+                                    else = {
+                                        ROOT = { TFR_EST_protect_anchor = yes }
+                                    }
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        set_state_owner_to = ROOT
+                                    }
+                                    else = {
+                                        ROOT = { TFR_EST_protect_anchor = yes }
+                                    }
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        set_state_controller_to = ROOT
+                                    }
 								}
 							}
 							ROOT = {
 								clr_country_flag = global_ass_lol
 								EU_leave_effect = yes
 								set_country_flag = BTO_member
-								load_focus_tree = generic_focus
+								if = {
+                                    limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+                                    TFR_EST_queue_occupation_reconciliation = yes
+                                }
+                                else = { load_focus_tree = generic_focus }
 								set_popularities = {
 									authoritarian_democrat = 37.5
 									fascist = 17.5
@@ -24078,10 +25194,20 @@ on_actions = {
 									}
 								}
 							}
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 						if = {
 							limit = {
@@ -24121,7 +25247,10 @@ on_actions = {
 								limit = {
 									is_core_of = ICE
 								}
-								set_state_controller_to = SOV
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } SOV = { original_tag = EST } } }
+                                    set_state_controller_to = SOV
+                                }
 							}
 						}
 						if = {
@@ -24190,6 +25319,10 @@ on_actions = {
 								has_global_flag = SOV_first_nato_war_victory
 							}
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							white_peace = ROOT
 							every_country = {
 								limit = {
@@ -24206,15 +25339,34 @@ on_actions = {
 										is_core_of = ROOT
 										NOT = { is_core_of = PREV }
 									}
-									transfer_state_to = ROOT
-									set_state_owner_to = ROOT
-									set_state_controller_to = ROOT
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        transfer_state_to = ROOT
+                                    }
+                                    else = {
+                                        ROOT = { TFR_EST_protect_anchor = yes }
+                                    }
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        set_state_owner_to = ROOT
+                                    }
+                                    else = {
+                                        ROOT = { TFR_EST_protect_anchor = yes }
+                                    }
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        set_state_controller_to = ROOT
+                                    }
 								}
 							}
 							ROOT = {
 								clr_country_flag = pact_of_steel_member
 								set_country_flag = mto_member
-								load_focus_tree = generic_focus
+								if = {
+                                    limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+                                    TFR_EST_queue_occupation_reconciliation = yes
+                                }
+                                else = { load_focus_tree = generic_focus }
 								set_popularities = {
 									authoritarian_democrat = 37.5
 									fascist = 17.5
@@ -24337,7 +25489,13 @@ on_actions = {
 									limit = {
 										is_core_of = CZE
 									}
-									transfer_state_to = CZE
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } CZE = { original_tag = EST } } }
+                                        transfer_state_to = CZE
+                                    }
+                                    else = {
+                                        CZE = { TFR_EST_protect_anchor = yes }
+                                    }
 								}
 								SOV = {
 									puppet = CZE
@@ -24587,6 +25745,10 @@ on_actions = {
 								has_global_flag = second_nato_war_flag
 							}
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 							white_peace = ROOT
 							every_country = {
 								limit = {
@@ -24603,9 +25765,24 @@ on_actions = {
 										is_core_of = ROOT
 										NOT = { is_core_of = PREV }
 									}
-									transfer_state_to = ROOT
-									set_state_owner_to = ROOT
-									set_state_controller_to = ROOT
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        transfer_state_to = ROOT
+                                    }
+                                    else = {
+                                        ROOT = { TFR_EST_protect_anchor = yes }
+                                    }
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        set_state_owner_to = ROOT
+                                    }
+                                    else = {
+                                        ROOT = { TFR_EST_protect_anchor = yes }
+                                    }
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                        set_state_controller_to = ROOT
+                                    }
 								}
 							}
 							ROOT = {
@@ -24626,7 +25803,11 @@ on_actions = {
 							else = {
 								set_country_flag = csto_member
 							}
-								load_focus_tree = generic_focus
+								if = {
+                                    limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+                                    TFR_EST_queue_occupation_reconciliation = yes
+                                }
+                                else = { load_focus_tree = generic_focus }
 								set_popularities = {
 									authoritarian_democrat = 37.5
 									fascist = 17.5
@@ -24817,7 +25998,13 @@ on_actions = {
 									limit = {
 										is_core_of = CZE
 									}
-									transfer_state_to = CZE
+									if = {
+                                        limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } CZE = { original_tag = EST } } }
+                                        transfer_state_to = CZE
+                                    }
+                                    else = {
+                                        CZE = { TFR_EST_protect_anchor = yes }
+                                    }
 								}
 								SOV = {
 									puppet = CZE
@@ -24986,6 +26173,10 @@ on_actions = {
 					GER = {
 						white_peace = ROOT
 						puppet = ROOT
+                        if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                        }
 						every_country = {
 							limit = {
 								is_in_faction_with = ROOT
@@ -25001,9 +26192,24 @@ on_actions = {
 									is_core_of = ROOT
 									NOT = { is_core_of = PREV }
 								}
-								transfer_state_to = ROOT
-								set_state_owner_to = ROOT
-								set_state_controller_to = ROOT
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    transfer_state_to = ROOT
+                                }
+                                else = {
+                                    ROOT = { TFR_EST_protect_anchor = yes }
+                                }
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    set_state_owner_to = ROOT
+                                }
+                                else = {
+                                    ROOT = { TFR_EST_protect_anchor = yes }
+                                }
+								if = {
+                                    limit = { OR = { NOT = { state = 13 } NOT = { EST = { has_country_flag = TFR_EST_initialized } } ROOT = { original_tag = EST } } }
+                                    set_state_controller_to = ROOT
+                                }
 							}
 						}
 					}
@@ -25018,7 +26224,11 @@ on_actions = {
 							limit = {
 								tag = FPR
 							}
-							FPR = { load_focus_tree = generic_focus }
+							FPR = { if = {
+        limit = { original_tag = EST has_country_flag = TFR_EST_initialized is_subject = yes }
+        TFR_EST_queue_occupation_reconciliation = yes
+    }
+    else = { load_focus_tree = generic_focus } }
 							800 = { transfer_state_to = GER }
 						}
 						if = {
@@ -25066,6 +26276,10 @@ on_actions = {
 									transfer_state = 85
 									transfer_state = 5
 									puppet = ROOT
+                                    if = {
+                                        limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                        ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                                    }
 								}
 								set_politics = {
 									ruling_party = nationalist
@@ -25099,6 +26313,10 @@ on_actions = {
 									transfer_state = 85
 									transfer_state = 5
 									puppet = ROOT
+                                    if = {
+                                        limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                        ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                                    }
 								}
 								add_ideas = NOR_unwilling_ally
 							}
@@ -25109,10 +26327,20 @@ on_actions = {
 									}
 								}
 								PLD = {
-									annex_country = {
-										target = ROOT
-										transfer_troops = no
-									}
+									if = {
+                                        limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                        ROOT = {
+                                            save_event_target_as = TFR_EST_settlement_target
+                                            set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                        }
+                                        TFR_EST_preserve_annexation = yes
+                                    }
+                                    else = {
+                                        annex_country = {
+                                            target = ROOT
+                                            transfer_troops = no
+                                        }
+                                    }
 								}
 							}
 							else_if = {
@@ -25122,10 +26350,20 @@ on_actions = {
 									}
 								}
 								PLD = {
-									annex_country = {
-										target = ROOT
-										transfer_troops = no
-									}
+									if = {
+                                        limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                        ROOT = {
+                                            save_event_target_as = TFR_EST_settlement_target
+                                            set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                        }
+                                        TFR_EST_preserve_annexation = yes
+                                    }
+                                    else = {
+                                        annex_country = {
+                                            target = ROOT
+                                            transfer_troops = no
+                                        }
+                                    }
 								}
 							}
 						}
@@ -25160,10 +26398,20 @@ on_actions = {
 					FROM = {
 						white_peace = ROOT
 						PLD = {
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 						set_global_flag = skip_default_capitulation
 					}
@@ -25207,6 +26455,10 @@ on_actions = {
 						white_peace = ROOT
 						GER = {
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 						}
 						ROOT = {
 							get_current_government_type = yes
@@ -25244,10 +26496,20 @@ on_actions = {
 									}
 								}
 								CZE = {
-								    annex_country = {
-									    target = ROOT
-										transfer_troops = no
-								    }
+								    if = {
+                                        limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                        ROOT = {
+                                            save_event_target_as = TFR_EST_settlement_target
+                                            set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                        }
+                                        TFR_EST_preserve_annexation = yes
+                                    }
+                                    else = {
+                                        annex_country = {
+                                            target = ROOT
+                                            transfer_troops = no
+                                        }
+                                    }
 								}
 							}
 							else_if = {
@@ -25257,10 +26519,20 @@ on_actions = {
 									}
 								}
 								PLD = {
-									annex_country = {
-										target = ROOT
-										transfer_troops = no
-									}
+									if = {
+                                        limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                        ROOT = {
+                                            save_event_target_as = TFR_EST_settlement_target
+                                            set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                        }
+                                        TFR_EST_preserve_annexation = yes
+                                    }
+                                    else = {
+                                        annex_country = {
+                                            target = ROOT
+                                            transfer_troops = no
+                                        }
+                                    }
 								}
 							}
 						}
@@ -25288,6 +26560,10 @@ on_actions = {
 						white_peace = ROOT
 						GER = {
 							puppet = ROOT
+                            if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                            }
 						}
 						ROOT = {
 							get_current_government_type = yes
@@ -25450,6 +26726,10 @@ on_actions = {
 					FROM = {
 						white_peace = ROOT
 						puppet = ROOT
+                        if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                        }
 						ROOT = {
 							get_current_government_type = yes
 							if = {
@@ -25692,6 +26972,10 @@ on_actions = {
 					FROM = {
 						white_peace = ROOT
 						puppet = ROOT
+                        if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                        }
 						ROOT = {
 							get_current_government_type = yes
 							if = {
@@ -25870,6 +27154,10 @@ on_actions = {
 					FROM = {
 						white_peace = ROOT
 						puppet = ROOT
+                        if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                        }
 						ROOT = {
 							get_current_government_type = yes
 							if = {
@@ -25966,10 +27254,20 @@ on_actions = {
 					}
 					ARR = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 						drop_cosmetic_tag = yes
 						set_politics = {
 							ruling_party = market_liberal
@@ -26018,6 +27316,10 @@ on_actions = {
 							}
 							GER = {
 								puppet = ROOT
+                                if = {
+                                    limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                    ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                                }
 							}
 						}
 						else_if = {
@@ -26039,6 +27341,10 @@ on_actions = {
 							}
 							GER = {
 								puppet = ROOT
+                                if = {
+                                    limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                    ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                                }
 							}
 						}
 						else_if = {
@@ -26054,6 +27360,10 @@ on_actions = {
 							}
 							GER = {
 								puppet = ROOT
+                                if = {
+                                    limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                    ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                                }
 							}
 						}
 						else_if = {
@@ -26101,10 +27411,20 @@ on_actions = {
 								}
 							}
 							GRE = {
-								annex_country = {
-									target = ROOT
-									transfer_troops = no
-								}
+								if = {
+                                    limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                    ROOT = {
+                                        save_event_target_as = TFR_EST_settlement_target
+                                        set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                    }
+                                    TFR_EST_preserve_annexation = yes
+                                }
+                                else = {
+                                    annex_country = {
+                                        target = ROOT
+                                        transfer_troops = no
+                                    }
+                                }
 								every_controlled_state = {
 									limit = {
 										is_core_of = ROOT
@@ -26141,10 +27461,20 @@ on_actions = {
 								}
 							}
 							PLD = {
-								annex_country = {
-									target = ROOT
-									transfer_troops = no
-								}
+								if = {
+                                    limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                    ROOT = {
+                                        save_event_target_as = TFR_EST_settlement_target
+                                        set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                    }
+                                    TFR_EST_preserve_annexation = yes
+                                }
+                                else = {
+                                    annex_country = {
+                                        target = ROOT
+                                        transfer_troops = no
+                                    }
+                                }
 								every_controlled_state = {
 									limit = {
 										is_core_of = ROOT
@@ -26251,10 +27581,20 @@ on_actions = {
 					FROM = {
 						white_peace = ROOT
 						UKR = {
-							annex_country = {
-								target = ROOT
-								transfer_troops = no
-							}
+							if = {
+                                limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                ROOT = {
+                                    save_event_target_as = TFR_EST_settlement_target
+                                    set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                                }
+                                TFR_EST_preserve_annexation = yes
+                            }
+                            else = {
+                                annex_country = {
+                                    target = ROOT
+                                    transfer_troops = no
+                                }
+                            }
 						}
 					}
 					set_global_flag = skip_default_capitulation
@@ -26275,6 +27615,10 @@ on_actions = {
 					FROM = {
 						white_peace = ROOT
 						puppet = ROOT
+                        if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = { TFR_EST_queue_occupation_reconciliation = yes }
+                        }
 						if = {
 							limit = {
 								GER = {
@@ -26337,10 +27681,20 @@ on_actions = {
 									}
 									set_cosmetic_tag = BLK_euro_commission
 								}
-								annex_country = {
-									target = ROOT
-									transfer_troops = yes
-								}
+								if = {
+                                    limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                    ROOT = {
+                                        save_event_target_as = TFR_EST_settlement_target
+                                        set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 1 }
+                                    }
+                                    TFR_EST_preserve_annexation = yes
+                                }
+                                else = {
+                                    annex_country = {
+                                        target = ROOT
+                                        transfer_troops = yes
+                                    }
+                                }
 								every_controlled_state = {
 									limit = {
 										is_core_of = ROOT
@@ -26386,10 +27740,20 @@ on_actions = {
 									}
 									set_cosmetic_tag = BLK_euro_commission
 								}
-								annex_country = {
-									target = ROOT
-									transfer_troops = yes
-								}
+								if = {
+                                    limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                                    ROOT = {
+                                        save_event_target_as = TFR_EST_settlement_target
+                                        set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 1 }
+                                    }
+                                    TFR_EST_preserve_annexation = yes
+                                }
+                                else = {
+                                    annex_country = {
+                                        target = ROOT
+                                        transfer_troops = yes
+                                    }
+                                }
 								every_controlled_state = {
 									limit = {
 										is_core_of = ROOT
@@ -26480,10 +27844,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 						if = {
 							limit = {
 								GAL = {
@@ -26748,7 +28122,13 @@ on_actions = {
 						add_state_core = 191
 						add_state_core = 1329
 						add_state_core = 840
-						transfer_state = 13
+						if = {
+                            limit = { OR = { original_tag = EST NOT = { EST = { has_country_flag = TFR_EST_initialized } } } }
+                            transfer_state = 13
+                        }
+                        else = {
+                            TFR_EST_protect_anchor = yes
+                        }
 						transfer_state = 191
 						transfer_state = 1329
 						transfer_state = 840
@@ -26829,10 +28209,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 						if = {
 							limit = {
 								GAL = {
@@ -27357,10 +28747,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 						KHI = {
 							set_cosmetic_tag = KHI_rus_kaz
 						}
@@ -27391,10 +28791,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 						country_event = {
 							id = persia.20
 							days = 20
@@ -27414,10 +28824,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 						country_event = {
 							id = persia.21
 							days = 40
@@ -27437,10 +28857,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 						set_cosmetic_tag = UDM_per
 					}
 					set_global_flag = skip_default_capitulation
@@ -27728,10 +29158,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 					}
 					set_global_flag = skip_default_capitulation
 				}
@@ -27747,10 +29187,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 					}
 					set_global_flag = skip_default_capitulation
 				}
@@ -28093,10 +29543,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 					}
 					set_global_flag = skip_default_capitulation
 				}
@@ -28178,10 +29638,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 					}
 					set_global_flag = skip_default_capitulation
 				}
@@ -28245,10 +29715,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 					}
 					set_global_flag = skip_default_capitulation
 				}
@@ -28277,10 +29757,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 					}
 					set_global_flag = skip_default_capitulation
 				}
@@ -28296,10 +29786,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 						drop_cosmetic_tag = yes
 					}
 					set_global_flag = skip_default_capitulation
@@ -28325,10 +29825,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 						IF = {
 							LIMIT = {
 								NOT = {
@@ -28370,10 +29880,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 						IF = {
 							LIMIT = {
 								NOT = {
@@ -28427,10 +29947,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 					}
 					set_global_flag = skip_default_capitulation
 				}
@@ -28456,10 +29986,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 						IF = {
 							LIMIT = {
 								NOT = {
@@ -28505,10 +30045,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 						IF = {
 							LIMIT = {
 								NOT = {
@@ -28555,10 +30105,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 						IF = {
 							LIMIT = {
 								NOT = {
@@ -28605,10 +30165,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 						IF = {
 							LIMIT = {
 								NOT = {
@@ -28655,10 +30225,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 						IF = {
 							LIMIT = {
 								NOT = {
@@ -28704,10 +30284,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = yes
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 1 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = yes
+                            }
+                        }
 						IF = {
 							LIMIT = {
 								NOT = {
@@ -28799,10 +30389,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 						IF = {
 							LIMIT = {
 								NOT = {
@@ -28848,10 +30448,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 						IF = {
 							LIMIT = {
 								NOT = {
@@ -28898,10 +30508,20 @@ on_actions = {
 					}
 					FROM = {
 						white_peace = ROOT
-						annex_country = {
-							target = ROOT
-							transfer_troops = no
-						}
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                                transfer_troops = no
+                            }
+                        }
 						IF = {
 							LIMIT = {
 								NOT = {
@@ -28966,10 +30586,20 @@ on_actions = {
 				}
 				FROM = {
 					white_peace = ROOT
-					annex_country = {
-						target = ROOT
-						transfer_troops = no
-					}
+					if = {
+                        limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                        ROOT = {
+                            save_event_target_as = TFR_EST_settlement_target
+                            set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 0 }
+                        }
+                        TFR_EST_preserve_annexation = yes
+                    }
+                    else = {
+                        annex_country = {
+                            target = ROOT
+                            transfer_troops = no
+                        }
+                    }
 				}
 				set_global_flag = skip_default_capitulation
 			}
@@ -28993,9 +30623,19 @@ on_actions = {
 					white_peace = FAF
 					white_peace = ENG
 					FSY = {
-						annex_country = {
-							target = ROOT
-						}		
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 1 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                            }
+                        }
 					}
 					FAF = {
 						puppet = FSY
@@ -29039,9 +30679,19 @@ on_actions = {
 					white_peace = FAF
 					white_peace = ENG
 					FSY = {
-						annex_country = {
-							target = ROOT
-						}	
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 1 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                            }
+                        }
 					}
 					FAF = {
 						puppet = FSY
@@ -29082,9 +30732,19 @@ on_actions = {
 					white_peace = FAF
 					white_peace = ENG
 					FSY = {
-						annex_country = {
-							target = ROOT
-						}		
+						if = {
+                            limit = { ROOT = { original_tag = EST has_country_flag = TFR_EST_initialized } }
+                            ROOT = {
+                                save_event_target_as = TFR_EST_settlement_target
+                                set_temp_variable = { var = TFR_EST_settlement_transfer_troops value = 1 }
+                            }
+                            TFR_EST_preserve_annexation = yes
+                        }
+                        else = {
+                            annex_country = {
+                                target = ROOT
+                            }
+                        }
 					}
 					FAF = {
 						puppet = FSY

@@ -1,0 +1,76 @@
+# Reuse TFR's head_minister slot and shared diplomacy HoG tooltip.
+# The ledger owns the cabinet; native country-leader roles display the president.
+TFR_EST_hide_executive_display = {
+    clr_country_flag = head_of_gov_ui_enabled
+    remove_ideas = {
+        TFR_EST_pm_reform TFR_EST_pm_centre TFR_EST_pm_ekre
+        TFR_EST_pm_isamaa TFR_EST_pm_sde TFR_EST_pm_e200 TFR_EST_pm_pp
+    }
+}
+
+# A multi-role character must be promoted with a specific sub-ideology.
+# These roles follow the cabinet's native ruling group, without changing the PM.
+TFR_EST_promote_constitutional_president = {
+    if = {
+        limit = { has_government = market_liberal }
+        if = { limit = { has_country_flag = TFR_EST_karis_president } promote_character = { character = TFR_EST_alar_karis ideology = classical_liberalism } }
+        else = { promote_character = { character = TFR_EST_kersti_kaljulaid ideology = classical_liberalism } }
+    }
+    else_if = {
+        limit = { has_government = social_liberal }
+        if = { limit = { has_country_flag = TFR_EST_karis_president } promote_character = { character = TFR_EST_alar_karis ideology = centrist } }
+        else = { promote_character = { character = TFR_EST_kersti_kaljulaid ideology = centrist } }
+    }
+    else_if = {
+        limit = { has_government = authoritarian_democrat }
+        if = { limit = { has_country_flag = TFR_EST_karis_president } promote_character = { character = TFR_EST_alar_karis ideology = ultra_conservatism } }
+        else = { promote_character = { character = TFR_EST_kersti_kaljulaid ideology = ultra_conservatism } }
+    }
+    else_if = {
+        limit = { has_government = conservative }
+        if = { limit = { has_country_flag = TFR_EST_karis_president } promote_character = { character = TFR_EST_alar_karis ideology = christian_conservatism } }
+        else = { promote_character = { character = TFR_EST_kersti_kaljulaid ideology = christian_conservatism } }
+    }
+    else_if = {
+        limit = { has_government = social_democrat }
+        if = { limit = { has_country_flag = TFR_EST_karis_president } promote_character = { character = TFR_EST_alar_karis ideology = left_centrist } }
+        else = { promote_character = { character = TFR_EST_kersti_kaljulaid ideology = left_centrist } }
+    }
+}
+
+TFR_EST_reconcile_executive_display = {
+    if = {
+        limit = { TFR_EST_constitutional_executive = yes }
+        set_country_flag = head_of_gov_ui_enabled
+        if = {
+            limit = { has_country_flag = TFR_EST_karis_president }
+            if = {
+                limit = { NOT = { has_country_leader = { ruling_only = yes character = TFR_EST_alar_karis } } }
+                TFR_EST_promote_constitutional_president = yes
+            }
+        }
+        else = {
+            if = {
+                limit = { NOT = { has_country_leader = { ruling_only = yes character = TFR_EST_kersti_kaljulaid } } }
+                TFR_EST_promote_constitutional_president = yes
+            }
+        }
+        # Remove only stale ministers; repairing the display never reruns an
+        # incumbent minister's on_add or changes confidence, polling or seats.
+        if = { limit = { NOT = { check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } } } remove_ideas = TFR_EST_pm_reform }
+        if = { limit = { NOT = { check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } } } remove_ideas = TFR_EST_pm_centre }
+        if = { limit = { NOT = { check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } } } remove_ideas = TFR_EST_pm_ekre }
+        if = { limit = { NOT = { check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } } } remove_ideas = TFR_EST_pm_isamaa }
+        if = { limit = { NOT = { check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } } } remove_ideas = TFR_EST_pm_sde }
+        if = { limit = { NOT = { check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } } } remove_ideas = TFR_EST_pm_e200 }
+        if = { limit = { NOT = { check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } } } remove_ideas = TFR_EST_pm_pp }
+        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_idea = TFR_EST_pm_reform } } add_ideas = TFR_EST_pm_reform }
+        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_idea = TFR_EST_pm_centre } } add_ideas = TFR_EST_pm_centre }
+        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_idea = TFR_EST_pm_ekre } } add_ideas = TFR_EST_pm_ekre }
+        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_idea = TFR_EST_pm_isamaa } } add_ideas = TFR_EST_pm_isamaa }
+        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_idea = TFR_EST_pm_sde } } add_ideas = TFR_EST_pm_sde }
+        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_idea = TFR_EST_pm_e200 } } add_ideas = TFR_EST_pm_e200 }
+        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_idea = TFR_EST_pm_pp } } add_ideas = TFR_EST_pm_pp }
+    }
+    else = { TFR_EST_hide_executive_display = yes }
+}

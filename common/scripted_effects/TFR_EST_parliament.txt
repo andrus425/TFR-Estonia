@@ -1,5 +1,6 @@
 # Parliament, cabinet and presidency lifecycle never reset polling or seats.
 TFR_EST_suspend_parliament = {
+    TFR_EST_hide_executive_display = yes
     clr_country_flag = TFR_EST_parliament_open
     remove_ideas = TFR_EST_constitutional_presidency
     remove_ideas = TFR_EST_presidency_karis
@@ -22,6 +23,7 @@ TFR_EST_reconcile_presidency = {
             if = { limit = { NOT = { has_idea = TFR_EST_constitutional_presidency } } add_ideas = TFR_EST_constitutional_presidency }
         }
     }
+    TFR_EST_reconcile_executive_display = yes
 }
 
 # Native elections are disabled because the party ledger schedules elections.
@@ -61,75 +63,20 @@ TFR_EST_sync_native_cabinet_politics = {
     }
 }
 
-# The confirmed party ledger owns independent Estonia's head of government.
-# Parent settlement scripts can replace leaders, so repair only a mismatched leader.
+# The confirmed party ledger owns the head_minister slot and ruling ideology.
+# The native country leader displays the separate constitutional president.
 TFR_EST_reconcile_cabinet_leadership = {
     if = {
         limit = { TFR_EST_independent_parliament = yes }
         TFR_EST_sync_native_cabinet_politics = yes
-        if = {
-            limit = { check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } }
-            if = {
-                limit = { NOT = { has_country_leader = { ruling_only = yes character = TFR_EST_kaja_kallas } } }
-                set_politics = { ruling_party = market_liberal elections_allowed = no }
-                promote_character = TFR_EST_kaja_kallas
-            }
-            set_party_name = { ideology = market_liberal name = TFR_EST_party_reform long_name = TFR_EST_party_reform }
-        }
-        if = {
-            limit = { check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } }
-            if = {
-                limit = { NOT = { has_country_leader = { ruling_only = yes character = TFR_EST_juri_ratas } } }
-                set_politics = { ruling_party = social_liberal elections_allowed = no }
-                promote_character = TFR_EST_juri_ratas
-            }
-            set_party_name = { ideology = social_liberal name = TFR_EST_party_centre long_name = TFR_EST_party_centre }
-        }
-        if = {
-            limit = { check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } }
-            if = {
-                limit = { NOT = { has_country_leader = { ruling_only = yes character = TFR_EST_mart_helme } } }
-                set_politics = { ruling_party = authoritarian_democrat elections_allowed = no }
-                promote_character = TFR_EST_mart_helme
-            }
-            set_party_name = { ideology = authoritarian_democrat name = TFR_EST_party_ekre long_name = TFR_EST_party_ekre }
-        }
-        if = {
-            limit = { check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } }
-            if = {
-                limit = { NOT = { has_country_leader = { ruling_only = yes character = TFR_EST_helir_valdor_seeder } } }
-                set_politics = { ruling_party = conservative elections_allowed = no }
-                promote_character = TFR_EST_helir_valdor_seeder
-            }
-            set_party_name = { ideology = conservative name = TFR_EST_party_isamaa long_name = TFR_EST_party_isamaa }
-        }
-        if = {
-            limit = { check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } }
-            if = {
-                limit = { NOT = { has_country_leader = { ruling_only = yes character = TFR_EST_indrek_saar } } }
-                set_politics = { ruling_party = social_democrat elections_allowed = no }
-                promote_character = TFR_EST_indrek_saar
-            }
-            set_party_name = { ideology = social_democrat name = TFR_EST_party_sde long_name = TFR_EST_party_sde }
-        }
-        if = {
-            limit = { check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } }
-            if = {
-                limit = { NOT = { has_country_leader = { ruling_only = yes character = TFR_EST_kristina_kallas } } }
-                set_politics = { ruling_party = social_liberal elections_allowed = no }
-                promote_character = TFR_EST_kristina_kallas
-            }
-            set_party_name = { ideology = social_liberal name = TFR_EST_party_e200 long_name = TFR_EST_party_e200 }
-        }
-        if = {
-            limit = { check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } }
-            if = {
-                limit = { NOT = { has_country_leader = { ruling_only = yes character = TFR_EST_lavly_perling } } }
-                set_politics = { ruling_party = market_liberal elections_allowed = no }
-                promote_character = TFR_EST_lavly_perling
-            }
-            set_party_name = { ideology = market_liberal name = TFR_EST_party_pp long_name = TFR_EST_party_pp }
-        }
+        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } } set_party_name = { ideology = market_liberal name = TFR_EST_party_reform long_name = TFR_EST_party_reform } }
+        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } } set_party_name = { ideology = social_liberal name = TFR_EST_party_centre long_name = TFR_EST_party_centre } }
+        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } } set_party_name = { ideology = authoritarian_democrat name = TFR_EST_party_ekre long_name = TFR_EST_party_ekre } }
+        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } } set_party_name = { ideology = conservative name = TFR_EST_party_isamaa long_name = TFR_EST_party_isamaa } }
+        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } } set_party_name = { ideology = social_democrat name = TFR_EST_party_sde long_name = TFR_EST_party_sde } }
+        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } } set_party_name = { ideology = social_liberal name = TFR_EST_party_e200 long_name = TFR_EST_party_e200 } }
+        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } } set_party_name = { ideology = market_liberal name = TFR_EST_party_pp long_name = TFR_EST_party_pp } }
+        TFR_EST_reconcile_executive_display = yes
     }
 }
 
@@ -447,48 +394,49 @@ clr_country_flag = TFR_EST_government_pp
 if = {
  limit = { check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } }
  set_politics = { ruling_party = market_liberal elections_allowed = no name = TFR_EST_party_reform long_name = TFR_EST_party_reform }
-promote_character = TFR_EST_kaja_kallas
+
 set_country_flag = TFR_EST_government_reform
 }
 if = {
  limit = { check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } }
  set_politics = { ruling_party = social_liberal elections_allowed = no name = TFR_EST_party_centre long_name = TFR_EST_party_centre }
-promote_character = TFR_EST_juri_ratas
+
 set_country_flag = TFR_EST_government_centre
 }
 if = {
  limit = { check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } }
  set_politics = { ruling_party = authoritarian_democrat elections_allowed = no name = TFR_EST_party_ekre long_name = TFR_EST_party_ekre }
-promote_character = TFR_EST_mart_helme
+
 set_country_flag = TFR_EST_government_ekre
 }
 if = {
  limit = { check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } }
  set_politics = { ruling_party = conservative elections_allowed = no name = TFR_EST_party_isamaa long_name = TFR_EST_party_isamaa }
-promote_character = TFR_EST_helir_valdor_seeder
+
 set_country_flag = TFR_EST_government_isamaa
 }
 if = {
  limit = { check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } }
  set_politics = { ruling_party = social_democrat elections_allowed = no name = TFR_EST_party_sde long_name = TFR_EST_party_sde }
-promote_character = TFR_EST_indrek_saar
+
 set_country_flag = TFR_EST_government_sde
 }
 if = {
  limit = { check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } }
  set_politics = { ruling_party = social_liberal elections_allowed = no name = TFR_EST_party_e200 long_name = TFR_EST_party_e200 }
-promote_character = TFR_EST_kristina_kallas
+
 set_country_flag = TFR_EST_government_e200
 }
 if = {
  limit = { check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } }
  set_politics = { ruling_party = market_liberal elections_allowed = no name = TFR_EST_party_pp long_name = TFR_EST_party_pp }
-promote_character = TFR_EST_lavly_perling
+
 set_country_flag = TFR_EST_government_pp
 }
 TFR_EST_recount_confidence = yes
 TFR_EST_project_ideologies = yes
 TFR_EST_refresh_programme = yes
+TFR_EST_reconcile_cabinet_leadership = yes
 
 }
 }
@@ -1622,20 +1570,14 @@ TFR_EST_confirm_cabinet = yes
 }
 
 TFR_EST_restore_parliament = {
-clr_country_flag = TFR_EST_occupied
-TFR_EST_reconcile_presidency = yes
-if = { limit = { check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } } set_politics = { ruling_party = market_liberal elections_allowed = no name = TFR_EST_party_reform long_name = TFR_EST_party_reform } promote_character = TFR_EST_kaja_kallas }
-if = { limit = { check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } } set_politics = { ruling_party = social_liberal elections_allowed = no name = TFR_EST_party_centre long_name = TFR_EST_party_centre } promote_character = TFR_EST_juri_ratas }
-if = { limit = { check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } } set_politics = { ruling_party = authoritarian_democrat elections_allowed = no name = TFR_EST_party_ekre long_name = TFR_EST_party_ekre } promote_character = TFR_EST_mart_helme }
-if = { limit = { check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } } set_politics = { ruling_party = conservative elections_allowed = no name = TFR_EST_party_isamaa long_name = TFR_EST_party_isamaa } promote_character = TFR_EST_helir_valdor_seeder }
-if = { limit = { check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } } set_politics = { ruling_party = social_democrat elections_allowed = no name = TFR_EST_party_sde long_name = TFR_EST_party_sde } promote_character = TFR_EST_indrek_saar }
-if = { limit = { check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } } set_politics = { ruling_party = social_liberal elections_allowed = no name = TFR_EST_party_e200 long_name = TFR_EST_party_e200 } promote_character = TFR_EST_kristina_kallas }
-if = { limit = { check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } } set_politics = { ruling_party = market_liberal elections_allowed = no name = TFR_EST_party_pp long_name = TFR_EST_party_pp } promote_character = TFR_EST_lavly_perling }
-TFR_EST_clear_coalition = yes
-set_country_flag = TFR_EST_restoration_election
-set_variable = { TFR_EST_restore_days = 0 }
-TFR_EST_enter_caretaker = yes
-TFR_EST_project_ideologies = yes
+    clr_country_flag = TFR_EST_occupied
+    TFR_EST_clear_coalition = yes
+    set_country_flag = TFR_EST_restoration_election
+    set_variable = { TFR_EST_restore_days = 0 }
+    TFR_EST_enter_caretaker = yes
+    TFR_EST_project_ideologies = yes
+    TFR_EST_reconcile_cabinet_leadership = yes
+    TFR_EST_reconcile_presidency = yes
 }
 
 TFR_EST_parliament_tick = {
@@ -1894,7 +1836,7 @@ if = {
 if = {
  limit = { date > 2021.10.10 NOT = { has_country_flag = TFR_EST_karis_president } }
  set_country_flag = TFR_EST_karis_president
-swap_ideas = { remove_idea = TFR_EST_constitutional_presidency add_idea = TFR_EST_presidency_karis }
+TFR_EST_reconcile_presidency = yes
 country_event = { id = tfr_estonia_parliament.3 days = 1 }
 }
 TFR_EST_recount_confidence = yes

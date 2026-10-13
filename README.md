@@ -19,7 +19,13 @@ created without the submod are not supported.
 
 The opening parliament uses the real 2019 seats: Reform 34, Centre 26, EKRE 19,
 Isamaa 12, and SDE 10. Jüri Ratas leads the 57-seat Centre–EKRE–Isamaa coalition.
-Kersti Kaljulaid is represented separately as the constitutional president.
+Kersti Kaljulaid appears as the president in the main country portrait. Jüri
+Ratas appears in TFR's head-minister slot and shared head-of-government tooltip,
+using the same arrangement as Germany's president and chancellor. Cabinet
+changes update the prime minister while preserving the constitutional president.
+The existing succession event installs Alar Karis; caretaker cabinets retain
+their incumbent prime minister. Occupation suspends this constitutional display
+and restoration reinstates the saved presidency and cabinet ledger.
 
 ## Playing the political system
 
@@ -164,7 +170,10 @@ Extract the ZIP into your HOI4 user-data `mod` directory. It contains
 
 The parent remains untouched. Shared-file overrides are necessary to stop
 destructive settlements **before** annexation occurs. Their upstream hashes and
-individual protections are recorded in `docs/compatibility.json`.
+individual changes are recorded in `docs/compatibility.json`. The additional
+shared head-of-government localization adapter retains every upstream country
+selector and adds Estonia's seven party-ledger selectors. The shared GUI itself
+is inherited directly from TFR.
 
 After a TFR update, compare each overridden file against the new parent version,
 review changed war/occupation assumptions, regenerate only after review, and rerun
