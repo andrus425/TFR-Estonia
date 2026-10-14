@@ -9,7 +9,7 @@ class ContinuityTests(unittest.TestCase):
         for path in (ROOT / "common/national_focus").glob("TFR_EST_*.txt"):
             tree = parse(path.read_text(encoding="utf-8-sig"))
             for _, e in tree.walk():
-                if e.key != "focus" or not isinstance(e.value, Block): continue
+                if e.key not in {"focus", "shared_focus"} or not isinstance(e.value, Block): continue
                 focus = e.value
                 bypass = focus.get("bypass")
                 reward = focus.get("completion_reward")

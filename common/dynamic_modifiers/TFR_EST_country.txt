@@ -1,0 +1,28 @@
+# Persistent containers for Estonia's future economic and military reforms.
+# Values are country variables in modifier units (0.03 = +3%).
+# Existing focus rewards remain unchanged until the content migration.
+TFR_EST_economy_dynamic = {
+    icon = GFX_idea_generic_emerging_economy
+    enable = { tag = EST }
+    production_speed_buildings_factor = TFR_EST_economy_production_speed_buildings_factor_var
+    industrial_capacity_factory = TFR_EST_economy_industrial_capacity_factory_var
+    industrial_capacity_dockyard = TFR_EST_economy_industrial_capacity_dockyard_var
+    production_factory_efficiency_gain_factor = TFR_EST_economy_production_factory_efficiency_gain_factor_var
+    production_factory_max_efficiency_factor = TFR_EST_economy_production_factory_max_efficiency_factor_var
+    research_speed_factor = TFR_EST_economy_research_speed_factor_var
+    local_resources_factor = TFR_EST_economy_local_resources_factor_var
+    consumer_goods_factor = TFR_EST_economy_consumer_goods_factor_var
+}
+
+TFR_EST_military_dynamic = {
+    icon = GFX_idea_generic_military_org
+    enable = { tag = EST }
+    army_attack_factor = TFR_EST_military_army_attack_factor_var
+    army_defence_factor = TFR_EST_military_army_defence_factor_var
+    army_org_factor = TFR_EST_military_army_org_factor_var
+    mobilization_speed = TFR_EST_military_mobilization_speed_var
+    training_time_army_factor = TFR_EST_military_training_time_army_factor_var
+    dig_in_speed_factor = TFR_EST_military_dig_in_speed_factor_var
+    attrition = TFR_EST_military_attrition_var
+    supply_consumption_factor = TFR_EST_military_supply_consumption_factor_var
+}

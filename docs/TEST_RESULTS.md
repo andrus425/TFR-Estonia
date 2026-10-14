@@ -1,4 +1,4 @@
-# Validation results — 13 October 2026
+# Validation results — 14 October 2026
 
 This is an implemented **development build**, not a declaration that the public
 v1 campaign matrix has passed. The pinned parent is **The Fire Rises 1.0.9.1c**.
@@ -8,18 +8,35 @@ The installed executable reports **HOI4 Operation Postern 1.19.3.0.c01a**.
 
 | Check | Observed result |
 |---|---|
-| `tools/validate_mod.py` | 51 additive/override script files; 192 focuses, 53 events, 66 decisions, 930 English localization keys; **0 errors** |
-| `python -m unittest discover -s tests -v` | **41 tests passed**, including 500 randomized election allocations checked against an independent integer reference |
+| `tools/validate_mod.py` | 56 additive/override script files; 192 focuses, 53 events, 59 decisions, 921 English localization keys; **0 errors** |
+| `python -m unittest discover -s tests -v` | **69 tests passed**, including 500 randomized election allocations checked against an independent integer reference |
 | `tools/test_occupation_compatibility.py` | **10 structural regression tests passed** |
 | `tools/patch_tfr_compatibility.py --check` | **11 reproducible overrides and 627 audited changes verified**: 620 settlement safeguards and seven head-of-government selectors |
 | `tools/native_script_interface.py --check` | **0 files with legacy argument-block interfaces** |
-| Portable packaging tests | Deterministic archive, exclusions, portable descriptors and metadata rejection passed as part of the 41-test suite |
+| Portable packaging tests | Deterministic archive, exclusions, portable descriptors and metadata rejection passed as part of the 69-test suite |
 
 The tests cover historical seats and confidence, threshold/tie behavior, invalid
 poll recovery, negative and fractional inputs, inactive parties, independent
 party identity, supply agreements, meter limits and tiers, economic unit conversion,
 reserve authorization, programme selection, formation, initialization, campaign
 stages and persistence through tree changes.
+
+The 19 leadership-mandate regressions cover the historical Centre exception,
+all seven election winners, tied largest delegations, invalid elections,
+minority winners waiting for 51 confidence votes, blocked legacy nominations,
+fabricated nominees, confidence recovery without replacing the incumbent,
+AI preferences respecting the election result, polling without seat changes,
+missing-variable repair from the saved PM, protected leader membership,
+occupation/restoration continuity and explicit story authorization. All three
+focus-tree files retain their pre-revision SHA-256 hashes; the two Estonia
+trees also have an automated preservation check.
+
+Nine dynamic-modifier tests cover the two neutral containers and their 16
+independent variable bindings, preservation of positive/negative authored values,
+repair without reapplying present modifiers, repeated initialization, EST scope
+guards, unchanged existing idea rewards, retained parent modifiers and all three
+focus-tree hashes. The static validator now checks dynamic-modifier references,
+localization and icon sprites.
 
 Executive tests cover valid confirmation of all seven PMs without changing the
 president, caretaker continuity, immediate Karis succession, occupation hiding,
@@ -66,7 +83,7 @@ containing the new `TFR_EST_` or `tfr_estonia` identifiers**. This establishes
 startup parity with this parent build; it does not make the parent error-free.
 The compact comparison is saved locally as `test-output/final-engine-comparison.json`.
 
-The latest executive-display run is captured under
+The 13 October executive-display run is captured under
 `test-output/engine-estonia-qa-20261013-123825/`. It reached the frontend in about
 154 seconds and passed **all 19 native assertions**, comprising the seven earlier
 arithmetic cases and 12 executive cases: the opening Kaljulaid/Ratas pairing,
@@ -87,6 +104,55 @@ explicit ideology for characters with several leader roles. The implementation
 now supplies the appropriate sub-ideology in all five government groups, and
 both static checks and a regression prevent reintroducing the ambiguous call.
 The later 19-case run is the accepted result.
+
+The election-led coalition run is captured under
+`test-output/engine-estonia-qa-20261014-111641/`. It reached the frontend in
+approximately **192 seconds** and passed **all 26 native assertions**. It repeats
+the 19 arithmetic/executive checks and adds seven leadership cases: unauthorized
+nomination does nothing, a fabricated nominee is rejected, AI confidence recovery
+keeps Centre, equal largest delegations use the fixed tie order, a minority winner
+waits for confidence, the elected successor can be confirmed, and an invalid
+subsequent election preserves the confirmed leader. The original mod/DLC
+configuration was restored after the owned process stopped.
+
+The first 14 October QA fixture passed 25 of 26 cases. During frontend history
+construction Estonia is AI-controlled, so its actual election effect immediately
+formed an 80-seat Reform–Centre coalition and confirmed Reform. The corrected
+fixture logs `pm=1 confidence=80 centre=1` before reconstructing the pending
+player cabinet from the actual elected 40/40/21 assembly. This tests native
+confirmation below 51 and after adding support without mistaking automatic AI
+formation for a player handover failure. The source regression separately follows
+the unmodified player election effect. No gameplay exception was added for QA.
+
+The successful 26-case log contains **no errors naming `TFR_EST_` or
+`tfr_estonia`**. The same-day parent-only run,
+`test-output/engine-parent-20261014-112136/`, reached the frontend in about
+173 seconds with the same DLC selection. After normalization it contains 2,023
+unique messages, versus 2,033 in the submod/QA run. The ten additional messages
+all reference missing foreign nationalist flag assets: medium flags for GBA,
+KHA, LBV, ORO, PAP, SID, SPM, TOS and VGE, plus SPM's small flag. There are no
+removed messages. Their additional loading is not isolated; this is not an
+error-free startup claim. The report is
+`test-output/mandate-engine-comparison-current.json`. The larger asset differences
+from the previous day's capture are not attributed to the parliament change.
+
+The latest dynamic-modifier run is captured under
+`test-output/engine-estonia-qa-20261014-114230/`. It reached the frontend in
+approximately **175 seconds** and passed **all 30 native assertions**: the prior
+26 cases plus neutral installation, actual modifier-value application,
+preservation during repeated initialization, and repair of a removed container.
+Reading native `modifier@industrial_capacity_factory` before and after changing
+its backing variable produced a delta of `0.03`; the corresponding supply
+consumption test produced `-0.05`. Test adjustments were returned to zero after
+the checks. The isolated fixture is not part of the ordinary mod.
+
+Comparison with the same-day parent-only baseline gives **2,023 normalized unique
+messages in both runs, zero new messages, zero removed messages, and zero messages
+containing `TFR_EST_` or `tfr_estonia`**. The comparison report is
+`test-output/dynamic-engine-comparison.json`. This establishes startup parity for
+this run without claiming the parent is error-free. The original mod/DLC
+configuration was restored after the owned test process stopped. It does not
+verify rendered icons, natural daily scheduling or save/reload in a campaign.
 
 The QA overlay is not shipped or enabled in ordinary play. It executes arithmetic
 within a single hidden-effect context during frontend history construction.

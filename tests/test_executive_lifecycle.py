@@ -22,12 +22,11 @@ class ExecutiveLifecycleTests(unittest.TestCase):
         self.assertEqual(r.leader, 'TFR_EST_kersti_kaljulaid')
         self.assertEqual(self.ministers(r), {'TFR_EST_pm_centre'})
         for index, (party, group) in enumerate(zip(PARTIES, GROUPS), 1):
-            r.call('TFR_EST_clear_coalition')
             for p in PARTIES:
-                r.variables['TFR_EST_seats_' + p] = 101 if p == party else 0
-            r.variables['TFR_EST_coalition_' + party] = 1
-            r.variables['TFR_EST_nominee_party'] = index
-            r.call('TFR_EST_recount_confidence')
+                r.variables['TFR_EST_active_' + p] = 1
+                r.variables['TFR_EST_support_' + p] = 10000 if p == party else 0
+            r.variables['TFR_EST_support_other'] = 0
+            r.call('TFR_EST_hold_election')
             r.call('TFR_EST_confirm_cabinet')
             self.assertEqual(r.variables['TFR_EST_pm_party'], index)
             self.assertEqual(r.politics['ruling_party'], group)

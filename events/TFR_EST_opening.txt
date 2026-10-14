@@ -1,0 +1,70 @@
+add_namespace = tfr_estonia_opening
+country_event = {
+    id = tfr_estonia_opening.1
+    title = TFR_EST_opening_covid_title
+    desc = TFR_EST_opening_covid_desc
+    picture = GFX_report_event_generic_handshake
+    is_triggered_only = yes
+    option = { name = TFR_EST_opening_covid_option }
+}
+country_event = {
+    id = tfr_estonia_opening.10
+    title = TFR_EST_porto_investigation_title
+    desc = TFR_EST_porto_investigation_desc
+    picture = GFX_report_event_generic_handshake
+    is_triggered_only = yes
+    trigger = {
+        TFR_EST_independent_parliament = yes
+        has_country_flag = TFR_EST_referendum_active
+        NOT = { has_country_flag = TFR_EST_porto_investigation_seen }
+    }
+    immediate = {
+        set_country_flag = TFR_EST_porto_investigation_seen
+        clr_country_flag = TFR_EST_porto_notice_pending
+    }
+    option = {
+        name = TFR_EST_porto_investigation_option
+        TFR_EST_opening_tick = yes
+    }
+}
+country_event = {
+    id = tfr_estonia_opening.11
+    title = TFR_EST_porto_choice_title
+    desc = TFR_EST_porto_choice_desc
+    picture = GFX_report_event_generic_handshake
+    is_triggered_only = yes
+    trigger = {
+        TFR_EST_independent_parliament = yes
+        has_country_flag = TFR_EST_porto_investigation_seen
+        NOT = { has_country_flag = TFR_EST_porto_choice_resolved }
+    }
+    option = {
+        name = TFR_EST_porto_keep_ratas
+        ai_chance = { factor = 20 }
+        custom_effect_tooltip = TFR_EST_keep_ratas_tt
+        TFR_EST_keep_ratas = yes
+    }
+    option = {
+        name = TFR_EST_porto_step_back
+        ai_chance = { factor = 80 }
+        custom_effect_tooltip = TFR_EST_step_back_tt
+        TFR_EST_ratas_steps_back = yes
+    }
+}
+country_event = {
+    id = tfr_estonia_opening.12
+    title = TFR_EST_reform_centre_title
+    desc = TFR_EST_reform_centre_desc
+    picture = GFX_report_event_generic_handshake
+    is_triggered_only = yes
+    trigger = {
+        TFR_EST_independent_parliament = yes
+        has_country_flag = TFR_EST_reform_handover_pending
+        NOT = { has_country_flag = TFR_EST_reform_centre_formed }
+    }
+    option = {
+        name = TFR_EST_reform_centre_option
+        custom_effect_tooltip = TFR_EST_reform_centre_tt
+        TFR_EST_form_reform_centre_cabinet = yes
+    }
+}

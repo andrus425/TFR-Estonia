@@ -39,9 +39,15 @@ and restoration reinstates the saved presidency and cabinet ledger.
   seats are seeded directly rather than recalculated by the simplified model.
 - Cabinet confirmation requires 51 confidence votes. Cabinet members and
   confidence-and-supply partners are counted separately, with no double counting.
-- Nominate a prime minister, negotiate a coalition, and confirm the cabinet.
-  A cabinet losing confidence becomes caretaker while negotiations or a snap
-  election resolve the crisis.
+- Centre holds the opening coalition leadership. After each valid election, the
+  party with the most seats automatically leads coalition formation. Exact seat
+  ties use Reform, Centre, EKRE, Isamaa, SDE, Eesti 200, Parempoolsed order.
+- Negotiate coalition partners or confidence and supply, then confirm the
+  mandated cabinet with 51 votes. The incumbent remains caretaker until the
+  elected successor is confirmed. There are no player nomination decisions.
+- Between elections, confidence recovery reconfirms the incumbent. A different
+  prime minister requires an explicit event or focus; ordinary negotiations and
+  AI route preferences cannot replace the coalition leader.
 - Regular elections begin in March 2023 and repeat every four years. Restored
   independence triggers an election within 90 days.
 - The dedicated Riigikogu panel shows polling, seats, cabinet membership,
@@ -63,6 +69,15 @@ create strain.
 Project budgets are stated in **millions of euros**, converted to the parent
 mod's debt units, and applied through TFR's inflation-adjusted economic effects.
 The submod retains the existing euro, EU, NATO, influence and economic setup.
+
+**Estonian Economy** and **Estonian Military** are permanent, variable-driven
+dynamic modifiers, using the same structure as TFR's country modifiers. Their
+initial values are neutral. The economy container supports construction,
+industrial output, production efficiency, research, resources and consumer goods;
+the military container supports combat, organization, mobilization, training,
+entrenchment, attrition and supply. Missing variables or modifiers are repaired
+without resetting saved adjustments. Existing focus rewards still grant their
+original ideas; their conversion will accompany a later content revision.
 
 Reserve authorization unlocks a Kaitseliit template and temporary training
 support. **Recruit units normally**: the authorization does not spawn free
@@ -132,8 +147,8 @@ a campaign. Do not use it while playing an existing game.
 
 The 600-second limit allows cold startup; the tool finishes early when the game
 reports the frontend ready. The optional isolated QA overlay executes native
-election and meter assertions while constructing the initial
-country snapshot, and is excluded from releases. These checks do not exercise
+election, leadership-mandate, executive-display, meter and dynamic-modifier
+assertions while constructing the initial country snapshot, and is excluded from releases. These checks do not exercise
 combat, natural war progression, interface rendering or save/reload.
 
 See [the architecture](docs/ARCHITECTURE.md), [manual test matrix](docs/TEST_MATRIX.md),

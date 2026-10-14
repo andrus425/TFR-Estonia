@@ -1,0 +1,11 @@
+defined_text = {
+ name = TFR_EST_mandate_party_name
+ text = { trigger = { check_variable = { var = TFR_EST_mandate_party value = 1 compare = equals } } localization_key = TFR_EST_party_reform }
+ text = { trigger = { check_variable = { var = TFR_EST_mandate_party value = 2 compare = equals } } localization_key = TFR_EST_party_centre }
+ text = { trigger = { check_variable = { var = TFR_EST_mandate_party value = 3 compare = equals } } localization_key = TFR_EST_party_ekre }
+ text = { trigger = { check_variable = { var = TFR_EST_mandate_party value = 4 compare = equals } } localization_key = TFR_EST_party_isamaa }
+ text = { trigger = { check_variable = { var = TFR_EST_mandate_party value = 5 compare = equals } } localization_key = TFR_EST_party_sde }
+ text = { trigger = { check_variable = { var = TFR_EST_mandate_party value = 6 compare = equals } } localization_key = TFR_EST_party_e200 }
+ text = { trigger = { check_variable = { var = TFR_EST_mandate_party value = 7 compare = equals } } localization_key = TFR_EST_party_pp }
+ text = { trigger = { always = yes } localization_key = TFR_EST_mandate_pending }
+}

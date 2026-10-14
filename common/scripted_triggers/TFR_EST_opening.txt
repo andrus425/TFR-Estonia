@@ -1,0 +1,60 @@
+# Coalition seats are distinct from confidence-and-supply votes.
+TFR_EST_coalition_majority = {
+    TFR_EST_independent_parliament = yes
+    check_variable = { var = TFR_EST_coalition_seats value = 51 compare = greater_than_or_equals }
+}
+TFR_EST_opening_coalition_majority = {
+    TFR_EST_coalition_majority = yes
+    NOT = { has_country_flag = TFR_EST_caretaker }
+    NOT = { has_country_flag = TFR_EST_opening_complete }
+    check_variable = { var = TFR_EST_pm_party value = 2 compare = equals }
+    check_variable = { var = TFR_EST_mandate_party value = 2 compare = equals }
+    check_variable = { var = TFR_EST_coalition_centre value = 1 compare = equals }
+    check_variable = { var = TFR_EST_coalition_ekre value = 1 compare = equals }
+    check_variable = { var = TFR_EST_coalition_isamaa value = 1 compare = equals }
+}
+TFR_EST_can_start_referendum = {
+    TFR_EST_opening_coalition_majority = yes
+    # Even 14 saved focus days leave the focus running on 12 and 13 January.
+    date > 2020.12.23
+    OR = {
+        has_completed_focus = TFR_EST_opening_pension_reform
+        has_country_flag = TFR_EST_done_opening_pension_reform
+    }
+    OR = {
+        has_completed_focus = TFR_EST_opening_teacher_pay
+        has_country_flag = TFR_EST_done_opening_teacher_pay
+    }
+    OR = {
+        has_completed_focus = TFR_EST_opening_covid_emergency
+        has_country_flag = TFR_EST_done_opening_covid_emergency
+    }
+    OR = {
+        has_completed_focus = TFR_EST_opening_pension_increase
+        has_country_flag = TFR_EST_done_opening_pension_increase
+    }
+    OR = {
+        has_completed_focus = TFR_EST_opening_wage_compensation
+        has_country_flag = TFR_EST_done_opening_wage_compensation
+    }
+    OR = {
+        has_completed_focus = TFR_EST_opening_excise_relief
+        has_country_flag = TFR_EST_done_opening_excise_relief
+    }
+    OR = {
+        has_completed_focus = TFR_EST_opening_eastern_border
+        has_country_flag = TFR_EST_done_opening_eastern_border
+    }
+    OR = {
+        has_completed_focus = TFR_EST_opening_kose_voobu
+        has_country_flag = TFR_EST_done_opening_kose_voobu
+    }
+    OR = {
+        has_completed_focus = TFR_EST_opening_three_seas
+        has_country_flag = TFR_EST_done_opening_three_seas
+    }
+    OR = {
+        has_completed_focus = TFR_EST_opening_research_budget
+        has_country_flag = TFR_EST_done_opening_research_budget
+    }
+}

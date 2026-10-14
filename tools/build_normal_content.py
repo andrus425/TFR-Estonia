@@ -1,6 +1,11 @@
 from pathlib import Path
-import json, re
+import argparse, json, re
 from native_script_interface import amount_call, native_amount_calls
+from build_opening_content import POLICIES
+
+parser = argparse.ArgumentParser(description='Build Estonia normal content.')
+parser.add_argument('--focus-only', action='store_true', help='Update the tree, route AI, focus text and dependent decisions without rewriting events or reward ideas.')
+args = parser.parse_args()
 
 ROOT = Path(__file__).resolve().parents[1]
 P = 'TFR_EST_'
@@ -32,8 +37,15 @@ def F(suffix, name, desc, x, y, pre=None, effects='', icon='national_unity', cos
     ident = P + suffix
     L(ident,name); L(ident+'_desc',desc)
     tests = ['NOT = { has_country_flag = TFR_EST_occupied }']
+    branch_tests = ['has_country_flag = TFR_EST_opening_complete']
+    crisis = 'TFR_EST_campaign_stage' in avail or 'TFR_EST_restoration_pending' in avail
+    if not crisis:
+        tests += ['TFR_EST_coalition_majority = yes', 'NOT = { has_country_flag = TFR_EST_caretaker }']
     if party is not None:
         tests += [f'check_variable = {{ TFR_EST_pm_party = {party} }}','NOT = { has_country_flag = TFR_EST_caretaker }']
+        branch_tests += [f'check_variable = {{ TFR_EST_pm_party = {party} }}', 'NOT = { has_country_flag = TFR_EST_caretaker }']
+    if avail:
+        branch_tests.append(avail)
     if avail: tests.append(avail)
     pr = [] if pre is None else ([pre] if isinstance(pre,str) else pre)
     prereqs = '\n'.join(f'prerequisite = {{ focus = TFR_EST_{s} }}' for s in pr)
@@ -41,9 +53,10 @@ def F(suffix, name, desc, x, y, pre=None, effects='', icon='national_unity', cos
         id = {ident}
         icon = GFX_goal_generic_{icon}
         x = {x}
-        y = {y}
+        y = {y + 7}
         cost = {cost}
         {prereqs}
+        allow_branch = {{ {' '.join(branch_tests)} }}
         available = {{ {' '.join(tests)} }}
         bypass = {{ has_country_flag = TFR_EST_done_{suffix} }}
         cancel_if_invalid = yes
@@ -56,23 +69,7 @@ def F(suffix, name, desc, x, y, pre=None, effects='', icon='national_unity', cos
     }}\n'''
     focuses.append((ident,f,party))
 
-# The opening cabinet and constitutional framework, shared by later governments.
-F('republic_at_the_crossroads','The Republic at the Crossroads',
-  'Estonia enters 2020 as a parliamentary republic in the European Union and NATO. Jüri Ratas governs through a coalition of Keskerakond, EKRE and Isamaa; President Kersti Kaljulaid guards the constitutional order. Our choices must keep a small state functioning as the international order begins to fracture.',9,0,effects=reward(pp(75),event(1)),cost=3,priority=100)
-F('coalition_contract','The Coalition Contract',
-  'The opening coalition holds 57 of the Riigikogu’s 101 seats. A written agreement will settle ministerial responsibilities and establish how disputes reach the cabinet. Future governments will inherit these procedures, even when different parties sit at the same table.',9,1,'republic_at_the_crossroads',reward(co(4),pp(40)),priority=50)
-F('public_health_contingency','Public Health Contingency',
-  'A dangerous epidemic would test hospital capacity, local services and public trust. Prepare a coordinated response before shortages turn into a political crisis. Parliament must decide how much immediate spending and emergency authority the situation justifies.',7,2,'coalition_contract',reward(budget(25),event(2)),icon='consumer_goods',priority=50)
-F('remote_government','A Government That Can Work Remotely',
-  'Secure communications and a legal procedure for remote cabinet meetings will preserve government when ministers cannot meet in Tallinn. Backups must include municipal offices and paper procedures, since digital convenience is no substitute for continuity.',11,2,'coalition_contract',reward(budget(20),idea('government_continuity'),co(3)),icon='intelligence_exchange',priority=30)
-F('presidential_reserve','The President and the Constitution',
-  'The president represents the republic and checks the constitutionality of legislation while the prime minister directs government. An explicit agreement on emergency consultation will protect those distinct roles and prevent a crisis from becoming a struggle for personal power.',7,3,'public_health_contingency',reward(co(5),event(3)),priority=20)
-F('protect_livelihoods','Protect Livelihoods',
-  'Small firms, workers and local governments cannot carry the cost of a national emergency alone. Targeted assistance should keep essential services open, with transparent conditions and a parliamentary review of the bill.',9,3,'public_health_contingency',reward(budget(65),co(4),pp(-25)),icon='consumer_goods',priority=25)
-F('credible_institutions','Institutions Worth Defending',
-  'People will endure hardship for institutions they trust. Publish procurement records, strengthen access to public information and invite independent scrutiny of emergency measures. A resilient state needs criticism as well as discipline.',11,3,'remote_government',reward(co(5),idea('open_administration')),icon='political_pressure',priority=20)
-F('national_security_review','The National Security Review',
-  'The collapse of stability abroad requires a common assessment of Estonia’s vulnerabilities. The army, Kaitseliit, municipalities and diplomatic service must identify what can be prepared domestically and what depends on our partners.',9,4,['presidential_reserve','credible_institutions'],reward(rd(5),xp(10),flag('security_review')),icon='defence',priority=40)
+# The mandatory opening is defined in build_opening_content.py.
 
 # Every programme remains in the same tree. A later elected cabinet can enact its own reforms.
 programmes = {
@@ -155,7 +152,7 @@ programmes = {
 ('programme','A Lean and Reliable State','Complete a programme of productive enterprise, disciplined public contracts and competent essential services. Its active benefits depend on a Parempoolsed prime minister.',reward(flag('pp_programme'),'TFR_EST_refresh_programme = yes',event(17)),'trade')]
 }
 for idx,(suffix,party_id,label) in enumerate(parties):
-    previous = 'coalition_contract'
+    previous = 'opening_marriage_referendum'
     for row,(node,name,desc,eff,icon) in enumerate(programmes[suffix]):
         current = suffix+'_'+node
         F(current,name,desc,idx*3,row+6,previous,eff,icon,party=party_id,avail='check_variable = { TFR_EST_active_pp = 1 }' if suffix=='pp' else '',priority=8)
@@ -182,7 +179,7 @@ economic = [
 ('affordable_heat','Reliable Heat for Households','Municipal heating and emergency shelter plans should keep homes habitable under pressure. Target assistance at vulnerable residents and protect essential repairs.',reward(budget(50),co(4)),'consumer_goods'),
 ('resilient_utilities','Utilities That Can Survive a Crisis','Complete joint exercises between municipalities, utilities and emergency authorities. The resulting plans will improve preparedness without replacing future maintenance expenditure.',reward(budget(25),rd(3),co(2)),'defence')])]
 for col,(name,nodes) in enumerate(economic):
-    previous='coalition_contract'
+    previous='opening_marriage_referendum'
     for row,(s,title,desc,eff,icon) in enumerate(nodes):
         F(s,title,desc,23+col*3,row+2,previous,eff,icon,priority=8 if row<2 else 5)
         previous=s
@@ -207,7 +204,7 @@ military = [
 ('air_warning','Integrated Air Warning','Improve the infrastructure used to detect and report air threats. Warning is useful even when Estonia must rely on allied aircraft for interception.',reward(budget(70),build(13,'radar_station'),rd(3)),'radar'),
 ('prepared_alliance','A Prepared Member of the Alliance','Complete a practical allied support plan and exercise the command arrangements. Estonia retains responsibility for its defence while using collective strength effectively.',reward(rd(4),xp(20),flag('alliance_prepared')),'major_alliance')])]
 for col,(name,nodes) in enumerate(military):
-    previous='national_security_review'
+    previous='opening_marriage_referendum'
     for row,(s,title,desc,eff,icon) in enumerate(nodes):
         F(s,title,desc,33+col*3,row+2,previous,eff,icon,priority=15 if row<3 else 10)
         previous=s
@@ -227,7 +224,7 @@ first = [
 ('first_defend_capital','Defend the Capital’s Institutions','Disperse vital records and organize the protection of national institutions. Even if Tallinn becomes a battlefield, lawful authority and public communication must continue.',reward(budget(40),co(3),rd(3)),'fortify_city'),
 ('first_endurance','A Small State Can Endure','Coordinate relief for displaced people, rest rotations and the repair of essential services. Estonia’s war effort must remain sustainable beyond the opening emergency.',reward(co(4),idea('national_endurance')),'national_unity'),
 ('first_lessons','Record the First War’s Lessons','Collect evidence from military operations and civilian administration before experience is lost. Preparation for recovery and future threats starts while the lessons are fresh.',reward(xp(30),rd(4),flag('first_lessons')),'army_doctrines')]
-previous='national_security_review'
+previous='opening_marriage_referendum'
 for row,(s,title,desc,eff,icon) in enumerate(first):
     F(s,title,desc,3,row+18,previous,eff,icon,cost=3,avail='has_country_flag = TFR_EST_first_war_seen',priority=40)
     previous=s
@@ -241,7 +238,7 @@ interwar = [
 ('reconstruction_defence','Rebuild Defence on Evidence','Use wartime experience to revise training and maintenance plans. The new force must reflect available territory, manpower and equipment.',reward(budget(45),rd(5),xp(25)),'army_doctrines'),
 ('reconstruction_partners','Rebuild Working Partnerships','Re-establish practical diplomatic, trade and military links with governments that remain able to cooperate. Estonia should adapt to the settlement rather than relying on a vanished international order.',reward(pp(60),rd(2)),'alliance'),
 ('interwar_watch','Watch the Next Gathering Storm','The first settlement may not have ended Europe’s crisis. Keep contingency plans current while restoring ordinary politics and preparing to respond to another continental war.',reward(rd(4),co(3),flag('interwar_watch')),'defence')]
-previous='national_security_review'
+previous='opening_marriage_referendum'
 for row,(s,title,desc,eff,icon) in enumerate(interwar):
     F(s,title,desc,9,row+18,previous,eff,icon,avail='check_variable = { TFR_EST_campaign_stage > 1 } has_war = no',priority=25)
     previous=s
@@ -257,7 +254,7 @@ second = [
 ('second_supply_resilience','Supply Through Disruption','Apply the first war’s lessons to dispersed repair, transport and distribution. Fund a renewed logistics exercise tied to the territory we control.',reward(budget(50),rd(4),idea('second_war_logistics')),'army_motorized'),
 ('second_social_endurance','Endurance for Soldiers and Citizens','Support families, displaced residents and exhausted essential workers. A war effort that consumes the society it defends cannot last indefinitely.',reward(budget(55),co(5)),'consumer_goods'),
 ('second_republic_survives','Carry the Republic Through','Maintain lawful authority, functioning institutions and the means to continue after the second settlement. Survival gives Estonia the opportunity to recover its future.',reward(co(4),rd(3),flag('second_lessons')),'national_unity')]
-previous='national_security_review'
+previous='opening_marriage_referendum'
 for row,(s,title,desc,eff,icon) in enumerate(second):
     F(s,title,desc,15,row+18,previous,eff,icon,cost=3,avail='has_country_flag = TFR_EST_second_war_seen',priority=45)
     previous=s
@@ -269,7 +266,7 @@ post = [
 ('postwar_accountability','Accountability After Emergency','Bring exceptional powers and contracts back before parliament. A state that survived war must recover the ordinary rights and oversight that give survival meaning.',reward(co(5),pp(40)),'political_pressure'),
 ('postwar_security','A Sustainable Security Policy','Maintain trained forces and a credible reserve plan within the resources of the surviving republic. End emergency habits that no longer contribute to defence.',reward(xp(25),rd(4),idea('sustainable_security')),'defence'),
 ('postwar_future','Estonia Has a Future','Conclude the two-war campaign with a programme of lawful government, viable services and realistic security. The next generation deserves institutions capable of managing peace.',reward(co(5),pp(100),flag('campaign_complete')),'national_unity')]
-previous='national_security_review'
+previous='opening_marriage_referendum'
 for row,(s,title,desc,eff,icon) in enumerate(post):
     F(s,title,desc,21,row+18,previous,eff,icon,avail='check_variable = { TFR_EST_campaign_stage > 3 } has_war = no',priority=30)
     previous=s
@@ -281,7 +278,7 @@ restoration = [
 ('restore_local_services','Restore Local Services','Rebuild the municipal staff and service arrangements weakened during occupation. Target resources at territory the independent state actually controls.',reward(budget(50),co(4),rd(2)),'consumer_goods'),
 ('restore_defence_command','Reconstitute the Defence Command','Review personnel, training and equipment before re-establishing military responsibilities. Retain useful skills while restoring accountable national command.',reward(budget(40),rd(4),xp(20)),'army_doctrines'),
 ('restoration_compact','A Restoration Compact','Bring government, opposition and municipalities together around the restored constitutional order. Elections and practical recovery must give the republic a future beyond the occupation’s divisions.',reward(co(5),pp(60),flag('restoration_compact')),'national_unity')]
-previous='national_security_review'
+previous='opening_marriage_referendum'
 for row,(s,title,desc,eff,icon) in enumerate(restoration):
     F(s,title,desc,27,row+18,previous,eff,icon,avail='has_country_flag = TFR_EST_restoration_pending',priority=35)
     previous=s
@@ -291,8 +288,8 @@ focus_tree = {
     id = TFR_EST_main_tree
     country = { factor = 0 modifier = { add = 100 original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } } }
     default = no
-    initial_show_position = { focus = TFR_EST_republic_at_the_crossroads }
-'''+''.join(f[1] for f in focuses)+'}\n'
+    initial_show_position = { focus = TFR_EST_opening_pension_reform }
+'''+''.join(f'    shared_focus = TFR_EST_opening_{policy.suffix}\n' for policy in POLICIES)+''.join(f[1] for f in focuses)+'}\n'
 
 ideas={
 'government_continuity':('Government Continuity','Secure communications, administrative backups and remote procedures keep government functioning when ordinary meetings are disrupted.','political_power_gain = 0.05'),
@@ -527,14 +524,14 @@ def D(category,s,title,desc,eff,cost=35,cooldown=180,available='',visible='',ico
 
 D('TFR_EST_national_programmes','municipal_roundtable','Convene a Municipal Roundtable','Bring mayors and service administrators together to resolve practical access problems. Costs 35 political power and €15 million in public debt; increases cohesion by 2. Available every 180 days.',reward(budget(15),co(2)),available='NOT = { has_country_flag = TFR_EST_caretaker }',ai=2)
 D('TFR_EST_national_programmes','publish_accounts','Publish Programme Accounts','Open public expenditure and implementation data to independent review. Costs 30 political power; increases cohesion by 1. Available every 180 days.',co(1),cost=30,ai=2)
-D('TFR_EST_national_programmes','service_rehearsal','Rehearse Essential Service Continuity','Test municipal communications, records and staffing arrangements. Costs 40 political power and €20 million in public debt; increases readiness by 2 and cohesion by 1. Available every 180 days.',reward(budget(20),rd(2),co(1)),cost=40,available='has_completed_focus = TFR_EST_remote_government',ai=2)
+D('TFR_EST_national_programmes','service_rehearsal','Rehearse Essential Service Continuity','Test municipal communications, records and staffing arrangements. Costs 40 political power and €20 million in public debt; increases readiness by 2 and cohesion by 1. Available every 180 days.',reward(budget(20),rd(2),co(1)),cost=40,available='has_country_flag = TFR_EST_done_opening_covid_emergency',ai=2)
 D('TFR_EST_national_programmes','regional_training','Fund Regional Technical Training','Support vocational training linked to local employers. Costs 35 political power and €30 million in public debt; increases cohesion by 2 and grants 5 army experience through maintenance training. Available every 365 days.',reward(budget(30),co(2),xp(5)),cooldown=365,available='has_completed_focus = TFR_EST_technical_training',ai=1)
 for suffix,pid,label in parties:
     D('TFR_EST_national_programmes',suffix+'_public_meetings',f'{label}: Public Programme Meetings',f'Explain the governing programme and hear local objections. Costs 40 political power and €10 million in public debt; increases cohesion by 1 and shifts polling support through the party campaign system. Requires a confirmed {label} government. Available every 180 days.',reward(budget(10),co(1),f'TFR_EST_campaign_{suffix} = yes'),cost=40,available=f'check_variable = {{ TFR_EST_pm_party = {pid} }} NOT = {{ has_country_flag = TFR_EST_caretaker }}',visible=f'check_variable = {{ TFR_EST_pm_party = {pid} }}',ai=1)
 D('TFR_EST_defence_programmes','reserve_mobilization','Activate Reserve Recruitment','Unlock a reserve recruitment template and a limited training programme once. Costs 50 political power. Requires the reserve plan, readiness of at least 50 or an active war, independence and control of Northern Estonia. Recruit divisions normally; this decision does not create free manpower or equipment.','TFR_EST_mobilize_reserves = yes',cost=50,available='has_country_flag = TFR_EST_reserve_plan TFR_EST_can_mobilize = yes',visible='has_country_flag = TFR_EST_reserve_plan NOT = { has_country_flag = TFR_EST_reserves_mobilized }',icon='generic_prepare_civil_war',ai=5,fire_once=True)
 D('TFR_EST_defence_programmes','readiness_exercise','Conduct a Readiness Exercise','Rehearse movement, issue procedures and command communications. Costs 45 political power and €30 million in public debt; increases readiness by 3 and grants 8 army experience. Available every 180 days.',reward(budget(30),rd(3),xp(8)),cost=45,available='has_completed_focus = TFR_EST_reserve_register check_variable = { TFR_EST_readiness < 90 }',icon='generic_prepare_civil_war',ai=3)
 D('TFR_EST_defence_programmes','volunteer_training','Train Local Civil Defence Volunteers','Fund first aid, emergency communication and distribution exercises. Costs 35 political power and €15 million in public debt; increases readiness by 2 and cohesion by 1. Available every 180 days.',reward(budget(15),rd(2),co(1)),available='has_completed_focus = TFR_EST_kaitseliit_training',icon='generic_prepare_civil_war',ai=2)
-D('TFR_EST_defence_programmes','lift_nato_restrictions','Activate the National Defence Mandate','Replace Estonia’s inherited peacetime NATO military restrictions through the national mobilization transition. Costs 50 political power. Requires the security review, independence, and readiness of at least 50 or an active war. This transition can occur only once.','TFR_EST_lift_nato_restrictions = yes',cost=50,available='has_completed_focus = TFR_EST_national_security_review is_subject = no OR = { check_variable = { TFR_EST_readiness > 49 } has_war = yes }',visible='NOT = { has_country_flag = TFR_EST_nato_restrictions_lifted }',icon='generic_prepare_civil_war',ai=5,fire_once=True)
+D('TFR_EST_defence_programmes','lift_nato_restrictions','Activate the National Defence Mandate','Replace Estonia’s inherited peacetime NATO military restrictions through the national mobilization transition. Costs 50 political power. Requires the completed opening programme, independence, and readiness of at least 50 or an active war. This transition can occur only once.','TFR_EST_lift_nato_restrictions = yes',cost=50,available='has_country_flag = TFR_EST_opening_complete is_subject = no OR = { check_variable = { TFR_EST_readiness > 49 } has_war = yes }',visible='NOT = { has_country_flag = TFR_EST_nato_restrictions_lifted }',icon='generic_prepare_civil_war',ai=5,fire_once=True)
 D('TFR_EST_defence_programmes','procure_infantry','A Limited Infantry Equipment Contract','Order 500 sets of basic infantry equipment from the domestic production base. Costs 50 political power and €40 million in public debt. Requires the procurement plan and an Estonian military factory. The 365-day cooldown limits deliveries.',reward(budget(40),'add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 500 producer = EST }'),cost=50,cooldown=365,available='has_country_flag = TFR_EST_procurement_plan num_of_military_factories > 0',visible='has_country_flag = TFR_EST_procurement_plan',icon='generic_prepare_civil_war',ai=2)
 D('TFR_EST_defence_programmes','logistics_rehearsal','Rehearse Wartime Distribution','Fund a joint military and municipal transport exercise. Costs 35 political power and €25 million in public debt; increases readiness by 2 and grants 5 army experience. Available every 180 days.',reward(budget(25),rd(2),xp(5)),available='has_completed_focus = TFR_EST_logistics_audit',icon='generic_prepare_civil_war',ai=2)
 decisions_text=''.join(cat+' = {\n'+''.join(vals)+'}\n\n' for cat,vals in decisions.items())
@@ -544,23 +541,23 @@ rule='''TFR_EST_AI_ROUTE = {
  group = RULE_GROUP_AI_BEHAVIOR
  default = { name = DEFAULT text = TFR_EST_RULE_DEFAULT desc = TFR_EST_RULE_DEFAULT_DESC }
 '''
-L('TFR_EST_AI_ROUTE','Estonia: Preferred Governing Party')
+L('TFR_EST_AI_ROUTE','Estonia: Preferred Campaigning Party')
 L('TFR_EST_RULE_DEFAULT','Competitive Parliamentary Politics')
-L('TFR_EST_RULE_DEFAULT_DESC','The opening 57-seat Ratas coalition is preserved. Later governments form from elections and coalition negotiations without a forced preferred party.')
+L('TFR_EST_RULE_DEFAULT_DESC','The opening 57-seat Ratas coalition is preserved. Subsequent coalition leadership goes to the party with the most elected seats; negotiations determine partners and confidence.')
 for suffix,pid,label in parties:
     option=suffix.upper()
     L('TFR_EST_RULE_'+option,label)
-    L('TFR_EST_RULE_'+option+'_DESC',f'AI Estonia favors {label} in later elections and cabinet formation. The historical opening coalition and parliamentary majority requirements remain intact. Parempoolsed becomes eligible only after its formation.')
+    L('TFR_EST_RULE_'+option+'_DESC',f'AI Estonia favors {label} when campaigning for later elections. The chosen party must win the most seats before it can lead a coalition; this rule cannot override the electoral mandate. The historical opening coalition and parliamentary majority requirements remain intact. Parempoolsed becomes eligible only after its formation.')
     rule+=f' option = {{ name = {option} text = TFR_EST_RULE_{option} desc = TFR_EST_RULE_{option}_DESC }}\n'
 rule+='}\n'
 
 plans=''
 for suffix,pid,label in parties:
     route_focuses=[f[0] for f in focuses if f[2]==pid]
-    shared_order=['republic_at_the_crossroads','coalition_contract','public_health_contingency','remote_government','presidential_reserve','credible_institutions','national_security_review','reserve_register','logistics_audit','allied_liaison','kaitseliit_training','interoperability','reserve_training_exercise','industrial_survey','tallinn_industry']
+    shared_order=['reserve_register','logistics_audit','allied_liaison','kaitseliit_training','interoperability','reserve_training_exercise','industrial_survey','tallinn_industry']
     # Unavailable entries are skipped: reactive campaign content takes priority as soon as its stage opens.
     emergency_order=[node[0] for node in second]+[node[0] for node in first]+[node[0] for node in restoration]+[node[0] for node in post]+[node[0] for node in interwar]
-    order=[P+s for s in emergency_order]+[P+s for s in shared_order]+route_focuses+[P+s for s in ['reserve_depots','mobilization_plans','realistic_procurement','total_defence','prepared_alliance','national_supply_plan','prepared_positions','artillery_observers','air_defence_integration']]
+    order=['TFR_EST_opening_'+p.suffix for p in POLICIES]+[P+s for s in emergency_order]+[P+s for s in shared_order]+route_focuses+[P+s for s in ['reserve_depots','mobilization_plans','realistic_procurement','total_defence','prepared_alliance','national_supply_plan','prepared_positions','artillery_observers','air_defence_integration']]
     L(P+suffix+'_ai_plan',f'Estonia: {label} Governing Programme')
     plans+=f'''TFR_EST_{suffix}_ai_plan = {{
  name = TFR_EST_{suffix}_ai_plan
@@ -583,6 +580,13 @@ strategy='''TFR_EST_territorial_force = {
 '''
 
 def write(rel,text,bom=False):
+    if args.focus_only and rel not in {
+        'common/national_focus/TFR_EST_normal.txt',
+        'common/ai_strategy_plans/TFR_EST_governments.txt',
+        'common/decisions/TFR_EST_content.txt',
+        'localisation/english/TFR_EST_content_l_english.yml',
+    }:
+        return
     text = native_amount_calls(text)
     # Explicit equality gates avoid relying on shorthand compare defaults in the engine.
     text = re.sub(r'check_variable\s*=\s*\{\s*(TFR_EST_\w+)\s*=\s*(-?\d+(?:\.\d+)?)\s*\}',

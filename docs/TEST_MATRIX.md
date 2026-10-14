@@ -13,8 +13,11 @@ to the parent-only baseline. Completion is not implied by the presence of script
 | Seven party routes | Each reaches government through valid confidence; ten policy focuses and both-war choices are accessible |
 | Same-ideology coalition | Reform/PP and Centre/E200 remain separate; opposition seats grant no coalition bonus |
 | Elections | 5% threshold, deterministic ties, 101 seats, invalid input recovery, caretaker and snap elections |
+| Leadership mandate | Centre starts as leader despite Reform34; elections assign the largest delegation; exact seat ties deterministic; nomination decisions absent; confidence recovery and AI preference cannot replace leader |
+| Election handover | Incumbent remains caretaker until the mandated successor gets51 votes; invalid elections preserve mandate; occupation/restoration preserve it until the next election |
 | Party emergence | E200 exists outside parliament initially; PP appears from Aug 2022; polling remains normalized |
 | Cohesion/readiness | UI values/trends match modifiers; thresholds and cancellations are correct |
+| Economy/military dynamic modifiers | Both containers appear after initialization with neutral values; authored values apply immediately and survive save/reload, occupation/restoration and missing-modifier repair; current focus rewards remain unchanged |
 | Procurement/reserves | Budget charged, cooldown respected, no duplicate authorization or free reserve army |
 | First war / NATO victory | Entry, Tallinn capture hooks, political responses and reconstruction progress |
 | Communist Russia victory | Same EST tag survives, patron and communist mandate correct, Russian follow-up content progresses |

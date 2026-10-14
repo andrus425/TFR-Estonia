@@ -1,0 +1,56 @@
+# The opening Centre-led government is a historical exception to plurality.
+# Never derive its mandate from the opening 34 Reform / 26 Centre seats.
+TFR_EST_repair_leadership_mandate = {
+    if = {
+        limit = { TFR_EST_independent_parliament = yes }
+        if = {
+            limit = {
+                NOT = {
+                    AND = {
+                        check_variable = { var = TFR_EST_mandate_party value = 1 compare = greater_than_or_equals }
+                        check_variable = { var = TFR_EST_mandate_party value = 7 compare = less_than_or_equals }
+                    }
+                }
+            }
+            set_variable = { var = TFR_EST_mandate_party value = TFR_EST_pm_party }
+            if = {
+                limit = {
+                    NOT = {
+                        AND = {
+                            check_variable = { var = TFR_EST_mandate_party value = 1 compare = greater_than_or_equals }
+                            check_variable = { var = TFR_EST_mandate_party value = 7 compare = less_than_or_equals }
+                        }
+                    }
+                }
+                set_variable = { TFR_EST_mandate_party = 2 }
+            }
+        }
+        set_variable = { var = TFR_EST_nominee_party value = TFR_EST_mandate_party }
+        if = { limit = { check_variable = { var = TFR_EST_mandate_party value = 1 compare = equals } } set_variable = { TFR_EST_coalition_reform = 1 } set_variable = { TFR_EST_supply_reform = 0 } }
+        if = { limit = { check_variable = { var = TFR_EST_mandate_party value = 2 compare = equals } } set_variable = { TFR_EST_coalition_centre = 1 } set_variable = { TFR_EST_supply_centre = 0 } }
+        if = { limit = { check_variable = { var = TFR_EST_mandate_party value = 3 compare = equals } } set_variable = { TFR_EST_coalition_ekre = 1 } set_variable = { TFR_EST_supply_ekre = 0 } }
+        if = { limit = { check_variable = { var = TFR_EST_mandate_party value = 4 compare = equals } } set_variable = { TFR_EST_coalition_isamaa = 1 } set_variable = { TFR_EST_supply_isamaa = 0 } }
+        if = { limit = { check_variable = { var = TFR_EST_mandate_party value = 5 compare = equals } } set_variable = { TFR_EST_coalition_sde = 1 } set_variable = { TFR_EST_supply_sde = 0 } }
+        if = { limit = { check_variable = { var = TFR_EST_mandate_party value = 6 compare = equals } } set_variable = { TFR_EST_coalition_e200 = 1 } set_variable = { TFR_EST_supply_e200 = 0 } }
+        if = { limit = { check_variable = { var = TFR_EST_mandate_party value = 7 compare = equals } } set_variable = { TFR_EST_coalition_pp = 1 } set_variable = { TFR_EST_supply_pp = 0 } }
+    }
+}
+
+# Called only after the election has committed a valid 101-seat assembly.
+# Strict comparisons preserve Reform/Centre/EKRE/Isamaa/SDE/E200/PP tie order.
+TFR_EST_assign_election_mandate = {
+    set_temp_variable = { var = TFR_EST_largest_elected_party value = -1 }
+    if = { limit = { check_variable = { var = TFR_EST_seats_reform value = TFR_EST_largest_elected_party compare = greater_than } } set_temp_variable = { var = TFR_EST_largest_elected_party value = TFR_EST_seats_reform } set_variable = { TFR_EST_mandate_party = 1 } }
+    if = { limit = { check_variable = { var = TFR_EST_seats_centre value = TFR_EST_largest_elected_party compare = greater_than } } set_temp_variable = { var = TFR_EST_largest_elected_party value = TFR_EST_seats_centre } set_variable = { TFR_EST_mandate_party = 2 } }
+    if = { limit = { check_variable = { var = TFR_EST_seats_ekre value = TFR_EST_largest_elected_party compare = greater_than } } set_temp_variable = { var = TFR_EST_largest_elected_party value = TFR_EST_seats_ekre } set_variable = { TFR_EST_mandate_party = 3 } }
+    if = { limit = { check_variable = { var = TFR_EST_seats_isamaa value = TFR_EST_largest_elected_party compare = greater_than } } set_temp_variable = { var = TFR_EST_largest_elected_party value = TFR_EST_seats_isamaa } set_variable = { TFR_EST_mandate_party = 4 } }
+    if = { limit = { check_variable = { var = TFR_EST_seats_sde value = TFR_EST_largest_elected_party compare = greater_than } } set_temp_variable = { var = TFR_EST_largest_elected_party value = TFR_EST_seats_sde } set_variable = { TFR_EST_mandate_party = 5 } }
+    if = { limit = { check_variable = { var = TFR_EST_seats_e200 value = TFR_EST_largest_elected_party compare = greater_than } } set_temp_variable = { var = TFR_EST_largest_elected_party value = TFR_EST_seats_e200 } set_variable = { TFR_EST_mandate_party = 6 } }
+    if = { limit = { check_variable = { var = TFR_EST_seats_pp value = TFR_EST_largest_elected_party compare = greater_than } } set_temp_variable = { var = TFR_EST_largest_elected_party value = TFR_EST_seats_pp } set_variable = { TFR_EST_mandate_party = 7 } }
+    TFR_EST_clear_coalition = yes
+    TFR_EST_repair_leadership_mandate = yes
+    TFR_EST_recount_confidence = yes
+    set_country_flag = TFR_EST_electoral_handover
+    clr_country_flag = TFR_EST_scripted_handover
+    TFR_EST_enter_caretaker = yes
+}

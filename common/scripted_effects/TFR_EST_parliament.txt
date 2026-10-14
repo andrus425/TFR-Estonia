@@ -121,7 +121,10 @@ set_variable = { TFR_EST_coalition_pp = 0 }
 set_variable = { TFR_EST_supply_pp = 0 }
 set_variable = { TFR_EST_support_other = 460 }
 set_variable = { TFR_EST_pm_party = 2 }
+set_variable = { TFR_EST_mandate_party = 2 }
 set_variable = { TFR_EST_nominee_party = 2 }
+clr_country_flag = TFR_EST_electoral_handover
+clr_country_flag = TFR_EST_scripted_handover
 set_variable = { TFR_EST_election_year = 2023 }
 set_variable = { TFR_EST_restore_days = 0 }
 set_country_flag = TFR_EST_government_centre
@@ -295,95 +298,133 @@ TFR_EST_refresh_programme = yes
 }
 
 TFR_EST_nominate_reform = {
+# Script-only exception for a future authored event or focus. The ordinary
+# player and AI cannot nominate a different coalition-leading party.
 if = {
- limit = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_reform value = 0 compare = greater_than } }
-
-TFR_EST_clear_coalition = yes
-set_variable = { TFR_EST_nominee_party = 1 }
-set_variable = { TFR_EST_coalition_reform = 1 }
-TFR_EST_enter_caretaker = yes
-
+    limit = { TFR_EST_independent_parliament = yes has_country_flag = TFR_EST_scripted_cabinet_change check_variable = { var = TFR_EST_seats_reform value = 0 compare = greater_than } }
+    TFR_EST_clear_coalition = yes
+    set_variable = { TFR_EST_mandate_party = 1 }
+    TFR_EST_repair_leadership_mandate = yes
+    TFR_EST_recount_confidence = yes
+    set_country_flag = TFR_EST_scripted_handover
+    clr_country_flag = TFR_EST_electoral_handover
+    TFR_EST_enter_caretaker = yes
 }
+# Consume the one-use authorization even if the nominated party has no seats.
+clr_country_flag = TFR_EST_scripted_cabinet_change
 }
 
 TFR_EST_nominate_centre = {
+# Script-only exception for a future authored event or focus. The ordinary
+# player and AI cannot nominate a different coalition-leading party.
 if = {
- limit = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_centre value = 0 compare = greater_than } }
-
-TFR_EST_clear_coalition = yes
-set_variable = { TFR_EST_nominee_party = 2 }
-set_variable = { TFR_EST_coalition_centre = 1 }
-TFR_EST_enter_caretaker = yes
-
+    limit = { TFR_EST_independent_parliament = yes has_country_flag = TFR_EST_scripted_cabinet_change check_variable = { var = TFR_EST_seats_centre value = 0 compare = greater_than } }
+    TFR_EST_clear_coalition = yes
+    set_variable = { TFR_EST_mandate_party = 2 }
+    TFR_EST_repair_leadership_mandate = yes
+    TFR_EST_recount_confidence = yes
+    set_country_flag = TFR_EST_scripted_handover
+    clr_country_flag = TFR_EST_electoral_handover
+    TFR_EST_enter_caretaker = yes
 }
+# Consume the one-use authorization even if the nominated party has no seats.
+clr_country_flag = TFR_EST_scripted_cabinet_change
 }
 
 TFR_EST_nominate_ekre = {
+# Script-only exception for a future authored event or focus. The ordinary
+# player and AI cannot nominate a different coalition-leading party.
 if = {
- limit = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_ekre value = 0 compare = greater_than } }
-
-TFR_EST_clear_coalition = yes
-set_variable = { TFR_EST_nominee_party = 3 }
-set_variable = { TFR_EST_coalition_ekre = 1 }
-TFR_EST_enter_caretaker = yes
-
+    limit = { TFR_EST_independent_parliament = yes has_country_flag = TFR_EST_scripted_cabinet_change check_variable = { var = TFR_EST_seats_ekre value = 0 compare = greater_than } }
+    TFR_EST_clear_coalition = yes
+    set_variable = { TFR_EST_mandate_party = 3 }
+    TFR_EST_repair_leadership_mandate = yes
+    TFR_EST_recount_confidence = yes
+    set_country_flag = TFR_EST_scripted_handover
+    clr_country_flag = TFR_EST_electoral_handover
+    TFR_EST_enter_caretaker = yes
 }
+# Consume the one-use authorization even if the nominated party has no seats.
+clr_country_flag = TFR_EST_scripted_cabinet_change
 }
 
 TFR_EST_nominate_isamaa = {
+# Script-only exception for a future authored event or focus. The ordinary
+# player and AI cannot nominate a different coalition-leading party.
 if = {
- limit = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_isamaa value = 0 compare = greater_than } }
-
-TFR_EST_clear_coalition = yes
-set_variable = { TFR_EST_nominee_party = 4 }
-set_variable = { TFR_EST_coalition_isamaa = 1 }
-TFR_EST_enter_caretaker = yes
-
+    limit = { TFR_EST_independent_parliament = yes has_country_flag = TFR_EST_scripted_cabinet_change check_variable = { var = TFR_EST_seats_isamaa value = 0 compare = greater_than } }
+    TFR_EST_clear_coalition = yes
+    set_variable = { TFR_EST_mandate_party = 4 }
+    TFR_EST_repair_leadership_mandate = yes
+    TFR_EST_recount_confidence = yes
+    set_country_flag = TFR_EST_scripted_handover
+    clr_country_flag = TFR_EST_electoral_handover
+    TFR_EST_enter_caretaker = yes
 }
+# Consume the one-use authorization even if the nominated party has no seats.
+clr_country_flag = TFR_EST_scripted_cabinet_change
 }
 
 TFR_EST_nominate_sde = {
+# Script-only exception for a future authored event or focus. The ordinary
+# player and AI cannot nominate a different coalition-leading party.
 if = {
- limit = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_sde value = 0 compare = greater_than } }
-
-TFR_EST_clear_coalition = yes
-set_variable = { TFR_EST_nominee_party = 5 }
-set_variable = { TFR_EST_coalition_sde = 1 }
-TFR_EST_enter_caretaker = yes
-
+    limit = { TFR_EST_independent_parliament = yes has_country_flag = TFR_EST_scripted_cabinet_change check_variable = { var = TFR_EST_seats_sde value = 0 compare = greater_than } }
+    TFR_EST_clear_coalition = yes
+    set_variable = { TFR_EST_mandate_party = 5 }
+    TFR_EST_repair_leadership_mandate = yes
+    TFR_EST_recount_confidence = yes
+    set_country_flag = TFR_EST_scripted_handover
+    clr_country_flag = TFR_EST_electoral_handover
+    TFR_EST_enter_caretaker = yes
 }
+# Consume the one-use authorization even if the nominated party has no seats.
+clr_country_flag = TFR_EST_scripted_cabinet_change
 }
 
 TFR_EST_nominate_e200 = {
+# Script-only exception for a future authored event or focus. The ordinary
+# player and AI cannot nominate a different coalition-leading party.
 if = {
- limit = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_e200 value = 0 compare = greater_than } }
-
-TFR_EST_clear_coalition = yes
-set_variable = { TFR_EST_nominee_party = 6 }
-set_variable = { TFR_EST_coalition_e200 = 1 }
-TFR_EST_enter_caretaker = yes
-
+    limit = { TFR_EST_independent_parliament = yes has_country_flag = TFR_EST_scripted_cabinet_change check_variable = { var = TFR_EST_seats_e200 value = 0 compare = greater_than } }
+    TFR_EST_clear_coalition = yes
+    set_variable = { TFR_EST_mandate_party = 6 }
+    TFR_EST_repair_leadership_mandate = yes
+    TFR_EST_recount_confidence = yes
+    set_country_flag = TFR_EST_scripted_handover
+    clr_country_flag = TFR_EST_electoral_handover
+    TFR_EST_enter_caretaker = yes
 }
+# Consume the one-use authorization even if the nominated party has no seats.
+clr_country_flag = TFR_EST_scripted_cabinet_change
 }
 
 TFR_EST_nominate_pp = {
+# Script-only exception for a future authored event or focus. The ordinary
+# player and AI cannot nominate a different coalition-leading party.
 if = {
- limit = { TFR_EST_independent_parliament = yes check_variable = { var = TFR_EST_seats_pp value = 0 compare = greater_than } }
-
-TFR_EST_clear_coalition = yes
-set_variable = { TFR_EST_nominee_party = 7 }
-set_variable = { TFR_EST_coalition_pp = 1 }
-TFR_EST_enter_caretaker = yes
-
+    limit = { TFR_EST_independent_parliament = yes has_country_flag = TFR_EST_scripted_cabinet_change check_variable = { var = TFR_EST_seats_pp value = 0 compare = greater_than } }
+    TFR_EST_clear_coalition = yes
+    set_variable = { TFR_EST_mandate_party = 7 }
+    TFR_EST_repair_leadership_mandate = yes
+    TFR_EST_recount_confidence = yes
+    set_country_flag = TFR_EST_scripted_handover
+    clr_country_flag = TFR_EST_electoral_handover
+    TFR_EST_enter_caretaker = yes
 }
+# Consume the one-use authorization even if the nominated party has no seats.
+clr_country_flag = TFR_EST_scripted_cabinet_change
 }
 
 TFR_EST_confirm_cabinet = {
 if = {
- limit = { TFR_EST_independent_parliament = yes TFR_EST_has_confidence = yes TFR_EST_valid_nominee = yes NOT = { has_country_flag = TFR_EST_restoration_election } }
+ limit = { TFR_EST_can_confirm_mandated_cabinet = yes }
  set_variable = { TFR_EST_pm_party = TFR_EST_nominee_party }
+clr_country_flag = TFR_EST_electoral_handover
+clr_country_flag = TFR_EST_scripted_handover
 clr_country_flag = TFR_EST_caretaker
 remove_ideas = TFR_EST_caretaker_cabinet
+mark_focus_tree_layout_dirty = yes
 clr_country_flag = TFR_EST_government_reform
 clr_country_flag = TFR_EST_government_centre
 clr_country_flag = TFR_EST_government_ekre
@@ -439,6 +480,28 @@ TFR_EST_refresh_programme = yes
 TFR_EST_reconcile_cabinet_leadership = yes
 
 }
+}
+
+# Event/focus-only snap elections. The authorizing story sets the flag
+# immediately before calling this effect; neither decisions nor AI set it.
+# Consume authorization even if occupation, restoration or invalid polls block
+# the election. A successful snap vote does not move the regular March date.
+TFR_EST_snap_election = {
+    if = {
+        limit = {
+            has_country_flag = TFR_EST_scripted_snap_election
+            TFR_EST_independent_parliament = yes
+            NOT = { has_country_flag = TFR_EST_restoration_election }
+        }
+        set_variable = { TFR_EST_election_this_tick = 0 }
+        TFR_EST_hold_election = yes
+        if = {
+            limit = { check_variable = { var = TFR_EST_election_this_tick value = 1 compare = equals } }
+            set_temp_variable = { var = TFR_EST_cohesion_delta value = -3 }
+            TFR_EST_change_cohesion = yes
+        }
+    }
+    clr_country_flag = TFR_EST_scripted_snap_election
 }
 
 TFR_EST_hold_election = {
@@ -1105,9 +1168,7 @@ set_variable = { TFR_EST_seats_e200 = TFR_EST_new_seats_e200 }
 set_variable = { TFR_EST_seats_pp = TFR_EST_new_seats_pp }
 clr_country_flag = TFR_EST_election_invalid
 set_variable = { TFR_EST_election_this_tick = 1 }
-set_variable = { TFR_EST_nominee_party = 0 }
-TFR_EST_clear_coalition = yes
-TFR_EST_enter_caretaker = yes
+TFR_EST_assign_election_mandate = yes
 set_country_flag = TFR_EST_election_held
 country_event = { id = tfr_estonia_parliament.1 days = 1 }
 if = {
@@ -1434,101 +1495,11 @@ TFR_EST_project_ideologies = yes
 
 TFR_EST_ai_cabinet = {
 if = {
- limit = { TFR_EST_independent_parliament = yes NOT = { has_country_flag = TFR_EST_restoration_election } }
-
-set_variable = { TFR_EST_ai_largest = -1 }
-set_variable = { TFR_EST_ai_nominee = 2 }
-if = {
- limit = { check_variable = { var = TFR_EST_seats_reform value = TFR_EST_ai_largest compare = greater_than } }
- set_variable = { TFR_EST_ai_largest = TFR_EST_seats_reform }
-set_variable = { TFR_EST_ai_nominee = 1 }
-}
-if = {
- limit = { check_variable = { var = TFR_EST_seats_centre value = TFR_EST_ai_largest compare = greater_than } }
- set_variable = { TFR_EST_ai_largest = TFR_EST_seats_centre }
-set_variable = { TFR_EST_ai_nominee = 2 }
-}
-if = {
- limit = { check_variable = { var = TFR_EST_seats_ekre value = TFR_EST_ai_largest compare = greater_than } }
- set_variable = { TFR_EST_ai_largest = TFR_EST_seats_ekre }
-set_variable = { TFR_EST_ai_nominee = 3 }
-}
-if = {
- limit = { check_variable = { var = TFR_EST_seats_isamaa value = TFR_EST_ai_largest compare = greater_than } }
- set_variable = { TFR_EST_ai_largest = TFR_EST_seats_isamaa }
-set_variable = { TFR_EST_ai_nominee = 4 }
-}
-if = {
- limit = { check_variable = { var = TFR_EST_seats_sde value = TFR_EST_ai_largest compare = greater_than } }
- set_variable = { TFR_EST_ai_largest = TFR_EST_seats_sde }
-set_variable = { TFR_EST_ai_nominee = 5 }
-}
-if = {
- limit = { check_variable = { var = TFR_EST_seats_e200 value = TFR_EST_ai_largest compare = greater_than } }
- set_variable = { TFR_EST_ai_largest = TFR_EST_seats_e200 }
-set_variable = { TFR_EST_ai_nominee = 6 }
-}
-if = {
- limit = { check_variable = { var = TFR_EST_seats_pp value = TFR_EST_ai_largest compare = greater_than } }
- set_variable = { TFR_EST_ai_largest = TFR_EST_seats_pp }
-set_variable = { TFR_EST_ai_nominee = 7 }
-}
-if = {
- limit = { has_game_rule = { rule = TFR_EST_AI_ROUTE option = REFORM } check_variable = { var = TFR_EST_seats_reform value = 0 compare = greater_than } }
- set_variable = { TFR_EST_ai_nominee = 1 }
-}
-if = {
- limit = { has_game_rule = { rule = TFR_EST_AI_ROUTE option = CENTRE } check_variable = { var = TFR_EST_seats_centre value = 0 compare = greater_than } }
- set_variable = { TFR_EST_ai_nominee = 2 }
-}
-if = {
- limit = { has_game_rule = { rule = TFR_EST_AI_ROUTE option = EKRE } check_variable = { var = TFR_EST_seats_ekre value = 0 compare = greater_than } }
- set_variable = { TFR_EST_ai_nominee = 3 }
-}
-if = {
- limit = { has_game_rule = { rule = TFR_EST_AI_ROUTE option = ISAMAA } check_variable = { var = TFR_EST_seats_isamaa value = 0 compare = greater_than } }
- set_variable = { TFR_EST_ai_nominee = 4 }
-}
-if = {
- limit = { has_game_rule = { rule = TFR_EST_AI_ROUTE option = SDE } check_variable = { var = TFR_EST_seats_sde value = 0 compare = greater_than } }
- set_variable = { TFR_EST_ai_nominee = 5 }
-}
-if = {
- limit = { has_game_rule = { rule = TFR_EST_AI_ROUTE option = E200 } check_variable = { var = TFR_EST_seats_e200 value = 0 compare = greater_than } }
- set_variable = { TFR_EST_ai_nominee = 6 }
-}
-if = {
- limit = { has_game_rule = { rule = TFR_EST_AI_ROUTE option = PP } check_variable = { var = TFR_EST_seats_pp value = 0 compare = greater_than } }
- set_variable = { TFR_EST_ai_nominee = 7 }
-}
-if = {
- limit = { check_variable = { var = TFR_EST_ai_nominee value = 1 compare = equals } }
- TFR_EST_nominate_reform = yes
-}
-if = {
- limit = { check_variable = { var = TFR_EST_ai_nominee value = 2 compare = equals } }
- TFR_EST_nominate_centre = yes
-}
-if = {
- limit = { check_variable = { var = TFR_EST_ai_nominee value = 3 compare = equals } }
- TFR_EST_nominate_ekre = yes
-}
-if = {
- limit = { check_variable = { var = TFR_EST_ai_nominee value = 4 compare = equals } }
- TFR_EST_nominate_isamaa = yes
-}
-if = {
- limit = { check_variable = { var = TFR_EST_ai_nominee value = 5 compare = equals } }
- TFR_EST_nominate_sde = yes
-}
-if = {
- limit = { check_variable = { var = TFR_EST_ai_nominee value = 6 compare = equals } }
- TFR_EST_nominate_e200 = yes
-}
-if = {
- limit = { check_variable = { var = TFR_EST_ai_nominee value = 7 compare = equals } }
- TFR_EST_nominate_pp = yes
-}
+ limit = { TFR_EST_independent_parliament = yes NOT = { has_country_flag = TFR_EST_restoration_election } NOT = { has_country_flag = TFR_EST_reform_handover_pending } }
+ # Preferred-party rules affect campaigning, never the coalition leadership.
+ TFR_EST_repair_leadership_mandate = yes
+ set_variable = { TFR_EST_ai_nominee = TFR_EST_mandate_party }
+ TFR_EST_recount_confidence = yes
 if = {
  limit = { check_variable = { var = TFR_EST_confidence_seats value = 51 compare = less_than } check_variable = { var = TFR_EST_seats_isamaa value = 0 compare = greater_than } }
  set_variable = { TFR_EST_coalition_isamaa = 1 }
@@ -1572,6 +1543,8 @@ TFR_EST_confirm_cabinet = yes
 TFR_EST_restore_parliament = {
     clr_country_flag = TFR_EST_occupied
     TFR_EST_clear_coalition = yes
+    TFR_EST_repair_leadership_mandate = yes
+    TFR_EST_recount_confidence = yes
     set_country_flag = TFR_EST_restoration_election
     set_variable = { TFR_EST_restore_days = 0 }
     TFR_EST_enter_caretaker = yes
@@ -1581,6 +1554,7 @@ TFR_EST_restore_parliament = {
 }
 
 TFR_EST_parliament_tick = {
+TFR_EST_repair_leadership_mandate = yes
 set_variable = { TFR_EST_election_this_tick = 0 }
 if = { limit = { has_country_flag = TFR_EST_occupied } TFR_EST_suspend_parliament = yes }
 TFR_EST_reconcile_cabinet_leadership = yes

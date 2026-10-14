@@ -1,5 +1,30 @@
 # Changelog
 
+## 14 October 2026 — economy and military dynamic modifiers
+
+- Added permanent Estonian Economy and Estonian Military dynamic modifiers,
+  following TFR's variable-driven country modifiers and inherited icon assets.
+- Added 16 independent backing variables with neutral initial values, guarded
+  initialization, immediate refresh and daily missing-membership repair.
+- Preserved existing values during repair and kept parent economic modifiers
+  independent. Added source and native-engine regression coverage.
+- Left all focus-tree files and existing focus rewards unchanged. Conversion of
+  their individual ideas is deferred to the later content revision.
+
+## 14 October 2026 — election-led coalition leadership
+
+- Removed the seven player nomination decisions. Centre retains the historical
+  opening leadership; later valid elections select the party with the most seats.
+- Preserved coalition/supply negotiations and 51-vote cabinet confirmation,
+  with the incumbent continuing as caretaker during an electoral handover.
+- Locked between-election confidence recovery to the incumbent. Explicit
+  event/focus hooks are the only permitted non-electoral succession mechanism.
+- Made AI cabinet formation respect the stored mandate instead of overriding
+  it with preferred-party game rules; those preferences now describe campaigning.
+- Displayed coalition leadership separately in the parliament panel and updated
+  instructions. Added leadership regressions and native-engine assertions.
+- Left every focus-tree file unchanged.
+
 ## Executive display integration
 
 - Adopted TFR's Germany-style president and head-of-government presentation.

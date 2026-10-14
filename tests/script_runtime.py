@@ -23,6 +23,8 @@ class Runtime:
         self.global_flags = set()
         self.ideas = set()
         self.dynamic = set()
+        self.dynamic_additions = []
+        self.dynamic_updates = 0
         self.events = []
         self.messages = []
         self.characters = []
@@ -34,6 +36,7 @@ class Runtime:
         self.triggers = {}
         self.props = {"is_ai": "no", "is_subject": "no", "tag": "EST", "original_tag": "EST", "has_war": "no", "has_capitulated": "no"}
         self.props.update({"date": date(2020, 1, 1), "game_rules": {}, "owner": "EST", "controller": "EST", "focus_tree": "TFR_EST_main_tree", "world_wars": set()})
+        self.props['completed_focuses'] = set()
         for directory, catalog in (("scripted_effects", self.effects), ("scripted_triggers", self.triggers)):
             for path in (ROOT / "common" / directory).glob("TFR_EST_*.txt"):
                 tree = parse(path.read_text(encoding="utf-8-sig"), str(path))
@@ -100,6 +103,8 @@ class Runtime:
             return self.props["owner" if key == "is_owned_by" else "controller"] == value
         if key == "has_focus_tree":
             return self.props["focus_tree"] == value
+        if key == "has_completed_focus":
+            return value in self.props['completed_focuses']
         if key == "has_country_leader":
             return value.get("character") == self.leader
         if key == "has_government":
@@ -193,6 +198,11 @@ class Runtime:
                 self.ideas.add(value.get("idea"))
             elif key == "remove_dynamic_modifier":
                 self.dynamic.discard(value.get("modifier"))
+            elif key == "add_dynamic_modifier":
+                self.dynamic.add(value.get("modifier"))
+                self.dynamic_additions.append(value.get("modifier"))
+            elif key == "force_update_dynamic_modifier":
+                self.dynamic_updates += 1
             elif key in {"hidden_effect", "effect"}:
                 self.run(value, args)
             elif key == "while_loop_effect":
@@ -219,6 +229,8 @@ class Runtime:
             elif key == "division_template": self.templates.append(value.get("name"))
             elif key == "load_focus_tree": self.props["focus_tree"] = value.get("tree") if isinstance(value, Block) else value
             elif key == "add_debt_with_inflation": self.calls.append((key, self.temp.get("debt_var_temp")))
+            elif key == "add_political_power":
+                self.props['political_power'] = self.props.get('political_power', Fraction(0)) + self.num(value, args)
             elif key == "clear_variable": self.variables.pop(value, None)
             elif key in {"set_popularities", "clear_array", "custom_effect_tooltip", "mark_focus_tree_layout_dirty", "set_party_name", "set_party_long_name"}:
                 pass

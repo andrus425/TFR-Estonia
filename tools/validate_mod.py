@@ -95,6 +95,9 @@ def validate(tfr, game):
         if rel.startswith("common/scripted_triggers/"):
             for e in tree.entries:
                 register("trigger", e.key, rel)
+        if rel.startswith("common/dynamic_modifiers/"):
+            for e in tree.entries:
+                register("dynamic_modifier", e.key, rel)
         if rel.startswith("common/characters/"):
             chars = tree.get("characters")
             if isinstance(chars, Block):
@@ -145,17 +148,23 @@ def validate(tfr, game):
         if isinstance(ref, str) and ref.startswith("TFR_EST_") and ref not in catalogs[kind]:
             errors.append(f"{rel}:{line}: undefined {kind} {ref}")
 
-    for kind in ("focus", "decision", "category", "idea", "character"):
+    for kind in ("focus", "decision", "category", "idea", "character", "dynamic_modifier"):
         for name in catalogs[kind]:
             if name.startswith("TFR_EST_") and name not in loc:
                 errors.append(f"missing localisation: {name}")
-        if kind in {"focus", "decision", "idea"}:
+        if kind in {"focus", "decision", "idea", "dynamic_modifier"}:
             for name in catalogs[kind]:
                 if name.startswith("TFR_EST_") and name + "_desc" not in loc:
                     errors.append(f"missing description: {name}_desc")
 
     for rel, tree in custom.items():
         for parents, e in tree.walk():
+            if rel.startswith("common/dynamic_modifiers/") and e.key == "icon" and isinstance(e.value, str):
+                if e.value not in sprites:
+                    errors.append(f"{rel}:{e.line}: missing dynamic modifier icon {e.value}")
+            if e.key in {"add_dynamic_modifier", "remove_dynamic_modifier", "has_dynamic_modifier"}:
+                ref = e.value.get("modifier") if isinstance(e.value, Block) else e.value
+                missing("dynamic_modifier", ref, rel, e.line)
             is_effect_definition = rel.startswith("common/scripted_effects/") and not parents
             is_decision_definition = rel.startswith("common/decisions/") and not rel.startswith("common/decisions/categories/") and len(parents) == 1
             if e.key in catalogs["effect"] and isinstance(e.value, Block) and not is_effect_definition and not is_decision_definition:

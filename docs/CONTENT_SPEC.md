@@ -6,9 +6,14 @@ acceptance. Later events are fictional developments in TFR's alternate timeline.
 
 ## Political entry and persistence
 
-All governing routes require an independent parliament, a nominated prime
-minister and at least 51 confidence votes. A party must have seats before it can
-lead a cabinet. Coalition members and supply partners remain separate records.
+All governing routes require an independent parliament, an electoral leadership
+mandate and at least 51 confidence votes. Centre leads the historical opening.
+Subsequent elections automatically give coalition leadership to the party with
+the most seats, with fixed party order resolving exact seat ties. The player
+negotiates partners and supply agreements around that leader. Coalition members
+and supply partners remain separate records. Between elections, ordinary
+confidence recovery retains the incumbent; another succession requires an
+explicit authored event or focus.
 The current confirmed party unlocks its programme; a caretaker cannot enact it.
 
 Each programme has ten focuses, one policy-conflict event, an active cabinet
@@ -27,10 +32,10 @@ ledger. Caretakers retain the incumbent PM, and occupation suspends the display.
 |---|---|---|
 | Keskerakond — Jüri Ratas | Starts as prime minister with the Centre–EKRE–Isamaa coalition. Municipal finance, regional transport, social guarantees, integration and coalition delivery. | Regional and social commitments compete for the budget. War choices emphasize municipal continuity, public support and organized reserves. |
 | Reform — Kaja Kallas | Parliamentary opposition at the start. Digital administration, accountable investment, enterprise, education and European cooperation. | The fiscal debate trades the pace of consolidation against cohesion and service guarantees. War choices balance institutional continuity with interoperable procurement. |
-| EKRE — Mart Helme | Coalition partner initially; can nominate its own cabinet later. Sovereignty, border security, local production, conservative policy and mobilization. | Emergency authority and coalition restraint affect legitimacy and partner relations. War choices emphasize local mobilization or support for the wider allied operation. |
+| EKRE — Mart Helme | Coalition partner initially; can lead a cabinet after winning the most seats. Sovereignty, border security, local production, conservative policy and mobilization. | Emergency authority and coalition restraint affect legitimacy and partner relations. War choices emphasize local mobilization or support for the wider allied operation. |
 | Isamaa — Helir-Valdor Seeder | Coalition partner with 12 initial seats. Family security, constitutional institutions, energy resilience and territorial defense. | A small parliamentary base requires coalition concessions. War choices fund county institutions or territorial command and logistics. |
 | Social Democrats — Indrek Saar | Opposition initially. Labor agreements, regional healthcare, retraining, integration and civil resilience. | Expanded services require funded commitments. War choices distribute support between civilian relief and service families or emergency work. |
-| Eesti 200 — Kristina Kallas | Active outside parliament in 2020; must cross the election threshold before leading a cabinet. Teachers, institutional redesign, university-industry cooperation and long-term planning. | Institutional reform trades speed against continuity of local services. War choices adapt planning to immediate defense while preserving schools and reconstruction capacity. |
+| Eesti 200 — Kristina Kallas | Active outside parliament in 2020; must enter parliament and win the most seats before leading a cabinet. Teachers, institutional redesign, university-industry cooperation and long-term planning. | Institutional reform trades speed against continuity of local services. War choices adapt planning to immediate defense while preserving schools and reconstruction capacity. |
 | Parempoolsed — Lavly Perling | Formation from August 2022 when independent politics is available, then an election and valid cabinet confirmation. Administrative audit, enterprise rules, fiscal discipline, justice and procurement. | Consolidation trades savings against public confidence. War choices emphasize contract scrutiny, essential services and maintainable equipment. |
 
 Party labels in the ledger are authoritative. Ideology popularity is a projection

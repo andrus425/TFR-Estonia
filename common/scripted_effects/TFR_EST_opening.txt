@@ -1,0 +1,228 @@
+# Rewards are called inside each focus's persistent once-only guard.
+TFR_EST_opening_reward_pension_reform = {
+    TFR_EST_initialize_country_modifiers = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = -1 }
+TFR_EST_change_cohesion = yes
+add_political_power = 20
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_opening_reward_teacher_pay = {
+    TFR_EST_initialize_country_modifiers = yes
+    set_temp_variable = { var = TFR_EST_budget_cost value = 20 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_opening_reward_covid_emergency = {
+    TFR_EST_initialize_country_modifiers = yes
+    set_temp_variable = { var = TFR_EST_budget_cost value = 25 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_opening_reward_pension_increase = {
+    TFR_EST_initialize_country_modifiers = yes
+    set_temp_variable = { var = TFR_EST_budget_cost value = 20.8 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_opening_reward_wage_compensation = {
+    TFR_EST_initialize_country_modifiers = yes
+    set_temp_variable = { var = TFR_EST_budget_cost value = 147.9 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
+add_to_variable = { TFR_EST_economy_industrial_capacity_factory_var = 0.01 }
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_opening_reward_excise_relief = {
+    TFR_EST_initialize_country_modifiers = yes
+    set_temp_variable = { var = TFR_EST_budget_cost value = 25 }
+TFR_EST_spend_budget = yes
+add_to_variable = { TFR_EST_economy_consumer_goods_factor_var = -0.01 }
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_opening_reward_eastern_border = {
+    TFR_EST_initialize_country_modifiers = yes
+    set_temp_variable = { var = TFR_EST_budget_cost value = 40 }
+TFR_EST_spend_budget = yes
+set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_opening_reward_kose_voobu = {
+    TFR_EST_initialize_country_modifiers = yes
+    set_temp_variable = { var = TFR_EST_budget_cost value = 30 }
+TFR_EST_spend_budget = yes
+add_to_variable = { TFR_EST_economy_production_speed_buildings_factor_var = 0.01 }
+add_to_variable = { TFR_EST_military_supply_consumption_factor_var = -0.01 }
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_opening_reward_three_seas = {
+    TFR_EST_initialize_country_modifiers = yes
+    add_political_power = 25
+add_to_variable = { TFR_EST_economy_production_factory_efficiency_gain_factor_var = 0.01 }
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_opening_reward_research_budget = {
+    TFR_EST_initialize_country_modifiers = yes
+    set_temp_variable = { var = TFR_EST_budget_cost value = 35 }
+TFR_EST_spend_budget = yes
+add_to_variable = { TFR_EST_economy_research_speed_factor_var = 0.02 }
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_begin_covid_response = {
+    if = {
+        limit = { NOT = { has_country_flag = TFR_EST_opening_covid_announced } }
+        set_country_flag = TFR_EST_opening_covid_announced
+        country_event = { id = tfr_estonia_opening.1 }
+    }
+}
+
+TFR_EST_begin_referendum = {
+    if = {
+        limit = { NOT = { has_country_flag = TFR_EST_done_opening_marriage_referendum } }
+        set_country_flag = TFR_EST_referendum_active
+        TFR_EST_opening_tick = yes
+    }
+}
+
+# Reveal the next stage only once the focus AND the crisis choice have finished.
+TFR_EST_reveal_after_opening = {
+    if = {
+        limit = {
+            has_country_flag = TFR_EST_done_opening_marriage_referendum
+            has_country_flag = TFR_EST_porto_choice_resolved
+            NOT = { has_country_flag = TFR_EST_opening_complete }
+        }
+        set_country_flag = TFR_EST_opening_complete
+        clr_country_flag = TFR_EST_referendum_active
+        mark_focus_tree_layout_dirty = yes
+    }
+}
+TFR_EST_finish_opening = {
+    TFR_EST_reveal_after_opening = yes
+    TFR_EST_opening_tick = yes
+}
+
+# A narrative choice may restore the original 57-seat cabinet, never its seats.
+TFR_EST_keep_ratas = {
+    if = {
+        limit = {
+            TFR_EST_independent_parliament = yes
+            has_country_flag = TFR_EST_porto_investigation_seen
+            NOT = { has_country_flag = TFR_EST_porto_choice_resolved }
+        }
+        set_country_flag = TFR_EST_porto_choice_resolved
+        set_country_flag = TFR_EST_ratas_retained
+        set_country_flag = TFR_EST_scripted_cabinet_change
+        TFR_EST_nominate_centre = yes
+        set_variable = { TFR_EST_coalition_ekre = 1 }
+        set_variable = { TFR_EST_coalition_isamaa = 1 }
+        TFR_EST_recount_confidence = yes
+        TFR_EST_confirm_cabinet = yes
+        set_temp_variable = { var = TFR_EST_cohesion_delta value = -6 }
+        TFR_EST_change_cohesion = yes
+        TFR_EST_reveal_after_opening = yes
+    }
+}
+
+# Ratas remains caretaker until a successor is confirmed by the same parliament.
+TFR_EST_ratas_steps_back = {
+    if = {
+        limit = {
+            TFR_EST_independent_parliament = yes
+            has_country_flag = TFR_EST_porto_investigation_seen
+            NOT = { has_country_flag = TFR_EST_porto_choice_resolved }
+        }
+        set_country_flag = TFR_EST_porto_choice_resolved
+        set_country_flag = TFR_EST_ratas_resigned
+        set_country_flag = TFR_EST_reform_handover_pending
+        set_variable = { TFR_EST_reform_handover_days = 13 }
+        TFR_EST_enter_caretaker = yes
+        set_temp_variable = { var = TFR_EST_cohesion_delta value = -2 }
+        TFR_EST_change_cohesion = yes
+        TFR_EST_reveal_after_opening = yes
+        mark_focus_tree_layout_dirty = yes
+    }
+}
+
+TFR_EST_form_reform_centre_cabinet = {
+    if = {
+        limit = {
+            TFR_EST_independent_parliament = yes
+            has_country_flag = TFR_EST_reform_handover_pending
+            NOT = { has_country_flag = TFR_EST_reform_centre_formed }
+        }
+        set_country_flag = TFR_EST_scripted_cabinet_change
+        TFR_EST_nominate_reform = yes
+        set_variable = { TFR_EST_coalition_centre = 1 }
+        TFR_EST_recount_confidence = yes
+        TFR_EST_confirm_cabinet = yes
+        if = {
+            limit = {
+                check_variable = { var = TFR_EST_pm_party value = 1 compare = equals }
+                NOT = { has_country_flag = TFR_EST_caretaker }
+            }
+            set_country_flag = TFR_EST_reform_centre_formed
+            clr_country_flag = TFR_EST_reform_handover_pending
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+}
+
+TFR_EST_opening_tick = {
+    if = {
+        limit = { TFR_EST_independent_parliament = yes }
+        if = {
+            limit = {
+                has_country_flag = TFR_EST_referendum_active
+                date > 2021.1.11
+                NOT = { has_country_flag = TFR_EST_porto_investigation_seen }
+                NOT = { has_country_flag = TFR_EST_porto_notice_pending }
+            }
+            # Short-lived queue guards recover if occupation drops a queued event.
+            set_country_flag = { flag = TFR_EST_porto_notice_pending days = 2 }
+            country_event = { id = tfr_estonia_opening.10 }
+        }
+        if = {
+            limit = {
+                has_country_flag = TFR_EST_porto_investigation_seen
+                NOT = { has_country_flag = TFR_EST_porto_choice_resolved }
+                NOT = { has_country_flag = TFR_EST_porto_choice_pending }
+            }
+            set_country_flag = { flag = TFR_EST_porto_choice_pending days = 3 }
+            country_event = { id = tfr_estonia_opening.11 days = 1 }
+        }
+        if = {
+            limit = { has_country_flag = TFR_EST_reform_handover_pending }
+            if = {
+                limit = { check_variable = { var = TFR_EST_reform_handover_days value = 0 compare = greater_than } }
+                subtract_from_variable = { TFR_EST_reform_handover_days = 1 }
+            }
+            if = {
+                limit = {
+                    check_variable = { var = TFR_EST_reform_handover_days value = 0 compare = less_than_or_equals }
+                    NOT = { has_country_flag = TFR_EST_new_cabinet_notice_pending }
+                }
+                set_country_flag = { flag = TFR_EST_new_cabinet_notice_pending days = 3 }
+                country_event = { id = tfr_estonia_opening.12 }
+            }
+        }
+        TFR_EST_reveal_after_opening = yes
+    }
+}

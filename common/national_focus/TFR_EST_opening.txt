@@ -1,0 +1,259 @@
+# The compact 2020 Centre-Isamaa-EKRE programme.
+# The main tree imports these shared IDs; no country tree is declared here.
+# Each five-point focus is a 35-day implementation period.
+
+shared_focus = {
+    id = TFR_EST_opening_pension_reform
+    icon = GFX_goal_generic_political_pressure
+    x = 4
+    y = 0
+    cost = 5
+    available = {
+        TFR_EST_opening_coalition_majority = yes
+    }
+    bypass = { has_country_flag = TFR_EST_done_opening_pension_reform }
+    cancel_if_invalid = yes
+    continue_if_invalid = no
+    ai_will_do = { factor = 100 }
+    completion_reward = {
+        if = {
+            limit = { NOT = { has_country_flag = TFR_EST_done_opening_pension_reform } }
+            set_country_flag = TFR_EST_done_opening_pension_reform
+            TFR_EST_opening_reward_pension_reform = yes
+        }
+    }
+}
+
+shared_focus = {
+    id = TFR_EST_opening_teacher_pay
+    icon = GFX_goal_generic_consumer_goods
+    x = 4
+    y = 1
+    cost = 5
+    prerequisite = { focus = TFR_EST_opening_pension_reform }
+    available = {
+        TFR_EST_opening_coalition_majority = yes
+    }
+    bypass = { has_country_flag = TFR_EST_done_opening_teacher_pay }
+    cancel_if_invalid = yes
+    continue_if_invalid = no
+    ai_will_do = { factor = 99 }
+    completion_reward = {
+        if = {
+            limit = { NOT = { has_country_flag = TFR_EST_done_opening_teacher_pay } }
+            set_country_flag = TFR_EST_done_opening_teacher_pay
+            TFR_EST_opening_reward_teacher_pay = yes
+        }
+    }
+}
+
+shared_focus = {
+    id = TFR_EST_opening_covid_emergency
+    icon = GFX_goal_generic_consumer_goods
+    x = 4
+    y = 2
+    cost = 5
+    prerequisite = { focus = TFR_EST_opening_teacher_pay }
+    available = {
+        TFR_EST_opening_coalition_majority = yes
+        date > 2020.3.10
+    }
+    bypass = { has_country_flag = TFR_EST_done_opening_covid_emergency }
+    cancel_if_invalid = yes
+    continue_if_invalid = no
+    ai_will_do = { factor = 98 }
+    select_effect = { TFR_EST_begin_covid_response = yes }
+    completion_reward = {
+        if = {
+            limit = { NOT = { has_country_flag = TFR_EST_done_opening_covid_emergency } }
+            set_country_flag = TFR_EST_done_opening_covid_emergency
+            TFR_EST_opening_reward_covid_emergency = yes
+        }
+    }
+}
+
+shared_focus = {
+    id = TFR_EST_opening_pension_increase
+    icon = GFX_goal_generic_consumer_goods
+    x = 4
+    y = 3
+    cost = 5
+    prerequisite = { focus = TFR_EST_opening_covid_emergency }
+    available = {
+        TFR_EST_opening_coalition_majority = yes
+    }
+    bypass = { has_country_flag = TFR_EST_done_opening_pension_increase }
+    cancel_if_invalid = yes
+    continue_if_invalid = no
+    ai_will_do = { factor = 97 }
+    completion_reward = {
+        if = {
+            limit = { NOT = { has_country_flag = TFR_EST_done_opening_pension_increase } }
+            set_country_flag = TFR_EST_done_opening_pension_increase
+            TFR_EST_opening_reward_pension_increase = yes
+        }
+    }
+}
+
+shared_focus = {
+    id = TFR_EST_opening_wage_compensation
+    icon = GFX_goal_generic_consumer_goods
+    x = 4
+    y = 4
+    cost = 5
+    prerequisite = { focus = TFR_EST_opening_pension_increase }
+    available = {
+        TFR_EST_opening_coalition_majority = yes
+    }
+    bypass = { has_country_flag = TFR_EST_done_opening_wage_compensation }
+    cancel_if_invalid = yes
+    continue_if_invalid = no
+    ai_will_do = { factor = 96 }
+    completion_reward = {
+        if = {
+            limit = { NOT = { has_country_flag = TFR_EST_done_opening_wage_compensation } }
+            set_country_flag = TFR_EST_done_opening_wage_compensation
+            TFR_EST_opening_reward_wage_compensation = yes
+        }
+    }
+}
+
+shared_focus = {
+    id = TFR_EST_opening_excise_relief
+    icon = GFX_goal_generic_trade
+    x = 4
+    y = 5
+    cost = 5
+    prerequisite = { focus = TFR_EST_opening_wage_compensation }
+    available = {
+        TFR_EST_opening_coalition_majority = yes
+    }
+    bypass = { has_country_flag = TFR_EST_done_opening_excise_relief }
+    cancel_if_invalid = yes
+    continue_if_invalid = no
+    ai_will_do = { factor = 95 }
+    completion_reward = {
+        if = {
+            limit = { NOT = { has_country_flag = TFR_EST_done_opening_excise_relief } }
+            set_country_flag = TFR_EST_done_opening_excise_relief
+            TFR_EST_opening_reward_excise_relief = yes
+        }
+    }
+}
+
+shared_focus = {
+    id = TFR_EST_opening_eastern_border
+    icon = GFX_goal_generic_defence
+    x = 4
+    y = 6
+    cost = 5
+    prerequisite = { focus = TFR_EST_opening_excise_relief }
+    available = {
+        TFR_EST_opening_coalition_majority = yes
+    }
+    bypass = { has_country_flag = TFR_EST_done_opening_eastern_border }
+    cancel_if_invalid = yes
+    continue_if_invalid = no
+    ai_will_do = { factor = 94 }
+    completion_reward = {
+        if = {
+            limit = { NOT = { has_country_flag = TFR_EST_done_opening_eastern_border } }
+            set_country_flag = TFR_EST_done_opening_eastern_border
+            TFR_EST_opening_reward_eastern_border = yes
+        }
+    }
+}
+
+shared_focus = {
+    id = TFR_EST_opening_kose_voobu
+    icon = GFX_goal_generic_construct_infrastructure
+    x = 4
+    y = 7
+    cost = 5
+    prerequisite = { focus = TFR_EST_opening_eastern_border }
+    available = {
+        TFR_EST_opening_coalition_majority = yes
+    }
+    bypass = { has_country_flag = TFR_EST_done_opening_kose_voobu }
+    cancel_if_invalid = yes
+    continue_if_invalid = no
+    ai_will_do = { factor = 93 }
+    completion_reward = {
+        if = {
+            limit = { NOT = { has_country_flag = TFR_EST_done_opening_kose_voobu } }
+            set_country_flag = TFR_EST_done_opening_kose_voobu
+            TFR_EST_opening_reward_kose_voobu = yes
+        }
+    }
+}
+
+shared_focus = {
+    id = TFR_EST_opening_three_seas
+    icon = GFX_goal_generic_alliance
+    x = 4
+    y = 8
+    cost = 5
+    prerequisite = { focus = TFR_EST_opening_kose_voobu }
+    available = {
+        TFR_EST_opening_coalition_majority = yes
+    }
+    bypass = { has_country_flag = TFR_EST_done_opening_three_seas }
+    cancel_if_invalid = yes
+    continue_if_invalid = no
+    ai_will_do = { factor = 92 }
+    completion_reward = {
+        if = {
+            limit = { NOT = { has_country_flag = TFR_EST_done_opening_three_seas } }
+            set_country_flag = TFR_EST_done_opening_three_seas
+            TFR_EST_opening_reward_three_seas = yes
+        }
+    }
+}
+
+shared_focus = {
+    id = TFR_EST_opening_research_budget
+    icon = GFX_goal_generic_scientific_exchange
+    x = 4
+    y = 9
+    cost = 5
+    prerequisite = { focus = TFR_EST_opening_three_seas }
+    available = {
+        TFR_EST_opening_coalition_majority = yes
+    }
+    bypass = { has_country_flag = TFR_EST_done_opening_research_budget }
+    cancel_if_invalid = yes
+    continue_if_invalid = no
+    ai_will_do = { factor = 91 }
+    completion_reward = {
+        if = {
+            limit = { NOT = { has_country_flag = TFR_EST_done_opening_research_budget } }
+            set_country_flag = TFR_EST_done_opening_research_budget
+            TFR_EST_opening_reward_research_budget = yes
+        }
+    }
+}
+
+shared_focus = {
+    id = TFR_EST_opening_marriage_referendum
+    icon = GFX_goal_generic_national_unity
+    x = 4
+    y = 10
+    cost = 5
+    prerequisite = { focus = TFR_EST_opening_research_budget }
+    available = {
+        TFR_EST_can_start_referendum = yes
+    }
+    bypass = { has_country_flag = TFR_EST_done_opening_marriage_referendum }
+    cancelable = no
+    cancel_if_invalid = no
+    continue_if_invalid = yes
+    ai_will_do = { factor = 90 }
+    select_effect = { TFR_EST_begin_referendum = yes }
+    completion_reward = {
+        if = {
+            limit = { NOT = { has_country_flag = TFR_EST_done_opening_marriage_referendum } }
+            set_country_flag = TFR_EST_done_opening_marriage_referendum
+            TFR_EST_finish_opening = yes
+        }
+    }
+}

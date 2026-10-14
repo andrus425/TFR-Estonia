@@ -3,181 +3,28 @@ focus_tree = {
     id = TFR_EST_main_tree
     country = { factor = 0 modifier = { add = 100 original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } } }
     default = no
-    initial_show_position = { focus = TFR_EST_republic_at_the_crossroads }
-
-	focus = {
-        id = TFR_EST_republic_at_the_crossroads
-        icon = GFX_goal_generic_national_unity
-        x = 9
-        y = 0
-        cost = 3
-        
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
-        bypass = { has_country_flag = TFR_EST_done_republic_at_the_crossroads }
-        cancel_if_invalid = yes
-        continue_if_invalid = no
-        ai_will_do = { factor = 100 }
-        completion_reward = {
-            set_country_flag = TFR_EST_done_republic_at_the_crossroads
-            add_political_power = 75
-country_event = { id = tfr_estonia_content.1 }
-        }
-    }
-
-	focus = {
-        id = TFR_EST_coalition_contract
-        icon = GFX_goal_generic_national_unity
-        x = 9
-        y = 1
-        cost = 5
-        prerequisite = { focus = TFR_EST_republic_at_the_crossroads }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
-        bypass = { has_country_flag = TFR_EST_done_coalition_contract }
-        cancel_if_invalid = yes
-        continue_if_invalid = no
-        ai_will_do = { factor = 50 }
-        completion_reward = {
-            set_country_flag = TFR_EST_done_coalition_contract
-            set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
-TFR_EST_change_cohesion = yes
-add_political_power = 40
-        }
-    }
-
-	focus = {
-        id = TFR_EST_public_health_contingency
-        icon = GFX_goal_generic_consumer_goods
-        x = 7
-        y = 2
-        cost = 5
-        prerequisite = { focus = TFR_EST_coalition_contract }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
-        bypass = { has_country_flag = TFR_EST_done_public_health_contingency }
-        cancel_if_invalid = yes
-        continue_if_invalid = no
-        ai_will_do = { factor = 50 }
-        completion_reward = {
-            set_country_flag = TFR_EST_done_public_health_contingency
-            set_temp_variable = { var = TFR_EST_budget_cost value = 25 }
-TFR_EST_spend_budget = yes
-country_event = { id = tfr_estonia_content.2 }
-        }
-    }
-
-	focus = {
-        id = TFR_EST_remote_government
-        icon = GFX_goal_generic_intelligence_exchange
-        x = 11
-        y = 2
-        cost = 5
-        prerequisite = { focus = TFR_EST_coalition_contract }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
-        bypass = { has_country_flag = TFR_EST_done_remote_government }
-        cancel_if_invalid = yes
-        continue_if_invalid = no
-        ai_will_do = { factor = 30 }
-        completion_reward = {
-            set_country_flag = TFR_EST_done_remote_government
-            set_temp_variable = { var = TFR_EST_budget_cost value = 20 }
-TFR_EST_spend_budget = yes
-add_ideas = TFR_EST_government_continuity
-set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
-TFR_EST_change_cohesion = yes
-        }
-    }
-
-	focus = {
-        id = TFR_EST_presidential_reserve
-        icon = GFX_goal_generic_national_unity
-        x = 7
-        y = 3
-        cost = 5
-        prerequisite = { focus = TFR_EST_public_health_contingency }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
-        bypass = { has_country_flag = TFR_EST_done_presidential_reserve }
-        cancel_if_invalid = yes
-        continue_if_invalid = no
-        ai_will_do = { factor = 20 }
-        completion_reward = {
-            set_country_flag = TFR_EST_done_presidential_reserve
-            set_temp_variable = { var = TFR_EST_cohesion_delta value = 5 }
-TFR_EST_change_cohesion = yes
-country_event = { id = tfr_estonia_content.3 }
-        }
-    }
-
-	focus = {
-        id = TFR_EST_protect_livelihoods
-        icon = GFX_goal_generic_consumer_goods
-        x = 9
-        y = 3
-        cost = 5
-        prerequisite = { focus = TFR_EST_public_health_contingency }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
-        bypass = { has_country_flag = TFR_EST_done_protect_livelihoods }
-        cancel_if_invalid = yes
-        continue_if_invalid = no
-        ai_will_do = { factor = 25 }
-        completion_reward = {
-            set_country_flag = TFR_EST_done_protect_livelihoods
-            set_temp_variable = { var = TFR_EST_budget_cost value = 65 }
-TFR_EST_spend_budget = yes
-set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
-TFR_EST_change_cohesion = yes
-add_political_power = -25
-        }
-    }
-
-	focus = {
-        id = TFR_EST_credible_institutions
-        icon = GFX_goal_generic_political_pressure
-        x = 11
-        y = 3
-        cost = 5
-        prerequisite = { focus = TFR_EST_remote_government }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
-        bypass = { has_country_flag = TFR_EST_done_credible_institutions }
-        cancel_if_invalid = yes
-        continue_if_invalid = no
-        ai_will_do = { factor = 20 }
-        completion_reward = {
-            set_country_flag = TFR_EST_done_credible_institutions
-            set_temp_variable = { var = TFR_EST_cohesion_delta value = 5 }
-TFR_EST_change_cohesion = yes
-add_ideas = TFR_EST_open_administration
-        }
-    }
-
-	focus = {
-        id = TFR_EST_national_security_review
-        icon = GFX_goal_generic_defence
-        x = 9
-        y = 4
-        cost = 5
-        prerequisite = { focus = TFR_EST_presidential_reserve }
-prerequisite = { focus = TFR_EST_credible_institutions }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
-        bypass = { has_country_flag = TFR_EST_done_national_security_review }
-        cancel_if_invalid = yes
-        continue_if_invalid = no
-        ai_will_do = { factor = 40 }
-        completion_reward = {
-            set_country_flag = TFR_EST_done_national_security_review
-            set_temp_variable = { var = TFR_EST_readiness_delta value = 5 }
-TFR_EST_change_readiness = yes
-army_experience = 10
-set_country_flag = TFR_EST_security_review
-        }
-    }
+    initial_show_position = { focus = TFR_EST_opening_pension_reform }
+    shared_focus = TFR_EST_opening_pension_reform
+    shared_focus = TFR_EST_opening_teacher_pay
+    shared_focus = TFR_EST_opening_covid_emergency
+    shared_focus = TFR_EST_opening_pension_increase
+    shared_focus = TFR_EST_opening_wage_compensation
+    shared_focus = TFR_EST_opening_excise_relief
+    shared_focus = TFR_EST_opening_eastern_border
+    shared_focus = TFR_EST_opening_kose_voobu
+    shared_focus = TFR_EST_opening_three_seas
+    shared_focus = TFR_EST_opening_research_budget
+    shared_focus = TFR_EST_opening_marriage_referendum
 
 	focus = {
         id = TFR_EST_reform_cabinet
         icon = GFX_goal_generic_political_pressure
         x = 0
-        y = 6
+        y = 13
         cost = 5
-        prerequisite = { focus = TFR_EST_coalition_contract }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_reform_cabinet }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -194,10 +41,11 @@ add_political_power = 60
         id = TFR_EST_reform_digital_services
         icon = GFX_goal_generic_scientific_exchange
         x = 0
-        y = 7
+        y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_reform_cabinet }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_reform_digital_services }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -215,10 +63,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_reform_investment
         icon = GFX_goal_generic_trade
         x = 0
-        y = 8
+        y = 15
         cost = 5
         prerequisite = { focus = TFR_EST_reform_digital_services }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_reform_investment }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -235,10 +84,11 @@ add_political_power = 40
         id = TFR_EST_reform_budget_review
         icon = GFX_goal_generic_consumer_goods
         x = 0
-        y = 9
+        y = 16
         cost = 5
         prerequisite = { focus = TFR_EST_reform_investment }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_reform_budget_review }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -254,10 +104,11 @@ country_event = { id = tfr_estonia_content.11 }
         id = TFR_EST_reform_tartu_innovation
         icon = GFX_goal_generic_scientific_exchange
         x = 0
-        y = 10
+        y = 17
         cost = 5
         prerequisite = { focus = TFR_EST_reform_budget_review }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_reform_tartu_innovation }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -276,10 +127,11 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         id = TFR_EST_reform_school_access
         icon = GFX_goal_generic_consumer_goods
         x = 0
-        y = 11
+        y = 18
         cost = 5
         prerequisite = { focus = TFR_EST_reform_tartu_innovation }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_reform_school_access }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -297,10 +149,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_reform_european_networks
         icon = GFX_goal_generic_alliance
         x = 0
-        y = 12
+        y = 19
         cost = 5
         prerequisite = { focus = TFR_EST_reform_school_access }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_reform_european_networks }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -317,10 +170,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_reform_precision_defence
         icon = GFX_goal_generic_defence
         x = 0
-        y = 13
+        y = 20
         cost = 5
         prerequisite = { focus = TFR_EST_reform_european_networks }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_reform_precision_defence }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -339,10 +193,11 @@ army_experience = 15
         id = TFR_EST_reform_crisis_transparency
         icon = GFX_goal_generic_national_unity
         x = 0
-        y = 14
+        y = 21
         cost = 5
         prerequisite = { focus = TFR_EST_reform_precision_defence }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_reform_crisis_transparency }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -360,10 +215,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_reform_programme
         icon = GFX_goal_generic_trade
         x = 0
-        y = 15
+        y = 22
         cost = 5
         prerequisite = { focus = TFR_EST_reform_crisis_transparency }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_reform_programme }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -380,10 +236,11 @@ country_event = { id = tfr_estonia_content.17 }
         id = TFR_EST_centre_cabinet
         icon = GFX_goal_generic_national_unity
         x = 3
-        y = 6
+        y = 13
         cost = 5
-        prerequisite = { focus = TFR_EST_coalition_contract }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_centre_cabinet }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -400,10 +257,11 @@ add_political_power = 50
         id = TFR_EST_centre_municipal_compact
         icon = GFX_goal_generic_consumer_goods
         x = 3
-        y = 7
+        y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_centre_cabinet }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_centre_municipal_compact }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -421,10 +279,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_centre_regional_transport
         icon = GFX_goal_generic_construct_infrastructure
         x = 3
-        y = 8
+        y = 15
         cost = 5
         prerequisite = { focus = TFR_EST_centre_municipal_compact }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_centre_regional_transport }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -442,10 +301,11 @@ add_building_construction = { type = infrastructure level = 1 instant_build = ye
         id = TFR_EST_centre_family_security
         icon = GFX_goal_generic_consumer_goods
         x = 3
-        y = 9
+        y = 16
         cost = 5
         prerequisite = { focus = TFR_EST_centre_regional_transport }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_centre_family_security }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -464,10 +324,11 @@ add_political_power = -20
         id = TFR_EST_centre_integration
         icon = GFX_goal_generic_national_unity
         x = 3
-        y = 10
+        y = 17
         cost = 5
         prerequisite = { focus = TFR_EST_centre_family_security }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_centre_integration }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -486,10 +347,11 @@ country_event = { id = tfr_estonia_content.10 }
         id = TFR_EST_centre_fair_procurement
         icon = GFX_goal_generic_political_pressure
         x = 3
-        y = 11
+        y = 18
         cost = 5
         prerequisite = { focus = TFR_EST_centre_integration }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_centre_fair_procurement }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -506,10 +368,11 @@ add_political_power = -25
         id = TFR_EST_centre_urban_industry
         icon = GFX_goal_generic_construct_civ_factory
         x = 3
-        y = 12
+        y = 19
         cost = 5
         prerequisite = { focus = TFR_EST_centre_fair_procurement }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_centre_urban_industry }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -528,10 +391,11 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         id = TFR_EST_centre_broad_defence
         icon = GFX_goal_generic_defence
         x = 3
-        y = 13
+        y = 20
         cost = 5
         prerequisite = { focus = TFR_EST_centre_urban_industry }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_centre_broad_defence }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -551,10 +415,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_centre_social_war_compact
         icon = GFX_goal_generic_major_war
         x = 3
-        y = 14
+        y = 21
         cost = 5
         prerequisite = { focus = TFR_EST_centre_broad_defence }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_centre_social_war_compact }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -574,10 +439,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_centre_programme
         icon = GFX_goal_generic_national_unity
         x = 3
-        y = 15
+        y = 22
         cost = 5
         prerequisite = { focus = TFR_EST_centre_social_war_compact }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_centre_programme }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -594,10 +460,11 @@ country_event = { id = tfr_estonia_content.17 }
         id = TFR_EST_ekre_cabinet
         icon = GFX_goal_generic_national_unity
         x = 6
-        y = 6
+        y = 13
         cost = 5
-        prerequisite = { focus = TFR_EST_coalition_contract }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_ekre_cabinet }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -614,10 +481,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_ekre_local_voice
         icon = GFX_goal_generic_consumer_goods
         x = 6
-        y = 7
+        y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_ekre_cabinet }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_ekre_local_voice }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -635,10 +503,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_ekre_sovereignty_review
         icon = GFX_goal_generic_political_pressure
         x = 6
-        y = 8
+        y = 15
         cost = 5
         prerequisite = { focus = TFR_EST_ekre_local_voice }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_ekre_sovereignty_review }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -654,10 +523,11 @@ country_event = { id = tfr_estonia_content.12 }
         id = TFR_EST_ekre_border_service
         icon = GFX_goal_generic_defence
         x = 6
-        y = 9
+        y = 16
         cost = 5
         prerequisite = { focus = TFR_EST_ekre_sovereignty_review }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_ekre_border_service }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -677,10 +547,11 @@ add_building_construction = { type = anti_air_building level = 1 instant_build =
         id = TFR_EST_ekre_rural_enterprise
         icon = GFX_goal_generic_construct_civ_factory
         x = 6
-        y = 10
+        y = 17
         cost = 5
         prerequisite = { focus = TFR_EST_ekre_border_service }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_ekre_rural_enterprise }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -699,10 +570,11 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         id = TFR_EST_ekre_family_policy
         icon = GFX_goal_generic_consumer_goods
         x = 6
-        y = 11
+        y = 18
         cost = 5
         prerequisite = { focus = TFR_EST_ekre_rural_enterprise }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_ekre_family_policy }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -720,10 +592,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_ekre_civil_duty
         icon = GFX_goal_generic_army_doctrines
         x = 6
-        y = 12
+        y = 19
         cost = 5
         prerequisite = { focus = TFR_EST_ekre_family_policy }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_ekre_civil_duty }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -743,10 +616,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_ekre_domestic_workshops
         icon = GFX_goal_generic_construct_mil_factory
         x = 6
-        y = 13
+        y = 20
         cost = 5
         prerequisite = { focus = TFR_EST_ekre_civil_duty }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_ekre_domestic_workshops }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -765,10 +639,11 @@ add_building_construction = { type = arms_factory level = 1 instant_build = yes 
         id = TFR_EST_ekre_wartime_sovereignty
         icon = GFX_goal_generic_major_war
         x = 6
-        y = 14
+        y = 21
         cost = 5
         prerequisite = { focus = TFR_EST_ekre_domestic_workshops }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_ekre_wartime_sovereignty }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -787,10 +662,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_ekre_programme
         icon = GFX_goal_generic_national_unity
         x = 6
-        y = 15
+        y = 22
         cost = 5
         prerequisite = { focus = TFR_EST_ekre_wartime_sovereignty }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_ekre_programme }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -807,10 +683,11 @@ country_event = { id = tfr_estonia_content.17 }
         id = TFR_EST_isamaa_cabinet
         icon = GFX_goal_generic_national_unity
         x = 9
-        y = 6
+        y = 13
         cost = 5
-        prerequisite = { focus = TFR_EST_coalition_contract }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_isamaa_cabinet }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -827,10 +704,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_isamaa_language
         icon = GFX_goal_generic_consumer_goods
         x = 9
-        y = 7
+        y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_isamaa_cabinet }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_isamaa_language }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -848,10 +726,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_isamaa_family_housing
         icon = GFX_goal_generic_construct_civ_factory
         x = 9
-        y = 8
+        y = 15
         cost = 5
         prerequisite = { focus = TFR_EST_isamaa_language }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_isamaa_family_housing }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -869,10 +748,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_isamaa_energy_security
         icon = GFX_goal_generic_oil_refinery
         x = 9
-        y = 9
+        y = 16
         cost = 5
         prerequisite = { focus = TFR_EST_isamaa_family_housing }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_isamaa_energy_security }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -889,10 +769,11 @@ country_event = { id = tfr_estonia_content.13 }
         id = TFR_EST_isamaa_county_institutions
         icon = GFX_goal_generic_national_unity
         x = 9
-        y = 10
+        y = 17
         cost = 5
         prerequisite = { focus = TFR_EST_isamaa_energy_security }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_isamaa_county_institutions }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -910,10 +791,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_isamaa_national_industry
         icon = GFX_goal_generic_construct_civ_factory
         x = 9
-        y = 11
+        y = 18
         cost = 5
         prerequisite = { focus = TFR_EST_isamaa_county_institutions }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_isamaa_national_industry }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -932,10 +814,11 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         id = TFR_EST_isamaa_territorial_defence
         icon = GFX_goal_generic_defence
         x = 9
-        y = 12
+        y = 19
         cost = 5
         prerequisite = { focus = TFR_EST_isamaa_national_industry }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_isamaa_territorial_defence }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -954,10 +837,11 @@ army_experience = 15
         id = TFR_EST_isamaa_strategic_routes
         icon = GFX_goal_generic_construct_infrastructure
         x = 9
-        y = 13
+        y = 20
         cost = 5
         prerequisite = { focus = TFR_EST_isamaa_territorial_defence }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_isamaa_strategic_routes }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -977,10 +861,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_isamaa_constitutional_continuity
         icon = GFX_goal_generic_political_pressure
         x = 9
-        y = 14
+        y = 21
         cost = 5
         prerequisite = { focus = TFR_EST_isamaa_strategic_routes }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_isamaa_constitutional_continuity }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -998,10 +883,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_isamaa_programme
         icon = GFX_goal_generic_national_unity
         x = 9
-        y = 15
+        y = 22
         cost = 5
         prerequisite = { focus = TFR_EST_isamaa_constitutional_continuity }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_isamaa_programme }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1018,10 +904,11 @@ country_event = { id = tfr_estonia_content.17 }
         id = TFR_EST_sde_cabinet
         icon = GFX_goal_generic_consumer_goods
         x = 12
-        y = 6
+        y = 13
         cost = 5
-        prerequisite = { focus = TFR_EST_coalition_contract }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_sde_cabinet }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1038,10 +925,11 @@ add_political_power = 50
         id = TFR_EST_sde_labour_compact
         icon = GFX_goal_generic_national_unity
         x = 12
-        y = 7
+        y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_sde_cabinet }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_sde_labour_compact }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1059,10 +947,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_sde_health_network
         icon = GFX_goal_generic_consumer_goods
         x = 12
-        y = 8
+        y = 15
         cost = 5
         prerequisite = { focus = TFR_EST_sde_labour_compact }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_sde_health_network }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1080,10 +969,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_sde_social_budget
         icon = GFX_goal_generic_political_pressure
         x = 12
-        y = 9
+        y = 16
         cost = 5
         prerequisite = { focus = TFR_EST_sde_health_network }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_sde_social_budget }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1099,10 +989,11 @@ country_event = { id = tfr_estonia_content.14 }
         id = TFR_EST_sde_training_jobs
         icon = GFX_goal_generic_construct_civ_factory
         x = 12
-        y = 10
+        y = 17
         cost = 5
         prerequisite = { focus = TFR_EST_sde_social_budget }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_sde_training_jobs }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1121,10 +1012,11 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         id = TFR_EST_sde_inclusive_republic
         icon = GFX_goal_generic_national_unity
         x = 12
-        y = 11
+        y = 18
         cost = 5
         prerequisite = { focus = TFR_EST_sde_training_jobs }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_sde_inclusive_republic }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1142,10 +1034,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_sde_civil_resilience
         icon = GFX_goal_generic_defence
         x = 12
-        y = 12
+        y = 19
         cost = 5
         prerequisite = { focus = TFR_EST_sde_inclusive_republic }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_sde_civil_resilience }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1165,10 +1058,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_sde_service_families
         icon = GFX_goal_generic_army_doctrines
         x = 12
-        y = 13
+        y = 20
         cost = 5
         prerequisite = { focus = TFR_EST_sde_civil_resilience }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_sde_service_families }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1188,10 +1082,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_sde_fair_requisition
         icon = GFX_goal_generic_major_war
         x = 12
-        y = 14
+        y = 21
         cost = 5
         prerequisite = { focus = TFR_EST_sde_service_families }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_sde_fair_requisition }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1208,10 +1103,11 @@ army_experience = 10
         id = TFR_EST_sde_programme
         icon = GFX_goal_generic_consumer_goods
         x = 12
-        y = 15
+        y = 22
         cost = 5
         prerequisite = { focus = TFR_EST_sde_fair_requisition }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_sde_programme }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1228,10 +1124,11 @@ country_event = { id = tfr_estonia_content.17 }
         id = TFR_EST_e200_cabinet
         icon = GFX_goal_generic_political_pressure
         x = 15
-        y = 6
+        y = 13
         cost = 5
-        prerequisite = { focus = TFR_EST_coalition_contract }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_e200_cabinet }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1248,10 +1145,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_e200_long_plan
         icon = GFX_goal_generic_scientific_exchange
         x = 15
-        y = 7
+        y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_e200_cabinet }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_e200_long_plan }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1268,10 +1166,11 @@ add_political_power = 35
         id = TFR_EST_e200_teachers
         icon = GFX_goal_generic_consumer_goods
         x = 15
-        y = 8
+        y = 15
         cost = 5
         prerequisite = { focus = TFR_EST_e200_long_plan }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_e200_teachers }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1289,10 +1188,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_e200_institutional_redesign
         icon = GFX_goal_generic_political_pressure
         x = 15
-        y = 9
+        y = 16
         cost = 5
         prerequisite = { focus = TFR_EST_e200_teachers }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_e200_institutional_redesign }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1308,10 +1208,11 @@ country_event = { id = tfr_estonia_content.15 }
         id = TFR_EST_e200_university_industry
         icon = GFX_goal_generic_scientific_exchange
         x = 15
-        y = 10
+        y = 17
         cost = 5
         prerequisite = { focus = TFR_EST_e200_institutional_redesign }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_e200_university_industry }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1330,10 +1231,11 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         id = TFR_EST_e200_shared_schools
         icon = GFX_goal_generic_national_unity
         x = 15
-        y = 11
+        y = 18
         cost = 5
         prerequisite = { focus = TFR_EST_e200_university_industry }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_e200_shared_schools }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1351,10 +1253,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_e200_future_services
         icon = GFX_goal_generic_consumer_goods
         x = 15
-        y = 12
+        y = 19
         cost = 5
         prerequisite = { focus = TFR_EST_e200_shared_schools }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_e200_future_services }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1372,10 +1275,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_e200_adaptive_defence
         icon = GFX_goal_generic_defence
         x = 15
-        y = 13
+        y = 20
         cost = 5
         prerequisite = { focus = TFR_EST_e200_future_services }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_e200_adaptive_defence }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1394,10 +1298,11 @@ army_experience = 15
         id = TFR_EST_e200_future_after_war
         icon = GFX_goal_generic_construct_infrastructure
         x = 15
-        y = 14
+        y = 21
         cost = 5
         prerequisite = { focus = TFR_EST_e200_adaptive_defence }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_e200_future_after_war }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1416,10 +1321,11 @@ add_political_power = 30
         id = TFR_EST_e200_programme
         icon = GFX_goal_generic_scientific_exchange
         x = 15
-        y = 15
+        y = 22
         cost = 5
         prerequisite = { focus = TFR_EST_e200_future_after_war }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_e200_programme }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1436,10 +1342,11 @@ country_event = { id = tfr_estonia_content.17 }
         id = TFR_EST_pp_cabinet
         icon = GFX_goal_generic_political_pressure
         x = 18
-        y = 6
+        y = 13
         cost = 5
-        prerequisite = { focus = TFR_EST_coalition_contract }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
         bypass = { has_country_flag = TFR_EST_done_pp_cabinet }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1456,10 +1363,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_pp_audit
         icon = GFX_goal_generic_consumer_goods
         x = 18
-        y = 7
+        y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_pp_cabinet }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
         bypass = { has_country_flag = TFR_EST_done_pp_audit }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1476,10 +1384,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_pp_enterprise_rules
         icon = GFX_goal_generic_trade
         x = 18
-        y = 8
+        y = 15
         cost = 5
         prerequisite = { focus = TFR_EST_pp_audit }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
         bypass = { has_country_flag = TFR_EST_done_pp_enterprise_rules }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1496,10 +1405,11 @@ add_political_power = 40
         id = TFR_EST_pp_fiscal_choice
         icon = GFX_goal_generic_political_pressure
         x = 18
-        y = 9
+        y = 16
         cost = 5
         prerequisite = { focus = TFR_EST_pp_enterprise_rules }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
         bypass = { has_country_flag = TFR_EST_done_pp_fiscal_choice }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1515,10 +1425,11 @@ country_event = { id = tfr_estonia_content.16 }
         id = TFR_EST_pp_industrial_sites
         icon = GFX_goal_generic_construct_civ_factory
         x = 18
-        y = 10
+        y = 17
         cost = 5
         prerequisite = { focus = TFR_EST_pp_fiscal_choice }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
         bypass = { has_country_flag = TFR_EST_done_pp_industrial_sites }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1537,10 +1448,11 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         id = TFR_EST_pp_justice_capacity
         icon = GFX_goal_generic_national_unity
         x = 18
-        y = 11
+        y = 18
         cost = 5
         prerequisite = { focus = TFR_EST_pp_industrial_sites }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
         bypass = { has_country_flag = TFR_EST_done_pp_justice_capacity }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1558,10 +1470,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_pp_targeted_services
         icon = GFX_goal_generic_consumer_goods
         x = 18
-        y = 12
+        y = 19
         cost = 5
         prerequisite = { focus = TFR_EST_pp_justice_capacity }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
         bypass = { has_country_flag = TFR_EST_done_pp_targeted_services }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1579,10 +1492,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_pp_procurement_discipline
         icon = GFX_goal_generic_military_deal
         x = 18
-        y = 13
+        y = 20
         cost = 5
         prerequisite = { focus = TFR_EST_pp_targeted_services }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
         bypass = { has_country_flag = TFR_EST_done_pp_procurement_discipline }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1601,10 +1515,11 @@ army_experience = 15
         id = TFR_EST_pp_crisis_reserves
         icon = GFX_goal_generic_defence
         x = 18
-        y = 14
+        y = 21
         cost = 5
         prerequisite = { focus = TFR_EST_pp_procurement_discipline }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
         bypass = { has_country_flag = TFR_EST_done_pp_crisis_reserves }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1624,10 +1539,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_pp_programme
         icon = GFX_goal_generic_trade
         x = 18
-        y = 15
+        y = 22
         cost = 5
         prerequisite = { focus = TFR_EST_pp_crisis_reserves }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
         bypass = { has_country_flag = TFR_EST_done_pp_programme }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1644,10 +1560,11 @@ country_event = { id = tfr_estonia_content.17 }
         id = TFR_EST_secure_records
         icon = GFX_goal_generic_intelligence_exchange
         x = 23
-        y = 2
+        y = 9
         cost = 5
-        prerequisite = { focus = TFR_EST_coalition_contract }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_secure_records }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1664,10 +1581,11 @@ add_ideas = TFR_EST_secure_digital_state
         id = TFR_EST_technical_training
         icon = GFX_goal_generic_scientific_exchange
         x = 23
-        y = 3
+        y = 10
         cost = 5
         prerequisite = { focus = TFR_EST_secure_records }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_technical_training }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1685,10 +1603,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_tartu_research
         icon = GFX_goal_generic_scientific_exchange
         x = 23
-        y = 4
+        y = 11
         cost = 5
         prerequisite = { focus = TFR_EST_technical_training }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_tartu_research }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1705,10 +1624,11 @@ add_ideas = TFR_EST_research_partnerships
         id = TFR_EST_rural_broadband
         icon = GFX_goal_generic_radar
         x = 23
-        y = 5
+        y = 12
         cost = 5
         prerequisite = { focus = TFR_EST_tartu_research }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_rural_broadband }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1728,10 +1648,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_cyber_exercises
         icon = GFX_goal_generic_intelligence_exchange
         x = 23
-        y = 6
+        y = 13
         cost = 5
         prerequisite = { focus = TFR_EST_rural_broadband }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_cyber_exercises }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1750,10 +1671,11 @@ add_political_power = 25
         id = TFR_EST_digital_civic_compact
         icon = GFX_goal_generic_national_unity
         x = 23
-        y = 7
+        y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_cyber_exercises }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_digital_civic_compact }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1770,10 +1692,11 @@ country_event = { id = tfr_estonia_content.20 }
         id = TFR_EST_industrial_survey
         icon = GFX_goal_generic_production
         x = 26
-        y = 2
+        y = 9
         cost = 5
-        prerequisite = { focus = TFR_EST_coalition_contract }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_industrial_survey }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1789,10 +1712,11 @@ set_country_flag = TFR_EST_industrial_survey
         id = TFR_EST_tallinn_industry
         icon = GFX_goal_generic_construct_civ_factory
         x = 26
-        y = 3
+        y = 10
         cost = 5
         prerequisite = { focus = TFR_EST_industrial_survey }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_tallinn_industry }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1811,10 +1735,11 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         id = TFR_EST_livonia_logistics
         icon = GFX_goal_generic_construct_infrastructure
         x = 26
-        y = 4
+        y = 11
         cost = 5
         prerequisite = { focus = TFR_EST_tallinn_industry }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_livonia_logistics }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1834,10 +1759,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_defence_contracts
         icon = GFX_goal_generic_construct_mil_factory
         x = 26
-        y = 5
+        y = 12
         cost = 5
         prerequisite = { focus = TFR_EST_livonia_logistics }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_defence_contracts }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1856,10 +1782,11 @@ add_building_construction = { type = arms_factory level = 1 instant_build = yes 
         id = TFR_EST_maintenance_network
         icon = GFX_goal_generic_production2
         x = 26
-        y = 6
+        y = 13
         cost = 5
         prerequisite = { focus = TFR_EST_defence_contracts }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_maintenance_network }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1878,10 +1805,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_productive_republic
         icon = GFX_goal_generic_trade
         x = 26
-        y = 7
+        y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_maintenance_network }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_productive_republic }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1898,10 +1826,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_energy_audit
         icon = GFX_goal_generic_oil_refinery
         x = 29
-        y = 2
+        y = 9
         cost = 5
-        prerequisite = { focus = TFR_EST_coalition_contract }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_energy_audit }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1918,10 +1847,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_ida_viru_transition
         icon = GFX_goal_generic_construct_civ_factory
         x = 29
-        y = 3
+        y = 10
         cost = 5
         prerequisite = { focus = TFR_EST_energy_audit }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_ida_viru_transition }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1942,10 +1872,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_grid_resilience
         icon = GFX_goal_generic_construct_infrastructure
         x = 29
-        y = 4
+        y = 11
         cost = 5
         prerequisite = { focus = TFR_EST_ida_viru_transition }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_grid_resilience }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1965,10 +1896,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_emergency_energy
         icon = GFX_goal_generic_oil_refinery
         x = 29
-        y = 5
+        y = 12
         cost = 5
         prerequisite = { focus = TFR_EST_grid_resilience }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_emergency_energy }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1986,10 +1918,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_affordable_heat
         icon = GFX_goal_generic_consumer_goods
         x = 29
-        y = 6
+        y = 13
         cost = 5
         prerequisite = { focus = TFR_EST_emergency_energy }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_affordable_heat }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2007,10 +1940,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_resilient_utilities
         icon = GFX_goal_generic_defence
         x = 29
-        y = 7
+        y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_affordable_heat }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_resilient_utilities }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2030,10 +1964,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_reserve_register
         icon = GFX_goal_generic_army_doctrines
         x = 33
-        y = 2
+        y = 9
         cost = 5
-        prerequisite = { focus = TFR_EST_national_security_review }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_reserve_register }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2051,10 +1986,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_kaitseliit_training
         icon = GFX_goal_generic_special_forces
         x = 33
-        y = 3
+        y = 10
         cost = 5
         prerequisite = { focus = TFR_EST_reserve_register }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_kaitseliit_training }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2074,10 +2010,11 @@ add_ideas = TFR_EST_kaitseliit_network
         id = TFR_EST_reserve_training_exercise
         icon = GFX_goal_generic_army_doctrines
         x = 33
-        y = 4
+        y = 11
         cost = 5
         prerequisite = { focus = TFR_EST_kaitseliit_training }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_reserve_training_exercise }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2096,10 +2033,11 @@ army_experience = 20
         id = TFR_EST_reserve_depots
         icon = GFX_goal_generic_small_arms
         x = 33
-        y = 5
+        y = 12
         cost = 5
         prerequisite = { focus = TFR_EST_reserve_training_exercise }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_reserve_depots }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2117,10 +2055,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_mobilization_plans
         icon = GFX_goal_generic_army_doctrines
         x = 33
-        y = 6
+        y = 13
         cost = 5
         prerequisite = { focus = TFR_EST_reserve_depots }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_mobilization_plans }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2138,10 +2077,11 @@ custom_effect_tooltip = TFR_EST_reserve_plan_tt
         id = TFR_EST_total_defence
         icon = GFX_goal_generic_defence
         x = 33
-        y = 7
+        y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_mobilization_plans }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_total_defence }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2160,10 +2100,11 @@ add_ideas = TFR_EST_total_defence
         id = TFR_EST_logistics_audit
         icon = GFX_goal_generic_army_motorized
         x = 36
-        y = 2
+        y = 9
         cost = 5
-        prerequisite = { focus = TFR_EST_national_security_review }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_logistics_audit }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2182,10 +2123,11 @@ army_experience = 10
         id = TFR_EST_northern_routes
         icon = GFX_goal_generic_construct_infrastructure
         x = 36
-        y = 3
+        y = 10
         cost = 5
         prerequisite = { focus = TFR_EST_logistics_audit }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_northern_routes }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2205,10 +2147,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_tartu_distribution
         icon = GFX_goal_generic_construct_infrastructure
         x = 36
-        y = 4
+        y = 11
         cost = 5
         prerequisite = { focus = TFR_EST_northern_routes }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_tartu_distribution }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2228,10 +2171,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_field_repair
         icon = GFX_goal_generic_production
         x = 36
-        y = 5
+        y = 12
         cost = 5
         prerequisite = { focus = TFR_EST_tartu_distribution }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_field_repair }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2249,10 +2193,11 @@ army_experience = 15
         id = TFR_EST_air_defence_sites
         icon = GFX_goal_generic_air_fighter
         x = 36
-        y = 6
+        y = 13
         cost = 5
         prerequisite = { focus = TFR_EST_field_repair }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_air_defence_sites }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2272,10 +2217,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_national_supply_plan
         icon = GFX_goal_generic_army_motorized
         x = 36
-        y = 7
+        y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_air_defence_sites }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_national_supply_plan }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2294,10 +2240,11 @@ add_ideas = TFR_EST_joint_logistics
         id = TFR_EST_allied_liaison
         icon = GFX_goal_generic_alliance
         x = 39
-        y = 2
+        y = 9
         cost = 5
-        prerequisite = { focus = TFR_EST_national_security_review }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_allied_liaison }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2314,10 +2261,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_interoperability
         icon = GFX_goal_generic_intelligence_exchange
         x = 39
-        y = 3
+        y = 10
         cost = 5
         prerequisite = { focus = TFR_EST_allied_liaison }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_interoperability }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2336,10 +2284,11 @@ army_experience = 15
         id = TFR_EST_allied_receiving
         icon = GFX_goal_generic_military_deal
         x = 39
-        y = 4
+        y = 11
         cost = 5
         prerequisite = { focus = TFR_EST_interoperability }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_allied_receiving }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2358,10 +2307,11 @@ army_experience = 10
         id = TFR_EST_realistic_procurement
         icon = GFX_goal_generic_small_arms
         x = 39
-        y = 5
+        y = 12
         cost = 5
         prerequisite = { focus = TFR_EST_allied_receiving }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_realistic_procurement }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2378,10 +2328,11 @@ custom_effect_tooltip = TFR_EST_procurement_plan_tt
         id = TFR_EST_air_warning
         icon = GFX_goal_generic_radar
         x = 39
-        y = 6
+        y = 13
         cost = 5
         prerequisite = { focus = TFR_EST_realistic_procurement }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_air_warning }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2401,10 +2352,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_prepared_alliance
         icon = GFX_goal_generic_major_alliance
         x = 39
-        y = 7
+        y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_air_warning }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_prepared_alliance }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2422,10 +2374,11 @@ set_country_flag = TFR_EST_alliance_prepared
         id = TFR_EST_prepared_positions
         icon = GFX_goal_generic_fortify_city
         x = 33
-        y = 8
+        y = 15
         cost = 5
         prerequisite = { focus = TFR_EST_total_defence }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_prepared_positions }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2445,10 +2398,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_artillery_observers
         icon = GFX_goal_generic_army_artillery
         x = 36
-        y = 8
+        y = 15
         cost = 5
         prerequisite = { focus = TFR_EST_national_supply_plan }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_artillery_observers }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2467,10 +2421,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_air_defence_integration
         icon = GFX_goal_generic_air_doctrine
         x = 39
-        y = 8
+        y = 15
         cost = 5
         prerequisite = { focus = TFR_EST_prepared_alliance }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_air_defence_integration }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2489,10 +2444,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_first_emergency
         icon = GFX_goal_generic_major_war
         x = 3
-        y = 18
+        y = 25
         cost = 3
-        prerequisite = { focus = TFR_EST_national_security_review }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_first_war_seen }
+        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_first_war_seen }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } has_country_flag = TFR_EST_first_war_seen }
         bypass = { has_country_flag = TFR_EST_done_first_emergency }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2511,10 +2467,11 @@ country_event = { id = tfr_estonia_content.30 }
         id = TFR_EST_first_civil_protection
         icon = GFX_goal_generic_consumer_goods
         x = 3
-        y = 19
+        y = 26
         cost = 3
         prerequisite = { focus = TFR_EST_first_emergency }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_first_war_seen }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_first_war_seen }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } has_country_flag = TFR_EST_first_war_seen }
         bypass = { has_country_flag = TFR_EST_done_first_civil_protection }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2534,10 +2491,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_first_reserve_call
         icon = GFX_goal_generic_army_doctrines
         x = 3
-        y = 20
+        y = 27
         cost = 3
         prerequisite = { focus = TFR_EST_first_civil_protection }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_first_war_seen }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_first_war_seen }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } has_country_flag = TFR_EST_first_war_seen }
         bypass = { has_country_flag = TFR_EST_done_first_reserve_call }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2553,10 +2511,11 @@ if = { limit = { TFR_EST_can_mobilize = yes } TFR_EST_mobilize_reserves = yes }
         id = TFR_EST_first_command
         icon = GFX_goal_generic_defence
         x = 3
-        y = 21
+        y = 28
         cost = 3
         prerequisite = { focus = TFR_EST_first_reserve_call }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_first_war_seen }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_first_war_seen }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } has_country_flag = TFR_EST_first_war_seen }
         bypass = { has_country_flag = TFR_EST_done_first_command }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2573,10 +2532,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_first_supply
         icon = GFX_goal_generic_army_motorized
         x = 3
-        y = 22
+        y = 29
         cost = 3
         prerequisite = { focus = TFR_EST_first_command }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_first_war_seen }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_first_war_seen }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } has_country_flag = TFR_EST_first_war_seen }
         bypass = { has_country_flag = TFR_EST_done_first_supply }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2595,10 +2555,11 @@ add_ideas = TFR_EST_wartime_transport
         id = TFR_EST_first_allied_staff
         icon = GFX_goal_generic_alliance
         x = 3
-        y = 23
+        y = 30
         cost = 3
         prerequisite = { focus = TFR_EST_first_supply }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_first_war_seen }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_first_war_seen }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } has_country_flag = TFR_EST_first_war_seen }
         bypass = { has_country_flag = TFR_EST_done_first_allied_staff }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2615,10 +2576,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_first_emergency_laws
         icon = GFX_goal_generic_political_pressure
         x = 3
-        y = 24
+        y = 31
         cost = 3
         prerequisite = { focus = TFR_EST_first_allied_staff }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_first_war_seen }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_first_war_seen }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } has_country_flag = TFR_EST_first_war_seen }
         bypass = { has_country_flag = TFR_EST_done_first_emergency_laws }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2634,10 +2596,11 @@ country_event = { id = tfr_estonia_content.31 }
         id = TFR_EST_first_defend_capital
         icon = GFX_goal_generic_fortify_city
         x = 3
-        y = 25
+        y = 32
         cost = 3
         prerequisite = { focus = TFR_EST_first_emergency_laws }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_first_war_seen }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_first_war_seen }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } has_country_flag = TFR_EST_first_war_seen }
         bypass = { has_country_flag = TFR_EST_done_first_defend_capital }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2657,10 +2620,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_first_endurance
         icon = GFX_goal_generic_national_unity
         x = 3
-        y = 26
+        y = 33
         cost = 3
         prerequisite = { focus = TFR_EST_first_defend_capital }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_first_war_seen }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_first_war_seen }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } has_country_flag = TFR_EST_first_war_seen }
         bypass = { has_country_flag = TFR_EST_done_first_endurance }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2677,10 +2641,11 @@ add_ideas = TFR_EST_national_endurance
         id = TFR_EST_first_lessons
         icon = GFX_goal_generic_army_doctrines
         x = 3
-        y = 27
+        y = 34
         cost = 3
         prerequisite = { focus = TFR_EST_first_endurance }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_first_war_seen }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_first_war_seen }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } has_country_flag = TFR_EST_first_war_seen }
         bypass = { has_country_flag = TFR_EST_done_first_lessons }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2698,9 +2663,10 @@ set_country_flag = TFR_EST_first_lessons
         id = TFR_EST_reconstruction_audit
         icon = GFX_goal_generic_construct_infrastructure
         x = 9
-        y = 18
+        y = 25
         cost = 5
-        prerequisite = { focus = TFR_EST_national_security_review }
+        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { TFR_EST_campaign_stage > 1 } has_war = no }
         available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { TFR_EST_campaign_stage > 1 } has_war = no }
         bypass = { has_country_flag = TFR_EST_done_reconstruction_audit }
         cancel_if_invalid = yes
@@ -2717,9 +2683,10 @@ country_event = { id = tfr_estonia_content.40 }
         id = TFR_EST_reconstruction_services
         icon = GFX_goal_generic_consumer_goods
         x = 9
-        y = 19
+        y = 26
         cost = 5
         prerequisite = { focus = TFR_EST_reconstruction_audit }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { TFR_EST_campaign_stage > 1 } has_war = no }
         available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { TFR_EST_campaign_stage > 1 } has_war = no }
         bypass = { has_country_flag = TFR_EST_done_reconstruction_services }
         cancel_if_invalid = yes
@@ -2738,9 +2705,10 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_returning_families
         icon = GFX_goal_generic_national_unity
         x = 9
-        y = 20
+        y = 27
         cost = 5
         prerequisite = { focus = TFR_EST_reconstruction_services }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { TFR_EST_campaign_stage > 1 } has_war = no }
         available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { TFR_EST_campaign_stage > 1 } has_war = no }
         bypass = { has_country_flag = TFR_EST_done_returning_families }
         cancel_if_invalid = yes
@@ -2759,9 +2727,10 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_reconstruction_industry
         icon = GFX_goal_generic_construct_civ_factory
         x = 9
-        y = 21
+        y = 28
         cost = 5
         prerequisite = { focus = TFR_EST_returning_families }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { TFR_EST_campaign_stage > 1 } has_war = no }
         available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { TFR_EST_campaign_stage > 1 } has_war = no }
         bypass = { has_country_flag = TFR_EST_done_reconstruction_industry }
         cancel_if_invalid = yes
@@ -2781,9 +2750,10 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         id = TFR_EST_reconstruction_accounts
         icon = GFX_goal_generic_political_pressure
         x = 9
-        y = 22
+        y = 29
         cost = 5
         prerequisite = { focus = TFR_EST_reconstruction_industry }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { TFR_EST_campaign_stage > 1 } has_war = no }
         available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { TFR_EST_campaign_stage > 1 } has_war = no }
         bypass = { has_country_flag = TFR_EST_done_reconstruction_accounts }
         cancel_if_invalid = yes
@@ -2801,9 +2771,10 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_reconstruction_defence
         icon = GFX_goal_generic_army_doctrines
         x = 9
-        y = 23
+        y = 30
         cost = 5
         prerequisite = { focus = TFR_EST_reconstruction_accounts }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { TFR_EST_campaign_stage > 1 } has_war = no }
         available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { TFR_EST_campaign_stage > 1 } has_war = no }
         bypass = { has_country_flag = TFR_EST_done_reconstruction_defence }
         cancel_if_invalid = yes
@@ -2823,9 +2794,10 @@ army_experience = 25
         id = TFR_EST_reconstruction_partners
         icon = GFX_goal_generic_alliance
         x = 9
-        y = 24
+        y = 31
         cost = 5
         prerequisite = { focus = TFR_EST_reconstruction_defence }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { TFR_EST_campaign_stage > 1 } has_war = no }
         available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { TFR_EST_campaign_stage > 1 } has_war = no }
         bypass = { has_country_flag = TFR_EST_done_reconstruction_partners }
         cancel_if_invalid = yes
@@ -2843,9 +2815,10 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_interwar_watch
         icon = GFX_goal_generic_defence
         x = 9
-        y = 25
+        y = 32
         cost = 5
         prerequisite = { focus = TFR_EST_reconstruction_partners }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { TFR_EST_campaign_stage > 1 } has_war = no }
         available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { TFR_EST_campaign_stage > 1 } has_war = no }
         bypass = { has_country_flag = TFR_EST_done_interwar_watch }
         cancel_if_invalid = yes
@@ -2865,10 +2838,11 @@ set_country_flag = TFR_EST_interwar_watch
         id = TFR_EST_second_emergency
         icon = GFX_goal_generic_major_war
         x = 15
-        y = 18
+        y = 25
         cost = 3
-        prerequisite = { focus = TFR_EST_national_security_review }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_second_war_seen }
+        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_second_war_seen }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } has_country_flag = TFR_EST_second_war_seen }
         bypass = { has_country_flag = TFR_EST_done_second_emergency }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2887,10 +2861,11 @@ country_event = { id = tfr_estonia_content.50 }
         id = TFR_EST_second_readiness
         icon = GFX_goal_generic_army_doctrines
         x = 15
-        y = 19
+        y = 26
         cost = 3
         prerequisite = { focus = TFR_EST_second_emergency }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_second_war_seen }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_second_war_seen }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } has_country_flag = TFR_EST_second_war_seen }
         bypass = { has_country_flag = TFR_EST_done_second_readiness }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2907,10 +2882,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_second_local_networks
         icon = GFX_goal_generic_national_unity
         x = 15
-        y = 20
+        y = 27
         cost = 3
         prerequisite = { focus = TFR_EST_second_readiness }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_second_war_seen }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_second_war_seen }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } has_country_flag = TFR_EST_second_war_seen }
         bypass = { has_country_flag = TFR_EST_done_second_local_networks }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2930,10 +2906,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_second_reserve_renewal
         icon = GFX_goal_generic_army_doctrines
         x = 15
-        y = 21
+        y = 28
         cost = 3
         prerequisite = { focus = TFR_EST_second_local_networks }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_second_war_seen }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_second_war_seen }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } has_country_flag = TFR_EST_second_war_seen }
         bypass = { has_country_flag = TFR_EST_done_second_reserve_renewal }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2951,10 +2928,11 @@ if = { limit = { TFR_EST_can_mobilize = yes } TFR_EST_mobilize_reserves = yes }
         id = TFR_EST_second_maintenance
         icon = GFX_goal_generic_production
         x = 15
-        y = 22
+        y = 29
         cost = 3
         prerequisite = { focus = TFR_EST_second_reserve_renewal }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_second_war_seen }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_second_war_seen }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } has_country_flag = TFR_EST_second_war_seen }
         bypass = { has_country_flag = TFR_EST_done_second_maintenance }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2973,10 +2951,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_second_common_command
         icon = GFX_goal_generic_alliance
         x = 15
-        y = 23
+        y = 30
         cost = 3
         prerequisite = { focus = TFR_EST_second_maintenance }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_second_war_seen }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_second_war_seen }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } has_country_flag = TFR_EST_second_war_seen }
         bypass = { has_country_flag = TFR_EST_done_second_common_command }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2993,10 +2972,11 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_second_constitution
         icon = GFX_goal_generic_political_pressure
         x = 15
-        y = 24
+        y = 31
         cost = 3
         prerequisite = { focus = TFR_EST_second_common_command }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_second_war_seen }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_second_war_seen }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } has_country_flag = TFR_EST_second_war_seen }
         bypass = { has_country_flag = TFR_EST_done_second_constitution }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -3012,10 +2992,11 @@ country_event = { id = tfr_estonia_content.51 }
         id = TFR_EST_second_supply_resilience
         icon = GFX_goal_generic_army_motorized
         x = 15
-        y = 25
+        y = 32
         cost = 3
         prerequisite = { focus = TFR_EST_second_constitution }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_second_war_seen }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_second_war_seen }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } has_country_flag = TFR_EST_second_war_seen }
         bypass = { has_country_flag = TFR_EST_done_second_supply_resilience }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -3034,10 +3015,11 @@ add_ideas = TFR_EST_second_war_logistics
         id = TFR_EST_second_social_endurance
         icon = GFX_goal_generic_consumer_goods
         x = 15
-        y = 26
+        y = 33
         cost = 3
         prerequisite = { focus = TFR_EST_second_supply_resilience }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_second_war_seen }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_second_war_seen }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } has_country_flag = TFR_EST_second_war_seen }
         bypass = { has_country_flag = TFR_EST_done_second_social_endurance }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -3055,10 +3037,11 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_second_republic_survives
         icon = GFX_goal_generic_national_unity
         x = 15
-        y = 27
+        y = 34
         cost = 3
         prerequisite = { focus = TFR_EST_second_social_endurance }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_second_war_seen }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_second_war_seen }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } has_country_flag = TFR_EST_second_war_seen }
         bypass = { has_country_flag = TFR_EST_done_second_republic_survives }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -3077,9 +3060,10 @@ set_country_flag = TFR_EST_second_lessons
         id = TFR_EST_second_settlement
         icon = GFX_goal_generic_alliance
         x = 21
-        y = 18
+        y = 25
         cost = 5
-        prerequisite = { focus = TFR_EST_national_security_review }
+        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { TFR_EST_campaign_stage > 3 } has_war = no }
         available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { TFR_EST_campaign_stage > 3 } has_war = no }
         bypass = { has_country_flag = TFR_EST_done_second_settlement }
         cancel_if_invalid = yes
@@ -3098,9 +3082,10 @@ country_event = { id = tfr_estonia_content.60 }
         id = TFR_EST_postwar_repairs
         icon = GFX_goal_generic_construct_infrastructure
         x = 21
-        y = 19
+        y = 26
         cost = 5
         prerequisite = { focus = TFR_EST_second_settlement }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { TFR_EST_campaign_stage > 3 } has_war = no }
         available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { TFR_EST_campaign_stage > 3 } has_war = no }
         bypass = { has_country_flag = TFR_EST_done_postwar_repairs }
         cancel_if_invalid = yes
@@ -3121,9 +3106,10 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_postwar_industry
         icon = GFX_goal_generic_construct_civ_factory
         x = 21
-        y = 20
+        y = 27
         cost = 5
         prerequisite = { focus = TFR_EST_postwar_repairs }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { TFR_EST_campaign_stage > 3 } has_war = no }
         available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { TFR_EST_campaign_stage > 3 } has_war = no }
         bypass = { has_country_flag = TFR_EST_done_postwar_industry }
         cancel_if_invalid = yes
@@ -3143,9 +3129,10 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         id = TFR_EST_postwar_accountability
         icon = GFX_goal_generic_political_pressure
         x = 21
-        y = 21
+        y = 28
         cost = 5
         prerequisite = { focus = TFR_EST_postwar_industry }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { TFR_EST_campaign_stage > 3 } has_war = no }
         available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { TFR_EST_campaign_stage > 3 } has_war = no }
         bypass = { has_country_flag = TFR_EST_done_postwar_accountability }
         cancel_if_invalid = yes
@@ -3163,9 +3150,10 @@ add_political_power = 40
         id = TFR_EST_postwar_security
         icon = GFX_goal_generic_defence
         x = 21
-        y = 22
+        y = 29
         cost = 5
         prerequisite = { focus = TFR_EST_postwar_accountability }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { TFR_EST_campaign_stage > 3 } has_war = no }
         available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { TFR_EST_campaign_stage > 3 } has_war = no }
         bypass = { has_country_flag = TFR_EST_done_postwar_security }
         cancel_if_invalid = yes
@@ -3184,9 +3172,10 @@ add_ideas = TFR_EST_sustainable_security
         id = TFR_EST_postwar_future
         icon = GFX_goal_generic_national_unity
         x = 21
-        y = 23
+        y = 30
         cost = 5
         prerequisite = { focus = TFR_EST_postwar_security }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { TFR_EST_campaign_stage > 3 } has_war = no }
         available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { TFR_EST_campaign_stage > 3 } has_war = no }
         bypass = { has_country_flag = TFR_EST_done_postwar_future }
         cancel_if_invalid = yes
@@ -3205,9 +3194,10 @@ set_country_flag = TFR_EST_campaign_complete
         id = TFR_EST_restored_authority
         icon = GFX_goal_generic_national_unity
         x = 27
-        y = 18
+        y = 25
         cost = 5
-        prerequisite = { focus = TFR_EST_national_security_review }
+        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_restoration_pending }
         available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_restoration_pending }
         bypass = { has_country_flag = TFR_EST_done_restored_authority }
         cancel_if_invalid = yes
@@ -3226,9 +3216,10 @@ country_event = { id = tfr_estonia_content.70 }
         id = TFR_EST_restore_civic_rights
         icon = GFX_goal_generic_political_pressure
         x = 27
-        y = 19
+        y = 26
         cost = 5
         prerequisite = { focus = TFR_EST_restored_authority }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_restoration_pending }
         available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_restoration_pending }
         bypass = { has_country_flag = TFR_EST_done_restore_civic_rights }
         cancel_if_invalid = yes
@@ -3247,9 +3238,10 @@ TFR_EST_change_cohesion = yes
         id = TFR_EST_review_occupation_records
         icon = GFX_goal_generic_intelligence_exchange
         x = 27
-        y = 20
+        y = 27
         cost = 5
         prerequisite = { focus = TFR_EST_restore_civic_rights }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_restoration_pending }
         available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_restoration_pending }
         bypass = { has_country_flag = TFR_EST_done_review_occupation_records }
         cancel_if_invalid = yes
@@ -3267,9 +3259,10 @@ country_event = { id = tfr_estonia_content.71 }
         id = TFR_EST_restore_local_services
         icon = GFX_goal_generic_consumer_goods
         x = 27
-        y = 21
+        y = 28
         cost = 5
         prerequisite = { focus = TFR_EST_review_occupation_records }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_restoration_pending }
         available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_restoration_pending }
         bypass = { has_country_flag = TFR_EST_done_restore_local_services }
         cancel_if_invalid = yes
@@ -3290,9 +3283,10 @@ TFR_EST_change_readiness = yes
         id = TFR_EST_restore_defence_command
         icon = GFX_goal_generic_army_doctrines
         x = 27
-        y = 22
+        y = 29
         cost = 5
         prerequisite = { focus = TFR_EST_restore_local_services }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_restoration_pending }
         available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_restoration_pending }
         bypass = { has_country_flag = TFR_EST_done_restore_defence_command }
         cancel_if_invalid = yes
@@ -3312,9 +3306,10 @@ army_experience = 20
         id = TFR_EST_restoration_compact
         icon = GFX_goal_generic_national_unity
         x = 27
-        y = 23
+        y = 30
         cost = 5
         prerequisite = { focus = TFR_EST_restore_defence_command }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_restoration_pending }
         available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_restoration_pending }
         bypass = { has_country_flag = TFR_EST_done_restoration_compact }
         cancel_if_invalid = yes

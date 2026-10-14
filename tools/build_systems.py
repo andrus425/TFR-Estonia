@@ -56,6 +56,7 @@ def main():
             set_variable = { TFR_EST_readiness_weekly = 0 }
             TFR_EST_initialize_parliament = yes
             TFR_EST_refresh_meters = yes
+            TFR_EST_initialize_country_modifiers = yes
             TFR_EST_reconcile_campaign = yes
             log = "TFR Estonia: initialized 2020 government, parliament and national systems."
             if = {
@@ -235,6 +236,8 @@ def main():
                     limit = { has_country_flag = TFR_EST_initialized }
                     TFR_EST_reconcile_occupation = yes
                     TFR_EST_reconcile_campaign = yes
+                    TFR_EST_initialize_country_modifiers = yes
+                    TFR_EST_opening_tick = yes
                 }
             }
         }

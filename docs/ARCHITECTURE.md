@@ -17,7 +17,36 @@ Each has support (integer basis points), seats, active, coalition and supply
 variables. Polling plus other votes totals 10,000; seats total 101 after every
 valid election. Invalid inputs leave the previous assembly in place and log a
 diagnostic. `TFR_EST_pm_party` is confirmed office; `TFR_EST_nominee_party` is a
-proposed cabinet leader. Confidence support and actual cabinet seats are separate.
+automatically selected cabinet leader. Confidence support and actual cabinet
+seats are separate. `TFR_EST_mandate_party` fixes coalition leadership: Centre
+at the start, then the party with the most seats after each successful election.
+Strict comparisons use the existing party order for exact seat ties. Polling,
+confidence loss, negotiations and AI preferences cannot change the mandate.
+
+An election selects the mandated party as nominee and a mandatory coalition
+member, then marks `TFR_EST_electoral_handover`. The incumbent remains caretaker
+until 51 votes confirm that successor. Confirmation requires nominee=mandate
+and either nominee=incumbent or an authorized electoral/scripted handover.
+Confirmation consumes the handover flag. Between elections, ordinary confidence
+recovery can reconfirm only the same incumbent.
+
+The seven former nomination decisions are removed. Their effects are guarded
+script-only hooks for future authored events/focuses. An explicit exception uses:
+
+```text
+set_country_flag = TFR_EST_scripted_cabinet_change
+TFR_EST_nominate_reform = yes
+```
+
+The nomination consumes that one-use authorization, updates the mandated party,
+and marks `TFR_EST_scripted_handover`; the new cabinet still needs 51 votes.
+No existing player decision or AI controller sets this authorization. No new
+story events or focus-tree changes were added in this revision.
+
+Weekly repair seeds a missing mandate from the saved incumbent rather than the
+largest historical delegation, preserving the opening Centre exception. It
+restores mandatory leader membership and normalizes the nominee. Occupation
+preserves this data; restoration retains it until its scheduled new election.
 
 The native country leader is the constitutional president, matching Germany's
 presentation in TFR. Kaljulaid and Karis each have roles covering all five normal
@@ -41,9 +70,15 @@ Polling campaigns preserve totals through bounded transfers and never change sea
 
 ## Public effects
 
+- `TFR_EST_initialize_country_modifiers`: fill only missing economy/military
+  variables with zero and repair the two permanent dynamic modifiers.
+- `TFR_EST_refresh_country_modifiers`: install missing containers and immediately
+  refresh their variable-driven effects after an authored adjustment.
 - `TFR_EST_initialize_systems`: guarded first initialization, called after parent startup.
 - `TFR_EST_initialize_parliament`: seed the historical assembly and Ratas cabinet.
 - `TFR_EST_parliament_tick`: weekly elections, formation, confidence and executive display repair.
+- `TFR_EST_assign_election_mandate`: select the largest party after valid seat commit.
+- `TFR_EST_repair_leadership_mandate`: preserve the stored leader and required membership.
 - `TFR_EST_suspend_parliament` / `TFR_EST_restore_parliament`: occupation and restoration.
 - `TFR_EST_reconcile_executive_display`: constitutional president and TFR head-minister presentation.
 - `TFR_EST_change_cohesion = yes` and the matching readiness effect:
@@ -67,6 +102,33 @@ TFR_EST_change_cohesion = yes
 
 Country-history top-level commands have separate temporary contexts. The native
 QA fixture therefore wraps related statements in one `hidden_effect` block.
+
+## Economy and military modifier foundation
+
+`common/dynamic_modifiers/TFR_EST_country.txt` defines `TFR_EST_economy_dynamic`
+and `TFR_EST_military_dynamic`. Both are restricted to EST and persist without
+a time limit. They are installed during first system initialization and repaired
+by the daily initialized-country hook, including during occupation/restoration.
+Every field has its own persistent `TFR_EST_<category>_<modifier>_var`; all 16
+start at zero. Initialization checks each variable before seeding it, so repeated
+initialization or a missing modifier cannot erase saved reforms. Existing parent
+modifiers, debt/inflation variables and NATO penalties remain independent.
+
+Future authored content can adjust a backing variable and refresh immediately:
+
+```text
+add_to_variable = { TFR_EST_economy_production_speed_buildings_factor_var = 0.03 }
+TFR_EST_refresh_country_modifiers = yes
+```
+
+Modifier factors use native units: `0.03` is three percentage points. Reductions
+to training time, attrition or supply consumption normally use negative values.
+Rewards must retain their own once-only guards; the refresh helper grants no
+additional values and does not reapply an already present modifier.
+
+This revision adds the containers only. Current focus definitions, completion
+rewards and national spirits are unchanged, so no reward is counted in both an
+idea and a new dynamic modifier. Migrating those rewards is a later content task.
 
 ## Lifecycle and persistence
 

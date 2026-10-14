@@ -1,0 +1,19 @@
+TFR_EST_can_confirm_mandated_cabinet = {
+    TFR_EST_independent_parliament = yes
+    TFR_EST_has_confidence = yes
+    TFR_EST_valid_nominee = yes
+    check_variable = { var = TFR_EST_nominee_party value = TFR_EST_mandate_party compare = equals }
+    OR = {
+        check_variable = { var = TFR_EST_nominee_party value = TFR_EST_pm_party compare = equals }
+        has_country_flag = TFR_EST_electoral_handover
+        has_country_flag = TFR_EST_scripted_handover
+    }
+    NOT = { has_country_flag = TFR_EST_restoration_election }
+    OR = {
+        NOT = { has_country_flag = TFR_EST_reform_handover_pending }
+        AND = {
+            has_country_flag = TFR_EST_scripted_handover
+            check_variable = { var = TFR_EST_nominee_party value = 1 compare = equals }
+        }
+    }
+}

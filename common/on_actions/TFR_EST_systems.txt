@@ -16,6 +16,8 @@ on_actions = {
                 limit = { has_country_flag = TFR_EST_initialized }
                 TFR_EST_reconcile_occupation = yes
                 TFR_EST_reconcile_campaign = yes
+                TFR_EST_initialize_country_modifiers = yes
+                TFR_EST_opening_tick = yes
             }
         }
     }

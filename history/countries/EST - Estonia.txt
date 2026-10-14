@@ -213,5 +213,6 @@ recruit_character = TFR_EST_lavly_perling
 recruit_character = TFR_EST_kersti_kaljulaid
 recruit_character = TFR_EST_alar_karis
 set_variable = { TFR_EST_pm_party = 2 }
+set_variable = { TFR_EST_mandate_party = 2 }
 TFR_EST_reconcile_executive_display = yes
 add_ideas = TFR_EST_constitutional_presidency
