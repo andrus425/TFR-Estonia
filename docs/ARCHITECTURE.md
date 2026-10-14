@@ -40,8 +40,14 @@ TFR_EST_nominate_reform = yes
 
 The nomination consumes that one-use authorization, updates the mandated party,
 and marks `TFR_EST_scripted_handover`; the new cabinet still needs 51 votes.
-No existing player decision or AI controller sets this authorization. No new
-story events or focus-tree changes were added in this revision.
+No ordinary player decision or AI controller sets this authorization. The Porto
+Franco story explicitly uses it for a retained Centre cabinet or Reform successor.
+
+`TFR_EST_snap_election` is a separate one-use story API. An event/focus must set
+`TFR_EST_scripted_snap_election` immediately before calling it. The flag is
+consumed even on rejected polling/occupation/restoration inputs. A successful
+vote costs three cohesion; regular and restoration scheduling bypass this API.
+There is no player snap decision or automatic caretaker vote.
 
 Weekly repair seeds a missing mandate from the saved incumbent rather than the
 largest historical delegation, preserving the opening Centre exception. It
@@ -126,9 +132,45 @@ to training time, attrition or supply consumption normally use negative values.
 Rewards must retain their own once-only guards; the refresh helper grants no
 additional values and does not reapply an already present modifier.
 
-This revision adds the containers only. Current focus definitions, completion
-rewards and national spirits are unchanged, so no reward is counted in both an
-idea and a new dynamic modifier. Migrating those rewards is a later content task.
+The new opening policy rewards adjust these containers directly, with persistent
+once-only completion guards. The later programmes retain their current ideas;
+their bonuses are not copied into the containers, avoiding double counting.
+
+## Compact opening and crisis
+
+`TFR_EST_opening.txt` contains eleven shared focuses imported by the single main
+tree. Eight older generic introduction nodes were removed; later prerequisites
+now lead from `TFR_EST_opening_marriage_referendum`. All opening costs are five
+focus points (35 days). The first ten require the actual original coalition,
+Centre PM and mandate, 51 cabinet seats and no caretaker status.
+
+`TFR_EST_can_start_referendum` requires each of the ten native completion records
+or its earned persistent marker, conjunctively. Markers preserve legitimate
+completion when an occupation tree handoff removes native IDs. December 24 is
+the earliest start; even 14 banked days leave January 12–13 inside the focus.
+The final uses `cancelable=no`, `cancel_if_invalid=no`, `continue_if_invalid=yes`.
+
+Its selection effect sets `TFR_EST_referendum_active`. Daily reconciliation
+queues the investigation from January 12 and the response one day after delivery.
+The date is a lower bound: late selection catches up during the active focus.
+Short-lived queue flags recover undelivered events after occupation, while
+persistent presented flags prevent duplicates when a player leaves a notice open.
+Choice helpers and completion rewards have separate once-only guards.
+
+Resignation keeps Ratas caretaker, sets a 13-day negotiation counter and blocks
+ordinary/AI reconfirmation. The successor event nominates Reform through explicit
+story authorization, adds Centre and confirms only with valid confidence. The
+original assembly supplies 60 seats. Unusual insufficient-confidence states can
+complete their authorized handover through parliament; daily repair clears the
+pending transition after confirmation. No tree swap occurs during the focus.
+
+`TFR_EST_opening_complete` requires both referendum completion and the crisis
+choice. All later nodes have `allow_branch` gates; party nodes also check PM and
+caretaker status, and war/restoration nodes retain their stage gates. The guarded
+`TFR_EST_refresh_focus_visibility` signature tracks stage, PM, opening, occupation,
+caretaker, war state, both seen-war flags, restoration and Parempoolsed formation.
+It refreshes the cached layout only when these inputs change. Availability keeps
+ordinary 51-seat checks while essential war/restoration content has its own gates.
 
 ## Lifecycle and persistence
 

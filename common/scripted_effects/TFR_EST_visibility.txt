@@ -1,0 +1,30 @@
+# allow_branch is cached by the focus interface. Refresh only on a relevant
+# lifecycle change, including changes outside the cabinet confirmation helper.
+TFR_EST_refresh_focus_visibility = {
+    if = {
+        limit = { tag = EST }
+        set_temp_variable = { var = TFR_EST_visibility_signature value = TFR_EST_campaign_stage }
+        multiply_temp_variable = { TFR_EST_visibility_signature = 100000 }
+        set_temp_variable = { var = TFR_EST_visibility_pm value = TFR_EST_pm_party }
+        multiply_temp_variable = { TFR_EST_visibility_pm = 1000 }
+        add_to_temp_variable = { var = TFR_EST_visibility_signature value = TFR_EST_visibility_pm }
+        if = { limit = { has_country_flag = TFR_EST_opening_complete } add_to_temp_variable = { TFR_EST_visibility_signature = 10000 } }
+        if = { limit = { has_country_flag = TFR_EST_occupied } add_to_temp_variable = { TFR_EST_visibility_signature = 20000 } }
+        if = { limit = { has_country_flag = TFR_EST_caretaker } add_to_temp_variable = { TFR_EST_visibility_signature = 100 } }
+        if = { limit = { has_war = yes } add_to_temp_variable = { TFR_EST_visibility_signature = 10 } }
+        if = { limit = { has_country_flag = TFR_EST_first_war_seen } add_to_temp_variable = { TFR_EST_visibility_signature = 1 } }
+        if = { limit = { has_country_flag = TFR_EST_second_war_seen } add_to_temp_variable = { TFR_EST_visibility_signature = 2 } }
+        if = { limit = { has_country_flag = TFR_EST_restoration_pending } add_to_temp_variable = { TFR_EST_visibility_signature = 4 } }
+        if = { limit = { check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } } add_to_temp_variable = { TFR_EST_visibility_signature = 1000000 } }
+        if = {
+            limit = {
+                OR = {
+                    NOT = { has_variable = TFR_EST_focus_visibility_signature }
+                    NOT = { check_variable = { var = TFR_EST_focus_visibility_signature value = TFR_EST_visibility_signature compare = equals } }
+                }
+            }
+            set_variable = { var = TFR_EST_focus_visibility_signature value = TFR_EST_visibility_signature }
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+}

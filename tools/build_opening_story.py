@@ -94,7 +94,7 @@ TFR_EST_reveal_after_opening = {
         }
         set_country_flag = TFR_EST_opening_complete
         clr_country_flag = TFR_EST_referendum_active
-        mark_focus_tree_layout_dirty = yes
+        TFR_EST_refresh_focus_visibility = yes
     }
 }
 TFR_EST_finish_opening = {
@@ -140,7 +140,7 @@ TFR_EST_ratas_steps_back = {
         set_temp_variable = { var = TFR_EST_cohesion_delta value = -2 }
         TFR_EST_change_cohesion = yes
         TFR_EST_reveal_after_opening = yes
-        mark_focus_tree_layout_dirty = yes
+        TFR_EST_refresh_focus_visibility = yes
     }
 }
 
@@ -163,7 +163,7 @@ TFR_EST_form_reform_centre_cabinet = {
             }
             set_country_flag = TFR_EST_reform_centre_formed
             clr_country_flag = TFR_EST_reform_handover_pending
-            mark_focus_tree_layout_dirty = yes
+            TFR_EST_refresh_focus_visibility = yes
         }
     }
 }
@@ -171,6 +171,15 @@ TFR_EST_form_reform_centre_cabinet = {
 TFR_EST_opening_tick = {
     if = {
         limit = { TFR_EST_independent_parliament = yes }
+        if = {
+            limit = {
+                has_country_flag = TFR_EST_reform_handover_pending
+                check_variable = { var = TFR_EST_pm_party value = 1 compare = equals }
+                NOT = { has_country_flag = TFR_EST_caretaker }
+            }
+            set_country_flag = TFR_EST_reform_centre_formed
+            clr_country_flag = TFR_EST_reform_handover_pending
+        }
         if = {
             limit = {
                 has_country_flag = TFR_EST_referendum_active
@@ -186,6 +195,7 @@ TFR_EST_opening_tick = {
             limit = {
                 has_country_flag = TFR_EST_porto_investigation_seen
                 NOT = { has_country_flag = TFR_EST_porto_choice_resolved }
+                NOT = { has_country_flag = TFR_EST_porto_choice_presented }
                 NOT = { has_country_flag = TFR_EST_porto_choice_pending }
             }
             set_country_flag = { flag = TFR_EST_porto_choice_pending days = 3 }
@@ -200,6 +210,7 @@ TFR_EST_opening_tick = {
             if = {
                 limit = {
                     check_variable = { var = TFR_EST_reform_handover_days value = 0 compare = less_than_or_equals }
+                    NOT = { has_country_flag = TFR_EST_new_cabinet_notice_presented }
                     NOT = { has_country_flag = TFR_EST_new_cabinet_notice_pending }
                 }
                 set_country_flag = { flag = TFR_EST_new_cabinet_notice_pending days = 3 }
@@ -249,7 +260,9 @@ country_event = {
         TFR_EST_independent_parliament = yes
         has_country_flag = TFR_EST_porto_investigation_seen
         NOT = { has_country_flag = TFR_EST_porto_choice_resolved }
+        NOT = { has_country_flag = TFR_EST_porto_choice_presented }
     }
+    immediate = { set_country_flag = TFR_EST_porto_choice_presented }
     option = {
         name = TFR_EST_porto_keep_ratas
         ai_chance = { factor = 20 }
@@ -273,7 +286,9 @@ country_event = {
         TFR_EST_independent_parliament = yes
         has_country_flag = TFR_EST_reform_handover_pending
         NOT = { has_country_flag = TFR_EST_reform_centre_formed }
+        NOT = { has_country_flag = TFR_EST_new_cabinet_notice_presented }
     }
+    immediate = { set_country_flag = TFR_EST_new_cabinet_notice_presented }
     option = {
         name = TFR_EST_reform_centre_option
         custom_effect_tooltip = TFR_EST_reform_centre_tt

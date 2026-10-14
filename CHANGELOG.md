@@ -1,5 +1,22 @@
 # Changelog
 
+## 14 October 2026 — historical coalition opening and Porto Franco
+
+- Replaced the eight generic introductory focuses with eleven 35-day focuses
+  covering the Ratas II coalition's documented policies and initial COVID response.
+- Hid later branches during the opening. Subsequent party and war sections reveal
+  through the serving government and campaign state, with guarded layout refresh.
+- Required actual Centre–EKRE–Isamaa coalition membership and 51 cabinet seats
+  for the ten policy focuses. Supply votes cannot substitute for coalition seats.
+- Required all ten policies before the marriage-referendum bill focus, made that
+  focus non-cancelable, and added a December 24 gate to account for banked progress.
+- Added the January 12–13 Porto Franco sequence and a choice between retaining
+  Ratas or a caretaker handover to a Reform–Centre cabinet in the same parliament.
+- Removed the snap-election decision; only explicit event/focus authorization
+  can call a snap vote. Regular and restoration elections continue unchanged.
+- Used the two dynamic modifiers for new opening bonuses and preserved later
+  content and occupation settlements. Added research notes and regression tests.
+
 ## 14 October 2026 — economy and military dynamic modifiers
 
 - Added permanent Estonian Economy and Estonian Military dynamic modifiers,

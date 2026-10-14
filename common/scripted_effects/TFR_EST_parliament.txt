@@ -292,6 +292,7 @@ set_variable = { TFR_EST_supply_pp = 0 }
 
 TFR_EST_enter_caretaker = {
 set_country_flag = TFR_EST_caretaker
+TFR_EST_refresh_focus_visibility = yes
 add_ideas = TFR_EST_caretaker_cabinet
 TFR_EST_recount_confidence = yes
 TFR_EST_refresh_programme = yes
@@ -424,7 +425,7 @@ clr_country_flag = TFR_EST_electoral_handover
 clr_country_flag = TFR_EST_scripted_handover
 clr_country_flag = TFR_EST_caretaker
 remove_ideas = TFR_EST_caretaker_cabinet
-mark_focus_tree_layout_dirty = yes
+TFR_EST_refresh_focus_visibility = yes
 clr_country_flag = TFR_EST_government_reform
 clr_country_flag = TFR_EST_government_centre
 clr_country_flag = TFR_EST_government_ekre

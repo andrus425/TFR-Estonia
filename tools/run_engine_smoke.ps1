@@ -2,6 +2,7 @@ param(
     [ValidateRange(30,600)][int]$Seconds = 120,
     [switch]$ParentOnly,
     [switch]$ArithmeticQA,
+    [int]$IgnoreInertQaChildOf = 0,
     [string]$GameDirectory = 'C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV'
 )
 $ErrorActionPreference = 'Stop'
@@ -12,7 +13,25 @@ if ((Split-Path $profileDirectory -Leaf) -ne 'Hearts of Iron IV') {
 }
 $executablePath = Join-Path $GameDirectory 'hoi4.exe'
 if (-not (Test-Path -LiteralPath $executablePath)) { throw "Missing game executable: $executablePath" }
-if (Get-Process -Name hoi4 -ErrorAction SilentlyContinue) { throw 'An existing HOI4 session is running. Close it before using the smoke test.' }
+$existingGames = @(Get-Process -Name hoi4 -ErrorAction SilentlyContinue)
+if ($IgnoreInertQaChildOf -gt 0 -and $existingGames.Count -gt 0) {
+    # Windows can retain an inaccessible, windowless 32 KiB process stub after
+    # a failed test. Never exempt a live game or an unrecorded process parent.
+    $recordedParent = @(Get-ChildItem -LiteralPath (Join-Path $modWorkspace 'test-output') -Directory |
+        Where-Object { $_.Name -like 'engine-*' } | ForEach-Object {
+            $runResultPath = Join-Path $_.FullName 'result.json'
+            if (Test-Path -LiteralPath $runResultPath) { Get-Content -LiteralPath $runResultPath -Raw | ConvertFrom-Json }
+        } | Where-Object { $_.processId -eq $IgnoreInertQaChildOf -and $_.exited -eq $true })
+    if ($recordedParent.Count -eq 0) { throw 'The requested inert-process exemption has no exited QA parent record.' }
+    $existingGames = @($existingGames | Where-Object {
+        $gameRecord = Get-CimInstance Win32_Process -Filter "ProcessId = $($_.Id)"
+        $isInertQaChild = $null -ne $gameRecord -and $gameRecord.ParentProcessId -eq $IgnoreInertQaChildOf -and
+            $_.MainWindowHandle -eq 0 -and $_.WorkingSet64 -le 1048576
+        if ($isInertQaChild) { Write-Host "Ignoring inert child $($_.Id) of recorded exited QA parent $IgnoreInertQaChildOf." }
+        -not $isInertQaChild
+    })
+}
+if ($existingGames.Count -gt 0) { throw 'An existing HOI4 session is running. Close it before using the smoke test.' }
 $loadFile = Join-Path $profileDirectory 'dlc_load.json'
 $hadLoadFile = Test-Path -LiteralPath $loadFile
 $previousBytes = if ($hadLoadFile) { [IO.File]::ReadAllBytes($loadFile) } else { $null }

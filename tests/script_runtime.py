@@ -25,6 +25,7 @@ class Runtime:
         self.dynamic = set()
         self.dynamic_additions = []
         self.dynamic_updates = 0
+        self.focus_layout_refreshes = 0
         self.events = []
         self.messages = []
         self.characters = []
@@ -232,7 +233,9 @@ class Runtime:
             elif key == "add_political_power":
                 self.props['political_power'] = self.props.get('political_power', Fraction(0)) + self.num(value, args)
             elif key == "clear_variable": self.variables.pop(value, None)
-            elif key in {"set_popularities", "clear_array", "custom_effect_tooltip", "mark_focus_tree_layout_dirty", "set_party_name", "set_party_long_name"}:
+            elif key == "mark_focus_tree_layout_dirty":
+                self.focus_layout_refreshes += 1
+            elif key in {"set_popularities", "clear_array", "custom_effect_tooltip", "set_party_name", "set_party_long_name"}:
                 pass
             else:
                 raise AssertionError(f"Unsupported numerical effect {key}")

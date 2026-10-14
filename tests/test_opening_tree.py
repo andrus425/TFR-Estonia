@@ -206,12 +206,21 @@ class OpeningTreeTests(unittest.TestCase):
                 runtime.flags.difference_update("TFR_EST_gov_" + p for p in PARTIES)
                 runtime.flags.add("TFR_EST_gov_" + party)
                 runtime.variables["TFR_EST_pm_party"] = Fraction(index)
+                runtime.variables["TFR_EST_active_pp"] = Fraction(1)
                 visible = self.legacy_visibility(runtime)
                 for candidate in PARTIES:
                     branch = {focus_id for focus_id in self.legacy
                               if focus_id.startswith("TFR_EST_" + candidate + "_")}
                     self.assertTrue(branch)
                     self.assertEqual(branch & visible, branch if candidate == party else set())
+
+    def test_unformed_parempoolsed_branch_stays_hidden(self):
+        runtime = self.runtime()
+        runtime.flags.add("TFR_EST_opening_complete")
+        runtime.variables["TFR_EST_pm_party"] = Fraction(7)
+        runtime.variables["TFR_EST_active_pp"] = Fraction(0)
+        self.assertFalse({focus_id for focus_id in self.legacy_visibility(runtime)
+                          if focus_id.startswith("TFR_EST_pp_")})
 
     def test_war_branches_stay_hidden_until_their_own_campaign_stage(self):
         runtime = self.runtime()

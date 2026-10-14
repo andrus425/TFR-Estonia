@@ -38,13 +38,13 @@ def F(suffix, name, desc, x, y, pre=None, effects='', icon='national_unity', cos
     L(ident,name); L(ident+'_desc',desc)
     tests = ['NOT = { has_country_flag = TFR_EST_occupied }']
     branch_tests = ['has_country_flag = TFR_EST_opening_complete']
-    crisis = 'TFR_EST_campaign_stage' in avail or 'TFR_EST_restoration_pending' in avail
+    crisis = any(token in avail for token in ('TFR_EST_campaign_stage', 'TFR_EST_restoration_pending', 'TFR_EST_first_war_seen', 'TFR_EST_second_war_seen'))
     if not crisis:
         tests += ['TFR_EST_coalition_majority = yes', 'NOT = { has_country_flag = TFR_EST_caretaker }']
     if party is not None:
         tests += [f'check_variable = {{ TFR_EST_pm_party = {party} }}','NOT = { has_country_flag = TFR_EST_caretaker }']
         branch_tests += [f'check_variable = {{ TFR_EST_pm_party = {party} }}', 'NOT = { has_country_flag = TFR_EST_caretaker }']
-    if avail:
+    if crisis or 'TFR_EST_active_pp' in avail:
         branch_tests.append(avail)
     if avail: tests.append(avail)
     pr = [] if pre is None else ([pre] if isinstance(pre,str) else pre)

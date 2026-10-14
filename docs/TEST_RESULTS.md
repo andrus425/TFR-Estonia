@@ -8,12 +8,13 @@ The installed executable reports **HOI4 Operation Postern 1.19.3.0.c01a**.
 
 | Check | Observed result |
 |---|---|
-| `tools/validate_mod.py` | 56 additive/override script files; 192 focuses, 53 events, 59 decisions, 921 English localization keys; **0 errors** |
-| `python -m unittest discover -s tests -v` | **69 tests passed**, including 500 randomized election allocations checked against an independent integer reference |
+| `tools/validate_mod.py` | 61 additive/override script files; 195 focuses, 57 events, 58 decisions, 941 English localization keys; **0 errors** |
+| `python -m unittest discover -s tests -v` | **124 tests passed**, including 500 randomized election allocations checked against an independent integer reference |
 | `tools/test_occupation_compatibility.py` | **10 structural regression tests passed** |
 | `tools/patch_tfr_compatibility.py --check` | **11 reproducible overrides and 627 audited changes verified**: 620 settlement safeguards and seven head-of-government selectors |
 | `tools/native_script_interface.py --check` | **0 files with legacy argument-block interfaces** |
-| Portable packaging tests | Deterministic archive, exclusions, portable descriptors and metadata rejection passed as part of the 69-test suite |
+| Opening generators | Eleven shared focuses, 22 focus localization keys, rewards/controller/events and their text reproduce exactly in `--check` mode |
+| Portable packaging tests | Deterministic archive, exclusions, portable descriptors and metadata rejection passed as part of the 124-test suite |
 
 The tests cover historical seats and confidence, threshold/tie behavior, invalid
 poll recovery, negative and fractional inputs, inactive parties, independent
@@ -27,16 +28,27 @@ minority winners waiting for 51 confidence votes, blocked legacy nominations,
 fabricated nominees, confidence recovery without replacing the incumbent,
 AI preferences respecting the election result, polling without seat changes,
 missing-variable repair from the saved PM, protected leader membership,
-occupation/restoration continuity and explicit story authorization. All three
-focus-tree files retain their pre-revision SHA-256 hashes; the two Estonia
-trees also have an automated preservation check.
+occupation/restoration continuity and explicit story authorization. The opening
+revision intentionally changes the normal tree. The occupation and parent Soviet
+trees retain their pre-revision hashes and remain protected by regression checks.
 
 Nine dynamic-modifier tests cover the two neutral containers and their 16
 independent variable bindings, preservation of positive/negative authored values,
 repair without reapplying present modifiers, repeated initialization, EST scope
-guards, unchanged existing idea rewards, retained parent modifiers and all three
-focus-tree hashes. The static validator now checks dynamic-modifier references,
+guards, retained later reward ideas and parent modifiers, and the unchanged
+occupation/parent trees. The static validator checks dynamic-modifier references,
 localization and icon sprites.
+
+The opening revision adds 55 regression methods: nine snap-election cases,
+21 focus/prerequisite/branch cases, 14 story/reward cases, seven cached-visibility
+cases and four event-notice cases. They cover actual coalition 50/51 thresholds
+with larger supply totals, all ten required policy records, original partner
+membership, December 24 and 14-day banking arithmetic, non-cancellation fields,
+both political choices, 13-day caretaker succession, preserved assembly/polls/
+president/calendar, ordinary and AI reconfirmation guards, dynamic reward totals,
+state-change layout refresh and once-only delivered notices. The tests execute
+authored control flow or inspect script structure; they do not emulate the game
+focus scheduler, rendered GUI or event timing engine.
 
 Executive tests cover valid confirmation of all seven PMs without changing the
 president, caretaker continuity, immediate Karis succession, occupation hiding,
@@ -136,7 +148,7 @@ error-free startup claim. The report is
 `test-output/mandate-engine-comparison-current.json`. The larger asset differences
 from the previous day's capture are not attributed to the parliament change.
 
-The latest dynamic-modifier run is captured under
+The preceding dynamic-modifier run is captured under
 `test-output/engine-estonia-qa-20261014-114230/`. It reached the frontend in
 approximately **175 seconds** and passed **all 30 native assertions**: the prior
 26 cases plus neutral installation, actual modifier-value application,
@@ -153,6 +165,30 @@ containing `TFR_EST_` or `tfr_estonia`**. The comparison report is
 this run without claiming the parent is error-free. The original mod/DLC
 configuration was restored after the owned test process stopped. It does not
 verify rendered icons, natural daily scheduling or save/reload in a campaign.
+
+The accepted opening run is captured under
+`test-output/engine-estonia-qa-20261014-162010/`. It reached the frontend in about
+**126 seconds** and passed **all 36 native assertions**. Six new cases verify the
+initial coalition, supply votes failing to replace coalition seats, unauthorized
+snap-vote rejection, resigned Ratas remaining caretaker, the Reform–Centre
+successor, and retained Ratas with his original coalition. Cabinet cases invoke
+story helpers directly in the isolated fixture, preserving seats, regular election
+year and president. They do not run the January scheduler or select an active focus.
+
+Comparison with the same-day parent baseline gives 2,032 normalized unique
+messages against 2,023. The nine additional messages reference medium nationalist
+flag assets for GBA, KHA, LBV, ORO, PAP, SID, SPM, TOS and VGE, matching the foreign
+asset-loading differences recorded earlier. There are no removed messages or
+messages containing `TFR_EST_`/`tfr_estonia`. The report is
+`test-output/opening-engine-comparison.json`; the extra loading is not treated
+as resolved or attributed to an Estonia script error.
+
+The first 36-case attempt, `engine-estonia-qa-20261014-124250`, exited at texture
+loading after 35 seconds, before reaching the frontend or any assertion. It is
+not a pass and does not isolate a content fault. Windows retained an inaccessible
+windowless 32 KiB child of that recorded test process. The retry exempted only
+that inert recorded child from the process guard; active games remain blocked.
+The accepted run stopped its owned process and restored the original playset.
 
 The QA overlay is not shipped or enabled in ordinary play. It executes arithmetic
 within a single hidden-effect context during frontend history construction.
@@ -178,6 +214,8 @@ interactive campaign observations were not performed.
 - Save/reload around elections, delayed settlements and restoration.
 - AI research, production, recruitment, coalition behavior and focus progression.
 - DLC combinations, UI scales, full text/tooltip display and actual focus layout.
+- A natural 2020 opening through both Ratas choices, banked focus progress,
+  manual cancellation attempts, delivered-event delays and post-crisis branch reveal.
 - Long-term economy, preparation, military growth and occupation balance.
 - Custom portraits for characters currently using generic likenesses, plus actual
   campaign screenshots for a public Workshop release.
@@ -194,6 +232,11 @@ the smoke-test tool. Prepare the isolated fixture with
 `tools/run_engine_smoke.ps1 -ArithmeticQA -Seconds 600`. Use `-ParentOnly` for
 the clean baseline. The tool stops early on frontend completion and checks every
 expected QA assertion. Compare captured logs with `tools/compare_engine_logs.py`.
+
+If Windows retains an inert child from an exited recorded test, the optional
+`-IgnoreInertQaChildOf <recorded-parent-PID>` accepts only a matching saved exited
+QA parent, no game window and a working set no greater than 1 MiB. It does not
+terminate that child or exempt active/unrecorded game processes.
 
 Rebuild the ZIP after changing documentation or source, then use
 `python tools/package_mod.py --check` to verify it exactly matches current inputs.
