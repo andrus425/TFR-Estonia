@@ -5,7 +5,7 @@
 shared_focus = {
     id = TFR_EST_opening_pension_reform
     icon = GFX_goal_generic_political_pressure
-    x = 4
+    x = 0
     y = 0
     cost = 5
     available = {
@@ -27,10 +27,9 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_opening_teacher_pay
     icon = GFX_goal_generic_consumer_goods
-    x = 4
-    y = 1
+    x = 3
+    y = 0
     cost = 5
-    prerequisite = { focus = TFR_EST_opening_pension_reform }
     available = {
         TFR_EST_opening_coalition_majority = yes
     }
@@ -50,13 +49,12 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_opening_covid_emergency
     icon = GFX_goal_generic_consumer_goods
-    x = 4
-    y = 2
+    x = 13
+    y = 0
     cost = 5
-    prerequisite = { focus = TFR_EST_opening_teacher_pay }
     available = {
         TFR_EST_opening_coalition_majority = yes
-        date > 2020.3.10
+        generic_has_corona = yes
     }
     bypass = { has_country_flag = TFR_EST_done_opening_covid_emergency }
     cancel_if_invalid = yes
@@ -75,10 +73,10 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_opening_pension_increase
     icon = GFX_goal_generic_consumer_goods
-    x = 4
-    y = 3
+    x = 0
+    y = 2
     cost = 5
-    prerequisite = { focus = TFR_EST_opening_covid_emergency }
+    prerequisite = { focus = TFR_EST_opening_pension_reform }
     available = {
         TFR_EST_opening_coalition_majority = yes
     }
@@ -98,10 +96,10 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_opening_wage_compensation
     icon = GFX_goal_generic_consumer_goods
-    x = 4
-    y = 4
+    x = 12
+    y = 2
     cost = 5
-    prerequisite = { focus = TFR_EST_opening_pension_increase }
+    prerequisite = { focus = TFR_EST_opening_covid_emergency }
     available = {
         TFR_EST_opening_coalition_majority = yes
     }
@@ -121,10 +119,10 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_opening_excise_relief
     icon = GFX_goal_generic_trade
-    x = 4
-    y = 5
+    x = 15
+    y = 2
     cost = 5
-    prerequisite = { focus = TFR_EST_opening_wage_compensation }
+    prerequisite = { focus = TFR_EST_opening_covid_emergency }
     available = {
         TFR_EST_opening_coalition_majority = yes
     }
@@ -144,10 +142,10 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_opening_eastern_border
     icon = GFX_goal_generic_defence
-    x = 4
-    y = 6
+    x = 6
+    y = 2
     cost = 5
-    prerequisite = { focus = TFR_EST_opening_excise_relief }
+    prerequisite = { focus = TFR_EST_opening_kose_voobu }
     available = {
         TFR_EST_opening_coalition_majority = yes
     }
@@ -167,10 +165,9 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_opening_kose_voobu
     icon = GFX_goal_generic_construct_infrastructure
-    x = 4
-    y = 7
+    x = 7
+    y = 0
     cost = 5
-    prerequisite = { focus = TFR_EST_opening_eastern_border }
     available = {
         TFR_EST_opening_coalition_majority = yes
     }
@@ -190,8 +187,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_opening_three_seas
     icon = GFX_goal_generic_alliance
-    x = 4
-    y = 8
+    x = 9
+    y = 2
     cost = 5
     prerequisite = { focus = TFR_EST_opening_kose_voobu }
     available = {
@@ -213,10 +210,10 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_opening_research_budget
     icon = GFX_goal_generic_scientific_exchange
-    x = 4
-    y = 9
+    x = 3
+    y = 2
     cost = 5
-    prerequisite = { focus = TFR_EST_opening_three_seas }
+    prerequisite = { focus = TFR_EST_opening_teacher_pay }
     available = {
         TFR_EST_opening_coalition_majority = yes
     }
@@ -236,10 +233,15 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_opening_marriage_referendum
     icon = GFX_goal_generic_national_unity
-    x = 4
-    y = 10
+    x = 7
+    y = 5
     cost = 5
+    prerequisite = { focus = TFR_EST_opening_pension_increase }
     prerequisite = { focus = TFR_EST_opening_research_budget }
+    prerequisite = { focus = TFR_EST_opening_eastern_border }
+    prerequisite = { focus = TFR_EST_opening_three_seas }
+    prerequisite = { focus = TFR_EST_opening_wage_compensation }
+    prerequisite = { focus = TFR_EST_opening_excise_relief }
     available = {
         TFR_EST_can_start_referendum = yes
     }

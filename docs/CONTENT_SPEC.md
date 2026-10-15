@@ -6,18 +6,36 @@ acceptance. Later events are fictional developments in TFR's alternate timeline.
 
 ## Initial coalition programme
 
-The opening is an eleven-focus, 35-day chain built from the documented Ratas II
+The opening has ten policy focuses in four short branches and a final marriage-referendum
+focus, each lasting 35 days, built from the documented Ratas II
 policies in [OPENING_POLICY_SOURCES.md](OPENING_POLICY_SOURCES.md). It replaces
 the eight vague introductory nodes; party programmes and later campaign work are
 hidden until the opening finishes. The ten policies require the original three
-partners, a Centre prime minister and at least 51 actual coalition seats.
+partners, a Centre prime minister and at least 51 actual coalition seats. Players
+choose between the pension-reform, teacher-pay and highway roots from the start;
+the COVID root additionally requires actual cases in Estonia. The branches are:
+
+- Pension reform → extraordinary pension increase.
+- Teacher pay → research funding.
+- Kose–Võõbu highway → eastern-border construction and Three Seas summit as siblings.
+- COVID emergency → wage compensation and excise relief as siblings.
+
+Six terminal focuses lead to the final focus, requiring all ten policies through
+their ancestor prerequisites. None of the ordinary policies has a start-date
+gate. The COVID focus uses TFR's `generic_has_corona` trigger, which reads the
+country's five case-severity ideas. A separate first-case event supplies Estonia's
+missing parent outbreak assignment from February 27, 2020. It preserves existing
+cases and does not reinfect after recovery. From 2023, it removes only its own
+unchanged lowest-severity idea after the mandatory COVID focus has finished,
+preserving access to that focus during delayed campaigns.
 
 The marriage-referendum bill is the final focus. All ten policies are mandatory,
-the focus cannot be canceled, and its December 24 gate accounts for up to 14
+the focus cannot be canceled, and its December 24, 2020 gate accounts for up to 14
 banked days. Investigation/response events on January 12–13 offer a retained Ratas
 cabinet or resignation followed by a Reform–Centre cabinet in the same parliament.
 The cabinet transition does not replace the active focus. The historical April
 referendum never occurred; remaining in office is an alternate-history branch.
+The final focus is the only opening focus with a start-date requirement.
 
 New opening economic and logistical bonuses use the country dynamic modifiers.
 Later programme rewards await their own redesign. There is no player snap vote;
@@ -64,14 +82,14 @@ democratic. Sharing an ideology grants no seats or coalition membership.
 
 ## Shared independent campaign
 
-The main tree contains 157 focuses: eight opening focuses, 70 programme focuses,
+The main tree contains 160 focuses: eleven opening focuses, 70 programme focuses,
 18 economic focuses, 21 military focuses and 40 campaign focuses. Branches are
 available according to independence, government and campaign stage; they do not
 lock later elected parties out permanently.
 
-The opening establishes the coalition contract, pandemic contingencies, remote
-government, livelihoods, presidency, transparency and national-security review.
-Economic development then supports education, regional investment, infrastructure,
+The opening implements the coalition's pension, teacher-pay, pandemic-relief,
+tax, border, transport, regional-cooperation and research policies before the
+referendum crisis. Economic development then supports education, regional investment, infrastructure,
 energy, digital services and defense industry. Defense preparation covers reserve
 organization, Kaitseliit, training, engineering, artillery, air defense, supply,
 maintenance, procurement and allied cooperation.

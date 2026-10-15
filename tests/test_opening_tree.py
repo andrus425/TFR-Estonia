@@ -5,6 +5,7 @@ not emulate the focus GUI, focus-progress engine, or the event scheduler.
 """
 from datetime import date, timedelta
 from fractions import Fraction
+from random import Random
 import unittest
 
 from script_runtime import ROOT, Block, Runtime, parse
@@ -18,6 +19,24 @@ OPENING_NAMES = (
 OPENING_IDS = tuple("TFR_EST_opening_" + name for name in OPENING_NAMES)
 POLICY_IDS = OPENING_IDS[:-1]
 PARTIES = ("reform", "centre", "ekre", "isamaa", "sde", "e200", "pp")
+POLICY_PARENTS = {
+    "pension_reform": (),
+    "teacher_pay": (),
+    "covid_emergency": (),
+    "pension_increase": ("pension_reform",),
+    "wage_compensation": ("covid_emergency",),
+    "excise_relief": ("covid_emergency",),
+    "eastern_border": ("kose_voobu",),
+    "kose_voobu": (),
+    "three_seas": ("kose_voobu",),
+    "research_budget": ("teacher_pay",),
+}
+BRANCH_LEAVES = tuple("TFR_EST_opening_" + name for name in (
+    "pension_increase", "research_budget", "eastern_border", "three_seas",
+    "wage_compensation", "excise_relief",
+))
+COVID_IDEAS = ("lower_covid_cases", "low_covid_cases", "medium_covid_cases",
+               "high_covid_cases", "higher_covid_cases")
 
 
 def read_script(relative):
@@ -56,6 +75,19 @@ class OpeningTreeTests(unittest.TestCase):
         return {focus_id for focus_id, focus in self.legacy.items()
                 if runtime.condition(focus.get("allow_branch", Block([])))}
 
+    def prerequisites_complete(self, runtime, focus_id):
+        # HOI4 ANDs separate prerequisite blocks; multiple focus entries inside
+        # one block are alternatives. Preserve that distinction in this graph
+        # check rather than treating the graph as a flat list of requirements.
+        completed = runtime.props["completed_focuses"]
+        return all(any(parent in completed for parent in block.all("focus"))
+                   for block in self.focuses[focus_id].all("prerequisite"))
+
+    def selectable(self, runtime, focus_id):
+        return (focus_id not in runtime.props["completed_focuses"]
+                and self.prerequisites_complete(runtime, focus_id)
+                and runtime.condition(self.focuses[focus_id].get("available")))
+
     def test_exactly_eleven_shared_opening_focuses_without_a_second_country_tree(self):
         self.assertEqual(tuple(self.focuses), OPENING_IDS)
         self.assertEqual(len(self.opening.all("shared_focus")), 11)
@@ -67,17 +99,200 @@ class OpeningTreeTests(unittest.TestCase):
             with self.subTest(focus=focus_id):
                 self.assertEqual(Fraction(focus.get("cost")) * 7, 35)
 
-    def test_main_tree_imports_the_whole_opening_chain(self):
-        self.assertCountEqual(self.main.all("shared_focus"), OPENING_IDS)
-        self.assertEqual(self.main.get("initial_show_position").get("focus"), OPENING_IDS[0])
+    def test_main_tree_imports_the_whole_opening_programme(self):
+        imports = self.main.all("shared_focus")
+        self.assertCountEqual([name for name in imports if name.startswith("TFR_EST_opening_")], OPENING_IDS)
+        self.assertEqual(len(imports), len(OPENING_IDS) + 20)
+        self.assertEqual(len([name for name in imports if name.startswith("TFR_EST_ratas_")]), 20)
+        self.assertEqual(self.main.get("initial_show_position").get("focus"),
+                         "TFR_EST_opening_kose_voobu")
 
-    def test_opening_is_one_ordered_chain_with_no_optional_or_mutually_exclusive_work(self):
-        for index, focus_id in enumerate(OPENING_IDS):
+    def test_policies_form_four_branches_with_meaningful_prerequisites_and_no_exclusions(self):
+        roots = []
+        for name, expected_parents in POLICY_PARENTS.items():
+            focus_id = "TFR_EST_opening_" + name
             focus = self.focuses[focus_id]
             with self.subTest(focus=focus_id):
-                parents = [p.get("focus") for p in focus.all("prerequisite")]
-                self.assertEqual(parents, [] if index == 0 else [OPENING_IDS[index - 1]])
+                prerequisites = focus.all("prerequisite")
+                self.assertEqual(len(prerequisites), len(expected_parents))
+                self.assertCountEqual([block.get("focus") for block in prerequisites],
+                                      ["TFR_EST_opening_" + parent for parent in expected_parents])
+                self.assertTrue(all(len(block.all("focus")) == 1 for block in prerequisites))
                 self.assertFalse(focus.all("mutually_exclusive"))
+                if not prerequisites:
+                    roots.append(focus_id)
+        self.assertEqual(len(roots), 4)
+
+    def test_referendum_requires_all_six_branch_ends_and_transitively_all_ten_policies(self):
+        referendum = self.focuses[OPENING_IDS[-1]]
+        prerequisites = referendum.all("prerequisite")
+        self.assertEqual(len(prerequisites), 6)
+        self.assertTrue(all(len(block.all("focus")) == 1 for block in prerequisites))
+        self.assertCountEqual([block.get("focus") for block in prerequisites], BRANCH_LEAVES)
+        ancestors = set()
+
+        def visit(focus_id):
+            for block in self.focuses[focus_id].all("prerequisite"):
+                for parent in block.all("focus"):
+                    self.assertNotEqual(parent, OPENING_IDS[-1], "Opening graph contains a cycle")
+                    if parent not in ancestors:
+                        ancestors.add(parent)
+                        visit(parent)
+
+        visit(OPENING_IDS[-1])
+        self.assertEqual(ancestors, set(POLICY_IDS))
+        self.assertFalse(referendum.all("mutually_exclusive"))
+        for focus_id in POLICY_IDS:
+            self.assertFalse(contains(self.focuses[focus_id], "focus", OPENING_IDS[-1]))
+
+    def test_branch_layout_keeps_children_below_parents_and_final_focus_below_every_policy(self):
+        coordinates = [(int(self.focuses[focus_id].get("x")),
+                        int(self.focuses[focus_id].get("y"))) for focus_id in POLICY_IDS]
+        self.assertEqual(len(set(coordinates)), len(POLICY_IDS))
+        for name, parents in POLICY_PARENTS.items():
+            focus = self.focuses["TFR_EST_opening_" + name]
+            for parent in parents:
+                self.assertGreater(int(focus.get("y")),
+                                   int(self.focuses["TFR_EST_opening_" + parent].get("y")))
+        referendum = self.focuses[OPENING_IDS[-1]]
+        self.assertGreater(int(referendum.get("y")), max(y for _, y in coordinates))
+
+    def test_policy_availability_and_referenced_trigger_chain_have_no_date_or_completion_gate(self):
+        runtime = self.runtime()
+
+        def reachable_conditions(block, seen=None):
+            seen = set() if seen is None else seen
+            yield block
+            for _, entry in block.walk():
+                if entry.key in runtime.triggers and entry.key not in seen:
+                    seen.add(entry.key)
+                    yield from reachable_conditions(runtime.triggers[entry.key], seen)
+
+        for focus_id in POLICY_IDS:
+            focus = self.focuses[focus_id]
+            with self.subTest(focus=focus_id):
+                self.assertFalse(contains(focus, "date"))
+                for condition in reachable_conditions(focus.get("available")):
+                    self.assertFalse(contains(condition, "date"))
+                    self.assertFalse(contains(condition, "has_completed_focus"))
+
+    def test_multiple_roots_are_available_but_dependent_policies_require_their_branch_parent(self):
+        runtime = self.runtime()
+        runtime.ideas.add("lower_covid_cases")
+        roots = {"TFR_EST_opening_" + name for name, parents in POLICY_PARENTS.items()
+                 if not parents}
+        self.assertEqual({focus_id for focus_id in POLICY_IDS
+                          if self.selectable(runtime, focus_id)}, roots)
+        for name, parents in POLICY_PARENTS.items():
+            if not parents:
+                continue
+            focus_id = "TFR_EST_opening_" + name
+            with self.subTest(focus=focus_id):
+                runtime = self.runtime()
+                runtime.ideas.add("lower_covid_cases")
+                self.assertFalse(self.selectable(runtime, focus_id))
+                runtime.props["completed_focuses"].update("TFR_EST_opening_" + p for p in parents)
+                self.assertTrue(self.selectable(runtime, focus_id))
+
+    def test_valid_branch_orders_allow_switching_between_parallel_work_and_reach_the_final_focus(self):
+        orders = set()
+        for seed in range(12):
+            with self.subTest(seed=seed):
+                runtime = self.runtime()
+                runtime.ideas.add("lower_covid_cases")
+                random = Random(seed)
+                order = []
+                while len(order) < len(POLICY_IDS):
+                    selectable = [focus_id for focus_id in POLICY_IDS
+                                  if self.selectable(runtime, focus_id)]
+                    self.assertTrue(selectable, "Opening branch graph stalls before completion")
+                    focus_id = random.choice(selectable)
+                    order.append(focus_id)
+                    self.assertFalse(self.trigger(runtime, "TFR_EST_can_start_referendum"))
+                    runtime.props["completed_focuses"].add(focus_id)
+                orders.add(tuple(order))
+                self.assertFalse(self.trigger(runtime, "TFR_EST_can_start_referendum"))
+                self.assertTrue(self.prerequisites_complete(runtime, OPENING_IDS[-1]))
+                runtime.props["date"] = date(2020, 12, 24)
+                self.assertTrue(self.selectable(runtime, OPENING_IDS[-1]))
+        self.assertGreater(len(orders), 1)
+
+    def test_covid_response_requires_domestic_cases_instead_of_a_calendar_date(self):
+        focus_id = "TFR_EST_opening_covid_emergency"
+        covid = self.focuses[focus_id]
+        self.assertFalse(covid.all("prerequisite"))
+        self.assertEqual(covid.get("available").get("generic_has_corona"), "yes")
+        for actual_date in (date(2020, 1, 1), date(2020, 2, 1), date(2020, 3, 12),
+                            date(2021, 1, 1)):
+            with self.subTest(date=actual_date, cases="none"):
+                runtime = self.runtime()
+                runtime.props["date"] = actual_date
+                self.assertFalse(self.selectable(runtime, focus_id))
+            for idea in COVID_IDEAS:
+                with self.subTest(date=actual_date, cases=idea):
+                    runtime = self.runtime()
+                    runtime.props["date"] = actual_date
+                    runtime.ideas.add(idea)
+                    self.assertTrue(self.selectable(runtime, focus_id))
+
+    def test_non_covid_roots_remain_available_while_the_country_has_no_cases(self):
+        runtime = self.runtime()
+        available = {focus_id for focus_id in POLICY_IDS if self.selectable(runtime, focus_id)}
+        self.assertEqual(available, {"TFR_EST_opening_" + name for name in
+                                    ("pension_reform", "teacher_pay", "kose_voobu")})
+
+    def test_early_domestic_cases_unlock_response_but_do_not_bypass_referendum_date_gate(self):
+        runtime = self.runtime()
+        runtime.ideas.add("lower_covid_cases")
+        runtime.props["date"] = date(2020, 2, 1)
+        self.assertTrue(self.selectable(runtime, "TFR_EST_opening_covid_emergency"))
+        runtime.props["completed_focuses"] = set(POLICY_IDS)
+        self.assertFalse(self.trigger(runtime, "TFR_EST_can_start_referendum"))
+        runtime.props["date"] = date(2020, 12, 24)
+        self.assertTrue(self.trigger(runtime, "TFR_EST_can_start_referendum"))
+
+    def test_historical_first_case_event_unlocks_response_without_completing_other_policies(self):
+        runtime = self.runtime()
+        focus_id = "TFR_EST_opening_covid_emergency"
+        runtime.props["date"] = date(2020, 2, 26)
+        runtime.call("TFR_EST_covid_tick")
+        self.assertFalse(self.selectable(runtime, focus_id))
+        self.assertNotIn("tfr_estonia_covid.1", runtime.events)
+        runtime.props["date"] = date(2020, 2, 27)
+        runtime.call("TFR_EST_covid_tick")
+        self.assertEqual(runtime.events.count("tfr_estonia_covid.1"), 1)
+        self.assertFalse(self.selectable(runtime, focus_id))
+        # The arithmetic runtime does not schedule events. Deliver the queued
+        # real event's immediate block explicitly, then inspect native state.
+        events = read_script("events/TFR_EST_covid.txt").all("country_event")
+        event = next(event for event in events if event.get("id") == "tfr_estonia_covid.1")
+        self.assertTrue(runtime.condition(event.get("trigger")))
+        runtime.run(event.get("immediate"))
+        self.assertIn("lower_covid_cases", runtime.ideas)
+        self.assertTrue(self.selectable(runtime, focus_id))
+        self.assertEqual(runtime.props["completed_focuses"], set())
+
+    def test_response_event_guard_rejects_no_cases_and_announces_each_real_tier_only_once(self):
+        runtime = self.runtime()
+        runtime.call("TFR_EST_begin_covid_response")
+        self.assertNotIn("tfr_estonia_opening.1", runtime.events)
+        self.assertNotIn("TFR_EST_opening_covid_announced", runtime.flags)
+        for tier in COVID_IDEAS:
+            with self.subTest(cases=tier):
+                runtime = self.runtime()
+                runtime.ideas.add(tier)
+                runtime.call("TFR_EST_begin_covid_response")
+                runtime.call("TFR_EST_begin_covid_response")
+                self.assertEqual(runtime.events.count("tfr_estonia_opening.1"), 1)
+                self.assertIn("TFR_EST_opening_covid_announced", runtime.flags)
+
+    def test_daily_maintenance_runs_domestic_covid_bridge_before_opening_controller(self):
+        daily = (read_script("common/on_actions/TFR_EST_systems.txt")
+                 .get("on_actions").get("on_daily_EST").get("effect").get("if"))
+        calls = [entry.key for entry in daily.entries]
+        self.assertIn("TFR_EST_covid_tick", calls)
+        self.assertIn("TFR_EST_opening_tick", calls)
+        self.assertLess(calls.index("TFR_EST_covid_tick"), calls.index("TFR_EST_opening_tick"))
 
     def test_each_policy_requires_the_actual_opening_coalition_majority(self):
         for focus_id in POLICY_IDS:

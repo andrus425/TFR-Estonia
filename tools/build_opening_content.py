@@ -56,7 +56,8 @@ POLICIES = (
         "hospitals, schools and border authorities. Estonia's emergency response in "
         "March 2020 includes restrictions on gatherings, remote learning and measures "
         "to reduce imported infections. Establish responsibility for those measures "
-        "and keep essential government services working. The coalition must command "
+        "and keep essential government services working. COVID-19 must be present "
+        "in Estonia before this response can begin. The coalition must command "
         "at least 51 parliamentary seats when it begins the response.",
         "consumer_goods",
     ),
@@ -154,23 +155,59 @@ POLICIES = (
 )
 
 
+# Short branches preserve policy progression while allowing the cabinet to
+# choose between several programmes. Separate prerequisite blocks are ANDs.
+PREREQUISITES = {
+    "pension_reform": (),
+    "pension_increase": ("pension_reform",),
+    "teacher_pay": (),
+    "research_budget": ("teacher_pay",),
+    "kose_voobu": (),
+    "eastern_border": ("kose_voobu",),
+    "three_seas": ("kose_voobu",),
+    "covid_emergency": (),
+    "wage_compensation": ("covid_emergency",),
+    "excise_relief": ("covid_emergency",),
+    "marriage_referendum": (
+        "pension_increase", "research_budget", "eastern_border",
+        "three_seas", "wage_compensation", "excise_relief",
+    ),
+}
+POSITIONS = {
+    "pension_reform": (0, 0),
+    "pension_increase": (0, 2),
+    "teacher_pay": (3, 0),
+    "research_budget": (3, 2),
+    "kose_voobu": (7, 0),
+    "eastern_border": (6, 2),
+    "three_seas": (9, 2),
+    "covid_emergency": (13, 0),
+    "wage_compensation": (12, 2),
+    "excise_relief": (15, 2),
+    "marriage_referendum": (7, 5),
+}
+
+
 def build_focuses() -> str:
     pieces = [
         "# The compact 2020 Centre-Isamaa-EKRE programme.\n"
         "# The main tree imports these shared IDs; no country tree is declared here.\n"
         "# Each five-point focus is a 35-day implementation period.\n"
     ]
-    previous = None
     for row, policy in enumerate(POLICIES):
         ident = PREFIX + policy.suffix
         flag = "TFR_EST_done_opening_" + policy.suffix
         final = policy.suffix == "marriage_referendum"
-        prerequisites = ""
-        if previous is not None:
-            prerequisites = f"    prerequisite = {{ focus = {previous} }}\n"
+        # The final focus joins all six branch ends; their ancestors cover all
+        # ten policies. The central availability trigger also checks each one.
+        prerequisites = "".join(
+            f"    prerequisite = {{ focus = {PREFIX}{parent} }}\n"
+            for parent in PREREQUISITES[policy.suffix]
+        )
         available = "TFR_EST_can_start_referendum = yes" if final else "TFR_EST_opening_coalition_majority = yes"
         if policy.suffix == "covid_emergency":
-            available += "\n        date > 2020.3.10"
+            available += "\n        generic_has_corona = yes"
+        x, y = POSITIONS[policy.suffix]
         cancellation = (
             "    cancelable = no\n    cancel_if_invalid = no\n    continue_if_invalid = yes\n"
             if final else "    cancel_if_invalid = yes\n    continue_if_invalid = no\n"
@@ -185,8 +222,8 @@ def build_focuses() -> str:
             f"\nshared_focus = {{\n"
             f"    id = {ident}\n"
             f"    icon = GFX_goal_generic_{policy.icon}\n"
-            f"    x = 4\n"
-            f"    y = {row}\n"
+            f"    x = {x}\n"
+            f"    y = {y}\n"
             f"    cost = 5\n"
             f"{prerequisites}"
             f"    available = {{\n        {available}\n    }}\n"
@@ -203,7 +240,6 @@ def build_focuses() -> str:
             f"    }}\n"
             f"}}\n"
         )
-        previous = ident
     return "".join(pieces)
 
 

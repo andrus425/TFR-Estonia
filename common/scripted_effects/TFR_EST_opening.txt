@@ -87,7 +87,10 @@ add_to_variable = { TFR_EST_economy_research_speed_factor_var = 0.02 }
 
 TFR_EST_begin_covid_response = {
     if = {
-        limit = { NOT = { has_country_flag = TFR_EST_opening_covid_announced } }
+        limit = {
+            generic_has_corona = yes
+            NOT = { has_country_flag = TFR_EST_opening_covid_announced }
+        }
         set_country_flag = TFR_EST_opening_covid_announced
         country_event = { id = tfr_estonia_opening.1 }
     }

@@ -42,6 +42,11 @@ class Runtime:
             for path in (ROOT / "common" / directory).glob("TFR_EST_*.txt"):
                 tree = parse(path.read_text(encoding="utf-8-sig"), str(path))
                 catalog.update({e.key: e.value for e in tree.entries})
+        # Execute TFR's real five-tier domestic COVID predicate from the
+        # compatibility override, rather than inventing a test-only infection.
+        generic_path = ROOT / "common/scripted_triggers/00_TFR_scripted_triggers_ZZZ_generic.txt"
+        generic = parse(generic_path.read_text(encoding="utf-8-sig"), str(generic_path))
+        self.triggers["generic_has_corona"] = generic.get("generic_has_corona")
         self.operations = 0
 
     def num(self, value, args=None):

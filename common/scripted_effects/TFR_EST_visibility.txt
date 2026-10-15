@@ -16,6 +16,8 @@ TFR_EST_refresh_focus_visibility = {
         if = { limit = { has_country_flag = TFR_EST_second_war_seen } add_to_temp_variable = { TFR_EST_visibility_signature = 2 } }
         if = { limit = { has_country_flag = TFR_EST_restoration_pending } add_to_temp_variable = { TFR_EST_visibility_signature = 4 } }
         if = { limit = { check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } } add_to_temp_variable = { TFR_EST_visibility_signature = 1000000 } }
+        if = { limit = { has_country_flag = TFR_EST_ratas_retained } add_to_temp_variable = { TFR_EST_visibility_signature = 2000000 } }
+        if = { limit = { has_country_flag = TFR_EST_ratas_mandate_ended } add_to_temp_variable = { TFR_EST_visibility_signature = 4000000 } }
         if = {
             limit = {
                 OR = {

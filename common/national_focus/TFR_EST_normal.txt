@@ -3,7 +3,7 @@ focus_tree = {
     id = TFR_EST_main_tree
     country = { factor = 0 modifier = { add = 100 original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } } }
     default = no
-    initial_show_position = { focus = TFR_EST_opening_pension_reform }
+    initial_show_position = { focus = TFR_EST_opening_kose_voobu }
     shared_focus = TFR_EST_opening_pension_reform
     shared_focus = TFR_EST_opening_teacher_pay
     shared_focus = TFR_EST_opening_covid_emergency

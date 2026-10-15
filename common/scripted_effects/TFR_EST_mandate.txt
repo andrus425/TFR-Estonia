@@ -39,6 +39,13 @@ TFR_EST_repair_leadership_mandate = {
 # Called only after the election has committed a valid 101-seat assembly.
 # Strict comparisons preserve Reform/Centre/EKRE/Isamaa/SDE/E200/PP tie order.
 TFR_EST_assign_election_mandate = {
+    # The renewed 2019 coalition programme belongs to its existing assembly.
+    # This hook runs only after a valid election has committed all 101 seats.
+    # Keep the historical choice and enacted reforms when a new mandate begins.
+    if = {
+        limit = { has_country_flag = TFR_EST_ratas_retained }
+        set_country_flag = TFR_EST_ratas_mandate_ended
+    }
     set_temp_variable = { var = TFR_EST_largest_elected_party value = -1 }
     if = { limit = { check_variable = { var = TFR_EST_seats_reform value = TFR_EST_largest_elected_party compare = greater_than } } set_temp_variable = { var = TFR_EST_largest_elected_party value = TFR_EST_seats_reform } set_variable = { TFR_EST_mandate_party = 1 } }
     if = { limit = { check_variable = { var = TFR_EST_seats_centre value = TFR_EST_largest_elected_party compare = greater_than } } set_temp_variable = { var = TFR_EST_largest_elected_party value = TFR_EST_seats_centre } set_variable = { TFR_EST_mandate_party = 2 } }

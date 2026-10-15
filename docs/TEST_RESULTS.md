@@ -1,4 +1,4 @@
-# Validation results — 14 October 2026
+# Validation results — 15 October 2026
 
 This is an implemented **development build**, not a declaration that the public
 v1 campaign matrix has passed. The pinned parent is **The Fire Rises 1.0.9.1c**.
@@ -8,13 +8,13 @@ The installed executable reports **HOI4 Operation Postern 1.19.3.0.c01a**.
 
 | Check | Observed result |
 |---|---|
-| `tools/validate_mod.py` | 61 additive/override script files; 195 focuses, 57 events, 58 decisions, 941 English localization keys; **0 errors** |
-| `python -m unittest discover -s tests -v` | **124 tests passed**, including 500 randomized election allocations checked against an independent integer reference |
+| `tools/validate_mod.py` | 63 additive/override script files; 195 focuses, 58 events, 58 decisions, 944 English localization keys; **0 errors** |
+| `python -m unittest discover -s tests -v` | **149 tests passed**, including 500 randomized election allocations checked against an independent integer reference |
 | `tools/test_occupation_compatibility.py` | **10 structural regression tests passed** |
 | `tools/patch_tfr_compatibility.py --check` | **11 reproducible overrides and 627 audited changes verified**: 620 settlement safeguards and seven head-of-government selectors |
 | `tools/native_script_interface.py --check` | **0 files with legacy argument-block interfaces** |
-| Opening generators | Eleven shared focuses, 22 focus localization keys, rewards/controller/events and their text reproduce exactly in `--check` mode |
-| Portable packaging tests | Deterministic archive, exclusions, portable descriptors and metadata rejection passed as part of the 124-test suite |
+| Opening and COVID generators | Eleven shared focuses, 22 focus localization keys, rewards/controller/events, the first-case bridge and their text reproduce exactly in `--check` mode |
+| Portable packaging tests | Deterministic archive, exclusions, portable descriptors and metadata rejection passed as part of the full source suite |
 
 The tests cover historical seats and confidence, threshold/tie behavior, invalid
 poll recovery, negative and fractional inputs, inactive parties, independent
@@ -39,8 +39,8 @@ guards, retained later reward ideas and parent modifiers, and the unchanged
 occupation/parent trees. The static validator checks dynamic-modifier references,
 localization and icon sprites.
 
-The opening revision adds 55 regression methods: nine snap-election cases,
-21 focus/prerequisite/branch cases, 14 story/reward cases, seven cached-visibility
+The opening and branch-choice regressions comprise nine snap-election cases,
+32 focus/prerequisite/branch cases, 14 story/reward cases, seven cached-visibility
 cases and four event-notice cases. They cover actual coalition 50/51 thresholds
 with larger supply totals, all ten required policy records, original partner
 membership, December 24 and 14-day banking arithmetic, non-cancellation fields,
@@ -49,6 +49,26 @@ president/calendar, ordinary and AI reconfirmation guards, dynamic reward totals
 state-change layout refresh and once-only delivered notices. The tests execute
 authored control flow or inspect script structure; they do not emulate the game
 focus scheduler, rendered GUI or event timing engine.
+
+The 15 October revision verifies four short prerequisite branches, multiple valid
+completion orders, blocked children, and six separate conjunctive prerequisites
+for the final referendum. Their ancestor closure covers all ten policies. Recursive
+checks include referenced scripted triggers and confirm that ordinary policies
+have no start-date gates. The COVID response requires TFR's actual domestic-case
+predicate, tested against all five inherited severity ideas. Global outbreak or
+announcement flags alone cannot unlock it; the other three roots remain usable
+without cases. The referendum alone retains its December 24 date gate.
+
+The first-case bridge has 14 separate behavior tests for the February 26/27 boundary,
+independent event delivery, repeated queues, existing and intervening infection at
+all five severities, ownership, recovery without reseeding, guarded cleanup and
+foreign-country no-ops. The delayed-response case retains this mod's owned infection
+after January 2023 until response completion, accepting either the persistent
+reward flag or native completed focus. An integration test delivers the authored event immediate
+effect and verifies that the actual COVID focus then becomes selectable without
+completing another policy. Daily-hook ordering and the response helper's own
+infection guard are checked separately. These source tests manually deliver queued
+events; they do not verify natural campaign scheduling or rendered focus arrows.
 
 Executive tests cover valid confirmation of all seven PMs without changing the
 president, caretaker continuity, immediate Karis succession, occupation hiding,
@@ -189,6 +209,25 @@ not a pass and does not isolate a content fault. Windows retained an inaccessibl
 windowless 32 KiB child of that recorded test process. The retry exempted only
 that inert recorded child from the process guard; active games remain blocked.
 The accepted run stopped its owned process and restored the original playset.
+
+The 15 October branched-opening run is captured under
+`test-output/engine-estonia-qa-20261015-122811/`. It reached the frontend in about
+**230 seconds** (234 seconds including capture) and passed **all 39 native
+assertions**. The three new cases verify that a clean country fails TFR's
+`generic_has_corona` check and cannot announce the response; each of the five
+parent case ideas satisfies that check; and an active outbreak permits the guarded
+response helper. The fixture restores its case ideas and announcement flag.
+Its date remains January 1, 2020, so the first-case event, natural focus selection
+and the 2023 cleanup guard are covered by source tests rather than this fixture.
+The final delayed-response cleanup guard was applied after the engine run.
+
+Comparison with the pinned parent-only baseline from October 14 gives 2,033
+normalized unique messages against 2,023. The ten additional messages are the
+nine foreign medium nationalist flags listed above plus SPM's small flag, matching
+the asset differences already observed in the earlier mandate run. There are no
+removed messages or messages containing `TFR_EST_`/`tfr_estonia`. The report is
+`test-output/branched-opening-engine-comparison.json`. The owned test process was
+stopped and the original mod/DLC configuration restored byte-for-byte.
 
 The QA overlay is not shipped or enabled in ordinary play. It executes arithmetic
 within a single hidden-effect context during frontend history construction.

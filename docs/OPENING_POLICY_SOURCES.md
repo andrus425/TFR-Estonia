@@ -1,15 +1,23 @@
 # Ratas II opening: policy and event sources
 
-This register supports the initial Centre–Isamaa–EKRE focus sequence and its
+This register supports the initial Centre–Isamaa–EKRE policy focuses and their
 Porto Franco crisis. It uses Estonian government, parliament, court and agency
-sources. Sources were checked on 14 October 2026. Later choices that diverge from
+sources. Policy sources were checked on 14 October 2026 and the first-case
+announcement on 15 October 2026. Later choices that diverge from
 these events are authored alternate history for The Fire Rises.
 
 ## Structure and timing
 
-The opening contains ten policy focuses followed by **The Marriage Referendum**.
-Every focus costs 35 days. All ten policy focuses must be completed before the
-referendum focus can start. The policy sequence is:
+The opening contains ten policy focuses in four short branches, followed by
+**The Marriage Referendum**. Every focus costs 35 days. Pension reform leads to
+the extraordinary pension increase; teacher pay leads to research funding;
+the highway leads to separate border-construction and Three Seas focuses;
+and the COVID emergency leads to separate wage-compensation and excise-relief
+focuses. The player chooses between available branches and siblings. Ordinary
+policies have no fixed start date, while the COVID root requires actual cases
+in Estonia. All six terminal policies are required before the referendum;
+their prerequisites ensure all ten policies have been completed. The following
+list is a reference index for the sources, not a required gameplay sequence:
 
 1. Pass the Voluntary Second-Pillar Reform.
 2. Raise Teachers' Minimum Pay to EUR 1,315.
@@ -26,14 +34,27 @@ referendum focus can start. The policy sequence is:
 These are 35-day policy blocks, not a claim that every law was enacted on the
 exact date a gameplay focus completes. Measures already
 agreed in 2019 are presented as implementation, funding or administration during
-2020. The dates in the source map below remain the historical reference.
+2020. The dates in the source map below remain the historical reference; they
+do not gate policy selection directly in the game. The domestic COVID requirement
+uses TFR's existing case-status trigger. Because the parent has no Estonia
+outbreak assignment, an independent event supplies the missing first-case hook
+from the Health Board's **27 February 2020 announcement**, published at 09:43.
+The source says Estonia's first COVID-19 case had been diagnosed; the event date
+represents the public announcement, rather than a claim about the exact time of
+laboratory detection. See the [Health Board's first-case announcement](https://terviseamet.ee/uudised/eestis-diagnoositi-esimene-covid-19-haigusjuhtum).
+The bridge uses the parent's lowest case tier, preserves an existing outbreak,
+does not reinfect a recovered country, and removes only its own unchanged
+lowest-tier idea from 2023 after the mandatory COVID response is completed.
+Deferring cleanup preserves access in delayed campaigns. Those severity and
+cleanup choices are gameplay rules.
 
 Ten uninterrupted 35-day focuses take 350 days. Gregorian arithmetic from
 1 January 2020 places the eleventh focus on 16 December 2020, with completion
 35 days later on 20 January 2021. HOI4 can apply stored focus progress, so that
 arithmetic alone does not guarantee a focus remains active on a particular date.
 
-The implemented start gate is **24 December 2020**. It accounts for TFR's
+The only opening start-date gate is **24 December 2020**, on the referendum
+focus. It accounts for TFR's
 14-day stored-progress allowance: a 35-day focus can then take as few as
 21 additional calendar days. An unbanked focus beginning at this gate finishes
 around 28 January; a fully banked focus finishes around 14 January. Both the
@@ -47,11 +68,11 @@ register, establish the engine's exact order and dates.
 
 ## Policy source map
 
-| Order and subject | Historical reference and localization constraints | Primary sources |
+| Reference and subject | Historical reference and localization constraints | Primary sources |
 |---|---|---|
 | **1. Voluntary second pension pillar** | On **29 January 2020**, parliament passed the reform with **56 votes for and 45 against**, using a confidence procedure. The president challenged the law; the Supreme Court rejected that challenge on **20 October**. Applications to leave the system were to begin in **January 2021**. The early focus represents passing and preparing the reform, not withdrawals during early 2020. | [Riigikogu: passage of the pension reform](https://www.riigikogu.ee/en/pressiteated/riigikogu-passed-act-mandatory-funded-pension-reform/); [Supreme Court: pension reform ruling, 20 October](https://www.riigikohus.ee/en/node/27591) |
 | **2. Teacher pay** | The minimum monthly teacher salary increased from **EUR 1,250 in 2019 to EUR 1,315 in 2020**. Treat this as implementing the new year's pay settlement, rather than an unrelated general education overhaul. | [Education Ministry: teacher pay statistics](https://www.hm.ee/en/ministry/statistics-and-analysis) |
-| **3. COVID-19 emergency** | The government declared an emergency situation on **12 March 2020**. Public events were prohibited and school operations changed. The accompanying statement described hospital guidance, protective-equipment procurement and healthcare readiness. The focus concerns the first response, not vaccination or the later pandemic waves. | [Government: declaration, 12 March](https://www.valitsus.ee/en/news/government-declared-state-emergency-estonia-until-1-may); [Ratas's parliamentary statement, 12 March](https://www.valitsus.ee/en/news/political-statement-prime-minister-juri-ratas-riigikogu-12-march-2020) |
+| **3. COVID-19 emergency** | The Health Board announced the first domestic case on **27 February 2020**. The government declared an emergency situation on **12 March 2020**. Public events were prohibited and school operations changed. The accompanying statement described hospital guidance, protective-equipment procurement and healthcare readiness. The focus requires domestic infection but has no fixed date gate; it concerns the first response, not vaccination or later waves. | [Health Board: first-case announcement, 27 February](https://terviseamet.ee/uudised/eestis-diagnoositi-esimene-covid-19-haigusjuhtum); [Government: declaration, 12 March](https://www.valitsus.ee/en/news/government-declared-state-emergency-estonia-until-1-may); [Ratas's parliamentary statement, 12 March](https://www.valitsus.ee/en/news/political-statement-prime-minister-juri-ratas-riigikogu-12-march-2020) |
 | **4. Extraordinary pension increase** | From **1 April 2020**, the pension base amount received **EUR 7 after indexation**. The average pension's approximately **EUR 45 total rise** combined indexation with that extra increase. Do not describe the whole EUR 45 as a discretionary government grant. | [State Pension Insurance Act: contemporary consolidation, section 61](https://www.riigiteataja.ee/en/tolge/pdf/505012021008); [Government: first-year policy review, 29 April](https://www.valitsus.ee/en/news/today-marks-first-year-government-coalition-centre-party-isamaa-and-conservative-peoples-party) |
 | **5. Wage compensation** | The initial Töötukassa wage-compensation measure operated during **March–May 2020**. On **21 May**, the government approved a further **EUR 147.9 million** transfer towards its estimated **EUR 250 million** cost. The focus funds a specific employment measure and should carry a fiscal cost. | [Government: wage-compensation financing, 21 May](https://valitsus.ee/en/news/government-directed-additional-1479-million-euros-foundation-labour-market-services-and) |
 | **6. Fuel and electricity excise** | Parliament approved the crisis tax package in April. Cuts applied from **1 May 2020**, originally until **30 April 2022**. Diesel excise fell from **EUR 493 to EUR 372 per 1,000 litres**; electricity excise fell from **EUR 4.47 to EUR 1 per MWh**. A gameplay bonus abstracts the relief and should not imply that the lost revenue was free. | [Finance Ministry: approved crisis tax measures](https://www.fin.ee/uudised/koroonakriisiga-seotud-maksumeetmed-said-riigikogu-heakskiidu) |

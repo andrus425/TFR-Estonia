@@ -70,7 +70,10 @@ TFR_EST_can_start_referendum = {
 }}\n\n'''
     effects += '''TFR_EST_begin_covid_response = {
     if = {
-        limit = { NOT = { has_country_flag = TFR_EST_opening_covid_announced } }
+        limit = {
+            generic_has_corona = yes
+            NOT = { has_country_flag = TFR_EST_opening_covid_announced }
+        }
         set_country_flag = TFR_EST_opening_covid_announced
         country_event = { id = tfr_estonia_opening.1 }
     }
@@ -297,7 +300,7 @@ country_event = {
 }
 '''
     loc = {
-        'TFR_EST_opening_covid_title': 'The Emergency Situation of 12 March',
+        'TFR_EST_opening_covid_title': 'The COVID-19 Emergency',
         'TFR_EST_opening_covid_desc': 'The government has declared an emergency situation in response to COVID-19. Schools must move to distance learning, public gatherings face restrictions, and hospitals need coordinated supplies. The cabinet must work with local authorities while the Riigikogu continues to scrutinize emergency powers. Wage compensation and tax relief will require separate funding decisions.',
         'TFR_EST_opening_covid_option': 'Put the emergency orders into effect.',
         'TFR_EST_porto_investigation_title': 'The Porto Franco Investigation',

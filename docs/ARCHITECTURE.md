@@ -144,10 +144,35 @@ now lead from `TFR_EST_opening_marriage_referendum`. All opening costs are five
 focus points (35 days). The first ten require the actual original coalition,
 Centre PM and mandate, 51 cabinet seats and no caretaker status.
 
+The ten policies form four prerequisite branches: `pension_reform` leads to
+`pension_increase`; `teacher_pay` leads to `research_budget`; `kose_voobu` leads
+to the separate `eastern_border` and `three_seas` children; `covid_emergency`
+leads to the separate `wage_compensation` and `excise_relief` children. Three
+roots are available immediately with the valid starting coalition. The COVID
+root also requires the inherited `generic_has_corona` country trigger. No ordinary
+policy has a start-date gate. The final focus has six separate prerequisite blocks,
+requiring all terminal policies conjunctively; their ancestor closure covers all
+ten policies. The layout has roots at y=0, children at y=2 and the referendum
+at x=7, y=5. The initial camera centers on the Kose–Võõbu highway root.
+
+`tools/build_estonia_covid.py` generates an independent first-case event and
+`TFR_EST_covid_tick`. The initialized-country daily hook runs it before the opening
+story controller. The installed parent never assigns Estonia a COVID case idea;
+the bridge queues its event from February 27, 2020, independently of focus choice.
+The event adds the parent's `lower_covid_cases` only if no case tier exists.
+The five severity ideas remain the authoritative evidence of domestic infection;
+world news and the response-announced flag do not grant focus access. A persistent
+first-case marker prevents reinfection after recovery, and existing parent/mod
+severity is never downgraded. Ownership tracking removes only the bridge's own
+unchanged lowest-tier idea from January 2023, after the mandatory COVID response
+focus has finished. The completion guard preserves focus access in delayed
+campaigns. This is an outbreak hook rather than a separate pandemic simulation.
+
 `TFR_EST_can_start_referendum` requires each of the ten native completion records
 or its earned persistent marker, conjunctively. Markers preserve legitimate
-completion when an occupation tree handoff removes native IDs. December 24 is
-the earliest start; even 14 banked days leave January 12–13 inside the focus.
+completion when an occupation tree handoff removes native IDs. December 24, 2020
+is the only opening date gate and the final focus's earliest start; even 14 banked
+days leave January 12–13 inside the focus.
 The final uses `cancelable=no`, `cancel_if_invalid=no`, `continue_if_invalid=yes`.
 
 Its selection effect sets `TFR_EST_referendum_active`. Daily reconciliation

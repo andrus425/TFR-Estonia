@@ -153,6 +153,30 @@ path="{base.as_posix()}"
         "clr_country_flag = TFR_EST_porto_choice_resolved\nclr_country_flag = TFR_EST_ratas_retained\nclr_country_flag = TFR_EST_porto_investigation_seen\nTFR_EST_initialize_parliament = yes\n",
     ])
     assertions.extend(["opening_initial_coalition", "opening_supply_cannot_replace_coalition", "snap_election_unapproved_noop", "porto_ratas_caretaker", "porto_reform_centre_successor", "porto_original_coalition_retained"])
+    # The frontend date is 1 January 2020, so do not spoof dates or trigger the
+    # guarded first-case seeding event. Exercise the actual parent infection
+    # trigger and response helper with isolated idea fixtures instead.
+    covid_tiers = ("lower_covid_cases", "low_covid_cases", "medium_covid_cases", "high_covid_cases", "higher_covid_cases")
+    for tier in covid_tiers:
+        body.append(f"if = {{ limit = {{ has_idea = {tier} }} set_country_flag = TFR_EST_qa_saved_{tier} }}\nremove_ideas = {tier}\n")
+    body.extend([
+        "if = { limit = { has_country_flag = TFR_EST_opening_covid_announced } set_country_flag = TFR_EST_qa_saved_covid_announced }\nclr_country_flag = TFR_EST_opening_covid_announced\n",
+        "TFR_EST_begin_covid_response = yes\n",
+        check("covid_absent_blocks_response", "NOT = { generic_has_corona = yes } NOT = { has_country_flag = TFR_EST_opening_covid_announced }"),
+        "set_variable = { TFR_EST_qa_covid_tiers_detected = 0 }\n",
+    ])
+    for tier in covid_tiers:
+        body.append(f"add_ideas = {tier}\nif = {{ limit = {{ generic_has_corona = yes has_idea = {tier} }} add_to_variable = {{ TFR_EST_qa_covid_tiers_detected = 1 }} }}\nremove_ideas = {tier}\n")
+    body.extend([
+        check("covid_all_five_parent_tiers_detected", eq("TFR_EST_qa_covid_tiers_detected", 5) + " NOT = { generic_has_corona = yes }"),
+        "add_ideas = lower_covid_cases\nTFR_EST_begin_covid_response = yes\nTFR_EST_begin_covid_response = yes\n",
+        check("covid_active_response_recorded", "generic_has_corona = yes has_country_flag = TFR_EST_opening_covid_announced"),
+        "remove_ideas = lower_covid_cases\nclr_country_flag = TFR_EST_opening_covid_announced\nclear_variable = TFR_EST_qa_covid_tiers_detected\n",
+    ])
+    for tier in covid_tiers:
+        body.append(f"if = {{ limit = {{ has_country_flag = TFR_EST_qa_saved_{tier} }} add_ideas = {tier} clr_country_flag = TFR_EST_qa_saved_{tier} }}\n")
+    body.append("if = { limit = { has_country_flag = TFR_EST_qa_saved_covid_announced } set_country_flag = TFR_EST_opening_covid_announced clr_country_flag = TFR_EST_qa_saved_covid_announced }\n")
+    assertions.extend(["covid_absent_blocks_response", "covid_all_five_parent_tiers_detected", "covid_active_response_recorded"])
     body.append("log = \"TFR_EST_ENGINE_QA_END\"\n")
     source = (ROOT / "history/countries/EST - Estonia.txt").read_text(encoding="utf-8-sig")
     # Country history executes top-level commands independently. Keep native

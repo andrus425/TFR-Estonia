@@ -7,10 +7,12 @@ to the parent-only baseline. Completion is not implied by the presence of script
 | Scenario | Required observation |
 |---|---|
 | Player EST / AI Russia | Kaljulaid main portrait, Ratas head-minister/HoG tooltip, 57-seat coalition, 101 total seats, working tree, no no-content warning, EU/NATO/economy retained |
-| Opening screen | Eleven policy/referendum focuses visible; all later programme and war branches hidden; all opening focuses take 35 nominal days |
+| Opening screen | Four short branches, six terminal policies and final referendum below; all later programme and war branches hidden; all opening focuses take 35 nominal days |
+| Opening choices | Pension reform, teacher pay and highway roots selectable from Jan 1 with valid coalition; children require their parent; highway and COVID children are sibling choices; different valid branch orders preserve rewards and final access; ordinary policies have no date gates |
+| Domestic COVID | Clean Estonia cannot select the emergency focus; each of TFR's five case tiers permits it; world news and a response flag alone do not; first-case event arrives independently from Feb 27, preserves existing severity, queues once and cannot reinfect after recovery; from 2023 cleanup removes only the bridge's unchanged owned lowest tier after the mandatory response focus is complete; delayed completion retains focus access |
 | Opening timing | Continuous play and 0–14 banked days place Jan 12/13 events inside the referendum; pauses/lost-majority delays catch up after final selection |
 | Coalition legislation | Original three parties and 51 cabinet seats required; supply votes cannot substitute; majority loss stops ordinary legislation |
-| Referendum crisis | All ten policies mandatory; manual cancellation and PM/confidence invalidation cannot stop final; both Ratas choices resolve once |
+| Referendum crisis | Any missing policy blocks final; six terminal prerequisite blocks are conjunctive and their ancestors cover all ten policies; only final has Dec 24, 2020 start gate; manual cancellation and PM/confidence invalidation cannot stop final; both Ratas choices resolve once |
 | Resignation | Ratas stays caretaker during 13-day handover; ordinary/AI reconfirmation blocked; Kallas confirmed with original 60-seat assembly; no election |
 | Branch refresh | Opening, PM, caretaker, both wars, peace/reconstruction, restoration and party formation refresh cached layout after state changes |
 | Snap votes | Player decision absent; prolonged caretaker does not call election; authorized event/focus consumes permission once; March/restoration schedules retained |

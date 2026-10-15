@@ -1,5 +1,30 @@
 # Changelog
 
+## 15 October 2026 — branched policies and domestic COVID requirements
+
+- Restored meaningful prerequisites within four short opening branches: pensions,
+  education, infrastructure and the COVID response. Players can choose between
+  branches and between sibling policies after the highway or emergency response.
+- Required all six terminal policies before the referendum; their prerequisites
+  cover all ten opening policies. Kept 35-day durations and the December 24 gate
+  exclusively on the non-cancelable final focus.
+- Required actual COVID cases in Estonia for the emergency focus, using TFR's
+  existing severity-idea trigger. Added an independent first-case event from the
+  Health Board's February 27, 2020 announcement because the parent has no Estonia
+  outbreak assignment. Existing severity is preserved and recovery cannot reseed
+  the outbreak. From 2023, the bridge removes only its own unchanged lowest tier
+  once the mandatory COVID response is complete, so delayed play can still finish
+  the opening.
+
+## 15 October 2026 — freely ordered coalition policies
+
+- Made the ten opening policy focuses available in any order, without policy
+  prerequisites or start-date gates, including the COVID response.
+- Arranged policies in two rows of five with the final marriage-referendum focus
+  centered below. All ten still must finish before that non-cancelable final.
+- Retained the December 24, 2020 gate only for the referendum, along with the
+  35-day durations, coalition-majority checks and Porto Franco choices.
+
 ## 14 October 2026 — historical coalition opening and Porto Franco
 
 - Replaced the eight generic introductory focuses with eleven 35-day focuses

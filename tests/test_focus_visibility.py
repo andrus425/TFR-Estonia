@@ -48,6 +48,7 @@ class FocusVisibilityTests(unittest.TestCase):
                 'TFR_EST_opening_complete', 'TFR_EST_occupied', 'TFR_EST_caretaker',
                 'TFR_EST_first_war_seen', 'TFR_EST_second_war_seen',
                 'TFR_EST_restoration_pending',
+                'TFR_EST_ratas_retained', 'TFR_EST_ratas_mandate_ended',
             )),
         )
         for kind, field, changed in cases:
