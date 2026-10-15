@@ -159,6 +159,10 @@ class OpeningStoryTests(unittest.TestCase):
         self.option(r, 'tfr_estonia_opening.11', 1)
         self.assertIn(RESOLVED, r.flags)
         self.assertIn('TFR_EST_ratas_resigned', r.flags)
+        self.assertIn('TFR_EST_referendum_failed', r.flags)
+        self.assertIn('TFR_EST_opening_complete', r.flags)
+        self.assertNotIn('TFR_EST_referendum_active', r.flags)
+        self.assertNotIn(FINAL, r.flags)
         self.assertIn(PENDING, r.flags)
         self.assertIn('TFR_EST_caretaker', r.flags)
         self.assertEqual(r.variables['TFR_EST_pm_party'], 2)
@@ -218,7 +222,7 @@ class OpeningStoryTests(unittest.TestCase):
         self.assertEqual((r.variables, r.flags, r.ideas), before)
 
     def test_successor_requires_pending_handover_and_independence(self):
-        for blocked in ('no_handover', 'occupied', 'subject'):
+        for blocked in ('no_handover', 'occupied', 'subject', 'election_ended_mandate'):
             with self.subTest(blocked=blocked):
                 r = self.runtime()
                 if blocked != 'no_handover':
@@ -227,9 +231,12 @@ class OpeningStoryTests(unittest.TestCase):
                     r.flags.add('TFR_EST_occupied')
                 if blocked == 'subject':
                     r.props['is_subject'] = 'yes'
+                if blocked == 'election_ended_mandate':
+                    r.flags.add('TFR_EST_kallas_mandate_ended')
                 before = (r.variables.copy(), r.flags.copy(), r.ideas.copy())
                 r.call('TFR_EST_form_reform_centre_cabinet')
                 self.assertEqual((r.variables, r.flags, r.ideas), before)
+                self.assertFalse(r.condition(self.events()['tfr_estonia_opening.12'].get('trigger')))
 
     def test_opening_reveal_requires_focus_completion_and_crisis_choice(self):
         for done, chosen in ((False, False), (True, False), (False, True), (True, True)):
@@ -259,6 +266,60 @@ class OpeningStoryTests(unittest.TestCase):
         r.call('TFR_EST_keep_ratas')
         self.assertIn('TFR_EST_opening_complete', r.flags)
         self.assertNotIn('TFR_EST_referendum_active', r.flags)
+
+    def test_failed_referendum_stage_exit_requires_resignation_and_resolved_choice(self):
+        for failed in (False, True):
+            for resigned in (False, True):
+                for chosen in (False, True):
+                    with self.subTest(failed=failed, resigned=resigned, chosen=chosen):
+                        r = self.runtime()
+                        if failed:
+                            r.flags.add('TFR_EST_referendum_failed')
+                        if resigned:
+                            r.flags.add('TFR_EST_ratas_resigned')
+                        if chosen:
+                            r.flags.add(RESOLVED)
+                        r.call('TFR_EST_reveal_after_opening')
+                        self.assertEqual('TFR_EST_opening_complete' in r.flags,
+                                         failed and resigned and chosen)
+                        self.assertNotIn(FINAL, r.flags)
+
+    def test_late_resignation_uncompletes_only_referendum_and_preserves_earned_policies(self):
+        r = self.runtime()
+        self.investigation(r)
+        policies = {'TFR_EST_opening_' + suffix for suffix in REWARDS}
+        earned = {'TFR_EST_done_opening_' + suffix for suffix in REWARDS}
+        r.props['completed_focuses'].update(policies | {'TFR_EST_opening_marriage_referendum'})
+        r.flags.update(earned | {FINAL})
+        ledger, modifiers = self.ledger(r), self.modifiers(r)
+        self.option(r, 'tfr_estonia_opening.11', 1)
+        self.assertEqual(r.props['completed_focuses'], policies)
+        self.assertTrue(earned <= r.flags)
+        self.assertNotIn(FINAL, r.flags)
+        self.assertIn('TFR_EST_referendum_failed', r.flags)
+        self.assertIn('TFR_EST_opening_complete', r.flags)
+        self.assertEqual(self.ledger(r), ledger)
+        self.assertEqual(self.modifiers(r), modifiers)
+        self.assertEqual([call for call in r.calls if call[0] == 'uncomplete_national_focus'],
+                         [('uncomplete_national_focus', 'TFR_EST_opening_marriage_referendum')])
+        uncomplete = next(entry.value for _, entry in r.effects['TFR_EST_fail_referendum'].walk()
+                          if entry.key == 'uncomplete_national_focus')
+        self.assertEqual(uncomplete.get('uncomplete_children'), 'no')
+        self.assertEqual(uncomplete.get('refund_political_power'), 'no')
+        r.call('TFR_EST_ratas_steps_back')
+        r.call('TFR_EST_fail_referendum')
+        self.assertEqual(r.props['completed_focuses'], policies)
+        self.assertEqual([call for call in r.calls if call[0] == 'uncomplete_national_focus'],
+                         [('uncomplete_national_focus', 'TFR_EST_opening_marriage_referendum')])
+
+    def test_failed_referendum_cannot_be_restarted_by_stale_selection_effect(self):
+        r = self.runtime()
+        self.investigation(r)
+        r.call('TFR_EST_ratas_steps_back')
+        r.call('TFR_EST_begin_referendum')
+        self.assertNotIn('TFR_EST_referendum_active', r.flags)
+        self.assertNotIn(FINAL, r.flags)
+        self.assertEqual(r.events.count('tfr_estonia_opening.10'), 1)
 
     def test_story_never_loads_a_tree_annexes_or_calls_an_election(self):
         path = ROOT / 'common/scripted_effects/TFR_EST_opening.txt'

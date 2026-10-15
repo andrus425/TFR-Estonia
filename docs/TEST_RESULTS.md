@@ -8,12 +8,14 @@ The installed executable reports **HOI4 Operation Postern 1.19.3.0.c01a**.
 
 | Check | Observed result |
 |---|---|
-| `tools/validate_mod.py` | 63 additive/override script files; 195 focuses, 58 events, 58 decisions, 944 English localization keys; **0 errors** |
-| `python -m unittest discover -s tests -v` | **149 tests passed**, including 500 randomized election allocations checked against an independent integer reference |
+| `tools/validate_mod.py` | 70 additive/override script files; 235 focuses, 59 events, 58 decisions, 1,067 English localization keys; **0 errors** |
+| `python -m unittest discover -s tests -v` | **241 tests passed**, including 500 randomized election allocations checked against an independent integer reference |
 | `tools/test_occupation_compatibility.py` | **10 structural regression tests passed** |
 | `tools/patch_tfr_compatibility.py --check` | **11 reproducible overrides and 627 audited changes verified**: 620 settlement safeguards and seven head-of-government selectors |
 | `tools/native_script_interface.py --check` | **0 files with legacy argument-block interfaces** |
 | Opening and COVID generators | Eleven shared focuses, 22 focus localization keys, rewards/controller/events, the first-case bridge and their text reproduce exactly in `--check` mode |
+| Retained-Ratas generator | Twenty shared focuses, governing/visibility/completion triggers, rewards, local crisis controller, one notice and 63 English keys reproduce exactly in `--check` mode |
+| Kallas generator | Twenty shared focuses, governing/visibility/completion triggers, rewards, recovered-case bypasses and 60 English keys reproduce exactly in `--check` mode |
 | Portable packaging tests | Deterministic archive, exclusions, portable descriptors and metadata rejection passed as part of the full source suite |
 
 The tests cover historical seats and confidence, threshold/tie behavior, invalid
@@ -40,7 +42,7 @@ occupation/parent trees. The static validator checks dynamic-modifier references
 localization and icon sprites.
 
 The opening and branch-choice regressions comprise nine snap-election cases,
-32 focus/prerequisite/branch cases, 14 story/reward cases, seven cached-visibility
+35 focus/prerequisite/branch cases, 17 story/reward cases, eight cached-visibility
 cases and four event-notice cases. They cover actual coalition 50/51 thresholds
 with larger supply totals, all ten required policy records, original partner
 membership, December 24 and 14-day banking arithmetic, non-cancellation fields,
@@ -77,6 +79,57 @@ ideology selection when promoting multi-role presidential characters. The shared
 localization adapter preserves all 139 upstream selectors. Independent parser
 tests verify all upstream script trees, retained annex actions and parent story
 dispatches, including compact punctuation and late-file Estonia paths.
+
+The retained-Ratas continuation adds 22 graph/lifecycle tests and 26 crisis tests.
+They cover immediate revelation after the choice while the referendum prerequisite
+still blocks selection, original partners and actual cabinet seats, five parallel
+policy branches, six full completion orders, all nineteen earned-policy records
+before the final report, and preservation of rewards across recreated fixtures.
+Twenty 35-day focuses take 700 days: January 28, 2021 to December 29, 2022,
+leaving 66 days before the earliest March 2023 election boundary. Valid elections
+end the old mandate even if Centre wins again; invalid polling leaves it intact.
+Old domestic branches stay hidden during that mandate while war/restoration
+branches retain their existing campaign gates.
+
+Crisis tests execute the authored effects against the two parent Saudi-war flags,
+including stale flags after settlement, five individual mitigation projects,
+preparation before onset, repeated updates/cycles and saved contribution values.
+They verify that only the tracked factory-output/consumer-goods contribution is
+reversed and permanent reforms and parent flags remain intact. Pandemic tests
+cover every case tier, owned-only lowest-tier removal, clean-country no-ops,
+once-only vaccination rewards and no-reward recovery bypasses. Recovery bypass
+requires earned coalition-agreement renewal; it cannot unlock family-doctor
+reform before the continuation's root. Foreign scope, occupation, subject status,
+missing initialization and recorded-outbreak guards are exercised separately.
+
+The Kallas revision adds 21 continuation and 16 crisis tests, plus resignation
+and visibility regressions. Resignation explicitly fails the referendum, rejects
+its delayed completion reward and hides the opening. The active-focus availability
+condition remains valid through ordinary confidence loss but becomes false on
+resignation. A late choice after completion uncompletes only the referendum;
+earlier policy records and rewards remain intact. These source tests model
+completion records and check the authored native cancellation fields; they do not
+simulate the game's active-focus validity-update timing.
+
+The Kallas root waits for a confirmed Reform-Centre cabinet while its branch is
+already visible during the caretaker handover. Six different full policy orders
+finish twenty 35-day focuses on December 27, 2022 from January 26, 2021, leaving
+68 days before March 5. The final report checks all nineteen earlier records.
+Pandemic recovery bypasses three interventions without paying their rewards,
+leaving the certificate service as a separate ordinary reform. Tests cover
+actual cabinet seats, both parties, repeat-safe rewards, valid/invalid elections,
+stale successor callbacks, war content and subsequent elected governments with
+the referendum still uncompleted. The five shared energy-mitigation slots accept
+either route's equivalent project once; all 32 mixed slot combinations are
+checked against overcompensation. Visibility tests verify 256 flag combinations
+without signature collisions. Parsed script definitions are cached by file
+metadata while runtime catalogs and gameplay state remain independent.
+The restoration regression clears all native completed-focus IDs while retaining
+earned opening markers. War, restoration and a subsequent elected government
+remain reachable with the failed opening hidden. Legacy phase roots use the
+persistent opening-resolved availability condition; their internal branches keep
+native prerequisites. They do not depend on a hidden opening focus being bypassed
+again after occupation.
 
 The tokenizer repair recovered 384 safeguards previously omitted after compact
 `NOT ={` syntax. The compatibility manifest contains the expanded inventory;
@@ -229,6 +282,52 @@ removed messages or messages containing `TFR_EST_`/`tfr_estonia`. The report is
 `test-output/branched-opening-engine-comparison.json`. The owned test process was
 stopped and the original mod/DLC configuration restored byte-for-byte.
 
+The retained-Ratas run is captured under
+`test-output/engine-estonia-qa-20261015-140432/`. It reached the frontend in about
+**313 seconds** (317 seconds including capture) and passed **all 46 native
+assertions**. Seven new cases verify immediate retained-choice visibility before
+referendum completion, the original majority governing with legacy domestic
+content suppressed, once-only energy penalties, funded mitigation, settlement
+reversing only tracked contributions, owned COVID recovery bypassing emergency
+policies while leaving ordinary family-doctor reform unfinished, and a valid
+Centre election ending the old mandate while retaining an enacted reform.
+
+The run has 2,032 normalized unique error messages versus 2,023 in the pinned
+parent-only baseline. The nine additional messages are the previously observed
+foreign medium nationalist flags. No message names `TFR_EST_` or `tfr_estonia`.
+Against the earlier same-day 39-case development run, there are **zero new
+messages**; SPM's small-flag message did not recur. This is not a claim that the
+foreign asset issue was repaired. Reports are `test-output/ratas-engine-comparison.json`
+and `test-output/ratas-previous-development-comparison.json`. The owned process
+was stopped and the original mod/DLC configuration restored byte-for-byte.
+The fixture invokes effects in country history; it does not select focuses,
+exercise the natural election scheduler or render the hidden branches.
+
+The Kallas-transition run is captured under
+`test-output/engine-estonia-qa-20261015-142648/`. It reached the frontend in about
+**212 seconds** (214 seconds including capture) and passed **all 52 native
+assertions**. Six new cases verify that a delayed resignation uncompletes only
+the referendum while retaining all ten earlier native completions, the confirmed
+60-seat Kallas cabinet governs its own route, recovered COVID bypasses only its
+emergency interventions, Kallas energy measures mitigate the same local shock,
+mixed-route energy flags do not stack, and a new Reform election ends the old
+Kallas mandate without a stale caretaker handover.
+
+The captured error log has 2,032 normalized unique messages, exactly matching the
+preceding retained-Ratas run: **zero new messages, zero removed messages and zero
+messages naming `TFR_EST_` or `tfr_estonia`**. The nine previously recorded foreign
+flag differences remain against the pinned parent-only baseline. Reports are
+`test-output/kallas-previous-development-comparison.json` and
+`test-output/kallas-engine-comparison.json`. The owned process stopped and the
+original mod/DLC configuration was restored byte-for-byte.
+
+This run confirms the documented uncompletion effect on an already completed
+referendum. Actual automatic cancellation of a running focus on the engine's
+validity update, rendered branch replacement and normal campaign scheduling
+remain interactive acceptance checks. The final legacy phase-root prerequisite
+removal was applied after this run and is covered by the source restoration
+regression and final structural validation.
+
 The QA overlay is not shipped or enabled in ordinary play. It executes arithmetic
 within a single hidden-effect context during frontend history construction.
 Temporary input and consumer statements must remain in the same context.
@@ -255,6 +354,13 @@ interactive campaign observations were not performed.
 - DLC combinations, UI scales, full text/tooltip display and actual focus layout.
 - A natural 2020 opening through both Ratas choices, banked focus progress,
   manual cancellation attempts, delivered-event delays and post-crisis branch reveal.
+- A retained-Ratas campaign through all twenty continuation focuses before the
+  2023 election, with natural pandemic recovery, Saudi-war onset/settlement,
+  early/late preparations, saved crisis contributions and the electoral handoff.
+- Resignation during the active referendum and after delayed event response,
+  native cancellation timing, Kallas's thirteen-day handover and all twenty
+  successor focuses before the election, including occupation/restoration with
+  native opening completion IDs lost and persistent policy markers retained.
 - Long-term economy, preparation, military growth and occupation balance.
 - Custom portraits for characters currently using generic likenesses, plus actual
   campaign screenshots for a public Workshop release.

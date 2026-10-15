@@ -8,6 +8,7 @@ shared_focus = {
     x = 0
     y = 0
     cost = 5
+    allow_branch = { NOT = { has_country_flag = TFR_EST_referendum_failed } }
     available = {
         TFR_EST_opening_coalition_majority = yes
     }
@@ -30,6 +31,7 @@ shared_focus = {
     x = 3
     y = 0
     cost = 5
+    allow_branch = { NOT = { has_country_flag = TFR_EST_referendum_failed } }
     available = {
         TFR_EST_opening_coalition_majority = yes
     }
@@ -52,6 +54,7 @@ shared_focus = {
     x = 13
     y = 0
     cost = 5
+    allow_branch = { NOT = { has_country_flag = TFR_EST_referendum_failed } }
     available = {
         TFR_EST_opening_coalition_majority = yes
         generic_has_corona = yes
@@ -77,6 +80,7 @@ shared_focus = {
     y = 2
     cost = 5
     prerequisite = { focus = TFR_EST_opening_pension_reform }
+    allow_branch = { NOT = { has_country_flag = TFR_EST_referendum_failed } }
     available = {
         TFR_EST_opening_coalition_majority = yes
     }
@@ -100,6 +104,7 @@ shared_focus = {
     y = 2
     cost = 5
     prerequisite = { focus = TFR_EST_opening_covid_emergency }
+    allow_branch = { NOT = { has_country_flag = TFR_EST_referendum_failed } }
     available = {
         TFR_EST_opening_coalition_majority = yes
     }
@@ -123,6 +128,7 @@ shared_focus = {
     y = 2
     cost = 5
     prerequisite = { focus = TFR_EST_opening_covid_emergency }
+    allow_branch = { NOT = { has_country_flag = TFR_EST_referendum_failed } }
     available = {
         TFR_EST_opening_coalition_majority = yes
     }
@@ -146,6 +152,7 @@ shared_focus = {
     y = 2
     cost = 5
     prerequisite = { focus = TFR_EST_opening_kose_voobu }
+    allow_branch = { NOT = { has_country_flag = TFR_EST_referendum_failed } }
     available = {
         TFR_EST_opening_coalition_majority = yes
     }
@@ -168,6 +175,7 @@ shared_focus = {
     x = 7
     y = 0
     cost = 5
+    allow_branch = { NOT = { has_country_flag = TFR_EST_referendum_failed } }
     available = {
         TFR_EST_opening_coalition_majority = yes
     }
@@ -191,6 +199,7 @@ shared_focus = {
     y = 2
     cost = 5
     prerequisite = { focus = TFR_EST_opening_kose_voobu }
+    allow_branch = { NOT = { has_country_flag = TFR_EST_referendum_failed } }
     available = {
         TFR_EST_opening_coalition_majority = yes
     }
@@ -214,6 +223,7 @@ shared_focus = {
     y = 2
     cost = 5
     prerequisite = { focus = TFR_EST_opening_teacher_pay }
+    allow_branch = { NOT = { has_country_flag = TFR_EST_referendum_failed } }
     available = {
         TFR_EST_opening_coalition_majority = yes
     }
@@ -242,18 +252,23 @@ shared_focus = {
     prerequisite = { focus = TFR_EST_opening_three_seas }
     prerequisite = { focus = TFR_EST_opening_wage_compensation }
     prerequisite = { focus = TFR_EST_opening_excise_relief }
+    allow_branch = { NOT = { has_country_flag = TFR_EST_referendum_failed } }
     available = {
-        TFR_EST_can_start_referendum = yes
+        NOT = { has_country_flag = TFR_EST_referendum_failed }
+        OR = {
+            has_country_flag = TFR_EST_referendum_active
+            TFR_EST_can_start_referendum = yes
+        }
     }
     bypass = { has_country_flag = TFR_EST_done_opening_marriage_referendum }
     cancelable = no
-    cancel_if_invalid = no
-    continue_if_invalid = yes
+    cancel_if_invalid = yes
+    continue_if_invalid = no
     ai_will_do = { factor = 90 }
     select_effect = { TFR_EST_begin_referendum = yes }
     completion_reward = {
         if = {
-            limit = { NOT = { has_country_flag = TFR_EST_done_opening_marriage_referendum } }
+            limit = { NOT = { has_country_flag = TFR_EST_done_opening_marriage_referendum } NOT = { has_country_flag = TFR_EST_referendum_failed } }
             set_country_flag = TFR_EST_done_opening_marriage_referendum
             TFR_EST_finish_opening = yes
         }

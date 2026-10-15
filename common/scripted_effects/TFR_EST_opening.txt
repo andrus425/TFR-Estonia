@@ -98,18 +98,28 @@ TFR_EST_begin_covid_response = {
 
 TFR_EST_begin_referendum = {
     if = {
-        limit = { NOT = { has_country_flag = TFR_EST_done_opening_marriage_referendum } }
+        limit = {
+            NOT = { has_country_flag = TFR_EST_done_opening_marriage_referendum }
+            NOT = { has_country_flag = TFR_EST_referendum_failed }
+        }
         set_country_flag = TFR_EST_referendum_active
         TFR_EST_opening_tick = yes
     }
 }
 
-# Reveal the next stage only once the focus AND the crisis choice have finished.
+# A successful bill or its explicit abandonment can end the opening stage.
+# Abandonment never records referendum success or grants its completion reward.
 TFR_EST_reveal_after_opening = {
     if = {
         limit = {
-            has_country_flag = TFR_EST_done_opening_marriage_referendum
             has_country_flag = TFR_EST_porto_choice_resolved
+            OR = {
+                has_country_flag = TFR_EST_done_opening_marriage_referendum
+                AND = {
+                    has_country_flag = TFR_EST_referendum_failed
+                    has_country_flag = TFR_EST_ratas_resigned
+                }
+            }
             NOT = { has_country_flag = TFR_EST_opening_complete }
         }
         set_country_flag = TFR_EST_opening_complete
@@ -120,6 +130,24 @@ TFR_EST_reveal_after_opening = {
 TFR_EST_finish_opening = {
     TFR_EST_reveal_after_opening = yes
     TFR_EST_opening_tick = yes
+}
+
+# Removing the availability condition aborts an active focus through the
+# engine's native cancel_if_invalid handling. A delayed event choice can also
+# arrive after native completion; undo only the abandoned referendum in that
+# case, preserving all ten earlier policies and their persistent rewards.
+TFR_EST_fail_referendum = {
+    set_country_flag = TFR_EST_referendum_failed
+    clr_country_flag = TFR_EST_referendum_active
+    clr_country_flag = TFR_EST_done_opening_marriage_referendum
+    if = {
+        limit = { has_completed_focus = TFR_EST_opening_marriage_referendum }
+        uncomplete_national_focus = {
+            focus = TFR_EST_opening_marriage_referendum
+            uncomplete_children = no
+            refund_political_power = no
+        }
+    }
 }
 
 # A narrative choice may restore the original 57-seat cabinet, never its seats.
@@ -141,6 +169,7 @@ TFR_EST_keep_ratas = {
         set_temp_variable = { var = TFR_EST_cohesion_delta value = -6 }
         TFR_EST_change_cohesion = yes
         TFR_EST_reveal_after_opening = yes
+        TFR_EST_refresh_focus_visibility = yes
     }
 }
 
@@ -154,6 +183,7 @@ TFR_EST_ratas_steps_back = {
         }
         set_country_flag = TFR_EST_porto_choice_resolved
         set_country_flag = TFR_EST_ratas_resigned
+        TFR_EST_fail_referendum = yes
         set_country_flag = TFR_EST_reform_handover_pending
         set_variable = { TFR_EST_reform_handover_days = 13 }
         TFR_EST_enter_caretaker = yes
@@ -170,6 +200,7 @@ TFR_EST_form_reform_centre_cabinet = {
             TFR_EST_independent_parliament = yes
             has_country_flag = TFR_EST_reform_handover_pending
             NOT = { has_country_flag = TFR_EST_reform_centre_formed }
+            NOT = { has_country_flag = TFR_EST_kallas_mandate_ended }
         }
         set_country_flag = TFR_EST_scripted_cabinet_change
         TFR_EST_nominate_reform = yes

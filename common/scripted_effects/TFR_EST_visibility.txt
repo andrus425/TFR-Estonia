@@ -10,11 +10,14 @@ TFR_EST_refresh_focus_visibility = {
         add_to_temp_variable = { var = TFR_EST_visibility_signature value = TFR_EST_visibility_pm }
         if = { limit = { has_country_flag = TFR_EST_opening_complete } add_to_temp_variable = { TFR_EST_visibility_signature = 10000 } }
         if = { limit = { has_country_flag = TFR_EST_occupied } add_to_temp_variable = { TFR_EST_visibility_signature = 20000 } }
-        if = { limit = { has_country_flag = TFR_EST_caretaker } add_to_temp_variable = { TFR_EST_visibility_signature = 100 } }
+        if = { limit = { has_country_flag = TFR_EST_caretaker } add_to_temp_variable = { TFR_EST_visibility_signature = 200 } }
         if = { limit = { has_war = yes } add_to_temp_variable = { TFR_EST_visibility_signature = 10 } }
         if = { limit = { has_country_flag = TFR_EST_first_war_seen } add_to_temp_variable = { TFR_EST_visibility_signature = 1 } }
         if = { limit = { has_country_flag = TFR_EST_second_war_seen } add_to_temp_variable = { TFR_EST_visibility_signature = 2 } }
         if = { limit = { has_country_flag = TFR_EST_restoration_pending } add_to_temp_variable = { TFR_EST_visibility_signature = 4 } }
+        if = { limit = { has_country_flag = TFR_EST_referendum_failed } add_to_temp_variable = { TFR_EST_visibility_signature = 20 } }
+        if = { limit = { has_country_flag = TFR_EST_reform_centre_formed } add_to_temp_variable = { TFR_EST_visibility_signature = 40 } }
+        if = { limit = { has_country_flag = TFR_EST_kallas_mandate_ended } add_to_temp_variable = { TFR_EST_visibility_signature = 80 } }
         if = { limit = { check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } } add_to_temp_variable = { TFR_EST_visibility_signature = 1000000 } }
         if = { limit = { has_country_flag = TFR_EST_ratas_retained } add_to_temp_variable = { TFR_EST_visibility_signature = 2000000 } }
         if = { limit = { has_country_flag = TFR_EST_ratas_mandate_ended } add_to_temp_variable = { TFR_EST_visibility_signature = 4000000 } }

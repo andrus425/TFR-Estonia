@@ -7,12 +7,25 @@ than silently falling back to a separately implemented election algorithm.
 from pathlib import Path
 from fractions import Fraction
 from datetime import date
+from functools import lru_cache
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 from clausewitz import Block, parse
 from native_script_interface import AMOUNT_INPUTS, amount_call
+
+
+@lru_cache(maxsize=256)
+def _parsed_script(path, modified_ns, byte_size):
+    # Definitions are read-only during execution. Each Runtime keeps its own
+    # catalogs and gameplay state; changed generated files invalidate this key.
+    return parse(path.read_text(encoding="utf-8-sig"), str(path))
+
+
+def parsed_script(path):
+    metadata = path.stat()
+    return _parsed_script(path, metadata.st_mtime_ns, metadata.st_size)
 
 
 class Runtime:
@@ -40,12 +53,12 @@ class Runtime:
         self.props['completed_focuses'] = set()
         for directory, catalog in (("scripted_effects", self.effects), ("scripted_triggers", self.triggers)):
             for path in (ROOT / "common" / directory).glob("TFR_EST_*.txt"):
-                tree = parse(path.read_text(encoding="utf-8-sig"), str(path))
+                tree = parsed_script(path)
                 catalog.update({e.key: e.value for e in tree.entries})
         # Execute TFR's real five-tier domestic COVID predicate from the
         # compatibility override, rather than inventing a test-only infection.
         generic_path = ROOT / "common/scripted_triggers/00_TFR_scripted_triggers_ZZZ_generic.txt"
-        generic = parse(generic_path.read_text(encoding="utf-8-sig"), str(generic_path))
+        generic = parsed_script(generic_path)
         self.triggers["generic_has_corona"] = generic.get("generic_has_corona")
         self.operations = 0
 
@@ -234,6 +247,12 @@ class Runtime:
                 self.politics.update({x.key: x.value for x in value.entries})
             elif key == "division_template": self.templates.append(value.get("name"))
             elif key == "load_focus_tree": self.props["focus_tree"] = value.get("tree") if isinstance(value, Block) else value
+            elif key == "uncomplete_national_focus":
+                # Model the documented completed-record operation only. The
+                # native focus-progress engine and automatic cancellation are
+                # deliberately outside this arithmetic/control-flow runtime.
+                self.props['completed_focuses'].discard(value.get('focus'))
+                self.calls.append((key, value.get('focus')))
             elif key == "add_debt_with_inflation": self.calls.append((key, self.temp.get("debt_var_temp")))
             elif key == "add_political_power":
                 self.props['political_power'] = self.props.get('political_power', Fraction(0)) + self.num(value, args)

@@ -2,6 +2,8 @@ from pathlib import Path
 import argparse, json, re
 from native_script_interface import amount_call, native_amount_calls
 from build_opening_content import POLICIES
+from build_ratas_continuation import POLICIES as RATAS_POLICIES
+from build_kallas_continuation import POLICIES as KALLAS_POLICIES
 
 parser = argparse.ArgumentParser(description='Build Estonia normal content.')
 parser.add_argument('--focus-only', action='store_true', help='Update the tree, route AI, focus text and dependent decisions without rewriting events or reward ideas.')
@@ -40,7 +42,8 @@ def F(suffix, name, desc, x, y, pre=None, effects='', icon='national_unity', cos
     branch_tests = ['has_country_flag = TFR_EST_opening_complete']
     crisis = any(token in avail for token in ('TFR_EST_campaign_stage', 'TFR_EST_restoration_pending', 'TFR_EST_first_war_seen', 'TFR_EST_second_war_seen'))
     if not crisis:
-        tests += ['TFR_EST_coalition_majority = yes', 'NOT = { has_country_flag = TFR_EST_caretaker }']
+        tests += ['TFR_EST_coalition_majority = yes', 'NOT = { has_country_flag = TFR_EST_caretaker }', 'TFR_EST_show_legacy_domestic_tree = yes']
+        branch_tests.append('TFR_EST_show_legacy_domestic_tree = yes')
     if party is not None:
         tests += [f'check_variable = {{ TFR_EST_pm_party = {party} }}','NOT = { has_country_flag = TFR_EST_caretaker }']
         branch_tests += [f'check_variable = {{ TFR_EST_pm_party = {party} }}', 'NOT = { has_country_flag = TFR_EST_caretaker }']
@@ -48,15 +51,20 @@ def F(suffix, name, desc, x, y, pre=None, effects='', icon='national_unity', cos
         branch_tests.append(avail)
     if avail: tests.append(avail)
     pr = [] if pre is None else ([pre] if isinstance(pre,str) else pre)
-    prereqs = '\n'.join(f'prerequisite = {{ focus = TFR_EST_{s} }}' for s in pr)
+    if pr == ['opening_marriage_referendum']:
+        # A failed opening is hidden and occupation may remove native focus
+        # records. Use its persistent resolved stage for these new phase roots;
+        # every internal branch keeps its normal native prerequisites.
+        pr = []
+        tests.append('TFR_EST_opening_resolved = yes')
+    prereqs = ''.join(f'        prerequisite = {{ focus = TFR_EST_{s} }}\n' for s in pr)
     f = f'''\n\tfocus = {{
         id = {ident}
         icon = GFX_goal_generic_{icon}
         x = {x}
         y = {y + 7}
         cost = {cost}
-        {prereqs}
-        allow_branch = {{ {' '.join(branch_tests)} }}
+{prereqs}        allow_branch = {{ {' '.join(branch_tests)} }}
         available = {{ {' '.join(tests)} }}
         bypass = {{ has_country_flag = TFR_EST_done_{suffix} }}
         cancel_if_invalid = yes
@@ -289,7 +297,7 @@ focus_tree = {
     country = { factor = 0 modifier = { add = 100 original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } } }
     default = no
     initial_show_position = { focus = TFR_EST_opening_kose_voobu }
-'''+''.join(f'    shared_focus = TFR_EST_opening_{policy.suffix}\n' for policy in POLICIES)+''.join(f[1] for f in focuses)+'}\n'
+'''+''.join(f'    shared_focus = TFR_EST_opening_{policy.suffix}\n' for policy in POLICIES)+''.join(f'    shared_focus = TFR_EST_ratas_{policy.suffix}\n' for policy in RATAS_POLICIES)+''.join(f'    shared_focus = TFR_EST_kallas_{policy.suffix}\n' for policy in KALLAS_POLICIES)+''.join(f[1] for f in focuses)+'}\n'
 
 ideas={
 'government_continuity':('Government Continuity','Secure communications, administrative backups and remote procedures keep government functioning when ordinary meetings are disrupted.','political_power_gain = 0.05'),
@@ -557,7 +565,7 @@ for suffix,pid,label in parties:
     shared_order=['reserve_register','logistics_audit','allied_liaison','kaitseliit_training','interoperability','reserve_training_exercise','industrial_survey','tallinn_industry']
     # Unavailable entries are skipped: reactive campaign content takes priority as soon as its stage opens.
     emergency_order=[node[0] for node in second]+[node[0] for node in first]+[node[0] for node in restoration]+[node[0] for node in post]+[node[0] for node in interwar]
-    order=['TFR_EST_opening_'+p.suffix for p in POLICIES]+[P+s for s in emergency_order]+[P+s for s in shared_order]+route_focuses+[P+s for s in ['reserve_depots','mobilization_plans','realistic_procurement','total_defence','prepared_alliance','national_supply_plan','prepared_positions','artillery_observers','air_defence_integration']]
+    order=['TFR_EST_opening_'+p.suffix for p in POLICIES]+[P+s for s in emergency_order]+['TFR_EST_ratas_'+p.suffix for p in RATAS_POLICIES]+['TFR_EST_kallas_'+p.suffix for p in KALLAS_POLICIES]+[P+s for s in shared_order]+route_focuses+[P+s for s in ['reserve_depots','mobilization_plans','realistic_procurement','total_defence','prepared_alliance','national_supply_plan','prepared_positions','artillery_observers','air_defence_integration']]
     L(P+suffix+'_ai_plan',f'Estonia: {label} Governing Programme')
     plans+=f'''TFR_EST_{suffix}_ai_plan = {{
  name = TFR_EST_{suffix}_ai_plan

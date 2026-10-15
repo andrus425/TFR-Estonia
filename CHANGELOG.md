@@ -1,5 +1,55 @@
 # Changelog
 
+## 15 October 2026 — Ratas resigns and Kallas takes office
+
+- Made Ratas's resignation automatically fail the marriage-referendum focus,
+  overriding its protection against manual cancellation. Ordinary confidence loss
+  still cannot cancel an already active referendum.
+- Hide the opening on resignation and reveal a dedicated twenty-focus Kallas
+  programme. Its first focus requires confirmation of the Reform–Centre cabinet
+  after the existing thirteen-day negotiations, with no election or seat changes.
+- Preserve all ten earlier policy rewards. If the player delays the resignation
+  response until after native focus completion, undo only the abandoned final.
+- Added five policy branches using enacted 2021–2022 policy: COVID response,
+  pension/education measures, recovery investment and local services, energy bills
+  and gas supply, and defence/civil protection. All twenty focuses take 35 days;
+  a 26 January 2021 start can finish on 27 December 2022 before the regular vote.
+- Require a confirmed Reform–Centre government and 51 actual coalition seats.
+  Recorded pandemic recovery bypasses unused emergency interventions without
+  rewards; certificate administration remains useful afterward.
+- Reuse the existing tracked energy-crisis contribution and capped mitigation
+  slots for both government routes. Relief never changes the parent's Saudi-war
+  flags or stacks duplicate mitigation after a route transition.
+- Keep broader domestic branches hidden until the next valid election, even if
+  Reform wins again. War and restoration content uses the resolved opening and
+  an earlier earned policy, so an abandoned referendum cannot block it permanently.
+- Document the coalition's continuation to 2023 as alternate history; no forced
+  June 2022 breakup or policies imported from the later Kallas II cabinet.
+
+## 15 October 2026 — the retained Ratas coalition through 2023
+
+- Added a hidden twenty-focus continuation that appears when Ratas chooses to
+  remain prime minister. The first focus waits for the active referendum to finish;
+  no tree replacement interrupts the crisis.
+- Built five branches from the 2019 coalition agreement and December 2020
+  pandemic plans: family support, regional employment and enterprise, healthcare,
+  energy supply and bills, and internal/territorial security. The player can move
+  between branches before the final report to voters.
+- Kept every focus at 35 days and required the original three partners, Centre
+  leadership and 51 actual coalition seats. Twenty focuses take 700 days, allowing
+  a late-January 2021 start to finish before the March 2023 election.
+- Required actual domestic COVID cases for the three pandemic interventions;
+  a recorded recovered outbreak bypasses them without rewards. Added guarded
+  one-tier vaccination relief using the parent's case ideas.
+- Connected Estonia's dynamic economy modifier to TFR's Saudi-war supply shock.
+  Funded supply, renovation and bill-relief policies mitigate its local penalties;
+  crisis resolution reverses only the tracked crisis contribution.
+- Hid the older domestic programmes during this coalition mandate while retaining
+  world-state war/restoration branches. The next valid election ends the extension,
+  including after another Centre victory; election arithmetic and dates are unchanged.
+- Added primary-source references, generated localization, regression coverage and
+  manual acceptance scenarios. In-game campaign and balance checks remain required.
+
 ## 15 October 2026 — branched policies and domestic COVID requirements
 
 - Restored meaningful prerequisites within four short opening branches: pensions,
@@ -16,7 +66,7 @@
   once the mandatory COVID response is complete, so delayed play can still finish
   the opening.
 
-## 15 October 2026 — freely ordered coalition policies
+## 15 October 2026 — freely ordered coalition policies (superseded)
 
 - Made the ten opening policy focuses available in any order, without policy
   prerequisites or start-date gates, including the COVID response.

@@ -61,14 +61,19 @@ alternate history.
 
 ## Adaptation and timing constraints
 
-The suggested pool totals **18 focuses**: fifteen agreement subjects and three
-additional pandemic subjects. All lasting 35 days would require 630 days. With
-an opening completed during January 2021, that allows completion during autumn
-2022, before the regular March 2023 election. Actual timing must also be tested
-against the implementation's conditions and parent crisis hooks.
+The source pool totals **18 policy focuses**: fifteen agreement subjects and three
+additional pandemic subjects. The implementation adds **Renew the 2019 Coalition
+Agreement** and **Account for the Coalition's Promises**, bringing the continuation
+to **twenty 35-day focuses**, or **700 days**. Starting on 28 January 2021 permits
+completion on 29 December 2022, 66 days before 5 March 2023. The renewal and final
+accountability report are authored framing, rather than additional measures found
+in the agreement. Actual timing must also be tested against the implementation's
+conditions and parent crisis hooks.
 
-Arrange policies into several short branches with alternatives between them.
-Reveal the continuation only after the player chooses to retain Ratas. A focus
+The implemented branches cover family support, regional employment/enterprise,
+healthcare, energy and security. Players can move between them while respecting
+their prerequisites. The continuation is revealed only after the player chooses
+to retain Ratas, and renewal waits for the active referendum focus to finish. A focus
 lasting 35 days can approve funding, establish a programme or start procurement;
 it should not claim to finish an LNG terminal or continental grid conversion
 within that period.
@@ -76,9 +81,18 @@ within that period.
 TFR's energy crisis is an authored setting. Its relief focuses adapt the
 agreement's energy and tax commitments; the 2019 document did not predict TFR's
 crisis. Regional infrastructure funding can prepare Estonia in advance. Relief
-for an active crisis must use the installed parent's crisis status, while
+for an active crisis uses the installed parent's Saudi-war crisis status, while
 avoiding changes that end the crisis for other countries or remove unrelated
 economic modifiers.
+
+The source-based energy programmes can be funded before or during the crisis;
+their mitigation applies while the parent shock is active. This preserves the
+700-day schedule instead of requiring players to wait for an uncertain onset.
+The next valid election ends this specific 2019 coalition mandate, even if Centre
+wins again. That transition preserves the existing parliamentary calendar and
+seat calculation. The three COVID emergency interventions require actual cases;
+after recovery from a recorded outbreak they bypass without rewards, keeping
+ordinary healthcare reform and the final report accessible.
 
 Rewards, fiscal costs, focus order, polling effects, coalition cohesion and
 crisis mitigation are game-design choices. The sources do not establish those

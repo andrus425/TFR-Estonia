@@ -96,6 +96,13 @@ Polling campaigns preserve totals through bounded transfers and never change sea
 - `TFR_EST_mobilize_reserves`: one-time template authorization; normal recruitment applies.
 - `TFR_EST_reconcile_occupation`: actual patron/status selects occupation or restoration.
 - `TFR_EST_reconcile_campaign`: war-stage tracking and independent main-tree repair.
+- `TFR_EST_ratas_tick`: retained-programme recovery bypasses and local energy reconciliation.
+- `TFR_EST_reconcile_energy_crisis`: replace only Estonia's tracked Saudi-war penalty.
+- `TFR_EST_ratas_reduce_covid`: improve one existing case tier through guarded vaccination relief.
+- `TFR_EST_fail_referendum`: abandon and automatically invalidate the active final,
+  or uncomplete only that final after a delayed story response.
+- `TFR_EST_kallas_tick`: bypass recovered-outbreak emergency interventions after
+  the Reform–Centre programme's root was earned.
 
 HOI4 scripted effects accept scalar calls, not argument blocks or `$AMOUNT$`
 parameters. Set the temporary input immediately before its helper in the same
@@ -132,15 +139,19 @@ to training time, attrition or supply consumption normally use negative values.
 Rewards must retain their own once-only guards; the refresh helper grants no
 additional values and does not reapply an already present modifier.
 
-The new opening policy rewards adjust these containers directly, with persistent
+The new opening, retained-Ratas and Kallas policy rewards adjust these containers directly, with persistent
 once-only completion guards. The later programmes retain their current ideas;
 their bonuses are not copied into the containers, avoiding double counting.
 
 ## Compact opening and crisis
 
 `TFR_EST_opening.txt` contains eleven shared focuses imported by the single main
-tree. Eight older generic introduction nodes were removed; later prerequisites
-now lead from `TFR_EST_opening_marriage_referendum`. All opening costs are five
+tree. Eight older generic introduction nodes were removed. Legacy campaign roots
+use `TFR_EST_opening_resolved` availability and the persistent
+`TFR_EST_opening_complete` visibility flag, with no external native opening-focus
+prerequisite. Either a completed or abandoned referendum can resolve the opening,
+including after an occupation handoff removes native completion IDs. Internal
+branch prerequisites remain intact. All opening costs are five
 focus points (35 days). The first ten require the actual original coalition,
 Centre PM and mandate, 51 cabinet seats and no caretaker status.
 
@@ -173,7 +184,11 @@ or its earned persistent marker, conjunctively. Markers preserve legitimate
 completion when an occupation tree handoff removes native IDs. December 24, 2020
 is the only opening date gate and the final focus's earliest start; even 14 banked
 days leave January 12–13 inside the focus.
-The final uses `cancelable=no`, `cancel_if_invalid=no`, `continue_if_invalid=yes`.
+The final uses `cancelable=no`, `cancel_if_invalid=yes`, `continue_if_invalid=no`.
+Its availability accepts either valid start conditions or the active-referendum
+flag, but always rejects `TFR_EST_referendum_failed`. Thus ordinary cabinet or
+confidence changes cannot invalidate the active focus; the explicit resignation
+effect clears that active flag and sets failure, allowing native cancellation.
 
 Its selection effect sets `TFR_EST_referendum_active`. Daily reconciliation
 queues the investigation from January 12 and the response one day after delivery.
@@ -187,15 +202,130 @@ ordinary/AI reconfirmation. The successor event nominates Reform through explici
 story authorization, adds Centre and confirms only with valid confidence. The
 original assembly supplies 60 seats. Unusual insufficient-confidence states can
 complete their authorized handover through parliament; daily repair clears the
-pending transition after confirmation. No tree swap occurs during the focus.
+pending transition after confirmation. Resignation calls `TFR_EST_fail_referendum`
+before caretaker setup. It clears the active and successful-completion markers;
+if a delayed player response finds the final already natively complete,
+`uncomplete_national_focus` removes only that final with no child reset or PP
+refund. No earlier policy rewards are replayed or removed. All eleven opening
+nodes reject the failure flag in `allow_branch`, while the Kallas programme
+becomes visible. The same main-tree ID stays loaded.
 
-`TFR_EST_opening_complete` requires both referendum completion and the crisis
-choice. All later nodes have `allow_branch` gates; party nodes also check PM and
+`TFR_EST_opening_complete` requires the crisis choice and either successful
+referendum completion or the explicit resigned-and-failed outcome. Failure does
+not create a successful final-focus record. All later nodes have `allow_branch` gates; party nodes also check PM and
 caretaker status, and war/restoration nodes retain their stage gates. The guarded
 `TFR_EST_refresh_focus_visibility` signature tracks stage, PM, opening, occupation,
-caretaker, war state, both seen-war flags, restoration and Parempoolsed formation.
+caretaker, war state, both seen-war flags, restoration, Parempoolsed formation,
+the retained-Ratas choice and mandate end, referendum failure, Reform–Centre
+confirmation, and the end of the Kallas mandate.
 It refreshes the cached layout only when these inputs change. Availability keeps
 ordinary 51-seat checks while essential war/restoration content has its own gates.
+
+## Retained Ratas coalition, 2021–2023
+
+`tools/build_ratas_continuation.py` generates twenty shared focuses, triggers,
+reward/controller effects, an energy-shock notice and English localization.
+The main tree imports these shared IDs alongside the eleven opening IDs.
+`TFR_EST_ratas_branch_visible` requires the retained-Ratas story choice, a
+non-occupied EST and no `TFR_EST_ratas_mandate_ended` flag. This reveals the branch
+immediately after the choice, but `renew_agreement` still has the referendum as
+a prerequisite. No tree swap or forced completion interrupts the final opening
+focus. All twenty focuses cost five focus points (35 days).
+
+`TFR_EST_ratas_governing` additionally requires the completed opening, Centre PM
+and mandate, no caretaker, the three original coalition partners, and at least
+51 actual cabinet seats. Five short branches lead to a conjunctive final report:
+family support (three focuses), regional development (four), health (four),
+energy (five) and security (two). The renewal and final report bring the total
+to twenty. Persistent `TFR_EST_done_ratas_*` markers guard all rewards and bypass
+completed work across occupation/tree transitions.
+
+The three COVID-specific focuses require `generic_has_corona`: hospital capacity,
+testing/tracing and risk-group vaccination. Once an outbreak has been recorded
+and no case tier remains, the daily controller marks these interventions complete
+without calling their rewards. That permits a recovered country to continue
+through the branch; ordinary family-doctor reform remains available. Vaccination
+uses an explicit severity ladder rather than the parent's unsafe generic decrease
+fallback. The lowest tier is removed only while Estonia owns the seeded case idea;
+other existing tiers are improved by one step without inventing an outbreak.
+
+`TFR_EST_energy_crisis_active` reads the parent's Saudi-war flags and excludes its
+global war-over flag. The energy controller stores the factory-output and
+consumer-goods contributions it previously applied in separate persistent
+variables. On a change it subtracts only those old contributions, calculates the
+new targets and adds them to the economy's backing variables. The baseline targets
+are −0.04 output and +0.03 consumer goods. The three supply focuses each mitigate
+output by 0.01; renovation and network-charge relief each mitigate consumer goods
+by 0.015. Preparations can be completed before onset and apply if the crisis starts
+later. Resolution returns the crisis targets to zero without resetting permanent
+reforms, changing global flags or removing other countries' ideas.
+
+The next successful election commits the end-of-mandate flag, including when
+Centre wins the most seats again. Invalid election input does not end the mandate.
+The `TFR_EST_show_legacy_domestic_tree` gate keeps the older party, economy and
+military branches hidden during the retained 2019 mandate; it releases them after
+the next valid election. War/restoration nodes retain their world-state access.
+Parliament allocation, election intervals and the regular March 2023 calendar
+remain owned by the existing election system.
+
+Twenty uninterrupted focuses require 700 days. A 28 January 2021 continuation
+start yields 29 December 2022 completion, 66 days before 5 March 2023; this is a
+schedule budget rather than a guarantee against player, coalition or war delays.
+
+## Kallas Reform–Centre government, 2021–2023
+
+`tools/build_kallas_continuation.py` generates twenty shared focuses, availability
+triggers, reward/controller effects and sixty English localization keys. The
+main tree imports them alongside the opening and retained-Ratas definitions.
+`TFR_EST_kallas_branch_visible` requires the resigned-and-failed story outcome,
+no occupation and no `TFR_EST_kallas_mandate_ended` flag. It reveals immediately
+on resignation. Its root has no prerequisite on the failed referendum.
+
+`TFR_EST_kallas_governing` requires the resolved opening, confirmed
+`TFR_EST_reform_centre_formed` flag, PM party and mandate 1, Reform and Centre as
+actual coalition members, no caretaker and at least 51 coalition seats. The
+thirteen-day handover therefore reveals the programme without allowing a
+caretaker to enact it. The original 60-seat assembly and election calendar remain.
+The real 2022 coalition collapse is not forced in this alternate-history mandate.
+
+The formation root opens five branches: COVID (four), social/education (four),
+recovery/services (four), energy (four), and security (two). A final report
+requires all five terminal focuses and every earlier completion record. The
+root and final bring the programme to twenty 35-day focuses. Persistent
+`TFR_EST_done_kallas_*` records guard rewards and bypass completed work. Rewards
+use the existing dynamic modifiers, cohesion/readiness and public-budget helper.
+
+The first three COVID policies—sick pay, hospital support and frontline-worker
+vaccination—require `generic_has_corona`. After an earned programme root and
+recorded outbreak recovery, `TFR_EST_kallas_tick` marks unused emergency policies
+done without their rewards. The certificate service has no case requirement and
+remains useful after recovery. Vaccination calls the same guarded case-tier
+ladder as the retained-Ratas route and cannot manufacture an outbreak.
+
+Both routes share five energy-mitigation slots. Each slot tests corresponding
+earned records with OR, so changing programme cannot duplicate its contribution:
+
+| Slot | Retained Ratas policy | Kallas policy | Local crisis adjustment |
+|---|---|---|---|
+| Supply connection | LNG connection | LNG capability | +0.01 output |
+| Supply reserve | Grid synchronisation | Strategic gas reserve | +0.01 output |
+| Operating supply | Renewable CHP | Network-charge relief | +0.01 output |
+| Household costs | Building renovation | Eligible bill compensation | −0.015 consumer goods |
+| Network costs | Network-charge relief | Network-charge relief | −0.015 consumer goods |
+
+With all applicable slots, the original −0.04/+0.03 crisis becomes −0.01/0.
+Resolution removes only the stored contribution. The Kallas focuses can prepare
+the schemes before onset; no uncertain crisis date blocks the 700-day programme.
+
+Every valid election marks the Kallas mandate ended, including another Reform
+victory. Invalid election input leaves it intact. The legacy domestic visibility
+gate suppresses the broader party, economy and military sections during either
+dedicated mandate. World-state war/restoration branches remain accessible after
+opening resolution. Their phase heads use the persistent stage-resolution guard
+without an external native prerequisite, preserving access after occupation
+removes native opening IDs. Internal prerequisites remain intact. Twenty
+uninterrupted focuses from 26 January 2021 finish on
+27 December 2022, leaving 68 days before 5 March 2023.
 
 ## Lifecycle and persistence
 

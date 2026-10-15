@@ -1,0 +1,9 @@
+add_namespace = tfr_estonia_ratas
+country_event = {
+    id = tfr_estonia_ratas.1
+    title = TFR_EST_ratas_energy_title
+    desc = TFR_EST_ratas_energy_desc
+    picture = GFX_report_event_generic_handshake
+    is_triggered_only = yes
+    option = { name = TFR_EST_ratas_energy_option }
+}

@@ -63,6 +63,7 @@ country_event = {
         TFR_EST_independent_parliament = yes
         has_country_flag = TFR_EST_reform_handover_pending
         NOT = { has_country_flag = TFR_EST_reform_centre_formed }
+        NOT = { has_country_flag = TFR_EST_kallas_mandate_ended }
         NOT = { has_country_flag = TFR_EST_new_cabinet_notice_presented }
     }
     immediate = { set_country_flag = TFR_EST_new_cabinet_notice_presented }

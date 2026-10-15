@@ -46,6 +46,18 @@ TFR_EST_assign_election_mandate = {
         limit = { has_country_flag = TFR_EST_ratas_retained }
         set_country_flag = TFR_EST_ratas_mandate_ended
     }
+    # The successor government serves the same pre-election assembly. End its
+    # programme after any valid new election, including another Reform win.
+    if = {
+        limit = {
+            OR = {
+                has_country_flag = TFR_EST_reform_centre_formed
+                has_country_flag = TFR_EST_ratas_resigned
+            }
+        }
+        set_country_flag = TFR_EST_kallas_mandate_ended
+        clr_country_flag = TFR_EST_reform_handover_pending
+    }
     set_temp_variable = { var = TFR_EST_largest_elected_party value = -1 }
     if = { limit = { check_variable = { var = TFR_EST_seats_reform value = TFR_EST_largest_elected_party compare = greater_than } } set_temp_variable = { var = TFR_EST_largest_elected_party value = TFR_EST_seats_reform } set_variable = { TFR_EST_mandate_party = 1 } }
     if = { limit = { check_variable = { var = TFR_EST_seats_centre value = TFR_EST_largest_elected_party compare = greater_than } } set_temp_variable = { var = TFR_EST_largest_elected_party value = TFR_EST_seats_centre } set_variable = { TFR_EST_mandate_party = 2 } }

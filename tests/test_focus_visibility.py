@@ -1,5 +1,6 @@
 """Exercise authored layout invalidation without emulating the focus interface."""
 from fractions import Fraction
+from itertools import product
 import unittest
 
 from script_runtime import Block, ROOT, Runtime, parse
@@ -49,6 +50,8 @@ class FocusVisibilityTests(unittest.TestCase):
                 'TFR_EST_first_war_seen', 'TFR_EST_second_war_seen',
                 'TFR_EST_restoration_pending',
                 'TFR_EST_ratas_retained', 'TFR_EST_ratas_mandate_ended',
+                'TFR_EST_referendum_failed', 'TFR_EST_reform_centre_formed',
+                'TFR_EST_kallas_mandate_ended',
             )),
         )
         for kind, field, changed in cases:
@@ -82,6 +85,23 @@ class FocusVisibilityTests(unittest.TestCase):
                            TFR_EST_cohesion=Fraction(75), TFR_EST_readiness=Fraction(60))
         r.call(EFFECT)
         self.assertEqual(r.focus_layout_refreshes, 1)
+
+    def test_handover_visibility_bits_do_not_collide_with_caretaker_or_war_bits(self):
+        # Different lifecycle states must invalidate allow_branch even when
+        # a handover, an occupation callback and a war change arrive together.
+        fields = ('TFR_EST_first_war_seen', 'TFR_EST_second_war_seen',
+                  'TFR_EST_restoration_pending', 'TFR_EST_referendum_failed',
+                  'TFR_EST_reform_centre_formed', 'TFR_EST_kallas_mandate_ended',
+                  'TFR_EST_caretaker')
+        signatures = set()
+        r = self.runtime()
+        for values in product((False, True), repeat=len(fields) + 1):
+            r.flags.difference_update(fields)
+            r.flags.update(field for field, enabled in zip(fields, values) if enabled)
+            r.props['has_war'] = 'yes' if values[-1] else 'no'
+            r.call(EFFECT)
+            self.assertNotIn(r.variables[SIGNATURE], signatures, values)
+            signatures.add(r.variables[SIGNATURE])
 
     def test_foreign_country_cannot_record_or_refresh_estonian_layout(self):
         r = self.runtime()

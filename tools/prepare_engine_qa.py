@@ -148,7 +148,7 @@ path="{base.as_posix()}"
         check("porto_ratas_caretaker", "has_country_flag = TFR_EST_caretaker has_country_flag = TFR_EST_reform_handover_pending NOT = { TFR_EST_can_confirm_mandated_cabinet = yes } " + eq("TFR_EST_pm_party", 2)),
         "TFR_EST_ai_cabinet = yes\nTFR_EST_confirm_cabinet = yes\nTFR_EST_form_reform_centre_cabinet = yes\n",
         check("porto_reform_centre_successor", "NOT = { has_country_flag = TFR_EST_caretaker } NOT = { has_country_flag = TFR_EST_reform_handover_pending } has_country_leader = { character = TFR_EST_kersti_kaljulaid ruling_only = yes } " + eq("TFR_EST_pm_party", 1) + " " + eq("TFR_EST_mandate_party", 1) + " " + eq("TFR_EST_coalition_seats", 60) + " " + eq("TFR_EST_seats_reform", 34) + " " + eq("TFR_EST_election_year", 2023)),
-        "TFR_EST_initialize_parliament = yes\nclr_country_flag = TFR_EST_porto_choice_resolved\nclr_country_flag = TFR_EST_ratas_resigned\nclr_country_flag = TFR_EST_reform_centre_formed\nTFR_EST_keep_ratas = yes\n",
+        "TFR_EST_initialize_parliament = yes\nclr_country_flag = TFR_EST_porto_choice_resolved\nclr_country_flag = TFR_EST_ratas_resigned\nclr_country_flag = TFR_EST_reform_centre_formed\nclr_country_flag = TFR_EST_referendum_failed\nclr_country_flag = TFR_EST_opening_complete\nTFR_EST_keep_ratas = yes\n",
         check("porto_original_coalition_retained", "has_country_flag = TFR_EST_ratas_retained NOT = { has_country_flag = TFR_EST_caretaker } " + eq("TFR_EST_pm_party", 2) + " " + eq("TFR_EST_mandate_party", 2) + " " + eq("TFR_EST_coalition_seats", 57)),
         "clr_country_flag = TFR_EST_porto_choice_resolved\nclr_country_flag = TFR_EST_ratas_retained\nclr_country_flag = TFR_EST_porto_investigation_seen\nTFR_EST_initialize_parliament = yes\n",
     ])
@@ -177,6 +177,92 @@ path="{base.as_posix()}"
         body.append(f"if = {{ limit = {{ has_country_flag = TFR_EST_qa_saved_{tier} }} add_ideas = {tier} clr_country_flag = TFR_EST_qa_saved_{tier} }}\n")
     body.append("if = { limit = { has_country_flag = TFR_EST_qa_saved_covid_announced } set_country_flag = TFR_EST_opening_covid_announced clr_country_flag = TFR_EST_qa_saved_covid_announced }\n")
     assertions.extend(["covid_absent_blocks_response", "covid_all_five_parent_tiers_detected", "covid_active_response_recorded"])
+    # Retained-coalition visibility, actual energy contributions and election
+    # handoff are safe in the frontend's isolated hidden-effect context.
+    body.extend([
+        "TFR_EST_initialize_parliament = yes\nset_country_flag = TFR_EST_ratas_retained\nclr_country_flag = TFR_EST_ratas_mandate_ended\nclr_country_flag = TFR_EST_opening_complete\n",
+        check("ratas_choice_reveals_before_referendum_finishes", "TFR_EST_ratas_branch_visible = yes NOT = { TFR_EST_ratas_governing = yes }"),
+        "set_country_flag = TFR_EST_opening_complete\n",
+        check("ratas_majority_governs_without_legacy_domestic", "TFR_EST_ratas_governing = yes NOT = { TFR_EST_show_legacy_domestic_tree = yes } " + eq("TFR_EST_coalition_seats", 57)),
+        "set_variable = { var = TFR_EST_qa_energy_factory_before value = TFR_EST_economy_industrial_capacity_factory_var }\nset_variable = { var = TFR_EST_qa_energy_goods_before value = TFR_EST_economy_consumer_goods_factor_var }\n",
+    ])
+    energy_flags = ("SAU_saudi_civil_war_global", "saudi_civil_war_flag", "SAU_saudi_civil_war_over_global")
+    energy_policies = ("lng_connection", "grid_synchronisation", "renewable_chp", "building_renovation", "network_charge_relief")
+    for index, global_flag in enumerate(energy_flags):
+        body.append(f"if = {{ limit = {{ has_global_flag = {global_flag} }} set_country_flag = TFR_EST_qa_saved_energy_{index} }}\nclr_global_flag = {global_flag}\n")
+    body.extend([
+        "set_global_flag = SAU_saudi_civil_war_global\nTFR_EST_reconcile_energy_crisis = yes\nTFR_EST_reconcile_energy_crisis = yes\n",
+        "set_variable = { var = TFR_EST_qa_energy_factory_delta value = TFR_EST_economy_industrial_capacity_factory_var }\nsubtract_from_variable = { var = TFR_EST_qa_energy_factory_delta value = TFR_EST_qa_energy_factory_before }\nset_variable = { var = TFR_EST_qa_energy_goods_delta value = TFR_EST_economy_consumer_goods_factor_var }\nsubtract_from_variable = { var = TFR_EST_qa_energy_goods_delta value = TFR_EST_qa_energy_goods_before }\n",
+        check("ratas_energy_shock_applies_once", eq("TFR_EST_qa_energy_factory_delta", -0.04) + " " + eq("TFR_EST_qa_energy_goods_delta", 0.03)),
+    ])
+    for suffix in energy_policies:
+        body.append(f"set_country_flag = TFR_EST_done_ratas_{suffix}\n")
+    body.extend([
+        "TFR_EST_reconcile_energy_crisis = yes\n",
+        check("ratas_energy_preparations_mitigate", eq("TFR_EST_energy_factory_applied", -0.01) + " " + eq("TFR_EST_energy_goods_applied", 0)),
+        "set_global_flag = SAU_saudi_civil_war_over_global\nTFR_EST_reconcile_energy_crisis = yes\n",
+        check("ratas_energy_resolution_preserves_reforms", eq("TFR_EST_economy_industrial_capacity_factory_var", "TFR_EST_qa_energy_factory_before") + " " + eq("TFR_EST_economy_consumer_goods_factor_var", "TFR_EST_qa_energy_goods_before") + " " + eq("TFR_EST_energy_factory_applied", 0)),
+    ])
+    for index, global_flag in enumerate(energy_flags):
+        body.append(f"clr_global_flag = {global_flag}\nif = {{ limit = {{ has_country_flag = TFR_EST_qa_saved_energy_{index} }} set_global_flag = {global_flag} clr_country_flag = TFR_EST_qa_saved_energy_{index} }}\n")
+    body.extend([
+        "add_ideas = lower_covid_cases\nset_country_flag = TFR_EST_covid_seed_owned\nset_country_flag = TFR_EST_covid_first_case_recorded\nset_country_flag = TFR_EST_done_ratas_renew_agreement\nTFR_EST_ratas_reduce_covid = yes\nTFR_EST_ratas_tick = yes\n",
+        check("ratas_covid_recovery_bypasses_only_emergency_policies", "NOT = { generic_has_corona = yes } NOT = { has_country_flag = TFR_EST_covid_seed_owned } has_country_flag = TFR_EST_covid_first_case_recorded has_country_flag = TFR_EST_done_ratas_hospital_covid has_country_flag = TFR_EST_done_ratas_testing_tracing has_country_flag = TFR_EST_done_ratas_vaccinate_risk_groups NOT = { has_country_flag = TFR_EST_done_ratas_family_doctors }"),
+        "set_country_flag = TFR_EST_done_ratas_family_home_guarantees\n",
+        polls((0, 10000, 0, 0, 0, 0, 0)), "TFR_EST_hold_election = yes\n",
+        check("ratas_valid_centre_election_ends_old_mandate", "has_country_flag = TFR_EST_ratas_mandate_ended has_country_flag = TFR_EST_ratas_retained has_country_flag = TFR_EST_done_ratas_family_home_guarantees NOT = { TFR_EST_ratas_branch_visible = yes } TFR_EST_show_legacy_domestic_tree = yes " + eq("TFR_EST_mandate_party", 2)),
+    ])
+    assertions.extend([
+        "ratas_choice_reveals_before_referendum_finishes", "ratas_majority_governs_without_legacy_domestic",
+        "ratas_energy_shock_applies_once", "ratas_energy_preparations_mitigate",
+        "ratas_energy_resolution_preserves_reforms", "ratas_covid_recovery_bypasses_only_emergency_policies",
+        "ratas_valid_centre_election_ends_old_mandate",
+    ])
+    # Build the opposite story outcome independently. A deliberately completed
+    # referendum exercises the documented late-choice uncompletion path; an
+    # active focus's native validity update still requires a running campaign.
+    from build_opening_content import POLICIES as OPENING_POLICIES
+    body.append("TFR_EST_initialize_parliament = yes\n")
+    for flag_name in ("ratas_retained", "ratas_resigned", "ratas_mandate_ended", "kallas_mandate_ended", "reform_centre_formed", "porto_choice_resolved", "referendum_failed", "opening_complete", "done_opening_marriage_referendum"):
+        body.append(f"clr_country_flag = TFR_EST_{flag_name}\n")
+    for policy in OPENING_POLICIES[:-1]:
+        body.append(f"set_country_flag = TFR_EST_done_opening_{policy.suffix}\ncomplete_national_focus = TFR_EST_opening_{policy.suffix}\n")
+    body.extend([
+        "set_country_flag = TFR_EST_referendum_active\ncomplete_national_focus = TFR_EST_opening_marriage_referendum\nset_country_flag = TFR_EST_porto_investigation_seen\nTFR_EST_ratas_steps_back = yes\n",
+        check("kallas_late_resignation_fails_only_referendum", "has_country_flag = TFR_EST_referendum_failed has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_caretaker TFR_EST_kallas_branch_visible = yes NOT = { TFR_EST_kallas_governing = yes } NOT = { has_completed_focus = TFR_EST_opening_marriage_referendum } NOT = { has_country_flag = TFR_EST_done_opening_marriage_referendum } " + " ".join(f"has_completed_focus = TFR_EST_opening_{p.suffix}" for p in OPENING_POLICIES[:-1])),
+        "TFR_EST_form_reform_centre_cabinet = yes\n",
+        check("kallas_confirmed_cabinet_route", "TFR_EST_kallas_governing = yes NOT = { TFR_EST_show_legacy_domestic_tree = yes } NOT = { TFR_EST_ratas_branch_visible = yes } " + eq("TFR_EST_coalition_seats", 60) + " " + eq("TFR_EST_pm_party", 1)),
+        "set_country_flag = TFR_EST_done_kallas_govern_together\nadd_ideas = lower_covid_cases\nset_country_flag = TFR_EST_covid_seed_owned\nTFR_EST_kallas_reduce_covid = yes\nTFR_EST_kallas_tick = yes\n",
+        check("kallas_covid_recovery_leaves_certificate_reform", "NOT = { generic_has_corona = yes } has_country_flag = TFR_EST_done_kallas_sick_pay has_country_flag = TFR_EST_done_kallas_hospital_support has_country_flag = TFR_EST_done_kallas_frontline_vaccination NOT = { has_country_flag = TFR_EST_done_kallas_covid_certificates }"),
+    ])
+    for suffix in energy_policies:
+        body.append(f"clr_country_flag = TFR_EST_done_ratas_{suffix}\n")
+    for index, global_flag in enumerate(energy_flags):
+        body.append(f"if = {{ limit = {{ has_global_flag = {global_flag} }} set_country_flag = TFR_EST_qa_saved_kallas_energy_{index} }}\nclr_global_flag = {global_flag}\n")
+    for suffix in ("energy_households", "energy_networks", "gas_reserve", "lng_connection"):
+        body.append(f"set_country_flag = TFR_EST_done_kallas_{suffix}\n")
+    body.extend([
+        "set_global_flag = SAU_saudi_civil_war_global\nTFR_EST_reconcile_energy_crisis = yes\n",
+        check("kallas_energy_mitigation", eq("TFR_EST_energy_factory_applied", -0.01) + " " + eq("TFR_EST_energy_goods_applied", 0)),
+    ])
+    for suffix in energy_policies:
+        body.append(f"set_country_flag = TFR_EST_done_ratas_{suffix}\n")
+    body.extend([
+        "TFR_EST_reconcile_energy_crisis = yes\n",
+        check("kallas_mixed_energy_does_not_stack", eq("TFR_EST_energy_factory_applied", -0.01) + " " + eq("TFR_EST_energy_goods_applied", 0)),
+    ])
+    for index, global_flag in enumerate(energy_flags):
+        body.append(f"clr_global_flag = {global_flag}\nif = {{ limit = {{ has_country_flag = TFR_EST_qa_saved_kallas_energy_{index} }} set_global_flag = {global_flag} clr_country_flag = TFR_EST_qa_saved_kallas_energy_{index} }}\n")
+    body.extend([
+        "TFR_EST_reconcile_energy_crisis = yes\n",
+        polls((10000, 0, 0, 0, 0, 0, 0)), "TFR_EST_hold_election = yes\n",
+        check("kallas_reform_election_ends_old_mandate", "has_country_flag = TFR_EST_kallas_mandate_ended has_country_flag = TFR_EST_reform_centre_formed NOT = { TFR_EST_kallas_branch_visible = yes } TFR_EST_show_legacy_domestic_tree = yes NOT = { has_country_flag = TFR_EST_reform_handover_pending } " + eq("TFR_EST_mandate_party", 1)),
+    ])
+    assertions.extend([
+        "kallas_late_resignation_fails_only_referendum", "kallas_confirmed_cabinet_route",
+        "kallas_covid_recovery_leaves_certificate_reform", "kallas_energy_mitigation",
+        "kallas_mixed_energy_does_not_stack", "kallas_reform_election_ends_old_mandate",
+    ])
     body.append("log = \"TFR_EST_ENGINE_QA_END\"\n")
     source = (ROOT / "history/countries/EST - Estonia.txt").read_text(encoding="utf-8-sig")
     # Country history executes top-level commands independently. Keep native

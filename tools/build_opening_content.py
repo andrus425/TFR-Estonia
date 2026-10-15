@@ -144,8 +144,9 @@ POLICIES = (
         "The coalition brings forward the proposal for a spring 2021 referendum "
         "asking whether marriage should remain a union between a man and a woman. "
         "Complete the entire opening government programme before taking this final "
-        "step. Once work on the bill begins, the focus cannot be cancelled, even "
-        "if the cabinet loses its majority. The Porto Franco investigation will "
+        "step. Once work on the bill begins, the player cannot cancel the focus, "
+        "and ordinary confidence loss does not interrupt it. Ratas's resignation "
+        "automatically ends the proposal and fails the focus. The Porto Franco investigation will "
         "force Jüri Ratas to decide whether to remain prime minister or step back "
         "while the parliamentary process is under way. This focus concerns the "
         "bill and its political crisis; it does not mean that the referendum has "
@@ -204,12 +205,19 @@ def build_focuses() -> str:
             f"    prerequisite = {{ focus = {PREFIX}{parent} }}\n"
             for parent in PREREQUISITES[policy.suffix]
         )
-        available = "TFR_EST_can_start_referendum = yes" if final else "TFR_EST_opening_coalition_majority = yes"
+        available = (
+            "NOT = { has_country_flag = TFR_EST_referendum_failed }\n"
+            "        OR = {\n"
+            "            has_country_flag = TFR_EST_referendum_active\n"
+            "            TFR_EST_can_start_referendum = yes\n"
+            "        }"
+            if final else "TFR_EST_opening_coalition_majority = yes"
+        )
         if policy.suffix == "covid_emergency":
             available += "\n        generic_has_corona = yes"
         x, y = POSITIONS[policy.suffix]
         cancellation = (
-            "    cancelable = no\n    cancel_if_invalid = no\n    continue_if_invalid = yes\n"
+            "    cancelable = no\n    cancel_if_invalid = yes\n    continue_if_invalid = no\n"
             if final else "    cancel_if_invalid = yes\n    continue_if_invalid = no\n"
         )
         selection = ""
@@ -218,6 +226,9 @@ def build_focuses() -> str:
         elif policy.suffix == "covid_emergency":
             selection = "    select_effect = { TFR_EST_begin_covid_response = yes }\n"
         reward = "TFR_EST_finish_opening" if final else "TFR_EST_opening_reward_" + policy.suffix
+        reward_guard = f"NOT = {{ has_country_flag = {flag} }}"
+        if final:
+            reward_guard += " NOT = { has_country_flag = TFR_EST_referendum_failed }"
         pieces.append(
             f"\nshared_focus = {{\n"
             f"    id = {ident}\n"
@@ -226,6 +237,7 @@ def build_focuses() -> str:
             f"    y = {y}\n"
             f"    cost = 5\n"
             f"{prerequisites}"
+            f"    allow_branch = {{ NOT = {{ has_country_flag = TFR_EST_referendum_failed }} }}\n"
             f"    available = {{\n        {available}\n    }}\n"
             f"    bypass = {{ has_country_flag = {flag} }}\n"
             f"{cancellation}"
@@ -233,7 +245,7 @@ def build_focuses() -> str:
             f"{selection}"
             f"    completion_reward = {{\n"
             f"        if = {{\n"
-            f"            limit = {{ NOT = {{ has_country_flag = {flag} }} }}\n"
+            f"            limit = {{ {reward_guard} }}\n"
             f"            set_country_flag = {flag}\n"
             f"            {reward} = yes\n"
             f"        }}\n"

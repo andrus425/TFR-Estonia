@@ -1,0 +1,231 @@
+TFR_EST_kallas_reward_govern_together = {
+    TFR_EST_initialize_country_modifiers = yes
+    custom_effect_tooltip = TFR_EST_kallas_govern_together_reward_tt
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
+    add_political_power = 25
+    TFR_EST_reconcile_energy_crisis = yes
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_kallas_reward_sick_pay = {
+    TFR_EST_initialize_country_modifiers = yes
+    custom_effect_tooltip = TFR_EST_kallas_sick_pay_reward_tt
+    set_temp_variable = { var = TFR_EST_budget_cost value = 25 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
+    TFR_EST_reconcile_energy_crisis = yes
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_kallas_reward_hospital_support = {
+    TFR_EST_initialize_country_modifiers = yes
+    custom_effect_tooltip = TFR_EST_kallas_hospital_support_reward_tt
+    set_temp_variable = { var = TFR_EST_budget_cost value = 52 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
+    TFR_EST_reconcile_energy_crisis = yes
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_kallas_reward_frontline_vaccination = {
+    TFR_EST_initialize_country_modifiers = yes
+    custom_effect_tooltip = TFR_EST_kallas_frontline_vaccination_reward_tt
+    set_temp_variable = { var = TFR_EST_budget_cost value = 30 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
+    TFR_EST_kallas_reduce_covid = yes
+    TFR_EST_reconcile_energy_crisis = yes
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_kallas_reward_covid_certificates = {
+    TFR_EST_initialize_country_modifiers = yes
+    custom_effect_tooltip = TFR_EST_kallas_covid_certificates_reward_tt
+    set_temp_variable = { var = TFR_EST_budget_cost value = 10 }
+TFR_EST_spend_budget = yes
+    add_to_variable = { TFR_EST_economy_research_speed_factor_var = 0.005 }
+    TFR_EST_reconcile_energy_crisis = yes
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_kallas_reward_pension_twenty = {
+    TFR_EST_initialize_country_modifiers = yes
+    custom_effect_tooltip = TFR_EST_kallas_pension_twenty_reward_tt
+    set_temp_variable = { var = TFR_EST_budget_cost value = 35 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
+    TFR_EST_reconcile_energy_crisis = yes
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_kallas_reward_pension_tax_allowance = {
+    TFR_EST_initialize_country_modifiers = yes
+    custom_effect_tooltip = TFR_EST_kallas_pension_tax_allowance_reward_tt
+    set_temp_variable = { var = TFR_EST_budget_cost value = 25 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
+    TFR_EST_reconcile_energy_crisis = yes
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_kallas_reward_teacher_pay = {
+    TFR_EST_initialize_country_modifiers = yes
+    custom_effect_tooltip = TFR_EST_kallas_teacher_pay_reward_tt
+    set_temp_variable = { var = TFR_EST_budget_cost value = 30 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
+    TFR_EST_reconcile_energy_crisis = yes
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_kallas_reward_school_catch_up = {
+    TFR_EST_initialize_country_modifiers = yes
+    custom_effect_tooltip = TFR_EST_kallas_school_catch_up_reward_tt
+    set_temp_variable = { var = TFR_EST_budget_cost value = 12 }
+TFR_EST_spend_budget = yes
+    add_to_variable = { TFR_EST_economy_research_speed_factor_var = 0.01 }
+    TFR_EST_reconcile_energy_crisis = yes
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_kallas_reward_recovery_plan = {
+    TFR_EST_initialize_country_modifiers = yes
+    custom_effect_tooltip = TFR_EST_kallas_recovery_plan_reward_tt
+    set_temp_variable = { var = TFR_EST_budget_cost value = 40 }
+TFR_EST_spend_budget = yes
+    add_to_variable = { TFR_EST_economy_production_speed_buildings_factor_var = 0.01 }
+    TFR_EST_reconcile_energy_crisis = yes
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_kallas_reward_enterprise_digital = {
+    TFR_EST_initialize_country_modifiers = yes
+    custom_effect_tooltip = TFR_EST_kallas_enterprise_digital_reward_tt
+    set_temp_variable = { var = TFR_EST_budget_cost value = 40 }
+TFR_EST_spend_budget = yes
+    add_to_variable = { TFR_EST_economy_production_factory_efficiency_gain_factor_var = 0.015 }
+    TFR_EST_reconcile_energy_crisis = yes
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_kallas_reward_rural_broadband = {
+    TFR_EST_initialize_country_modifiers = yes
+    custom_effect_tooltip = TFR_EST_kallas_rural_broadband_reward_tt
+    set_temp_variable = { var = TFR_EST_budget_cost value = 45 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
+    TFR_EST_reconcile_energy_crisis = yes
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_kallas_reward_mental_health = {
+    TFR_EST_initialize_country_modifiers = yes
+    custom_effect_tooltip = TFR_EST_kallas_mental_health_reward_tt
+    set_temp_variable = { var = TFR_EST_budget_cost value = 3 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
+    TFR_EST_reconcile_energy_crisis = yes
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_kallas_reward_energy_households = {
+    TFR_EST_initialize_country_modifiers = yes
+    custom_effect_tooltip = TFR_EST_kallas_energy_households_reward_tt
+    set_temp_variable = { var = TFR_EST_budget_cost value = 50 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
+    TFR_EST_reconcile_energy_crisis = yes
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_kallas_reward_energy_networks = {
+    TFR_EST_initialize_country_modifiers = yes
+    custom_effect_tooltip = TFR_EST_kallas_energy_networks_reward_tt
+    set_temp_variable = { var = TFR_EST_budget_cost value = 45 }
+TFR_EST_spend_budget = yes
+    TFR_EST_reconcile_energy_crisis = yes
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_kallas_reward_gas_reserve = {
+    TFR_EST_initialize_country_modifiers = yes
+    custom_effect_tooltip = TFR_EST_kallas_gas_reserve_reward_tt
+    set_temp_variable = { var = TFR_EST_budget_cost value = 170 }
+TFR_EST_spend_budget = yes
+    TFR_EST_reconcile_energy_crisis = yes
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_kallas_reward_lng_connection = {
+    TFR_EST_initialize_country_modifiers = yes
+    custom_effect_tooltip = TFR_EST_kallas_lng_connection_reward_tt
+    set_temp_variable = { var = TFR_EST_budget_cost value = 30 }
+TFR_EST_spend_budget = yes
+    TFR_EST_reconcile_energy_crisis = yes
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_kallas_reward_defence_budget = {
+    TFR_EST_initialize_country_modifiers = yes
+    custom_effect_tooltip = TFR_EST_kallas_defence_budget_reward_tt
+    set_temp_variable = { var = TFR_EST_budget_cost value = 70 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
+    add_to_variable = { TFR_EST_military_training_time_army_factor_var = -0.02 }
+    TFR_EST_reconcile_energy_crisis = yes
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_kallas_reward_civil_protection = {
+    TFR_EST_initialize_country_modifiers = yes
+    custom_effect_tooltip = TFR_EST_kallas_civil_protection_reward_tt
+    set_temp_variable = { var = TFR_EST_budget_cost value = 45 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
+    set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
+    TFR_EST_reconcile_energy_crisis = yes
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+TFR_EST_kallas_reward_account_to_voters = {
+    TFR_EST_initialize_country_modifiers = yes
+    custom_effect_tooltip = TFR_EST_kallas_account_to_voters_reward_tt
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
+    set_country_flag = TFR_EST_kallas_programme_finished
+add_political_power = 50
+    TFR_EST_reconcile_energy_crisis = yes
+    TFR_EST_refresh_country_modifiers = yes
+}
+
+# Both routes use the same guarded case-tier improvement.
+TFR_EST_kallas_reduce_covid = { TFR_EST_ratas_reduce_covid = yes }
+TFR_EST_kallas_tick = {
+    if = {
+        limit = {
+            TFR_EST_kallas_governing = yes
+            OR = {
+                has_country_flag = TFR_EST_done_kallas_govern_together
+                has_completed_focus = TFR_EST_kallas_govern_together
+            }
+            has_country_flag = TFR_EST_covid_first_case_recorded
+            NOT = { generic_has_corona = yes }
+        }
+        set_country_flag = TFR_EST_done_kallas_sick_pay
+        set_country_flag = TFR_EST_done_kallas_hospital_support
+        set_country_flag = TFR_EST_done_kallas_frontline_vaccination
+    }
+}

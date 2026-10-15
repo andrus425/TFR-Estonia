@@ -26,6 +26,9 @@ TFR_EST_coalition_majority = {
     TFR_EST_independent_parliament = yes
     check_variable = { var = TFR_EST_coalition_seats value = 51 compare = greater_than_or_equals }
 }
+TFR_EST_opening_resolved = {
+    has_country_flag = TFR_EST_opening_complete
+}
 TFR_EST_opening_coalition_majority = {
     TFR_EST_coalition_majority = yes
     NOT = { has_country_flag = TFR_EST_caretaker }
@@ -38,6 +41,7 @@ TFR_EST_opening_coalition_majority = {
 }
 TFR_EST_can_start_referendum = {
     TFR_EST_opening_coalition_majority = yes
+    NOT = { has_country_flag = TFR_EST_referendum_failed }
     # Even 14 saved focus days leave the focus running on 12 and 13 January.
     date > 2020.12.23
 '''
@@ -81,18 +85,28 @@ TFR_EST_can_start_referendum = {
 
 TFR_EST_begin_referendum = {
     if = {
-        limit = { NOT = { has_country_flag = TFR_EST_done_opening_marriage_referendum } }
+        limit = {
+            NOT = { has_country_flag = TFR_EST_done_opening_marriage_referendum }
+            NOT = { has_country_flag = TFR_EST_referendum_failed }
+        }
         set_country_flag = TFR_EST_referendum_active
         TFR_EST_opening_tick = yes
     }
 }
 
-# Reveal the next stage only once the focus AND the crisis choice have finished.
+# A successful bill or its explicit abandonment can end the opening stage.
+# Abandonment never records referendum success or grants its completion reward.
 TFR_EST_reveal_after_opening = {
     if = {
         limit = {
-            has_country_flag = TFR_EST_done_opening_marriage_referendum
             has_country_flag = TFR_EST_porto_choice_resolved
+            OR = {
+                has_country_flag = TFR_EST_done_opening_marriage_referendum
+                AND = {
+                    has_country_flag = TFR_EST_referendum_failed
+                    has_country_flag = TFR_EST_ratas_resigned
+                }
+            }
             NOT = { has_country_flag = TFR_EST_opening_complete }
         }
         set_country_flag = TFR_EST_opening_complete
@@ -103,6 +117,24 @@ TFR_EST_reveal_after_opening = {
 TFR_EST_finish_opening = {
     TFR_EST_reveal_after_opening = yes
     TFR_EST_opening_tick = yes
+}
+
+# Removing the availability condition aborts an active focus through the
+# engine's native cancel_if_invalid handling. A delayed event choice can also
+# arrive after native completion; undo only the abandoned referendum in that
+# case, preserving all ten earlier policies and their persistent rewards.
+TFR_EST_fail_referendum = {
+    set_country_flag = TFR_EST_referendum_failed
+    clr_country_flag = TFR_EST_referendum_active
+    clr_country_flag = TFR_EST_done_opening_marriage_referendum
+    if = {
+        limit = { has_completed_focus = TFR_EST_opening_marriage_referendum }
+        uncomplete_national_focus = {
+            focus = TFR_EST_opening_marriage_referendum
+            uncomplete_children = no
+            refund_political_power = no
+        }
+    }
 }
 
 # A narrative choice may restore the original 57-seat cabinet, never its seats.
@@ -124,6 +156,7 @@ TFR_EST_keep_ratas = {
         set_temp_variable = { var = TFR_EST_cohesion_delta value = -6 }
         TFR_EST_change_cohesion = yes
         TFR_EST_reveal_after_opening = yes
+        TFR_EST_refresh_focus_visibility = yes
     }
 }
 
@@ -137,6 +170,7 @@ TFR_EST_ratas_steps_back = {
         }
         set_country_flag = TFR_EST_porto_choice_resolved
         set_country_flag = TFR_EST_ratas_resigned
+        TFR_EST_fail_referendum = yes
         set_country_flag = TFR_EST_reform_handover_pending
         set_variable = { TFR_EST_reform_handover_days = 13 }
         TFR_EST_enter_caretaker = yes
@@ -153,6 +187,7 @@ TFR_EST_form_reform_centre_cabinet = {
             TFR_EST_independent_parliament = yes
             has_country_flag = TFR_EST_reform_handover_pending
             NOT = { has_country_flag = TFR_EST_reform_centre_formed }
+            NOT = { has_country_flag = TFR_EST_kallas_mandate_ended }
         }
         set_country_flag = TFR_EST_scripted_cabinet_change
         TFR_EST_nominate_reform = yes
@@ -289,6 +324,7 @@ country_event = {
         TFR_EST_independent_parliament = yes
         has_country_flag = TFR_EST_reform_handover_pending
         NOT = { has_country_flag = TFR_EST_reform_centre_formed }
+        NOT = { has_country_flag = TFR_EST_kallas_mandate_ended }
         NOT = { has_country_flag = TFR_EST_new_cabinet_notice_presented }
     }
     immediate = { set_country_flag = TFR_EST_new_cabinet_notice_presented }
@@ -307,15 +343,15 @@ country_event = {
         'TFR_EST_porto_investigation_desc': 'Prosecutors and the Internal Security Service have announced corruption suspicions connected to the Porto Franco development. The reported allegations concern party donations and access-road arrangements, alongside a separate suspected attempt to obtain favourable decisions on crisis lending. Centre secretary-general Mihhail Korb and Finance Minister Martin Helme\'s adviser Kersti Kracht are among those named by investigators.\n\nThese are allegations under investigation, not findings of guilt. Jüri Ratas has not been personally named as a suspect in this announcement. Nevertheless, the cabinet faces a political crisis while parliament debates the marriage referendum bill.',
         'TFR_EST_porto_investigation_option': 'Convene the coalition leaders.',
         'TFR_EST_porto_choice_title': 'Ratas Must Decide',
-        'TFR_EST_porto_choice_desc': 'The prime minister must decide whether taking political responsibility requires his resignation. Remaining in office would require Centre, Isamaa and EKRE to renew their support while the investigation proceeds independently. Stepping back would leave Ratas leading a caretaker administration as a successor is negotiated in the existing Riigikogu.\n\nThe marriage-referendum focus will continue to its conclusion whichever course he chooses. A resignation would end this coalition\'s referendum proposal; it does not require an election.',
+        'TFR_EST_porto_choice_desc': 'The prime minister must decide whether taking political responsibility requires his resignation. Remaining in office would require Centre, Isamaa and EKRE to renew their support while the investigation proceeds independently. Stepping back would leave Ratas leading a caretaker administration as a successor is negotiated in the existing Riigikogu.\n\nResignation automatically fails the marriage-referendum focus and abandons the proposal. Reform and Centre would negotiate a government under Kaja Kallas. The cabinet change does not require an election.',
         'TFR_EST_porto_keep_ratas': 'Ratas stays; renew the coalition agreement.',
         'TFR_EST_porto_step_back': 'Ratas takes political responsibility and steps back.',
-        'TFR_EST_keep_ratas_tt': 'Ratas remains prime minister of the Centre–Isamaa–EKRE cabinet. Renew its parliamentary support and lose 6 cohesion. The referendum proposal remains the responsibility of this government. The active focus continues.',
-        'TFR_EST_step_back_tt': 'Ratas resigns and remains caretaker until a successor is confirmed. Lose 2 cohesion. Reform and Centre will negotiate a cabinet in the existing parliament over the next 13 days. The referendum proposal is abandoned, while its focus continues. No election is called.',
+        'TFR_EST_keep_ratas_tt': 'Ratas remains prime minister of the Centre–Isamaa–EKRE cabinet. Renew its parliamentary support and lose 6 cohesion. Reveal the coalition agreement programme through the March 2023 election. Its first focus requires the active referendum focus to finish; the referendum proposal remains the responsibility of this government.',
+        'TFR_EST_step_back_tt': 'Ratas resigns and remains caretaker until a successor is confirmed. Lose 2 cohesion. Automatically fail the marriage-referendum focus and reveal Kaja Kallas\'s government programme. Reform and Centre will negotiate a cabinet in the existing parliament over the next 13 days; its focuses require confirmation. Preserve all earlier policies and their rewards. No election is called.',
         'TFR_EST_reform_centre_title': 'A Reform–Centre Cabinet',
         'TFR_EST_reform_centre_desc': 'Reform and Centre have agreed to form a government under Kaja Kallas. Their original parliamentary delegations hold 60 of the 101 seats. Kersti Kaljulaid remains president, while Ratas hands over the prime minister\'s office after confirmation. This is a cabinet change within the existing assembly. The outgoing coalition\'s marriage-referendum proposal will not proceed.',
         'TFR_EST_reform_centre_option': 'Confirm the new cabinet in the Riigikogu.',
-        'TFR_EST_reform_centre_tt': 'Confirm Kaja Kallas if Reform and Centre provide at least 51 confidence votes. Preserve parliamentary seats, polls and the March 2023 election calendar. Reveal her programme after the opening focus concludes.',
+        'TFR_EST_reform_centre_tt': 'Confirm Kaja Kallas if Reform and Centre provide at least 51 confidence votes. Preserve parliamentary seats, polls and the March 2023 election calendar. Her government can now begin its programme, while the abandoned marriage referendum remains failed.',
     }
     loc_text = 'l_english:\n' + ''.join(f' {key}:0 {json.dumps(value, ensure_ascii=False)}\n' for key, value in loc.items())
     return {

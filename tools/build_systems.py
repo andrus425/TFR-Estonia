@@ -239,6 +239,8 @@ def main():
                     TFR_EST_initialize_country_modifiers = yes
                     TFR_EST_covid_tick = yes
                     TFR_EST_opening_tick = yes
+                    TFR_EST_ratas_tick = yes
+                    TFR_EST_kallas_tick = yes
                     TFR_EST_refresh_focus_visibility = yes
                 }
             }

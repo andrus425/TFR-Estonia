@@ -30,16 +30,135 @@ unchanged lowest-severity idea after the mandatory COVID focus has finished,
 preserving access to that focus during delayed campaigns.
 
 The marriage-referendum bill is the final focus. All ten policies are mandatory,
-the focus cannot be canceled, and its December 24, 2020 gate accounts for up to 14
+the focus cannot be canceled manually, and its December 24, 2020 gate accounts for up to 14
 banked days. Investigation/response events on January 12–13 offer a retained Ratas
 cabinet or resignation followed by a Reform–Centre cabinet in the same parliament.
-The cabinet transition does not replace the active focus. The historical April
-referendum never occurred; remaining in office is an alternate-history branch.
+Ordinary confidence loss cannot stop the active focus, but Ratas's resignation
+automatically fails it and abandons the proposal. That outcome hides the opening
+and reveals Kallas's programme. If the player delayed the choice until after the
+focus completed, only this final focus is undone; the ten earlier policies and
+their rewards remain. The historical April referendum never occurred; remaining
+in office is an alternate-history branch.
 The final focus is the only opening focus with a start-date requirement.
 
-New opening economic and logistical bonuses use the country dynamic modifiers.
-Later programme rewards await their own redesign. There is no player snap vote;
+New opening, retained-coalition and Kallas economic and logistical bonuses use the country
+dynamic modifiers. Older programme rewards await their own redesign. There is no player snap vote;
 the crisis changes cabinets through explicitly authorized story effects.
+
+## Retaining Ratas until the next election
+
+Choosing not to resign reveals **twenty 35-day focuses** below the opening, based
+on the coalition's unfinished 2019 commitments and its December 2020 COVID plans.
+The reveal happens when the choice is made; the renewal focus cannot start until
+the referendum finishes. Both the opening and extension remain in the same main
+tree. Sources, chapters and pages appear in
+[RATAS_CONTINUATION_SOURCES.md](RATAS_CONTINUATION_SOURCES.md).
+
+**Renew the 2019 Coalition Agreement** opens these five branches. Each arrow is
+a prerequisite; the player can move between branches in any valid order:
+
+- KredEx family-home guarantees → child-based tax allowance → home nursing.
+- Move 1,000 state jobs beyond Tallinn → rural broadband → regional industrial
+  parks → adult retraining.
+- County-hospital COVID wards → testing and contact tracing → evening/weekend
+  family-doctor access → risk-group vaccination through family doctors.
+- Estonian LNG connection → European-grid investment → renewable combined heat
+  and power → building-renovation grants → temporary network-charge relief.
+- Police/border-guard crisis reserve → conscript and Kaitseliit training.
+
+All branch terminals are required before **Account for the Coalition's Promises**.
+The full programme takes 700 days, so a 28 January 2021 start can finish on
+29 December 2022, leaving 66 days before 5 March 2023. Neither the final report nor
+any other new focus calls an election. Coalition breakdown, occupation and player
+delays can consume the available margin.
+
+Legislation requires Centre to retain the PM and leadership mandate, all three
+original parties to remain coalition members, at least 51 actual coalition seats
+and no caretaker status. Supplies from outside parties cannot replace the cabinet
+majority. Costs are explicit debt-financed budgets; rewards adjust the existing
+dynamic modifiers and cohesion/readiness, with persistent one-time completion.
+Security programmes improve training and preparation without granting free units.
+
+The hospital, testing/tracing and vaccination focuses require a domestic case
+tier. After the country's recorded outbreak recovers, unneeded pandemic measures
+are bypassed without rewards. This preserves access to ordinary family-doctor
+reform and the final report. Vaccination improves one existing severity; it can
+clear the lowest tier only when the submod owns that outbreak seed.
+
+TFR's Saudi-war flags control the energy shock. Estonia receives a local −4%
+factory-output and +3-point consumer-goods contribution in its economy dynamic
+modifier. The LNG, grid and combined-generation focuses each mitigate one output
+point; renovation and network-charge relief each mitigate 1.5 consumer-goods
+points. Focuses can prepare before onset or respond during the crisis; no onset
+date blocks the programme. Resolution reverses only the tracked local crisis
+contribution. Permanent policy adjustments and parent global/country crisis
+systems remain independent. Network-charge relief is distinct from the opening's
+electricity excise cut, and infrastructure focuses finance programmes rather than
+claiming complete projects in 35 days.
+
+Older party, economy and military sections remain hidden during the retained
+coalition's 2019 mandate, while war/restoration sections still follow world state.
+The next valid election ends the extension and reveals the older domestic
+programmes, even if Centre wins again. An invalid election leaves the current
+mandate intact. The ordinary seat allocation and election calendar are unchanged.
+
+## Kallas's Reform–Centre government until the next election
+
+Ratas's resignation reveals **twenty 35-day focuses** and resolves the opening as
+an abandoned referendum. **A Reform–Centre Government** has no prerequisite on
+the failed final. It requires Kallas's confirmed cabinet after the existing
+thirteen-day negotiations, using the same 60-seat parliament. The implemented
+policies come from actual 2021–2022 decisions and enacted laws, with sources and
+historical effective dates in
+[KALLAS_GOVERNMENT_SOURCES.md](KALLAS_GOVERNMENT_SOURCES.md).
+
+The formation root opens five branches. Each arrow is a prerequisite, while the
+player chooses which branch to advance:
+
+- Extend sick pay from day two → EUR 52 million hospital package → frontline
+  vaccination → digital COVID certificates and verification.
+- Legislate the EUR 20 pension increase → average-pension income-tax allowance →
+  teachers' minimum EUR 1,412 → EUR 12 million for learning gaps.
+- Recovery investment programme → enterprise digitisation → rural broadband →
+  community mental-health services.
+- Compensate eligible household energy bills → electricity/gas network-charge
+  relief → procure a strategic gas reserve → fund LNG connection capability.
+- The 2022 defence commitment → public shelter marking and evacuation preparation.
+
+All five branch terminals and earlier policies are required before **Present the
+Government's Record**. Legislation requires Reform PM and mandate, both Reform
+and Centre in the coalition, no caretaker and at least 51 actual coalition seats.
+Confidence-and-supply cannot replace that cabinet majority. Costs use the public
+budget helper; persistent records prevent repeated dynamic-modifier, cohesion
+and readiness rewards.
+
+The first three COVID focuses require actual domestic cases. After an earned
+formation root and recovery from a recorded outbreak, unused emergency policies
+bypass without rewards. Digital certificates remain accessible afterward.
+Frontline vaccination improves one existing case tier through the same guarded
+ladder used by the retained-Ratas government.
+
+The energy policies adapt contemporary measures to TFR's Saudi-war crisis. Bill
+compensation mitigates 1.5 consumer-goods points; network-charge relief mitigates
+one output point and 1.5 consumer-goods points; the gas reserve and LNG capability
+each mitigate one output point. The two routes share five capped mitigation
+slots rather than stacking duplicate projects. Completing all applicable work
+reduces the local crisis from −4% output/+3 goods points to −1%/0. The source
+allocations of up to EUR 170 million for gas reserves and EUR 30 million for LNG
+capability fund procurement and enabling works, not instantaneous terminals.
+Preparations can precede onset, and resolution preserves permanent reforms.
+
+Twenty focuses require 700 days. A 26 January 2021 start permits completion on
+27 December 2022, leaving 68 days before 5 March 2023; confidence loss, occupation
+and player delays consume that margin. No programme focus calls or postpones the
+regular election. The route does not force the real 2022 coalition collapse, and
+its continued Reform–Centre partnership is explicit alternate history. The next
+valid election ends this programme even if Reform wins again, revealing the
+broader domestic sections. War and restoration access still follows world state.
+The phase-entry roots use the persistent opening-resolution guard, without an
+external native opening-focus prerequisite. This preserves access if occupation
+and restoration remove native opening completion IDs; internal prerequisites
+within each branch still apply.
 
 ## Political entry and persistence
 
@@ -51,9 +170,10 @@ negotiates partners and supply agreements around that leader. Coalition members
 and supply partners remain separate records. Between elections, ordinary
 confidence recovery retains the incumbent; another succession requires an
 explicit authored event or focus.
-The current confirmed party unlocks its programme; a caretaker cannot enact it.
+Outside the dedicated retained-Ratas and Kallas programmes, the current confirmed party unlocks
+its programme; a caretaker cannot enact it.
 
-Each programme has ten focuses, one policy-conflict event, an active cabinet
+Each older general party programme has ten focuses, one policy-conflict event, an active cabinet
 modifier, and distinct first- and second-war response events. Completed laws and
 investments persist through elections and occupation. Only the current cabinet's
 programme modifier applies. Restoration resumes the saved party ledger under a
@@ -82,14 +202,17 @@ democratic. Sharing an ideology grants no seats or coalition membership.
 
 ## Shared independent campaign
 
-The main tree contains 160 focuses: eleven opening focuses, 70 programme focuses,
+The main tree contains 200 focuses: eleven opening focuses, twenty retained-Ratas
+continuation focuses, twenty Kallas government focuses, 70 general programme focuses,
 18 economic focuses, 21 military focuses and 40 campaign focuses. Branches are
 available according to independence, government and campaign stage; they do not
 lock later elected parties out permanently.
 
 The opening implements the coalition's pension, teacher-pay, pandemic-relief,
 tax, border, transport, regional-cooperation and research policies before the
-referendum crisis. Economic development then supports education, regional investment, infrastructure,
+referendum crisis. A retained government follows its extended coalition programme;
+resignation instead opens Kallas's dedicated programme. The next parliamentary term uses the broader domestic
+branches. Economic development supports education, regional investment, infrastructure,
 energy, digital services and defense industry. Defense preparation covers reserve
 organization, Kaitseliit, training, engineering, artillery, air defense, supply,
 maintenance, procurement and allied cooperation.

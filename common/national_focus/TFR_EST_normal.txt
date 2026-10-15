@@ -15,6 +15,46 @@ focus_tree = {
     shared_focus = TFR_EST_opening_three_seas
     shared_focus = TFR_EST_opening_research_budget
     shared_focus = TFR_EST_opening_marriage_referendum
+    shared_focus = TFR_EST_ratas_renew_agreement
+    shared_focus = TFR_EST_ratas_family_home_guarantees
+    shared_focus = TFR_EST_ratas_child_tax_allowance
+    shared_focus = TFR_EST_ratas_home_care
+    shared_focus = TFR_EST_ratas_state_jobs_counties
+    shared_focus = TFR_EST_ratas_rural_broadband
+    shared_focus = TFR_EST_ratas_industrial_parks
+    shared_focus = TFR_EST_ratas_worker_retraining
+    shared_focus = TFR_EST_ratas_hospital_covid
+    shared_focus = TFR_EST_ratas_testing_tracing
+    shared_focus = TFR_EST_ratas_family_doctors
+    shared_focus = TFR_EST_ratas_vaccinate_risk_groups
+    shared_focus = TFR_EST_ratas_lng_connection
+    shared_focus = TFR_EST_ratas_grid_synchronisation
+    shared_focus = TFR_EST_ratas_renewable_chp
+    shared_focus = TFR_EST_ratas_building_renovation
+    shared_focus = TFR_EST_ratas_network_charge_relief
+    shared_focus = TFR_EST_ratas_police_reserve
+    shared_focus = TFR_EST_ratas_territorial_training
+    shared_focus = TFR_EST_ratas_account_to_voters
+    shared_focus = TFR_EST_kallas_govern_together
+    shared_focus = TFR_EST_kallas_sick_pay
+    shared_focus = TFR_EST_kallas_hospital_support
+    shared_focus = TFR_EST_kallas_frontline_vaccination
+    shared_focus = TFR_EST_kallas_covid_certificates
+    shared_focus = TFR_EST_kallas_pension_twenty
+    shared_focus = TFR_EST_kallas_pension_tax_allowance
+    shared_focus = TFR_EST_kallas_teacher_pay
+    shared_focus = TFR_EST_kallas_school_catch_up
+    shared_focus = TFR_EST_kallas_recovery_plan
+    shared_focus = TFR_EST_kallas_enterprise_digital
+    shared_focus = TFR_EST_kallas_rural_broadband
+    shared_focus = TFR_EST_kallas_mental_health
+    shared_focus = TFR_EST_kallas_energy_households
+    shared_focus = TFR_EST_kallas_energy_networks
+    shared_focus = TFR_EST_kallas_gas_reserve
+    shared_focus = TFR_EST_kallas_lng_connection
+    shared_focus = TFR_EST_kallas_defence_budget
+    shared_focus = TFR_EST_kallas_civil_protection
+    shared_focus = TFR_EST_kallas_account_to_voters
 
 	focus = {
         id = TFR_EST_reform_cabinet
@@ -22,9 +62,8 @@ focus_tree = {
         x = 0
         y = 13
         cost = 5
-        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_opening_resolved = yes }
         bypass = { has_country_flag = TFR_EST_done_reform_cabinet }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -44,8 +83,8 @@ add_political_power = 60
         y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_reform_cabinet }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_reform_digital_services }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -66,8 +105,8 @@ TFR_EST_change_cohesion = yes
         y = 15
         cost = 5
         prerequisite = { focus = TFR_EST_reform_digital_services }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_reform_investment }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -87,8 +126,8 @@ add_political_power = 40
         y = 16
         cost = 5
         prerequisite = { focus = TFR_EST_reform_investment }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_reform_budget_review }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -107,8 +146,8 @@ country_event = { id = tfr_estonia_content.11 }
         y = 17
         cost = 5
         prerequisite = { focus = TFR_EST_reform_budget_review }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_reform_tartu_innovation }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -130,8 +169,8 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         y = 18
         cost = 5
         prerequisite = { focus = TFR_EST_reform_tartu_innovation }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_reform_school_access }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -152,8 +191,8 @@ TFR_EST_change_cohesion = yes
         y = 19
         cost = 5
         prerequisite = { focus = TFR_EST_reform_school_access }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_reform_european_networks }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -173,8 +212,8 @@ TFR_EST_change_cohesion = yes
         y = 20
         cost = 5
         prerequisite = { focus = TFR_EST_reform_european_networks }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_reform_precision_defence }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -196,8 +235,8 @@ army_experience = 15
         y = 21
         cost = 5
         prerequisite = { focus = TFR_EST_reform_precision_defence }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_reform_crisis_transparency }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -218,8 +257,8 @@ TFR_EST_change_readiness = yes
         y = 22
         cost = 5
         prerequisite = { focus = TFR_EST_reform_crisis_transparency }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_reform_programme }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -238,9 +277,8 @@ country_event = { id = tfr_estonia_content.17 }
         x = 3
         y = 13
         cost = 5
-        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_opening_resolved = yes }
         bypass = { has_country_flag = TFR_EST_done_centre_cabinet }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -260,8 +298,8 @@ add_political_power = 50
         y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_centre_cabinet }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_centre_municipal_compact }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -282,8 +320,8 @@ TFR_EST_change_cohesion = yes
         y = 15
         cost = 5
         prerequisite = { focus = TFR_EST_centre_municipal_compact }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_centre_regional_transport }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -304,8 +342,8 @@ add_building_construction = { type = infrastructure level = 1 instant_build = ye
         y = 16
         cost = 5
         prerequisite = { focus = TFR_EST_centre_regional_transport }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_centre_family_security }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -327,8 +365,8 @@ add_political_power = -20
         y = 17
         cost = 5
         prerequisite = { focus = TFR_EST_centre_family_security }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_centre_integration }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -350,8 +388,8 @@ country_event = { id = tfr_estonia_content.10 }
         y = 18
         cost = 5
         prerequisite = { focus = TFR_EST_centre_integration }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_centre_fair_procurement }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -371,8 +409,8 @@ add_political_power = -25
         y = 19
         cost = 5
         prerequisite = { focus = TFR_EST_centre_fair_procurement }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_centre_urban_industry }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -394,8 +432,8 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         y = 20
         cost = 5
         prerequisite = { focus = TFR_EST_centre_urban_industry }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_centre_broad_defence }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -418,8 +456,8 @@ TFR_EST_change_cohesion = yes
         y = 21
         cost = 5
         prerequisite = { focus = TFR_EST_centre_broad_defence }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_centre_social_war_compact }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -442,8 +480,8 @@ TFR_EST_change_readiness = yes
         y = 22
         cost = 5
         prerequisite = { focus = TFR_EST_centre_social_war_compact }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_centre_programme }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -462,9 +500,8 @@ country_event = { id = tfr_estonia_content.17 }
         x = 6
         y = 13
         cost = 5
-        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_opening_resolved = yes }
         bypass = { has_country_flag = TFR_EST_done_ekre_cabinet }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -484,8 +521,8 @@ TFR_EST_change_cohesion = yes
         y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_ekre_cabinet }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_ekre_local_voice }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -506,8 +543,8 @@ TFR_EST_change_cohesion = yes
         y = 15
         cost = 5
         prerequisite = { focus = TFR_EST_ekre_local_voice }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_ekre_sovereignty_review }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -526,8 +563,8 @@ country_event = { id = tfr_estonia_content.12 }
         y = 16
         cost = 5
         prerequisite = { focus = TFR_EST_ekre_sovereignty_review }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_ekre_border_service }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -550,8 +587,8 @@ add_building_construction = { type = anti_air_building level = 1 instant_build =
         y = 17
         cost = 5
         prerequisite = { focus = TFR_EST_ekre_border_service }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_ekre_rural_enterprise }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -573,8 +610,8 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         y = 18
         cost = 5
         prerequisite = { focus = TFR_EST_ekre_rural_enterprise }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_ekre_family_policy }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -595,8 +632,8 @@ TFR_EST_change_cohesion = yes
         y = 19
         cost = 5
         prerequisite = { focus = TFR_EST_ekre_family_policy }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_ekre_civil_duty }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -619,8 +656,8 @@ TFR_EST_change_cohesion = yes
         y = 20
         cost = 5
         prerequisite = { focus = TFR_EST_ekre_civil_duty }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_ekre_domestic_workshops }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -642,8 +679,8 @@ add_building_construction = { type = arms_factory level = 1 instant_build = yes 
         y = 21
         cost = 5
         prerequisite = { focus = TFR_EST_ekre_domestic_workshops }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_ekre_wartime_sovereignty }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -665,8 +702,8 @@ TFR_EST_change_cohesion = yes
         y = 22
         cost = 5
         prerequisite = { focus = TFR_EST_ekre_wartime_sovereignty }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_ekre_programme }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -685,9 +722,8 @@ country_event = { id = tfr_estonia_content.17 }
         x = 9
         y = 13
         cost = 5
-        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_opening_resolved = yes }
         bypass = { has_country_flag = TFR_EST_done_isamaa_cabinet }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -707,8 +743,8 @@ TFR_EST_change_cohesion = yes
         y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_isamaa_cabinet }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_isamaa_language }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -729,8 +765,8 @@ TFR_EST_change_cohesion = yes
         y = 15
         cost = 5
         prerequisite = { focus = TFR_EST_isamaa_language }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_isamaa_family_housing }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -751,8 +787,8 @@ TFR_EST_change_cohesion = yes
         y = 16
         cost = 5
         prerequisite = { focus = TFR_EST_isamaa_family_housing }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_isamaa_energy_security }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -772,8 +808,8 @@ country_event = { id = tfr_estonia_content.13 }
         y = 17
         cost = 5
         prerequisite = { focus = TFR_EST_isamaa_energy_security }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_isamaa_county_institutions }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -794,8 +830,8 @@ TFR_EST_change_cohesion = yes
         y = 18
         cost = 5
         prerequisite = { focus = TFR_EST_isamaa_county_institutions }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_isamaa_national_industry }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -817,8 +853,8 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         y = 19
         cost = 5
         prerequisite = { focus = TFR_EST_isamaa_national_industry }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_isamaa_territorial_defence }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -840,8 +876,8 @@ army_experience = 15
         y = 20
         cost = 5
         prerequisite = { focus = TFR_EST_isamaa_territorial_defence }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_isamaa_strategic_routes }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -864,8 +900,8 @@ TFR_EST_change_readiness = yes
         y = 21
         cost = 5
         prerequisite = { focus = TFR_EST_isamaa_strategic_routes }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_isamaa_constitutional_continuity }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -886,8 +922,8 @@ TFR_EST_change_readiness = yes
         y = 22
         cost = 5
         prerequisite = { focus = TFR_EST_isamaa_constitutional_continuity }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_isamaa_programme }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -906,9 +942,8 @@ country_event = { id = tfr_estonia_content.17 }
         x = 12
         y = 13
         cost = 5
-        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_opening_resolved = yes }
         bypass = { has_country_flag = TFR_EST_done_sde_cabinet }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -928,8 +963,8 @@ add_political_power = 50
         y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_sde_cabinet }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_sde_labour_compact }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -950,8 +985,8 @@ TFR_EST_change_cohesion = yes
         y = 15
         cost = 5
         prerequisite = { focus = TFR_EST_sde_labour_compact }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_sde_health_network }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -972,8 +1007,8 @@ TFR_EST_change_cohesion = yes
         y = 16
         cost = 5
         prerequisite = { focus = TFR_EST_sde_health_network }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_sde_social_budget }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -992,8 +1027,8 @@ country_event = { id = tfr_estonia_content.14 }
         y = 17
         cost = 5
         prerequisite = { focus = TFR_EST_sde_social_budget }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_sde_training_jobs }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1015,8 +1050,8 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         y = 18
         cost = 5
         prerequisite = { focus = TFR_EST_sde_training_jobs }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_sde_inclusive_republic }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1037,8 +1072,8 @@ TFR_EST_change_cohesion = yes
         y = 19
         cost = 5
         prerequisite = { focus = TFR_EST_sde_inclusive_republic }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_sde_civil_resilience }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1061,8 +1096,8 @@ TFR_EST_change_cohesion = yes
         y = 20
         cost = 5
         prerequisite = { focus = TFR_EST_sde_civil_resilience }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_sde_service_families }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1085,8 +1120,8 @@ TFR_EST_change_cohesion = yes
         y = 21
         cost = 5
         prerequisite = { focus = TFR_EST_sde_service_families }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_sde_fair_requisition }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1106,8 +1141,8 @@ army_experience = 10
         y = 22
         cost = 5
         prerequisite = { focus = TFR_EST_sde_fair_requisition }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_sde_programme }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1126,9 +1161,8 @@ country_event = { id = tfr_estonia_content.17 }
         x = 15
         y = 13
         cost = 5
-        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_opening_resolved = yes }
         bypass = { has_country_flag = TFR_EST_done_e200_cabinet }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1148,8 +1182,8 @@ TFR_EST_change_cohesion = yes
         y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_e200_cabinet }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_e200_long_plan }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1169,8 +1203,8 @@ add_political_power = 35
         y = 15
         cost = 5
         prerequisite = { focus = TFR_EST_e200_long_plan }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_e200_teachers }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1191,8 +1225,8 @@ TFR_EST_change_cohesion = yes
         y = 16
         cost = 5
         prerequisite = { focus = TFR_EST_e200_teachers }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_e200_institutional_redesign }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1211,8 +1245,8 @@ country_event = { id = tfr_estonia_content.15 }
         y = 17
         cost = 5
         prerequisite = { focus = TFR_EST_e200_institutional_redesign }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_e200_university_industry }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1234,8 +1268,8 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         y = 18
         cost = 5
         prerequisite = { focus = TFR_EST_e200_university_industry }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_e200_shared_schools }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1256,8 +1290,8 @@ TFR_EST_change_cohesion = yes
         y = 19
         cost = 5
         prerequisite = { focus = TFR_EST_e200_shared_schools }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_e200_future_services }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1278,8 +1312,8 @@ TFR_EST_change_cohesion = yes
         y = 20
         cost = 5
         prerequisite = { focus = TFR_EST_e200_future_services }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_e200_adaptive_defence }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1301,8 +1335,8 @@ army_experience = 15
         y = 21
         cost = 5
         prerequisite = { focus = TFR_EST_e200_adaptive_defence }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_e200_future_after_war }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1324,8 +1358,8 @@ add_political_power = 30
         y = 22
         cost = 5
         prerequisite = { focus = TFR_EST_e200_future_after_war }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } }
         bypass = { has_country_flag = TFR_EST_done_e200_programme }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1344,9 +1378,8 @@ country_event = { id = tfr_estonia_content.17 }
         x = 18
         y = 13
         cost = 5
-        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } TFR_EST_opening_resolved = yes }
         bypass = { has_country_flag = TFR_EST_done_pp_cabinet }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1366,8 +1399,8 @@ TFR_EST_change_cohesion = yes
         y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_pp_cabinet }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
         bypass = { has_country_flag = TFR_EST_done_pp_audit }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1387,8 +1420,8 @@ TFR_EST_change_cohesion = yes
         y = 15
         cost = 5
         prerequisite = { focus = TFR_EST_pp_audit }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
         bypass = { has_country_flag = TFR_EST_done_pp_enterprise_rules }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1408,8 +1441,8 @@ add_political_power = 40
         y = 16
         cost = 5
         prerequisite = { focus = TFR_EST_pp_enterprise_rules }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
         bypass = { has_country_flag = TFR_EST_done_pp_fiscal_choice }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1428,8 +1461,8 @@ country_event = { id = tfr_estonia_content.16 }
         y = 17
         cost = 5
         prerequisite = { focus = TFR_EST_pp_fiscal_choice }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
         bypass = { has_country_flag = TFR_EST_done_pp_industrial_sites }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1451,8 +1484,8 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         y = 18
         cost = 5
         prerequisite = { focus = TFR_EST_pp_industrial_sites }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
         bypass = { has_country_flag = TFR_EST_done_pp_justice_capacity }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1473,8 +1506,8 @@ TFR_EST_change_cohesion = yes
         y = 19
         cost = 5
         prerequisite = { focus = TFR_EST_pp_justice_capacity }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
         bypass = { has_country_flag = TFR_EST_done_pp_targeted_services }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1495,8 +1528,8 @@ TFR_EST_change_cohesion = yes
         y = 20
         cost = 5
         prerequisite = { focus = TFR_EST_pp_targeted_services }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
         bypass = { has_country_flag = TFR_EST_done_pp_procurement_discipline }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1518,8 +1551,8 @@ army_experience = 15
         y = 21
         cost = 5
         prerequisite = { focus = TFR_EST_pp_procurement_discipline }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
         bypass = { has_country_flag = TFR_EST_done_pp_crisis_reserves }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1542,8 +1575,8 @@ TFR_EST_change_cohesion = yes
         y = 22
         cost = 5
         prerequisite = { focus = TFR_EST_pp_crisis_reserves }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_country_flag = TFR_EST_caretaker } check_variable = { var = TFR_EST_active_pp value = 1 compare = equals } }
         bypass = { has_country_flag = TFR_EST_done_pp_programme }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1562,9 +1595,8 @@ country_event = { id = tfr_estonia_content.17 }
         x = 23
         y = 9
         cost = 5
-        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes TFR_EST_opening_resolved = yes }
         bypass = { has_country_flag = TFR_EST_done_secure_records }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1584,8 +1616,8 @@ add_ideas = TFR_EST_secure_digital_state
         y = 10
         cost = 5
         prerequisite = { focus = TFR_EST_secure_records }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_technical_training }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1606,8 +1638,8 @@ TFR_EST_change_cohesion = yes
         y = 11
         cost = 5
         prerequisite = { focus = TFR_EST_technical_training }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_tartu_research }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1627,8 +1659,8 @@ add_ideas = TFR_EST_research_partnerships
         y = 12
         cost = 5
         prerequisite = { focus = TFR_EST_tartu_research }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_rural_broadband }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1651,8 +1683,8 @@ TFR_EST_change_readiness = yes
         y = 13
         cost = 5
         prerequisite = { focus = TFR_EST_rural_broadband }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_cyber_exercises }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1674,8 +1706,8 @@ add_political_power = 25
         y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_cyber_exercises }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_digital_civic_compact }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1694,9 +1726,8 @@ country_event = { id = tfr_estonia_content.20 }
         x = 26
         y = 9
         cost = 5
-        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes TFR_EST_opening_resolved = yes }
         bypass = { has_country_flag = TFR_EST_done_industrial_survey }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1715,8 +1746,8 @@ set_country_flag = TFR_EST_industrial_survey
         y = 10
         cost = 5
         prerequisite = { focus = TFR_EST_industrial_survey }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_tallinn_industry }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1738,8 +1769,8 @@ add_building_construction = { type = industrial_complex level = 1 instant_build 
         y = 11
         cost = 5
         prerequisite = { focus = TFR_EST_tallinn_industry }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_livonia_logistics }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1762,8 +1793,8 @@ TFR_EST_change_readiness = yes
         y = 12
         cost = 5
         prerequisite = { focus = TFR_EST_livonia_logistics }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_defence_contracts }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1785,8 +1816,8 @@ add_building_construction = { type = arms_factory level = 1 instant_build = yes 
         y = 13
         cost = 5
         prerequisite = { focus = TFR_EST_defence_contracts }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_maintenance_network }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1808,8 +1839,8 @@ TFR_EST_change_readiness = yes
         y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_maintenance_network }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_productive_republic }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1828,9 +1859,8 @@ TFR_EST_change_cohesion = yes
         x = 29
         y = 9
         cost = 5
-        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes TFR_EST_opening_resolved = yes }
         bypass = { has_country_flag = TFR_EST_done_energy_audit }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1850,8 +1880,8 @@ TFR_EST_change_readiness = yes
         y = 10
         cost = 5
         prerequisite = { focus = TFR_EST_energy_audit }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_ida_viru_transition }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1875,8 +1905,8 @@ TFR_EST_change_cohesion = yes
         y = 11
         cost = 5
         prerequisite = { focus = TFR_EST_ida_viru_transition }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_grid_resilience }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1899,8 +1929,8 @@ TFR_EST_change_readiness = yes
         y = 12
         cost = 5
         prerequisite = { focus = TFR_EST_grid_resilience }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_emergency_energy }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1921,8 +1951,8 @@ TFR_EST_change_readiness = yes
         y = 13
         cost = 5
         prerequisite = { focus = TFR_EST_emergency_energy }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_affordable_heat }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1943,8 +1973,8 @@ TFR_EST_change_cohesion = yes
         y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_affordable_heat }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_resilient_utilities }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1966,9 +1996,8 @@ TFR_EST_change_cohesion = yes
         x = 33
         y = 9
         cost = 5
-        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes TFR_EST_opening_resolved = yes }
         bypass = { has_country_flag = TFR_EST_done_reserve_register }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -1989,8 +2018,8 @@ TFR_EST_change_readiness = yes
         y = 10
         cost = 5
         prerequisite = { focus = TFR_EST_reserve_register }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_kaitseliit_training }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2013,8 +2042,8 @@ add_ideas = TFR_EST_kaitseliit_network
         y = 11
         cost = 5
         prerequisite = { focus = TFR_EST_kaitseliit_training }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_reserve_training_exercise }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2036,8 +2065,8 @@ army_experience = 20
         y = 12
         cost = 5
         prerequisite = { focus = TFR_EST_reserve_training_exercise }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_reserve_depots }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2058,8 +2087,8 @@ TFR_EST_change_readiness = yes
         y = 13
         cost = 5
         prerequisite = { focus = TFR_EST_reserve_depots }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_mobilization_plans }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2080,8 +2109,8 @@ custom_effect_tooltip = TFR_EST_reserve_plan_tt
         y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_mobilization_plans }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_total_defence }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2102,9 +2131,8 @@ add_ideas = TFR_EST_total_defence
         x = 36
         y = 9
         cost = 5
-        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes TFR_EST_opening_resolved = yes }
         bypass = { has_country_flag = TFR_EST_done_logistics_audit }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2126,8 +2154,8 @@ army_experience = 10
         y = 10
         cost = 5
         prerequisite = { focus = TFR_EST_logistics_audit }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_northern_routes }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2150,8 +2178,8 @@ TFR_EST_change_readiness = yes
         y = 11
         cost = 5
         prerequisite = { focus = TFR_EST_northern_routes }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_tartu_distribution }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2174,8 +2202,8 @@ TFR_EST_change_readiness = yes
         y = 12
         cost = 5
         prerequisite = { focus = TFR_EST_tartu_distribution }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_field_repair }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2196,8 +2224,8 @@ army_experience = 15
         y = 13
         cost = 5
         prerequisite = { focus = TFR_EST_field_repair }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_air_defence_sites }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2220,8 +2248,8 @@ TFR_EST_change_readiness = yes
         y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_air_defence_sites }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_national_supply_plan }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2242,9 +2270,8 @@ add_ideas = TFR_EST_joint_logistics
         x = 39
         y = 9
         cost = 5
-        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes TFR_EST_opening_resolved = yes }
         bypass = { has_country_flag = TFR_EST_done_allied_liaison }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2264,8 +2291,8 @@ TFR_EST_change_readiness = yes
         y = 10
         cost = 5
         prerequisite = { focus = TFR_EST_allied_liaison }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_interoperability }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2287,8 +2314,8 @@ army_experience = 15
         y = 11
         cost = 5
         prerequisite = { focus = TFR_EST_interoperability }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_allied_receiving }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2310,8 +2337,8 @@ army_experience = 10
         y = 12
         cost = 5
         prerequisite = { focus = TFR_EST_allied_receiving }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_realistic_procurement }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2331,8 +2358,8 @@ custom_effect_tooltip = TFR_EST_procurement_plan_tt
         y = 13
         cost = 5
         prerequisite = { focus = TFR_EST_realistic_procurement }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_air_warning }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2355,8 +2382,8 @@ TFR_EST_change_readiness = yes
         y = 14
         cost = 5
         prerequisite = { focus = TFR_EST_air_warning }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_prepared_alliance }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2377,8 +2404,8 @@ set_country_flag = TFR_EST_alliance_prepared
         y = 15
         cost = 5
         prerequisite = { focus = TFR_EST_total_defence }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_prepared_positions }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2401,8 +2428,8 @@ TFR_EST_change_readiness = yes
         y = 15
         cost = 5
         prerequisite = { focus = TFR_EST_national_supply_plan }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_artillery_observers }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2424,8 +2451,8 @@ TFR_EST_change_readiness = yes
         y = 15
         cost = 5
         prerequisite = { focus = TFR_EST_prepared_alliance }
-        allow_branch = { has_country_flag = TFR_EST_opening_complete }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } }
+        allow_branch = { has_country_flag = TFR_EST_opening_complete TFR_EST_show_legacy_domestic_tree = yes }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } TFR_EST_coalition_majority = yes NOT = { has_country_flag = TFR_EST_caretaker } TFR_EST_show_legacy_domestic_tree = yes }
         bypass = { has_country_flag = TFR_EST_done_air_defence_integration }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2446,9 +2473,8 @@ TFR_EST_change_readiness = yes
         x = 3
         y = 25
         cost = 3
-        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
         allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_first_war_seen }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_first_war_seen }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_first_war_seen TFR_EST_opening_resolved = yes }
         bypass = { has_country_flag = TFR_EST_done_first_emergency }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2665,9 +2691,8 @@ set_country_flag = TFR_EST_first_lessons
         x = 9
         y = 25
         cost = 5
-        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
         allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { TFR_EST_campaign_stage > 1 } has_war = no }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { TFR_EST_campaign_stage > 1 } has_war = no }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { TFR_EST_campaign_stage > 1 } has_war = no TFR_EST_opening_resolved = yes }
         bypass = { has_country_flag = TFR_EST_done_reconstruction_audit }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -2840,9 +2865,8 @@ set_country_flag = TFR_EST_interwar_watch
         x = 15
         y = 25
         cost = 3
-        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
         allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_second_war_seen }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_second_war_seen }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_second_war_seen TFR_EST_opening_resolved = yes }
         bypass = { has_country_flag = TFR_EST_done_second_emergency }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -3062,9 +3086,8 @@ set_country_flag = TFR_EST_second_lessons
         x = 21
         y = 25
         cost = 5
-        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
         allow_branch = { has_country_flag = TFR_EST_opening_complete check_variable = { TFR_EST_campaign_stage > 3 } has_war = no }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { TFR_EST_campaign_stage > 3 } has_war = no }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } check_variable = { TFR_EST_campaign_stage > 3 } has_war = no TFR_EST_opening_resolved = yes }
         bypass = { has_country_flag = TFR_EST_done_second_settlement }
         cancel_if_invalid = yes
         continue_if_invalid = no
@@ -3196,9 +3219,8 @@ set_country_flag = TFR_EST_campaign_complete
         x = 27
         y = 25
         cost = 5
-        prerequisite = { focus = TFR_EST_opening_marriage_referendum }
         allow_branch = { has_country_flag = TFR_EST_opening_complete has_country_flag = TFR_EST_restoration_pending }
-        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_restoration_pending }
+        available = { NOT = { has_country_flag = TFR_EST_occupied } has_country_flag = TFR_EST_restoration_pending TFR_EST_opening_resolved = yes }
         bypass = { has_country_flag = TFR_EST_done_restored_authority }
         cancel_if_invalid = yes
         continue_if_invalid = no

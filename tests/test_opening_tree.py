@@ -102,8 +102,9 @@ class OpeningTreeTests(unittest.TestCase):
     def test_main_tree_imports_the_whole_opening_programme(self):
         imports = self.main.all("shared_focus")
         self.assertCountEqual([name for name in imports if name.startswith("TFR_EST_opening_")], OPENING_IDS)
-        self.assertEqual(len(imports), len(OPENING_IDS) + 20)
+        self.assertEqual(len(imports), len(OPENING_IDS) + 40)
         self.assertEqual(len([name for name in imports if name.startswith("TFR_EST_ratas_")]), 20)
+        self.assertEqual(len([name for name in imports if name.startswith("TFR_EST_kallas_")]), 20)
         self.assertEqual(self.main.get("initial_show_position").get("focus"),
                          "TFR_EST_opening_kose_voobu")
 
@@ -302,13 +303,44 @@ class OpeningTreeTests(unittest.TestCase):
                 self.assertEqual(self.focuses[focus_id].get("cancel_if_invalid"), "yes")
                 self.assertEqual(self.focuses[focus_id].get("continue_if_invalid"), "no")
 
-    def test_referendum_cannot_be_canceled_or_interrupted_by_confidence_loss(self):
+    def test_referendum_blocks_manual_cancellation_but_supports_native_failure(self):
         referendum = self.focuses[OPENING_IDS[-1]]
         self.assertEqual(referendum.get("cancelable"), "no")
-        self.assertEqual(referendum.get("cancel_if_invalid"), "no")
-        self.assertEqual(referendum.get("continue_if_invalid"), "yes")
-        self.assertEqual(referendum.get("available").get("TFR_EST_can_start_referendum"), "yes")
+        self.assertEqual(referendum.get("cancel_if_invalid"), "yes")
+        self.assertEqual(referendum.get("continue_if_invalid"), "no")
+        self.assertTrue(contains(referendum.get("available"), "TFR_EST_can_start_referendum", "yes"))
         self.assertEqual(referendum.get("select_effect").get("TFR_EST_begin_referendum"), "yes")
+
+    def test_active_referendum_remains_valid_after_ordinary_confidence_loss(self):
+        runtime = self.runtime(True)
+        referendum = self.focuses[OPENING_IDS[-1]]
+        self.assertTrue(runtime.condition(referendum.get("available")))
+        runtime.call("TFR_EST_begin_referendum")
+        runtime.variables["TFR_EST_coalition_ekre"] = Fraction(0)
+        runtime.call("TFR_EST_recount_confidence")
+        runtime.call("TFR_EST_enter_caretaker")
+        self.assertFalse(self.trigger(runtime, "TFR_EST_can_start_referendum"))
+        self.assertTrue(runtime.condition(referendum.get("available")))
+
+    def test_resignation_invalidates_active_referendum_and_hides_opening(self):
+        runtime = self.runtime(True)
+        referendum = self.focuses[OPENING_IDS[-1]]
+        runtime.call("TFR_EST_begin_referendum")
+        runtime.flags.add("TFR_EST_porto_investigation_seen")
+        runtime.call("TFR_EST_ratas_steps_back")
+        self.assertFalse(runtime.condition(referendum.get("available")))
+        self.assertFalse(self.trigger(runtime, "TFR_EST_can_start_referendum"))
+        self.assertFalse(any(runtime.condition(focus.get("allow_branch", Block([])))
+                             for focus in self.focuses.values()))
+        self.assertIn("TFR_EST_referendum_failed", runtime.flags)
+        self.assertNotIn("TFR_EST_done_opening_marriage_referendum", runtime.flags)
+
+    def test_failed_referendum_cannot_award_success_even_if_completion_is_delayed(self):
+        runtime = self.runtime(True)
+        runtime.flags.update({"TFR_EST_referendum_failed", "TFR_EST_ratas_resigned"})
+        before = (runtime.flags.copy(), runtime.variables.copy(), runtime.props["completed_focuses"].copy())
+        runtime.run(self.focuses[OPENING_IDS[-1]].get("completion_reward"))
+        self.assertEqual((runtime.flags, runtime.variables, runtime.props["completed_focuses"]), before)
 
     def test_referendum_completion_list_is_native_and_requires_all_ten_policies(self):
         runtime = self.runtime(True)
