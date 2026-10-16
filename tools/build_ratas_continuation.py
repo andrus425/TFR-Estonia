@@ -12,11 +12,13 @@ import json
 from pathlib import Path
 
 from native_script_interface import amount_call
+from focus_reward_model import rebalance_policies, modifier_reward, energy_progress_tooltip, concise_trigger
 
 
 ROOT = Path(__file__).resolve().parents[1]
 PREFIX = "TFR_EST_ratas_"
 COVID_POLICIES = ("hospital_covid", "testing_tracing", "vaccinate_risk_groups")
+COMPACT_ROWS = {7: 4, 9: 5, 11: 6, 13: 7, 15: 8, 17: 9, 20: 11}
 
 
 @dataclass(frozen=True)
@@ -128,6 +130,9 @@ POLICIES = (
 )
 
 
+POLICIES = rebalance_policies(POLICIES, "ratas")
+
+
 def done(suffix: str) -> str:
     return "TFR_EST_done_ratas_" + suffix
 
@@ -139,15 +144,15 @@ def build_focuses() -> str:
             f"    prerequisite = {{ focus = {'TFR_EST_' + parent if parent.startswith('opening_') else PREFIX + parent} }}\n"
             for parent in policy.parents
         )
-        case = "\n        generic_has_corona = yes" if policy.suffix in COVID_POLICIES else ""
+        case = "\n        TFR_EST_has_covid = yes" if policy.suffix in COVID_POLICIES else ""
         if policy.suffix == "account_to_voters":
             case += "\n        TFR_EST_ratas_all_policies_done = yes"
         out.append(f"""
 shared_focus = {{
     id = {PREFIX}{policy.suffix}
     icon = GFX_goal_generic_{policy.icon}
-    x = {policy.x}
-    y = {policy.y}
+    x = {policy.x // 2}
+    y = {COMPACT_ROWS[policy.y]}
     cost = 5
 {parents}    allow_branch = {{ TFR_EST_ratas_branch_visible = yes }}
     available = {{
@@ -199,7 +204,7 @@ TFR_EST_show_legacy_domestic_tree = {
         has_country_flag = TFR_EST_kallas_mandate_ended
     }
 }
-# This is TFR's Saudi-war supply shock, not Germany's country-only oil spirit.
+# TFR's Saudi-war supply shock activates the shared Oil Crash idea family.
 TFR_EST_energy_crisis_active = {
     NOT = { has_global_flag = SAU_saudi_civil_war_over_global }
     OR = {
@@ -213,25 +218,30 @@ TFR_EST_energy_crisis_active = {
     # ancestors. Check every policy explicitly before the common conclusion.
     for policy in POLICIES[:-1]:
         text += f"    OR = {{ has_completed_focus = {PREFIX}{policy.suffix} has_country_flag = {done(policy.suffix)} }}\n"
-    return text + "}\n"
+    text += "}\n"
+    for name in ("TFR_EST_ratas_governing", "TFR_EST_ratas_all_policies_done"):
+        text = concise_trigger(name, text)
+    return text
 
 
 def build_effects() -> str:
     out = ["# Generated rewards run inside the focus's persistent once-only guard.\n"]
     for policy in POLICIES:
-        effects = ["TFR_EST_initialize_country_modifiers = yes",
-                   f"custom_effect_tooltip = {PREFIX}{policy.suffix}_reward_tt"]
+        effects = ["hidden_effect = { TFR_EST_initialize_country_modifiers = yes }"]
         for value, helper in ((policy.budget, "TFR_EST_spend_budget"),
                               (policy.cohesion, "TFR_EST_change_cohesion"),
                               (policy.readiness, "TFR_EST_change_readiness")):
             if value:
                 effects.append(amount_call(helper, value))
         for group, modifiers in (("economy", policy.economic), ("military", policy.military)):
-            effects.extend(f"add_to_variable = {{ TFR_EST_{group}_{key}_var = {value} }}"
-                           for key, value in modifiers)
+            if modifiers:
+                effects.append(modifier_reward(PREFIX + policy.suffix, group, modifiers))
         if policy.extra:
             effects.append(policy.extra)
-        effects.extend(("TFR_EST_reconcile_energy_crisis = yes", "TFR_EST_refresh_country_modifiers = yes"))
+        energy = energy_progress_tooltip("ratas", policy.suffix)
+        if energy:
+            effects.append(energy)
+        effects.append("hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }")
         out.append(f"{PREFIX}reward_{policy.suffix} = {{\n    " + "\n    ".join(effects) + "\n}\n\n")
     out.append("""# Never call the parent's unsafe generic decrease_corona fallback.
 TFR_EST_ratas_reduce_covid = {
@@ -249,48 +259,6 @@ TFR_EST_ratas_reduce_covid = {
             limit = { has_idea = lower_covid_cases has_country_flag = TFR_EST_covid_seed_owned }
             remove_ideas = lower_covid_cases
             clr_country_flag = TFR_EST_covid_seed_owned
-        }
-    }
-}
-
-# Separate contribution variables preserve all permanent economy reforms.
-TFR_EST_reconcile_energy_crisis = {
-    if = {
-        limit = { tag = EST has_country_flag = TFR_EST_initialized }
-        TFR_EST_initialize_country_modifiers = yes
-        if = { limit = { NOT = { has_variable = TFR_EST_energy_factory_applied } } set_variable = { TFR_EST_energy_factory_applied = 0 } }
-        if = { limit = { NOT = { has_variable = TFR_EST_energy_goods_applied } } set_variable = { TFR_EST_energy_goods_applied = 0 } }
-        set_temp_variable = { TFR_EST_energy_factory_target = 0 }
-        set_temp_variable = { TFR_EST_energy_goods_target = 0 }
-        if = {
-            limit = { TFR_EST_energy_crisis_active = yes }
-            if = {
-                limit = { NOT = { has_country_flag = TFR_EST_energy_crisis_seen } }
-                set_country_flag = TFR_EST_energy_crisis_seen
-                country_event = { id = tfr_estonia_ratas.1 }
-            }
-            set_temp_variable = { TFR_EST_energy_factory_target = -0.04 }
-            set_temp_variable = { TFR_EST_energy_goods_target = 0.03 }
-            if = { limit = { OR = { has_country_flag = TFR_EST_done_ratas_lng_connection has_country_flag = TFR_EST_done_kallas_lng_connection } } add_to_temp_variable = { TFR_EST_energy_factory_target = 0.01 } }
-            if = { limit = { OR = { has_country_flag = TFR_EST_done_ratas_grid_synchronisation has_country_flag = TFR_EST_done_kallas_gas_reserve } } add_to_temp_variable = { TFR_EST_energy_factory_target = 0.01 } }
-            if = { limit = { OR = { has_country_flag = TFR_EST_done_ratas_renewable_chp has_country_flag = TFR_EST_done_kallas_energy_networks } } add_to_temp_variable = { TFR_EST_energy_factory_target = 0.01 } }
-            if = { limit = { OR = { has_country_flag = TFR_EST_done_ratas_building_renovation has_country_flag = TFR_EST_done_kallas_energy_households } } add_to_temp_variable = { TFR_EST_energy_goods_target = -0.015 } }
-            if = { limit = { OR = { has_country_flag = TFR_EST_done_ratas_network_charge_relief has_country_flag = TFR_EST_done_kallas_energy_networks } } add_to_temp_variable = { TFR_EST_energy_goods_target = -0.015 } }
-        }
-        if = {
-            limit = {
-                OR = {
-                    NOT = { check_variable = { var = TFR_EST_energy_factory_applied value = TFR_EST_energy_factory_target compare = equals } }
-                    NOT = { check_variable = { var = TFR_EST_energy_goods_applied value = TFR_EST_energy_goods_target compare = equals } }
-                }
-            }
-            subtract_from_variable = { var = TFR_EST_economy_industrial_capacity_factory_var value = TFR_EST_energy_factory_applied }
-            subtract_from_variable = { var = TFR_EST_economy_consumer_goods_factor_var value = TFR_EST_energy_goods_applied }
-            add_to_variable = { var = TFR_EST_economy_industrial_capacity_factory_var value = TFR_EST_energy_factory_target }
-            add_to_variable = { var = TFR_EST_economy_consumer_goods_factor_var value = TFR_EST_energy_goods_target }
-            set_variable = { var = TFR_EST_energy_factory_applied value = TFR_EST_energy_factory_target }
-            set_variable = { var = TFR_EST_energy_goods_applied value = TFR_EST_energy_goods_target }
-            TFR_EST_refresh_country_modifiers = yes
         }
     }
 }
@@ -344,7 +312,7 @@ def build_localisation() -> str:
         entries[ident + "_reward_tt"] = "\n".join(benefit)
     entries.update({
         "TFR_EST_ratas_energy_title": "The Energy Shock Reaches Estonia",
-        "TFR_EST_ratas_energy_desc": "The Saudi civil war is disrupting international energy supplies. Estonia must protect essential services and help firms absorb higher costs. Without preparation, the shock reduces factory output by 4% and adds 3% to the consumer-goods factor until supplies recover. Funded LNG, grid and local-generation preparations reduce the output penalty; renovation and network-charge relief ease the burden on consumers. These measures support Estonia while the wider crisis follows its own course.",
+        "TFR_EST_ratas_energy_desc": "The Saudi civil war is disrupting international energy supplies. Estonia must protect essential services and help firms absorb higher costs. The Oil Crash national spirit disrupts production, construction, public confidence and household spending. Funded LNG, grid, local-generation, renovation and network-charge measures each advance recovery by one stage. Completing the energy response removes the spirit even while the wider supply shock continues. These measures support Estonia while the wider crisis follows its own course.",
         "TFR_EST_ratas_energy_option": "Review supply security and household bills.",
     })
     return "l_english:\n" + "".join(f" {key}:0 {json.dumps(value, ensure_ascii=False)}\n" for key, value in entries.items())

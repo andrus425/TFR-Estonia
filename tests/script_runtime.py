@@ -77,6 +77,9 @@ class Runtime:
         return all(self.test(e.key, e.op, e.value, args) for e in block.entries)
 
     def test(self, key, op, value, args=None):
+        if key == "custom_trigger_tooltip":
+            return all(self.test(e.key, e.op, e.value, args)
+                       for e in value.entries if e.key != "tooltip")
         if key == "OR":
             return any(self.test(e.key, e.op, e.value, args) for e in value.entries)
         if key in ("AND", "limit"):
@@ -224,6 +227,9 @@ class Runtime:
                 self.dynamic_updates += 1
             elif key in {"hidden_effect", "effect"}:
                 self.run(value, args)
+            elif key == "effect_tooltip":
+                # HOI4 renders this block without executing its effects.
+                pass
             elif key == "while_loop_effect":
                 count = 0
                 while self.condition(value.get("limit"), args):

@@ -86,7 +86,11 @@ avoiding changes that end the crisis for other countries or remove unrelated
 economic modifiers.
 
 The source-based energy programmes can be funded before or during the crisis;
-their mitigation applies while the parent shock is active. This preserves the
+their mitigation applies while the parent shock is active. Since the 16 October
+revision, each of the five projects advances the actual parent Oil Crash idea
+by one recovery stage, with all five removing it. This replaces the earlier
+custom economy contribution; permanent economic reforms remain separate.
+This preserves the
 700-day schedule instead of requiring players to wait for an uncertain onset.
 The next valid election ends this specific 2019 coalition mandate, even if Centre
 wins again. That transition preserves the existing parliamentary calendar and

@@ -1,5 +1,29 @@
 # Changelog
 
+## 16 October 2026 — compact focuses and visible, stronger rewards
+
+- Compact all five focus layouts while preserving their IDs, prerequisites,
+  visibility, 35-day timings and final referendum. The opening is ten grid units
+  wide; both historical government programmes use five columns two units apart.
+- Preserve all 235 existing focus descriptions exactly, with a hash fixture
+  guarding their localized values.
+- Show actual inflation-adjusted budget costs through TFR's native debt helper.
+  Cohesion and readiness now show signed numerical changes without internal
+  variable arithmetic in their effect tooltips.
+- Give the opening and both historical cabinets stronger permanent economic and
+  military rewards. Use TFR-style native "Modify ... by" previews generated from
+  the same numerical model as the real modifier changes. Preview definitions
+  remain display-only and never become national spirits.
+- Replace the custom energy penalty with TFR's existing five Oil Crash ideas.
+  Each Ratas energy policy advances recovery once; Kallas's network-charge focus
+  advances it twice and her other three projects once. The full energy branch
+  removes the spirit before the wider crisis ends. Shared project slots prevent
+  duplicate relief across routes, and saved custom penalties migrate safely.
+- Replace long historical-cabinet requirement lists with concise tooltips while
+  retaining the full coalition, cabinet, programme, date and domestic-case checks.
+- Add regression coverage for compact layouts, unchanged descriptions, actual
+  debt costs, exact modifier previews and the real parent crisis tiers.
+
 ## 15 October 2026 — Ratas resigns and Kallas takes office
 
 - Made Ratas's resignation automatically fail the marriage-referendum focus,

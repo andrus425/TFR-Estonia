@@ -193,13 +193,13 @@ path="{base.as_posix()}"
     body.extend([
         "set_global_flag = SAU_saudi_civil_war_global\nTFR_EST_reconcile_energy_crisis = yes\nTFR_EST_reconcile_energy_crisis = yes\n",
         "set_variable = { var = TFR_EST_qa_energy_factory_delta value = TFR_EST_economy_industrial_capacity_factory_var }\nsubtract_from_variable = { var = TFR_EST_qa_energy_factory_delta value = TFR_EST_qa_energy_factory_before }\nset_variable = { var = TFR_EST_qa_energy_goods_delta value = TFR_EST_economy_consumer_goods_factor_var }\nsubtract_from_variable = { var = TFR_EST_qa_energy_goods_delta value = TFR_EST_qa_energy_goods_before }\n",
-        check("ratas_energy_shock_applies_once", eq("TFR_EST_qa_energy_factory_delta", -0.04) + " " + eq("TFR_EST_qa_energy_goods_delta", 0.03)),
+        check("ratas_energy_shock_applies_once", "has_idea = GER_oil_crash1 " + eq("TFR_EST_qa_energy_factory_delta", 0) + " " + eq("TFR_EST_qa_energy_goods_delta", 0)),
     ])
     for suffix in energy_policies:
         body.append(f"set_country_flag = TFR_EST_done_ratas_{suffix}\n")
     body.extend([
         "TFR_EST_reconcile_energy_crisis = yes\n",
-        check("ratas_energy_preparations_mitigate", eq("TFR_EST_energy_factory_applied", -0.01) + " " + eq("TFR_EST_energy_goods_applied", 0)),
+        check("ratas_energy_preparations_mitigate", " ".join(f"NOT = {{ has_idea = GER_oil_crash{i} }}" for i in range(1, 6)) + " " + eq("TFR_EST_energy_response_steps", 5) + " " + eq("TFR_EST_energy_factory_applied", 0) + " " + eq("TFR_EST_energy_goods_applied", 0)),
         "set_global_flag = SAU_saudi_civil_war_over_global\nTFR_EST_reconcile_energy_crisis = yes\n",
         check("ratas_energy_resolution_preserves_reforms", eq("TFR_EST_economy_industrial_capacity_factory_var", "TFR_EST_qa_energy_factory_before") + " " + eq("TFR_EST_economy_consumer_goods_factor_var", "TFR_EST_qa_energy_goods_before") + " " + eq("TFR_EST_energy_factory_applied", 0)),
     ])
@@ -243,13 +243,13 @@ path="{base.as_posix()}"
         body.append(f"set_country_flag = TFR_EST_done_kallas_{suffix}\n")
     body.extend([
         "set_global_flag = SAU_saudi_civil_war_global\nTFR_EST_reconcile_energy_crisis = yes\n",
-        check("kallas_energy_mitigation", eq("TFR_EST_energy_factory_applied", -0.01) + " " + eq("TFR_EST_energy_goods_applied", 0)),
+        check("kallas_energy_mitigation", " ".join(f"NOT = {{ has_idea = GER_oil_crash{i} }}" for i in range(1, 6)) + " " + eq("TFR_EST_energy_response_steps", 5) + " " + eq("TFR_EST_energy_factory_applied", 0) + " " + eq("TFR_EST_energy_goods_applied", 0)),
     ])
     for suffix in energy_policies:
         body.append(f"set_country_flag = TFR_EST_done_ratas_{suffix}\n")
     body.extend([
         "TFR_EST_reconcile_energy_crisis = yes\n",
-        check("kallas_mixed_energy_does_not_stack", eq("TFR_EST_energy_factory_applied", -0.01) + " " + eq("TFR_EST_energy_goods_applied", 0)),
+        check("kallas_mixed_energy_does_not_stack", " ".join(f"NOT = {{ has_idea = GER_oil_crash{i} }}" for i in range(1, 6)) + " " + eq("TFR_EST_energy_response_steps", 5) + " " + eq("TFR_EST_energy_factory_applied", 0) + " " + eq("TFR_EST_energy_goods_applied", 0)),
     ])
     for index, global_flag in enumerate(energy_flags):
         body.append(f"clr_global_flag = {global_flag}\nif = {{ limit = {{ has_country_flag = TFR_EST_qa_saved_kallas_energy_{index} }} set_global_flag = {global_flag} clr_country_flag = TFR_EST_qa_saved_kallas_energy_{index} }}\n")
@@ -263,6 +263,16 @@ path="{base.as_posix()}"
         "kallas_covid_recovery_leaves_certificate_reform", "kallas_energy_mitigation",
         "kallas_mixed_energy_does_not_stack", "kallas_reform_election_ends_old_mandate",
     ])
+    # Run real reward helpers natively; preview blocks must remain display-only.
+    from build_focus_tooltips import idea_definitions
+    body.extend([
+        "set_variable = { TFR_EST_qa_construction_before = TFR_EST_economy_production_speed_buildings_factor_var }\nset_variable = { TFR_EST_qa_supply_before = TFR_EST_military_supply_consumption_factor_var }\n",
+        "TFR_EST_opening_reward_kose_voobu = yes\n",
+        "set_variable = { TFR_EST_qa_construction_delta = TFR_EST_economy_production_speed_buildings_factor_var }\nsubtract_from_variable = { var = TFR_EST_qa_construction_delta value = TFR_EST_qa_construction_before }\nset_variable = { TFR_EST_qa_supply_delta = TFR_EST_military_supply_consumption_factor_var }\nsubtract_from_variable = { var = TFR_EST_qa_supply_delta value = TFR_EST_qa_supply_before }\n",
+        check("compact_focus_reward_deltas", eq("TFR_EST_qa_construction_delta", .05) + " " + eq("TFR_EST_qa_supply_delta", -.04)),
+        check("preview_ideas_are_display_only", " ".join(f"NOT = {{ has_idea = {ident} }}" for ident in idea_definitions())),
+    ])
+    assertions.extend(["compact_focus_reward_deltas", "preview_ideas_are_display_only"])
     body.append("log = \"TFR_EST_ENGINE_QA_END\"\n")
     source = (ROOT / "history/countries/EST - Estonia.txt").read_text(encoding="utf-8-sig")
     # Country history executes top-level commands independently. Keep native

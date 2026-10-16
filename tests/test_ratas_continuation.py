@@ -423,6 +423,30 @@ class RatasContinuationTests(unittest.TestCase):
                 self.assertTrue(contains(r.effects[helper], 'TFR_EST_refresh_country_modifiers', 'yes'))
                 self.assertFalse(contains(r.effects[helper], 'add_ideas'))
 
+    def test_energy_focus_rewards_replace_each_parent_tier_and_finish_recovery(self):
+        r = self.runtime()
+        r.global_flags.add('SAU_saudi_civil_war_global')
+        r.call('TFR_EST_reconcile_energy_crisis')
+        tiers = {f'GER_oil_crash{index}' for index in range(1, 6)}
+        self.assertEqual(r.ideas.intersection(tiers), {'GER_oil_crash1'})
+        self.complete(r, ROOT_FOCUS)
+        projects = ('lng_connection', 'grid_synchronisation', 'renewable_chp',
+                    'building_renovation', 'network_charge_relief')
+        for index, suffix in enumerate(projects, start=2):
+            name = PREFIX + suffix
+            self.complete(r, name)
+            with self.subTest(focus=name):
+                expected = {f'GER_oil_crash{index}'} if index <= 5 else set()
+                self.assertEqual(r.ideas.intersection(tiers), expected)
+                self.assertEqual(r.variables['TFR_EST_energy_factory_applied'], 0)
+                self.assertEqual(r.variables['TFR_EST_energy_goods_applied'], 0)
+                before = self.material_state(r)
+                r.run(self.focuses[name].get('completion_reward'))
+                self.assertEqual(self.material_state(r), before)
+        r.call('TFR_EST_reconcile_energy_crisis')
+        self.assertFalse(r.ideas.intersection(tiers))
+        self.assertEqual(r.global_flags, {'SAU_saudi_civil_war_global'})
+
 
 if __name__ == '__main__':
     unittest.main()

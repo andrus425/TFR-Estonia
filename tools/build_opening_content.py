@@ -176,16 +176,16 @@ PREREQUISITES = {
 }
 POSITIONS = {
     "pension_reform": (0, 0),
-    "pension_increase": (0, 2),
-    "teacher_pay": (3, 0),
-    "research_budget": (3, 2),
-    "kose_voobu": (7, 0),
-    "eastern_border": (6, 2),
-    "three_seas": (9, 2),
-    "covid_emergency": (13, 0),
-    "wage_compensation": (12, 2),
-    "excise_relief": (15, 2),
-    "marriage_referendum": (7, 5),
+    "pension_increase": (0, 1),
+    "teacher_pay": (2, 0),
+    "research_budget": (2, 1),
+    "kose_voobu": (5, 0),
+    "eastern_border": (4, 1),
+    "three_seas": (6, 1),
+    "covid_emergency": (9, 0),
+    "wage_compensation": (8, 1),
+    "excise_relief": (10, 1),
+    "marriage_referendum": (5, 3),
 }
 
 
@@ -205,16 +205,9 @@ def build_focuses() -> str:
             f"    prerequisite = {{ focus = {PREFIX}{parent} }}\n"
             for parent in PREREQUISITES[policy.suffix]
         )
-        available = (
-            "NOT = { has_country_flag = TFR_EST_referendum_failed }\n"
-            "        OR = {\n"
-            "            has_country_flag = TFR_EST_referendum_active\n"
-            "            TFR_EST_can_start_referendum = yes\n"
-            "        }"
-            if final else "TFR_EST_opening_coalition_majority = yes"
-        )
+        available = "TFR_EST_referendum_available = yes" if final else "TFR_EST_opening_coalition_majority = yes"
         if policy.suffix == "covid_emergency":
-            available += "\n        generic_has_corona = yes"
+            available += "\n        TFR_EST_has_covid = yes"
         x, y = POSITIONS[policy.suffix]
         cancellation = (
             "    cancelable = no\n    cancel_if_invalid = yes\n    continue_if_invalid = no\n"

@@ -36,7 +36,7 @@ VARIABLES = {
     for field in fields
 }
 FOCUS_BASELINE = {
-    'TFR_EST_occupation.txt': 'd133cdb9a10acc6ce7af0905b7c203f640cdc5843d17a8bb4799146536ce8036',
+    'TFR_EST_occupation.txt': 'e0fd40ae1e48e8e355a2baba6b455625395c11be2c41141f6376c722aed5ffed',
     'TFR_national_focus_SOV_communist_new.txt': 'd266e91326f5e4ec4d67369c1901b4b58531f3c084a56e59918a9f88a1f512aa',
 }
 
@@ -131,7 +131,7 @@ class DynamicModifierTests(unittest.TestCase):
         runtime.call('TFR_EST_initialize_country_modifiers')
         self.assertEqual(runtime.dynamic, MODIFIERS | {'economy_dynamic_modifier', 'GER_army_dynamic_modifier'})
 
-    def test_occupation_and_parent_trees_remain_unchanged(self):
+    def test_occupation_and_parent_trees_match_the_current_baseline(self):
         for name, expected in FOCUS_BASELINE.items():
             with self.subTest(tree=name):
                 actual = hashlib.sha256((ROOT / 'common/national_focus' / name).read_bytes()).hexdigest()

@@ -1,21 +1,26 @@
 # Public API. All callers operate in EST country scope.
     TFR_EST_change_cohesion = {
-        add_to_variable = { var = TFR_EST_cohesion value = TFR_EST_cohesion_delta }
-        clamp_variable = { var = TFR_EST_cohesion min = 0 max = 100 }
-        TFR_EST_refresh_meters = yes
+        custom_effect_tooltip = TFR_EST_cohesion_change_tt
+        hidden_effect = {
+            add_to_variable = { var = TFR_EST_cohesion value = TFR_EST_cohesion_delta }
+            clamp_variable = { var = TFR_EST_cohesion min = 0 max = 100 }
+            TFR_EST_refresh_meters = yes
+        }
     }
     TFR_EST_change_readiness = {
-        add_to_variable = { var = TFR_EST_readiness value = TFR_EST_readiness_delta }
-        clamp_variable = { var = TFR_EST_readiness min = 0 max = 100 }
-        TFR_EST_refresh_meters = yes
+        custom_effect_tooltip = TFR_EST_readiness_change_tt
+        hidden_effect = {
+            add_to_variable = { var = TFR_EST_readiness value = TFR_EST_readiness_delta }
+            clamp_variable = { var = TFR_EST_readiness min = 0 max = 100 }
+            TFR_EST_refresh_meters = yes
+        }
     }
     TFR_EST_spend_budget = {
-        custom_effect_tooltip = TFR_EST_budget_cost_tt
-        hidden_effect = {
-            set_temp_variable = { var = debt_var_temp value = TFR_EST_budget_cost }
-            multiply_temp_variable = { var = debt_var_temp value = 0.001 }
-            add_debt_with_inflation = yes
-        }
+        # Match TFR: calculate the actual inflation-adjusted cost before its
+        # visible add_debt_tooltip. The parent ledger uses billions of USD.
+        set_temp_variable = { var = debt_var_temp value = TFR_EST_budget_cost }
+        multiply_temp_variable = { var = debt_var_temp value = 0.001 }
+        add_debt_with_inflation = yes
     }
     TFR_EST_initialize_systems = {
         if = {

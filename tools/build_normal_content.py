@@ -61,8 +61,8 @@ def F(suffix, name, desc, x, y, pre=None, effects='', icon='national_unity', cos
     f = f'''\n\tfocus = {{
         id = {ident}
         icon = GFX_goal_generic_{icon}
-        x = {x}
-        y = {y + 7}
+        x = {x * 2 // 3}
+        y = {y + 4}
         cost = {cost}
 {prereqs}        allow_branch = {{ {' '.join(branch_tests)} }}
         available = {{ {' '.join(tests)} }}

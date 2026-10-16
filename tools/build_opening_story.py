@@ -4,6 +4,7 @@ import argparse
 import json
 from build_opening_content import POLICIES
 from native_script_interface import amount_call
+from focus_reward_model import OPENING_ECONOMIC, OPENING_MILITARY, modifier_reward, concise_trigger
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -52,25 +53,45 @@ TFR_EST_can_start_referendum = {
     }}
 '''
     triggers += '}\n'
+    triggers += '''TFR_EST_has_covid = {
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_has_covid_tt
+        generic_has_corona = yes
+    }
+}
+TFR_EST_referendum_available = {
+    NOT = { has_country_flag = TFR_EST_referendum_failed }
+    OR = {
+        has_country_flag = TFR_EST_referendum_active
+        TFR_EST_can_start_referendum = yes
+    }
+}
+'''
+    for name in ('TFR_EST_opening_coalition_majority', 'TFR_EST_can_start_referendum', 'TFR_EST_referendum_available'):
+        triggers = concise_trigger(name, triggers)
 
     rewards = {
-        'pension_reform': co(-1) + '\nadd_political_power = 20',
-        'teacher_pay': budget(20) + '\n' + co(2),
-        'covid_emergency': budget(25) + '\n' + co(2),
-        'pension_increase': budget(20.8) + '\n' + co(3),
-        'wage_compensation': budget(147.9) + '\n' + co(3) + '\n' + variable('TFR_EST_economy_industrial_capacity_factory_var', 0.01),
-        'excise_relief': budget(25) + '\n' + variable('TFR_EST_economy_consumer_goods_factor_var', -0.01),
-        'eastern_border': budget(40) + '\n' + amount_call('TFR_EST_change_readiness', 3),
-        'kose_voobu': budget(30) + '\n' + variable('TFR_EST_economy_production_speed_buildings_factor_var', 0.01) + '\n' + variable('TFR_EST_military_supply_consumption_factor_var', -0.01),
-        'three_seas': 'add_political_power = 25\n' + variable('TFR_EST_economy_production_factory_efficiency_gain_factor_var', 0.01),
-        'research_budget': budget(35) + '\n' + variable('TFR_EST_economy_research_speed_factor_var', 0.02),
+        'pension_reform': co(-1) + '\nadd_political_power = 40',
+        'teacher_pay': budget(20) + '\n' + co(3),
+        'covid_emergency': budget(25) + '\n' + co(3),
+        'pension_increase': budget(20.8) + '\n' + co(4),
+        'wage_compensation': budget(147.9) + '\n' + co(4),
+        'excise_relief': budget(25),
+        'eastern_border': budget(40) + '\n' + amount_call('TFR_EST_change_readiness', 6),
+        'kose_voobu': budget(30),
+        'three_seas': 'add_political_power = 40',
+        'research_budget': budget(35),
     }
     effects = '# Rewards are called inside each focus\'s persistent once-only guard.\n'
     for suffix, reward in rewards.items():
+        for group, mapping in (('economy', OPENING_ECONOMIC), ('military', OPENING_MILITARY)):
+            preview = modifier_reward('TFR_EST_opening_' + suffix, group, mapping.get(suffix, ()))
+            if preview:
+                reward += '\n    ' + preview
         effects += f'''TFR_EST_opening_reward_{suffix} = {{
-    TFR_EST_initialize_country_modifiers = yes
+    hidden_effect = {{ TFR_EST_initialize_country_modifiers = yes }}
     {reward}
-    TFR_EST_refresh_country_modifiers = yes
+    hidden_effect = {{ TFR_EST_refresh_country_modifiers = yes }}
 }}\n\n'''
     effects += '''TFR_EST_begin_covid_response = {
     if = {
@@ -336,6 +357,16 @@ country_event = {
 }
 '''
     loc = {
+        'TFR_EST_opening_coalition_majority_tt': 'Centre–Isamaa–EKRE cabinet with at least 51 coalition seats.',
+        'TFR_EST_can_start_referendum_tt': 'Complete the opening programme; retain 51 coalition seats; 24 December 2020 or later.',
+        'TFR_EST_referendum_available_tt': 'Complete the opening programme; retain 51 coalition seats; 24 December 2020 or later. Once begun, continues unless Ratas steps back.',
+        'TFR_EST_has_covid_tt': 'COVID-19 cases are present in Estonia.',
+        'TFR_EST_ratas_governing_tt': 'Ratas leads the Centre–Isamaa–EKRE cabinet with at least 51 coalition seats.',
+        'TFR_EST_kallas_governing_tt': 'Kallas leads a confirmed Reform–Centre cabinet with at least 51 coalition seats.',
+        'TFR_EST_ratas_all_policies_done_tt': 'Complete the other 19 coalition programme focuses.',
+        'TFR_EST_kallas_all_policies_done_tt': 'Complete the other 19 government programme focuses.',
+        'TFR_EST_energy_one_stage_tt': 'Advance recovery from §YThe Oil Crash§! by §G1 stage§! (5 stages remove the spirit). Preparation also applies if the crisis begins later.',
+        'TFR_EST_energy_two_stages_tt': 'Advance recovery from §YThe Oil Crash§! by §G2 stages§! (5 stages remove the spirit). Preparation also applies if the crisis begins later.',
         'TFR_EST_opening_covid_title': 'The COVID-19 Emergency',
         'TFR_EST_opening_covid_desc': 'The government has declared an emergency situation in response to COVID-19. Schools must move to distance learning, public gatherings face restrictions, and hospitals need coordinated supplies. The cabinet must work with local authorities while the Riigikogu continues to scrutinize emergency powers. Wage compensation and tax relief will require separate funding decisions.',
         'TFR_EST_opening_covid_option': 'Put the emergency orders into effect.',

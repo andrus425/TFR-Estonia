@@ -9,7 +9,7 @@ from script_runtime import ROOT, Block, Runtime, parse
 PARTIES = ('reform', 'centre', 'ekre', 'isamaa', 'sde', 'e200', 'pp')
 EXECUTIVE_VARIABLES = ('TFR_EST_mandate_party', 'TFR_EST_nominee_party', 'TFR_EST_pm_party')
 FOCUS_BASELINE = {
-    'TFR_EST_occupation.txt': 'd133cdb9a10acc6ce7af0905b7c203f640cdc5843d17a8bb4799146536ce8036',
+    'TFR_EST_occupation.txt': 'e0fd40ae1e48e8e355a2baba6b455625395c11be2c41141f6376c722aed5ffed',
 }
 
 
@@ -270,8 +270,8 @@ class LeadershipMandateTests(unittest.TestCase):
                     flag = entry.value.get('flag') if isinstance(entry.value, Block) else entry.value
                     self.assertNotIn(flag, {'TFR_EST_scripted_cabinet_change', 'TFR_EST_scripted_handover'})
 
-    def test_occupation_tree_remains_unchanged(self):
-        # The user explicitly deferred focus-tree changes in this revision.
+    def test_occupation_tree_matches_the_current_layout_baseline(self):
+        # Only horizontal positions changed in the October compact-tree revision.
         for name, expected in FOCUS_BASELINE.items():
             with self.subTest(tree=name):
                 actual = hashlib.sha256((ROOT / 'common/national_focus' / name).read_bytes()).hexdigest()

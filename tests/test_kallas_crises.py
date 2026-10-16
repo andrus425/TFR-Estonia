@@ -32,6 +32,7 @@ GOODS_SLOTS = (
     ('ratas_building_renovation', 'kallas_energy_households'),
     ('ratas_network_charge_relief', 'kallas_energy_networks'),
 )
+OIL_TIERS = tuple(f'GER_oil_crash{index}' for index in range(1, 6))
 
 
 class KallasCrisisTests(unittest.TestCase):
@@ -63,12 +64,13 @@ class KallasCrisisTests(unittest.TestCase):
     def reconcile(self, r):
         r.call('TFR_EST_reconcile_energy_crisis')
 
-    def assert_contribution(self, r, factory, goods):
-        factory, goods = Fraction(factory), Fraction(goods)
-        self.assertEqual(r.variables[FACTORY_APPLIED], factory)
-        self.assertEqual(r.variables[GOODS_APPLIED], goods)
-        self.assertEqual(r.variables[FACTORY], Fraction(7, 100) + factory)
-        self.assertEqual(r.variables[GOODS], Fraction(-2, 100) + goods)
+    def assert_energy_tier(self, r, recovery):
+        self.assertEqual(r.ideas.intersection(OIL_TIERS),
+                         {OIL_TIERS[recovery]} if recovery < 5 else set())
+        self.assertEqual(r.variables[FACTORY_APPLIED], 0)
+        self.assertEqual(r.variables[GOODS_APPLIED], 0)
+        self.assertEqual(r.variables[FACTORY], Fraction(7, 100))
+        self.assertEqual(r.variables[GOODS], Fraction(-2, 100))
 
     def test_case_interventions_require_actual_domestic_cases_instead_of_world_news(self):
         for idea in (*TIERS, None):
@@ -183,26 +185,24 @@ class KallasCrisisTests(unittest.TestCase):
         # successor's recovery tick; its name does not restrict the government.
         r.call('TFR_EST_ratas_tick')
         r.call('TFR_EST_kallas_tick')
-        self.assert_contribution(r, '-0.04', '0.03')
+        self.assert_energy_tier(r, 0)
         self.assertEqual(r.events, ['tfr_estonia_ratas.1'])
         for _ in range(5):
             r.call('TFR_EST_ratas_tick')
             r.call('TFR_EST_kallas_tick')
-        self.assert_contribution(r, '-0.04', '0.03')
+        self.assert_energy_tier(r, 0)
         self.assertEqual(r.events, ['tfr_estonia_ratas.1'])
 
-    def test_each_kallas_energy_policy_mitigates_its_promised_portion_of_shock(self):
-        cases = {'energy_households': ('-0.04', '0.015'),
-                 'energy_networks': ('-0.03', '0.015'),
-                 'gas_reserve': ('-0.03', '0.03'),
-                 'lng_connection': ('-0.03', '0.03')}
-        for suffix, (factory, goods) in cases.items():
+    def test_each_kallas_energy_policy_advances_the_parent_recovery_tiers(self):
+        cases = {'energy_households': 1, 'energy_networks': 2,
+                 'gas_reserve': 1, 'lng_connection': 1}
+        for suffix, recovery in cases.items():
             r = self.runtime()
             r.global_flags.add(ONSET)
             r.flags.add('TFR_EST_done_kallas_' + suffix)
             with self.subTest(policy=suffix):
                 self.reconcile(r)
-                self.assert_contribution(r, factory, goods)
+                self.assert_energy_tier(r, recovery)
 
     def test_equivalent_project_flags_from_both_routes_do_not_double_count_a_slot(self):
         for group, slots in (('factory', SUPPLY_SLOTS), ('goods', GOODS_SLOTS)):
@@ -213,10 +213,10 @@ class KallasCrisisTests(unittest.TestCase):
                     r.flags.update('TFR_EST_done_' + flag for flag, active in zip(pair, enabled) if active)
                     self.reconcile(r)
                     with self.subTest(group=group, pair=pair, enabled=enabled):
-                        if group == 'factory':
-                            self.assertEqual(r.variables[FACTORY_APPLIED], Fraction(-3, 100))
-                        else:
-                            self.assertEqual(r.variables[GOODS_APPLIED], Fraction(15, 1000))
+                        # Kallas's network charge policy legitimately covers
+                        # both one supply and one consumer relief slot.
+                        expected = 2 if 'TFR_EST_done_kallas_energy_networks' in r.flags else 1
+                        self.assert_energy_tier(r, expected)
 
     def test_all_mixed_route_flags_keep_mitigation_at_the_same_limit(self):
         slots = (*SUPPLY_SLOTS, *GOODS_SLOTS)
@@ -228,21 +228,21 @@ class KallasCrisisTests(unittest.TestCase):
             r.flags.update('TFR_EST_done_' + slot[choice] for slot, choice in zip(slots, choices))
             with self.subTest(choices=choices):
                 self.reconcile(r)
-                self.assert_contribution(r, '-0.01', 0)
+                self.assert_energy_tier(r, 5)
                 for slot in slots:
                     r.flags.update('TFR_EST_done_' + flag for flag in slot)
                 self.reconcile(r)
-                self.assert_contribution(r, '-0.01', 0)
+                self.assert_energy_tier(r, 5)
 
     def test_preparation_before_parent_crisis_becomes_effective_at_onset(self):
         r = self.runtime()
         r.flags.update('TFR_EST_done_kallas_' + suffix for suffix in PROJECTS)
         self.reconcile(r)
-        self.assert_contribution(r, 0, 0)
+        self.assert_energy_tier(r, 5)
         self.assertFalse(r.events)
         r.global_flags.add(ONSET)
         self.reconcile(r)
-        self.assert_contribution(r, '-0.01', 0)
+        self.assert_energy_tier(r, 5)
 
     def test_crisis_resolution_preserves_permanent_reforms_and_prepared_projects(self):
         r = self.runtime()
@@ -258,10 +258,11 @@ class KallasCrisisTests(unittest.TestCase):
         self.assertEqual(r.variables[GOODS], Fraction(-3, 100))
         self.assertEqual(r.variables[FACTORY_APPLIED], 0)
         self.assertEqual(r.variables[GOODS_APPLIED], 0)
+        self.assertFalse(r.ideas.intersection(OIL_TIERS))
         self.assertIn('TFR_EST_done_kallas_energy_households', r.flags)
         self.assertEqual(r.global_flags, {ONSET, RESOLUTION})
 
-    def test_persisted_energy_contribution_repairs_without_stacking_after_reload(self):
+    def test_persisted_energy_response_stays_fully_recovered_after_reload(self):
         r = self.runtime()
         r.global_flags.add(ONSET)
         r.flags.update('TFR_EST_done_kallas_' + suffix for suffix in PROJECTS)
@@ -275,7 +276,7 @@ class KallasCrisisTests(unittest.TestCase):
         self.assertFalse(loaded.events)
         loaded.global_flags.add(RESOLUTION)
         self.reconcile(loaded)
-        self.assert_contribution(loaded, 0, 0)
+        self.assert_energy_tier(loaded, 5)
 
 
 if __name__ == '__main__':

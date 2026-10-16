@@ -222,7 +222,7 @@ class OpeningTreeTests(unittest.TestCase):
         focus_id = "TFR_EST_opening_covid_emergency"
         covid = self.focuses[focus_id]
         self.assertFalse(covid.all("prerequisite"))
-        self.assertEqual(covid.get("available").get("generic_has_corona"), "yes")
+        self.assertEqual(covid.get("available").get("TFR_EST_has_covid"), "yes")
         for actual_date in (date(2020, 1, 1), date(2020, 2, 1), date(2020, 3, 12),
                             date(2021, 1, 1)):
             with self.subTest(date=actual_date, cases="none"):
@@ -308,7 +308,8 @@ class OpeningTreeTests(unittest.TestCase):
         self.assertEqual(referendum.get("cancelable"), "no")
         self.assertEqual(referendum.get("cancel_if_invalid"), "yes")
         self.assertEqual(referendum.get("continue_if_invalid"), "no")
-        self.assertTrue(contains(referendum.get("available"), "TFR_EST_can_start_referendum", "yes"))
+        self.assertEqual(referendum.get("available").get("TFR_EST_referendum_available"), "yes")
+        self.assertTrue(contains(self.runtime().triggers["TFR_EST_referendum_available"], "TFR_EST_can_start_referendum", "yes"))
         self.assertEqual(referendum.get("select_effect").get("TFR_EST_begin_referendum"), "yes")
 
     def test_active_referendum_remains_valid_after_ordinary_confidence_loss(self):

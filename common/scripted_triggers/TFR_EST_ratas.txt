@@ -6,15 +6,18 @@ TFR_EST_ratas_branch_visible = {
     NOT = { has_country_flag = TFR_EST_occupied }
 }
 TFR_EST_ratas_governing = {
-    TFR_EST_ratas_branch_visible = yes
-    TFR_EST_coalition_majority = yes
-    has_country_flag = TFR_EST_opening_complete
-    NOT = { has_country_flag = TFR_EST_caretaker }
-    check_variable = { var = TFR_EST_pm_party value = 2 compare = equals }
-    check_variable = { var = TFR_EST_mandate_party value = 2 compare = equals }
-    check_variable = { var = TFR_EST_coalition_centre value = 1 compare = equals }
-    check_variable = { var = TFR_EST_coalition_ekre value = 1 compare = equals }
-    check_variable = { var = TFR_EST_coalition_isamaa value = 1 compare = equals }
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_ratas_governing_tt
+        TFR_EST_ratas_branch_visible = yes
+        TFR_EST_coalition_majority = yes
+        has_country_flag = TFR_EST_opening_complete
+        NOT = { has_country_flag = TFR_EST_caretaker }
+        check_variable = { var = TFR_EST_pm_party value = 2 compare = equals }
+        check_variable = { var = TFR_EST_mandate_party value = 2 compare = equals }
+        check_variable = { var = TFR_EST_coalition_centre value = 1 compare = equals }
+        check_variable = { var = TFR_EST_coalition_ekre value = 1 compare = equals }
+        check_variable = { var = TFR_EST_coalition_isamaa value = 1 compare = equals }
+    }
 }
 TFR_EST_show_legacy_domestic_tree = {
     OR = {
@@ -27,7 +30,7 @@ TFR_EST_show_legacy_domestic_tree = {
         has_country_flag = TFR_EST_kallas_mandate_ended
     }
 }
-# This is TFR's Saudi-war supply shock, not Germany's country-only oil spirit.
+# TFR's Saudi-war supply shock activates the shared Oil Crash idea family.
 TFR_EST_energy_crisis_active = {
     NOT = { has_global_flag = SAU_saudi_civil_war_over_global }
     OR = {
@@ -36,23 +39,26 @@ TFR_EST_energy_crisis_active = {
     }
 }
 TFR_EST_ratas_all_policies_done = {
-    OR = { has_completed_focus = TFR_EST_ratas_renew_agreement has_country_flag = TFR_EST_done_ratas_renew_agreement }
-    OR = { has_completed_focus = TFR_EST_ratas_family_home_guarantees has_country_flag = TFR_EST_done_ratas_family_home_guarantees }
-    OR = { has_completed_focus = TFR_EST_ratas_child_tax_allowance has_country_flag = TFR_EST_done_ratas_child_tax_allowance }
-    OR = { has_completed_focus = TFR_EST_ratas_home_care has_country_flag = TFR_EST_done_ratas_home_care }
-    OR = { has_completed_focus = TFR_EST_ratas_state_jobs_counties has_country_flag = TFR_EST_done_ratas_state_jobs_counties }
-    OR = { has_completed_focus = TFR_EST_ratas_rural_broadband has_country_flag = TFR_EST_done_ratas_rural_broadband }
-    OR = { has_completed_focus = TFR_EST_ratas_industrial_parks has_country_flag = TFR_EST_done_ratas_industrial_parks }
-    OR = { has_completed_focus = TFR_EST_ratas_worker_retraining has_country_flag = TFR_EST_done_ratas_worker_retraining }
-    OR = { has_completed_focus = TFR_EST_ratas_hospital_covid has_country_flag = TFR_EST_done_ratas_hospital_covid }
-    OR = { has_completed_focus = TFR_EST_ratas_testing_tracing has_country_flag = TFR_EST_done_ratas_testing_tracing }
-    OR = { has_completed_focus = TFR_EST_ratas_family_doctors has_country_flag = TFR_EST_done_ratas_family_doctors }
-    OR = { has_completed_focus = TFR_EST_ratas_vaccinate_risk_groups has_country_flag = TFR_EST_done_ratas_vaccinate_risk_groups }
-    OR = { has_completed_focus = TFR_EST_ratas_lng_connection has_country_flag = TFR_EST_done_ratas_lng_connection }
-    OR = { has_completed_focus = TFR_EST_ratas_grid_synchronisation has_country_flag = TFR_EST_done_ratas_grid_synchronisation }
-    OR = { has_completed_focus = TFR_EST_ratas_renewable_chp has_country_flag = TFR_EST_done_ratas_renewable_chp }
-    OR = { has_completed_focus = TFR_EST_ratas_building_renovation has_country_flag = TFR_EST_done_ratas_building_renovation }
-    OR = { has_completed_focus = TFR_EST_ratas_network_charge_relief has_country_flag = TFR_EST_done_ratas_network_charge_relief }
-    OR = { has_completed_focus = TFR_EST_ratas_police_reserve has_country_flag = TFR_EST_done_ratas_police_reserve }
-    OR = { has_completed_focus = TFR_EST_ratas_territorial_training has_country_flag = TFR_EST_done_ratas_territorial_training }
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_ratas_all_policies_done_tt
+        OR = { has_completed_focus = TFR_EST_ratas_renew_agreement has_country_flag = TFR_EST_done_ratas_renew_agreement }
+        OR = { has_completed_focus = TFR_EST_ratas_family_home_guarantees has_country_flag = TFR_EST_done_ratas_family_home_guarantees }
+        OR = { has_completed_focus = TFR_EST_ratas_child_tax_allowance has_country_flag = TFR_EST_done_ratas_child_tax_allowance }
+        OR = { has_completed_focus = TFR_EST_ratas_home_care has_country_flag = TFR_EST_done_ratas_home_care }
+        OR = { has_completed_focus = TFR_EST_ratas_state_jobs_counties has_country_flag = TFR_EST_done_ratas_state_jobs_counties }
+        OR = { has_completed_focus = TFR_EST_ratas_rural_broadband has_country_flag = TFR_EST_done_ratas_rural_broadband }
+        OR = { has_completed_focus = TFR_EST_ratas_industrial_parks has_country_flag = TFR_EST_done_ratas_industrial_parks }
+        OR = { has_completed_focus = TFR_EST_ratas_worker_retraining has_country_flag = TFR_EST_done_ratas_worker_retraining }
+        OR = { has_completed_focus = TFR_EST_ratas_hospital_covid has_country_flag = TFR_EST_done_ratas_hospital_covid }
+        OR = { has_completed_focus = TFR_EST_ratas_testing_tracing has_country_flag = TFR_EST_done_ratas_testing_tracing }
+        OR = { has_completed_focus = TFR_EST_ratas_family_doctors has_country_flag = TFR_EST_done_ratas_family_doctors }
+        OR = { has_completed_focus = TFR_EST_ratas_vaccinate_risk_groups has_country_flag = TFR_EST_done_ratas_vaccinate_risk_groups }
+        OR = { has_completed_focus = TFR_EST_ratas_lng_connection has_country_flag = TFR_EST_done_ratas_lng_connection }
+        OR = { has_completed_focus = TFR_EST_ratas_grid_synchronisation has_country_flag = TFR_EST_done_ratas_grid_synchronisation }
+        OR = { has_completed_focus = TFR_EST_ratas_renewable_chp has_country_flag = TFR_EST_done_ratas_renewable_chp }
+        OR = { has_completed_focus = TFR_EST_ratas_building_renovation has_country_flag = TFR_EST_done_ratas_building_renovation }
+        OR = { has_completed_focus = TFR_EST_ratas_network_charge_relief has_country_flag = TFR_EST_done_ratas_network_charge_relief }
+        OR = { has_completed_focus = TFR_EST_ratas_police_reserve has_country_flag = TFR_EST_done_ratas_police_reserve }
+        OR = { has_completed_focus = TFR_EST_ratas_territorial_training has_country_flag = TFR_EST_done_ratas_territorial_training }
+    }
 }

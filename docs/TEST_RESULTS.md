@@ -1,4 +1,4 @@
-# Validation results — 15 October 2026
+# Validation results — 16 October 2026
 
 This is an implemented **development build**, not a declaration that the public
 v1 campaign matrix has passed. The pinned parent is **The Fire Rises 1.0.9.1c**.
@@ -8,14 +8,15 @@ The installed executable reports **HOI4 Operation Postern 1.19.3.0.c01a**.
 
 | Check | Observed result |
 |---|---|
-| `tools/validate_mod.py` | 70 additive/override script files; 235 focuses, 59 events, 58 decisions, 1,067 English localization keys; **0 errors** |
-| `python -m unittest discover -s tests -v` | **241 tests passed**, including 500 randomized election allocations checked against an independent integer reference |
+| `tools/validate_mod.py` | 72 additive/override script files; 235 focuses, 59 events, 58 decisions, 1,177 English localization keys; **0 errors** |
+| `python -m unittest discover -s tests -v` | **287 tests passed**, including 500 randomized election allocations checked against an independent integer reference |
 | `tools/test_occupation_compatibility.py` | **10 structural regression tests passed** |
 | `tools/patch_tfr_compatibility.py --check` | **11 reproducible overrides and 627 audited changes verified**: 620 settlement safeguards and seven head-of-government selectors |
 | `tools/native_script_interface.py --check` | **0 files with legacy argument-block interfaces** |
 | Opening and COVID generators | Eleven shared focuses, 22 focus localization keys, rewards/controller/events, the first-case bridge and their text reproduce exactly in `--check` mode |
 | Retained-Ratas generator | Twenty shared focuses, governing/visibility/completion triggers, rewards, local crisis controller, one notice and 63 English keys reproduce exactly in `--check` mode |
 | Kallas generator | Twenty shared focuses, governing/visibility/completion triggers, rewards, recovered-case bypasses and 60 English keys reproduce exactly in `--check` mode |
+| Energy and preview generators | Actual parent Oil Crash integration, old-penalty migration, 49 display-only preview definitions and 98 aliases reproduce exactly in `--check` mode |
 | Portable packaging tests | Deterministic archive, exclusions, portable descriptors and metadata rejection passed as part of the full source suite |
 
 The tests cover historical seats and confidence, threshold/tie behavior, invalid
@@ -31,14 +32,15 @@ fabricated nominees, confidence recovery without replacing the incumbent,
 AI preferences respecting the election result, polling without seat changes,
 missing-variable repair from the saved PM, protected leader membership,
 occupation/restoration continuity and explicit story authorization. The opening
-revision intentionally changes the normal tree. The occupation and parent Soviet
-trees retain their pre-revision hashes and remain protected by regression checks.
+revision intentionally changes the normal tree. This revision compacts the
+occupation tree's horizontal coordinates; its updated hash and the unchanged
+parent Soviet tree remain protected by regression checks.
 
 Nine dynamic-modifier tests cover the two neutral containers and their 16
 independent variable bindings, preservation of positive/negative authored values,
 repair without reapplying present modifiers, repeated initialization, EST scope
 guards, retained later reward ideas and parent modifiers, and the unchanged
-occupation/parent trees. The static validator checks dynamic-modifier references,
+occupation gameplay and parent tree. The static validator checks dynamic-modifier references,
 localization and icon sprites.
 
 The opening and branch-choice regressions comprise nine snap-election cases,
@@ -94,8 +96,9 @@ branches retain their existing campaign gates.
 Crisis tests execute the authored effects against the two parent Saudi-war flags,
 including stale flags after settlement, five individual mitigation projects,
 preparation before onset, repeated updates/cycles and saved contribution values.
-They verify that only the tracked factory-output/consumer-goods contribution is
-reversed and permanent reforms and parent flags remain intact. Pandemic tests
+They now verify the actual parent Oil Crash tiers, removal after full preparation,
+and one-time reversal of saved factory-output/consumer-goods contributions while
+permanent reforms and parent flags remain intact. Pandemic tests
 cover every case tier, owned-only lowest-tier removal, clean-country no-ops,
 once-only vaccination rewards and no-reward recovery bypasses. Recovery bypass
 requires earned coalition-agreement renewal; it cannot unlock family-doctor
@@ -140,6 +143,40 @@ They cover guarded explicit and dynamic annexation, the retained anchor, partiti
 remainders, original non-Estonia annex actions, parent war flags and follow-up
 events, autonomy restrictions, once-per-mandate force cleanup, all seven occupation
 gates and repeat-safe repair. They do not execute combat or a live peace conference.
+
+## Compact layouts, costs and focus-effect previews
+
+The 16 October revision adds eight presentation tests, nine native-preview tests,
+eleven cost/requirement tests, sixteen parent-crisis tests and two integrated
+energy-focus progression tests. A fixture hashes all 235 existing focus description
+values; all remain unchanged. Coordinate checks cover compact bounds, unique icon
+positions, downward prerequisites and space for labels. A separate review evaluated
+actual branch visibility for the opening, each historical cabinet, either cabinet
+during the first war, and a later elected Centre cabinet; no icon positions collide.
+These checks do not replace rendered UI inspection.
+
+The preview suite executes all 51 opening/Ratas/Kallas completion blocks from
+nonzero saved modifier baselines and compares every actual economic/military
+change with its advertised native preview. The 49 preview definitions use TFR's
+existing `effect_tooltip`/`swap_ideas` pattern; no gameplay script grants them.
+The two real persistent dynamic modifiers remain the recipients of reforms.
+
+Cost tests execute the installed parent's unchanged inflation/debt helper across
+twenty combinations of budget size and inflation, including fractional amounts
+and deflation. They confirm that its native numerical tooltip follows conversion
+from millions to billions and inflation adjustment. A call-graph check follows
+all 235 completion rewards and confirms that every reachable budget charge stays
+visible. Meter tests verify signed numerical text, hidden arithmetic and clamping.
+Concise requirement wrappers still enforce actual coalition seats, the correct
+cabinet, occupation/caretaker restrictions and all five domestic COVID case tiers.
+
+The energy controller now uses the parent's exact `GER_oil_crash1`–`5` modifiers.
+Tests cover all 512 Ratas/Kallas project-flag combinations, progressive recovery,
+final removal while the world crisis continues, preparation before onset,
+weaker external tiers, missing/duplicate-tier repair, repeat updates, reconstructed
+saved state, foreign/uninitialized guards and one-time reversal of the earlier
+custom penalties without losing reforms. Integrated rewards verify Ratas's
+1→2→3→4→5→removed progression and Kallas's 1→2→4→5→removed progression.
 
 ## Native engine observations
 
@@ -327,6 +364,25 @@ validity update, rendered branch replacement and normal campaign scheduling
 remain interactive acceptance checks. The final legacy phase-root prerequisite
 removal was applied after this run and is covered by the source restoration
 regression and final structural validation.
+
+The latest compact-focus run is captured under
+`test-output/engine-estonia-qa-20261016-122842/`. It reached the frontend in
+approximately **280 seconds** and passed **all 54 native assertions**. The
+existing energy cases now exercise the real Oil Crash idea, full removal after
+preparation and preservation of permanent reforms. Two additional cases execute
+the highway's actual improved +5% construction/−4% supply-consumption reward and
+confirm that none of the 49 display-only preview definitions becomes an idea.
+The concise governing wrappers also participate in the existing native checks.
+
+The captured log contains **2,023 normalized unique parent messages**, exactly
+matching the pinned parent-only baseline: **zero new messages, zero removed
+messages and zero Estonia-prefixed errors**. Comparison with the previous
+development run also finds no new messages; its nine foreign missing-flag
+messages did not occur in this capture. Their absence is not attributed to an
+asset fix. Reports are `test-output/compact-engine-comparison.json` and
+`test-output/compact-previous-development-comparison.json`. The owned process
+stopped and the original mod/DLC configuration was verified restored byte-for-byte.
+No normal campaign or rendered tooltip inspection was performed.
 
 The QA overlay is not shipped or enabled in ordinary play. It executes arithmetic
 within a single hidden-effect context during frontend history construction.

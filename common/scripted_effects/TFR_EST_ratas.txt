@@ -1,215 +1,345 @@
 # Generated rewards run inside the focus's persistent once-only guard.
 TFR_EST_ratas_reward_renew_agreement = {
-    TFR_EST_initialize_country_modifiers = yes
-    custom_effect_tooltip = TFR_EST_ratas_renew_agreement_reward_tt
-    set_temp_variable = { var = TFR_EST_cohesion_delta value = 1 }
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
 TFR_EST_change_cohesion = yes
-    add_political_power = 25
-    TFR_EST_reconcile_energy_crisis = yes
-    TFR_EST_refresh_country_modifiers = yes
+    add_political_power = 40
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
 }
 
 TFR_EST_ratas_reward_family_home_guarantees = {
-    TFR_EST_initialize_country_modifiers = yes
-    custom_effect_tooltip = TFR_EST_ratas_family_home_guarantees_reward_tt
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
     set_temp_variable = { var = TFR_EST_budget_cost value = 35 }
 TFR_EST_spend_budget = yes
-    set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
 TFR_EST_change_cohesion = yes
-    TFR_EST_reconcile_energy_crisis = yes
-    TFR_EST_refresh_country_modifiers = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_ratas_family_home_guarantees_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_production_speed_buildings_factor_var = 0.04 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
 }
 
 TFR_EST_ratas_reward_child_tax_allowance = {
-    TFR_EST_initialize_country_modifiers = yes
-    custom_effect_tooltip = TFR_EST_ratas_child_tax_allowance_reward_tt
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
     set_temp_variable = { var = TFR_EST_budget_cost value = 30 }
 TFR_EST_spend_budget = yes
-    set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
 TFR_EST_change_cohesion = yes
-    TFR_EST_reconcile_energy_crisis = yes
-    TFR_EST_refresh_country_modifiers = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_ratas_child_tax_allowance_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_consumer_goods_factor_var = -0.01 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
 }
 
 TFR_EST_ratas_reward_home_care = {
-    TFR_EST_initialize_country_modifiers = yes
-    custom_effect_tooltip = TFR_EST_ratas_home_care_reward_tt
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
     set_temp_variable = { var = TFR_EST_budget_cost value = 35 }
 TFR_EST_spend_budget = yes
-    set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
 TFR_EST_change_cohesion = yes
-    TFR_EST_reconcile_energy_crisis = yes
-    TFR_EST_refresh_country_modifiers = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_ratas_home_care_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_consumer_goods_factor_var = -0.01 }
+        add_to_variable = { TFR_EST_economy_production_factory_max_efficiency_factor_var = 0.025 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
 }
 
 TFR_EST_ratas_reward_state_jobs_counties = {
-    TFR_EST_initialize_country_modifiers = yes
-    custom_effect_tooltip = TFR_EST_ratas_state_jobs_counties_reward_tt
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
     set_temp_variable = { var = TFR_EST_budget_cost value = 25 }
 TFR_EST_spend_budget = yes
-    set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
 TFR_EST_change_cohesion = yes
-    TFR_EST_reconcile_energy_crisis = yes
-    TFR_EST_refresh_country_modifiers = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_ratas_state_jobs_counties_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_production_speed_buildings_factor_var = 0.03 }
+        add_to_variable = { TFR_EST_economy_industrial_capacity_factory_var = 0.02 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
 }
 
 TFR_EST_ratas_reward_rural_broadband = {
-    TFR_EST_initialize_country_modifiers = yes
-    custom_effect_tooltip = TFR_EST_ratas_rural_broadband_reward_tt
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
     set_temp_variable = { var = TFR_EST_budget_cost value = 50 }
 TFR_EST_spend_budget = yes
-    add_to_variable = { TFR_EST_economy_research_speed_factor_var = 0.01 }
-    TFR_EST_reconcile_energy_crisis = yes
-    TFR_EST_refresh_country_modifiers = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_ratas_rural_broadband_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_research_speed_factor_var = 0.03 }
+        add_to_variable = { TFR_EST_economy_production_factory_efficiency_gain_factor_var = 0.03 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
 }
 
 TFR_EST_ratas_reward_industrial_parks = {
-    TFR_EST_initialize_country_modifiers = yes
-    custom_effect_tooltip = TFR_EST_ratas_industrial_parks_reward_tt
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
     set_temp_variable = { var = TFR_EST_budget_cost value = 80 }
 TFR_EST_spend_budget = yes
-    add_to_variable = { TFR_EST_economy_industrial_capacity_factory_var = 0.015 }
-    TFR_EST_reconcile_energy_crisis = yes
-    TFR_EST_refresh_country_modifiers = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_ratas_industrial_parks_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_industrial_capacity_factory_var = 0.05 }
+        add_to_variable = { TFR_EST_economy_production_speed_buildings_factor_var = 0.05 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
 }
 
 TFR_EST_ratas_reward_worker_retraining = {
-    TFR_EST_initialize_country_modifiers = yes
-    custom_effect_tooltip = TFR_EST_ratas_worker_retraining_reward_tt
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
     set_temp_variable = { var = TFR_EST_budget_cost value = 35 }
 TFR_EST_spend_budget = yes
-    add_to_variable = { TFR_EST_economy_production_factory_efficiency_gain_factor_var = 0.015 }
-    TFR_EST_reconcile_energy_crisis = yes
-    TFR_EST_refresh_country_modifiers = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_ratas_worker_retraining_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_production_factory_efficiency_gain_factor_var = 0.05 }
+        add_to_variable = { TFR_EST_economy_production_factory_max_efficiency_factor_var = 0.05 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
 }
 
 TFR_EST_ratas_reward_hospital_covid = {
-    TFR_EST_initialize_country_modifiers = yes
-    custom_effect_tooltip = TFR_EST_ratas_hospital_covid_reward_tt
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
     set_temp_variable = { var = TFR_EST_budget_cost value = 60 }
 TFR_EST_spend_budget = yes
-    set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
 TFR_EST_change_cohesion = yes
-    TFR_EST_reconcile_energy_crisis = yes
-    TFR_EST_refresh_country_modifiers = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_ratas_hospital_covid_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_consumer_goods_factor_var = -0.01 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
 }
 
 TFR_EST_ratas_reward_testing_tracing = {
-    TFR_EST_initialize_country_modifiers = yes
-    custom_effect_tooltip = TFR_EST_ratas_testing_tracing_reward_tt
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
     set_temp_variable = { var = TFR_EST_budget_cost value = 35 }
 TFR_EST_spend_budget = yes
-    set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
 TFR_EST_change_cohesion = yes
-    TFR_EST_reconcile_energy_crisis = yes
-    TFR_EST_refresh_country_modifiers = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_ratas_testing_tracing_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_research_speed_factor_var = 0.02 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
 }
 
 TFR_EST_ratas_reward_family_doctors = {
-    TFR_EST_initialize_country_modifiers = yes
-    custom_effect_tooltip = TFR_EST_ratas_family_doctors_reward_tt
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
     set_temp_variable = { var = TFR_EST_budget_cost value = 40 }
 TFR_EST_spend_budget = yes
-    set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
 TFR_EST_change_cohesion = yes
-    TFR_EST_reconcile_energy_crisis = yes
-    TFR_EST_refresh_country_modifiers = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_ratas_family_doctors_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_production_factory_max_efficiency_factor_var = 0.025 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
 }
 
 TFR_EST_ratas_reward_vaccinate_risk_groups = {
-    TFR_EST_initialize_country_modifiers = yes
-    custom_effect_tooltip = TFR_EST_ratas_vaccinate_risk_groups_reward_tt
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
     set_temp_variable = { var = TFR_EST_budget_cost value = 45 }
 TFR_EST_spend_budget = yes
-    set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
 TFR_EST_change_cohesion = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_ratas_vaccinate_risk_groups_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_industrial_capacity_factory_var = 0.03 }
+    }
     TFR_EST_ratas_reduce_covid = yes
-    TFR_EST_reconcile_energy_crisis = yes
-    TFR_EST_refresh_country_modifiers = yes
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
 }
 
 TFR_EST_ratas_reward_lng_connection = {
-    TFR_EST_initialize_country_modifiers = yes
-    custom_effect_tooltip = TFR_EST_ratas_lng_connection_reward_tt
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
     set_temp_variable = { var = TFR_EST_budget_cost value = 80 }
 TFR_EST_spend_budget = yes
-    TFR_EST_reconcile_energy_crisis = yes
-    TFR_EST_refresh_country_modifiers = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_ratas_lng_connection_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_local_resources_factor_var = 0.05 }
+        add_to_variable = { TFR_EST_economy_industrial_capacity_factory_var = 0.02 }
+    }
+    custom_effect_tooltip = TFR_EST_energy_one_stage_tt
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
 }
 
 TFR_EST_ratas_reward_grid_synchronisation = {
-    TFR_EST_initialize_country_modifiers = yes
-    custom_effect_tooltip = TFR_EST_ratas_grid_synchronisation_reward_tt
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
     set_temp_variable = { var = TFR_EST_budget_cost value = 70 }
-TFR_EST_spend_budget = yes
-    set_temp_variable = { var = TFR_EST_readiness_delta value = 1 }
-TFR_EST_change_readiness = yes
-    TFR_EST_reconcile_energy_crisis = yes
-    TFR_EST_refresh_country_modifiers = yes
-}
-
-TFR_EST_ratas_reward_renewable_chp = {
-    TFR_EST_initialize_country_modifiers = yes
-    custom_effect_tooltip = TFR_EST_ratas_renewable_chp_reward_tt
-    set_temp_variable = { var = TFR_EST_budget_cost value = 55 }
-TFR_EST_spend_budget = yes
-    TFR_EST_reconcile_energy_crisis = yes
-    TFR_EST_refresh_country_modifiers = yes
-}
-
-TFR_EST_ratas_reward_building_renovation = {
-    TFR_EST_initialize_country_modifiers = yes
-    custom_effect_tooltip = TFR_EST_ratas_building_renovation_reward_tt
-    set_temp_variable = { var = TFR_EST_budget_cost value = 55 }
-TFR_EST_spend_budget = yes
-    add_to_variable = { TFR_EST_economy_production_speed_buildings_factor_var = 0.01 }
-    TFR_EST_reconcile_energy_crisis = yes
-    TFR_EST_refresh_country_modifiers = yes
-}
-
-TFR_EST_ratas_reward_network_charge_relief = {
-    TFR_EST_initialize_country_modifiers = yes
-    custom_effect_tooltip = TFR_EST_ratas_network_charge_relief_reward_tt
-    set_temp_variable = { var = TFR_EST_budget_cost value = 45 }
-TFR_EST_spend_budget = yes
-    set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
-TFR_EST_change_cohesion = yes
-    TFR_EST_reconcile_energy_crisis = yes
-    TFR_EST_refresh_country_modifiers = yes
-}
-
-TFR_EST_ratas_reward_police_reserve = {
-    TFR_EST_initialize_country_modifiers = yes
-    custom_effect_tooltip = TFR_EST_ratas_police_reserve_reward_tt
-    set_temp_variable = { var = TFR_EST_budget_cost value = 30 }
 TFR_EST_spend_budget = yes
     set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
 TFR_EST_change_readiness = yes
-    TFR_EST_reconcile_energy_crisis = yes
-    TFR_EST_refresh_country_modifiers = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_ratas_grid_synchronisation_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_production_speed_buildings_factor_var = 0.04 }
+    }
+    custom_effect_tooltip = TFR_EST_energy_one_stage_tt
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_ratas_reward_renewable_chp = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 55 }
+TFR_EST_spend_budget = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_ratas_renewable_chp_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_industrial_capacity_factory_var = 0.04 }
+    }
+    custom_effect_tooltip = TFR_EST_energy_one_stage_tt
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_ratas_reward_building_renovation = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 55 }
+TFR_EST_spend_budget = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_ratas_building_renovation_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_production_speed_buildings_factor_var = 0.05 }
+    }
+    custom_effect_tooltip = TFR_EST_energy_one_stage_tt
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_ratas_reward_network_charge_relief = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 45 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_ratas_network_charge_relief_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_consumer_goods_factor_var = -0.01 }
+    }
+    custom_effect_tooltip = TFR_EST_energy_one_stage_tt
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_ratas_reward_police_reserve = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 30 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_readiness_delta value = 5 }
+TFR_EST_change_readiness = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_military_empty
+            add_idea = TFR_EST_ratas_police_reserve_military_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_military_army_org_factor_var = 0.04 }
+        add_to_variable = { TFR_EST_military_mobilization_speed_var = 0.15 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
 }
 
 TFR_EST_ratas_reward_territorial_training = {
-    TFR_EST_initialize_country_modifiers = yes
-    custom_effect_tooltip = TFR_EST_ratas_territorial_training_reward_tt
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
     set_temp_variable = { var = TFR_EST_budget_cost value = 40 }
 TFR_EST_spend_budget = yes
-    set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+    set_temp_variable = { var = TFR_EST_readiness_delta value = 6 }
 TFR_EST_change_readiness = yes
-    add_to_variable = { TFR_EST_military_training_time_army_factor_var = -0.02 }
-    TFR_EST_reconcile_energy_crisis = yes
-    TFR_EST_refresh_country_modifiers = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_military_empty
+            add_idea = TFR_EST_ratas_territorial_training_military_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_military_training_time_army_factor_var = -0.08 }
+        add_to_variable = { TFR_EST_military_army_defence_factor_var = 0.05 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
 }
 
 TFR_EST_ratas_reward_account_to_voters = {
-    TFR_EST_initialize_country_modifiers = yes
-    custom_effect_tooltip = TFR_EST_ratas_account_to_voters_reward_tt
-    set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
 TFR_EST_change_cohesion = yes
     set_country_flag = TFR_EST_ratas_programme_finished
-add_political_power = 50
-    TFR_EST_reconcile_energy_crisis = yes
-    TFR_EST_refresh_country_modifiers = yes
+add_political_power = 75
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
 }
 
 # Never call the parent's unsafe generic decrease_corona fallback.
@@ -228,48 +358,6 @@ TFR_EST_ratas_reduce_covid = {
             limit = { has_idea = lower_covid_cases has_country_flag = TFR_EST_covid_seed_owned }
             remove_ideas = lower_covid_cases
             clr_country_flag = TFR_EST_covid_seed_owned
-        }
-    }
-}
-
-# Separate contribution variables preserve all permanent economy reforms.
-TFR_EST_reconcile_energy_crisis = {
-    if = {
-        limit = { tag = EST has_country_flag = TFR_EST_initialized }
-        TFR_EST_initialize_country_modifiers = yes
-        if = { limit = { NOT = { has_variable = TFR_EST_energy_factory_applied } } set_variable = { TFR_EST_energy_factory_applied = 0 } }
-        if = { limit = { NOT = { has_variable = TFR_EST_energy_goods_applied } } set_variable = { TFR_EST_energy_goods_applied = 0 } }
-        set_temp_variable = { TFR_EST_energy_factory_target = 0 }
-        set_temp_variable = { TFR_EST_energy_goods_target = 0 }
-        if = {
-            limit = { TFR_EST_energy_crisis_active = yes }
-            if = {
-                limit = { NOT = { has_country_flag = TFR_EST_energy_crisis_seen } }
-                set_country_flag = TFR_EST_energy_crisis_seen
-                country_event = { id = tfr_estonia_ratas.1 }
-            }
-            set_temp_variable = { TFR_EST_energy_factory_target = -0.04 }
-            set_temp_variable = { TFR_EST_energy_goods_target = 0.03 }
-            if = { limit = { OR = { has_country_flag = TFR_EST_done_ratas_lng_connection has_country_flag = TFR_EST_done_kallas_lng_connection } } add_to_temp_variable = { TFR_EST_energy_factory_target = 0.01 } }
-            if = { limit = { OR = { has_country_flag = TFR_EST_done_ratas_grid_synchronisation has_country_flag = TFR_EST_done_kallas_gas_reserve } } add_to_temp_variable = { TFR_EST_energy_factory_target = 0.01 } }
-            if = { limit = { OR = { has_country_flag = TFR_EST_done_ratas_renewable_chp has_country_flag = TFR_EST_done_kallas_energy_networks } } add_to_temp_variable = { TFR_EST_energy_factory_target = 0.01 } }
-            if = { limit = { OR = { has_country_flag = TFR_EST_done_ratas_building_renovation has_country_flag = TFR_EST_done_kallas_energy_households } } add_to_temp_variable = { TFR_EST_energy_goods_target = -0.015 } }
-            if = { limit = { OR = { has_country_flag = TFR_EST_done_ratas_network_charge_relief has_country_flag = TFR_EST_done_kallas_energy_networks } } add_to_temp_variable = { TFR_EST_energy_goods_target = -0.015 } }
-        }
-        if = {
-            limit = {
-                OR = {
-                    NOT = { check_variable = { var = TFR_EST_energy_factory_applied value = TFR_EST_energy_factory_target compare = equals } }
-                    NOT = { check_variable = { var = TFR_EST_energy_goods_applied value = TFR_EST_energy_goods_target compare = equals } }
-                }
-            }
-            subtract_from_variable = { var = TFR_EST_economy_industrial_capacity_factory_var value = TFR_EST_energy_factory_applied }
-            subtract_from_variable = { var = TFR_EST_economy_consumer_goods_factor_var value = TFR_EST_energy_goods_applied }
-            add_to_variable = { var = TFR_EST_economy_industrial_capacity_factory_var value = TFR_EST_energy_factory_target }
-            add_to_variable = { var = TFR_EST_economy_consumer_goods_factor_var value = TFR_EST_energy_goods_target }
-            set_variable = { var = TFR_EST_energy_factory_applied value = TFR_EST_energy_factory_target }
-            set_variable = { var = TFR_EST_energy_goods_applied value = TFR_EST_energy_goods_target }
-            TFR_EST_refresh_country_modifiers = yes
         }
     }
 }

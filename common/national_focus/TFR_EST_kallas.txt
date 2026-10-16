@@ -3,7 +3,7 @@
 shared_focus = {
     id = TFR_EST_kallas_govern_together
     icon = GFX_goal_generic_national_unity
-    x = 8
+    x = 4
     y = 0
     cost = 5
     allow_branch = { TFR_EST_kallas_branch_visible = yes }
@@ -27,13 +27,13 @@ shared_focus = {
     id = TFR_EST_kallas_sick_pay
     icon = GFX_goal_generic_consumer_goods
     x = 0
-    y = 2
+    y = 1
     cost = 5
     prerequisite = { focus = TFR_EST_kallas_govern_together }
     allow_branch = { TFR_EST_kallas_branch_visible = yes }
     available = {
         TFR_EST_kallas_governing = yes
-        generic_has_corona = yes
+        TFR_EST_has_covid = yes
     }
     bypass = { has_country_flag = TFR_EST_done_kallas_sick_pay }
     cancel_if_invalid = yes
@@ -52,13 +52,13 @@ shared_focus = {
     id = TFR_EST_kallas_hospital_support
     icon = GFX_goal_generic_consumer_goods
     x = 0
-    y = 4
+    y = 2
     cost = 5
     prerequisite = { focus = TFR_EST_kallas_sick_pay }
     allow_branch = { TFR_EST_kallas_branch_visible = yes }
     available = {
         TFR_EST_kallas_governing = yes
-        generic_has_corona = yes
+        TFR_EST_has_covid = yes
     }
     bypass = { has_country_flag = TFR_EST_done_kallas_hospital_support }
     cancel_if_invalid = yes
@@ -77,13 +77,13 @@ shared_focus = {
     id = TFR_EST_kallas_frontline_vaccination
     icon = GFX_goal_generic_consumer_goods
     x = 0
-    y = 6
+    y = 3
     cost = 5
     prerequisite = { focus = TFR_EST_kallas_hospital_support }
     allow_branch = { TFR_EST_kallas_branch_visible = yes }
     available = {
         TFR_EST_kallas_governing = yes
-        generic_has_corona = yes
+        TFR_EST_has_covid = yes
     }
     bypass = { has_country_flag = TFR_EST_done_kallas_frontline_vaccination }
     cancel_if_invalid = yes
@@ -102,7 +102,7 @@ shared_focus = {
     id = TFR_EST_kallas_covid_certificates
     icon = GFX_goal_generic_scientific_exchange
     x = 0
-    y = 8
+    y = 4
     cost = 5
     prerequisite = { focus = TFR_EST_kallas_frontline_vaccination }
     allow_branch = { TFR_EST_kallas_branch_visible = yes }
@@ -125,8 +125,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_kallas_pension_twenty
     icon = GFX_goal_generic_consumer_goods
-    x = 4
-    y = 2
+    x = 2
+    y = 1
     cost = 5
     prerequisite = { focus = TFR_EST_kallas_govern_together }
     allow_branch = { TFR_EST_kallas_branch_visible = yes }
@@ -149,8 +149,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_kallas_pension_tax_allowance
     icon = GFX_goal_generic_consumer_goods
-    x = 4
-    y = 4
+    x = 2
+    y = 2
     cost = 5
     prerequisite = { focus = TFR_EST_kallas_pension_twenty }
     allow_branch = { TFR_EST_kallas_branch_visible = yes }
@@ -173,8 +173,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_kallas_teacher_pay
     icon = GFX_goal_generic_consumer_goods
-    x = 4
-    y = 6
+    x = 2
+    y = 3
     cost = 5
     prerequisite = { focus = TFR_EST_kallas_pension_tax_allowance }
     allow_branch = { TFR_EST_kallas_branch_visible = yes }
@@ -197,8 +197,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_kallas_school_catch_up
     icon = GFX_goal_generic_scientific_exchange
-    x = 4
-    y = 8
+    x = 2
+    y = 4
     cost = 5
     prerequisite = { focus = TFR_EST_kallas_teacher_pay }
     allow_branch = { TFR_EST_kallas_branch_visible = yes }
@@ -221,8 +221,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_kallas_recovery_plan
     icon = GFX_goal_generic_construct_infrastructure
-    x = 8
-    y = 2
+    x = 4
+    y = 1
     cost = 5
     prerequisite = { focus = TFR_EST_kallas_govern_together }
     allow_branch = { TFR_EST_kallas_branch_visible = yes }
@@ -245,8 +245,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_kallas_enterprise_digital
     icon = GFX_goal_generic_production
-    x = 8
-    y = 4
+    x = 4
+    y = 2
     cost = 5
     prerequisite = { focus = TFR_EST_kallas_recovery_plan }
     allow_branch = { TFR_EST_kallas_branch_visible = yes }
@@ -269,8 +269,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_kallas_rural_broadband
     icon = GFX_goal_generic_scientific_exchange
-    x = 8
-    y = 6
+    x = 4
+    y = 3
     cost = 5
     prerequisite = { focus = TFR_EST_kallas_enterprise_digital }
     allow_branch = { TFR_EST_kallas_branch_visible = yes }
@@ -293,8 +293,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_kallas_mental_health
     icon = GFX_goal_generic_consumer_goods
-    x = 8
-    y = 8
+    x = 4
+    y = 4
     cost = 5
     prerequisite = { focus = TFR_EST_kallas_rural_broadband }
     allow_branch = { TFR_EST_kallas_branch_visible = yes }
@@ -317,8 +317,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_kallas_energy_households
     icon = GFX_goal_generic_consumer_goods
-    x = 12
-    y = 2
+    x = 6
+    y = 1
     cost = 5
     prerequisite = { focus = TFR_EST_kallas_govern_together }
     allow_branch = { TFR_EST_kallas_branch_visible = yes }
@@ -341,8 +341,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_kallas_energy_networks
     icon = GFX_goal_generic_consumer_goods
-    x = 12
-    y = 4
+    x = 6
+    y = 2
     cost = 5
     prerequisite = { focus = TFR_EST_kallas_energy_households }
     allow_branch = { TFR_EST_kallas_branch_visible = yes }
@@ -365,8 +365,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_kallas_gas_reserve
     icon = GFX_goal_generic_oil_refinery
-    x = 12
-    y = 6
+    x = 6
+    y = 3
     cost = 5
     prerequisite = { focus = TFR_EST_kallas_energy_networks }
     allow_branch = { TFR_EST_kallas_branch_visible = yes }
@@ -389,8 +389,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_kallas_lng_connection
     icon = GFX_goal_generic_construct_infrastructure
-    x = 12
-    y = 8
+    x = 6
+    y = 4
     cost = 5
     prerequisite = { focus = TFR_EST_kallas_gas_reserve }
     allow_branch = { TFR_EST_kallas_branch_visible = yes }
@@ -413,8 +413,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_kallas_defence_budget
     icon = GFX_goal_generic_defence
-    x = 16
-    y = 2
+    x = 8
+    y = 1
     cost = 5
     prerequisite = { focus = TFR_EST_kallas_govern_together }
     allow_branch = { TFR_EST_kallas_branch_visible = yes }
@@ -437,8 +437,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_kallas_civil_protection
     icon = GFX_goal_generic_national_unity
-    x = 16
-    y = 4
+    x = 8
+    y = 2
     cost = 5
     prerequisite = { focus = TFR_EST_kallas_defence_budget }
     allow_branch = { TFR_EST_kallas_branch_visible = yes }
@@ -461,8 +461,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_kallas_account_to_voters
     icon = GFX_goal_generic_national_unity
-    x = 8
-    y = 11
+    x = 4
+    y = 6
     cost = 5
     prerequisite = { focus = TFR_EST_kallas_covid_certificates }
     prerequisite = { focus = TFR_EST_kallas_school_catch_up }

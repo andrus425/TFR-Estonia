@@ -27,22 +27,27 @@ def main():
     effects = '''
     # Public API. All callers operate in EST country scope.
     TFR_EST_change_cohesion = {
-        add_to_variable = { var = TFR_EST_cohesion value = TFR_EST_cohesion_delta }
-        clamp_variable = { var = TFR_EST_cohesion min = 0 max = 100 }
-        TFR_EST_refresh_meters = yes
+        custom_effect_tooltip = TFR_EST_cohesion_change_tt
+        hidden_effect = {
+            add_to_variable = { var = TFR_EST_cohesion value = TFR_EST_cohesion_delta }
+            clamp_variable = { var = TFR_EST_cohesion min = 0 max = 100 }
+            TFR_EST_refresh_meters = yes
+        }
     }
     TFR_EST_change_readiness = {
-        add_to_variable = { var = TFR_EST_readiness value = TFR_EST_readiness_delta }
-        clamp_variable = { var = TFR_EST_readiness min = 0 max = 100 }
-        TFR_EST_refresh_meters = yes
+        custom_effect_tooltip = TFR_EST_readiness_change_tt
+        hidden_effect = {
+            add_to_variable = { var = TFR_EST_readiness value = TFR_EST_readiness_delta }
+            clamp_variable = { var = TFR_EST_readiness min = 0 max = 100 }
+            TFR_EST_refresh_meters = yes
+        }
     }
     TFR_EST_spend_budget = {
-        custom_effect_tooltip = TFR_EST_budget_cost_tt
-        hidden_effect = {
-            set_temp_variable = { var = debt_var_temp value = TFR_EST_budget_cost }
-            multiply_temp_variable = { var = debt_var_temp value = 0.001 }
-            add_debt_with_inflation = yes
-        }
+        # Match TFR: calculate the actual inflation-adjusted cost before its
+        # visible add_debt_tooltip. The parent ledger uses billions of USD.
+        set_temp_variable = { var = debt_var_temp value = TFR_EST_budget_cost }
+        multiply_temp_variable = { var = debt_var_temp value = 0.001 }
+        add_debt_with_inflation = yes
     }
     TFR_EST_initialize_systems = {
         if = {
@@ -365,7 +370,9 @@ def main():
     loc("TFR_EST_authorize_reserves", "Authorize Kaitseliit Reserve Recruitment", "Unlock a two-battalion reserve template and a 90-day training program. This does not create free divisions: recruit the brigades normally. Requires independent Estonia, control of Northern Estonia, and either 50 readiness or an active war.\n\nBudget: €50 million.")
     loc("TFR_EST_defense_procurement", "A Limited Defense Procurement Package", "Purchase 500 infantry equipment and 50 support equipment through a funded contract. Readiness increases by 3. Each contract costs €90 million; another can be approved after 180 days.")
     loc("TFR_EST_fortify_tallinn", "Prepare Tallinn's Defensive Belt", "Build one additional level of land fortifications at Tallinn and improve readiness by 5. The €75 million project can be authorized once.")
-    loc("TFR_EST_budget_cost_tt", "The project is financed through TFR's inflation-adjusted public debt ledger; budget figures are in millions of euros.")
+    loc("TFR_EST_budget_cost_tt", "The project is financed through TFR's inflation-adjusted public debt ledger, in billions of 2020 US dollars.")
+    loc("TFR_EST_cohesion_change_tt", "National Cohesion: [?TFR_EST_cohesion_delta|=+0] (0–100).")
+    loc("TFR_EST_readiness_change_tt", "Defense Readiness: [?TFR_EST_readiness_delta|=+0] (0–100).")
     loc("TFR_EST_nato_restrictions_tt", "Replace Estonia's inherited NATO peacetime military restrictions with its funded defense commitment. Other NATO countries are unaffected.")
     loc("TFR_EST_reserve_template_tt", "Unlock the Kaitseliidu reservbrigaad template and a temporary reserve-training bonus. Train units through normal recruitment; no soldiers or equipment are created by this authorization.")
     write("common/decisions/categories/TFR_EST_systems.txt", "\n\n".join(categories))

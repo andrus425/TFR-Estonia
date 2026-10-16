@@ -73,6 +73,11 @@ the real measures to that shock, selecting their costs and relief strengths, and
 allowing preparations before an uncertain onset are game design. The historical
 sources do not establish that TFR's events occurred. Relief must operate on the
 Estonian component of the crisis without clearing the parent mod's global state.
+The 16 October implementation uses TFR's actual `GER_oil_crash1`–`5` ideas.
+Household support, strategic gas reserves and LNG access each earn one recovery
+stage; combined electricity/gas network relief earns two. The complete branch
+removes the spirit. Equivalent Ratas projects use the same five slots, preventing
+double relief if policies survive a change of government.
 
 ## Security and civil preparedness
 

@@ -1,6 +1,7 @@
 """Generate deterministic, English-localized occupation content (no parent edits)."""
 from pathlib import Path
 import re
+from native_script_interface import native_amount_calls
 
 ROOT = Path(__file__).resolve().parents[1]
 PREFIX = "TFR_EST_occupation_"
@@ -55,13 +56,14 @@ def write(relative, text, bom=False):
     path = ROOT / relative
     path.parent.mkdir(parents=True, exist_ok=True)
     text = re.sub(r'add_to_variable = \{ var = TFR_EST_occupation_(cooperation|resistance) value = ([^ }]+) \}', r'TFR_EST_change_occupation_\1 = { AMOUNT = \2 }', text)
+    text = native_amount_calls(text)
     path.write_text(text, encoding="utf-8-sig" if bom else "utf-8", newline="\n")
 
 
 def focus(name, title, desc, x, y, reward, prerequisites=(), available="", branch="", exclusive=(), icon="political_pressure", cost=4):
     key = PREFIX + name
     LOC[key], LOC[key + "_desc"] = title, desc
-    lines = ["    focus = {", f"        id = {key}", f"        icon = GFX_goal_generic_{icon}", f"        x = {x}", f"        y = {y}", f"        cost = {cost}", "        cancel_if_invalid = yes", f"        bypass = {{ has_country_flag = {key}_done }}"]
+    lines = ["    focus = {", f"        id = {key}", f"        icon = GFX_goal_generic_{icon}", f"        x = {x // 3}", f"        y = {y}", f"        cost = {cost}", "        cancel_if_invalid = yes", f"        bypass = {{ has_country_flag = {key}_done }}"]
     for group in prerequisites:
         if isinstance(group, str):
             group = (group,)

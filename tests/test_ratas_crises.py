@@ -1,4 +1,4 @@
-"""Execute Estonia's authored crisis ledgers and retained-cabinet recovery.
+"""Execute Estonia's parent Oil Crash spirit and retained-cabinet recovery.
 
 The fixture uses the actual country effects and TFR's actual COVID predicate.
 Event delivery, focus scheduling and the game's UI are outside this runtime.
@@ -8,6 +8,7 @@ from itertools import product
 import unittest
 
 from script_runtime import ROOT, Runtime, parse
+from build_ratas_continuation import POLICIES
 
 
 FACTORY = "TFR_EST_economy_industrial_capacity_factory_var"
@@ -26,6 +27,7 @@ TIERS = (
 )
 FACTORY_PROJECTS = ("lng_connection", "grid_synchronisation", "renewable_chp")
 GOODS_PROJECTS = ("building_renovation", "network_charge_relief")
+OIL_TIERS = tuple(f"GER_oil_crash{index}" for index in range(1, 6))
 COVID_POLICIES = ("hospital_covid", "testing_tracing", "vaccinate_risk_groups")
 COVID_DONE = {"TFR_EST_done_ratas_" + suffix for suffix in COVID_POLICIES}
 
@@ -51,12 +53,15 @@ class RatasCrisisTests(unittest.TestCase):
     def reconcile(self, r):
         r.call("TFR_EST_reconcile_energy_crisis")
 
-    def assert_contribution(self, r, factory, goods):
-        factory, goods = Fraction(factory), Fraction(goods)
-        self.assertEqual(r.variables[FACTORY_APPLIED], factory)
-        self.assertEqual(r.variables[GOODS_APPLIED], goods)
-        self.assertEqual(r.variables[FACTORY], Fraction(7, 100) + factory)
-        self.assertEqual(r.variables[GOODS], Fraction(-2, 100) + goods)
+    def assert_energy_tier(self, r, recovery):
+        self.assertEqual(r.ideas.intersection(OIL_TIERS),
+                         {OIL_TIERS[recovery]} if recovery < 5 else set())
+        # The crisis now lives entirely in TFR's national spirit. These
+        # migration ledgers remain zero and do not dilute permanent reforms.
+        self.assertEqual(r.variables[FACTORY_APPLIED], 0)
+        self.assertEqual(r.variables[GOODS_APPLIED], 0)
+        self.assertEqual(r.variables[FACTORY], Fraction(7, 100))
+        self.assertEqual(r.variables[GOODS], Fraction(-2, 100))
 
     def test_energy_trigger_uses_actual_onset_and_explicit_resolution(self):
         for primary, secondary, ended in product((False, True), repeat=3):
@@ -70,19 +75,19 @@ class RatasCrisisTests(unittest.TestCase):
         r = self.runtime()
         before = r.variables.copy()
         self.reconcile(r)
-        self.assert_contribution(r, 0, 0)
+        self.assert_energy_tier(r, 5)
         for key, value in before.items():
             self.assertEqual(r.variables[key], value)
         self.assertNotIn(SEEN, r.flags)
         self.assertFalse(r.events)
 
-    def test_each_parent_onset_flag_applies_country_penalty(self):
+    def test_each_parent_onset_flag_applies_the_parent_oil_crash_spirit(self):
         for flag in ACTIVE_FLAGS:
             with self.subTest(flag=flag):
                 r = self.runtime()
                 r.global_flags.add(flag)
                 self.reconcile(r)
-                self.assert_contribution(r, "-0.04", "0.03")
+                self.assert_energy_tier(r, 0)
                 self.assertIn(SEEN, r.flags)
                 self.assertEqual(r.events, [NOTICE])
                 self.assertNotIn("TFR_EST_ratas_retained", r.flags,
@@ -98,37 +103,37 @@ class RatasCrisisTests(unittest.TestCase):
         self.assertEqual(r.variables, expected)
         self.assertEqual(r.events, [NOTICE])
 
-    def test_resolution_reverses_only_tracked_penalties_with_stale_onset_flags(self):
+    def test_resolution_removes_managed_spirit_even_with_stale_onset_flags(self):
         r = self.runtime()
         r.global_flags.update(ACTIVE_FLAGS)
         self.reconcile(r)
         r.global_flags.add(ENDED)
         self.reconcile(r)
-        self.assert_contribution(r, 0, 0)
+        self.assert_energy_tier(r, 5)
         self.assertIn(SEEN, r.flags)
         self.assertEqual(r.events, [NOTICE])
         self.assertEqual(r.global_flags, {*ACTIVE_FLAGS, ENDED})
 
-    def test_clearing_onset_flags_also_removes_local_penalty(self):
+    def test_clearing_onset_flags_also_removes_managed_spirit(self):
         r = self.runtime()
         r.global_flags.update(ACTIVE_FLAGS)
         self.reconcile(r)
         r.global_flags.clear()
         self.reconcile(r)
-        self.assert_contribution(r, 0, 0)
+        self.assert_energy_tier(r, 5)
 
     def test_repeated_onset_resolution_cycles_preserve_bonus_and_single_notice(self):
         r = self.runtime()
         for _ in range(4):
             r.global_flags = {ACTIVE_FLAGS[0]}
             self.reconcile(r)
-            self.assert_contribution(r, "-0.04", "0.03")
+            self.assert_energy_tier(r, 0)
             r.global_flags = {ENDED}
             self.reconcile(r)
-            self.assert_contribution(r, 0, 0)
+            self.assert_energy_tier(r, 5)
         self.assertEqual(r.events, [NOTICE])
 
-    def test_each_supply_project_offsets_one_percentage_point_of_factory_loss(self):
+    def test_each_supply_project_advances_one_real_recovery_tier(self):
         for project in FACTORY_PROJECTS:
             with self.subTest(project=project):
                 r = self.runtime()
@@ -136,39 +141,39 @@ class RatasCrisisTests(unittest.TestCase):
                 self.reconcile(r)
                 r.flags.add("TFR_EST_done_ratas_" + project)
                 self.reconcile(r)
-                self.assert_contribution(r, "-0.03", "0.03")
+                self.assert_energy_tier(r, 1)
                 self.reconcile(r)
-                self.assert_contribution(r, "-0.03", "0.03")
+                self.assert_energy_tier(r, 1)
 
-    def test_each_household_project_halves_the_consumer_goods_shock(self):
+    def test_each_household_project_advances_one_real_recovery_tier(self):
         for project in GOODS_PROJECTS:
             with self.subTest(project=project):
                 r = self.runtime()
                 r.global_flags.add(ACTIVE_FLAGS[0])
                 r.flags.add("TFR_EST_done_ratas_" + project)
                 self.reconcile(r)
-                self.assert_contribution(r, "-0.04", "0.015")
+                self.assert_energy_tier(r, 1)
 
-    def test_all_projects_leave_limited_factory_loss_and_no_goods_shock(self):
+    def test_all_projects_remove_the_parent_spirit_before_world_resolution(self):
         r = self.runtime()
         r.global_flags.add(ACTIVE_FLAGS[0])
         for project in (*FACTORY_PROJECTS, *GOODS_PROJECTS):
             r.flags.add("TFR_EST_done_ratas_" + project)
         self.reconcile(r)
-        self.assert_contribution(r, "-0.01", 0)
+        self.assert_energy_tier(r, 5)
         r.global_flags.add(ENDED)
         self.reconcile(r)
-        self.assert_contribution(r, 0, 0)
+        self.assert_energy_tier(r, 5)
 
     def test_projects_completed_before_onset_prevent_their_share_of_shock(self):
         r = self.runtime()
         r.flags.update({"TFR_EST_done_ratas_lng_connection",
                         "TFR_EST_done_ratas_network_charge_relief"})
         self.reconcile(r)
-        self.assert_contribution(r, 0, 0)
+        self.assert_energy_tier(r, 5)
         r.global_flags.add(ACTIVE_FLAGS[0])
         self.reconcile(r)
-        self.assert_contribution(r, "-0.03", "0.015")
+        self.assert_energy_tier(r, 2)
 
     def test_permanent_reforms_added_during_crisis_survive_resolution(self):
         r = self.runtime()
@@ -186,7 +191,7 @@ class RatasCrisisTests(unittest.TestCase):
         for key, value in untouched.items():
             self.assertEqual(r.variables[key], value)
 
-    def test_saved_contributions_reconcile_without_reset_or_duplicate_reward(self):
+    def test_saved_recovery_tier_repairs_without_reset_or_duplicate_reward(self):
         r = self.runtime()
         r.global_flags.add(ACTIVE_FLAGS[0])
         self.reconcile(r)
@@ -196,10 +201,11 @@ class RatasCrisisTests(unittest.TestCase):
         loaded.global_flags = r.global_flags.copy()
         self.reconcile(loaded)
         self.assertEqual(loaded.variables, r.variables)
+        self.assertEqual(loaded.ideas, r.ideas)
         self.assertFalse(loaded.events)
         loaded.global_flags.add(ENDED)
         self.reconcile(loaded)
-        self.assert_contribution(loaded, 0, 0)
+        self.assert_energy_tier(loaded, 5)
 
     def test_reconciler_requires_initialized_estonia_and_never_changes_parent_flags(self):
         for blocked in ("foreign", "uninitialized"):
@@ -282,8 +288,9 @@ class RatasCrisisTests(unittest.TestCase):
         r.run(focus.get("completion_reward"))
         self.assertEqual((r.variables, r.flags, r.ideas, r.calls), first)
         self.assertEqual(r.ideas.intersection(TIERS), {"high_covid_cases"})
-        self.assertEqual(r.calls, [("add_debt_with_inflation", Fraction(45, 1000))])
-        self.assertEqual(r.variables["TFR_EST_cohesion"], 57)
+        policy = next(policy for policy in POLICIES if policy.suffix == "vaccinate_risk_groups")
+        self.assertEqual(r.calls, [("add_debt_with_inflation", Fraction(policy.budget, 1000))])
+        self.assertEqual(r.variables["TFR_EST_cohesion"], 55 + policy.cohesion)
 
     def test_recovered_outbreak_bypasses_only_emergency_focuses_without_rewards(self):
         r = self.runtime(retained=True)
@@ -321,7 +328,7 @@ class RatasCrisisTests(unittest.TestCase):
         r.global_flags.update(ACTIVE_FLAGS)
         before_cohesion = r.variables["TFR_EST_cohesion"]
         r.call("TFR_EST_ratas_tick")
-        self.assert_contribution(r, "-0.04", "0.03")
+        self.assert_energy_tier(r, 0)
         self.assertTrue(COVID_DONE.isdisjoint(r.flags))
         self.assertEqual(r.variables["TFR_EST_cohesion"], before_cohesion)
         self.assertFalse(r.calls)

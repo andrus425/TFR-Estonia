@@ -6,34 +6,40 @@ TFR_EST_kallas_branch_visible = {
     NOT = { has_country_flag = TFR_EST_occupied }
 }
 TFR_EST_kallas_governing = {
-    TFR_EST_kallas_branch_visible = yes
-    TFR_EST_coalition_majority = yes
-    has_country_flag = TFR_EST_opening_complete
-    has_country_flag = TFR_EST_reform_centre_formed
-    NOT = { has_country_flag = TFR_EST_caretaker }
-    check_variable = { var = TFR_EST_pm_party value = 1 compare = equals }
-    check_variable = { var = TFR_EST_mandate_party value = 1 compare = equals }
-    check_variable = { var = TFR_EST_coalition_reform value = 1 compare = equals }
-    check_variable = { var = TFR_EST_coalition_centre value = 1 compare = equals }
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_kallas_governing_tt
+        TFR_EST_kallas_branch_visible = yes
+        TFR_EST_coalition_majority = yes
+        has_country_flag = TFR_EST_opening_complete
+        has_country_flag = TFR_EST_reform_centre_formed
+        NOT = { has_country_flag = TFR_EST_caretaker }
+        check_variable = { var = TFR_EST_pm_party value = 1 compare = equals }
+        check_variable = { var = TFR_EST_mandate_party value = 1 compare = equals }
+        check_variable = { var = TFR_EST_coalition_reform value = 1 compare = equals }
+        check_variable = { var = TFR_EST_coalition_centre value = 1 compare = equals }
+    }
 }
 TFR_EST_kallas_all_policies_done = {
-    OR = { has_completed_focus = TFR_EST_kallas_govern_together has_country_flag = TFR_EST_done_kallas_govern_together }
-    OR = { has_completed_focus = TFR_EST_kallas_sick_pay has_country_flag = TFR_EST_done_kallas_sick_pay }
-    OR = { has_completed_focus = TFR_EST_kallas_hospital_support has_country_flag = TFR_EST_done_kallas_hospital_support }
-    OR = { has_completed_focus = TFR_EST_kallas_frontline_vaccination has_country_flag = TFR_EST_done_kallas_frontline_vaccination }
-    OR = { has_completed_focus = TFR_EST_kallas_covid_certificates has_country_flag = TFR_EST_done_kallas_covid_certificates }
-    OR = { has_completed_focus = TFR_EST_kallas_pension_twenty has_country_flag = TFR_EST_done_kallas_pension_twenty }
-    OR = { has_completed_focus = TFR_EST_kallas_pension_tax_allowance has_country_flag = TFR_EST_done_kallas_pension_tax_allowance }
-    OR = { has_completed_focus = TFR_EST_kallas_teacher_pay has_country_flag = TFR_EST_done_kallas_teacher_pay }
-    OR = { has_completed_focus = TFR_EST_kallas_school_catch_up has_country_flag = TFR_EST_done_kallas_school_catch_up }
-    OR = { has_completed_focus = TFR_EST_kallas_recovery_plan has_country_flag = TFR_EST_done_kallas_recovery_plan }
-    OR = { has_completed_focus = TFR_EST_kallas_enterprise_digital has_country_flag = TFR_EST_done_kallas_enterprise_digital }
-    OR = { has_completed_focus = TFR_EST_kallas_rural_broadband has_country_flag = TFR_EST_done_kallas_rural_broadband }
-    OR = { has_completed_focus = TFR_EST_kallas_mental_health has_country_flag = TFR_EST_done_kallas_mental_health }
-    OR = { has_completed_focus = TFR_EST_kallas_energy_households has_country_flag = TFR_EST_done_kallas_energy_households }
-    OR = { has_completed_focus = TFR_EST_kallas_energy_networks has_country_flag = TFR_EST_done_kallas_energy_networks }
-    OR = { has_completed_focus = TFR_EST_kallas_gas_reserve has_country_flag = TFR_EST_done_kallas_gas_reserve }
-    OR = { has_completed_focus = TFR_EST_kallas_lng_connection has_country_flag = TFR_EST_done_kallas_lng_connection }
-    OR = { has_completed_focus = TFR_EST_kallas_defence_budget has_country_flag = TFR_EST_done_kallas_defence_budget }
-    OR = { has_completed_focus = TFR_EST_kallas_civil_protection has_country_flag = TFR_EST_done_kallas_civil_protection }
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_kallas_all_policies_done_tt
+        OR = { has_completed_focus = TFR_EST_kallas_govern_together has_country_flag = TFR_EST_done_kallas_govern_together }
+        OR = { has_completed_focus = TFR_EST_kallas_sick_pay has_country_flag = TFR_EST_done_kallas_sick_pay }
+        OR = { has_completed_focus = TFR_EST_kallas_hospital_support has_country_flag = TFR_EST_done_kallas_hospital_support }
+        OR = { has_completed_focus = TFR_EST_kallas_frontline_vaccination has_country_flag = TFR_EST_done_kallas_frontline_vaccination }
+        OR = { has_completed_focus = TFR_EST_kallas_covid_certificates has_country_flag = TFR_EST_done_kallas_covid_certificates }
+        OR = { has_completed_focus = TFR_EST_kallas_pension_twenty has_country_flag = TFR_EST_done_kallas_pension_twenty }
+        OR = { has_completed_focus = TFR_EST_kallas_pension_tax_allowance has_country_flag = TFR_EST_done_kallas_pension_tax_allowance }
+        OR = { has_completed_focus = TFR_EST_kallas_teacher_pay has_country_flag = TFR_EST_done_kallas_teacher_pay }
+        OR = { has_completed_focus = TFR_EST_kallas_school_catch_up has_country_flag = TFR_EST_done_kallas_school_catch_up }
+        OR = { has_completed_focus = TFR_EST_kallas_recovery_plan has_country_flag = TFR_EST_done_kallas_recovery_plan }
+        OR = { has_completed_focus = TFR_EST_kallas_enterprise_digital has_country_flag = TFR_EST_done_kallas_enterprise_digital }
+        OR = { has_completed_focus = TFR_EST_kallas_rural_broadband has_country_flag = TFR_EST_done_kallas_rural_broadband }
+        OR = { has_completed_focus = TFR_EST_kallas_mental_health has_country_flag = TFR_EST_done_kallas_mental_health }
+        OR = { has_completed_focus = TFR_EST_kallas_energy_households has_country_flag = TFR_EST_done_kallas_energy_households }
+        OR = { has_completed_focus = TFR_EST_kallas_energy_networks has_country_flag = TFR_EST_done_kallas_energy_networks }
+        OR = { has_completed_focus = TFR_EST_kallas_gas_reserve has_country_flag = TFR_EST_done_kallas_gas_reserve }
+        OR = { has_completed_focus = TFR_EST_kallas_lng_connection has_country_flag = TFR_EST_done_kallas_lng_connection }
+        OR = { has_completed_focus = TFR_EST_kallas_defence_budget has_country_flag = TFR_EST_done_kallas_defence_budget }
+        OR = { has_completed_focus = TFR_EST_kallas_civil_protection has_country_flag = TFR_EST_done_kallas_civil_protection }
+    }
 }

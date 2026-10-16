@@ -28,7 +28,7 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_opening_teacher_pay
     icon = GFX_goal_generic_consumer_goods
-    x = 3
+    x = 2
     y = 0
     cost = 5
     allow_branch = { NOT = { has_country_flag = TFR_EST_referendum_failed } }
@@ -51,13 +51,13 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_opening_covid_emergency
     icon = GFX_goal_generic_consumer_goods
-    x = 13
+    x = 9
     y = 0
     cost = 5
     allow_branch = { NOT = { has_country_flag = TFR_EST_referendum_failed } }
     available = {
         TFR_EST_opening_coalition_majority = yes
-        generic_has_corona = yes
+        TFR_EST_has_covid = yes
     }
     bypass = { has_country_flag = TFR_EST_done_opening_covid_emergency }
     cancel_if_invalid = yes
@@ -77,7 +77,7 @@ shared_focus = {
     id = TFR_EST_opening_pension_increase
     icon = GFX_goal_generic_consumer_goods
     x = 0
-    y = 2
+    y = 1
     cost = 5
     prerequisite = { focus = TFR_EST_opening_pension_reform }
     allow_branch = { NOT = { has_country_flag = TFR_EST_referendum_failed } }
@@ -100,8 +100,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_opening_wage_compensation
     icon = GFX_goal_generic_consumer_goods
-    x = 12
-    y = 2
+    x = 8
+    y = 1
     cost = 5
     prerequisite = { focus = TFR_EST_opening_covid_emergency }
     allow_branch = { NOT = { has_country_flag = TFR_EST_referendum_failed } }
@@ -124,8 +124,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_opening_excise_relief
     icon = GFX_goal_generic_trade
-    x = 15
-    y = 2
+    x = 10
+    y = 1
     cost = 5
     prerequisite = { focus = TFR_EST_opening_covid_emergency }
     allow_branch = { NOT = { has_country_flag = TFR_EST_referendum_failed } }
@@ -148,8 +148,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_opening_eastern_border
     icon = GFX_goal_generic_defence
-    x = 6
-    y = 2
+    x = 4
+    y = 1
     cost = 5
     prerequisite = { focus = TFR_EST_opening_kose_voobu }
     allow_branch = { NOT = { has_country_flag = TFR_EST_referendum_failed } }
@@ -172,7 +172,7 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_opening_kose_voobu
     icon = GFX_goal_generic_construct_infrastructure
-    x = 7
+    x = 5
     y = 0
     cost = 5
     allow_branch = { NOT = { has_country_flag = TFR_EST_referendum_failed } }
@@ -195,8 +195,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_opening_three_seas
     icon = GFX_goal_generic_alliance
-    x = 9
-    y = 2
+    x = 6
+    y = 1
     cost = 5
     prerequisite = { focus = TFR_EST_opening_kose_voobu }
     allow_branch = { NOT = { has_country_flag = TFR_EST_referendum_failed } }
@@ -219,8 +219,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_opening_research_budget
     icon = GFX_goal_generic_scientific_exchange
-    x = 3
-    y = 2
+    x = 2
+    y = 1
     cost = 5
     prerequisite = { focus = TFR_EST_opening_teacher_pay }
     allow_branch = { NOT = { has_country_flag = TFR_EST_referendum_failed } }
@@ -243,8 +243,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_opening_marriage_referendum
     icon = GFX_goal_generic_national_unity
-    x = 7
-    y = 5
+    x = 5
+    y = 3
     cost = 5
     prerequisite = { focus = TFR_EST_opening_pension_increase }
     prerequisite = { focus = TFR_EST_opening_research_budget }
@@ -254,11 +254,7 @@ shared_focus = {
     prerequisite = { focus = TFR_EST_opening_excise_relief }
     allow_branch = { NOT = { has_country_flag = TFR_EST_referendum_failed } }
     available = {
-        NOT = { has_country_flag = TFR_EST_referendum_failed }
-        OR = {
-            has_country_flag = TFR_EST_referendum_active
-            TFR_EST_can_start_referendum = yes
-        }
+        TFR_EST_referendum_available = yes
     }
     bypass = { has_country_flag = TFR_EST_done_opening_marriage_referendum }
     cancelable = no

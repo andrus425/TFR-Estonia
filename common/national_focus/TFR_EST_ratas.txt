@@ -3,8 +3,8 @@
 shared_focus = {
     id = TFR_EST_ratas_renew_agreement
     icon = GFX_goal_generic_national_unity
-    x = 8
-    y = 7
+    x = 4
+    y = 4
     cost = 5
     prerequisite = { focus = TFR_EST_opening_marriage_referendum }
     allow_branch = { TFR_EST_ratas_branch_visible = yes }
@@ -28,7 +28,7 @@ shared_focus = {
     id = TFR_EST_ratas_family_home_guarantees
     icon = GFX_goal_generic_construct_civ_factory
     x = 0
-    y = 9
+    y = 5
     cost = 5
     prerequisite = { focus = TFR_EST_ratas_renew_agreement }
     allow_branch = { TFR_EST_ratas_branch_visible = yes }
@@ -52,7 +52,7 @@ shared_focus = {
     id = TFR_EST_ratas_child_tax_allowance
     icon = GFX_goal_generic_consumer_goods
     x = 0
-    y = 11
+    y = 6
     cost = 5
     prerequisite = { focus = TFR_EST_ratas_family_home_guarantees }
     allow_branch = { TFR_EST_ratas_branch_visible = yes }
@@ -76,7 +76,7 @@ shared_focus = {
     id = TFR_EST_ratas_home_care
     icon = GFX_goal_generic_consumer_goods
     x = 0
-    y = 13
+    y = 7
     cost = 5
     prerequisite = { focus = TFR_EST_ratas_child_tax_allowance }
     allow_branch = { TFR_EST_ratas_branch_visible = yes }
@@ -99,8 +99,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_ratas_state_jobs_counties
     icon = GFX_goal_generic_political_pressure
-    x = 4
-    y = 9
+    x = 2
+    y = 5
     cost = 5
     prerequisite = { focus = TFR_EST_ratas_renew_agreement }
     allow_branch = { TFR_EST_ratas_branch_visible = yes }
@@ -123,8 +123,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_ratas_rural_broadband
     icon = GFX_goal_generic_scientific_exchange
-    x = 4
-    y = 11
+    x = 2
+    y = 6
     cost = 5
     prerequisite = { focus = TFR_EST_ratas_state_jobs_counties }
     allow_branch = { TFR_EST_ratas_branch_visible = yes }
@@ -147,8 +147,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_ratas_industrial_parks
     icon = GFX_goal_generic_construct_civ_factory
-    x = 4
-    y = 13
+    x = 2
+    y = 7
     cost = 5
     prerequisite = { focus = TFR_EST_ratas_rural_broadband }
     allow_branch = { TFR_EST_ratas_branch_visible = yes }
@@ -171,8 +171,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_ratas_worker_retraining
     icon = GFX_goal_generic_production
-    x = 4
-    y = 15
+    x = 2
+    y = 8
     cost = 5
     prerequisite = { focus = TFR_EST_ratas_industrial_parks }
     allow_branch = { TFR_EST_ratas_branch_visible = yes }
@@ -195,14 +195,14 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_ratas_hospital_covid
     icon = GFX_goal_generic_consumer_goods
-    x = 8
-    y = 9
+    x = 4
+    y = 5
     cost = 5
     prerequisite = { focus = TFR_EST_ratas_renew_agreement }
     allow_branch = { TFR_EST_ratas_branch_visible = yes }
     available = {
         TFR_EST_ratas_governing = yes
-        generic_has_corona = yes
+        TFR_EST_has_covid = yes
     }
     bypass = { has_country_flag = TFR_EST_done_ratas_hospital_covid }
     cancel_if_invalid = yes
@@ -220,14 +220,14 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_ratas_testing_tracing
     icon = GFX_goal_generic_scientific_exchange
-    x = 8
-    y = 11
+    x = 4
+    y = 6
     cost = 5
     prerequisite = { focus = TFR_EST_ratas_hospital_covid }
     allow_branch = { TFR_EST_ratas_branch_visible = yes }
     available = {
         TFR_EST_ratas_governing = yes
-        generic_has_corona = yes
+        TFR_EST_has_covid = yes
     }
     bypass = { has_country_flag = TFR_EST_done_ratas_testing_tracing }
     cancel_if_invalid = yes
@@ -245,8 +245,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_ratas_family_doctors
     icon = GFX_goal_generic_consumer_goods
-    x = 8
-    y = 13
+    x = 4
+    y = 7
     cost = 5
     prerequisite = { focus = TFR_EST_ratas_testing_tracing }
     allow_branch = { TFR_EST_ratas_branch_visible = yes }
@@ -269,14 +269,14 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_ratas_vaccinate_risk_groups
     icon = GFX_goal_generic_consumer_goods
-    x = 8
-    y = 15
+    x = 4
+    y = 8
     cost = 5
     prerequisite = { focus = TFR_EST_ratas_family_doctors }
     allow_branch = { TFR_EST_ratas_branch_visible = yes }
     available = {
         TFR_EST_ratas_governing = yes
-        generic_has_corona = yes
+        TFR_EST_has_covid = yes
     }
     bypass = { has_country_flag = TFR_EST_done_ratas_vaccinate_risk_groups }
     cancel_if_invalid = yes
@@ -294,8 +294,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_ratas_lng_connection
     icon = GFX_goal_generic_oil_refinery
-    x = 12
-    y = 9
+    x = 6
+    y = 5
     cost = 5
     prerequisite = { focus = TFR_EST_ratas_renew_agreement }
     allow_branch = { TFR_EST_ratas_branch_visible = yes }
@@ -318,8 +318,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_ratas_grid_synchronisation
     icon = GFX_goal_generic_construct_infrastructure
-    x = 12
-    y = 11
+    x = 6
+    y = 6
     cost = 5
     prerequisite = { focus = TFR_EST_ratas_lng_connection }
     allow_branch = { TFR_EST_ratas_branch_visible = yes }
@@ -342,8 +342,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_ratas_renewable_chp
     icon = GFX_goal_generic_production
-    x = 12
-    y = 13
+    x = 6
+    y = 7
     cost = 5
     prerequisite = { focus = TFR_EST_ratas_grid_synchronisation }
     allow_branch = { TFR_EST_ratas_branch_visible = yes }
@@ -366,8 +366,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_ratas_building_renovation
     icon = GFX_goal_generic_construct_infrastructure
-    x = 12
-    y = 15
+    x = 6
+    y = 8
     cost = 5
     prerequisite = { focus = TFR_EST_ratas_renewable_chp }
     allow_branch = { TFR_EST_ratas_branch_visible = yes }
@@ -390,8 +390,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_ratas_network_charge_relief
     icon = GFX_goal_generic_consumer_goods
-    x = 12
-    y = 17
+    x = 6
+    y = 9
     cost = 5
     prerequisite = { focus = TFR_EST_ratas_building_renovation }
     allow_branch = { TFR_EST_ratas_branch_visible = yes }
@@ -414,8 +414,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_ratas_police_reserve
     icon = GFX_goal_generic_defence
-    x = 16
-    y = 9
+    x = 8
+    y = 5
     cost = 5
     prerequisite = { focus = TFR_EST_ratas_renew_agreement }
     allow_branch = { TFR_EST_ratas_branch_visible = yes }
@@ -438,8 +438,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_ratas_territorial_training
     icon = GFX_goal_generic_army_doctrines
-    x = 16
-    y = 11
+    x = 8
+    y = 6
     cost = 5
     prerequisite = { focus = TFR_EST_ratas_police_reserve }
     allow_branch = { TFR_EST_ratas_branch_visible = yes }
@@ -462,8 +462,8 @@ shared_focus = {
 shared_focus = {
     id = TFR_EST_ratas_account_to_voters
     icon = GFX_goal_generic_national_unity
-    x = 8
-    y = 20
+    x = 4
+    y = 11
     cost = 5
     prerequisite = { focus = TFR_EST_ratas_home_care }
     prerequisite = { focus = TFR_EST_ratas_worker_retraining }
