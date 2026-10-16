@@ -1,5 +1,32 @@
 # Changelog
 
+## 16 October 2026 — coalition ministers
+
+- Added 39 candidacies covering 38 people across TFR's foreign, economic,
+  interior, intelligence and defence minister slots. All seven parties have
+  candidates for every slot, including when their own leader serves as PM.
+- Require an active coalition party and a confirmed independent cabinet for
+  appointments. Confidence-and-supply partners do not qualify. Keep all seven
+  prime-minister tokens locked to parliamentary and scripted transitions.
+- Add fifteen professional traits with beneficial native country modifiers and
+  clear party-nominee labels. Record primary sources and inferred appointments
+  in a reproducible candidate register; use installed TFR generic portraits.
+- Prevent one person from occupying two portfolios or combining a portfolio
+  with the premiership. Include alternate EKRE nominees for Mart Helme's posts.
+- Add Trivimi Velliste as Isamaa's foreign-affairs alternative and Rene Kokk as
+  EKRE's economic alternative. Explicit person markers support future Reinsalu
+  and Martin Helme premierships while preserving their eligibility under their
+  parties' current default PMs. Caretaker/confidence recovery preserves identity;
+  confirmed new mandates, occupation and stale party changes clear it.
+- Initialize the historical opening cabinet once, preserve player choices and
+  vacancies, retain outgoing caretaker ministers during talks, remove departing
+  coalition parties' ministers, and clear all five slots under occupation.
+- Grant a native 80% appointment-cost reduction for 90 days after a valid
+  regular, authorized snap or restoration election. Invalid election input and
+  daily reconciliation cannot grant or renew the window.
+- Add cabinet behavior tests and native engine assertions for eligibility,
+  traits, duplicate offices, lifecycle, all-party coverage and appointment costs.
+
 ## 16 October 2026 — compact focuses and visible, stronger rewards
 
 - Compact all five focus layouts while preserving their IDs, prerequisites,

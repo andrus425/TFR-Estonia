@@ -48,6 +48,15 @@ dependencies={{"The Fire Rises" "{submod_name}"}}
 path="{base.as_posix()}"
 '''
     (base / "descriptor.mod").write_text(descriptor, encoding="utf-8")
+    # These generated idea-category cost modifiers are dynamic engine tokens.
+    # Only the QA overlay reads them as modifier@ values; synchronize those
+    # test-only lookup tokens rather than changing the parent's token file.
+    token_directory = base / "common/synchronized_dynamic_tokens"
+    token_directory.mkdir(parents=True, exist_ok=True)
+    (token_directory / "TFR_EST_qa_minister_tokens.txt").write_text(
+        "\n".join(slot + "_minister_cost_factor" for slot in
+                  ("foreign", "economic", "interior", "intelligence", "theorist")) + "\n",
+        encoding="utf-8")
     body = ["\n# Isolated native engine arithmetic assertions.\n",
             "log = \"TFR_EST_ENGINE_QA_BEGIN\"\n",
             "set_country_flag = TFR_EST_initialized\n",
@@ -273,6 +282,70 @@ path="{base.as_posix()}"
         check("preview_ideas_are_display_only", " ".join(f"NOT = {{ has_idea = {ident} }}" for ident in idea_definitions())),
     ])
     assertions.extend(["compact_focus_reward_deltas", "preview_ideas_are_display_only"])
+    # Native minister slots apply traits themselves; test these without invoking
+    # diplomatic transitions or simulating a political-screen button purchase.
+    from build_ministers import CANDIDATES, OPENING, candidate_id, eligibility
+    opening_ministers = " ".join(f"has_idea = TFR_EST_minister_{suffix}" for suffix in OPENING)
+    body.extend([
+        "TFR_EST_suspend_ministers = yes\nclr_country_flag = TFR_EST_ministers_initialized\nTFR_EST_initialize_parliament = yes\nTFR_EST_initialize_ministers = yes\n",
+        check("ministers_historical_cabinet", opening_ministers + " has_idea = TFR_EST_pm_centre " + eq("TFR_EST_pm_party", 2)),
+        check("ministers_coalition_required", "TFR_EST_can_appoint_urmas_reinsalu_foreign = yes NOT = { TFR_EST_can_appoint_urmas_paet_foreign = yes } NOT = { TFR_EST_can_appoint_tiit_riisalo_economic = yes }"),
+        check("ministers_second_office_blocked", "has_idea = TFR_EST_minister_mart_helme_interior NOT = { TFR_EST_can_appoint_mart_helme_foreign = yes }"),
+        "remove_ideas = TFR_EST_minister_taavi_aas_economic\nTFR_EST_initialize_ministers = yes\nTFR_EST_reconcile_ministers = yes\n",
+        check("ministers_player_vacancy_preserved", "NOT = { has_idea = TFR_EST_minister_taavi_aas_economic } has_idea = TFR_EST_minister_juri_luik_defence"),
+        "set_variable = { TFR_EST_pm_party = 3 }\nTFR_EST_reconcile_cabinet_leadership = yes\n",
+        check("ministers_pm_cannot_hold_portfolio", "has_idea = TFR_EST_pm_ekre NOT = { has_idea = TFR_EST_minister_mart_helme_interior } NOT = { TFR_EST_can_appoint_mart_helme_foreign = yes } NOT = { TFR_EST_can_appoint_mart_helme_interior = yes } TFR_EST_can_appoint_jaak_madison_foreign = yes TFR_EST_can_appoint_alar_laneman_interior = yes"),
+        "set_variable = { TFR_EST_pm_party = 2 }\nTFR_EST_reconcile_cabinet_leadership = yes\nset_variable = { TFR_EST_coalition_sde = 1 }\nTFR_EST_recount_confidence = yes\n",
+        "force_update_dynamic_modifier = yes\nset_variable = { TFR_EST_qa_minister_stability_before = modifier@stability_factor }\nadd_ideas = TFR_EST_minister_katri_raik_interior\nforce_update_dynamic_modifier = yes\nset_variable = { TFR_EST_qa_minister_stability_delta = modifier@stability_factor }\nsubtract_from_variable = { var = TFR_EST_qa_minister_stability_delta value = TFR_EST_qa_minister_stability_before }\nlog = \"TFR_EST_ENGINE_QA_MINISTER stability_before=[?TFR_EST_qa_minister_stability_before] stability_delta=[?TFR_EST_qa_minister_stability_delta]\"\n",
+        check("ministers_trait_applies_country_buff", "has_idea = TFR_EST_minister_katri_raik_interior " + eq("TFR_EST_qa_minister_stability_delta", .04)),
+        "set_variable = { TFR_EST_coalition_sde = 0 }\nTFR_EST_recount_confidence = yes\n",
+        check("ministers_withdrawn_party_vacates", "NOT = { has_idea = TFR_EST_minister_katri_raik_interior } has_idea = TFR_EST_minister_juri_luik_defence has_idea = TFR_EST_pm_centre"),
+        "TFR_EST_enter_caretaker = yes\n",
+        check("ministers_caretaker_retains_no_appointments", "has_idea = TFR_EST_minister_juri_luik_defence NOT = { TFR_EST_can_appoint_urmas_reinsalu_foreign = yes }"),
+        "clr_country_flag = TFR_EST_caretaker\nremove_ideas = TFR_EST_cabinet_formation\nforce_update_dynamic_modifier = yes\n",
+    ])
+    minister_assertions = ["ministers_historical_cabinet", "ministers_coalition_required", "ministers_second_office_blocked", "ministers_player_vacancy_preserved", "ministers_pm_cannot_hold_portfolio", "ministers_trait_applies_country_buff", "ministers_withdrawn_party_vacates", "ministers_caretaker_retains_no_appointments"]
+    # All five prices must receive the real native cost-factor discount. Capture
+    # their existing baselines so unrelated parent modifiers remain valid.
+    factors = ("foreign", "economic", "interior", "intelligence", "theorist")
+    for slot in factors:
+        body.append(f"set_variable = {{ TFR_EST_qa_{slot}_cost_before = modifier@{slot}_minister_cost_factor }}\n")
+    body.extend([
+        polls((10001, 0, 0, 0, 0, 0, 0)), "TFR_EST_hold_election = yes\n",
+        check("ministers_invalid_election_no_discount", "NOT = { has_idea = TFR_EST_cabinet_formation }"),
+        polls((10000, 0, 0, 0, 0, 0, 0)), "TFR_EST_hold_election = yes\n",
+        "force_update_dynamic_modifier = yes\n",
+    ])
+    for slot in factors:
+        body.append(f"set_variable = {{ TFR_EST_qa_{slot}_cost_delta = modifier@{slot}_minister_cost_factor }}\nsubtract_from_variable = {{ var = TFR_EST_qa_{slot}_cost_delta value = TFR_EST_qa_{slot}_cost_before }}\n")
+        body.append(f'log = "TFR_EST_ENGINE_QA_MINISTER {slot}_cost_before=[?TFR_EST_qa_{slot}_cost_before] delta=[?TFR_EST_qa_{slot}_cost_delta]"\n')
+    body.append(check("ministers_valid_election_discount", "has_idea = TFR_EST_cabinet_formation " + " ".join(eq(f"TFR_EST_qa_{slot}_cost_delta", -.8) for slot in factors)))
+    minister_assertions.extend(["ministers_invalid_election_no_discount", "ministers_valid_election_discount"])
+    # Directly activate the seven parties for isolated coverage. This asserts
+    # candidacies rather than inventing a legal zero-seat coalition in play.
+    body.append("clr_country_flag = TFR_EST_caretaker\n")
+    for party in PARTIES:
+        body.append(f"set_variable = {{ TFR_EST_active_{party} = 1 }}\nset_variable = {{ TFR_EST_coalition_{party} = 1 }}\n")
+    for index, party in enumerate(PARTIES, 1):
+        body.append(f"set_variable = {{ TFR_EST_pm_party = {index} }}\nTFR_EST_reconcile_cabinet_leadership = yes\n")
+        # A PM's same person is deliberately excluded; EKRE has alternatives.
+        nominees = [c for c in CANDIDATES if c['party'] == party and c['person'] != 'mart_helme']
+        name = "ministers_full_cabinet_" + party
+        body.append(check(name, " ".join(eligibility(candidate) + " = yes" for candidate in nominees)))
+        minister_assertions.append(name)
+    body.extend([
+        "set_variable = { TFR_EST_pm_party = 4 }\nset_country_flag = TFR_EST_pm_person_urmas_reinsalu\nTFR_EST_reconcile_cabinet_leadership = yes\n",
+        check("ministers_reinsalu_pm_alternative", "TFR_EST_person_is_pm_urmas_reinsalu = yes NOT = { has_idea = TFR_EST_minister_urmas_reinsalu_foreign } NOT = { TFR_EST_can_appoint_urmas_reinsalu_foreign = yes } TFR_EST_can_appoint_trivimi_velliste_foreign = yes"),
+        "set_variable = { TFR_EST_pm_party = 3 }\nset_country_flag = TFR_EST_pm_person_martin_helme\nTFR_EST_reconcile_cabinet_leadership = yes\n",
+        check("ministers_martin_pm_alternative", "TFR_EST_person_is_pm_martin_helme = yes NOT = { TFR_EST_person_is_pm_mart_helme = yes } NOT = { TFR_EST_can_appoint_martin_helme_economic = yes } TFR_EST_can_appoint_rene_kokk_economic = yes TFR_EST_can_appoint_mart_helme_interior = yes"),
+    ])
+    minister_assertions.extend(["ministers_reinsalu_pm_alternative", "ministers_martin_pm_alternative"])
+    body.extend([
+        "set_country_flag = TFR_EST_occupied\nTFR_EST_suspend_parliament = yes\n",
+        check("ministers_occupation_clears_all_five", "NOT = { has_idea = TFR_EST_cabinet_formation } " + " ".join(f"NOT = {{ has_idea = {candidate_id(candidate)} }}" for candidate in CANDIDATES)),
+    ])
+    minister_assertions.append("ministers_occupation_clears_all_five")
+    assertions.extend(minister_assertions)
     body.append("log = \"TFR_EST_ENGINE_QA_END\"\n")
     source = (ROOT / "history/countries/EST - Estonia.txt").read_text(encoding="utf-8-sig")
     # Country history executes top-level commands independently. Keep native

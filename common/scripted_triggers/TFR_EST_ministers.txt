@@ -1,0 +1,507 @@
+# Cabinet appointments use the seven-party ledger, never ideology groups.
+TFR_EST_can_manage_ministers = {
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_confirmed_tt
+        TFR_EST_confirmed_cabinet = yes
+    }
+}
+TFR_EST_person_is_pm_urmas_reinsalu = {
+    TFR_EST_constitutional_executive = yes
+    has_country_flag = TFR_EST_pm_person_urmas_reinsalu
+    check_variable = { var = TFR_EST_pm_party value = 4 compare = equals }
+}
+TFR_EST_person_is_pm_martin_helme = {
+    TFR_EST_constitutional_executive = yes
+    has_country_flag = TFR_EST_pm_person_martin_helme
+    check_variable = { var = TFR_EST_pm_party value = 3 compare = equals }
+}
+TFR_EST_person_is_pm_mart_helme = {
+    TFR_EST_constitutional_executive = yes
+    OR = {
+        has_idea = TFR_EST_pm_ekre
+        check_variable = { var = TFR_EST_pm_party value = 3 compare = equals }
+    }
+    NOT = { TFR_EST_person_is_pm_martin_helme = yes }
+}
+TFR_EST_minister_coalition_reform = {
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_coalition_reform_tt
+        check_variable = { var = TFR_EST_active_reform value = 1 compare = equals }
+        check_variable = { var = TFR_EST_coalition_reform value = 1 compare = equals }
+    }
+}
+TFR_EST_minister_coalition_centre = {
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_coalition_centre_tt
+        check_variable = { var = TFR_EST_active_centre value = 1 compare = equals }
+        check_variable = { var = TFR_EST_coalition_centre value = 1 compare = equals }
+    }
+}
+TFR_EST_minister_coalition_ekre = {
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_coalition_ekre_tt
+        check_variable = { var = TFR_EST_active_ekre value = 1 compare = equals }
+        check_variable = { var = TFR_EST_coalition_ekre value = 1 compare = equals }
+    }
+}
+TFR_EST_minister_coalition_isamaa = {
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_coalition_isamaa_tt
+        check_variable = { var = TFR_EST_active_isamaa value = 1 compare = equals }
+        check_variable = { var = TFR_EST_coalition_isamaa value = 1 compare = equals }
+    }
+}
+TFR_EST_minister_coalition_sde = {
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_coalition_sde_tt
+        check_variable = { var = TFR_EST_active_sde value = 1 compare = equals }
+        check_variable = { var = TFR_EST_coalition_sde value = 1 compare = equals }
+    }
+}
+TFR_EST_minister_coalition_e200 = {
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_coalition_e200_tt
+        check_variable = { var = TFR_EST_active_e200 value = 1 compare = equals }
+        check_variable = { var = TFR_EST_coalition_e200 value = 1 compare = equals }
+    }
+}
+TFR_EST_minister_coalition_pp = {
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_coalition_pp_tt
+        check_variable = { var = TFR_EST_active_pp value = 1 compare = equals }
+        check_variable = { var = TFR_EST_coalition_pp value = 1 compare = equals }
+    }
+}
+TFR_EST_can_appoint_urmas_paet_foreign = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_reform = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_jurgen_ligi_economic = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_reform = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_hanno_pevkur_interior = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_reform = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_eerik_niiles_kross_intelligence = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_reform = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_kalle_laanet_defence = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_reform = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_enn_eesmaa_foreign = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_centre = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_taavi_aas_economic = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_centre = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_jaak_aab_interior = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_centre = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_kalle_klandorf_intelligence = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_centre = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_tiit_terik_defence = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_centre = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_urmas_reinsalu_foreign = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_isamaa = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+            NOT = { TFR_EST_person_is_pm_urmas_reinsalu = yes }
+        }
+    }
+}
+TFR_EST_can_appoint_sven_sester_economic = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_isamaa = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_marko_pomerants_interior = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_isamaa = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_raivo_aeg_intelligence = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_isamaa = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_juri_luik_defence = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_isamaa = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_marina_kaljurand_foreign = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_sde = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_ivari_padar_economic = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_sde = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_katri_raik_interior = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_sde = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_andres_anvelt_intelligence = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_sde = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_sven_mikser_defence = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_sde = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_trivimi_velliste_foreign = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_isamaa = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_mart_helme_foreign = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_ekre = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+            NOT = { has_idea = TFR_EST_minister_mart_helme_interior }
+            NOT = { TFR_EST_person_is_pm_mart_helme = yes }
+        }
+    }
+}
+TFR_EST_can_appoint_martin_helme_economic = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_ekre = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+            NOT = { TFR_EST_person_is_pm_martin_helme = yes }
+        }
+    }
+}
+TFR_EST_can_appoint_alar_laneman_interior = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_ekre = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_ants_frosch_intelligence = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_ekre = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_leo_kunnas_defence = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_ekre = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_jaak_madison_foreign = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_ekre = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_mart_helme_interior = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_ekre = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+            NOT = { has_idea = TFR_EST_minister_mart_helme_foreign }
+            NOT = { TFR_EST_person_is_pm_mart_helme = yes }
+        }
+    }
+}
+TFR_EST_can_appoint_margus_tsahkna_foreign = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_e200 = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_tiit_riisalo_economic = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_e200 = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_igor_taro_interior = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_e200 = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_liisa_ly_pakosta_intelligence = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_e200 = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_kalev_stoicescu_defence = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_e200 = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_tiit_naber_foreign = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_pp = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_kristjan_vanaselja_economic = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_pp = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_siim_valmar_kiisler_interior = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_pp = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_rainer_saks_intelligence = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_pp = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_ilmar_raag_defence = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_pp = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}
+TFR_EST_can_appoint_rene_kokk_economic = {
+    TFR_EST_can_manage_ministers = yes
+    TFR_EST_minister_coalition_ekre = yes
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_minister_one_office_tt
+        AND = {
+            always = yes
+
+        }
+    }
+}

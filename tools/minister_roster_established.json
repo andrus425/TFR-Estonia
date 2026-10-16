@@ -1,0 +1,380 @@
+[
+  {
+    "person": "urmas_paet",
+    "name": "Urmas Paet",
+    "party": "reform",
+    "portfolio": "foreign",
+    "basis": "exactfit",
+    "rationale": "Foreign Minister 2005–2014; Reform Party foreign-policy coordinator in 2020.",
+    "sources": [
+      {
+        "title": "Official biography or historical record: Urmas Paet",
+        "url": "https://www.vm.ee/ministeerium-uudised-ja-kontaktid/valisministeeriumist/valisminister"
+      },
+      {
+        "title": "Official biography or historical record: Urmas Paet",
+        "url": "https://reform.ee/erakond/ajalugu/aasta-2020/"
+      }
+    ]
+  },
+  {
+    "person": "jurgen_ligi",
+    "name": "Jürgen Ligi",
+    "party": "reform",
+    "portfolio": "economic",
+    "basis": "exactfit",
+    "rationale": "Finance Minister 2009–2014; Reform member since 1994. TFR economic portfolio combines economic and fiscal responsibility.",
+    "sources": [
+      {
+        "title": "Official biography or historical record: Jürgen Ligi",
+        "url": "https://www.riigikogu.ee/en/parliament-of-estonia/members-of-the-riigikogu/c0c7bea2-4c5e-4295-9c0f-dca52d602098/J%C3%BCrgen-Ligi/"
+      }
+    ]
+  },
+  {
+    "person": "hanno_pevkur",
+    "name": "Hanno Pevkur",
+    "party": "reform",
+    "portfolio": "interior",
+    "basis": "exactfit",
+    "rationale": "Interior Minister 2014–2016; Reform member since 2000.",
+    "sources": [
+      {
+        "title": "Official biography or historical record: Hanno Pevkur",
+        "url": "https://www.riigikogu.ee/en/parliament-of-estonia/members-of-the-riigikogu/cf42a56a-b91a-4a51-913b-a489305326a2/hanno-pevkur/"
+      }
+    ]
+  },
+  {
+    "person": "eerik_niiles_kross",
+    "name": "Eerik-Niiles Kross",
+    "party": "reform",
+    "portfolio": "intelligence",
+    "basis": "inferred",
+    "rationale": "Government security/intelligence experience and Senior Director for Intelligence Institutions Development in Iraq 2003–2004; Reform member since 2014.",
+    "sources": [
+      {
+        "title": "Official biography or historical record: Eerik-Niiles Kross",
+        "url": "https://www.riigikogu.ee/en/parliament-of-estonia/members-of-the-riigikogu/b2226516-4cd4-4471-b93b-696c40b7a9e2/eerik-niiles-kross/"
+      }
+    ]
+  },
+  {
+    "person": "kalle_laanet",
+    "name": "Kalle Laanet",
+    "party": "reform",
+    "portfolio": "defence",
+    "basis": "exactfit",
+    "rationale": "Defence Minister 2021–2022; former Interior Minister and senior police official. Reform member since 2014, previously Centre 2005–2012. In the 2020 game he is a plausible future defence appointee, not yet the historical incumbent.",
+    "sources": [
+      {
+        "title": "Official biography or historical record: Kalle Laanet",
+        "url": "https://valitsus.ee/kalle-laanet"
+      }
+    ]
+  },
+  {
+    "person": "enn_eesmaa",
+    "name": "Enn Eesmaa",
+    "party": "centre",
+    "portfolio": "foreign",
+    "basis": "inferred",
+    "rationale": "Foreign Affairs Committee chair 2019–2021 and previously 2005–2007; Centre member 2003–2024. A credible Centre foreign-minister appointment, never represented as an actual former Foreign Minister.",
+    "sources": [
+      {
+        "title": "Official biography or historical record: Enn Eesmaa",
+        "url": "https://www.riigikogu.ee/en/pressiteated/foreign-policy-debate-focused-importance-international-regional-cooperation/"
+      },
+      {
+        "title": "Official biography or historical record: Enn Eesmaa",
+        "url": "https://www.riigikogu.ee/wpcms/wp-content/uploads/2024/07/101-biographies-2024.pdf"
+      }
+    ]
+  },
+  {
+    "person": "taavi_aas",
+    "name": "Taavi Aas",
+    "party": "centre",
+    "portfolio": "economic",
+    "basis": "exactfit",
+    "rationale": "Economic Affairs and Infrastructure Minister 2019–2022; Centre member at campaign start.",
+    "sources": [
+      {
+        "title": "Official biography or historical record: Taavi Aas",
+        "url": "https://www.valitsus.ee/taavi-aas"
+      },
+      {
+        "title": "Official biography or historical record: Taavi Aas",
+        "url": "https://www.riigikogu.ee/riigikogu/riigikogu-liikmed/9f3d840c-3a49-43de-8c5d-d1990933b692/taavi-aas/"
+      }
+    ]
+  },
+  {
+    "person": "jaak_aab",
+    "name": "Jaak Aab",
+    "party": "centre",
+    "portfolio": "interior",
+    "basis": "inferred",
+    "rationale": "Public Administration Minister in 2017–2018 and 2019–2020, and former Social Affairs Minister. Administrative experience supports a counterfactual Interior appointment. Centre in the starting timeline; the actual 2024 move to SDE is not projected backwards.",
+    "sources": [
+      {
+        "title": "Official biography or historical record: Jaak Aab",
+        "url": "https://valitsus.static.live.vportal.ee/jaak-aab"
+      },
+      {
+        "title": "Official biography or historical record: Jaak Aab",
+        "url": "https://rk2019.valimised.ee/en/candidates/candidate-1002.html"
+      },
+      {
+        "title": "Official biography or historical record: Jaak Aab",
+        "url": "https://www.riigikogu.ee/en/parliament-of-estonia/members-of-the-riigikogu/6b45cfb5-8a17-481c-b674-80fc00c6cf5d/jaak-aab/"
+      }
+    ]
+  },
+  {
+    "person": "kalle_klandorf",
+    "name": "Kalle Klandorf",
+    "party": "centre",
+    "portfolio": "intelligence",
+    "basis": "inferred",
+    "rationale": "Served in the Republic's Special Service and police 1991–2005; Centre candidate and Tallinn deputy mayor. This is a security-background inference, not a historical cabinet office.",
+    "sources": [
+      {
+        "title": "Official biography or historical record: Kalle Klandorf",
+        "url": "https://www.tallinn.ee/et/uudis/tallinna-soojust-hakkab-juhtima-kalle-klandorf"
+      },
+      {
+        "title": "Official biography or historical record: Kalle Klandorf",
+        "url": "https://vana.keskerakond.ee/et/meedia/2592-tallinna-suurimas-ringkonnas-veab-keskerakonna-nimekirja-mihhail-k%C3%B5lvart.html"
+      }
+    ]
+  },
+  {
+    "person": "tiit_terik",
+    "name": "Tiit Terik",
+    "party": "centre",
+    "portfolio": "defence",
+    "basis": "inferred",
+    "rationale": "National Defence Committee member in 2016; Defence League member since 2010 and graduate of the Higher National Defence Course. Centre member since 2007. A plausible defence appointment, not a real former Defence Minister.",
+    "sources": [
+      {
+        "title": "Official biography or historical record: Tiit Terik",
+        "url": "https://www.riigikogu.ee/en/pressiteated/hannes-hanso-is-the-new-chairman-of-the-national-defence-committee/"
+      },
+      {
+        "title": "Official biography or historical record: Tiit Terik",
+        "url": "https://www.riigikogu.ee/wpcms/wp-content/uploads/2014/11/101_biograhies_2018juuni_engl.pdf"
+      }
+    ]
+  },
+  {
+    "person": "urmas_reinsalu",
+    "name": "Urmas Reinsalu",
+    "party": "isamaa",
+    "portfolio": "foreign",
+    "basis": "exactfit",
+    "rationale": "Foreign Minister 2019–2021; Isamaa's historical starting incumbent in this portfolio.",
+    "sources": [
+      {
+        "title": "Official biography or historical record: Urmas Reinsalu",
+        "url": "https://valitsus.ee/vabariigi-valitsuse-50-koosseis"
+      },
+      {
+        "title": "Official biography or historical record: Urmas Reinsalu",
+        "url": "https://www.vm.ee/ministeerium-uudised-ja-kontaktid/valisministeeriumist/valisminister"
+      }
+    ]
+  },
+  {
+    "person": "sven_sester",
+    "name": "Sven Sester",
+    "party": "isamaa",
+    "portfolio": "economic",
+    "basis": "exactfit",
+    "rationale": "Finance Minister 2015–2017 and Economic Affairs Committee chair 2017–2021; Res Publica/Isamaa member since 1999.",
+    "sources": [
+      {
+        "title": "Official biography or historical record: Sven Sester",
+        "url": "https://www.riigikogu.ee/wpcms/wp-content/uploads/2022/01/101_biograafiat2022_jan_eng.pdf"
+      },
+      {
+        "title": "Official biography or historical record: Sven Sester",
+        "url": "https://www.riigikogu.ee/en/sitting-reviews/sester-replied-to-interpellation-concerning-redundancy-in-area-of-administration-of-ministry-of-finance/"
+      }
+    ]
+  },
+  {
+    "person": "marko_pomerants",
+    "name": "Marko Pomerants",
+    "party": "isamaa",
+    "portfolio": "interior",
+    "basis": "exactfit",
+    "rationale": "Interior Minister 2009–2011; Res Publica/IRL/Isamaa member since 2002. Preferable to Ken-Marti Vaher, who withdrew from parliamentary politics in 2017.",
+    "sources": [
+      {
+        "title": "Official biography or historical record: Marko Pomerants",
+        "url": "https://www.riigikogu.ee/wpcms/wp-content/uploads/2015/02/101_biographies_2019.pdf"
+      }
+    ]
+  },
+  {
+    "person": "raivo_aeg",
+    "name": "Raivo Aeg",
+    "party": "isamaa",
+    "portfolio": "intelligence",
+    "basis": "inferred",
+    "rationale": "Internal Security Service Director General 2008–2013, Police Director General 2005–2008, intelligence oversight committee chair from 2016; Isamaa/IRL member since 2014 and Justice Minister at campaign start.",
+    "sources": [
+      {
+        "title": "Official biography or historical record: Raivo Aeg",
+        "url": "https://www.riigikogu.ee/riigikogu/riigikogu-liikmed/bec6cb23-f13e-411b-9393-a3e4fb59378b/raivo-aeg/"
+      },
+      {
+        "title": "Official biography or historical record: Raivo Aeg",
+        "url": "https://www.riigiteataja.ee/akt/12970469"
+      },
+      {
+        "title": "Official biography or historical record: Raivo Aeg",
+        "url": "https://valitsus.ee/vabariigi-valitsuse-50-koosseis"
+      }
+    ]
+  },
+  {
+    "person": "juri_luik",
+    "name": "Jüri Luik",
+    "party": "isamaa",
+    "portfolio": "defence",
+    "basis": "exactfit",
+    "rationale": "Defence Minister at campaign start; 2019 Isamaa European election candidate with extensive NATO and diplomatic experience.",
+    "sources": [
+      {
+        "title": "Official biography or historical record: Jüri Luik",
+        "url": "https://isamaa.ee/ep_candidates/"
+      },
+      {
+        "title": "Official biography or historical record: Jüri Luik",
+        "url": "https://kaitseministeerium.ee/uudised/uus-kaitseministeeriumi-arengukava-tostab-oluliselt-lahinguvoimet-ning-kaitsevalmidust"
+      },
+      {
+        "title": "Official biography or historical record: Jüri Luik",
+        "url": "https://valitsus.ee/vabariigi-valitsuse-50-koosseis"
+      }
+    ]
+  },
+  {
+    "person": "marina_kaljurand",
+    "name": "Marina Kaljurand",
+    "party": "sde",
+    "portfolio": "foreign",
+    "basis": "exactfit",
+    "rationale": "Foreign Minister 2015–2016; official SDE European election candidate and elected member in 2019. Her earlier non-party ministerial tenure does not prevent her being an SDE appointee from 2020.",
+    "sources": [
+      {
+        "title": "Official biography or historical record: Marina Kaljurand",
+        "url": "https://www.vm.ee/ministeerium-uudised-ja-kontaktid/valisministeeriumist/valisminister"
+      },
+      {
+        "title": "Official biography or historical record: Marina Kaljurand",
+        "url": "https://ep2019.valimised.ee/en/candidates/party-SDE-candidates.html"
+      },
+      {
+        "title": "Official biography or historical record: Marina Kaljurand",
+        "url": "https://ep2019.valimised.ee/en/elected-members/acquired-mandates.html"
+      }
+    ]
+  },
+  {
+    "person": "ivari_padar",
+    "name": "Ivari Padar",
+    "party": "sde",
+    "portfolio": "economic",
+    "basis": "exactfit",
+    "rationale": "Finance Minister 2007–2009 and former Agriculture Minister; Mõõdukad/SDE member since 1999.",
+    "sources": [
+      {
+        "title": "Official biography or historical record: Ivari Padar",
+        "url": "https://www.riigikogu.ee/riigikogu/riigikogu-liikmed/56240b7a-f393-479e-8fa4-8267be56d125/ivari-padar/"
+      },
+      {
+        "title": "Official biography or historical record: Ivari Padar",
+        "url": "https://www.riigiteataja.ee/akt/307022011001"
+      }
+    ]
+  },
+  {
+    "person": "katri_raik",
+    "name": "Katri Raik",
+    "party": "sde",
+    "portfolio": "interior",
+    "basis": "exactfit",
+    "rationale": "Interior Minister 2018–2019 and former Estonian Academy of Security Services rector; SDE member since September 2018, formerly Res Publica/IRL until 2017.",
+    "sources": [
+      {
+        "title": "Official biography or historical record: Katri Raik",
+        "url": "https://www.riigikogu.ee/wpcms/wp-content/uploads/2015/02/101_biographies_2019_june_eng.pdf"
+      },
+      {
+        "title": "Official biography or historical record: Katri Raik",
+        "url": "https://ariregister.rik.ee/eng/political_party/member_history/2000002649"
+      }
+    ]
+  },
+  {
+    "person": "andres_anvelt",
+    "name": "Andres Anvelt",
+    "party": "sde",
+    "portfolio": "intelligence",
+    "basis": "inferred",
+    "rationale": "Central Criminal Police director 2002–2003, security adviser to Defence Forces commander 2007–2011, Justice Minister 2014–2015 and later Interior Minister; SDE member in the starting timeline.",
+    "sources": [
+      {
+        "title": "Official biography or historical record: Andres Anvelt",
+        "url": "https://www.riigikogu.ee/wpcms/wp-content/uploads/2014/11/101_biograhies_2018juuni_engl.pdf"
+      },
+      {
+        "title": "Official biography or historical record: Andres Anvelt",
+        "url": "https://www.riigiteataja.ee/akt/324112016004.pdf"
+      }
+    ]
+  },
+  {
+    "person": "sven_mikser",
+    "name": "Sven Mikser",
+    "party": "sde",
+    "portfolio": "defence",
+    "basis": "exactfit",
+    "rationale": "Defence Minister 2002–2003 and 2014–2015; SDE member since 2005 (previously Centre). Former NATO Parliamentary Assembly vice-president and defence committee rapporteur.",
+    "sources": [
+      {
+        "title": "Official biography or historical record: Sven Mikser",
+        "url": "https://www.riigikogu.ee/wpcms/wp-content/uploads/2014/11/101_biograhies_2018juuni_engl.pdf"
+      },
+      {
+        "title": "Official biography or historical record: Sven Mikser",
+        "url": "https://www.sotsid.ee/erakond/ajalugu/"
+      }
+    ]
+  },
+  {
+    "person": "trivimi_velliste",
+    "name": "Trivimi Velliste",
+    "party": "isamaa",
+    "portfolio": "foreign",
+    "basis": "exactfit",
+    "rationale": "Foreign Minister from October 1992 to January 1994 and Estonia's ambassador to the United Nations in 1994-1998. His parliamentary biography records Isamaa/IRL affiliation since 1992, and he stood on Isamaa's 2019 parliamentary list. A return to cabinet in the alternate timeline supplies a qualified foreign-minister alternative when Urmas Reinsalu is prime minister; it does not imply a historical ministerial appointment in 2020.",
+    "sources": [
+      {
+        "title": "Official parliamentary biography of Trivimi Velliste",
+        "url": "https://www.riigikogu.ee/riigikogu/riigikogu-liikmed/5aa42e57-52c4-4fde-9077-5c917978d64d/trivimi-velliste/"
+      },
+      {
+        "title": "Foreign Ministry historical register of foreign ministers",
+        "url": "https://vm.ee/ministeerium-uudised-ja-kontaktid/valisministeeriumist/valisminister"
+      },
+      {
+        "title": "Isamaa's 2019 parliamentary election national list",
+        "url": "https://isamaa.ee/yldnimekiri/"
+      }
+    ]
+  }
+]

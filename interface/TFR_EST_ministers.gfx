@@ -1,0 +1,41 @@
+# Existing TFR generic portraits; no third-party portrait assets redistributed.
+spriteTypes = {
+    spriteType = { name = "GFX_idea_TFR_EST_person_urmas_paet" texturefile = "gfx/leaders/Europe/politician1.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_jurgen_ligi" texturefile = "gfx/leaders/Europe/politician2.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_hanno_pevkur" texturefile = "gfx/leaders/Europe/politician3.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_eerik_niiles_kross" texturefile = "gfx/leaders/Europe/politician4.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_kalle_laanet" texturefile = "gfx/leaders/Europe/politician5.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_enn_eesmaa" texturefile = "gfx/leaders/Europe/politician6.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_taavi_aas" texturefile = "gfx/leaders/Europe/politician7.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_jaak_aab" texturefile = "gfx/leaders/Europe/politician8.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_kalle_klandorf" texturefile = "gfx/leaders/Europe/politician9.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_tiit_terik" texturefile = "gfx/leaders/Europe/politician10.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_urmas_reinsalu" texturefile = "gfx/leaders/Europe/politician11.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_sven_sester" texturefile = "gfx/leaders/Europe/politician12.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_marko_pomerants" texturefile = "gfx/leaders/Europe/politician13.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_raivo_aeg" texturefile = "gfx/leaders/Europe/politician14.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_juri_luik" texturefile = "gfx/leaders/Europe/politician15.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_marina_kaljurand" texturefile = "gfx/leaders/Europe/politician_female1.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_ivari_padar" texturefile = "gfx/leaders/Europe/politician17.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_katri_raik" texturefile = "gfx/leaders/Europe/politician_female3.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_andres_anvelt" texturefile = "gfx/leaders/Europe/politician19.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_sven_mikser" texturefile = "gfx/leaders/Europe/politician20.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_trivimi_velliste" texturefile = "gfx/leaders/Europe/politician21.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_mart_helme" texturefile = "gfx/leaders/Europe/politician22.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_martin_helme" texturefile = "gfx/leaders/Europe/politician23.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_alar_laneman" texturefile = "gfx/leaders/Europe/politician24.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_ants_frosch" texturefile = "gfx/leaders/Europe/politician25.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_leo_kunnas" texturefile = "gfx/leaders/Europe/politician26.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_jaak_madison" texturefile = "gfx/leaders/Europe/politician27.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_margus_tsahkna" texturefile = "gfx/leaders/Europe/politician28.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_tiit_riisalo" texturefile = "gfx/leaders/Europe/politician29.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_igor_taro" texturefile = "gfx/leaders/Europe/politician30.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_liisa_ly_pakosta" texturefile = "gfx/leaders/Europe/politician_female1.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_kalev_stoicescu" texturefile = "gfx/leaders/Europe/politician32.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_tiit_naber" texturefile = "gfx/leaders/Europe/politician33.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_kristjan_vanaselja" texturefile = "gfx/leaders/Europe/politician1.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_siim_valmar_kiisler" texturefile = "gfx/leaders/Europe/politician2.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_rainer_saks" texturefile = "gfx/leaders/Europe/politician3.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_ilmar_raag" texturefile = "gfx/leaders/Europe/politician4.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_person_rene_kokk" texturefile = "gfx/leaders/Europe/politician5.png" legacy_lazy_load = no }
+}

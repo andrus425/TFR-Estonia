@@ -66,10 +66,13 @@ TFR_EST_assign_election_mandate = {
     if = { limit = { check_variable = { var = TFR_EST_seats_sde value = TFR_EST_largest_elected_party compare = greater_than } } set_temp_variable = { var = TFR_EST_largest_elected_party value = TFR_EST_seats_sde } set_variable = { TFR_EST_mandate_party = 5 } }
     if = { limit = { check_variable = { var = TFR_EST_seats_e200 value = TFR_EST_largest_elected_party compare = greater_than } } set_temp_variable = { var = TFR_EST_largest_elected_party value = TFR_EST_seats_e200 } set_variable = { TFR_EST_mandate_party = 6 } }
     if = { limit = { check_variable = { var = TFR_EST_seats_pp value = TFR_EST_largest_elected_party compare = greater_than } } set_temp_variable = { var = TFR_EST_largest_elected_party value = TFR_EST_seats_pp } set_variable = { TFR_EST_mandate_party = 7 } }
+    # Keep outgoing ministers as caretakers during post-election negotiations.
+    set_country_flag = TFR_EST_caretaker
     TFR_EST_clear_coalition = yes
     TFR_EST_repair_leadership_mandate = yes
     TFR_EST_recount_confidence = yes
     set_country_flag = TFR_EST_electoral_handover
     clr_country_flag = TFR_EST_scripted_handover
     TFR_EST_enter_caretaker = yes
+    TFR_EST_begin_minister_formation = yes
 }

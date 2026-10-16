@@ -1,0 +1,768 @@
+# Generated native TFR cabinet candidates. Head minister is deliberately absent.
+ideas = {
+    foreign_minister = {
+        TFR_EST_minister_urmas_paet_foreign = {
+            picture = TFR_EST_person_urmas_paet
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_reform value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_urmas_paet_foreign = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_reform TFR_EST_minister_trait_diplomat }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } }
+            }
+        }
+        TFR_EST_minister_enn_eesmaa_foreign = {
+            picture = TFR_EST_person_enn_eesmaa
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_centre value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_enn_eesmaa_foreign = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_centre TFR_EST_minister_trait_cooperation }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } }
+            }
+        }
+        TFR_EST_minister_urmas_reinsalu_foreign = {
+            picture = TFR_EST_person_urmas_reinsalu
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_isamaa value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_urmas_reinsalu_foreign = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_isamaa TFR_EST_minister_trait_sovereignty }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } }
+            }
+        }
+        TFR_EST_minister_marina_kaljurand_foreign = {
+            picture = TFR_EST_person_marina_kaljurand
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_sde value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_marina_kaljurand_foreign = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_sde TFR_EST_minister_trait_diplomat }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } }
+            }
+        }
+        TFR_EST_minister_trivimi_velliste_foreign = {
+            picture = TFR_EST_person_trivimi_velliste
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_isamaa value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_trivimi_velliste_foreign = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_isamaa TFR_EST_minister_trait_diplomat }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } }
+            }
+        }
+        TFR_EST_minister_mart_helme_foreign = {
+            picture = TFR_EST_person_mart_helme
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_ekre value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_mart_helme_foreign = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_ekre TFR_EST_minister_trait_sovereignty }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } }
+            }
+        }
+        TFR_EST_minister_jaak_madison_foreign = {
+            picture = TFR_EST_person_jaak_madison
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_ekre value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_jaak_madison_foreign = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_ekre TFR_EST_minister_trait_sovereignty }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } }
+            }
+        }
+        TFR_EST_minister_margus_tsahkna_foreign = {
+            picture = TFR_EST_person_margus_tsahkna
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_e200 value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_margus_tsahkna_foreign = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_e200 TFR_EST_minister_trait_cooperation }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } }
+            }
+        }
+        TFR_EST_minister_tiit_naber_foreign = {
+            picture = TFR_EST_person_tiit_naber
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_pp value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_tiit_naber_foreign = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_pp TFR_EST_minister_trait_diplomat }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } }
+            }
+        }
+    }
+    economic_minister = {
+        TFR_EST_minister_jurgen_ligi_economic = {
+            picture = TFR_EST_person_jurgen_ligi
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_reform value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_jurgen_ligi_economic = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_reform TFR_EST_minister_trait_fiscal }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } }
+            }
+        }
+        TFR_EST_minister_taavi_aas_economic = {
+            picture = TFR_EST_person_taavi_aas
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_centre value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_taavi_aas_economic = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_centre TFR_EST_minister_trait_regional }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } }
+            }
+        }
+        TFR_EST_minister_sven_sester_economic = {
+            picture = TFR_EST_person_sven_sester
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_isamaa value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_sven_sester_economic = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_isamaa TFR_EST_minister_trait_fiscal }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } }
+            }
+        }
+        TFR_EST_minister_ivari_padar_economic = {
+            picture = TFR_EST_person_ivari_padar
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_sde value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_ivari_padar_economic = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_sde TFR_EST_minister_trait_regional }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } }
+            }
+        }
+        TFR_EST_minister_martin_helme_economic = {
+            picture = TFR_EST_person_martin_helme
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_ekre value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_martin_helme_economic = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_ekre TFR_EST_minister_trait_fiscal }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } }
+            }
+        }
+        TFR_EST_minister_tiit_riisalo_economic = {
+            picture = TFR_EST_person_tiit_riisalo
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_e200 value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_tiit_riisalo_economic = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_e200 TFR_EST_minister_trait_enterprise }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } }
+            }
+        }
+        TFR_EST_minister_kristjan_vanaselja_economic = {
+            picture = TFR_EST_person_kristjan_vanaselja
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_pp value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_kristjan_vanaselja_economic = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_pp TFR_EST_minister_trait_enterprise }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } }
+            }
+        }
+        TFR_EST_minister_rene_kokk_economic = {
+            picture = TFR_EST_person_rene_kokk
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_ekre value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_rene_kokk_economic = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_ekre TFR_EST_minister_trait_regional }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } }
+            }
+        }
+    }
+    interior_minister = {
+        TFR_EST_minister_hanno_pevkur_interior = {
+            picture = TFR_EST_person_hanno_pevkur
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_reform value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_hanno_pevkur_interior = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_reform TFR_EST_minister_trait_administration }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } }
+            }
+        }
+        TFR_EST_minister_jaak_aab_interior = {
+            picture = TFR_EST_person_jaak_aab
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_centre value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_jaak_aab_interior = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_centre TFR_EST_minister_trait_administration }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } }
+            }
+        }
+        TFR_EST_minister_marko_pomerants_interior = {
+            picture = TFR_EST_person_marko_pomerants
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_isamaa value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_marko_pomerants_interior = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_isamaa TFR_EST_minister_trait_administration }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } }
+            }
+        }
+        TFR_EST_minister_katri_raik_interior = {
+            picture = TFR_EST_person_katri_raik
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_sde value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_katri_raik_interior = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_sde TFR_EST_minister_trait_civic }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } }
+            }
+        }
+        TFR_EST_minister_alar_laneman_interior = {
+            picture = TFR_EST_person_alar_laneman
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_ekre value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_alar_laneman_interior = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_ekre TFR_EST_minister_trait_emergency }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } }
+            }
+        }
+        TFR_EST_minister_mart_helme_interior = {
+            picture = TFR_EST_person_mart_helme
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_ekre value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_mart_helme_interior = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_ekre TFR_EST_minister_trait_emergency }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } }
+            }
+        }
+        TFR_EST_minister_igor_taro_interior = {
+            picture = TFR_EST_person_igor_taro
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_e200 value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_igor_taro_interior = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_e200 TFR_EST_minister_trait_emergency }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } }
+            }
+        }
+        TFR_EST_minister_siim_valmar_kiisler_interior = {
+            picture = TFR_EST_person_siim_valmar_kiisler
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_pp value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_siim_valmar_kiisler_interior = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_pp TFR_EST_minister_trait_administration }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } }
+            }
+        }
+    }
+    intelligence_minister = {
+        TFR_EST_minister_eerik_niiles_kross_intelligence = {
+            picture = TFR_EST_person_eerik_niiles_kross
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_reform value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_eerik_niiles_kross_intelligence = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_reform TFR_EST_minister_trait_intelligence }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } }
+            }
+        }
+        TFR_EST_minister_kalle_klandorf_intelligence = {
+            picture = TFR_EST_person_kalle_klandorf
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_centre value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_kalle_klandorf_intelligence = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_centre TFR_EST_minister_trait_counterintelligence }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } }
+            }
+        }
+        TFR_EST_minister_raivo_aeg_intelligence = {
+            picture = TFR_EST_person_raivo_aeg
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_isamaa value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_raivo_aeg_intelligence = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_isamaa TFR_EST_minister_trait_counterintelligence }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } }
+            }
+        }
+        TFR_EST_minister_andres_anvelt_intelligence = {
+            picture = TFR_EST_person_andres_anvelt
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_sde value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_andres_anvelt_intelligence = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_sde TFR_EST_minister_trait_counterintelligence }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } }
+            }
+        }
+        TFR_EST_minister_ants_frosch_intelligence = {
+            picture = TFR_EST_person_ants_frosch
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_ekre value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_ants_frosch_intelligence = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_ekre TFR_EST_minister_trait_intelligence }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } }
+            }
+        }
+        TFR_EST_minister_liisa_ly_pakosta_intelligence = {
+            picture = TFR_EST_person_liisa_ly_pakosta
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_e200 value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_liisa_ly_pakosta_intelligence = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_e200 TFR_EST_minister_trait_oversight }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } }
+            }
+        }
+        TFR_EST_minister_rainer_saks_intelligence = {
+            picture = TFR_EST_person_rainer_saks
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_pp value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_rainer_saks_intelligence = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_pp TFR_EST_minister_trait_intelligence }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } }
+            }
+        }
+    }
+    theorist_minister = {
+        TFR_EST_minister_kalle_laanet_defence = {
+            picture = TFR_EST_person_kalle_laanet
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_reform value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_kalle_laanet_defence = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_reform TFR_EST_minister_trait_professional }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } }
+            }
+        }
+        TFR_EST_minister_tiit_terik_defence = {
+            picture = TFR_EST_person_tiit_terik
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_centre value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_tiit_terik_defence = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_centre TFR_EST_minister_trait_territorial }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } }
+            }
+        }
+        TFR_EST_minister_juri_luik_defence = {
+            picture = TFR_EST_person_juri_luik
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_isamaa value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_juri_luik_defence = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_isamaa TFR_EST_minister_trait_allied }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } }
+            }
+        }
+        TFR_EST_minister_sven_mikser_defence = {
+            picture = TFR_EST_person_sven_mikser
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_sde value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_sven_mikser_defence = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_sde TFR_EST_minister_trait_allied }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } }
+            }
+        }
+        TFR_EST_minister_leo_kunnas_defence = {
+            picture = TFR_EST_person_leo_kunnas
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_ekre value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_leo_kunnas_defence = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_ekre TFR_EST_minister_trait_territorial }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } }
+            }
+        }
+        TFR_EST_minister_kalev_stoicescu_defence = {
+            picture = TFR_EST_person_kalev_stoicescu
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_e200 value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_kalev_stoicescu_defence = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_e200 TFR_EST_minister_trait_allied }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } }
+            }
+        }
+        TFR_EST_minister_ilmar_raag_defence = {
+            picture = TFR_EST_person_ilmar_raag
+            allowed = { original_tag = EST }
+            visible = {
+                TFR_EST_constitutional_executive = yes
+                check_variable = { var = TFR_EST_active_pp value = 1 compare = equals }
+            }
+            available = { TFR_EST_can_appoint_ilmar_raag_defence = yes }
+            allowed_to_remove = { TFR_EST_can_manage_ministers = yes }
+            cost = 100
+            removal_cost = -1
+            traits = { TFR_EST_minister_party_pp TFR_EST_minister_trait_territorial }
+            on_add = { hidden_effect = { TFR_EST_reconcile_ministers = yes } }
+            ai_will_do = {
+                base = 2
+                modifier = { factor = 4 has_idea = TFR_EST_cabinet_formation }
+                modifier = { factor = 2 check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } }
+            }
+        }
+    }
+    country = {
+        TFR_EST_cabinet_formation = {
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            removal_cost = -1
+            modifier = {
+                foreign_minister_cost_factor = -0.8
+                economic_minister_cost_factor = -0.8
+                interior_minister_cost_factor = -0.8
+                intelligence_minister_cost_factor = -0.8
+                theorist_minister_cost_factor = -0.8
+            }
+        }
+    }
+}

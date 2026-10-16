@@ -8,8 +8,8 @@ The installed executable reports **HOI4 Operation Postern 1.19.3.0.c01a**.
 
 | Check | Observed result |
 |---|---|
-| `tools/validate_mod.py` | 72 additive/override script files; 235 focuses, 59 events, 58 decisions, 1,177 English localization keys; **0 errors** |
-| `python -m unittest discover -s tests -v` | **287 tests passed**, including 500 randomized election allocations checked against an independent integer reference |
+| `tools/validate_mod.py` | 77 additive/override script files; 235 focuses, 59 events, 58 decisions, 1,310 English localization keys; **0 errors** |
+| `python -m unittest discover -s tests -v` | **321 tests passed**, including 500 randomized election allocations checked against an independent integer reference |
 | `tools/test_occupation_compatibility.py` | **10 structural regression tests passed** |
 | `tools/patch_tfr_compatibility.py --check` | **11 reproducible overrides and 627 audited changes verified**: 620 settlement safeguards and seven head-of-government selectors |
 | `tools/native_script_interface.py --check` | **0 files with legacy argument-block interfaces** |
@@ -17,6 +17,7 @@ The installed executable reports **HOI4 Operation Postern 1.19.3.0.c01a**.
 | Retained-Ratas generator | Twenty shared focuses, governing/visibility/completion triggers, rewards, local crisis controller, one notice and 63 English keys reproduce exactly in `--check` mode |
 | Kallas generator | Twenty shared focuses, governing/visibility/completion triggers, rewards, recovered-case bypasses and 60 English keys reproduce exactly in `--check` mode |
 | Energy and preview generators | Actual parent Oil Crash integration, old-penalty migration, 49 display-only preview definitions and 98 aliases reproduce exactly in `--check` mode |
+| Minister generator | 39 candidacies, 38 people, 35 party/portfolio combinations, 15 professional traits, lifecycle, timed discount, localization, portrait references and sourced register reproduce exactly in `--check` mode |
 | Portable packaging tests | Deterministic archive, exclusions, portable descriptors and metadata rejection passed as part of the full source suite |
 
 The tests cover historical seats and confidence, threshold/tie behavior, invalid
@@ -177,6 +178,42 @@ weaker external tiers, missing/duplicate-tier repair, repeat updates, reconstruc
 saved state, foreign/uninitialized guards and one-time reversal of the earlier
 custom penalties without losing reforms. Integrated rewards verify Ratas's
 1→2→3→4→5→removed progression and Kallas's 1→2→4→5→removed progression.
+
+## Coalition minister behavior
+
+Thirty-four minister tests exercise the actual generated cabinet definitions
+and parliamentary lifecycle. All seven parties retain a candidate for every
+portfolio even while their own leader holds the premiership. Native definitions
+use the five TFR slots, the normal 100 PP price, positive country traits and
+independent party membership. Tests distinguish coalition from confidence and
+supply, including parties sharing an ideology, inactive parties and caretaker
+governments. The existing PM tokens remain unappointable and unremovable.
+
+The suite checks one-time historical initialization, late-install/alternate-cabinet
+guards, preserving chosen ministers and empty slots, no daily reappointment,
+immediate party-withdrawal cleanup, outgoing caretaker continuity and removal
+after confirmation of a new coalition. A full election→caretaker→sole-Reform
+confirmation sequence exercises actual hooks. Mart Helme's two portfolios have
+reciprocal availability exclusions and both are removed/unavailable while he is
+PM. Native `on_add` contains repeat-safe defensive repair for forced duplicates.
+
+Valid elections grant a 90-day timed spirit with exactly five −80% minister-cost
+factors. Invalid polling, ordinary government changes and repeated repairs do
+not create a discount. Occupation clears every new portfolio and the window;
+unrelated parent spirits survive. The small test UI helper models replacement
+within one native slot and executes the authored `on_add`; it does not emulate
+political-screen clicking, PP purchases or timed-idea expiration. Those remain
+native engine and manual acceptance concerns.
+
+The alternatives revision adds Trivimi Velliste and Rene Kokk and seven regressions
+covering the two extra nominees, default-PM compatibility and explicit personal
+identity. Reinsalu is eligible under Seeder and Martin under Mart; markers for
+their own future authored premiership exclude that particular person while
+preserving a suitable alternative. A Martin marker supersedes Mart's default
+personal exclusion. Wrong-party markers and occupation clear personal metadata;
+caretakers, ordinary confidence recovery and invalid confirmation preserve it.
+Successful new electoral/scripted mandates clear outgoing metadata. No current
+route sets these future markers or changes its PM identity.
 
 ## Native engine observations
 
@@ -384,6 +421,55 @@ asset fix. Reports are `test-output/compact-engine-comparison.json` and
 stopped and the original mod/DLC configuration was verified restored byte-for-byte.
 No normal campaign or rendered tooltip inspection was performed.
 
+The accepted minister run is captured under
+`test-output/engine-estonia-qa-20261016-131021/`. It reached the frontend in
+approximately **216 seconds** and passed **all 72 native assertions**. The
+eighteen new cases cover historical cabinet initialization, real coalition
+eligibility, duplicate offices, user vacancies, PM/portfolio exclusion, trait
+application, party withdrawal, caretaker behavior, invalid/valid election costs,
+all seven parties' full cabinets and occupation cleanup. Native modifier reads
+measured **+0.04 stability** from Katri Raik's trait and **−0.50** in each of the
+five minister-cost factors after the valid election.
+
+The initial minister fixture reached the frontend but passed 70/72 cases: it
+read stale idea-modifier values during country-history execution and queried
+unsynchronized dynamic cost tokens. The corrected fixture refreshes modifiers
+before/after its comparisons and declares the five query tokens only in the
+ignored QA overlay. No gameplay buff, appointment rule or discount was changed
+to make the numerical tests pass. The original failed capture remains recorded
+under `test-output/engine-estonia-qa-20261016-130451/` and is not an accepted run.
+
+The accepted error log has **2,015 normalized unique parent messages**, **zero
+new messages** against both the pinned parent-only baseline and the previous
+development run, and **zero Estonia-prefixed errors**. Eight foreign missing-flag
+messages did not appear in this capture; that absence is not attributed to an
+asset fix. Reports are `test-output/ministers-engine-comparison.json` and
+`test-output/ministers-previous-development-comparison.json`. The owned process
+stopped and the original mod/DLC configuration was verified restored byte-for-byte.
+This verifies the native cost factors and trait modifiers; political-screen
+clicks, PP purchases and natural expiration of the 90-day window remain manual
+campaign checks, alongside rendered portraits and tooltips.
+
+The alternatives/80% revision is captured under
+`test-output/engine-estonia-qa-20261016-133716/`. It reached the frontend in
+approximately **261 seconds** and passed **all 74 native assertions**. All five
+appointment-cost reads now measure **−0.80**. Two additional cases explicitly
+mark Reinsalu and Martin as future authored incumbents, verify that the incumbent
+cannot also hold a portfolio, and confirm that Velliste/Kokk remain eligible.
+The Martin case also verifies that Mart's ordinary minister candidacy is restored
+under Martin's personal identity. No current route changes PM through these tests.
+
+The capture has **2,032 normalized unique messages** and **zero Estonia-prefixed
+errors**. Nine additional messages against the pinned parent-only baseline name
+the same missing foreign medium nationalist flags recorded in earlier accepted
+development runs (GBA, KHA, LBV, ORO, PAP, SID, SPM, TOS and VGE). The previous
+minister capture omitted several foreign-flag loads, so its direct comparison
+contains seventeen additional foreign-flag messages. No candidate, trait, PM
+identity or cost-factor errors occur. Reports are
+`test-output/minister-alternatives-engine-comparison.json` and
+`test-output/minister-alternatives-previous-comparison.json`. The original mod/DLC
+configuration was verified restored byte-for-byte after the owned process stopped.
+
 The QA overlay is not shipped or enabled in ordinary play. It executes arithmetic
 within a single hidden-effect context during frontend history construction.
 Temporary input and consumer statements must remain in the same context.
@@ -418,6 +504,8 @@ interactive campaign observations were not performed.
   successor focuses before the election, including occupation/restoration with
   native opening completion IDs lost and persistent policy markers retained.
 - Long-term economy, preparation, military growth and occupation balance.
+- Native minister-menu purchases, trait tooltips, generic portraits, vacancy
+  selection, cost display, 90-day expiry and save/reload during cabinet formation.
 - Custom portraits for characters currently using generic likenesses, plus actual
   campaign screenshots for a public Workshop release.
 

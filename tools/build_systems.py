@@ -60,6 +60,7 @@ def main():
             set_variable = { TFR_EST_cohesion_weekly = 0 }
             set_variable = { TFR_EST_readiness_weekly = 0 }
             TFR_EST_initialize_parliament = yes
+            TFR_EST_initialize_ministers = yes
             TFR_EST_refresh_meters = yes
             TFR_EST_initialize_country_modifiers = yes
             TFR_EST_reconcile_campaign = yes
@@ -241,6 +242,8 @@ def main():
                     limit = { has_country_flag = TFR_EST_initialized }
                     TFR_EST_reconcile_occupation = yes
                     TFR_EST_reconcile_campaign = yes
+                    TFR_EST_initialize_ministers = yes
+                    TFR_EST_reconcile_ministers = yes
                     TFR_EST_initialize_country_modifiers = yes
                     TFR_EST_covid_tick = yes
                     TFR_EST_opening_tick = yes

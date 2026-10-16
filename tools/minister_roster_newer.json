@@ -1,0 +1,224 @@
+[
+  {
+    "person": "mart_helme",
+    "name": "Mart Helme",
+    "party": "ekre",
+    "portfolio": "foreign",
+    "basis": "inferred",
+    "rationale": "Estonia's ambassador to Russia in 1995-1999 and EKRE leader at the campaign start. An inferred foreign-minister appointment based on a real diplomatic career; not a claim that he served as foreign minister. Exclude while he is prime minister or occupies the interior portfolio.",
+    "sources": [
+      {"title": "Presidential appointment of Mart Helme as ambassador to the Russian Federation", "url": "https://www.riigiteataja.ee/akt/12983516.pdf"},
+      {"title": "Government historical cabinet register", "url": "https://valitsus.ee/peaminister-ministrid/varasemad-valitsused"}
+    ]
+  },
+  {
+    "person": "martin_helme",
+    "name": "Martin Helme",
+    "party": "ekre",
+    "portfolio": "economic",
+    "basis": "exactfit",
+    "rationale": "The actual finance minister in Ratas's second cabinet, 2019-2021. TFR's economic portfolio combines economic and financial administration. His historical EKRE affiliation is retained in the alternate timeline.",
+    "sources": [
+      {"title": "Government historical cabinet register", "url": "https://valitsus.ee/peaminister-ministrid/varasemad-valitsused"},
+      {"title": "Government press conference, 24 September 2019", "url": "https://www.valitsus.ee/uudised/vabariigi-valitsuse-pressikonverentsi-stenogramm-24-september-2019"}
+    ]
+  },
+  {
+    "person": "alar_laneman",
+    "name": "Alar Laneman",
+    "party": "ekre",
+    "portfolio": "interior",
+    "basis": "exactfit",
+    "rationale": "The actual EKRE-appointed interior minister from 18 November 2020 to January 2021; a former Defence Forces chief of staff and brigadier general. This alternative permits a full EKRE cabinet when Mart Helme is prime minister. Do not automatically import his 2024 party departure into TFR's alternate timeline.",
+    "sources": [
+      {"title": "Alar Laneman takes office as Minister of the Interior, 18 November 2020", "url": "https://valitsus.ee/uudised/siseminister-alar-laneman-astus-ametisse"},
+      {"title": "Interior Ministry biography of Alar Laneman", "url": "https://www.siseministeerium.ee/ministeerium-uudised-ja-kontakt/ministeerium-ja-minister/siseminister"}
+    ]
+  },
+  {
+    "person": "ants_frosch",
+    "name": "Ants Frosch",
+    "party": "ekre",
+    "portfolio": "intelligence",
+    "basis": "exactfit",
+    "rationale": "Director General of Estonia's Information Board/Foreign Intelligence Service in 1992-1999 and subsequently an ambassador. His intelligence qualification directly matches the TFR slot. His EKRE affiliation begins in 2021 in the official biography; using him as an EKRE nominee earlier is alternate-timeline recruitment. Later real-world party changes are not automatic campaign events.",
+    "sources": [
+      {"title": "Official parliamentary biography of Ants Frosch", "url": "https://www.riigikogu.ee/riigikogu/riigikogu-liikmed/c4e3fc0f-80fb-4a3e-b49e-80045c5253d9/ants-frosch/"}
+    ]
+  },
+  {
+    "person": "leo_kunnas",
+    "name": "Leo Kunnas",
+    "party": "ekre",
+    "portfolio": "defence",
+    "basis": "inferred",
+    "rationale": "Reserve lieutenant colonel, former commander of the military academy and former General Staff operations chief. An independent politician associated with the EKRE parliamentary group, not a formal party member; model him as an EKRE-nominated defence theorist. His professional background is established before 2020, while later defence-committee leadership reinforces suitability.",
+    "sources": [
+      {"title": "Official parliamentary biography of Leo Kunnas", "url": "https://www.riigikogu.ee/riigikogu/riigikogu-liikmed/fd2d1dd5-ff19-445e-b190-28aabb07763a/leo-kunnas/"},
+      {"title": "Riigikogu XIV composition biographies, January 2022", "url": "https://www.riigikogu.ee/wpcms/wp-content/uploads/2022/01/101_biograafiat-2022_jaan.pdf"}
+    ]
+  },
+  {
+    "person": "jaak_madison",
+    "name": "Jaak Madison",
+    "party": "ekre",
+    "portfolio": "foreign",
+    "basis": "inferred",
+    "rationale": "EKRE deputy chair and former deputy chair of the Riigikogu European Union Affairs Committee. An inferred foreign-minister candidate with real party foreign-policy experience, providing an alternative when Mart Helme is prime minister or interior minister. Do not automatically import Madison's later real-world party change into the alternate timeline.",
+    "sources": [
+      {"title": "Official parliamentary biography of Jaak Madison", "url": "https://www.riigikogu.ee/riigikogu/riigikogu-liikmed/ecbd080f-ee6a-4287-9dff-393cf5c8e880/jaak-madison/"},
+      {"title": "Madison on Estonia's EU presidency, 2017", "url": "https://www.riigikogu.ee/pressiteated/jaak-madison-eesti-peab-ka-eesistumise-perioodil-kaitsma-oma-rahvuslikke-huve/"}
+    ]
+  },
+  {
+    "person": "mart_helme",
+    "name": "Mart Helme",
+    "party": "ekre",
+    "portfolio": "interior",
+    "basis": "exactfit",
+    "rationale": "The actual interior minister on 1 January 2020. This is the historical opening appointment. Exclude him while prime minister or foreign minister; the same person must not occupy both selectable portfolios simultaneously.",
+    "sources": [
+      {"title": "Government historical cabinet register", "url": "https://valitsus.ee/peaminister-ministrid/varasemad-valitsused"},
+      {"title": "Government press conference listing Interior Minister Mart Helme, 19 March 2020", "url": "https://valitsus.ee/uudised/vabariigi-valitsuse-pressikonverentsi-stenogramm-19-marts-2020"}
+    ]
+  },
+  {
+    "person": "margus_tsahkna",
+    "name": "Margus Tsahkna",
+    "party": "e200",
+    "portfolio": "foreign",
+    "basis": "exactfit",
+    "rationale": "Actual Eesti 200 foreign minister from 2023; previously defence minister in 2016-2017 and an Eesti 200 founding politician. His later appointment is evidence of suitability, not a requirement to reproduce real-world coalition history.",
+    "sources": [
+      {"title": "Government confirms ministerial responsibilities, 18 April 2023", "url": "https://valitsus.ee/en/news/prime-minister-kallas-confirms-areas-responsibility-ministers-new-government"},
+      {"title": "Eesti 200 ministerial nominations: Tsahkna, Kallas and Pakosta", "url": "https://eesti200.ee/eesti-200-ministriteks-on-tsahkna-kallas-ja-pakosta/"}
+    ]
+  },
+  {
+    "person": "tiit_riisalo",
+    "name": "Tiit Riisalo",
+    "party": "e200",
+    "portfolio": "economic",
+    "basis": "exactfit",
+    "rationale": "Actual Eesti 200 Minister of Economic Affairs and Information Technology in 2023-2024; earlier public-administration, export-promotion and management experience. Using his later party appointment as a roster basis does not imply he held that office in 2020.",
+    "sources": [
+      {"title": "Official government biography of Tiit Riisalo", "url": "https://www.valitsus.ee/en/tiit-riisalo"},
+      {"title": "Government confirms ministerial responsibilities, 18 April 2023", "url": "https://valitsus.ee/en/news/prime-minister-kallas-confirms-areas-responsibility-ministers-new-government"}
+    ]
+  },
+  {
+    "person": "igor_taro",
+    "name": "Igor Taro",
+    "party": "e200",
+    "portfolio": "interior",
+    "basis": "exactfit",
+    "rationale": "Actual Eesti 200 interior minister from March 2025; formerly Polva county governor, local councillor and Defence League member. Treating him as an earlier party nominee in TFR is an alternate-timeline appointment supported by his real subsequent office.",
+    "sources": [
+      {"title": "Official government biography of Interior Minister Igor Taro", "url": "https://www.valitsus.ee/peaminister-ministrid/siseminister-igor-taro"}
+    ]
+  },
+  {
+    "person": "liisa_ly_pakosta",
+    "name": "Liisa-Ly Pakosta",
+    "party": "e200",
+    "portfolio": "intelligence",
+    "basis": "inferred",
+    "rationale": "An inferred civilian security-oversight appointment based on her real justice and digital-affairs ministry, earlier anti-corruption committee vice-chairmanship and Interior Ministry administrative work. She has not been established as an intelligence-service director. Official biography records Eesti 200 membership from 2023; any earlier recruitment is an alternate-timeline assumption.",
+    "sources": [
+      {"title": "Official government biography of Justice and Digital Affairs Minister Liisa-Ly Pakosta", "url": "https://valitsus.ee/peaminister-ministrid/ministrid/justiits-ja-digiminister-liisa-ly-pakosta"},
+      {"title": "Eesti 200 ministerial nominations: Tsahkna, Kallas and Pakosta", "url": "https://eesti200.ee/eesti-200-ministriteks-on-tsahkna-kallas-ja-pakosta/"}
+    ]
+  },
+  {
+    "person": "kalev_stoicescu",
+    "name": "Kalev Stoicescu",
+    "party": "e200",
+    "portfolio": "defence",
+    "basis": "inferred",
+    "rationale": "An inferred defence-theorist appointment based on Defence Ministry service in 2002-2014, NATO/Paris defence-adviser assignments, regional-security research in 2014-2023 and subsequent chairmanship of the parliamentary National Defence Committee. Official biography records Eesti 200 membership from 2022; earlier nomination would be alternate-timeline recruitment.",
+    "sources": [
+      {"title": "Official parliamentary biography of Kalev Stoicescu", "url": "https://www.riigikogu.ee/riigikogu/riigikogu-liikmed/987e47c7-929b-4437-9385-fab4f4fd7824/kalev-stoicescu/"}
+    ]
+  },
+  {
+    "person": "tiit_naber",
+    "name": "Tiit Naber",
+    "party": "pp",
+    "portfolio": "foreign",
+    "basis": "inferred",
+    "rationale": "Retired career diplomat and ambassador with thirty years of diplomatic and international-negotiating experience, listed as an actual Parempoolsed candidate in 2023. An inferred foreign-minister nomination grounded in direct professional expertise; not a claim that he held the ministry. Available only after the party forms.",
+    "sources": [
+      {"title": "Parempoolsed 2023 Haabersti, Pohja-Tallinn and Kristiine candidates: Tiit Naber", "url": "https://www.parempoolsed.ee/riigikogu-valimised-2023/haabersti-pohja-tallinn-ja-kristiine/"},
+      {"title": "Foreign Ministry Estonian Review, September 2008, Ambassador Tiit Naber", "url": "https://vm.ee/sites/default/files/content-editors/web-static/223/ER_39_2008.pdf"}
+    ]
+  },
+  {
+    "person": "kristjan_vanaselja",
+    "name": "Kristjan Vanaselja",
+    "party": "pp",
+    "portfolio": "economic",
+    "basis": "inferred",
+    "rationale": "GoWorkaBit founder and CEO, Parempoolsed founding deputy chair and actual 2023 parliamentary candidate. An inferred economic-minister nominee based on entrepreneurship, labour-market experience and party leadership. Available only after the party forms.",
+    "sources": [
+      {"title": "Parempoolsed 2023 Hiiu, Laane and Saare candidates: Kristjan Vanaselja", "url": "https://www.parempoolsed.ee/riigikogu-valimised-2023/hiiu-laane-ja-saaremaa/"},
+      {"title": "Parempoolsed 2024 assembly candidate biographies", "url": "https://www.parempoolsed.ee/uldkogu-2024/"}
+    ]
+  },
+  {
+    "person": "siim_valmar_kiisler",
+    "name": "Siim Valmar Kiisler",
+    "party": "pp",
+    "portfolio": "interior",
+    "basis": "inferred",
+    "rationale": "Actual Regional Affairs Minister in 2008-2014, administering regional/local-government matters within the Interior Ministry's broader area, and Environment Minister in 2017-2019. Later a founding Parempoolsed politician. An inferred full interior-minister appointment based on real cabinet and administrative experience. His 2020 Isamaa membership should not create a duplicate second identity: use one person and the later Parempoolsed nomination after formation.",
+    "sources": [
+      {"title": "Official parliamentary biography of Siim Kiisler", "url": "https://www.riigikogu.ee/riigikogu/riigikogu-liikmed/ac0e1069-9bbf-4bf9-88fe-f609a671e74d/siim-kiisler/"},
+      {"title": "Interior Ministry 2012 annual report", "url": "https://www.siseministeerium.ee/sites/default/files/documents/2020-12/sim_majandusaasta_aruanne_2012.pdf"},
+      {"title": "Parempoolsed 2022 annual report with founding board signatories", "url": "https://parempoolsed.ee/wp-content/uploads/2024/06/Erakond_Parempoolsed-aruanne_2022.pdf"}
+    ]
+  },
+  {
+    "person": "rainer_saks",
+    "name": "Rainer Saks",
+    "party": "pp",
+    "portfolio": "intelligence",
+    "basis": "inferred",
+    "rationale": "Actual Director General of the Information Board before his appointment as Foreign Ministry secretary-general in December 2015; a real Parempoolsed European-election candidate in 2024. His professional qualification directly fits the slot. Recruiting him immediately after Parempoolsed forms in 2022 is an explicit alternate-timeline inference: the verified party nomination is from 2024, not evidence of founding membership.",
+    "sources": [
+      {"title": "Foreign Ministry appoints Rainer Saks secretary-general, 1 December 2015", "url": "https://www.vm.ee/uudised/valisministeeriumi-kantslerina-asub-tanasest-toole-rainer-saks"},
+      {"title": "Parempoolsed European candidate Rainer Saks", "url": "https://parempoolsed.ee/vabadust/kandidaadid/rainer-saks/"},
+      {"title": "Parempoolsed announces European-election slate, 13 April 2024", "url": "https://parempoolsed.ee/2024/04/13/parempoolsed-lahevad-valimistele-liidrite-nimekirja-ja-selge-sonumiga-kaitseme-vabadust/"}
+    ]
+  },
+  {
+    "person": "ilmar_raag",
+    "name": "Ilmar Raag",
+    "party": "pp",
+    "portfolio": "defence",
+    "basis": "inferred",
+    "rationale": "Reserve officer since 2003, lecturer at Higher National Defence Courses and Government Office psychological-defence adviser from 2015. A real Parempoolsed parliamentary candidate in 2023. An inferred defence-theorist appointment focused on strategic communication and societal resistance. Available only after the party forms; does not imply he was a defence minister.",
+    "sources": [
+      {"title": "Government Office recruits Ilmar Raag for psychological defence, 30 December 2014", "url": "https://riigikantselei.ee/uudised/ilmar-raag-hakkab-riigikantseleis-arendama-riigi-psuhholoogilist-kaitset"},
+      {"title": "Parempoolsed 2023 Haabersti, Pohja-Tallinn and Kristiine candidates: Ilmar Raag", "url": "https://www.parempoolsed.ee/riigikogu-valimised-2023/haabersti-pohja-tallinn-ja-kristiine/"},
+      {"title": "Parempoolsed announces European-election slate, 13 April 2024", "url": "https://parempoolsed.ee/2024/04/13/parempoolsed-lahevad-valimistele-liidrite-nimekirja-ja-selge-sonumiga-kaitseme-vabadust/"}
+    ]
+  },
+  {
+    "person": "rene_kokk",
+    "name": "Rene Kokk",
+    "party": "ekre",
+    "portfolio": "economic",
+    "basis": "inferred",
+    "rationale": "EKRE member since 2014 and the actual Environment Minister in 2019-2020. His economics and entrepreneurship degree, construction/forestry management and company-board experience predate the campaign; he later served as deputy chair of the parliamentary Economic Affairs Committee in 2022-2023. These facts support an inferred economic-minister appointment when Martin Helme is prime minister, not a claim that Kokk historically held the economic or finance ministry.",
+    "sources": [
+      {
+        "title": "Official parliamentary biography of Rene Kokk",
+        "url": "https://www.riigikogu.ee/riigikogu/riigikogu-liikmed/694b084f-e151-4f7e-8a5c-2664a40cee7a/rene-kokk/"
+      },
+      {
+        "title": "Riigikogu XV composition biographies, September 2023",
+        "url": "https://www.riigikogu.ee/wpcms/wp-content/uploads/2023/09/101biographies-2023.pdf"
+      }
+    ]
+  }
+]

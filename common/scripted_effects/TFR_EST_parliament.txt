@@ -1,6 +1,7 @@
 # Parliament, cabinet and presidency lifecycle never reset polling or seats.
 TFR_EST_suspend_parliament = {
     TFR_EST_hide_executive_display = yes
+    TFR_EST_suspend_ministers = yes
     clr_country_flag = TFR_EST_parliament_open
     remove_ideas = TFR_EST_constitutional_presidency
     remove_ideas = TFR_EST_presidency_karis
@@ -77,6 +78,7 @@ TFR_EST_reconcile_cabinet_leadership = {
         if = { limit = { check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } } set_party_name = { ideology = social_liberal name = TFR_EST_party_e200 long_name = TFR_EST_party_e200 } }
         if = { limit = { check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } } set_party_name = { ideology = market_liberal name = TFR_EST_party_pp long_name = TFR_EST_party_pp } }
         TFR_EST_reconcile_executive_display = yes
+        TFR_EST_reconcile_ministers = yes
     }
 }
 
@@ -271,6 +273,7 @@ if = {
 else_if = { limit = { check_variable = { var = TFR_EST_coalition_seats value = 61 compare = greater_than_or_equals } } add_ideas = TFR_EST_coalition_working }
 else_if = { limit = { check_variable = { var = TFR_EST_coalition_seats value = 51 compare = greater_than_or_equals } } add_ideas = TFR_EST_coalition_narrow }
 }
+TFR_EST_reconcile_ministers = yes
 }
 
 TFR_EST_clear_coalition = {
@@ -420,6 +423,12 @@ clr_country_flag = TFR_EST_scripted_cabinet_change
 TFR_EST_confirm_cabinet = {
 if = {
  limit = { TFR_EST_can_confirm_mandated_cabinet = yes }
+ # New mandates use their authored default leader. Confidence recovery alone
+ # preserves any explicitly scripted incumbent within the same mandate.
+ if = {
+  limit = { OR = { has_country_flag = TFR_EST_electoral_handover has_country_flag = TFR_EST_scripted_handover } }
+  TFR_EST_clear_pm_person_markers = yes
+ }
  set_variable = { TFR_EST_pm_party = TFR_EST_nominee_party }
 clr_country_flag = TFR_EST_electoral_handover
 clr_country_flag = TFR_EST_scripted_handover

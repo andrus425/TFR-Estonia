@@ -223,6 +223,48 @@ Government programme focuses become available to the current party in office.
 An election can open a different programme. Completed policies remain recorded,
 and active cabinet bonuses reconcile with the current government.
 
+## Appointing coalition ministers
+
+Use TFR's existing cabinet slots to appoint the **foreign, economic, interior,
+intelligence and defence ministers**. Each of the seven parties has at least
+one nominee for every portfolio: 38 people provide 39 candidacies. Active parties'
+nominees remain visible, but appointments require that party in the actual
+coalition and a confirmed independent government with 51 confidence votes.
+Confidence-and-supply agreements do not provide cabinet appointment rights.
+Parempoolsed nominees appear after the party forms.
+
+Appointments normally cost **100 political power**. For **90 days after each
+valid election**, a timed cabinet-formation spirit reduces all five appointment
+costs by **80%**, normally to **20 PP**, before other modifiers. The displayed
+native price includes the discount. Invalid elections, ordinary coalition
+negotiations and the Ratas–Kallas handover do not start a discount window.
+
+Minister traits provide national benefits, including construction and output,
+fiscal efficiency, diplomatic relations, stability, intelligence capabilities,
+army organization, training and supply. The prime minister remains locked to the
+parliamentary mandate and scripted government changes. A person cannot hold two
+cabinet offices: Mart Helme's foreign/interior candidacies exclude one another,
+and both become unavailable when he is prime minister. Vacate his current
+portfolio through TFR's empty-slot choice before appointing him to the other.
+EKRE has alternatives for both positions.
+Trivimi Velliste provides an Isamaa foreign-affairs alternative to Urmas Reinsalu,
+and Rene Kokk provides an EKRE economic alternative to Martin Helme. Person-aware
+exclusions support future authored premierships without blocking Reinsalu under
+Seeder or Martin under Mart Helme.
+
+The day-one initialization appoints Urmas Reinsalu, Taavi Aas, Mart Helme,
+Raivo Aeg and Jüri Luik. Aeg represents security oversight in TFR's intelligence
+slot. Coalition withdrawal removes the departing party's ministers; outgoing
+caretakers retain their ministers during negotiations but cannot appoint new
+ones. Confirmation removes ministers outside the new coalition. Occupation
+clears all five portfolios and the discount. Deliberately vacant portfolios and
+player choices are never overwritten by daily repair.
+
+The [candidate register](docs/MINISTER_ROSTER.md) records the complete roster and
+primary sources. It distinguishes historical portfolio holders from inferred
+appointments and later-party recruitment in the alternate timeline. Minister
+portraits currently use TFR's generic European political portraits.
+
 ## Cohesion, defense and the economy
 
 Cohesion starts at **55** and readiness at **25**, both on a 0–100 scale.
@@ -289,6 +331,7 @@ python tools/test_occupation_compatibility.py
 python tools/native_script_interface.py --check
 python tools/build_energy_crisis.py --check
 python tools/build_focus_tooltips.py --check
+python tools/build_ministers.py --check
 ```
 
 On this Codex host, Python is also available at:
@@ -310,6 +353,9 @@ text and dependent decisions without rewriting unrelated event/idea files.
 `tools/build_focus_tooltips.py` generates native previews from those same values.
 `tools/build_energy_crisis.py` generates the parent Oil Crash integration and
 safe migration of the earlier custom penalty. Both generators support `--check`.
+`tools/build_ministers.py` builds the native cabinet candidates, traits,
+eligibility, lifecycle helpers, portraits, localization and sourced roster from
+the two `tools/minister_roster_*.json` research files; it also supports `--check`.
 
 For a controlled startup parser check, close any existing HOI4 session and run:
 

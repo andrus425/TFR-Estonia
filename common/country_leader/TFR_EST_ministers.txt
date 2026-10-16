@@ -1,0 +1,85 @@
+# Party labels are cosmetic; professional traits supply native country modifiers.
+leader_traits = {
+    TFR_EST_minister_party_reform = { random = no }
+    TFR_EST_minister_party_centre = { random = no }
+    TFR_EST_minister_party_ekre = { random = no }
+    TFR_EST_minister_party_isamaa = { random = no }
+    TFR_EST_minister_party_sde = { random = no }
+    TFR_EST_minister_party_e200 = { random = no }
+    TFR_EST_minister_party_pp = { random = no }
+    TFR_EST_minister_trait_diplomat = {
+        random = no
+        opinion_gain_monthly_factor = 0.15
+        trade_opinion_factor = 0.15
+    }
+    TFR_EST_minister_trait_cooperation = {
+        random = no
+        opinion_gain_monthly_factor = 0.1
+        research_speed_factor = 0.025
+    }
+    TFR_EST_minister_trait_sovereignty = {
+        random = no
+        war_support_factor = 0.05
+        opinion_gain_monthly_factor = 0.1
+    }
+    TFR_EST_minister_trait_enterprise = {
+        random = no
+        production_speed_buildings_factor = 0.06
+        industrial_capacity_factory = 0.03
+    }
+    TFR_EST_minister_trait_fiscal = {
+        random = no
+        consumer_goods_factor = -0.025
+        political_power_gain = 0.1
+    }
+    TFR_EST_minister_trait_regional = {
+        random = no
+        production_speed_buildings_factor = 0.04
+        local_resources_factor = 0.05
+    }
+    TFR_EST_minister_trait_administration = {
+        random = no
+        stability_factor = 0.05
+        political_power_gain = 0.05
+    }
+    TFR_EST_minister_trait_emergency = {
+        random = no
+        stability_factor = 0.03
+        mobilization_speed = 0.1
+    }
+    TFR_EST_minister_trait_civic = {
+        random = no
+        stability_factor = 0.04
+        war_support_factor = 0.03
+    }
+    TFR_EST_minister_trait_intelligence = {
+        random = no
+        encryption_factor = 0.1
+        decryption_factor = 0.15
+    }
+    TFR_EST_minister_trait_oversight = {
+        random = no
+        encryption_factor = 0.1
+        stability_factor = 0.025
+    }
+    TFR_EST_minister_trait_counterintelligence = {
+        random = no
+        encryption_factor = 0.15
+        decryption_factor = 0.1
+    }
+    TFR_EST_minister_trait_territorial = {
+        random = no
+        army_defence_factor = 0.05
+        army_org_factor = 0.03
+    }
+    TFR_EST_minister_trait_professional = {
+        random = no
+        training_time_army_factor = -0.08
+        army_org_factor = 0.04
+    }
+    TFR_EST_minister_trait_allied = {
+        random = no
+        supply_consumption_factor = -0.04
+        army_org_factor = 0.04
+    }
+}
