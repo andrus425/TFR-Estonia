@@ -1,0 +1,40 @@
+# Career history survives elections, occupation and restoration. The personal
+# marker identifies only the current officeholder and is repeat-safe to repair.
+TFR_EST_reconcile_reform_pm_identity = {
+    if = {
+        limit = {
+            TFR_EST_constitutional_executive = yes
+            check_variable = { var = TFR_EST_pm_party value = 1 compare = equals }
+            has_country_flag = TFR_EST_kallas_departed_for_europe
+        }
+        set_country_flag = TFR_EST_pm_person_kristen_michal
+    }
+    else = { clr_country_flag = TFR_EST_pm_person_kristen_michal }
+}
+
+# No seats, coalition partners, election dates, popularity or rewards change.
+# An obsolete delayed event cannot replace a successor or an occupation leader.
+TFR_EST_complete_reform_handover = {
+    if = {
+        limit = { TFR_EST_reform_handover_eligible = yes }
+        set_country_flag = TFR_EST_kallas_departed_for_europe
+        set_country_flag = TFR_EST_pm_person_kristen_michal
+        clr_country_flag = TFR_EST_reform_2024_handover_pending
+        TFR_EST_reconcile_executive_display = yes
+    }
+}
+
+TFR_EST_reform_handover_tick = {
+    if = {
+        limit = { tag = EST has_country_flag = TFR_EST_initialized }
+        if = {
+            limit = { TFR_EST_reform_handover_eligible = yes }
+            if = {
+                limit = { NOT = { has_country_flag = TFR_EST_reform_2024_handover_pending } }
+                set_country_flag = TFR_EST_reform_2024_handover_pending
+                country_event = { id = tfr_estonia_reform_handover.1 days = 1 }
+            }
+        }
+        else = { clr_country_flag = TFR_EST_reform_2024_handover_pending }
+    }
+}

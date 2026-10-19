@@ -16,7 +16,7 @@ guiTypes = {
  instantTextBoxType = { name = "TFR_EST_seats_reform" position = { x = 370 y = 157 } font = "VCR02_18" text = "TFR_EST_panel_seats_reform" maxWidth = 60 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_cabinet_reform" position = { x = 465 y = 157 } font = "VCR02_18" text = "TFR_EST_panel_cabinet_reform" maxWidth = 65 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_supply_reform" position = { x = 565 y = 157 } font = "VCR02_18" text = "TFR_EST_panel_supply_reform" maxWidth = 65 maxHeight = 25 format = left fixedsize = yes }
- instantTextBoxType = { name = "TFR_EST_party_centre" position = { x = 24 y = 184 } font = "VCR02_18" text = "TFR_EST_party_centre" maxWidth = 225 maxHeight = 25 format = left fixedsize = yes }
+ instantTextBoxType = { name = "TFR_EST_party_centre" position = { x = 24 y = 184 } font = "VCR02_18" text = "TFR_EST_party_centre" pdx_tooltip = "TFR_EST_centre_party_leader_tt" maxWidth = 225 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_poll_centre" position = { x = 265 y = 184 } font = "VCR02_18" text = "TFR_EST_panel_poll_centre" maxWidth = 80 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_seats_centre" position = { x = 370 y = 184 } font = "VCR02_18" text = "TFR_EST_panel_seats_centre" maxWidth = 60 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_cabinet_centre" position = { x = 465 y = 184 } font = "VCR02_18" text = "TFR_EST_panel_cabinet_centre" maxWidth = 65 maxHeight = 25 format = left fixedsize = yes }

@@ -480,7 +480,7 @@ class MinisterTests(unittest.TestCase):
         executives = parse((ROOT / 'common/ideas/TFR_EST_executive.txt').read_text(
             encoding='utf-8-sig')).get('ideas').get('head_minister')
         r = self.runtime()
-        self.assertEqual(len(executives.entries), 7)
+        self.assertEqual(len(executives.entries), 11)
         for entry in executives.entries:
             self.assertFalse(r.condition(entry.value.get('available')))
             self.assertFalse(r.condition(entry.value.get('allowed_to_remove')))

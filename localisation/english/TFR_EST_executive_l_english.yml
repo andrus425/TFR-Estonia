@@ -27,3 +27,8 @@
  TFR_EST_pm_unconfirmed:0 "Awaiting cabinet confirmation"
  TFR_EST_hog_caretaker_status:0 "§YCaretaker cabinet§! — continues in office pending parliamentary confirmation."
  TFR_EST_hog_confirmed_status:0 "Cabinet in office — responsible to the Riigikogu."
+ TFR_EST_martin_helme:0 "Martin Helme"
+ TFR_EST_martin_helme_desc:0 "EKRE's chairman at the 2023 election, Martin Helme leads the party's elected government after parliamentary confirmation. A former finance minister, he takes responsibility for the cabinet's programme while the president retains the constitutional head-of-state role."
+ TFR_EST_pm_ekre_martin:0 "$TFR_EST_martin_helme$"
+ TFR_EST_pm_ekre_martin_desc:0 "Prime Minister: §H$TFR_EST_martin_helme$§!\n[TFR_EST_hog_cabinet_status]\n\n$TFR_EST_martin_helme_desc$"
+ TFR_EST_hog_ekre_martin:0 "Prime Minister: §H$TFR_EST_martin_helme$§!\n[TFR_EST_hog_cabinet_status]\n\n\n\n\n\n\n   £GFX_idea_TFR_EST_pm_ekre_martin\n\n\n\n\n\n\n\n\n-------------------------------------\n§L$TFR_EST_martin_helme_desc$§!"

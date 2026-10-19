@@ -1,0 +1,55 @@
+# A Reform plurality in the 2023 election grants this programme.
+TFR_EST_reform_2023_branch_visible = {
+    TFR_EST_independent_parliament = yes
+    has_country_flag = TFR_EST_reform_2023_mandate
+    has_country_flag = TFR_EST_reform_won_2023_election
+    NOT = { has_country_flag = TFR_EST_reform_2023_mandate_ended }
+    check_variable = { var = TFR_EST_mandate_party value = 1 compare = equals }
+}
+TFR_EST_reform_2023_governing = {
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_reform_2023_governing_tt
+        TFR_EST_reform_2023_branch_visible = yes
+        TFR_EST_coalition_majority = yes
+        TFR_EST_confirmed_cabinet = yes
+        check_variable = { var = TFR_EST_pm_party value = 1 compare = equals }
+        check_variable = { var = TFR_EST_mandate_party value = 1 compare = equals }
+        check_variable = { var = TFR_EST_coalition_reform value = 1 compare = equals }
+    }
+}
+TFR_EST_reform_2023_all_policies_done = {
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_reform_2023_all_policies_done_tt
+        OR = { has_completed_focus = TFR_EST_reform_2023_new_mandate has_country_flag = TFR_EST_done_reform_2023_new_mandate }
+        OR = { has_completed_focus = TFR_EST_reform_2023_defence_three_percent has_country_flag = TFR_EST_done_reform_2023_defence_three_percent }
+        OR = { has_completed_focus = TFR_EST_reform_2023_territorial_twenty_thousand has_country_flag = TFR_EST_done_reform_2023_territorial_twenty_thousand }
+        OR = { has_completed_focus = TFR_EST_reform_2023_layered_air_defence has_country_flag = TFR_EST_done_reform_2023_layered_air_defence }
+        OR = { has_completed_focus = TFR_EST_reform_2023_baltic_defence_line has_country_flag = TFR_EST_done_reform_2023_baltic_defence_line }
+        OR = { has_completed_focus = TFR_EST_reform_2023_nursipalu has_country_flag = TFR_EST_done_reform_2023_nursipalu }
+        OR = { has_completed_focus = TFR_EST_reform_2023_allied_logistics has_country_flag = TFR_EST_done_reform_2023_allied_logistics }
+        OR = { has_completed_focus = TFR_EST_reform_2023_industrial_park has_country_flag = TFR_EST_done_reform_2023_industrial_park }
+        OR = { has_completed_focus = TFR_EST_reform_2023_ammunition_line has_country_flag = TFR_EST_done_reform_2023_ammunition_line }
+        OR = { has_completed_focus = TFR_EST_reform_2023_drone_workshops has_country_flag = TFR_EST_done_reform_2023_drone_workshops }
+        OR = { has_completed_focus = TFR_EST_reform_2023_grid_connection has_country_flag = TFR_EST_done_reform_2023_grid_connection }
+        OR = { has_completed_focus = TFR_EST_reform_2023_wind_permits has_country_flag = TFR_EST_done_reform_2023_wind_permits }
+        OR = { has_completed_focus = TFR_EST_reform_2023_renovation has_country_flag = TFR_EST_done_reform_2023_renovation }
+        OR = { has_completed_focus = TFR_EST_reform_2023_estonian_education has_country_flag = TFR_EST_done_reform_2023_estonian_education }
+        OR = { has_completed_focus = TFR_EST_reform_2023_ida_viru_teachers has_country_flag = TFR_EST_done_reform_2023_ida_viru_teachers }
+        OR = { has_completed_focus = TFR_EST_reform_2023_teacher_agreement has_country_flag = TFR_EST_done_reform_2023_teacher_agreement }
+        OR = { has_completed_focus = TFR_EST_reform_2023_learning_eighteen has_country_flag = TFR_EST_done_reform_2023_learning_eighteen }
+        OR = { has_completed_focus = TFR_EST_reform_2023_vocational_places has_country_flag = TFR_EST_done_reform_2023_vocational_places }
+        OR = { has_completed_focus = TFR_EST_reform_2023_applied_research has_country_flag = TFR_EST_done_reform_2023_applied_research }
+        OR = { has_completed_focus = TFR_EST_reform_2023_real_time_economy has_country_flag = TFR_EST_done_reform_2023_real_time_economy }
+        OR = { has_completed_focus = TFR_EST_reform_2023_enterprise_digital has_country_flag = TFR_EST_done_reform_2023_enterprise_digital }
+        OR = { has_completed_focus = TFR_EST_reform_2023_cyber_reserve has_country_flag = TFR_EST_done_reform_2023_cyber_reserve }
+        OR = { has_completed_focus = TFR_EST_reform_2023_research_one_percent has_country_flag = TFR_EST_done_reform_2023_research_one_percent }
+        OR = { has_completed_focus = TFR_EST_reform_2023_regional_exporters has_country_flag = TFR_EST_done_reform_2023_regional_exporters }
+        OR = { has_completed_focus = TFR_EST_reform_2023_civil_reserve has_country_flag = TFR_EST_done_reform_2023_civil_reserve }
+        OR = { has_completed_focus = TFR_EST_reform_2023_vat_twenty_two has_country_flag = TFR_EST_done_reform_2023_vat_twenty_two }
+        OR = { has_completed_focus = TFR_EST_reform_2023_spending_reviews has_country_flag = TFR_EST_done_reform_2023_spending_reviews }
+        OR = { has_completed_focus = TFR_EST_reform_2023_municipal_revenue has_country_flag = TFR_EST_done_reform_2023_municipal_revenue }
+        OR = { has_completed_focus = TFR_EST_reform_2023_care_reform has_country_flag = TFR_EST_done_reform_2023_care_reform }
+        OR = { has_completed_focus = TFR_EST_reform_2023_marriage_equality has_country_flag = TFR_EST_done_reform_2023_marriage_equality }
+        OR = { has_completed_focus = TFR_EST_reform_2023_mental_health has_country_flag = TFR_EST_done_reform_2023_mental_health }
+    }
+}

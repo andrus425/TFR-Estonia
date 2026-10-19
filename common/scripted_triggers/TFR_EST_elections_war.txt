@@ -1,0 +1,33 @@
+# Parent first-war settlements set the shared over flag and one winner flag.
+# A start flag followed by a quiet declaration tick is not a peace settlement.
+TFR_EST_first_european_war_concluded = {
+    has_global_flag = SOV_nato_war_over_global
+    OR = {
+        has_global_flag = nato_nato_won_nato_war
+        has_global_flag = SOV_first_nato_war_victory
+    }
+}
+
+TFR_EST_first_european_war_settled = {
+    TFR_EST_first_european_war_concluded = yes
+    has_war = no
+    has_capitulated = no
+    NOT = { SOV = { has_war_with = GER } }
+    NOT = { GER = { has_war_with = SOV } }
+}
+
+TFR_EST_can_hold_postwar_election = {
+    TFR_EST_independent_parliament = yes
+    TFR_EST_first_european_war_settled = yes
+    has_country_flag = TFR_EST_postwar_election_pending
+    NOT = { has_country_flag = TFR_EST_postwar_election_held }
+    NOT = { has_country_flag = TFR_EST_restoration_election }
+}
+
+# A fresh four-year parliamentary term begins with the postwar election.
+# Story-authorized snap elections remain a separate, one-use entrypoint.
+TFR_EST_regular_calendar_available = {
+    TFR_EST_independent_parliament = yes
+    has_country_flag = TFR_EST_postwar_election_held
+    NOT = { has_country_flag = TFR_EST_restoration_election }
+}

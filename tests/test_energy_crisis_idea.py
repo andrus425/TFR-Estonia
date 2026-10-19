@@ -8,7 +8,8 @@ from itertools import product
 import unittest
 
 from script_runtime import ROOT, Runtime, parse
-from build_energy_crisis import IDEAS, KALLAS_PROJECTS, RATAS_PROJECTS, SLOTS
+from build_energy_crisis import (IDEAS, KALLAS_PROJECTS, RATAS_PROJECTS, SLOTS,
+                                REFORM_2023_PROJECTS, REFORM_2023_SLOTS)
 from patch_tfr_compatibility import DEFAULT_PARENT, parse as parent_parse, walk
 
 
@@ -139,6 +140,51 @@ class EnergyCrisisIdeaTests(unittest.TestCase):
             with self.subTest(earned=sorted(earned)):
                 self.assertEqual(r.variables[STEPS], expected)
                 self.assert_tier(r, expected)
+
+    def test_reform_2023_three_projects_recover_two_one_and_two_stages(self):
+        r = self.runtime()
+        self.reconcile(r)
+        for project, recovery in (("grid_connection", 2), ("wind_permits", 3), ("renovation", 5)):
+            r.flags.add("TFR_EST_done_reform_2023_" + project)
+            self.reconcile(r)
+            with self.subTest(project=project):
+                self.assertEqual(r.variables[STEPS], recovery)
+                self.assert_tier(r, recovery)
+        before = (r.variables.copy(), r.ideas.copy(), r.flags.copy())
+        for _ in range(5):
+            self.reconcile(r)
+        self.assertEqual((r.variables, r.ideas, r.flags), before)
+
+    def test_all_4096_three_government_combinations_share_exactly_five_slots(self):
+        flags = ["TFR_EST_done_ratas_" + project for project in RATAS_PROJECTS]
+        flags += ["TFR_EST_done_kallas_" + project for project in KALLAS_PROJECTS]
+        flags += ["TFR_EST_done_reform_2023_" + project for project in REFORM_2023_PROJECTS]
+        self.assertEqual(len(flags), 12)
+        for enabled in product((False, True), repeat=len(flags)):
+            earned = {flag for flag, active in zip(flags, enabled) if active}
+            expected = sum(any(flag in earned for flag in (
+                "TFR_EST_done_ratas_" + ratas,
+                "TFR_EST_done_kallas_" + kallas,
+                "TFR_EST_done_reform_2023_" + reform))
+                for (ratas, kallas), reform in zip(SLOTS, REFORM_2023_SLOTS))
+            r = self.runtime()
+            r.flags.update(earned)
+            self.reconcile(r)
+            with self.subTest(earned=sorted(earned)):
+                self.assertEqual(r.variables[STEPS], expected)
+                self.assert_tier(r, expected)
+
+    def test_reform_2023_preparation_before_onset_and_handover_never_regrants_spirit(self):
+        r = self.runtime(active=False)
+        r.flags.update("TFR_EST_done_reform_2023_" + project for project in REFORM_2023_PROJECTS)
+        self.reconcile(r)
+        r.global_flags.add(ONSET)
+        self.reconcile(r)
+        self.assert_tier(r, 5)
+        r.flags.update({"TFR_EST_reform_2023_mandate_ended", "TFR_EST_reform_pm_michal"})
+        self.reconcile(r)
+        self.assert_tier(r, 5)
+        self.assertEqual(r.events, [NOTICE])
 
     def test_preparing_every_project_prevents_onset_spirit_and_never_regrants_it(self):
         for route, projects in (("ratas", RATAS_PROJECTS), ("kallas", KALLAS_PROJECTS)):

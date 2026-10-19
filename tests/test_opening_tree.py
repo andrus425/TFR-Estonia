@@ -102,7 +102,10 @@ class OpeningTreeTests(unittest.TestCase):
     def test_main_tree_imports_the_whole_opening_programme(self):
         imports = self.main.all("shared_focus")
         self.assertCountEqual([name for name in imports if name.startswith("TFR_EST_opening_")], OPENING_IDS)
-        self.assertEqual(len(imports), len(OPENING_IDS) + 40)
+        self.assertEqual(len(imports), len(OPENING_IDS) + 40 + 96)
+        self.assertEqual(len([name for name in imports if name.startswith("TFR_EST_reform_2023_")]), 32)
+        self.assertEqual(len([name for name in imports if name.startswith("TFR_EST_ekre_2023_")]), 32)
+        self.assertEqual(len([name for name in imports if name.startswith("TFR_EST_centre_2023_")]), 32)
         self.assertEqual(len([name for name in imports if name.startswith("TFR_EST_ratas_")]), 20)
         self.assertEqual(len([name for name in imports if name.startswith("TFR_EST_kallas_")]), 20)
         self.assertEqual(self.main.get("initial_show_position").get("focus"),

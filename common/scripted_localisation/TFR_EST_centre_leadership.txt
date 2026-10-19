@@ -1,0 +1,6 @@
+defined_text = {
+    name = TFR_EST_centre_party_leader
+    text = { trigger = { has_country_flag = TFR_EST_centre_leader_kiik } localization_key = TFR_EST_tanel_kiik }
+    text = { trigger = { has_country_flag = TFR_EST_centre_leader_kolvart } localization_key = TFR_EST_mihhail_kolvart }
+    text = { trigger = { always = yes } localization_key = TFR_EST_juri_ratas }
+}

@@ -52,13 +52,17 @@ class FocusVisibilityTests(unittest.TestCase):
                 'TFR_EST_ratas_retained', 'TFR_EST_ratas_mandate_ended',
                 'TFR_EST_referendum_failed', 'TFR_EST_reform_centre_formed',
                 'TFR_EST_kallas_mandate_ended',
+                'TFR_EST_reform_2023_mandate', 'TFR_EST_reform_2023_mandate_ended',
+                'TFR_EST_opening_assembly_ended',
+                'TFR_EST_ekre_2023_mandate', 'TFR_EST_ekre_2023_mandate_ended',
+                'TFR_EST_centre_2023_mandate', 'TFR_EST_centre_2023_mandate_ended',
             )),
         )
         for kind, field, changed in cases:
             with self.subTest(input=field):
                 r = self.runtime()
                 r.call(EFFECT)
-                original = r.variables[SIGNATURE]
+                original = (r.variables[SIGNATURE], r.variables["TFR_EST_focus_visibility_late_signature"])
                 if kind == 'flag':
                     r.flags.add(field)
                 else:
@@ -66,7 +70,7 @@ class FocusVisibilityTests(unittest.TestCase):
                     previous = store[field]
                     store[field] = changed
                 r.call(EFFECT)
-                self.assertNotEqual(r.variables[SIGNATURE], original)
+                self.assertNotEqual((r.variables[SIGNATURE], r.variables["TFR_EST_focus_visibility_late_signature"]), original)
                 self.assertEqual(r.focus_layout_refreshes, 2)
                 r.call(EFFECT)
                 self.assertEqual(r.focus_layout_refreshes, 2)
@@ -75,7 +79,7 @@ class FocusVisibilityTests(unittest.TestCase):
                 else:
                     store[field] = previous
                 r.call(EFFECT)
-                self.assertEqual(r.variables[SIGNATURE], original)
+                self.assertEqual((r.variables[SIGNATURE], r.variables["TFR_EST_focus_visibility_late_signature"]), original)
                 self.assertEqual(r.focus_layout_refreshes, 3)
 
     def test_unrelated_poll_and_meter_changes_do_not_invalidate_layout(self):

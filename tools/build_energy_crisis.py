@@ -23,6 +23,14 @@ SLOTS = (
 )
 RATAS_PROJECTS = tuple(pair[0] for pair in SLOTS)
 KALLAS_PROJECTS = tuple(dict.fromkeys(pair[1] for pair in SLOTS))
+# Keep the older two-route SLOTS API stable for its exhaustive 512-case test.
+# New preparations fill equivalent slots, never adding a second contribution.
+REFORM_2023_SLOTS = ("grid_connection", "grid_connection", "wind_permits", "renovation", "renovation")
+REFORM_2023_PROJECTS = tuple(dict.fromkeys(REFORM_2023_SLOTS))
+EKRE_2023_SLOTS = ("narva_blocks", "narva_blocks", "kiisa_reserve", "regulated_power", "regulated_power")
+EKRE_2023_PROJECTS = tuple(dict.fromkeys(EKRE_2023_SLOTS))
+CENTRE_2023_SLOTS = ("power_reserves", "power_reserves", "local_chp", "apartment_renovation", "apartment_renovation")
+CENTRE_2023_PROJECTS = tuple(dict.fromkeys(CENTRE_2023_SLOTS))
 
 
 def idea_cleanup(keep: str | None = None, indent: str = "        ") -> str:
@@ -71,9 +79,9 @@ TFR_EST_reconcile_energy_crisis = {
         TFR_EST_migrate_energy_crisis_ledger = yes
         set_variable = { TFR_EST_energy_response_steps = 0 }
 """
-    for ratas, kallas in SLOTS:
+    for (ratas, kallas), reform, ekre, centre in zip(SLOTS, REFORM_2023_SLOTS, EKRE_2023_SLOTS, CENTRE_2023_SLOTS):
         text += f"""        if = {{
-            limit = {{ OR = {{ has_country_flag = TFR_EST_done_ratas_{ratas} has_country_flag = TFR_EST_done_kallas_{kallas} }} }}
+            limit = {{ OR = {{ has_country_flag = TFR_EST_done_ratas_{ratas} has_country_flag = TFR_EST_done_kallas_{kallas} has_country_flag = TFR_EST_done_reform_2023_{reform} has_country_flag = TFR_EST_done_ekre_2023_{ekre} has_country_flag = TFR_EST_done_centre_2023_{centre} }} }}
             add_to_variable = {{ TFR_EST_energy_response_steps = 1 }}
         }}
 """

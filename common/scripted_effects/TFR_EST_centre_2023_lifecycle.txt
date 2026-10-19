@@ -1,0 +1,32 @@
+# Runs only after committing a valid 101-seat result and its plurality.
+# A defeat records party history; it does not remove Ratas before the congress.
+TFR_EST_note_centre_2023_election = {
+    if = {
+        limit = { has_country_flag = TFR_EST_centre_2023_mandate }
+        set_country_flag = TFR_EST_centre_2023_mandate_ended
+    }
+    if = {
+        limit = {
+            date > 2023.3.4
+            date < 2024.1.1
+            NOT = { has_country_flag = TFR_EST_postwar_election_pending }
+            NOT = { has_country_flag = TFR_EST_postwar_election_held }
+        }
+        if = {
+            limit = { check_variable = { var = TFR_EST_mandate_party value = 2 compare = equals } }
+            if = {
+                limit = { NOT = { has_country_flag = TFR_EST_centre_won_2023_election } }
+                set_country_flag = TFR_EST_centre_won_2023_election
+                set_country_flag = TFR_EST_centre_2023_mandate
+                clr_country_flag = TFR_EST_centre_2023_mandate_ended
+            }
+            # An intervening victory removes the reason for an unheld congress.
+            # A choice already made remains the party's persistent leadership.
+            clr_country_flag = TFR_EST_centre_lost_2023_election
+        }
+        else_if = {
+            limit = { NOT = { has_country_flag = TFR_EST_centre_won_2023_election } }
+            set_country_flag = TFR_EST_centre_lost_2023_election
+        }
+    }
+}

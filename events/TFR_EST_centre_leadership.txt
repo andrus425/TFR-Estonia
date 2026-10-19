@@ -1,0 +1,29 @@
+add_namespace = tfr_estonia_centre_leadership
+country_event = {
+    id = tfr_estonia_centre_leadership.1
+    title = TFR_EST_centre_congress_title
+    desc = TFR_EST_centre_congress_desc
+    picture = GFX_report_event_generic_handshake
+    is_triggered_only = yes
+    trigger = {
+        TFR_EST_centre_leadership_eligible = yes
+        has_country_flag = TFR_EST_centre_leadership_pending
+        NOT = { has_country_flag = TFR_EST_centre_leadership_presented }
+    }
+    immediate = {
+        set_country_flag = TFR_EST_centre_leadership_presented
+        clr_country_flag = TFR_EST_centre_leadership_pending
+    }
+    option = {
+        name = TFR_EST_centre_congress_kiik
+        ai_chance = { factor = 45 }
+        custom_effect_tooltip = TFR_EST_centre_congress_kiik_tt
+        hidden_effect = { TFR_EST_choose_centre_leader_kiik = yes }
+    }
+    option = {
+        name = TFR_EST_centre_congress_kolvart
+        ai_chance = { factor = 55 }
+        custom_effect_tooltip = TFR_EST_centre_congress_kolvart_tt
+        hidden_effect = { TFR_EST_choose_centre_leader_kolvart = yes }
+    }
+}

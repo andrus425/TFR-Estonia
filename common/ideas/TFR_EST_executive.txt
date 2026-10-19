@@ -2,7 +2,17 @@ ideas = { head_minister = {
  TFR_EST_pm_reform = {
   picture = TFR_EST_pm_reform
   allowed = { original_tag = EST }
-  visible = { TFR_EST_constitutional_executive = yes check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } }
+  visible = { TFR_EST_constitutional_executive = yes check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_kallas_departed_for_europe } }
+  available = { always = no }
+  allowed_to_remove = { always = no }
+  cost = 0
+  removal_cost = -1
+  modifier = { }
+ }
+ TFR_EST_pm_reform_michal = {
+  picture = TFR_EST_pm_reform_michal
+  allowed = { original_tag = EST }
+  visible = { TFR_EST_constitutional_executive = yes check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } has_country_flag = TFR_EST_kallas_departed_for_europe }
   available = { always = no }
   allowed_to_remove = { always = no }
   cost = 0
@@ -12,7 +22,27 @@ ideas = { head_minister = {
  TFR_EST_pm_centre = {
   picture = TFR_EST_pm_centre
   allowed = { original_tag = EST }
-  visible = { TFR_EST_constitutional_executive = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } }
+  visible = { TFR_EST_constitutional_executive = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_pm_person_tanel_kiik } NOT = { has_country_flag = TFR_EST_pm_person_mihhail_kolvart } }
+  available = { always = no }
+  allowed_to_remove = { always = no }
+  cost = 0
+  removal_cost = -1
+  modifier = { }
+ }
+ TFR_EST_pm_centre_kiik = {
+  picture = TFR_EST_pm_centre_kiik
+  allowed = { original_tag = EST }
+  visible = { TFR_EST_constitutional_executive = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } has_country_flag = TFR_EST_pm_person_tanel_kiik }
+  available = { always = no }
+  allowed_to_remove = { always = no }
+  cost = 0
+  removal_cost = -1
+  modifier = { }
+ }
+ TFR_EST_pm_centre_kolvart = {
+  picture = TFR_EST_pm_centre_kolvart
+  allowed = { original_tag = EST }
+  visible = { TFR_EST_constitutional_executive = yes check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } has_country_flag = TFR_EST_pm_person_mihhail_kolvart }
   available = { always = no }
   allowed_to_remove = { always = no }
   cost = 0
@@ -22,7 +52,17 @@ ideas = { head_minister = {
  TFR_EST_pm_ekre = {
   picture = TFR_EST_pm_ekre
   allowed = { original_tag = EST }
-  visible = { TFR_EST_constitutional_executive = yes check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } }
+  visible = { TFR_EST_constitutional_executive = yes check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_martin_leads_ekre } }
+  available = { always = no }
+  allowed_to_remove = { always = no }
+  cost = 0
+  removal_cost = -1
+  modifier = { }
+ }
+ TFR_EST_pm_ekre_martin = {
+  picture = TFR_EST_pm_ekre_martin
+  allowed = { original_tag = EST }
+  visible = { TFR_EST_constitutional_executive = yes check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } has_country_flag = TFR_EST_martin_leads_ekre }
   available = { always = no }
   allowed_to_remove = { always = no }
   cost = 0

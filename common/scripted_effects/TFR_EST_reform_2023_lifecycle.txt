@@ -1,0 +1,21 @@
+# Called only by the committed election result, after the plurality is known.
+# An interrupted/invalid ballot must never reveal or end a mandate programme.
+TFR_EST_note_reform_2023_election = {
+    if = {
+        limit = { has_country_flag = TFR_EST_reform_2023_mandate }
+        set_country_flag = TFR_EST_reform_2023_mandate_ended
+    }
+    if = {
+        limit = {
+            NOT = { has_country_flag = TFR_EST_reform_won_2023_election }
+            date > 2023.3.4
+            date < 2024.1.1
+            check_variable = { var = TFR_EST_mandate_party value = 1 compare = equals }
+            NOT = { has_country_flag = TFR_EST_postwar_election_pending }
+            NOT = { has_country_flag = TFR_EST_postwar_election_held }
+        }
+        set_country_flag = TFR_EST_reform_won_2023_election
+        set_country_flag = TFR_EST_reform_2023_mandate
+        clr_country_flag = TFR_EST_reform_2023_mandate_ended
+    }
+}

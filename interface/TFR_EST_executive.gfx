@@ -1,7 +1,11 @@
 spriteTypes = {
  spriteType = { name = "GFX_idea_TFR_EST_pm_reform" texturefile = "gfx/leaders/Europe/portrait_europe_generic_4.dds" legacy_lazy_load = no }
+ spriteType = { name = "GFX_idea_TFR_EST_pm_reform_michal" texturefile = "gfx/leaders/Europe/portrait_europe_generic_5.dds" legacy_lazy_load = no }
  spriteType = { name = "GFX_idea_TFR_EST_pm_centre" texturefile = "gfx/leaders/Europe/portrait_europe_generic_5.dds" legacy_lazy_load = no }
+ spriteType = { name = "GFX_idea_TFR_EST_pm_centre_kiik" texturefile = "gfx/leaders/Europe/portrait_europe_generic_6.dds" legacy_lazy_load = no }
+ spriteType = { name = "GFX_idea_TFR_EST_pm_centre_kolvart" texturefile = "gfx/leaders/Europe/portrait_europe_generic_4.dds" legacy_lazy_load = no }
  spriteType = { name = "GFX_idea_TFR_EST_pm_ekre" texturefile = "gfx/leaders/Europe/portrait_europe_generic_6.dds" legacy_lazy_load = no }
+ spriteType = { name = "GFX_idea_TFR_EST_pm_ekre_martin" texturefile = "gfx/leaders/Europe/portrait_europe_generic_4.dds" legacy_lazy_load = no }
  spriteType = { name = "GFX_idea_TFR_EST_pm_isamaa" texturefile = "gfx/leaders/Europe/portrait_europe_generic_4.dds" legacy_lazy_load = no }
  spriteType = { name = "GFX_idea_TFR_EST_pm_sde" texturefile = "gfx/leaders/Europe/portrait_europe_generic_5.dds" legacy_lazy_load = no }
  spriteType = { name = "GFX_idea_TFR_EST_pm_e200" texturefile = "gfx/leaders/Europe/portrait_europe_generic_6.dds" legacy_lazy_load = no }

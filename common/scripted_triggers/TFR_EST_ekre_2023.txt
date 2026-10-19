@@ -1,0 +1,55 @@
+# An EKRE plurality in the validated 2023 ballot grants this mandate.
+TFR_EST_ekre_2023_branch_visible = {
+    TFR_EST_independent_parliament = yes
+    has_country_flag = TFR_EST_ekre_2023_mandate
+    has_country_flag = TFR_EST_ekre_won_2023_election
+    NOT = { has_country_flag = TFR_EST_ekre_2023_mandate_ended }
+    check_variable = { var = TFR_EST_mandate_party value = 3 compare = equals }
+}
+TFR_EST_ekre_2023_governing = {
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_ekre_2023_governing_tt
+        TFR_EST_ekre_2023_branch_visible = yes
+        TFR_EST_coalition_majority = yes
+        TFR_EST_confirmed_cabinet = yes
+        check_variable = { var = TFR_EST_pm_party value = 3 compare = equals }
+        check_variable = { var = TFR_EST_mandate_party value = 3 compare = equals }
+        check_variable = { var = TFR_EST_coalition_ekre value = 1 compare = equals }
+    }
+}
+TFR_EST_ekre_2023_all_policies_done = {
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_ekre_2023_all_policies_done_tt
+        OR = { has_completed_focus = TFR_EST_ekre_2023_new_mandate has_country_flag = TFR_EST_done_ekre_2023_new_mandate }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_defence_commitment has_country_flag = TFR_EST_done_ekre_2023_defence_commitment }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_reserve_training has_country_flag = TFR_EST_done_ekre_2023_reserve_training }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_air_defence has_country_flag = TFR_EST_done_ekre_2023_air_defence }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_coastal_defence has_country_flag = TFR_EST_done_ekre_2023_coastal_defence }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_military_border_guard has_country_flag = TFR_EST_done_ekre_2023_military_border_guard }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_shelters has_country_flag = TFR_EST_done_ekre_2023_shelters }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_defence_contracts has_country_flag = TFR_EST_done_ekre_2023_defence_contracts }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_ammunition_workshop has_country_flag = TFR_EST_done_ekre_2023_ammunition_workshop }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_repair_workshop has_country_flag = TFR_EST_done_ekre_2023_repair_workshop }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_existing_railways has_country_flag = TFR_EST_done_ekre_2023_existing_railways }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_trunk_roads has_country_flag = TFR_EST_done_ekre_2023_trunk_roads }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_food_reserves has_country_flag = TFR_EST_done_ekre_2023_food_reserves }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_narva_blocks has_country_flag = TFR_EST_done_ekre_2023_narva_blocks }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_kiisa_reserve has_country_flag = TFR_EST_done_ekre_2023_kiisa_reserve }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_regulated_power has_country_flag = TFR_EST_done_ekre_2023_regulated_power }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_fuel_excise has_country_flag = TFR_EST_done_ekre_2023_fuel_excise }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_food_vat has_country_flag = TFR_EST_done_ekre_2023_food_vat }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_medicine_vat has_country_flag = TFR_EST_done_ekre_2023_medicine_vat }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_child_tax_relief has_country_flag = TFR_EST_done_ekre_2023_child_tax_relief }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_family_home_loans has_country_flag = TFR_EST_done_ekre_2023_family_home_loans }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_student_loan_relief has_country_flag = TFR_EST_done_ekre_2023_student_loan_relief }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_family_doctors has_country_flag = TFR_EST_done_ekre_2023_family_doctors }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_rural_maternity has_country_flag = TFR_EST_done_ekre_2023_rural_maternity }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_thirteenth_pension has_country_flag = TFR_EST_done_ekre_2023_thirteenth_pension }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_parliamentary_scrutiny has_country_flag = TFR_EST_done_ekre_2023_parliamentary_scrutiny }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_e_vote_audit has_country_flag = TFR_EST_done_ekre_2023_e_vote_audit }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_citizens_initiative has_country_flag = TFR_EST_done_ekre_2023_citizens_initiative }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_presidential_election_bill has_country_flag = TFR_EST_done_ekre_2023_presidential_election_bill }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_constitutional_review has_country_flag = TFR_EST_done_ekre_2023_constitutional_review }
+        OR = { has_completed_focus = TFR_EST_ekre_2023_estonian_education has_country_flag = TFR_EST_done_ekre_2023_estonian_education }
+    }
+}

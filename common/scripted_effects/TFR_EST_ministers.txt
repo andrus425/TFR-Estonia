@@ -1,5 +1,6 @@
-# Optional named-PM metadata for future authored government changes.
-# Existing routes keep their current leaders; no player appointment can set it.
+# Named-PM metadata belongs to authored government changes.
+# The 2023 EKRE mandate derives Martin's marker from persistent party history.
+# No player appointment can set these flags.
 TFR_EST_clear_pm_person_markers = {
     clr_country_flag = TFR_EST_pm_person_urmas_reinsalu
     clr_country_flag = TFR_EST_pm_person_martin_helme
@@ -40,6 +41,8 @@ TFR_EST_initialize_ministers = {
 
 TFR_EST_suspend_ministers = {
     TFR_EST_clear_pm_person_markers = yes
+    clr_country_flag = TFR_EST_pm_person_tanel_kiik
+    clr_country_flag = TFR_EST_pm_person_mihhail_kolvart
     remove_ideas = {
         TFR_EST_minister_urmas_paet_foreign
         TFR_EST_minister_jurgen_ligi_economic
@@ -88,6 +91,10 @@ TFR_EST_suspend_ministers = {
 TFR_EST_reconcile_ministers = {
     if = {
         limit = { tag = EST has_country_flag = TFR_EST_initialized }
+        # Confirmation recounts confidence before repairing the executive UI.
+        # Identify the actual PM before excluding any portfolio candidate.
+        TFR_EST_reconcile_ekre_pm_identity = yes
+        TFR_EST_reconcile_centre_pm_identity = yes
         if = {
             limit = { NOT = { TFR_EST_independent_parliament = yes } }
             TFR_EST_suspend_ministers = yes

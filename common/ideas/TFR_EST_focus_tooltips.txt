@@ -411,5 +411,744 @@ ideas = {
                 dig_in_speed_factor = 0.1
             }
         }
+        TFR_EST_reform_2023_defence_three_percent_military_delta = {
+            name = TFR_EST_military_dynamic
+            picture = generic_military_org
+            allowed = { original_tag = EST }
+            modifier = {
+                army_org_factor = 0.04
+                supply_consumption_factor = -0.03
+            }
+        }
+        TFR_EST_reform_2023_territorial_twenty_thousand_military_delta = {
+            name = TFR_EST_military_dynamic
+            picture = generic_military_org
+            allowed = { original_tag = EST }
+            modifier = {
+                mobilization_speed = 0.2
+                army_defence_factor = 0.04
+            }
+        }
+        TFR_EST_reform_2023_layered_air_defence_military_delta = {
+            name = TFR_EST_military_dynamic
+            picture = generic_military_org
+            allowed = { original_tag = EST }
+            modifier = {
+                army_defence_factor = 0.04
+                attrition = -0.025
+            }
+        }
+        TFR_EST_reform_2023_baltic_defence_line_military_delta = {
+            name = TFR_EST_military_dynamic
+            picture = generic_military_org
+            allowed = { original_tag = EST }
+            modifier = {
+                dig_in_speed_factor = 0.15
+                army_defence_factor = 0.05
+            }
+        }
+        TFR_EST_reform_2023_nursipalu_military_delta = {
+            name = TFR_EST_military_dynamic
+            picture = generic_military_org
+            allowed = { original_tag = EST }
+            modifier = {
+                training_time_army_factor = -0.06
+                army_org_factor = 0.03
+            }
+        }
+        TFR_EST_reform_2023_allied_logistics_military_delta = {
+            name = TFR_EST_military_dynamic
+            picture = generic_military_org
+            allowed = { original_tag = EST }
+            modifier = {
+                supply_consumption_factor = -0.05
+                attrition = -0.025
+            }
+        }
+        TFR_EST_reform_2023_industrial_park_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                production_speed_buildings_factor = 0.04
+            }
+        }
+        TFR_EST_reform_2023_ammunition_line_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                industrial_capacity_factory = 0.04
+            }
+        }
+        TFR_EST_reform_2023_drone_workshops_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                production_factory_efficiency_gain_factor = 0.05
+            }
+        }
+        TFR_EST_reform_2023_grid_connection_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                industrial_capacity_factory = 0.03
+                production_speed_buildings_factor = 0.03
+            }
+        }
+        TFR_EST_reform_2023_wind_permits_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                local_resources_factor = 0.05
+                industrial_capacity_factory = 0.03
+            }
+        }
+        TFR_EST_reform_2023_renovation_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                production_speed_buildings_factor = 0.04
+                consumer_goods_factor = -0.015
+            }
+        }
+        TFR_EST_reform_2023_estonian_education_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                research_speed_factor = 0.02
+            }
+        }
+        TFR_EST_reform_2023_ida_viru_teachers_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                research_speed_factor = 0.02
+            }
+        }
+        TFR_EST_reform_2023_teacher_agreement_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                research_speed_factor = 0.025
+            }
+        }
+        TFR_EST_reform_2023_learning_eighteen_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                production_factory_efficiency_gain_factor = 0.025
+            }
+        }
+        TFR_EST_reform_2023_vocational_places_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                production_factory_max_efficiency_factor = 0.04
+                production_factory_efficiency_gain_factor = 0.025
+            }
+        }
+        TFR_EST_reform_2023_applied_research_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                research_speed_factor = 0.035
+                production_factory_max_efficiency_factor = 0.025
+            }
+        }
+        TFR_EST_reform_2023_real_time_economy_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                production_factory_efficiency_gain_factor = 0.03
+            }
+        }
+        TFR_EST_reform_2023_enterprise_digital_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                industrial_capacity_factory = 0.03
+                production_factory_efficiency_gain_factor = 0.03
+            }
+        }
+        TFR_EST_reform_2023_cyber_reserve_military_delta = {
+            name = TFR_EST_military_dynamic
+            picture = generic_military_org
+            allowed = { original_tag = EST }
+            modifier = {
+                army_org_factor = 0.025
+                mobilization_speed = 0.1
+            }
+        }
+        TFR_EST_reform_2023_research_one_percent_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                research_speed_factor = 0.035
+            }
+        }
+        TFR_EST_reform_2023_regional_exporters_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                industrial_capacity_factory = 0.03
+                production_speed_buildings_factor = 0.03
+            }
+        }
+        TFR_EST_reform_2023_civil_reserve_military_delta = {
+            name = TFR_EST_military_dynamic
+            picture = generic_military_org
+            allowed = { original_tag = EST }
+            modifier = {
+                dig_in_speed_factor = 0.05
+                attrition = -0.025
+            }
+        }
+        TFR_EST_reform_2023_vat_twenty_two_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                consumer_goods_factor = 0.015
+            }
+        }
+        TFR_EST_reform_2023_spending_reviews_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                consumer_goods_factor = -0.015
+            }
+        }
+        TFR_EST_reform_2023_municipal_revenue_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                production_speed_buildings_factor = 0.025
+            }
+        }
+        TFR_EST_reform_2023_care_reform_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                production_factory_max_efficiency_factor = 0.03
+            }
+        }
+        TFR_EST_reform_2023_mental_health_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                production_factory_max_efficiency_factor = 0.025
+            }
+        }
+        TFR_EST_ekre_2023_defence_commitment_military_delta = {
+            name = TFR_EST_military_dynamic
+            picture = generic_military_org
+            allowed = { original_tag = EST }
+            modifier = {
+                army_org_factor = 0.04
+                supply_consumption_factor = -0.03
+            }
+        }
+        TFR_EST_ekre_2023_reserve_training_military_delta = {
+            name = TFR_EST_military_dynamic
+            picture = generic_military_org
+            allowed = { original_tag = EST }
+            modifier = {
+                mobilization_speed = 0.2
+                training_time_army_factor = -0.05
+            }
+        }
+        TFR_EST_ekre_2023_air_defence_military_delta = {
+            name = TFR_EST_military_dynamic
+            picture = generic_military_org
+            allowed = { original_tag = EST }
+            modifier = {
+                army_defence_factor = 0.05
+                attrition = -0.025
+            }
+        }
+        TFR_EST_ekre_2023_coastal_defence_military_delta = {
+            name = TFR_EST_military_dynamic
+            picture = generic_military_org
+            allowed = { original_tag = EST }
+            modifier = {
+                army_defence_factor = 0.03
+                dig_in_speed_factor = 0.1
+            }
+        }
+        TFR_EST_ekre_2023_military_border_guard_military_delta = {
+            name = TFR_EST_military_dynamic
+            picture = generic_military_org
+            allowed = { original_tag = EST }
+            modifier = {
+                army_org_factor = 0.03
+                mobilization_speed = 0.1
+            }
+        }
+        TFR_EST_ekre_2023_shelters_military_delta = {
+            name = TFR_EST_military_dynamic
+            picture = generic_military_org
+            allowed = { original_tag = EST }
+            modifier = {
+                dig_in_speed_factor = 0.1
+                attrition = -0.025
+            }
+        }
+        TFR_EST_ekre_2023_defence_contracts_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                production_factory_efficiency_gain_factor = 0.035
+            }
+        }
+        TFR_EST_ekre_2023_ammunition_workshop_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                industrial_capacity_factory = 0.04
+            }
+        }
+        TFR_EST_ekre_2023_repair_workshop_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                production_factory_max_efficiency_factor = 0.04
+            }
+        }
+        TFR_EST_ekre_2023_repair_workshop_military_delta = {
+            name = TFR_EST_military_dynamic
+            picture = generic_military_org
+            allowed = { original_tag = EST }
+            modifier = {
+                attrition = -0.025
+            }
+        }
+        TFR_EST_ekre_2023_existing_railways_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                production_speed_buildings_factor = 0.04
+            }
+        }
+        TFR_EST_ekre_2023_existing_railways_military_delta = {
+            name = TFR_EST_military_dynamic
+            picture = generic_military_org
+            allowed = { original_tag = EST }
+            modifier = {
+                supply_consumption_factor = -0.03
+            }
+        }
+        TFR_EST_ekre_2023_trunk_roads_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                production_speed_buildings_factor = 0.04
+            }
+        }
+        TFR_EST_ekre_2023_trunk_roads_military_delta = {
+            name = TFR_EST_military_dynamic
+            picture = generic_military_org
+            allowed = { original_tag = EST }
+            modifier = {
+                supply_consumption_factor = -0.03
+            }
+        }
+        TFR_EST_ekre_2023_food_reserves_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                local_resources_factor = 0.04
+                consumer_goods_factor = -0.01
+            }
+        }
+        TFR_EST_ekre_2023_narva_blocks_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                industrial_capacity_factory = 0.05
+                local_resources_factor = 0.05
+            }
+        }
+        TFR_EST_ekre_2023_kiisa_reserve_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                industrial_capacity_factory = 0.03
+                production_factory_max_efficiency_factor = 0.025
+            }
+        }
+        TFR_EST_ekre_2023_regulated_power_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                industrial_capacity_factory = 0.04
+                consumer_goods_factor = -0.015
+            }
+        }
+        TFR_EST_ekre_2023_fuel_excise_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                consumer_goods_factor = -0.015
+                production_speed_buildings_factor = 0.025
+            }
+        }
+        TFR_EST_ekre_2023_food_vat_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                consumer_goods_factor = -0.025
+            }
+        }
+        TFR_EST_ekre_2023_medicine_vat_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                consumer_goods_factor = -0.01
+                production_factory_max_efficiency_factor = 0.025
+            }
+        }
+        TFR_EST_ekre_2023_child_tax_relief_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                consumer_goods_factor = -0.015
+            }
+        }
+        TFR_EST_ekre_2023_family_home_loans_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                production_speed_buildings_factor = 0.035
+            }
+        }
+        TFR_EST_ekre_2023_student_loan_relief_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                research_speed_factor = 0.025
+            }
+        }
+        TFR_EST_ekre_2023_family_doctors_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                production_factory_max_efficiency_factor = 0.025
+            }
+        }
+        TFR_EST_ekre_2023_rural_maternity_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                production_factory_max_efficiency_factor = 0.025
+            }
+        }
+        TFR_EST_ekre_2023_thirteenth_pension_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                consumer_goods_factor = -0.015
+            }
+        }
+        TFR_EST_ekre_2023_e_vote_audit_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                research_speed_factor = 0.02
+            }
+        }
+        TFR_EST_ekre_2023_estonian_education_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                research_speed_factor = 0.035
+                production_factory_efficiency_gain_factor = 0.025
+            }
+        }
+        TFR_EST_centre_2023_defence_commitment_military_delta = {
+            name = TFR_EST_military_dynamic
+            picture = generic_military_org
+            allowed = { original_tag = EST }
+            modifier = {
+                army_org_factor = 0.04
+                supply_consumption_factor = -0.03
+            }
+        }
+        TFR_EST_centre_2023_air_defence_military_delta = {
+            name = TFR_EST_military_dynamic
+            picture = generic_military_org
+            allowed = { original_tag = EST }
+            modifier = {
+                army_defence_factor = 0.05
+                attrition = -0.025
+            }
+        }
+        TFR_EST_centre_2023_reserve_expertise_military_delta = {
+            name = TFR_EST_military_dynamic
+            picture = generic_military_org
+            allowed = { original_tag = EST }
+            modifier = {
+                mobilization_speed = 0.2
+                training_time_army_factor = -0.05
+            }
+        }
+        TFR_EST_centre_2023_allied_basing_military_delta = {
+            name = TFR_EST_military_dynamic
+            picture = generic_military_org
+            allowed = { original_tag = EST }
+            modifier = {
+                supply_consumption_factor = -0.05
+                army_org_factor = 0.025
+            }
+        }
+        TFR_EST_centre_2023_community_training_military_delta = {
+            name = TFR_EST_military_dynamic
+            picture = generic_military_org
+            allowed = { original_tag = EST }
+            modifier = {
+                training_time_army_factor = -0.04
+                dig_in_speed_factor = 0.1
+            }
+        }
+        TFR_EST_centre_2023_civil_continuity_military_delta = {
+            name = TFR_EST_military_dynamic
+            picture = generic_military_org
+            allowed = { original_tag = EST }
+            modifier = {
+                attrition = -0.025
+                army_defence_factor = 0.025
+            }
+        }
+        TFR_EST_centre_2023_industrial_guarantees_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                production_factory_efficiency_gain_factor = 0.035
+            }
+        }
+        TFR_EST_centre_2023_ammunition_workshop_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                industrial_capacity_factory = 0.04
+            }
+        }
+        TFR_EST_centre_2023_maintenance_workshop_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                production_factory_max_efficiency_factor = 0.04
+            }
+        }
+        TFR_EST_centre_2023_maintenance_workshop_military_delta = {
+            name = TFR_EST_military_dynamic
+            picture = generic_military_org
+            allowed = { original_tag = EST }
+            modifier = {
+                attrition = -0.025
+            }
+        }
+        TFR_EST_centre_2023_ida_viru_innovation_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                industrial_capacity_factory = 0.035
+                research_speed_factor = 0.025
+            }
+        }
+        TFR_EST_centre_2023_regional_jobs_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                production_factory_efficiency_gain_factor = 0.03
+                industrial_capacity_factory = 0.025
+            }
+        }
+        TFR_EST_centre_2023_construction_orders_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                production_speed_buildings_factor = 0.05
+            }
+        }
+        TFR_EST_centre_2023_power_reserves_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                industrial_capacity_factory = 0.04
+                local_resources_factor = 0.05
+            }
+        }
+        TFR_EST_centre_2023_local_chp_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                industrial_capacity_factory = 0.03
+                production_factory_max_efficiency_factor = 0.025
+            }
+        }
+        TFR_EST_centre_2023_apartment_renovation_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                production_speed_buildings_factor = 0.04
+                consumer_goods_factor = -0.015
+            }
+        }
+        TFR_EST_centre_2023_weatherproof_grid_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                industrial_capacity_factory = 0.025
+                production_speed_buildings_factor = 0.025
+            }
+        }
+        TFR_EST_centre_2023_rural_broadband_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                research_speed_factor = 0.025
+                production_factory_efficiency_gain_factor = 0.025
+            }
+        }
+        TFR_EST_centre_2023_energy_cooperatives_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                local_resources_factor = 0.04
+                consumer_goods_factor = -0.01
+            }
+        }
+        TFR_EST_centre_2023_minimum_tax_allowance_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                consumer_goods_factor = -0.02
+            }
+        }
+        TFR_EST_centre_2023_food_vat_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                consumer_goods_factor = -0.025
+            }
+        }
+        TFR_EST_centre_2023_prescription_vat_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                consumer_goods_factor = -0.01
+                production_factory_max_efficiency_factor = 0.025
+            }
+        }
+        TFR_EST_centre_2023_pension_fifty_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                consumer_goods_factor = -0.015
+            }
+        }
+        TFR_EST_centre_2023_home_care_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                production_factory_max_efficiency_factor = 0.03
+            }
+        }
+        TFR_EST_centre_2023_county_hospitals_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                production_factory_max_efficiency_factor = 0.03
+            }
+        }
+        TFR_EST_centre_2023_second_day_sick_pay_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                industrial_capacity_factory = 0.025
+            }
+        }
+        TFR_EST_centre_2023_free_kindergarten_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                production_factory_efficiency_gain_factor = 0.025
+            }
+        }
+        TFR_EST_centre_2023_teacher_pay_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                research_speed_factor = 0.04
+            }
+        }
+        TFR_EST_centre_2023_language_courses_economy_delta = {
+            name = TFR_EST_economy_dynamic
+            picture = generic_emerging_economy
+            allowed = { original_tag = EST }
+            modifier = {
+                research_speed_factor = 0.025
+            }
+        }
     }
 }

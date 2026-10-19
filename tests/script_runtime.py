@@ -1,6 +1,6 @@
 """Execute the arithmetic/control-flow subset used by the actual game scripts.
 
-This deliberately does not emulate combat, UI, country scope changes or the
+This deliberately does not emulate combat, UI, general country scope changes or the
 engine's event scheduler. Tests can fail on missing numerical operations, rather
 than silently falling back to a separately implemented election algorithm.
 """
@@ -60,10 +60,15 @@ class Runtime:
         generic_path = ROOT / "common/scripted_triggers/00_TFR_scripted_triggers_ZZZ_generic.txt"
         generic = parsed_script(generic_path)
         self.triggers["generic_has_corona"] = generic.get("generic_has_corona")
+        self.state_id = None
+        self.states = {n: {"owner": "EST", "controller": "EST", "slots": 25, "buildings": {}}
+                       for n in (13, 191, 1329, 840)}
         self.operations = 0
 
     def num(self, value, args=None):
         value = str(value)
+        if value == "global.year":
+            return Fraction(self.props["date"].year)
         if value.startswith("$") and value.endswith("$"):
             value = str((args or {})[value.strip("$")])
         try:
@@ -122,7 +127,8 @@ class Runtime:
         if key == "has_game_rule":
             return self.props["game_rules"].get(value.get("rule"), "DEFAULT") == value.get("option")
         if key in {"is_owned_by", "is_controlled_by"}:
-            return self.props["owner" if key == "is_owned_by" else "controller"] == value
+            field = "owner" if key == "is_owned_by" else "controller"
+            return (self.states[self.state_id][field] if self.state_id is not None else self.props[field]) == value
         if key == "has_focus_tree":
             return self.props["focus_tree"] == value
         if key == "has_completed_focus":
@@ -140,7 +146,20 @@ class Runtime:
             self.props["tag"] = before
             return answer
         if key.isdigit() and isinstance(value, Block):
-            return self.condition(value, args)
+            previous = self.state_id
+            self.state_id = int(key)
+            try:
+                return self.condition(value, args)
+            finally:
+                self.state_id = previous
+        if key == "free_building_slots":
+            if self.state_id is None:
+                raise AssertionError("free_building_slots requires a state scope")
+            state = self.states[self.state_id]
+            free = state["slots"] - sum(state["buildings"].values())
+            entry = next(e for e in value.entries if e.key == "size")
+            target = self.num(entry.value, args)
+            return {">": free > target, "=": free == target, "<": free < target}[entry.op]
         if key == "has_war_with":
             return frozenset((self.props["tag"], value)) in self.props["world_wars"]
         if key in self.props:
@@ -259,9 +278,27 @@ class Runtime:
                 # deliberately outside this arithmetic/control-flow runtime.
                 self.props['completed_focuses'].discard(value.get('focus'))
                 self.calls.append((key, value.get('focus')))
-            elif key == "add_debt_with_inflation": self.calls.append((key, self.temp.get("debt_var_temp")))
-            elif key == "add_political_power":
-                self.props['political_power'] = self.props.get('political_power', Fraction(0)) + self.num(value, args)
+            elif key in {"add_debt_with_inflation", "add_income_with_inflation"}:
+                field = "debt_var_temp" if key == "add_debt_with_inflation" else "income_var_temp"
+                self.calls.append((key, self.temp.get(field)))
+            elif key in {"add_political_power", "army_experience", "add_stability"}:
+                field = "political_power" if key == "add_political_power" else key
+                self.props[field] = self.props.get(field, Fraction(0)) + self.num(value, args)
+            elif key in {"ROOT", "EST"} or key.isdigit():
+                previous = self.state_id
+                self.state_id = None if key in {"ROOT", "EST"} else int(key)
+                try:
+                    self.run(value, args)
+                finally:
+                    self.state_id = previous
+            elif key == "add_building_construction":
+                if self.state_id is None:
+                    raise AssertionError("Building construction requires a state scope")
+                buildings = self.states[self.state_id]["buildings"]
+                building = value.get("type")
+                amount = int(self.num(value.get("level"), args))
+                buildings[building] = buildings.get(building, 0) + amount
+                self.calls.append(("add_building_construction", self.state_id, building, amount))
             elif key == "clear_variable": self.variables.pop(value, None)
             elif key == "mark_focus_tree_layout_dirty":
                 self.focus_layout_refreshes += 1

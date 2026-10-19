@@ -14,7 +14,7 @@ country_event = {
     picture = GFX_report_event_generic_handshake
     is_triggered_only = yes
     trigger = {
-        TFR_EST_independent_parliament = yes
+        TFR_EST_opening_assembly_current = yes
         has_country_flag = TFR_EST_referendum_active
         NOT = { has_country_flag = TFR_EST_porto_investigation_seen }
     }
@@ -34,7 +34,7 @@ country_event = {
     picture = GFX_report_event_generic_handshake
     is_triggered_only = yes
     trigger = {
-        TFR_EST_independent_parliament = yes
+        TFR_EST_opening_assembly_current = yes
         has_country_flag = TFR_EST_porto_investigation_seen
         NOT = { has_country_flag = TFR_EST_porto_choice_resolved }
         NOT = { has_country_flag = TFR_EST_porto_choice_presented }
@@ -60,7 +60,7 @@ country_event = {
     picture = GFX_report_event_generic_handshake
     is_triggered_only = yes
     trigger = {
-        TFR_EST_independent_parliament = yes
+        TFR_EST_opening_assembly_current = yes
         has_country_flag = TFR_EST_reform_handover_pending
         NOT = { has_country_flag = TFR_EST_reform_centre_formed }
         NOT = { has_country_flag = TFR_EST_kallas_mandate_ended }

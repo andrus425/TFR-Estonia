@@ -197,8 +197,9 @@ def build_effects():
         f"            if = {{ limit = {{ NOT = {{ check_variable = {{ var = TFR_EST_pm_party value = {PARTIES.index(party) + 1} compare = equals }} }} }} clr_country_flag = TFR_EST_pm_person_{person} }}"
         for person, party in NAMED_PM_PEOPLE.items()
     )
-    out = [f"""# Optional named-PM metadata for future authored government changes.
-# Existing routes keep their current leaders; no player appointment can set it.
+    out = [f"""# Named-PM metadata belongs to authored government changes.
+# The 2023 EKRE mandate derives Martin's marker from persistent party history.
+# No player appointment can set these flags.
 TFR_EST_clear_pm_person_markers = {{
     {clear_markers}
 }}
@@ -234,6 +235,8 @@ TFR_EST_initialize_ministers = {{
 
 TFR_EST_suspend_ministers = {{
     TFR_EST_clear_pm_person_markers = yes
+    clr_country_flag = TFR_EST_pm_person_tanel_kiik
+    clr_country_flag = TFR_EST_pm_person_mihhail_kolvart
     remove_ideas = {{
         {all_ids}
         TFR_EST_cabinet_formation
@@ -244,6 +247,10 @@ TFR_EST_suspend_ministers = {{
 TFR_EST_reconcile_ministers = {{
     if = {{
         limit = {{ tag = EST has_country_flag = TFR_EST_initialized }}
+        # Confirmation recounts confidence before repairing the executive UI.
+        # Identify the actual PM before excluding any portfolio candidate.
+        TFR_EST_reconcile_ekre_pm_identity = yes
+        TFR_EST_reconcile_centre_pm_identity = yes
         if = {{
             limit = {{ NOT = {{ TFR_EST_independent_parliament = yes }} }}
             TFR_EST_suspend_ministers = yes
@@ -305,8 +312,9 @@ def build_register():
            "TFR's five editable portfolios are foreign, economic, interior, intelligence and defence (`theorist_minister`). Its economic slot covers fiscal and economic policy. Estonia has no separate cabinet-level intelligence ministry: these nominees represent political oversight and professional security experience. All intelligence appointments are inferences, including former intelligence directors.\n\n",
            "The opening appoints Urmas Reinsalu, Taavi Aas, Mart Helme, Raivo Aeg and Jüri Luik. Aeg's slot is an abstraction of his justice/security responsibilities. The [official cabinet register](https://www.valitsus.ee/vabariigi-valitsuse-50-koosseis) records the historical government.\n\n",
            "Appointments use the party ledger, require a confirmed independent cabinet and coalition membership, and cost 100 PP before modifiers. A valid election grants a 90-day, 80% appointment discount, normally reducing the price to 20 PP. Caretakers retain outgoing ministers but cannot appoint replacements. A confirmed coalition change removes outgoing parties' ministers; occupation clears all five portfolios and the discount. Portfolios vacated by the player are never automatically refilled.\n\n",
-           "Mart Helme has two possible portfolios; reciprocal exclusions permit only one. Both are blocked while he is PM. Jaak Madison and Alar Laneman preserve EKRE's alternatives. Trivimi Velliste and Rene Kokk provide alternatives if Reinsalu or Martin Helme becomes PM in future authored content. Reinsalu remains appointable under Seeder and Martin under Mart; their parties supplying a PM does not identify them as that person. Portraits currently reuse TFR's generic European political portraits.\n\n",
-           "Future leadership events may set `TFR_EST_pm_person_urmas_reinsalu` or `TFR_EST_pm_person_martin_helme` after confirming the appropriate party's cabinet and updating its executive display. Minister eligibility then excludes the named incumbent, and a Martin marker supersedes Mart's default personal exclusion. Reconciliation clears stale wrong-party markers; occupation clears both. A successful new electoral or scripted mandate clears outgoing personal markers, while ordinary confidence recovery and caretaker continuity preserve the incumbent. These markers do not themselves change the PM, his display, parties, seats or mandates; existing routes do not set them.\n\n",
+           "Mart Helme has two possible portfolios; reciprocal exclusions permit only one. Both are blocked while he is PM. Jaak Madison and Alar Laneman preserve EKRE's alternatives. Trivimi Velliste and Rene Kokk provide alternatives if Reinsalu or Martin Helme becomes PM. Reinsalu remains appointable under Seeder and Martin under Mart; their parties supplying a PM does not identify them as that person. Once a confirmed EKRE government serves its 2023 mandate, Martin becomes prime minister and Rene Kokk remains eligible for the economic portfolio. Mart's foreign and interior candidacies then become available subject to their mutual office restriction. Portraits currently reuse TFR's generic European political portraits.\n\n",
+           "The 2023 EKRE government records `TFR_EST_martin_leads_ekre` only after cabinet confirmation. This career history survives later elections and occupation, restores `TFR_EST_pm_person_martin_helme` while EKRE supplies the incumbent, and keeps Martin as the head of later EKRE governments. Future leadership events may set `TFR_EST_pm_person_urmas_reinsalu` or `TFR_EST_pm_person_martin_helme` after confirming the appropriate party's cabinet and updating its executive display. Minister eligibility excludes the named incumbent, and a Martin marker supersedes Mart's default personal exclusion. Reconciliation clears stale wrong-party markers; occupation clears both personal markers while preserving career history. A successful new electoral or scripted mandate clears outgoing personal markers, and reconciliation restores the recorded EKRE leader. Confidence recovery and caretaker continuity preserve the incumbent. Personal markers never change parties, seats or parliamentary mandates.\n\n",
+           "After a valid Centre defeat in 2023, its September congress chooses Tanel Kiik or Mihhail Kõlvart as party leader. Neither is a portfolio nominee in this roster, so all five Centre portfolios retain eligible candidates. The choice does not replace another party's prime minister or alter portfolio appointments; an outgoing Ratas caretaker waits for cabinet confirmation. Selected party leadership survives future elections and occupation, while current Centre PM markers are cleared during occupation.\n\n",
            "| Party | Foreign | Economy | Interior | Intelligence | Defence |\n|---|---|---|---|---|---|\n"]
     for party in PARTIES:
         cells = [PARTY_NAMES[party]]

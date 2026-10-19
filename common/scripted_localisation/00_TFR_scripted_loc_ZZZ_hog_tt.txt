@@ -1127,6 +1127,42 @@ defined_text = {
         trigger = {
             TFR_EST_constitutional_executive = yes
             check_variable = { var = TFR_EST_pm_party value = 1 compare = equals }
+            has_country_flag = TFR_EST_kallas_departed_for_europe
+        }
+        localization_key = TFR_EST_hog_reform_michal
+    }
+
+    text = {
+        trigger = {
+            TFR_EST_constitutional_executive = yes
+            check_variable = { var = TFR_EST_pm_party value = 3 compare = equals }
+            has_country_flag = TFR_EST_martin_leads_ekre
+        }
+        localization_key = TFR_EST_hog_ekre_martin
+    }
+
+    text = {
+        trigger = {
+            TFR_EST_constitutional_executive = yes
+            check_variable = { var = TFR_EST_pm_party value = 2 compare = equals }
+            has_country_flag = TFR_EST_pm_person_tanel_kiik
+        }
+        localization_key = TFR_EST_hog_centre_kiik
+    }
+
+    text = {
+        trigger = {
+            TFR_EST_constitutional_executive = yes
+            check_variable = { var = TFR_EST_pm_party value = 2 compare = equals }
+            has_country_flag = TFR_EST_pm_person_mihhail_kolvart
+        }
+        localization_key = TFR_EST_hog_centre_kolvart
+    }
+
+    text = {
+        trigger = {
+            TFR_EST_constitutional_executive = yes
+            check_variable = { var = TFR_EST_pm_party value = 1 compare = equals }
         }
         localization_key = TFR_EST_hog_reform
     }

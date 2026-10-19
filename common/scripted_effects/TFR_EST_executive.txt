@@ -2,9 +2,47 @@
 # The ledger owns the cabinet; native country-leader roles display the president.
 TFR_EST_hide_executive_display = {
     clr_country_flag = head_of_gov_ui_enabled
+    clr_country_flag = TFR_EST_pm_person_kristen_michal
+    clr_country_flag = TFR_EST_pm_person_martin_helme
+    clr_country_flag = TFR_EST_pm_person_tanel_kiik
+    clr_country_flag = TFR_EST_pm_person_mihhail_kolvart
     remove_ideas = {
-        TFR_EST_pm_reform TFR_EST_pm_centre TFR_EST_pm_ekre
+        TFR_EST_pm_reform TFR_EST_pm_reform_michal TFR_EST_pm_centre TFR_EST_pm_centre_kiik TFR_EST_pm_centre_kolvart TFR_EST_pm_ekre TFR_EST_pm_ekre_martin
         TFR_EST_pm_isamaa TFR_EST_pm_sde TFR_EST_pm_e200 TFR_EST_pm_pp
+    }
+}
+
+# Martin led EKRE at the 2023 election. Record this career change only once
+# the elected cabinet is confirmed; the outgoing caretaker keeps its own PM.
+# Source: EKRE's programme launch, 28 January 2023, and Riigikogu's registration
+# of its parliamentary groups, 11 April 2023 (see executive regression tests).
+TFR_EST_reconcile_ekre_pm_identity = {
+    if = {
+        limit = {
+            TFR_EST_confirmed_cabinet = yes
+            has_country_flag = TFR_EST_ekre_2023_mandate
+            NOT = { has_country_flag = TFR_EST_ekre_2023_mandate_ended }
+            check_variable = { var = TFR_EST_mandate_party value = 3 compare = equals }
+            check_variable = { var = TFR_EST_pm_party value = 3 compare = equals }
+        }
+        set_country_flag = TFR_EST_martin_leads_ekre
+    }
+    if = {
+        limit = {
+            TFR_EST_constitutional_executive = yes
+            check_variable = { var = TFR_EST_pm_party value = 3 compare = equals }
+            has_country_flag = TFR_EST_martin_leads_ekre
+        }
+        set_country_flag = TFR_EST_pm_person_martin_helme
+    }
+    else_if = {
+        limit = {
+            OR = {
+                NOT = { TFR_EST_constitutional_executive = yes }
+                NOT = { check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } }
+            }
+        }
+        clr_country_flag = TFR_EST_pm_person_martin_helme
     }
 }
 
@@ -42,6 +80,9 @@ TFR_EST_reconcile_executive_display = {
     if = {
         limit = { TFR_EST_constitutional_executive = yes }
         set_country_flag = head_of_gov_ui_enabled
+        TFR_EST_reconcile_reform_pm_identity = yes
+        TFR_EST_reconcile_ekre_pm_identity = yes
+        TFR_EST_reconcile_centre_pm_identity = yes
         if = {
             limit = { has_country_flag = TFR_EST_karis_president }
             if = {
@@ -57,16 +98,24 @@ TFR_EST_reconcile_executive_display = {
         }
         # Remove only stale ministers; repairing the display never reruns an
         # incumbent minister's on_add or changes confidence, polling or seats.
-        if = { limit = { NOT = { check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } } } remove_ideas = TFR_EST_pm_reform }
-        if = { limit = { NOT = { check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } } } remove_ideas = TFR_EST_pm_centre }
-        if = { limit = { NOT = { check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } } } remove_ideas = TFR_EST_pm_ekre }
+        if = { limit = { OR = { NOT = { check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } } has_country_flag = TFR_EST_kallas_departed_for_europe } } remove_ideas = TFR_EST_pm_reform }
+        if = { limit = { OR = { NOT = { check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } } NOT = { has_country_flag = TFR_EST_kallas_departed_for_europe } } } remove_ideas = TFR_EST_pm_reform_michal }
+        if = { limit = { OR = { NOT = { check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } } has_country_flag = TFR_EST_pm_person_tanel_kiik has_country_flag = TFR_EST_pm_person_mihhail_kolvart } } remove_ideas = TFR_EST_pm_centre }
+        if = { limit = { OR = { NOT = { check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } } NOT = { has_country_flag = TFR_EST_pm_person_tanel_kiik } } } remove_ideas = TFR_EST_pm_centre_kiik }
+        if = { limit = { OR = { NOT = { check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } } NOT = { has_country_flag = TFR_EST_pm_person_mihhail_kolvart } } } remove_ideas = TFR_EST_pm_centre_kolvart }
+        if = { limit = { OR = { NOT = { check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } } has_country_flag = TFR_EST_martin_leads_ekre } } remove_ideas = TFR_EST_pm_ekre }
+        if = { limit = { OR = { NOT = { check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } } NOT = { has_country_flag = TFR_EST_martin_leads_ekre } } } remove_ideas = TFR_EST_pm_ekre_martin }
         if = { limit = { NOT = { check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } } } remove_ideas = TFR_EST_pm_isamaa }
         if = { limit = { NOT = { check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } } } remove_ideas = TFR_EST_pm_sde }
         if = { limit = { NOT = { check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } } } remove_ideas = TFR_EST_pm_e200 }
         if = { limit = { NOT = { check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } } } remove_ideas = TFR_EST_pm_pp }
-        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_idea = TFR_EST_pm_reform } } add_ideas = TFR_EST_pm_reform }
-        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_idea = TFR_EST_pm_centre } } add_ideas = TFR_EST_pm_centre }
-        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_idea = TFR_EST_pm_ekre } } add_ideas = TFR_EST_pm_ekre }
+        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_kallas_departed_for_europe } NOT = { has_idea = TFR_EST_pm_reform } } add_ideas = TFR_EST_pm_reform }
+        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } has_country_flag = TFR_EST_kallas_departed_for_europe NOT = { has_idea = TFR_EST_pm_reform_michal } } add_ideas = TFR_EST_pm_reform_michal }
+        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } NOT = { has_country_flag = TFR_EST_pm_person_tanel_kiik } NOT = { has_country_flag = TFR_EST_pm_person_mihhail_kolvart } NOT = { has_idea = TFR_EST_pm_centre } } add_ideas = TFR_EST_pm_centre }
+        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } has_country_flag = TFR_EST_pm_person_tanel_kiik NOT = { has_idea = TFR_EST_pm_centre_kiik } } add_ideas = TFR_EST_pm_centre_kiik }
+        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } has_country_flag = TFR_EST_pm_person_mihhail_kolvart NOT = { has_idea = TFR_EST_pm_centre_kolvart } } add_ideas = TFR_EST_pm_centre_kolvart }
+        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_martin_leads_ekre } NOT = { has_idea = TFR_EST_pm_ekre } } add_ideas = TFR_EST_pm_ekre }
+        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } has_country_flag = TFR_EST_martin_leads_ekre NOT = { has_idea = TFR_EST_pm_ekre_martin } } add_ideas = TFR_EST_pm_ekre_martin }
         if = { limit = { check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_idea = TFR_EST_pm_isamaa } } add_ideas = TFR_EST_pm_isamaa }
         if = { limit = { check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_idea = TFR_EST_pm_sde } } add_ideas = TFR_EST_pm_sde }
         if = { limit = { check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_idea = TFR_EST_pm_e200 } } add_ideas = TFR_EST_pm_e200 }

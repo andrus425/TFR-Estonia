@@ -219,7 +219,8 @@ def build_focuses() -> str:
         elif policy.suffix == "covid_emergency":
             selection = "    select_effect = { TFR_EST_begin_covid_response = yes }\n"
         reward = "TFR_EST_finish_opening" if final else "TFR_EST_opening_reward_" + policy.suffix
-        reward_guard = f"NOT = {{ has_country_flag = {flag} }}"
+        reward_guard = (f"NOT = {{ has_country_flag = {flag} }} "
+                        "NOT = { has_country_flag = TFR_EST_opening_assembly_ended }")
         if final:
             reward_guard += " NOT = { has_country_flag = TFR_EST_referendum_failed }"
         pieces.append(
@@ -230,7 +231,7 @@ def build_focuses() -> str:
             f"    y = {y}\n"
             f"    cost = 5\n"
             f"{prerequisites}"
-            f"    allow_branch = {{ NOT = {{ has_country_flag = TFR_EST_referendum_failed }} }}\n"
+            f"    allow_branch = {{ NOT = {{ has_country_flag = TFR_EST_referendum_failed }} NOT = {{ has_country_flag = TFR_EST_opening_assembly_ended }} NOT = {{ TFR_EST_reform_2023_branch_visible = yes }} }}\n"
             f"    available = {{\n        {available}\n    }}\n"
             f"    bypass = {{ has_country_flag = {flag} }}\n"
             f"{cancellation}"

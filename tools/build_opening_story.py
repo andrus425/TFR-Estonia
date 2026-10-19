@@ -30,7 +30,14 @@ TFR_EST_coalition_majority = {
 TFR_EST_opening_resolved = {
     has_country_flag = TFR_EST_opening_complete
 }
+# A new valid assembly retires these 2019-government events even if an old
+# popup is still open. Current party IDs cannot establish assembly identity.
+TFR_EST_opening_assembly_current = {
+    TFR_EST_independent_parliament = yes
+    NOT = { has_country_flag = TFR_EST_opening_assembly_ended }
+}
 TFR_EST_opening_coalition_majority = {
+    TFR_EST_opening_assembly_current = yes
     TFR_EST_coalition_majority = yes
     NOT = { has_country_flag = TFR_EST_caretaker }
     NOT = { has_country_flag = TFR_EST_opening_complete }
@@ -60,6 +67,7 @@ TFR_EST_can_start_referendum = {
     }
 }
 TFR_EST_referendum_available = {
+    TFR_EST_opening_assembly_current = yes
     NOT = { has_country_flag = TFR_EST_referendum_failed }
     OR = {
         has_country_flag = TFR_EST_referendum_active
@@ -96,6 +104,7 @@ TFR_EST_referendum_available = {
     effects += '''TFR_EST_begin_covid_response = {
     if = {
         limit = {
+            TFR_EST_opening_assembly_current = yes
             generic_has_corona = yes
             NOT = { has_country_flag = TFR_EST_opening_covid_announced }
         }
@@ -107,6 +116,7 @@ TFR_EST_referendum_available = {
 TFR_EST_begin_referendum = {
     if = {
         limit = {
+            TFR_EST_opening_assembly_current = yes
             NOT = { has_country_flag = TFR_EST_done_opening_marriage_referendum }
             NOT = { has_country_flag = TFR_EST_referendum_failed }
         }
@@ -120,6 +130,7 @@ TFR_EST_begin_referendum = {
 TFR_EST_reveal_after_opening = {
     if = {
         limit = {
+            TFR_EST_opening_assembly_current = yes
             has_country_flag = TFR_EST_porto_choice_resolved
             OR = {
                 has_country_flag = TFR_EST_done_opening_marriage_referendum
@@ -145,15 +156,18 @@ TFR_EST_finish_opening = {
 # arrive after native completion; undo only the abandoned referendum in that
 # case, preserving all ten earlier policies and their persistent rewards.
 TFR_EST_fail_referendum = {
-    set_country_flag = TFR_EST_referendum_failed
-    clr_country_flag = TFR_EST_referendum_active
-    clr_country_flag = TFR_EST_done_opening_marriage_referendum
     if = {
-        limit = { has_completed_focus = TFR_EST_opening_marriage_referendum }
-        uncomplete_national_focus = {
-            focus = TFR_EST_opening_marriage_referendum
-            uncomplete_children = no
-            refund_political_power = no
+        limit = { TFR_EST_opening_assembly_current = yes }
+        set_country_flag = TFR_EST_referendum_failed
+        clr_country_flag = TFR_EST_referendum_active
+        clr_country_flag = TFR_EST_done_opening_marriage_referendum
+        if = {
+            limit = { has_completed_focus = TFR_EST_opening_marriage_referendum }
+            uncomplete_national_focus = {
+                focus = TFR_EST_opening_marriage_referendum
+                uncomplete_children = no
+                refund_political_power = no
+            }
         }
     }
 }
@@ -162,7 +176,7 @@ TFR_EST_fail_referendum = {
 TFR_EST_keep_ratas = {
     if = {
         limit = {
-            TFR_EST_independent_parliament = yes
+            TFR_EST_opening_assembly_current = yes
             has_country_flag = TFR_EST_porto_investigation_seen
             NOT = { has_country_flag = TFR_EST_porto_choice_resolved }
         }
@@ -185,7 +199,7 @@ TFR_EST_keep_ratas = {
 TFR_EST_ratas_steps_back = {
     if = {
         limit = {
-            TFR_EST_independent_parliament = yes
+            TFR_EST_opening_assembly_current = yes
             has_country_flag = TFR_EST_porto_investigation_seen
             NOT = { has_country_flag = TFR_EST_porto_choice_resolved }
         }
@@ -205,7 +219,7 @@ TFR_EST_ratas_steps_back = {
 TFR_EST_form_reform_centre_cabinet = {
     if = {
         limit = {
-            TFR_EST_independent_parliament = yes
+            TFR_EST_opening_assembly_current = yes
             has_country_flag = TFR_EST_reform_handover_pending
             NOT = { has_country_flag = TFR_EST_reform_centre_formed }
             NOT = { has_country_flag = TFR_EST_kallas_mandate_ended }
@@ -229,7 +243,7 @@ TFR_EST_form_reform_centre_cabinet = {
 
 TFR_EST_opening_tick = {
     if = {
-        limit = { TFR_EST_independent_parliament = yes }
+        limit = { TFR_EST_opening_assembly_current = yes }
         if = {
             limit = {
                 has_country_flag = TFR_EST_reform_handover_pending
@@ -296,7 +310,7 @@ country_event = {
     picture = GFX_report_event_generic_handshake
     is_triggered_only = yes
     trigger = {
-        TFR_EST_independent_parliament = yes
+        TFR_EST_opening_assembly_current = yes
         has_country_flag = TFR_EST_referendum_active
         NOT = { has_country_flag = TFR_EST_porto_investigation_seen }
     }
@@ -316,7 +330,7 @@ country_event = {
     picture = GFX_report_event_generic_handshake
     is_triggered_only = yes
     trigger = {
-        TFR_EST_independent_parliament = yes
+        TFR_EST_opening_assembly_current = yes
         has_country_flag = TFR_EST_porto_investigation_seen
         NOT = { has_country_flag = TFR_EST_porto_choice_resolved }
         NOT = { has_country_flag = TFR_EST_porto_choice_presented }
@@ -342,7 +356,7 @@ country_event = {
     picture = GFX_report_event_generic_handshake
     is_triggered_only = yes
     trigger = {
-        TFR_EST_independent_parliament = yes
+        TFR_EST_opening_assembly_current = yes
         has_country_flag = TFR_EST_reform_handover_pending
         NOT = { has_country_flag = TFR_EST_reform_centre_formed }
         NOT = { has_country_flag = TFR_EST_kallas_mandate_ended }

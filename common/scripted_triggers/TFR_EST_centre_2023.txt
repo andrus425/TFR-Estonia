@@ -1,0 +1,55 @@
+# A Centre plurality in the validated 2023 ballot grants this mandate.
+TFR_EST_centre_2023_branch_visible = {
+    TFR_EST_independent_parliament = yes
+    has_country_flag = TFR_EST_centre_2023_mandate
+    has_country_flag = TFR_EST_centre_won_2023_election
+    NOT = { has_country_flag = TFR_EST_centre_2023_mandate_ended }
+    check_variable = { var = TFR_EST_mandate_party value = 2 compare = equals }
+}
+TFR_EST_centre_2023_governing = {
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_centre_2023_governing_tt
+        TFR_EST_centre_2023_branch_visible = yes
+        TFR_EST_coalition_majority = yes
+        TFR_EST_confirmed_cabinet = yes
+        check_variable = { var = TFR_EST_pm_party value = 2 compare = equals }
+        check_variable = { var = TFR_EST_mandate_party value = 2 compare = equals }
+        check_variable = { var = TFR_EST_coalition_centre value = 1 compare = equals }
+    }
+}
+TFR_EST_centre_2023_all_policies_done = {
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_centre_2023_all_policies_done_tt
+        OR = { has_completed_focus = TFR_EST_centre_2023_new_mandate has_country_flag = TFR_EST_done_centre_2023_new_mandate }
+        OR = { has_completed_focus = TFR_EST_centre_2023_defence_commitment has_country_flag = TFR_EST_done_centre_2023_defence_commitment }
+        OR = { has_completed_focus = TFR_EST_centre_2023_air_defence has_country_flag = TFR_EST_done_centre_2023_air_defence }
+        OR = { has_completed_focus = TFR_EST_centre_2023_reserve_expertise has_country_flag = TFR_EST_done_centre_2023_reserve_expertise }
+        OR = { has_completed_focus = TFR_EST_centre_2023_allied_basing has_country_flag = TFR_EST_done_centre_2023_allied_basing }
+        OR = { has_completed_focus = TFR_EST_centre_2023_community_training has_country_flag = TFR_EST_done_centre_2023_community_training }
+        OR = { has_completed_focus = TFR_EST_centre_2023_civil_continuity has_country_flag = TFR_EST_done_centre_2023_civil_continuity }
+        OR = { has_completed_focus = TFR_EST_centre_2023_industrial_guarantees has_country_flag = TFR_EST_done_centre_2023_industrial_guarantees }
+        OR = { has_completed_focus = TFR_EST_centre_2023_ammunition_workshop has_country_flag = TFR_EST_done_centre_2023_ammunition_workshop }
+        OR = { has_completed_focus = TFR_EST_centre_2023_maintenance_workshop has_country_flag = TFR_EST_done_centre_2023_maintenance_workshop }
+        OR = { has_completed_focus = TFR_EST_centre_2023_ida_viru_innovation has_country_flag = TFR_EST_done_centre_2023_ida_viru_innovation }
+        OR = { has_completed_focus = TFR_EST_centre_2023_regional_jobs has_country_flag = TFR_EST_done_centre_2023_regional_jobs }
+        OR = { has_completed_focus = TFR_EST_centre_2023_construction_orders has_country_flag = TFR_EST_done_centre_2023_construction_orders }
+        OR = { has_completed_focus = TFR_EST_centre_2023_power_reserves has_country_flag = TFR_EST_done_centre_2023_power_reserves }
+        OR = { has_completed_focus = TFR_EST_centre_2023_local_chp has_country_flag = TFR_EST_done_centre_2023_local_chp }
+        OR = { has_completed_focus = TFR_EST_centre_2023_apartment_renovation has_country_flag = TFR_EST_done_centre_2023_apartment_renovation }
+        OR = { has_completed_focus = TFR_EST_centre_2023_weatherproof_grid has_country_flag = TFR_EST_done_centre_2023_weatherproof_grid }
+        OR = { has_completed_focus = TFR_EST_centre_2023_rural_broadband has_country_flag = TFR_EST_done_centre_2023_rural_broadband }
+        OR = { has_completed_focus = TFR_EST_centre_2023_energy_cooperatives has_country_flag = TFR_EST_done_centre_2023_energy_cooperatives }
+        OR = { has_completed_focus = TFR_EST_centre_2023_progressive_income_tax has_country_flag = TFR_EST_done_centre_2023_progressive_income_tax }
+        OR = { has_completed_focus = TFR_EST_centre_2023_minimum_tax_allowance has_country_flag = TFR_EST_done_centre_2023_minimum_tax_allowance }
+        OR = { has_completed_focus = TFR_EST_centre_2023_food_vat has_country_flag = TFR_EST_done_centre_2023_food_vat }
+        OR = { has_completed_focus = TFR_EST_centre_2023_prescription_vat has_country_flag = TFR_EST_done_centre_2023_prescription_vat }
+        OR = { has_completed_focus = TFR_EST_centre_2023_pension_fifty has_country_flag = TFR_EST_done_centre_2023_pension_fifty }
+        OR = { has_completed_focus = TFR_EST_centre_2023_home_care has_country_flag = TFR_EST_done_centre_2023_home_care }
+        OR = { has_completed_focus = TFR_EST_centre_2023_county_hospitals has_country_flag = TFR_EST_done_centre_2023_county_hospitals }
+        OR = { has_completed_focus = TFR_EST_centre_2023_second_day_sick_pay has_country_flag = TFR_EST_done_centre_2023_second_day_sick_pay }
+        OR = { has_completed_focus = TFR_EST_centre_2023_free_kindergarten has_country_flag = TFR_EST_done_centre_2023_free_kindergarten }
+        OR = { has_completed_focus = TFR_EST_centre_2023_teacher_pay has_country_flag = TFR_EST_done_centre_2023_teacher_pay }
+        OR = { has_completed_focus = TFR_EST_centre_2023_language_courses has_country_flag = TFR_EST_done_centre_2023_language_courses }
+        OR = { has_completed_focus = TFR_EST_centre_2023_minorities_council has_country_flag = TFR_EST_done_centre_2023_minorities_council }
+    }
+}

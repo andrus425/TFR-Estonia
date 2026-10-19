@@ -47,8 +47,8 @@ changes to **Estonian Economy** or **Estonian Military**. For example, the highw
 adds **5% construction speed** and reduces **supply consumption by 4%**; the
 research commitment adds **5% research speed**. Permanent reforms accumulate in
 the two dynamic modifiers. Requirement tooltips summarize the necessary cabinet,
-51-seat majority, domestic COVID cases or completed programme. Focus descriptions
-remain unchanged.
+51-seat majority, domestic COVID cases or completed programme. Existing focus
+descriptions remain unchanged.
 
 The policies cover voluntary second-pillar reform, €1,315
 teacher pay, COVID emergency measures, the €7 extraordinary pension increase,
@@ -135,11 +135,13 @@ save's custom energy penalty is reversed once before adopting the real spirit.
 Twenty focuses take **700 days**. Beginning the continuation on 28 January 2021
 allows completion on 29 December 2022, with 66 days before the 5 March 2023 election
 date. Delays caused by inactivity, lost coalition confidence or occupation consume
-that margin. The election calendar and seat-allocation rules are unchanged.
+that margin. The March 2023 election date and seat-allocation rules are unchanged.
 The next valid election ends this 2019 coalition programme, even if Centre wins
-again, and reveals the normal domestic programmes. While it is active, those older
-party, economy and military branches remain hidden; relevant war and restoration
-branches can still appear when the world state requires them.
+again. Reform, EKRE and Centre victories in 2023 reveal their new mandate programmes;
+other results open the applicable normal domestic programmes. While a historical
+government programme is active, the older party, economy and military branches remain
+hidden; relevant war and restoration branches can still appear when the world
+state requires them.
 
 ## Ratas steps back: Kallas's government through 2023
 
@@ -182,13 +184,194 @@ the route does not force the real 2022 coalition collapse. Twenty focuses take
 **700 days**: a 26 January 2021 start allows completion on **27 December 2022**,
 68 days before 5 March 2023. A lost majority, occupation or player delay consumes
 that margin. The next valid election ends this programme even after another
-Reform victory, revealing the broader domestic tree. Relevant war and restoration
-branches remain governed by the world state.
+Reform victory. Reform, EKRE and Centre pluralities in 2023 open their new mandate
+programmes; other results reveal the applicable broader domestic tree. Relevant
+war and restoration branches remain governed by the world state.
 
 War, restoration and later-term branch entries use the saved opening-resolution
 state. They remain reachable after occupation and restoration even when the
 engine no longer retains the earlier opening's native completion records.
 Prerequisites within those branches remain in place.
+
+## Reform wins in 2023: preparation for the European war
+
+A validated election in 2023 gives Reform its own **32-focus programme** if it
+wins the most seats. The route stays hidden before that result and does not
+require the earlier Reform–Centre government to have existed. Select its focuses
+under a confirmed Reform-led cabinet with **51 actual coalition seats**. The
+coalition comes from the party ledger; Eesti 200 and the Social Democrats are
+not forced into government. Confidence-and-supply seats do not replace the
+coalition majority needed for legislation.
+
+One root opens five compact columns, with choices between them and ordinary
+prerequisites inside each:
+
+- Three-percent defence funding, territorial-defence equipment and training,
+  layered air defence, the Baltic Defence Line, Nursipalu and allied logistics.
+- Defence-industry planning, ammunition and drone/repair production, European-grid
+  works, wind permits and regional apartment renovation.
+- Estonian-language education, Ida-Viru teacher recruitment, teachers' pay and
+  careers, learning until eighteen, vocational places and Metrosert applied research.
+- Automatic business reporting, enterprise digitisation, the digital defence
+  reserve, public research funding, regional exporters and civil protection.
+- VAT reform and spending reviews, municipal revenue, care funding, marriage
+  equality and local mental-health services.
+
+Defence funding and industrial planning are available immediately after the root.
+The ammunition and drone projects each grant **one paid military factory**, with
+earliest completion after **105 and 140 total focus-days** respectively. They
+require an owned and controlled Estonian core with a free unlocked building slot.
+If no suitable slot exists, the funded project waits and retries; it grants no
+extra slots and cannot award a duplicate factory after a reload or PM handover.
+Air-defence and Baltic-line preparation are also early in their branch, rather
+than depending on the final report or completed civilian policies.
+
+All focuses take **35 days**, for **1,120 days** in total. An uninterrupted start
+on the historical cabinet date of 17 April 2023 can finish on **11 May 2026**, 235
+days before 2027. Delayed cabinet formation, lost majorities, occupation and player
+pauses consume that margin. An early European war does not itself close the
+programme. The final report requires every other policy; it starts no war and
+calls no election. Older generic domestic branches stay hidden during this
+mandate, while relevant war and restoration content remains available. A valid
+election also retires unfinished Porto Franco choices and old cabinet callbacks;
+they cannot replace the newly elected government or grant skipped policies.
+
+The programme uses enacted policy and the 2023–2027 and 2024–2027 coalition
+agreements, as recorded in [the Reform source register](docs/REFORM_2023_SOURCES.md).
+Factory timing and numerical benefits are gameplay adaptations. Economic and
+military rewards use the existing dynamic modifiers with native delta previews
+and parent-ledger costs. The grid, wind and renovation measures fill the existing
+five Oil Crash preparation slots; earlier governments' work counts once.
+
+From late July 2024, an event can send **Kaja Kallas to Europe** and install
+**Kristen Michal** as PM, provided the confirmed Reform mandate and Estonia's
+actual EU membership still qualify. The delayed event rechecks those conditions.
+The handover preserves the president, coalition, seats, ministers, completed
+policies and election schedule. Kallas's departure is permanent career history:
+future Reform-led cabinets use Michal, including after a supported occupation
+and restoration, rather than bringing her back automatically.
+
+## EKRE wins in 2023: a national conservative programme
+
+A validated EKRE plurality in the 2023 election reveals a separate **32-focus
+programme**. Its basis is the party's 2023 election, defence and population
+platforms: EKRE did not lead the historical government formed after that election.
+The [EKRE source register](docs/EKRE_2023_SOURCES.md) records the proposals and
+their game adaptations. The coalition remains the one negotiated in parliament.
+Focuses require a confirmed EKRE-led government and **51 actual coalition seats**.
+
+One root opens five compact columns with ordinary prerequisites and choices
+between them:
+
+- Defence funding, expanded reserve preparation, air and coastal defence,
+  a military border-guard reserve, and shelters and civil-protection training.
+- Domestic defence contracts, ammunition and equipment-repair workshops,
+  existing railways, trunk-road sections and emergency food reserves.
+- Narva generating-unit overhauls, Kiisa supply arrangements, the proposed
+  subsidised electricity tariff, fuel-excise relief and reduced food/medicine VAT.
+- Child-linked tax relief, family-home and student-loan programmes, family-doctor
+  duty hours, rural midwife cover and a thirteenth-pension supplement.
+- Parliamentary scrutiny, an independent e-voting audit, citizen-initiative and
+  direct-presidential-election bills, review of European measures and
+  Estonian-language teaching capacity.
+
+Defence funding can finish after **70 total focus-days**. The ammunition and
+repair workshops each provide **one paid military factory**, with earliest
+completion after **105 and 140 days** respectively. As on the Reform route,
+delivery needs an owned and controlled Estonian core with a free unlocked slot.
+Funded projects wait if necessary and cannot duplicate their factories or costs.
+Reserve and air-defence preparation are also early in their branch. The expanded
+reserve and domestic-contract policies unlock the existing paid recruitment and
+procurement decisions rather than granting an equipped army immediately.
+
+All **32 focuses take 35 days** each: **1,120 days**, allowing an uninterrupted
+17 April 2023 start to finish on **11 May 2026**, 235 days before 2027. The final
+report requires all other policies. Early war does not end the programme;
+coalition loss or occupation can interrupt it, and persistent policy records
+preserve enacted work. The older generic domestic branches remain hidden while
+this mandate is active. A later valid election ends the programme even if EKRE
+wins again; rejected election inputs do not end it.
+
+The programme uses the existing economic and military dynamic modifiers, visible
+budget costs and explicit recurring income losses for tax relief. Narva overhauls
+cover two Oil Crash recovery slots, Kiisa covers one and the funded tariff covers
+two. These are the same five slots used by earlier governments, so equivalent
+projects count once and the full energy branch can remove the parent spirit.
+Constitutional focuses prepare bills and oversight; the current president and
+parliament remain governed by their established systems.
+
+After confirmation of the elected EKRE government, **Martin Helme** takes the
+locked PM position. The outgoing caretaker keeps its incumbent during coalition
+talks. Martin's leadership persists for later EKRE cabinets across elections and
+supported occupation/restoration. His economic-minister appointment is excluded
+while he is PM, leaving Rene Kokk as the party's economic candidate; Mart Helme
+remains eligible for an ordinary portfolio.
+
+## Centre wins in 2023: public services and national preparation
+
+A validated Centre plurality in the 2023 election opens its own **32-focus
+programme**. An initial March victory keeps Jüri Ratas as PM after cabinet
+confirmation; a later 2023 victory preserves any successor already chosen at
+the September congress. The programme adapts Centre's contemporary election
+platform; it represents a
+hypothetical government rather than the historical Reform-led cabinet's actions.
+The [Centre source register](docs/CENTRE_2023_SOURCES.md) records the original
+platform and each policy's implementation. A confirmed Centre-led government and
+**51 actual coalition seats** are required, with partners chosen through the
+party ledger.
+
+One root opens five compact columns with choices between them:
+
+- A cross-party defence commitment, air-defence preparation, reservists'
+  civilian expertise, allied reception facilities, training-area compensation
+  and municipal civil protection.
+- Domestic defence suppliers, ammunition and equipment-maintenance workshops,
+  Ida-Viru industrial technology, regional investment guarantees and funded
+  public construction.
+- Dispatchable generation and LNG preparation, local heat-and-power projects,
+  rural apartment renovation, weatherproof networks, last-mile broadband and
+  community energy cooperatives.
+- A higher income-tax band, a minimum-wage-linked allowance, reduced food and
+  prescription-medicine VAT, a funded pension increase and care at home.
+- Predictable county-hospital funding, sick pay from the second day, free
+  kindergarten places, teachers' pay negotiations, free Estonian courses and a
+  national-minorities advisory council.
+
+Defence funding is available after **70 total focus-days**, air defence after
+**105**, and reserve preparation after **140** along their branch. The industrial
+column provides **two paid military factories** after **105 and 140 days**.
+Each needs an owned and controlled Estonian core with an unlocked free building
+slot; funded projects wait when necessary and grant each facility once. Neither
+the factories nor the early defence policies require completed civilian branches
+or the final report. Reserve and domestic-supplier policies also unlock the
+existing paid recruitment and procurement decisions.
+
+All focuses take **35 days**, totaling **1,120 days**. An uninterrupted
+17 April 2023 start can finish on **11 May 2026**, 235 days before 2027. The final
+report requires all other policies. The programme remains available during an
+early European war while the government still qualifies; occupation or loss of
+the coalition majority can interrupt it. Older generic domestic branches remain
+hidden during the mandate. A later valid election ends this programme even after
+another Centre victory, while invalid ballots preserve it.
+
+Native effect tooltips show the actual budget charges, dynamic-modifier deltas
+and recurring revenue changes. The higher income-tax band raises receipts;
+the allowance and consumption-tax relief reduce them. The energy programme
+shares the existing five Oil Crash recovery slots: reserve-generation/LNG work
+covers two, local heat and power one, and apartment renovation two. Earlier
+equivalent preparations count once. Completing all three can remove the crisis
+spirit without duplicating another cabinet's work.
+
+If Centre instead loses the 2023 election, Ratas remains party chair through the
+summer. From **10 September 2023**, an independent Estonia receives the party's
+extraordinary-congress event with **Tanel Kiik** and **Mihhail Kõlvart** as its two
+candidates. The choice changes Centre's chair and its future PM identity. It
+preserves another party's incumbent PM, the president, parliamentary seats,
+coalition agreements and election schedule, including when Centre is a junior
+coalition partner. An outgoing Ratas caretaker stays until cabinet confirmation.
+The selected leader persists across future Centre governments and supported
+occupation/restoration. Centre's 2023 victory path does not hold this defeat
+congress.
 
 ## Playing the political system
 
@@ -211,8 +394,15 @@ Prerequisites within those branches remain in place.
 - Between elections, confidence recovery reconfirms the incumbent. A different
   prime minister requires an explicit event or focus; ordinary negotiations and
   AI route preferences cannot replace the coalition leader.
-- Regular elections begin in March 2023 and repeat every four years. Restored
-  independence triggers an election within 90 days.
+- The March 2023 election remains scheduled. Its successor waits for the First
+  European War to finish: no fixed 2027 election takes place before or during
+  that war. An independent survivor votes on the first daily update after the
+  actual settlement, even if peace comes before 2027. Active war, capitulation
+  and occupation defer that vote. A fresh four-year term (1,461 days) then begins.
+- Restored independence retains its 84-day election period. When a postwar vote
+  is also pending, the restoration ballot waits for a settled war and satisfies
+  both schedules without a second immediate election. Invalid polling preserves
+  the assembly and retries the pending election instead of consuming its schedule.
 - There is no snap-election decision or automatic caretaker snap vote. Only an
   authored event or focus can authorize one.
 - The dedicated Riigikogu panel shows polling, seats, cabinet membership,
@@ -283,9 +473,9 @@ initial values are neutral. The economy container supports construction,
 industrial output, production efficiency, research, resources and consumer goods;
 the military container supports combat, organization, mobilization, training,
 entrenchment, attrition and supply. Missing variables or modifiers are repaired
-without resetting saved adjustments. New opening, retained-Ratas and Kallas bonuses use these
-containers. Later programmes retain their current reward ideas pending their
-own content revision.
+without resetting saved adjustments. Opening, retained-Ratas, pre-election
+Kallas and the Reform/EKRE/Centre 2023 mandate bonuses use these containers. Older generic
+programmes retain their current reward ideas pending their own content revision.
 
 Reserve authorization unlocks a Kaitseliit template and temporary training
 support. **Recruit units normally**: the authorization does not spawn free
@@ -332,6 +522,11 @@ python tools/native_script_interface.py --check
 python tools/build_energy_crisis.py --check
 python tools/build_focus_tooltips.py --check
 python tools/build_ministers.py --check
+python tools/build_reform_2023.py --check
+python tools/build_reform_handover.py --check
+python tools/build_ekre_2023.py --check
+python tools/build_centre_2023.py --check
+python tools/build_centre_leadership.py --check
 ```
 
 On this Codex host, Python is also available at:
@@ -356,6 +551,21 @@ safe migration of the earlier custom penalty. Both generators support `--check`.
 `tools/build_ministers.py` builds the native cabinet candidates, traits,
 eligibility, lifecycle helpers, portraits, localization and sourced roster from
 the two `tools/minister_roster_*.json` research files; it also supports `--check`.
+`tools/build_reform_2023.py` generates the elected 2023 programme, rewards and
+localization. `tools/build_reform_handover.py` generates the Kallas–Michal event
+and guarded career transition. Both support `--check`. Election scheduling and
+the validated 2023 mandate lifecycle are authored in the dedicated
+`TFR_EST_elections_war.txt` and `TFR_EST_reform_2023_lifecycle.txt` helpers.
+`tools/build_ekre_2023.py` generates the alternative elected EKRE programme,
+rewards and localization, with its own `--check`. The elected programmes feed
+the shared main-tree imports, AI priorities, modifier previews and capped energy
+recovery slots; regenerate the shared main tree and check those outputs after a
+policy change. The EKRE election hook is in `TFR_EST_ekre_2023_lifecycle.txt`.
+`tools/build_centre_2023.py` generates Centre's elected programme, rewards and
+localization and also supports `--check`. Its validated mandate and party-defeat
+history are maintained in `TFR_EST_centre_2023_lifecycle.txt`.
+`tools/build_centre_leadership.py` generates the guarded September congress,
+party-leader labels and persistent leadership helpers, with its own `--check`.
 
 For a controlled startup parser check, close any existing HOI4 session and run:
 

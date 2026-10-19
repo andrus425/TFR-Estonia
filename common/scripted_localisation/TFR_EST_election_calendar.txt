@@ -1,0 +1,24 @@
+# Parliament and panel share one lifecycle-aware election calendar.
+defined_text = {
+    name = TFR_EST_election_calendar
+    text = {
+        trigger = { has_country_flag = TFR_EST_occupied }
+        localization_key = TFR_EST_calendar_occupation
+    }
+    text = {
+        trigger = { has_country_flag = TFR_EST_restoration_election }
+        localization_key = TFR_EST_calendar_restoration
+    }
+    text = {
+        trigger = { has_country_flag = TFR_EST_postwar_election_held }
+        localization_key = TFR_EST_calendar_postwar_term
+    }
+    text = {
+        trigger = {
+            check_variable = { var = TFR_EST_election_year value = 2023 compare = equals }
+            date < 2027.1.1
+        }
+        localization_key = TFR_EST_calendar_2023
+    }
+    text = { localization_key = TFR_EST_calendar_first_war }
+}

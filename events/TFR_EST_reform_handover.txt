@@ -1,0 +1,17 @@
+add_namespace = tfr_estonia_reform_handover
+country_event = {
+    id = tfr_estonia_reform_handover.1
+    title = TFR_EST_reform_handover_title
+    desc = TFR_EST_reform_handover_desc
+    picture = GFX_report_event_generic_handshake
+    is_triggered_only = yes
+    trigger = {
+        TFR_EST_reform_handover_eligible = yes
+        has_country_flag = TFR_EST_reform_2024_handover_pending
+    }
+    option = {
+        name = TFR_EST_reform_handover_option
+        custom_effect_tooltip = TFR_EST_reform_handover_tt
+        hidden_effect = { TFR_EST_complete_reform_handover = yes }
+    }
+}

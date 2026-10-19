@@ -1,0 +1,104 @@
+# Party office and the incumbent prime minister are separate records. An
+# opposition congress never changes the country's cabinet or parliamentary
+# mandate. An outgoing Ratas caretaker waits for actual cabinet confirmation.
+TFR_EST_reconcile_centre_pm_identity = {
+    if = {
+        limit = {
+            TFR_EST_constitutional_executive = yes
+            check_variable = { var = TFR_EST_pm_party value = 2 compare = equals }
+        }
+        if = {
+            limit = { NOT = { has_country_flag = TFR_EST_caretaker } }
+            clr_country_flag = TFR_EST_centre_leadership_waiting_confirmation
+        }
+        if = {
+            limit = { NOT = { has_country_flag = TFR_EST_centre_leadership_waiting_confirmation } }
+            if = {
+                limit = { has_country_flag = TFR_EST_centre_leader_kiik }
+                set_country_flag = TFR_EST_pm_person_tanel_kiik
+                clr_country_flag = TFR_EST_pm_person_mihhail_kolvart
+            }
+            else_if = {
+                limit = { has_country_flag = TFR_EST_centre_leader_kolvart }
+                set_country_flag = TFR_EST_pm_person_mihhail_kolvart
+                clr_country_flag = TFR_EST_pm_person_tanel_kiik
+            }
+            else = {
+                clr_country_flag = TFR_EST_pm_person_tanel_kiik
+                clr_country_flag = TFR_EST_pm_person_mihhail_kolvart
+            }
+        }
+    }
+    else = {
+        clr_country_flag = TFR_EST_pm_person_tanel_kiik
+        clr_country_flag = TFR_EST_pm_person_mihhail_kolvart
+        if = {
+            limit = { NOT = { check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } } }
+            clr_country_flag = TFR_EST_centre_leadership_waiting_confirmation
+        }
+    }
+}
+
+TFR_EST_choose_centre_leader_kiik = {
+    if = {
+        limit = { TFR_EST_centre_leadership_eligible = yes }
+        set_country_flag = TFR_EST_centre_leadership_resolved
+        set_country_flag = TFR_EST_centre_leader_kiik
+        clr_country_flag = TFR_EST_centre_leader_kolvart
+        clr_country_flag = TFR_EST_centre_leadership_pending
+        if = {
+            limit = {
+                check_variable = { var = TFR_EST_pm_party value = 2 compare = equals }
+                has_country_flag = TFR_EST_caretaker
+            }
+            set_country_flag = TFR_EST_centre_leadership_waiting_confirmation
+        }
+        else = { clr_country_flag = TFR_EST_centre_leadership_waiting_confirmation }
+        TFR_EST_reconcile_centre_pm_identity = yes
+        TFR_EST_reconcile_executive_display = yes
+    }
+}
+
+TFR_EST_choose_centre_leader_kolvart = {
+    if = {
+        limit = { TFR_EST_centre_leadership_eligible = yes }
+        set_country_flag = TFR_EST_centre_leadership_resolved
+        set_country_flag = TFR_EST_centre_leader_kolvart
+        clr_country_flag = TFR_EST_centre_leader_kiik
+        clr_country_flag = TFR_EST_centre_leadership_pending
+        if = {
+            limit = {
+                check_variable = { var = TFR_EST_pm_party value = 2 compare = equals }
+                has_country_flag = TFR_EST_caretaker
+            }
+            set_country_flag = TFR_EST_centre_leadership_waiting_confirmation
+        }
+        else = { clr_country_flag = TFR_EST_centre_leadership_waiting_confirmation }
+        TFR_EST_reconcile_centre_pm_identity = yes
+        TFR_EST_reconcile_executive_display = yes
+    }
+}
+
+TFR_EST_centre_leadership_tick = {
+    if = {
+        limit = { tag = EST has_country_flag = TFR_EST_initialized }
+        if = {
+            limit = { TFR_EST_centre_leadership_eligible = yes }
+            if = {
+                limit = {
+                    NOT = { has_country_flag = TFR_EST_centre_leadership_pending }
+                    NOT = { has_country_flag = TFR_EST_centre_leadership_presented }
+                }
+                set_country_flag = { flag = TFR_EST_centre_leadership_pending days = 2 }
+                country_event = { id = tfr_estonia_centre_leadership.1 hours = 1 }
+            }
+        }
+        else = {
+            clr_country_flag = TFR_EST_centre_leadership_pending
+            if = {
+                limit = { NOT = { has_country_flag = TFR_EST_centre_leadership_resolved } }
+                clr_country_flag = TFR_EST_centre_leadership_presented
+            }
+        }
+    }
+}

@@ -242,6 +242,7 @@ def main():
                     limit = { has_country_flag = TFR_EST_initialized }
                     TFR_EST_reconcile_occupation = yes
                     TFR_EST_reconcile_campaign = yes
+                    TFR_EST_war_elections_tick = yes
                     TFR_EST_initialize_ministers = yes
                     TFR_EST_reconcile_ministers = yes
                     TFR_EST_initialize_country_modifiers = yes
@@ -249,6 +250,11 @@ def main():
                     TFR_EST_opening_tick = yes
                     TFR_EST_ratas_tick = yes
                     TFR_EST_kallas_tick = yes
+                    TFR_EST_reform_2023_tick = yes
+                    TFR_EST_ekre_2023_tick = yes
+                    TFR_EST_centre_2023_tick = yes
+                    TFR_EST_centre_leadership_tick = yes
+                    TFR_EST_reform_handover_tick = yes
                     TFR_EST_refresh_focus_visibility = yes
                 }
             }

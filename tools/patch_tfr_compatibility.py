@@ -147,6 +147,36 @@ def parent_patch(text: str, relative: str) -> tuple[str, list[dict]]:
         pos = definitions[0].end - 1
         if text[pos] != "}":
             raise ValueError("Expected the outer head-of-government closing brace")
+        # The career history has priority over the ordinary Reform selector.
+        # Keep it scoped to Reform so another party never inherits his display.
+        michal_selector = ("\n    text = {\n"
+                           "        trigger = {\n"
+                           "            TFR_EST_constitutional_executive = yes\n"
+                           "            check_variable = { var = TFR_EST_pm_party value = 1 compare = equals }\n"
+                           "            has_country_flag = TFR_EST_kallas_departed_for_europe\n"
+                           "        }\n"
+                           "        localization_key = TFR_EST_hog_reform_michal\n"
+                           "    }\n")
+        edits.append((pos, pos, michal_selector, "Estonia head-of-government selector for Michal after Kallas departs"))
+        martin_selector = ("\n    text = {\n"
+                           "        trigger = {\n"
+                           "            TFR_EST_constitutional_executive = yes\n"
+                           "            check_variable = { var = TFR_EST_pm_party value = 3 compare = equals }\n"
+                           "            has_country_flag = TFR_EST_martin_leads_ekre\n"
+                           "        }\n"
+                           "        localization_key = TFR_EST_hog_ekre_martin\n"
+                           "    }\n")
+        edits.append((pos, pos, martin_selector, "Estonia head-of-government selector for Martin after the 2023 EKRE mandate"))
+        for leader, person in (("kiik", "tanel_kiik"), ("kolvart", "mihhail_kolvart")):
+            centre_selector = ("\n    text = {\n"
+                               "        trigger = {\n"
+                               "            TFR_EST_constitutional_executive = yes\n"
+                               "            check_variable = { var = TFR_EST_pm_party value = 2 compare = equals }\n"
+                               f"            has_country_flag = TFR_EST_pm_person_{person}\n"
+                               "        }\n"
+                               f"        localization_key = TFR_EST_hog_centre_{leader}\n"
+                               "    }\n")
+            edits.append((pos, pos, centre_selector, f"Estonia head-of-government selector for Centre incumbent {leader}"))
         for party_id, party in enumerate(ESTONIA_PARTIES, 1):
             selector = ("\n    text = {\n"
                         "        trigger = {\n"

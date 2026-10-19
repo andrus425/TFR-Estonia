@@ -194,6 +194,9 @@ TFR_EST_ratas_governing = {
     check_variable = { var = TFR_EST_coalition_isamaa value = 1 compare = equals }
 }
 TFR_EST_show_legacy_domestic_tree = {
+    NOT = { TFR_EST_reform_2023_branch_visible = yes }
+    NOT = { TFR_EST_ekre_2023_branch_visible = yes }
+    NOT = { TFR_EST_centre_2023_branch_visible = yes }
     OR = {
         NOT = { has_country_flag = TFR_EST_ratas_retained }
         has_country_flag = TFR_EST_ratas_mandate_ended

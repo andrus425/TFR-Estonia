@@ -1,4 +1,4 @@
-# Validation results — 16 October 2026
+# Validation results — 19 October 2026
 
 This is an implemented **development build**, not a declaration that the public
 v1 campaign matrix has passed. The pinned parent is **The Fire Rises 1.0.9.1c**.
@@ -8,15 +8,20 @@ The installed executable reports **HOI4 Operation Postern 1.19.3.0.c01a**.
 
 | Check | Observed result |
 |---|---|
-| `tools/validate_mod.py` | 77 additive/override script files; 235 focuses, 59 events, 58 decisions, 1,310 English localization keys; **0 errors** |
-| `python -m unittest discover -s tests -v` | **321 tests passed**, including 500 randomized election allocations checked against an independent integer reference |
+| `tools/validate_mod.py` | 99 additive/override script files; 331 focuses, 61 events, 58 decisions, 1,730 English localization keys; **0 errors** |
+| `python -m unittest discover -s tests -v` | **492 tests passed**, including 500 randomized election allocations checked against an independent integer reference |
 | `tools/test_occupation_compatibility.py` | **10 structural regression tests passed** |
-| `tools/patch_tfr_compatibility.py --check` | **11 reproducible overrides and 627 audited changes verified**: 620 settlement safeguards and seven head-of-government selectors |
+| `tools/patch_tfr_compatibility.py --check` | **11 reproducible overrides and 631 audited changes verified**: 620 settlement safeguards and eleven head-of-government selectors |
 | `tools/native_script_interface.py --check` | **0 files with legacy argument-block interfaces** |
 | Opening and COVID generators | Eleven shared focuses, 22 focus localization keys, rewards/controller/events, the first-case bridge and their text reproduce exactly in `--check` mode |
 | Retained-Ratas generator | Twenty shared focuses, governing/visibility/completion triggers, rewards, local crisis controller, one notice and 63 English keys reproduce exactly in `--check` mode |
 | Kallas generator | Twenty shared focuses, governing/visibility/completion triggers, rewards, recovered-case bypasses and 60 English keys reproduce exactly in `--check` mode |
-| Energy and preview generators | Actual parent Oil Crash integration, old-penalty migration, 49 display-only preview definitions and 98 aliases reproduce exactly in `--check` mode |
+| Energy and preview generators | Actual parent Oil Crash integration, old-penalty migration, 136 display-only preview definitions and 272 aliases reproduce exactly in `--check` mode |
+| Reform 2023 generator | Thirty-two focuses, governing/visibility/completion triggers, guarded rewards, bounded factory delivery and 70 English keys reproduce exactly in `--check` mode |
+| EKRE 2023 generator | Thirty-two focuses, governing/visibility/completion triggers, paid factory projects, recurring income reductions and 70 English keys reproduce exactly in `--check` mode |
+| Centre 2023 generator | Thirty-two focuses, governing/visibility/completion triggers, two bounded paid factories, native debt/income helpers and English text reproduce exactly in `--check` mode |
+| Centre leadership generator | September congress, exactly two guarded successor choices, persistent party leadership, caretaker protection, locked PM identities and localization reproduce exactly in `--check` mode |
+| Kallas–Michal generator | Guarded, once-only succession controller, event and text reproduce exactly in `--check` mode |
 | Minister generator | 39 candidacies, 38 people, 35 party/portfolio combinations, 15 professional traits, lifecycle, timed discount, localization, portrait references and sourced register reproduce exactly in `--check` mode |
 | Portable packaging tests | Deterministic archive, exclusions, portable descriptors and metadata rejection passed as part of the full source suite |
 
@@ -145,6 +150,149 @@ remainders, original non-Estonia annex actions, parent war flags and follow-up
 events, autonomy restrictions, once-per-mandate force cleanup, all seven occupation
 gates and repeat-safe repair. They do not execute combat or a live peace conference.
 
+## Centre's conditional 2023 programme and September congress
+
+Thirty-one programme/integration tests and twenty-two leadership tests cover
+the new Centre route. Its 32 compact focuses each take 35 days, giving 1,120
+days of content. An uninterrupted start on 17 April 2023 completes on 11 May
+2026, leaving 235 days before 2027. The root opens five parallel policy branches;
+only the final report requires every earlier policy. Defence funding takes 70
+focus-days, air-defence preparation 105, reserve planning 140, and the two paid
+military factories 105 and 140 along their respective branches.
+
+The tests execute the actual election commit, confirmation, reward, delivery
+and recovery effects. They check valid 2023 Centre pluralities, wrong parties
+and years, invalid inputs, postwar ballots, next-election retirement, caretaker
+restrictions and 51 actual coalition seats. Supply votes do not replace cabinet
+seats and no particular partner is mandatory. An early war preserves the
+programme; occupation suspends it while retaining reforms and funded projects.
+
+Factory delivery requires ownership, control and an unlocked slot. Full states
+keep the paid entitlement pending; repeated reconciliation and reconstructed
+saved fixtures cannot add more than two factories or charge again. The tax
+package executes native recurring-income inputs of +0.045, -0.030, -0.040 and
+-0.012 billion, totaling -0.037 before inflation. Its debt-financed project
+costs remain visible and separate from recurring receipts. The three energy
+projects contribute 2 + 1 + 2 shared recovery slots and remove the actual parent
+Oil Crash spirit without duplicating earlier governments' preparations.
+
+The September story records an ordinary 2023 defeat without changing Ratas's
+chairmanship in March. It rejects September 9, queues once from September 10
+with a one-hour event delay, and offers exactly Tanel Kiik or Mihhail Kõlvart.
+There is no retain-Ratas option. Invalid elections do not create the story;
+an intervening Centre victory makes unresolved queued notices and option
+effects obsolete. A choice already made persists through a later victory.
+
+Opposition and junior-coalition choices preserve the other party's PM, seats,
+polls, coalition, portfolio ministers and calendar. A Centre caretaker waits
+for cabinet confirmation, including through occupation and restoration.
+Confirmed or future Centre governments use the selected successor; actual PM
+markers are repaired separately from persistent party leadership. The parliament
+displays Centre's current party chair independently of the cabinet. Both new
+native PM tokens remain locked and use existing generic TFR portraits.
+
+All 299 pre-existing focus-description values match their byte-level fixture.
+Native previews now compare all 147 shared focus-reward sources. Source tests
+cover mixed energy histories across all five programmes and retain the earlier
+4,096-combination check. These source cases do not emulate the natural event
+scheduler, save-file serialization or rendered interface. The historical policy
+and timing references are recorded in [the Centre source register](CENTRE_2023_SOURCES.md).
+
+## EKRE's conditional 2023 programme
+
+The EKRE addition has twenty-eight programme/integration tests, sixteen executive
+identity tests and a ninth-HoG selector regression. Its 32 focuses take 35 days
+each: 1,120 days in total, finishing on 11 May 2026 from an uninterrupted
+17 April 2023 start. Defence funding takes 70 days along its prerequisite path;
+the two paid factory projects take 105 and 140. Five compact branches give a
+choice of policy priorities without placing the military preparations behind
+the final report or the civilian programme.
+
+Source tests execute the actual committed-election callback, confirmation and
+completion blocks. They cover valid EKRE pluralities, wrong years and other
+parties, invalid polling, postwar/restoration context, second votes, caretaker
+negotiations, 50/51 actual coalition seats, confidence-and-supply differences and
+single-party government without forced partners. War does not itself disable
+the programme; occupation hides it and saved policy flags prevent repeat rewards.
+
+The factory cases check ownership, control, building capacity, partial delivery,
+full-state pending entitlements, reconstructed saved fixtures and the maximum
+of two grants. Reserve planning and domestic contracts unlock the existing paid,
+bounded recruitment/procurement decisions. The four tax-relief policies use
+negative native income-helper inputs, tested at exactly -0.015, -0.04, -0.008
+and -0.02 ledger units. These are ongoing revenue losses, distinct from public
+investment costs charged through the unchanged debt helper.
+
+The three EKRE energy measures contribute 2 + 1 + 2 to the existing five slots.
+All eight combinations are checked against representative mixed preparations
+from the three older programmes, alongside the unchanged 4,096 earlier-route
+combinations. Native preview comparisons cover all 115 focus-reward sources.
+A new snapshot protects the raw values of all 267 pre-existing focus descriptions.
+The visible-tree matrix checks icon positions alongside first-war branches.
+
+Martin Helme's identity becomes active only after confirmation of an independent
+EKRE cabinet serving this 2023 mandate. Outgoing Centre and Mart Helme caretakers
+retain their incumbent. A persistent career marker survives elections and
+occupation; the personal PM marker is repaired only while EKRE supplies the PM.
+Tests preserve the president, ministers, seat ledger and Reform/Michal continuity,
+exclude Martin from the finance portfolio and retain Rene Kokk and Mart Helme's
+ordinary candidacies. Neither the constitutional-bill focuses nor the election
+audit alter the president, seat arithmetic, election calendar or alliances.
+
+The policy source register distinguishes EKRE's contemporary proposals from
+historically enacted government policy. Constitutional preparation, industrial
+workshops and force planning are explicit gameplay adaptations. These checks
+are not a substitute for natural campaign timing, save-file serialization or
+rendered interface acceptance.
+
+## Reform 2023, succession and postwar elections
+
+The 19 October revision adds twenty-five programme/integration tests, twelve handover
+tests, thirty-one war-election tests, an eighth-HoG selector regression and three
+additional energy cases. All 32 focuses take 35 days. Random valid branch orders
+complete in 1,120 days, reaching 11 May 2026 from a 17 April 2023 start; the two
+paid factory projects need only 105 and 140 days along their branch. The remaining
+235-day margin assumes uninterrupted focus selection and a valid majority.
+
+Tests execute the actual committed-election mandate callback. They cover valid
+Reform pluralities in 2023, confirmation and actual 50/51 coalition seats, supply
+agreements, invalid polling, date boundaries, a second 2023 vote, later Reform
+victories, and postwar ballots. The historical programme is initially hidden and
+ends after the next valid election. Its policy records persist through Michal's
+handover, war and occupation. A visibility matrix checks both Ratas histories
+alongside first-war content for colliding icon coordinates. All 235 older focus
+description values remain protected and unchanged.
+
+The factory tests execute the generated numeric state scopes: each project needs
+an owned, controlled state and an unlocked slot; full states preserve a paid
+pending entitlement for retry. Repeated calls grant at most two factories in
+total and never charge again. Exact preview comparisons now cover all 83
+opening/Ratas/Kallas/Reform completion blocks, including fiscal parent-helper
+calls. Energy coverage includes all 4,096 combinations of preparations across
+three governments and verifies the shared five-slot ceiling.
+
+Succession cases cover the 23 July 2024 boundary, actual EU membership, confirmed
+Reform leadership, stale or invalid event delivery, repeat queues and the ended
+mandate guard. Persistent career history prevents Kallas returning as PM after
+Michal's appointment in later Reform cabinets, including after restoration.
+Seats, ministers, coalition partners, president and earned rewards remain intact.
+An opening-assembly marker retires old Porto options, queued cabinet events and
+late focus completions at the first valid election. It closes the old campaign
+stage without inventing a resignation/retention choice or awarding reforms;
+invalid ballots leave that opening assembly intact.
+
+Calendar cases retain March 2023, block regular 2027 ballots before and during
+the first war, and require TFR's explicit completed settlement plus a winner.
+A quiet declaration frame cannot count as peace. Independent Estonia votes on
+the first settled daily update, even before 2027; occupation retains the 84-day
+restoration process, whose vote also satisfies a pending postwar ballot. Invalid
+polling retains the assembly and pending schedule. A new 1,461-day term starts
+from a valid postwar election. Calendar localization displays this schedule.
+
+These are source/control-flow checks; natural campaign event delivery, saved
+native focus progress, UI rendering and war settlement interactions remain the
+manual acceptance cases in `TEST_MATRIX.md`.
+
 ## Compact layouts, costs and focus-effect previews
 
 The 16 October revision adds eight presentation tests, nine native-preview tests,
@@ -216,6 +364,94 @@ Successful new electoral/scripted mandates clear outgoing metadata. No current
 route sets these future markers or changes its PM identity.
 
 ## Native engine observations
+
+The Centre revision's accepted capture is
+`test-output/engine-estonia-qa-20261019-132419/`. It reached the frontend in
+approximately **269 seconds** and passed **all 122 native assertions**.
+Its eighteen new cases verify initial hiding, confirmed Ratas/president display,
+caretaker and actual-coalition gates, native military-variable deltas, two real
+factory increments without repeats, the parent energy spirit's 2 + 1 + 2
+recovery, next-election retirement, rejection of a congress in 2020, both
+successor PM tokens, preservation of another party's PM and occupation/restoration
+identity. The prior 104 assertions also pass.
+
+The native fixture explicitly seeds the 2023 programme and completed successor
+choices in a **2020 frontend snapshot**. It does not advance a natural campaign
+to September. The September 9/10 boundary, event queuing, both actual option
+effects, invalidated notices and caretaker congress transitions are source-tested;
+natural delivery and saved-game serialization remain manual acceptance cases.
+
+The capture contains **2,015 normalized unique messages**, with **zero new
+messages** against both the pinned TFR-only baseline and the accepted EKRE build,
+and **zero Estonia-prefixed errors**. Eight foreign missing-flag messages from
+those baselines did not occur in this run; no foreign asset fix is claimed.
+The comparison reports are `test-output/centre2023-final-engine-comparison.json`
+and `test-output/centre2023-previous-engine-comparison.json`. The owned test
+process stopped and the original `dlc_load.json` was verified restored
+byte-for-byte. The QA overlay remains excluded from ordinary play and packaging.
+
+The EKRE revision's accepted capture is
+`test-output/engine-estonia-qa-20261019-130435/`. It reached the frontend in
+approximately **204 seconds** and passed **all 104 native assertions**.
+The fourteen new assertions verify initial hiding, caretaker confirmation,
+Martin's PM token and minister exclusions alongside the preserved president,
+actual coalition thresholds, military-variable deltas, two real factory
+increments and repeat prevention, progressive parent Oil Crash tiers,
+occupation/restoration identity, and retirement at the next valid vote.
+
+These cases explicitly seed the 2023 mandate in the 2020 frontend snapshot.
+They execute native effects without claiming a natural 2023 campaign, rendered
+focus UI, political-screen clicks or saved-game serialization. Date boundaries,
+legitimate electoral entry and all 32 completion rewards are also source-tested.
+
+The accepted error log and pinned TFR-only baseline both contain **2,023
+normalized unique messages**: **zero new messages**, **zero removed messages**
+and **zero Estonia-prefixed errors**. The previous accepted Reform capture
+contained nine additional foreign flag-load messages that did not occur in this
+run; no foreign asset repair is claimed. Comparison reports are
+`test-output/ekre2023-final-engine-comparison.json` and
+`test-output/ekre2023-previous-engine-comparison.json`.
+The original `dlc_load.json` was verified restored byte-for-byte after the owned
+test process stopped. The isolated QA overlay is excluded from the package.
+
+The Reform revision's final 19 October capture is
+`test-output/engine-estonia-qa-20261019-124517/`. It reached the frontend in
+approximately **180 seconds** and passed **all 90 native assertions**. In
+addition to the programme, building, modifier, calendar and PM-display checks
+below, it invokes obsolete Porto Franco options and the old cabinet controller
+after an elected government has replaced the opening assembly. They preserve
+the elected Reform PM and mandate and do not create a caretaker or old handover.
+
+The final error log has **2,032 normalized unique messages**, matching the
+previous accepted 16 October build exactly: **zero additional messages** and
+**zero Estonia-prefixed errors**. Its nine additional messages against the pinned
+TFR-only baseline are the already recorded foreign medium nationalist flag loads
+for GBA, KHA, LBV, ORO, PAP, SID, SPM, TOS and VGE. Reports are
+`test-output/reform2023-final-engine-comparison.json` and
+`test-output/reform2023-previous-engine-comparison.json`. The original
+`dlc_load.json` was verified restored byte-for-byte after the owned process
+stopped. No ordinary campaign or rendered-interface acceptance is claimed.
+
+The first 19 October Reform capture, `engine-estonia-qa-20261019-123235`,
+reached the frontend but passed only 88 of 89 assertions. The country-scope
+`year` lookup returned zero, producing a display year of 4. This was not accepted
+as a successful run. The controller now reads `global.year`; the source runtime
+also models this scope distinction so the same error cannot pass its tests.
+
+The corrected capture, `test-output/engine-estonia-qa-20261019-123815/`,
+reached the frontend in approximately **190 seconds** and passed **all 89
+assertions**. The 2020 snapshot correctly produced the next display year **2024**.
+It verifies the new programme's gates, exact military-variable deltas, two real
+military-factory building increments, repeat prevention, removal of all parent
+Oil Crash tiers, the pending/postwar election transitions and native Michal PM
+ideas alongside the preserved president. Mandate flags were explicitly seeded
+for history-time effect tests; the run does not simulate a 2023 or 2024 campaign.
+
+This capture and the pinned parent baseline both contain **2,023 normalized
+unique error messages**, with **zero additional messages** and **zero
+Estonia-prefixed errors**. The report is
+`test-output/reform2023-second-engine-comparison.json`. The original mod/DLC
+configuration was restored after the owned test process stopped.
 
 The earlier implementation run is captured locally under
 `test-output/engine-estonia-qa-20261013-095041/`.

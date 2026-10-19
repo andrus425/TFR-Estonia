@@ -1,0 +1,71 @@
+# The first regular election remains March 2023. Its successor is held after
+# the first European peace settlement, even if that settlement precedes 2027.
+# This controller runs daily so an independent survivor votes on the first
+# settled day, rather than waiting for the weekly parliamentary update.
+TFR_EST_begin_postwar_electoral_term = {
+    set_variable = { TFR_EST_postwar_term_days = 0 }
+    # The current-year dynamic variable belongs to the GLOBAL scope.
+    set_variable = { TFR_EST_election_year = global.year }
+    add_to_variable = { TFR_EST_election_year = 4 }
+}
+
+# Invoke only after hold_election reports a valid result. Keep pending set
+# throughout allocation so election-mandate callbacks can identify this vote.
+TFR_EST_complete_postwar_election = {
+    if = {
+        limit = {
+            check_variable = { var = TFR_EST_election_this_tick value = 1 compare = equals }
+            has_country_flag = TFR_EST_postwar_election_pending
+            NOT = { has_country_flag = TFR_EST_postwar_election_held }
+            TFR_EST_independent_parliament = yes
+            TFR_EST_first_european_war_settled = yes
+        }
+        set_country_flag = TFR_EST_postwar_election_held
+        clr_country_flag = TFR_EST_postwar_election_pending
+        clr_country_flag = TFR_EST_election_waiting_first_war
+        TFR_EST_begin_postwar_electoral_term = yes
+    }
+}
+
+TFR_EST_war_elections_tick = {
+    if = {
+        limit = { tag = EST has_country_flag = TFR_EST_initialized }
+        if = {
+            limit = { has_country_flag = TFR_EST_postwar_election_held }
+            add_to_variable = { TFR_EST_postwar_term_days = 1 }
+            if = {
+                limit = {
+                    TFR_EST_regular_calendar_available = yes
+                    check_variable = { var = TFR_EST_postwar_term_days value = 1461 compare = greater_than_or_equals }
+                }
+                set_variable = { TFR_EST_election_this_tick = 0 }
+                TFR_EST_hold_election = yes
+                if = {
+                    limit = { check_variable = { var = TFR_EST_election_this_tick value = 1 compare = equals } }
+                    TFR_EST_begin_postwar_electoral_term = yes
+                }
+            }
+        }
+        else_if = {
+            limit = {
+                OR = {
+                    check_variable = { var = TFR_EST_election_year value = 2027 compare = greater_than_or_equals }
+                    date > 2026.12.31
+                }
+            }
+            set_country_flag = TFR_EST_election_waiting_first_war
+            if = {
+                limit = { TFR_EST_first_european_war_concluded = yes }
+                set_country_flag = TFR_EST_postwar_election_pending
+            }
+            if = {
+                limit = { TFR_EST_can_hold_postwar_election = yes }
+                set_variable = { TFR_EST_election_this_tick = 0 }
+                TFR_EST_hold_election = yes
+                # Rejected integer polling retains both the old assembly and
+                # the pending election. The next daily update retries it.
+                TFR_EST_complete_postwar_election = yes
+            }
+        }
+    }
+}

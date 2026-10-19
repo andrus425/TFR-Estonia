@@ -1627,195 +1627,81 @@ subtract_from_variable = { TFR_EST_formation_needed = TFR_EST_formation_transfer
 TFR_EST_project_ideologies = yes
 country_event = { id = tfr_estonia_parliament.2 days = 1 }
 }
+# Restoration retains the established 84-day election period. A rejected
+# ballot leaves the caretaker schedule pending, rather than consuming it.
 if = {
  limit = { has_country_flag = TFR_EST_restoration_election }
  add_to_variable = { TFR_EST_restore_days = 7 }
-if = {
- limit = { check_variable = { var = TFR_EST_restore_days value = 84 compare = greater_than_or_equals } }
- clr_country_flag = TFR_EST_restoration_election
-TFR_EST_hold_election = yes
+ if = {
+  limit = {
+   check_variable = { var = TFR_EST_restore_days value = 84 compare = greater_than_or_equals }
+   OR = {
+    NOT = { has_country_flag = TFR_EST_postwar_election_pending }
+    TFR_EST_first_european_war_settled = yes
+   }
+  }
+  if = {
+   limit = {
+    TFR_EST_first_european_war_settled = yes
+    NOT = { has_country_flag = TFR_EST_postwar_election_held }
+   }
+   set_country_flag = TFR_EST_postwar_election_pending
+  }
+  set_variable = { TFR_EST_election_this_tick = 0 }
+  TFR_EST_hold_election = yes
+  if = {
+   limit = { check_variable = { var = TFR_EST_election_this_tick value = 1 compare = equals } }
+   clr_country_flag = TFR_EST_restoration_election
+   if = {
+    limit = { has_country_flag = TFR_EST_postwar_election_pending }
+    TFR_EST_complete_postwar_election = yes
+   }
+   else_if = {
+    limit = { has_country_flag = TFR_EST_postwar_election_held }
+    TFR_EST_begin_postwar_electoral_term = yes
+   }
+   else_if = {
+    limit = {
+     date > 2023.3.4
+     check_variable = { var = TFR_EST_election_year value = 2023 compare = equals }
+    }
+    # This valid restoration vote also replaces a regular ballot missed
+    # under occupation. Do not hold another one the following week.
+    set_variable = { TFR_EST_election_year = 2027 }
+    set_country_flag = TFR_EST_election_waiting_first_war
+   }
+  }
+ }
 }
-
-}
+# March 2023 is the final fixed-date election. All later regular elections
+# are controlled by the first-war settlement and the new postwar term.
 if = {
- limit = { date > 2023.3.4 check_variable = { var = TFR_EST_election_year value = 2023 compare = equals } }
- add_to_variable = { TFR_EST_election_year = 4 }
-if = {
- limit = { NOT = { has_country_flag = TFR_EST_restoration_election } check_variable = { var = TFR_EST_election_this_tick value = 0 compare = equals } }
+ limit = {
+  date > 2023.3.4
+  date < 2027.1.1
+  check_variable = { var = TFR_EST_election_year value = 2023 compare = equals }
+  NOT = { has_country_flag = TFR_EST_restoration_election }
+  check_variable = { var = TFR_EST_election_this_tick value = 0 compare = equals }
+ }
+ if = {
+  limit = {
+   TFR_EST_first_european_war_settled = yes
+   NOT = { has_country_flag = TFR_EST_postwar_election_held }
+  }
+  set_country_flag = TFR_EST_postwar_election_pending
+ }
  TFR_EST_hold_election = yes
-}
-
-}
-if = {
- limit = { date > 2027.3.4 check_variable = { var = TFR_EST_election_year value = 2027 compare = equals } }
- add_to_variable = { TFR_EST_election_year = 4 }
-if = {
- limit = { NOT = { has_country_flag = TFR_EST_restoration_election } check_variable = { var = TFR_EST_election_this_tick value = 0 compare = equals } }
- TFR_EST_hold_election = yes
-}
-
-}
-if = {
- limit = { date > 2031.3.4 check_variable = { var = TFR_EST_election_year value = 2031 compare = equals } }
- add_to_variable = { TFR_EST_election_year = 4 }
-if = {
- limit = { NOT = { has_country_flag = TFR_EST_restoration_election } check_variable = { var = TFR_EST_election_this_tick value = 0 compare = equals } }
- TFR_EST_hold_election = yes
-}
-
-}
-if = {
- limit = { date > 2035.3.4 check_variable = { var = TFR_EST_election_year value = 2035 compare = equals } }
- add_to_variable = { TFR_EST_election_year = 4 }
-if = {
- limit = { NOT = { has_country_flag = TFR_EST_restoration_election } check_variable = { var = TFR_EST_election_this_tick value = 0 compare = equals } }
- TFR_EST_hold_election = yes
-}
-
-}
-if = {
- limit = { date > 2039.3.4 check_variable = { var = TFR_EST_election_year value = 2039 compare = equals } }
- add_to_variable = { TFR_EST_election_year = 4 }
-if = {
- limit = { NOT = { has_country_flag = TFR_EST_restoration_election } check_variable = { var = TFR_EST_election_this_tick value = 0 compare = equals } }
- TFR_EST_hold_election = yes
-}
-
-}
-if = {
- limit = { date > 2043.3.4 check_variable = { var = TFR_EST_election_year value = 2043 compare = equals } }
- add_to_variable = { TFR_EST_election_year = 4 }
-if = {
- limit = { NOT = { has_country_flag = TFR_EST_restoration_election } check_variable = { var = TFR_EST_election_this_tick value = 0 compare = equals } }
- TFR_EST_hold_election = yes
-}
-
-}
-if = {
- limit = { date > 2047.3.4 check_variable = { var = TFR_EST_election_year value = 2047 compare = equals } }
- add_to_variable = { TFR_EST_election_year = 4 }
-if = {
- limit = { NOT = { has_country_flag = TFR_EST_restoration_election } check_variable = { var = TFR_EST_election_this_tick value = 0 compare = equals } }
- TFR_EST_hold_election = yes
-}
-
-}
-if = {
- limit = { date > 2051.3.4 check_variable = { var = TFR_EST_election_year value = 2051 compare = equals } }
- add_to_variable = { TFR_EST_election_year = 4 }
-if = {
- limit = { NOT = { has_country_flag = TFR_EST_restoration_election } check_variable = { var = TFR_EST_election_this_tick value = 0 compare = equals } }
- TFR_EST_hold_election = yes
-}
-
-}
-if = {
- limit = { date > 2055.3.4 check_variable = { var = TFR_EST_election_year value = 2055 compare = equals } }
- add_to_variable = { TFR_EST_election_year = 4 }
-if = {
- limit = { NOT = { has_country_flag = TFR_EST_restoration_election } check_variable = { var = TFR_EST_election_this_tick value = 0 compare = equals } }
- TFR_EST_hold_election = yes
-}
-
-}
-if = {
- limit = { date > 2059.3.4 check_variable = { var = TFR_EST_election_year value = 2059 compare = equals } }
- add_to_variable = { TFR_EST_election_year = 4 }
-if = {
- limit = { NOT = { has_country_flag = TFR_EST_restoration_election } check_variable = { var = TFR_EST_election_this_tick value = 0 compare = equals } }
- TFR_EST_hold_election = yes
-}
-
-}
-if = {
- limit = { date > 2063.3.4 check_variable = { var = TFR_EST_election_year value = 2063 compare = equals } }
- add_to_variable = { TFR_EST_election_year = 4 }
-if = {
- limit = { NOT = { has_country_flag = TFR_EST_restoration_election } check_variable = { var = TFR_EST_election_this_tick value = 0 compare = equals } }
- TFR_EST_hold_election = yes
-}
-
-}
-if = {
- limit = { date > 2067.3.4 check_variable = { var = TFR_EST_election_year value = 2067 compare = equals } }
- add_to_variable = { TFR_EST_election_year = 4 }
-if = {
- limit = { NOT = { has_country_flag = TFR_EST_restoration_election } check_variable = { var = TFR_EST_election_this_tick value = 0 compare = equals } }
- TFR_EST_hold_election = yes
-}
-
-}
-if = {
- limit = { date > 2071.3.4 check_variable = { var = TFR_EST_election_year value = 2071 compare = equals } }
- add_to_variable = { TFR_EST_election_year = 4 }
-if = {
- limit = { NOT = { has_country_flag = TFR_EST_restoration_election } check_variable = { var = TFR_EST_election_this_tick value = 0 compare = equals } }
- TFR_EST_hold_election = yes
-}
-
-}
-if = {
- limit = { date > 2075.3.4 check_variable = { var = TFR_EST_election_year value = 2075 compare = equals } }
- add_to_variable = { TFR_EST_election_year = 4 }
-if = {
- limit = { NOT = { has_country_flag = TFR_EST_restoration_election } check_variable = { var = TFR_EST_election_this_tick value = 0 compare = equals } }
- TFR_EST_hold_election = yes
-}
-
-}
-if = {
- limit = { date > 2079.3.4 check_variable = { var = TFR_EST_election_year value = 2079 compare = equals } }
- add_to_variable = { TFR_EST_election_year = 4 }
-if = {
- limit = { NOT = { has_country_flag = TFR_EST_restoration_election } check_variable = { var = TFR_EST_election_this_tick value = 0 compare = equals } }
- TFR_EST_hold_election = yes
-}
-
-}
-if = {
- limit = { date > 2083.3.4 check_variable = { var = TFR_EST_election_year value = 2083 compare = equals } }
- add_to_variable = { TFR_EST_election_year = 4 }
-if = {
- limit = { NOT = { has_country_flag = TFR_EST_restoration_election } check_variable = { var = TFR_EST_election_this_tick value = 0 compare = equals } }
- TFR_EST_hold_election = yes
-}
-
-}
-if = {
- limit = { date > 2087.3.4 check_variable = { var = TFR_EST_election_year value = 2087 compare = equals } }
- add_to_variable = { TFR_EST_election_year = 4 }
-if = {
- limit = { NOT = { has_country_flag = TFR_EST_restoration_election } check_variable = { var = TFR_EST_election_this_tick value = 0 compare = equals } }
- TFR_EST_hold_election = yes
-}
-
-}
-if = {
- limit = { date > 2091.3.4 check_variable = { var = TFR_EST_election_year value = 2091 compare = equals } }
- add_to_variable = { TFR_EST_election_year = 4 }
-if = {
- limit = { NOT = { has_country_flag = TFR_EST_restoration_election } check_variable = { var = TFR_EST_election_this_tick value = 0 compare = equals } }
- TFR_EST_hold_election = yes
-}
-
-}
-if = {
- limit = { date > 2095.3.4 check_variable = { var = TFR_EST_election_year value = 2095 compare = equals } }
- add_to_variable = { TFR_EST_election_year = 4 }
-if = {
- limit = { NOT = { has_country_flag = TFR_EST_restoration_election } check_variable = { var = TFR_EST_election_this_tick value = 0 compare = equals } }
- TFR_EST_hold_election = yes
-}
-
-}
-if = {
- limit = { date > 2099.3.4 check_variable = { var = TFR_EST_election_year value = 2099 compare = equals } }
- add_to_variable = { TFR_EST_election_year = 4 }
-if = {
- limit = { NOT = { has_country_flag = TFR_EST_restoration_election } check_variable = { var = TFR_EST_election_this_tick value = 0 compare = equals } }
- TFR_EST_hold_election = yes
-}
-
+ if = {
+  limit = { check_variable = { var = TFR_EST_election_this_tick value = 1 compare = equals } }
+  if = {
+   limit = { has_country_flag = TFR_EST_postwar_election_pending }
+   TFR_EST_complete_postwar_election = yes
+  }
+  else = {
+   set_variable = { TFR_EST_election_year = 2027 }
+   set_country_flag = TFR_EST_election_waiting_first_war
+  }
+ }
 }
 if = {
  limit = { date > 2021.10.10 NOT = { has_country_flag = TFR_EST_karis_president } }

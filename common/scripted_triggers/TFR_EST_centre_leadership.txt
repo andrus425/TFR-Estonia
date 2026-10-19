@@ -1,0 +1,9 @@
+# A valid 2023 defeat is recorded by the election commit hook. March's
+# result does not change the party chair; the congress is held in September.
+TFR_EST_centre_leadership_eligible = {
+    TFR_EST_independent_parliament = yes
+    has_country_flag = TFR_EST_centre_lost_2023_election
+    NOT = { has_country_flag = TFR_EST_centre_won_2023_election }
+    NOT = { has_country_flag = TFR_EST_centre_leadership_resolved }
+    date > 2023.9.9
+}

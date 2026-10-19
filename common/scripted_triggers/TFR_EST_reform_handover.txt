@@ -1,0 +1,14 @@
+# A European nomination requires Estonia's actual TFR EU membership.
+# The 2023 mandate is authored by the validated election controller.
+TFR_EST_reform_handover_eligible = {
+    TFR_EST_confirmed_cabinet = yes
+    has_country_flag = TFR_EST_reform_2023_mandate
+    NOT = { has_country_flag = TFR_EST_reform_2023_mandate_ended }
+    check_variable = { var = TFR_EST_mandate_party value = 1 compare = equals }
+    check_variable = { var = TFR_EST_pm_party value = 1 compare = equals }
+    check_variable = { var = TFR_EST_coalition_reform value = 1 compare = equals }
+    check_variable = { var = TFR_EST_coalition_seats value = 51 compare = greater_than_or_equals }
+    has_dynamic_modifier = { modifier = EU_member_dynamic }
+    date > 2024.7.22
+    NOT = { has_country_flag = TFR_EST_kallas_departed_for_europe }
+}

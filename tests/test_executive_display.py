@@ -53,7 +53,7 @@ class ExecutiveDisplayAdapterTests(unittest.TestCase):
                          [shape(entry) for entry in retained])
         self.assertEqual([shape(entry) for entry in self.upstream if entry is not original],
                          [shape(entry) for entry in self.patched if entry is not patched])
-        self.assertEqual(len(additions), 7)
+        self.assertEqual(len(additions), 11)
         # The implementation only inserts content: all original selector text,
         # including portraits, date tests and other countries, survives exactly.
         for entry in original.children:
@@ -71,7 +71,7 @@ class ExecutiveDisplayAdapterTests(unittest.TestCase):
         current = patched.get("defined_text")
         extras = [entry for entry in current.entries if entry.key == "text" and
                   str(entry.value.get("localization_key", "")).startswith("TFR_EST_hog_")]
-        self.assertEqual(len(extras), 7)
+        self.assertEqual(len(extras), 11)
 
         def independent_shape(entry):
             value = (tuple(independent_shape(item) for item in entry.value.entries)
@@ -84,7 +84,9 @@ class ExecutiveDisplayAdapterTests(unittest.TestCase):
     def test_seven_selectors_follow_party_ledger_even_for_shared_ideologies(self):
         definition = shared_definition(self.patched)
         selectors = [entry for entry in definition.children if entry.key == "text" and
-                     (scalar(entry, "localization_key") or "").startswith("TFR_EST_hog_")]
+                     (scalar(entry, "localization_key") or "").startswith("TFR_EST_hog_") and
+                     scalar(entry, "localization_key") not in ("TFR_EST_hog_reform_michal", "TFR_EST_hog_ekre_martin",
+                                                               "TFR_EST_hog_centre_kiik", "TFR_EST_hog_centre_kolvart")]
         self.assertEqual([scalar(entry, "localization_key") for entry in selectors],
                          [f"TFR_EST_hog_{party}" for party in ESTONIA_PARTIES])
         for party_id, entry in enumerate(selectors, 1):
@@ -103,6 +105,57 @@ class ExecutiveDisplayAdapterTests(unittest.TestCase):
         self.assertNotEqual(scalar(child(child(selectors[1], "trigger"), "check_variable"), "value"),
                             scalar(child(child(selectors[5], "trigger"), "check_variable"), "value"))
 
+    def test_michal_selector_precedes_reform_and_requires_personal_career_history(self):
+        definition = shared_definition(self.patched)
+        selectors = [entry for entry in definition.children if entry.key == "text" and
+                     (scalar(entry, "localization_key") or "").startswith("TFR_EST_hog_")]
+        self.assertEqual([scalar(entry, "localization_key") for entry in selectors],
+                         ["TFR_EST_hog_reform_michal", "TFR_EST_hog_ekre_martin",
+                          "TFR_EST_hog_centre_kiik", "TFR_EST_hog_centre_kolvart"] +
+                         [f"TFR_EST_hog_{party}" for party in ESTONIA_PARTIES])
+        trigger = child(selectors[0], "trigger")
+        self.assertEqual([item.key for item in trigger.children],
+                         ["TFR_EST_constitutional_executive", "check_variable", "has_country_flag"])
+        self.assertEqual(scalar(trigger, "TFR_EST_constitutional_executive"), "yes")
+        self.assertEqual(scalar(trigger, "has_country_flag"), "TFR_EST_kallas_departed_for_europe")
+        check = child(trigger, "check_variable")
+        self.assertEqual(scalar(check, "var"), "TFR_EST_pm_party")
+        self.assertEqual(scalar(check, "value"), "1")
+        self.assertEqual(scalar(check, "compare"), "equals")
+
+    def test_centre_selectors_require_actual_incumbent_markers_not_party_chair(self):
+        definition = shared_definition(self.patched)
+        selectors = [entry for entry in definition.children if entry.key == "text" and
+                     (scalar(entry, "localization_key") or "").startswith("TFR_EST_hog_")]
+        ratas = next(entry for entry in selectors if scalar(entry, "localization_key") == "TFR_EST_hog_centre")
+        for leader, person in (("kiik", "tanel_kiik"), ("kolvart", "mihhail_kolvart")):
+            entry = next(entry for entry in selectors if scalar(entry, "localization_key") == f"TFR_EST_hog_centre_{leader}")
+            self.assertLess(selectors.index(entry), selectors.index(ratas))
+            trigger = child(entry, "trigger")
+            self.assertEqual(scalar(trigger, "TFR_EST_constitutional_executive"), "yes")
+            self.assertEqual(scalar(trigger, "has_country_flag"), f"TFR_EST_pm_person_{person}")
+            check = child(trigger, "check_variable")
+            self.assertEqual(scalar(check, "var"), "TFR_EST_pm_party")
+            self.assertEqual(scalar(check, "value"), "2")
+            self.assertEqual(scalar(check, "compare"), "equals")
+
+    def test_martin_selector_precedes_mart_and_requires_ekre_career_history(self):
+        definition = shared_definition(self.patched)
+        selectors = [entry for entry in definition.children if entry.key == "text" and
+                     (scalar(entry, "localization_key") or "").startswith("TFR_EST_hog_")]
+        martin = next(entry for entry in selectors if scalar(entry, "localization_key") == "TFR_EST_hog_ekre_martin")
+        mart = next(entry for entry in selectors if scalar(entry, "localization_key") == "TFR_EST_hog_ekre")
+        self.assertLess(selectors.index(martin), selectors.index(mart))
+        trigger = child(martin, "trigger")
+        self.assertEqual([item.key for item in trigger.children],
+                         ["TFR_EST_constitutional_executive", "check_variable", "has_country_flag"])
+        self.assertEqual(scalar(trigger, "TFR_EST_constitutional_executive"), "yes")
+        self.assertEqual(scalar(trigger, "has_country_flag"), "TFR_EST_martin_leads_ekre")
+        check = child(trigger, "check_variable")
+        self.assertEqual(scalar(check, "var"), "TFR_EST_pm_party")
+        self.assertEqual(scalar(check, "value"), "3")
+        self.assertEqual(scalar(check, "compare"), "equals")
+
     def test_adapter_is_reproducible_and_baseline_hash_is_recorded(self):
         generated = self.patched_text.replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")
         if self.upstream_bytes.startswith(b"\xef\xbb\xbf"):
@@ -112,7 +165,7 @@ class ExecutiveDisplayAdapterTests(unittest.TestCase):
         adapter = next(item for item in manifest["overrides"] if item["path"] == HOG_LOCALISATION_PATH)
         self.assertEqual(adapter["upstream_sha256"], hashlib.sha256(self.upstream_bytes).hexdigest())
         self.assertEqual(adapter["generated_sha256"], hashlib.sha256(generated).hexdigest())
-        self.assertEqual(len(adapter["changes"]), 7)
+        self.assertEqual(len(adapter["changes"]), 11)
         self.assertEqual(adapter["changes"], self.audit)
 
     def test_shared_gui_and_diplomacy_interface_are_inherited(self):

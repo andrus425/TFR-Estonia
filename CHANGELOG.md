@@ -1,5 +1,112 @@
 # Changelog
 
+## 19 October 2026 — Centre's 2023 mandate and leadership congress
+
+- Add a hidden 32-focus programme for a validated Centre plurality in 2023,
+  with Ratas continuing after an initial March victory and a confirmed 51-seat
+  coalition required for legislation. A later 2023 win preserves any successor
+  already chosen at the September congress. Preserve the partners actually
+  negotiated in parliament.
+- Use Centre's contemporary election platform for defence, domestic industry,
+  energy and regional infrastructure, tax and pension policy, public services
+  and integration. Record the original platform, primary topic pages and game
+  adaptations in [the Centre source register](docs/CENTRE_2023_SOURCES.md).
+- Keep the five-column layout and 35-day duration: 1,120 days for the complete
+  programme, allowing an uninterrupted 17 April 2023 start to finish on
+  11 May 2026. The final report requires the other 31 policies.
+- Put defence funding at 70 total focus-days, air defence at 105 and reserve
+  preparation at 140. Two paid military-factory projects become available after
+  105 and 140 days; require owned, controlled Estonian cores and free building
+  slots and retain paid entitlements until one-time delivery.
+- Apply the existing economic and military dynamic modifiers with native effect
+  previews, budget costs and recurring income changes. Fill the shared five
+  energy-recovery slots through generation/LNG preparation, local heat and power,
+  and renovation; earlier equivalent investments count once.
+- Hide legacy domestic content during the Centre mandate while preserving war
+  access, enacted reforms and funded projects. Only a later valid election ends
+  the programme, including another Centre win.
+- Record a validated 2023 defeat without immediately replacing Ratas as chair.
+  From 10 September, offer the extraordinary congress's two candidates, Kiik
+  and Kõlvart. Centre's victory path does not trigger the defeat congress.
+- Keep party leadership separate from the country's cabinet: an opposition or
+  junior-partner chair election preserves another party's PM, seats, coalition,
+  presidency and calendar. Preserve an outgoing Ratas caretaker until cabinet
+  confirmation and retain the selected leader for later Centre governments.
+- Expand imports and modifier-preview sources to 147, preserve the older energy
+  APIs and all 299 existing focus descriptions, and add policy/lifecycle/factory/
+  energy/leadership regression coverage and manual campaign scenarios.
+
+## 19 October 2026 — EKRE's alternative 2023 mandate
+
+- Add a hidden 32-focus programme for a validated EKRE plurality in the 2023
+  election, with a confirmed EKRE cabinet and 51 actual coalition seats needed
+  to legislate. Preserve the partners chosen through the parliament system.
+- Base the hypothetical cabinet on EKRE's 2023 election, defence and population
+  platforms, with primary sources and implementation choices recorded in
+  [the EKRE source register](docs/EKRE_2023_SOURCES.md).
+- Use five compact policy columns covering defence, domestic production and
+  transport, energy and tax relief, families and services, and institutions.
+  Thirty-two 35-day focuses require 1,120 days and can finish before 2027;
+  the final report requires the other 31 policies.
+- Put defence funding at 70 total focus-days and two paid military-factory
+  projects at 105 and 140 days. Require owned, controlled Estonian cores and free
+  building slots; retain funded projects until delivery without duplicate rewards.
+- Apply native dynamic-modifier previews and parent economic effects. Record
+  recurring revenue losses for tax relief. Share the existing five Oil Crash
+  recovery slots with previous cabinets instead of stacking equivalent projects.
+- Hide legacy domestic branches during this electoral mandate while keeping
+  relevant war content available. Preserve enacted policies and end the mandate
+  only on a later valid election, including another EKRE win.
+- Install Martin Helme after confirmation of the elected government, preserve
+  the outgoing caretaker during talks, and retain Martin for later EKRE cabinets.
+  Block his economic portfolio while PM and preserve Rene Kokk's alternative.
+- Integrate both elected programmes into focus imports, AI priorities and 115
+  focus-reward preview sources. Preserve all 267 pre-existing focus descriptions
+  and the earlier Reform programme.
+- Add automated policy, election, factory, mixed-energy, visibility and
+  description-preservation checks; expand the manual campaign acceptance matrix.
+
+## 19 October 2026 — Reform's 2023 mandate and postwar elections
+
+- Add a hidden 32-focus Reform programme awarded by a validated Reform plurality
+  in 2023. Require a confirmed Reform cabinet and 51 actual coalition seats;
+  preserve the coalition negotiated in the party ledger rather than forcing the
+  historical Reform–Eesti 200–SDE partnership.
+- Base concrete policies on enacted government measures and the 2023–2027 and
+  2024–2027 agreements. Record primary sources and gameplay adaptations in
+  [the Reform source register](docs/REFORM_2023_SOURCES.md).
+- Keep all focuses at 35 days: 1,120 days for the whole programme. A 17 April
+  2023 start can finish on 11 May 2026 without interruptions. Use five compact
+  columns with an all-policy final report, while keeping defence funding,
+  territorial defence, air defence and Baltic-line preparation accessible early.
+- Put two paid military-factory projects near the start of the industrial column,
+  available after 105 and 140 total focus-days. Require owned, controlled Estonian
+  cores and free building slots; keep funded entitlements pending when no slot
+  qualifies. Persistent records prevent duplicate buildings and other rewards.
+- Reuse native dynamic-modifier previews, inflation-adjusted parent economic
+  effects and shared Oil Crash preparation slots. Preserve previous investments
+  and all existing focus descriptions.
+- Hide older generic domestic branches during this mandate. Keep world-state war
+  content available, preserve completed policies across occupation and do not end
+  the programme merely because the first European war begins early.
+- Add a late-July-2024 EU nomination and Kallas–Michal succession event guarded
+  by the current Reform mandate, a confirmed majority and actual EU membership.
+  Recheck delayed callbacks; preserve the president, seats, coalition, ministers
+  and reforms. Record Kallas's departure permanently so later Reform cabinets
+  continue under Michal across elections and supported occupation/restoration.
+- Retain the March 2023 election but replace the fixed 2027 successor with an
+  immediate independent-survivor ballot after the explicit First European War
+  settlement. Require the parent's over/winner flags and a settled war state;
+  start flags and temporary peace cannot trigger it. Start a new 1,461-day term.
+- Preserve the 84-day restoration election and let it satisfy a pending postwar
+  ballot once. Invalid polling retains the old assembly and pending schedule;
+  story-authorized snap elections remain a separate exception.
+- Retire the opening assembly on a valid election, including unresolved Porto
+  Franco choices and obsolete cabinet callbacks. Preserve earned reforms without
+  inventing a Ratas outcome or awarding unfinished policies.
+- Add source and lifecycle regression coverage and expand the manual acceptance
+  matrix. Natural campaigns, rendered menus and balance remain release checks.
+
 ## 16 October 2026 — coalition ministers
 
 - Added 39 candidacies covering 38 people across TFR's foreign, economic,

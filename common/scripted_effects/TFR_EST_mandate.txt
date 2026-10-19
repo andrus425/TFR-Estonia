@@ -39,6 +39,15 @@ TFR_EST_repair_leadership_mandate = {
 # Called only after the election has committed a valid 101-seat assembly.
 # Strict comparisons preserve Reform/Centre/EKRE/Isamaa/SDE/E200/PP tie order.
 TFR_EST_assign_election_mandate = {
+    # The elected assembly supersedes the opening cabinet's unresolved story.
+    # Retire callbacks without inventing a Porto choice or awarding policies.
+    set_country_flag = TFR_EST_opening_assembly_ended
+    set_country_flag = TFR_EST_opening_complete
+    clr_country_flag = TFR_EST_referendum_active
+    clr_country_flag = TFR_EST_reform_handover_pending
+    clr_country_flag = TFR_EST_porto_notice_pending
+    clr_country_flag = TFR_EST_porto_choice_pending
+    clr_country_flag = TFR_EST_new_cabinet_notice_pending
     # The renewed 2019 coalition programme belongs to its existing assembly.
     # This hook runs only after a valid election has committed all 101 seats.
     # Keep the historical choice and enacted reforms when a new mandate begins.
@@ -66,6 +75,9 @@ TFR_EST_assign_election_mandate = {
     if = { limit = { check_variable = { var = TFR_EST_seats_sde value = TFR_EST_largest_elected_party compare = greater_than } } set_temp_variable = { var = TFR_EST_largest_elected_party value = TFR_EST_seats_sde } set_variable = { TFR_EST_mandate_party = 5 } }
     if = { limit = { check_variable = { var = TFR_EST_seats_e200 value = TFR_EST_largest_elected_party compare = greater_than } } set_temp_variable = { var = TFR_EST_largest_elected_party value = TFR_EST_seats_e200 } set_variable = { TFR_EST_mandate_party = 6 } }
     if = { limit = { check_variable = { var = TFR_EST_seats_pp value = TFR_EST_largest_elected_party compare = greater_than } } set_temp_variable = { var = TFR_EST_largest_elected_party value = TFR_EST_seats_pp } set_variable = { TFR_EST_mandate_party = 7 } }
+    TFR_EST_note_reform_2023_election = yes
+    TFR_EST_note_ekre_2023_election = yes
+    TFR_EST_note_centre_2023_election = yes
     # Keep outgoing ministers as caretakers during post-election negotiations.
     set_country_flag = TFR_EST_caretaker
     TFR_EST_clear_coalition = yes
