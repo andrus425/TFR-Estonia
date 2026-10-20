@@ -528,6 +528,283 @@ path="{base.as_posix()}"
         check("centre_congress_restoration_preserves_choice", "has_idea = TFR_EST_pm_centre_kolvart has_country_flag = TFR_EST_centre_leader_kolvart has_country_flag = TFR_EST_caretaker"),
     ])
     assertions.extend(["centre2023_next_vote_ends_programme", "centre_congress_date_guard_2020", "centre_congress_kiik_native_identity", "centre_congress_other_pm_preserved", "centre_congress_kolvart_native_identity", "centre_congress_occupation_preserves_choice", "centre_congress_restoration_preserves_choice"])
+    # As with the other elected programmes, the frontend remains in 2020.
+    # Source tests validate legitimate 2023 election entry; this native block
+    # seeds the mandate to verify its effects, delivery and executive gates.
+    from build_isamaa_2023 import POLICIES as ISAMAA_POLICIES, PREFIX as ISAMAA_PREFIX, INDUSTRY_PROJECTS as ISAMAA_INDUSTRY, ENERGY_STAGES as ISAMAA_ENERGY
+    body.extend([
+        # The preceding independent Centre restoration case deliberately leaves
+        # a restoration ballot pending. This separate ordinary-election fixture
+        # must close that test state; actual gameplay keeps its confirmation lock.
+        "clr_country_flag = TFR_EST_restoration_election\nTFR_EST_initialize_parliament = yes\n",
+        check("isamaa2023_hidden_at_start", "NOT = { TFR_EST_isamaa_2023_branch_visible = yes }"),
+        polls((0, 4000, 0, 6000, 0, 0, 0)), "TFR_EST_hold_election = yes\n",
+        # Frontend countries are AI-controlled and immediately confirm a
+        # majority after the vote. Seed a caretaker frame explicitly, as for
+        # the older programme QA blocks; source tests cover the player handoff.
+        "set_country_flag = TFR_EST_isamaa_won_2023_election\nset_country_flag = TFR_EST_isamaa_2023_mandate\nclr_country_flag = TFR_EST_isamaa_2023_mandate_ended\nset_country_flag = TFR_EST_electoral_handover\nset_country_flag = TFR_EST_caretaker\nTFR_EST_reconcile_cabinet_leadership = yes\n",
+        check("isamaa2023_waits_for_confirmation", "TFR_EST_isamaa_2023_branch_visible = yes NOT = { TFR_EST_isamaa_2023_governing = yes } has_country_flag = TFR_EST_caretaker " + eq("TFR_EST_pm_party", 4)),
+        "TFR_EST_confirm_cabinet = yes\n",
+        check("isamaa2023_confirmed_seeder_and_president", "TFR_EST_isamaa_2023_governing = yes has_idea = TFR_EST_pm_isamaa NOT = { TFR_EST_show_legacy_domestic_tree = yes } has_country_leader = { character = TFR_EST_alar_karis ruling_only = yes } " + eq("TFR_EST_pm_party", 4)),
+        "set_variable = { TFR_EST_coalition_seats = 50 }\nset_variable = { TFR_EST_confidence_seats = 90 }\n",
+        check("isamaa2023_actual_coalition_gate", "NOT = { TFR_EST_isamaa_2023_governing = yes }"),
+        "TFR_EST_recount_confidence = yes\n",
+    ])
+    assertions.extend(["isamaa2023_hidden_at_start", "isamaa2023_waits_for_confirmation", "isamaa2023_confirmed_seeder_and_president", "isamaa2023_actual_coalition_gate"])
+    isamaa_defence = next(p for p in ISAMAA_POLICIES if p.x == 0 and p.y == 1)
+    for field, amount in isamaa_defence.military:
+        body.append(f"set_variable = {{ TFR_EST_qa_isamaa_before_{field} = TFR_EST_military_{field}_var }}\n")
+    body.append(ISAMAA_PREFIX + "reward_" + isamaa_defence.suffix + " = yes\n")
+    for field, amount in isamaa_defence.military:
+        body.append(f"set_variable = {{ TFR_EST_qa_isamaa_delta_{field} = TFR_EST_military_{field}_var }}\nsubtract_from_variable = {{ var = TFR_EST_qa_isamaa_delta_{field} value = TFR_EST_qa_isamaa_before_{field} }}\n")
+    body.append(check("isamaa2023_native_military_deltas", " ".join(eq("TFR_EST_qa_isamaa_delta_" + field, amount) for field, amount in isamaa_defence.military)))
+    assertions.append("isamaa2023_native_military_deltas")
+    for state in (13, 191):
+        body.append(f"{state} = {{ add_extra_state_shared_building_slots = 2 set_variable = {{ TFR_EST_qa_isamaa_factory_before = arms_factory_level }} }}\n")
+    for project in ISAMAA_INDUSTRY:
+        body.append(f"set_country_flag = TFR_EST_isamaa_2023_{project}_factory_pending\n")
+    body.append("TFR_EST_isamaa_2023_grant_industry = yes\n")
+    isamaa_factory_checks = " ".join(f"has_country_flag = TFR_EST_isamaa_2023_{project}_factory_granted" for project in ISAMAA_INDUSTRY)
+    for state in (13, 191):
+        body.append(f"{state} = {{ set_variable = {{ TFR_EST_qa_isamaa_factory_delta = arms_factory_level }} subtract_from_variable = {{ var = TFR_EST_qa_isamaa_factory_delta value = TFR_EST_qa_isamaa_factory_before }} }}\n")
+        isamaa_factory_checks += f" {state} = {{ " + eq("TFR_EST_qa_isamaa_factory_delta", 1) + " }"
+    body.append(check("isamaa2023_two_native_factories", isamaa_factory_checks))
+    body.append("TFR_EST_isamaa_2023_grant_industry = yes\n")
+    for state in (13, 191):
+        body.append(f"{state} = {{ set_variable = {{ TFR_EST_qa_isamaa_factory_delta = arms_factory_level }} subtract_from_variable = {{ var = TFR_EST_qa_isamaa_factory_delta value = TFR_EST_qa_isamaa_factory_before }} }}\n")
+    body.append(check("isamaa2023_factories_do_not_repeat", isamaa_factory_checks))
+    assertions.extend(["isamaa2023_two_native_factories", "isamaa2023_factories_do_not_repeat"])
+    from build_energy_crisis import CENTRE_2023_PROJECTS
+    for route, projects in (("ratas", RATAS_PROJECTS), ("kallas", KALLAS_PROJECTS), ("reform_2023", REFORM_2023_PROJECTS), ("ekre_2023", EKRE_2023_PROJECTS), ("centre_2023", CENTRE_2023_PROJECTS)):
+        for project in projects:
+            body.append(f"clr_country_flag = TFR_EST_done_{route}_{project}\n")
+    body.append("set_global_flag = SAU_saudi_civil_war_global\nclr_global_flag = SAU_saudi_civil_war_over_global\nset_country_flag = TFR_EST_energy_idea_managed\nset_variable = { TFR_EST_energy_external_recovery = 0 }\nTFR_EST_reconcile_energy_crisis = yes\n")
+    body.append(check("isamaa2023_energy_starts_at_parent_tier", "has_idea = GER_oil_crash1"))
+    assertions.append("isamaa2023_energy_starts_at_parent_tier")
+    completed_stages = 0
+    for project, stages in ISAMAA_ENERGY.items():
+        body.append(f"set_country_flag = TFR_EST_done_isamaa_2023_{project}\nTFR_EST_reconcile_energy_crisis = yes\n")
+        completed_stages += stages
+        name = "isamaa2023_native_energy_" + project
+        conditions = " ".join(f"NOT = {{ has_idea = GER_oil_crash{i} }}" for i in range(1, 6)) if completed_stages >= 5 else f"has_idea = GER_oil_crash{completed_stages + 1}"
+        body.append(check(name, conditions))
+        assertions.append(name)
+    body.extend([
+        "set_country_flag = TFR_EST_occupied\nTFR_EST_suspend_parliament = yes\n",
+        check("isamaa2023_occupation_hides_programme", "NOT = { TFR_EST_isamaa_2023_branch_visible = yes } NOT = { has_idea = TFR_EST_pm_isamaa }"),
+        "TFR_EST_restore_parliament = yes\n",
+        check("isamaa2023_restoration_keeps_programme", "TFR_EST_isamaa_2023_branch_visible = yes NOT = { TFR_EST_isamaa_2023_governing = yes } has_country_flag = TFR_EST_caretaker has_idea = TFR_EST_pm_isamaa"),
+        "clr_country_flag = TFR_EST_restoration_election\n",
+        polls((0, 0, 0, 10000, 0, 0, 0)), "TFR_EST_hold_election = yes\nTFR_EST_confirm_cabinet = yes\n",
+        check("isamaa2023_next_vote_ends_programme", "has_country_flag = TFR_EST_isamaa_2023_mandate_ended NOT = { TFR_EST_isamaa_2023_branch_visible = yes } has_idea = TFR_EST_pm_isamaa " + eq("TFR_EST_pm_party", 4)),
+    ])
+    assertions.extend(["isamaa2023_occupation_hides_programme", "isamaa2023_restoration_keeps_programme", "isamaa2023_next_vote_ends_programme"])
+    # The 2020 frontend cannot deliver a historical 2022 congress naturally.
+    # Verify its native date rejection, then seed career history explicitly for
+    # display tests. Source tests exercise the real February 4/5 transition.
+    from build_sde_2023 import POLICIES as SDE_POLICIES, PREFIX as SDE_PREFIX, INDUSTRY_PROJECTS as SDE_INDUSTRY, ENERGY_STAGES as SDE_ENERGY
+    body.extend([
+        "clr_country_flag = TFR_EST_restoration_election\nTFR_EST_initialize_parliament = yes\n",
+        check("sde2023_hidden_at_start", "NOT = { TFR_EST_sde_2023_branch_visible = yes }"),
+        polls((0, 0, 0, 0, 10000, 0, 0)), "TFR_EST_hold_election = yes\nTFR_EST_confirm_cabinet = yes\nTFR_EST_sde_handover_tick = yes\nTFR_EST_complete_sde_handover = yes\n",
+        check("sde_handover_date_guard_2020", "NOT = { has_country_flag = TFR_EST_laanemets_leads_sde } NOT = { has_country_flag = TFR_EST_pm_person_lauri_laanemets } has_idea = TFR_EST_pm_sde " + eq("TFR_EST_pm_party", 5)),
+        "set_country_flag = TFR_EST_laanemets_leads_sde\nTFR_EST_reconcile_executive_display = yes\n",
+        check("sde_handover_laanemets_native_identity", "has_idea = TFR_EST_pm_sde_laanemets NOT = { has_idea = TFR_EST_pm_sde } has_country_flag = TFR_EST_pm_person_lauri_laanemets has_country_leader = { character = TFR_EST_alar_karis ruling_only = yes } " + eq("TFR_EST_pm_party", 5)),
+        "set_variable = { TFR_EST_pm_party = 4 }\nTFR_EST_reconcile_executive_display = yes\n",
+        check("sde_handover_other_pm_preserved", "has_idea = TFR_EST_pm_isamaa NOT = { has_idea = TFR_EST_pm_sde_laanemets } NOT = { has_country_flag = TFR_EST_pm_person_lauri_laanemets } has_country_flag = TFR_EST_laanemets_leads_sde " + eq("TFR_EST_pm_party", 4)),
+        "TFR_EST_initialize_parliament = yes\n",
+        polls((0, 4000, 0, 0, 6000, 0, 0)), "TFR_EST_hold_election = yes\n",
+        # Native history countries are AI-controlled and auto-confirm a
+        # majority. Seed a caretaker frame to test the player-facing gate.
+        "set_country_flag = TFR_EST_sde_won_2023_election\nset_country_flag = TFR_EST_sde_2023_mandate\nclr_country_flag = TFR_EST_sde_2023_mandate_ended\nset_country_flag = TFR_EST_electoral_handover\nset_country_flag = TFR_EST_caretaker\nTFR_EST_reconcile_cabinet_leadership = yes\n",
+        check("sde2023_waits_for_confirmation", "TFR_EST_sde_2023_branch_visible = yes NOT = { TFR_EST_sde_2023_governing = yes } has_country_flag = TFR_EST_caretaker " + eq("TFR_EST_pm_party", 5)),
+        "TFR_EST_confirm_cabinet = yes\n",
+        check("sde2023_confirmed_laanemets_and_president", "TFR_EST_sde_2023_governing = yes has_idea = TFR_EST_pm_sde_laanemets NOT = { has_idea = TFR_EST_pm_sde } NOT = { TFR_EST_show_legacy_domestic_tree = yes } has_country_flag = TFR_EST_pm_person_lauri_laanemets has_country_leader = { character = TFR_EST_alar_karis ruling_only = yes } " + eq("TFR_EST_pm_party", 5)),
+        "set_variable = { TFR_EST_coalition_seats = 50 }\nset_variable = { TFR_EST_confidence_seats = 90 }\n",
+        check("sde2023_actual_coalition_gate", "NOT = { TFR_EST_sde_2023_governing = yes }"),
+        "TFR_EST_recount_confidence = yes\n",
+    ])
+    assertions.extend(["sde2023_hidden_at_start", "sde_handover_date_guard_2020", "sde_handover_laanemets_native_identity", "sde_handover_other_pm_preserved", "sde2023_waits_for_confirmation", "sde2023_confirmed_laanemets_and_president", "sde2023_actual_coalition_gate"])
+    sde_defence = next(p for p in SDE_POLICIES if p.x == 0 and p.y == 1)
+    for field, amount in sde_defence.military:
+        body.append(f"set_variable = {{ TFR_EST_qa_sde_before_{field} = TFR_EST_military_{field}_var }}\n")
+    body.append(SDE_PREFIX + "reward_" + sde_defence.suffix + " = yes\n")
+    for field, amount in sde_defence.military:
+        body.append(f"set_variable = {{ TFR_EST_qa_sde_delta_{field} = TFR_EST_military_{field}_var }}\nsubtract_from_variable = {{ var = TFR_EST_qa_sde_delta_{field} value = TFR_EST_qa_sde_before_{field} }}\n")
+    body.append(check("sde2023_native_military_deltas", " ".join(eq("TFR_EST_qa_sde_delta_" + field, amount) for field, amount in sde_defence.military)))
+    assertions.append("sde2023_native_military_deltas")
+    for state in (13, 191):
+        body.append(f"{state} = {{ add_extra_state_shared_building_slots = 2 set_variable = {{ TFR_EST_qa_sde_factory_before = arms_factory_level }} }}\n")
+    for project in SDE_INDUSTRY:
+        body.append(f"set_country_flag = TFR_EST_sde_2023_{project}_factory_pending\n")
+    body.append("TFR_EST_sde_2023_grant_industry = yes\n")
+    sde_factory_checks = " ".join(f"has_country_flag = TFR_EST_sde_2023_{project}_factory_granted" for project in SDE_INDUSTRY)
+    for state in (13, 191):
+        body.append(f"{state} = {{ set_variable = {{ TFR_EST_qa_sde_factory_delta = arms_factory_level }} subtract_from_variable = {{ var = TFR_EST_qa_sde_factory_delta value = TFR_EST_qa_sde_factory_before }} }}\n")
+        sde_factory_checks += f" {state} = {{ " + eq("TFR_EST_qa_sde_factory_delta", 1) + " }"
+    body.append(check("sde2023_two_native_factories", sde_factory_checks))
+    body.append("TFR_EST_sde_2023_grant_industry = yes\n")
+    for state in (13, 191):
+        body.append(f"{state} = {{ set_variable = {{ TFR_EST_qa_sde_factory_delta = arms_factory_level }} subtract_from_variable = {{ var = TFR_EST_qa_sde_factory_delta value = TFR_EST_qa_sde_factory_before }} }}\n")
+    body.append(check("sde2023_factories_do_not_repeat", sde_factory_checks))
+    assertions.extend(["sde2023_two_native_factories", "sde2023_factories_do_not_repeat"])
+    from build_energy_crisis import ISAMAA_2023_PROJECTS
+    for route, projects in (("ratas", RATAS_PROJECTS), ("kallas", KALLAS_PROJECTS), ("reform_2023", REFORM_2023_PROJECTS), ("ekre_2023", EKRE_2023_PROJECTS), ("centre_2023", CENTRE_2023_PROJECTS), ("isamaa_2023", ISAMAA_2023_PROJECTS)):
+        for project in projects:
+            body.append(f"clr_country_flag = TFR_EST_done_{route}_{project}\n")
+    body.append("set_global_flag = SAU_saudi_civil_war_global\nclr_global_flag = SAU_saudi_civil_war_over_global\nset_country_flag = TFR_EST_energy_idea_managed\nset_variable = { TFR_EST_energy_external_recovery = 0 }\nTFR_EST_reconcile_energy_crisis = yes\n")
+    body.append(check("sde2023_energy_starts_at_parent_tier", "has_idea = GER_oil_crash1"))
+    assertions.append("sde2023_energy_starts_at_parent_tier")
+    completed_stages = 0
+    for project, stages in SDE_ENERGY.items():
+        body.append(f"set_country_flag = TFR_EST_done_sde_2023_{project}\nTFR_EST_reconcile_energy_crisis = yes\n")
+        completed_stages += stages
+        name = "sde2023_native_energy_" + project
+        conditions = " ".join(f"NOT = {{ has_idea = GER_oil_crash{i} }}" for i in range(1, 6)) if completed_stages >= 5 else f"has_idea = GER_oil_crash{completed_stages + 1}"
+        body.append(check(name, conditions))
+        assertions.append(name)
+    body.extend([
+        "set_country_flag = TFR_EST_occupied\nTFR_EST_suspend_parliament = yes\n",
+        check("sde2023_occupation_hides_programme", "NOT = { TFR_EST_sde_2023_branch_visible = yes } NOT = { has_idea = TFR_EST_pm_sde_laanemets } NOT = { has_country_flag = TFR_EST_pm_person_lauri_laanemets } has_country_flag = TFR_EST_laanemets_leads_sde"),
+        "TFR_EST_restore_parliament = yes\n",
+        check("sde2023_restoration_keeps_programme", "TFR_EST_sde_2023_branch_visible = yes NOT = { TFR_EST_sde_2023_governing = yes } has_country_flag = TFR_EST_caretaker has_idea = TFR_EST_pm_sde_laanemets has_country_flag = TFR_EST_laanemets_leads_sde"),
+        "clr_country_flag = TFR_EST_restoration_election\n",
+        polls((0, 0, 0, 0, 10000, 0, 0)), "TFR_EST_hold_election = yes\nTFR_EST_confirm_cabinet = yes\n",
+        check("sde2023_next_vote_ends_programme", "has_country_flag = TFR_EST_sde_2023_mandate_ended NOT = { TFR_EST_sde_2023_branch_visible = yes } has_idea = TFR_EST_pm_sde_laanemets has_country_flag = TFR_EST_laanemets_leads_sde " + eq("TFR_EST_pm_party", 5)),
+    ])
+    assertions.extend(["sde2023_occupation_hides_programme", "sde2023_restoration_keeps_programme", "sde2023_next_vote_ends_programme"])
+    # The frontend remains in 2020. Source tests exercise legitimate 2023
+    # electoral entry; these native cases seed the mandate and caretaker frame.
+    from build_e200_2023 import POLICIES as E200_POLICIES, PREFIX as E200_PREFIX, INDUSTRY_PROJECTS as E200_INDUSTRY, ENERGY_STAGES as E200_ENERGY
+    body.extend([
+        "clr_country_flag = TFR_EST_restoration_election\nTFR_EST_initialize_parliament = yes\n",
+        check("e2002023_hidden_at_start", "NOT = { TFR_EST_e200_2023_branch_visible = yes }"),
+        polls((0, 4000, 0, 0, 0, 6000, 0)), "TFR_EST_hold_election = yes\n",
+        # Native history countries are AI-controlled and auto-confirm a
+        # majority. Explicitly seed a caretaker to exercise availability.
+        "set_country_flag = TFR_EST_e200_won_2023_election\nset_country_flag = TFR_EST_e200_2023_mandate\nclr_country_flag = TFR_EST_e200_2023_mandate_ended\nset_country_flag = TFR_EST_electoral_handover\nset_country_flag = TFR_EST_caretaker\nTFR_EST_reconcile_cabinet_leadership = yes\n",
+        check("e2002023_waits_for_confirmation", "TFR_EST_e200_2023_branch_visible = yes NOT = { TFR_EST_e200_2023_governing = yes } has_country_flag = TFR_EST_caretaker " + eq("TFR_EST_pm_party", 6)),
+        "TFR_EST_confirm_cabinet = yes\n",
+        check("e2002023_confirmed_cabinet_and_president", "TFR_EST_e200_2023_governing = yes has_idea = TFR_EST_pm_e200 NOT = { TFR_EST_show_legacy_domestic_tree = yes } has_country_leader = { character = TFR_EST_alar_karis ruling_only = yes } " + eq("TFR_EST_pm_party", 6)),
+        "set_variable = { TFR_EST_coalition_seats = 50 }\nset_variable = { TFR_EST_confidence_seats = 90 }\n",
+        check("e2002023_actual_coalition_gate", "NOT = { TFR_EST_e200_2023_governing = yes }"),
+        "TFR_EST_recount_confidence = yes\n",
+    ])
+    assertions.extend(["e2002023_hidden_at_start", "e2002023_waits_for_confirmation", "e2002023_confirmed_cabinet_and_president", "e2002023_actual_coalition_gate"])
+    e200_defence = next(p for p in E200_POLICIES if p.x == 0 and p.y == 1)
+    for field, amount in e200_defence.military:
+        body.append(f"set_variable = {{ TFR_EST_qa_e200_before_{field} = TFR_EST_military_{field}_var }}\n")
+    body.append(E200_PREFIX + "reward_" + e200_defence.suffix + " = yes\n")
+    for field, amount in e200_defence.military:
+        body.append(f"set_variable = {{ TFR_EST_qa_e200_delta_{field} = TFR_EST_military_{field}_var }}\nsubtract_from_variable = {{ var = TFR_EST_qa_e200_delta_{field} value = TFR_EST_qa_e200_before_{field} }}\n")
+    body.append(check("e2002023_native_military_deltas", " ".join(eq("TFR_EST_qa_e200_delta_" + field, amount) for field, amount in e200_defence.military)))
+    assertions.append("e2002023_native_military_deltas")
+    for state in (13, 191):
+        body.append(f"{state} = {{ add_extra_state_shared_building_slots = 2 set_variable = {{ TFR_EST_qa_e200_factory_before = arms_factory_level }} }}\n")
+    for project in E200_INDUSTRY:
+        body.append(f"set_country_flag = TFR_EST_e200_2023_{project}_factory_pending\n")
+    body.append("TFR_EST_e200_2023_grant_industry = yes\n")
+    e200_factory_checks = " ".join(f"has_country_flag = TFR_EST_e200_2023_{project}_factory_granted" for project in E200_INDUSTRY)
+    for state in (13, 191):
+        body.append(f"{state} = {{ set_variable = {{ TFR_EST_qa_e200_factory_delta = arms_factory_level }} subtract_from_variable = {{ var = TFR_EST_qa_e200_factory_delta value = TFR_EST_qa_e200_factory_before }} }}\n")
+        e200_factory_checks += f" {state} = {{ " + eq("TFR_EST_qa_e200_factory_delta", 1) + " }"
+    body.append(check("e2002023_two_native_factories", e200_factory_checks))
+    body.append("TFR_EST_e200_2023_grant_industry = yes\n")
+    for state in (13, 191):
+        body.append(f"{state} = {{ set_variable = {{ TFR_EST_qa_e200_factory_delta = arms_factory_level }} subtract_from_variable = {{ var = TFR_EST_qa_e200_factory_delta value = TFR_EST_qa_e200_factory_before }} }}\n")
+    body.append(check("e2002023_factories_do_not_repeat", e200_factory_checks))
+    assertions.extend(["e2002023_two_native_factories", "e2002023_factories_do_not_repeat"])
+    from build_energy_crisis import SDE_2023_PROJECTS
+    for route, projects in (("ratas", RATAS_PROJECTS), ("kallas", KALLAS_PROJECTS), ("reform_2023", REFORM_2023_PROJECTS), ("ekre_2023", EKRE_2023_PROJECTS), ("centre_2023", CENTRE_2023_PROJECTS), ("isamaa_2023", ISAMAA_2023_PROJECTS), ("sde_2023", SDE_2023_PROJECTS)):
+        for project in projects:
+            body.append(f"clr_country_flag = TFR_EST_done_{route}_{project}\n")
+    body.append("set_global_flag = SAU_saudi_civil_war_global\nclr_global_flag = SAU_saudi_civil_war_over_global\nset_country_flag = TFR_EST_energy_idea_managed\nset_variable = { TFR_EST_energy_external_recovery = 0 }\nTFR_EST_reconcile_energy_crisis = yes\n")
+    body.append(check("e2002023_energy_starts_at_parent_tier", "has_idea = GER_oil_crash1"))
+    assertions.append("e2002023_energy_starts_at_parent_tier")
+    completed_stages = 0
+    for project, stages in E200_ENERGY.items():
+        body.append(f"set_country_flag = TFR_EST_done_e200_2023_{project}\nTFR_EST_reconcile_energy_crisis = yes\n")
+        completed_stages += stages
+        name = "e2002023_native_energy_" + project
+        conditions = " ".join(f"NOT = {{ has_idea = GER_oil_crash{i} }}" for i in range(1, 6)) if completed_stages >= 5 else f"has_idea = GER_oil_crash{completed_stages + 1}"
+        body.append(check(name, conditions))
+        assertions.append(name)
+    body.extend([
+        "set_country_flag = TFR_EST_occupied\nTFR_EST_suspend_parliament = yes\n",
+        check("e2002023_occupation_hides_programme", "NOT = { TFR_EST_e200_2023_branch_visible = yes } NOT = { has_idea = TFR_EST_pm_e200 }"),
+        "TFR_EST_restore_parliament = yes\n",
+        check("e2002023_restoration_keeps_programme", "TFR_EST_e200_2023_branch_visible = yes NOT = { TFR_EST_e200_2023_governing = yes } has_country_flag = TFR_EST_caretaker has_idea = TFR_EST_pm_e200"),
+        "clr_country_flag = TFR_EST_restoration_election\n",
+        polls((0, 0, 0, 0, 0, 10000, 0)), "TFR_EST_hold_election = yes\nTFR_EST_confirm_cabinet = yes\n",
+        check("e2002023_next_vote_ends_programme", "has_country_flag = TFR_EST_e200_2023_mandate_ended NOT = { TFR_EST_e200_2023_branch_visible = yes } has_idea = TFR_EST_pm_e200 " + eq("TFR_EST_pm_party", 6)),
+    ])
+    assertions.extend(["e2002023_occupation_hides_programme", "e2002023_restoration_keeps_programme", "e2002023_next_vote_ends_programme"])
+    # The frontend remains in 2020. Source tests exercise legitimate 2023
+    # electoral entry; these native cases seed the mandate and caretaker frame.
+    from build_pp_2023 import POLICIES as PP_POLICIES, PREFIX as PP_PREFIX, INDUSTRY_PROJECTS as PP_INDUSTRY, ENERGY_STAGES as PP_ENERGY
+    body.extend([
+        "clr_country_flag = TFR_EST_restoration_election\nTFR_EST_initialize_parliament = yes\n",
+        check("pp2023_hidden_at_start", "NOT = { TFR_EST_pp_2023_branch_visible = yes }"),
+        polls((4000, 0, 0, 0, 0, 0, 6000)), "TFR_EST_hold_election = yes\n",
+        # Native history countries are AI-controlled and auto-confirm a
+        # majority. Explicitly seed a caretaker to exercise availability.
+        "set_country_flag = TFR_EST_pp_won_2023_election\nset_country_flag = TFR_EST_pp_2023_mandate\nclr_country_flag = TFR_EST_pp_2023_mandate_ended\nset_country_flag = TFR_EST_electoral_handover\nset_country_flag = TFR_EST_caretaker\nTFR_EST_reconcile_cabinet_leadership = yes\n",
+        check("pp2023_waits_for_confirmation", "TFR_EST_pp_2023_branch_visible = yes NOT = { TFR_EST_pp_2023_governing = yes } has_country_flag = TFR_EST_caretaker " + eq("TFR_EST_pm_party", 7)),
+        "TFR_EST_confirm_cabinet = yes\n",
+        check("pp2023_confirmed_cabinet_and_president", "TFR_EST_pp_2023_governing = yes has_idea = TFR_EST_pm_pp NOT = { TFR_EST_show_legacy_domestic_tree = yes } has_country_leader = { character = TFR_EST_alar_karis ruling_only = yes } " + eq("TFR_EST_pm_party", 7)),
+        "set_variable = { TFR_EST_coalition_seats = 50 }\nset_variable = { TFR_EST_confidence_seats = 90 }\n",
+        check("pp2023_actual_coalition_gate", "NOT = { TFR_EST_pp_2023_governing = yes }"),
+        "TFR_EST_recount_confidence = yes\n",
+    ])
+    assertions.extend(["pp2023_hidden_at_start", "pp2023_waits_for_confirmation", "pp2023_confirmed_cabinet_and_president", "pp2023_actual_coalition_gate"])
+    pp_defence = next(p for p in PP_POLICIES if p.x == 0 and p.y == 1)
+    for field, amount in pp_defence.military:
+        body.append(f"set_variable = {{ TFR_EST_qa_pp_before_{field} = TFR_EST_military_{field}_var }}\n")
+    body.append(PP_PREFIX + "reward_" + pp_defence.suffix + " = yes\n")
+    for field, amount in pp_defence.military:
+        body.append(f"set_variable = {{ TFR_EST_qa_pp_delta_{field} = TFR_EST_military_{field}_var }}\nsubtract_from_variable = {{ var = TFR_EST_qa_pp_delta_{field} value = TFR_EST_qa_pp_before_{field} }}\n")
+    body.append(check("pp2023_native_military_deltas", " ".join(eq("TFR_EST_qa_pp_delta_" + field, amount) for field, amount in pp_defence.military)))
+    assertions.append("pp2023_native_military_deltas")
+    for state in (13, 191):
+        body.append(f"{state} = {{ add_extra_state_shared_building_slots = 2 set_variable = {{ TFR_EST_qa_pp_factory_before = arms_factory_level }} }}\n")
+    for project in PP_INDUSTRY:
+        body.append(f"set_country_flag = TFR_EST_pp_2023_{project}_factory_pending\n")
+    body.append("TFR_EST_pp_2023_grant_industry = yes\n")
+    pp_factory_checks = " ".join(f"has_country_flag = TFR_EST_pp_2023_{project}_factory_granted" for project in PP_INDUSTRY)
+    for state in (13, 191):
+        body.append(f"{state} = {{ set_variable = {{ TFR_EST_qa_pp_factory_delta = arms_factory_level }} subtract_from_variable = {{ var = TFR_EST_qa_pp_factory_delta value = TFR_EST_qa_pp_factory_before }} }}\n")
+        pp_factory_checks += f" {state} = {{ " + eq("TFR_EST_qa_pp_factory_delta", 1) + " }"
+    body.append(check("pp2023_two_native_factories", pp_factory_checks))
+    body.append("TFR_EST_pp_2023_grant_industry = yes\n")
+    for state in (13, 191):
+        body.append(f"{state} = {{ set_variable = {{ TFR_EST_qa_pp_factory_delta = arms_factory_level }} subtract_from_variable = {{ var = TFR_EST_qa_pp_factory_delta value = TFR_EST_qa_pp_factory_before }} }}\n")
+    body.append(check("pp2023_factories_do_not_repeat", pp_factory_checks))
+    assertions.extend(["pp2023_two_native_factories", "pp2023_factories_do_not_repeat"])
+    from build_energy_crisis import SDE_2023_PROJECTS, E200_2023_PROJECTS
+    for route, projects in (("ratas", RATAS_PROJECTS), ("kallas", KALLAS_PROJECTS), ("reform_2023", REFORM_2023_PROJECTS), ("ekre_2023", EKRE_2023_PROJECTS), ("centre_2023", CENTRE_2023_PROJECTS), ("isamaa_2023", ISAMAA_2023_PROJECTS), ("sde_2023", SDE_2023_PROJECTS), ("e200_2023", E200_2023_PROJECTS)):
+        for project in projects:
+            body.append(f"clr_country_flag = TFR_EST_done_{route}_{project}\n")
+    body.append("set_global_flag = SAU_saudi_civil_war_global\nclr_global_flag = SAU_saudi_civil_war_over_global\nset_country_flag = TFR_EST_energy_idea_managed\nset_variable = { TFR_EST_energy_external_recovery = 0 }\nTFR_EST_reconcile_energy_crisis = yes\n")
+    body.append(check("pp2023_energy_starts_at_parent_tier", "has_idea = GER_oil_crash1"))
+    assertions.append("pp2023_energy_starts_at_parent_tier")
+    completed_stages = 0
+    for project, stages in PP_ENERGY.items():
+        body.append(f"set_country_flag = TFR_EST_done_pp_2023_{project}\nTFR_EST_reconcile_energy_crisis = yes\n")
+        completed_stages += stages
+        name = "pp2023_native_energy_" + project
+        conditions = " ".join(f"NOT = {{ has_idea = GER_oil_crash{i} }}" for i in range(1, 6)) if completed_stages >= 5 else f"has_idea = GER_oil_crash{completed_stages + 1}"
+        body.append(check(name, conditions))
+        assertions.append(name)
+    body.extend([
+        "set_country_flag = TFR_EST_occupied\nTFR_EST_suspend_parliament = yes\n",
+        check("pp2023_occupation_hides_programme", "NOT = { TFR_EST_pp_2023_branch_visible = yes } NOT = { has_idea = TFR_EST_pm_pp }"),
+        "TFR_EST_restore_parliament = yes\n",
+        check("pp2023_restoration_keeps_programme", "TFR_EST_pp_2023_branch_visible = yes NOT = { TFR_EST_pp_2023_governing = yes } has_country_flag = TFR_EST_caretaker has_idea = TFR_EST_pm_pp"),
+        "clr_country_flag = TFR_EST_restoration_election\n",
+        polls((0, 0, 0, 0, 0, 0, 10000)), "TFR_EST_hold_election = yes\nTFR_EST_confirm_cabinet = yes\n",
+        check("pp2023_next_vote_ends_programme", "has_country_flag = TFR_EST_pp_2023_mandate_ended NOT = { TFR_EST_pp_2023_branch_visible = yes } has_idea = TFR_EST_pm_pp " + eq("TFR_EST_pm_party", 7)),
+    ])
+    assertions.extend(["pp2023_occupation_hides_programme", "pp2023_restoration_keeps_programme", "pp2023_next_vote_ends_programme"])
     body.append("log = \"TFR_EST_ENGINE_QA_END\"\n")
     source = (ROOT / "history/countries/EST - Estonia.txt").read_text(encoding="utf-8-sig")
     # Country history executes top-level commands independently. Keep native

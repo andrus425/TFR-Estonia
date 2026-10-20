@@ -8,6 +8,7 @@ defined_text = {
     text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } has_country_flag = TFR_EST_martin_leads_ekre } localization_key = TFR_EST_martin_helme }
     text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } } localization_key = TFR_EST_mart_helme }
     text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } } localization_key = TFR_EST_helir_valdor_seeder }
+    text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } has_country_flag = TFR_EST_pm_person_lauri_laanemets } localization_key = TFR_EST_lauri_laanemets }
     text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } } localization_key = TFR_EST_indrek_saar }
     text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } } localization_key = TFR_EST_kristina_kallas }
     text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } } localization_key = TFR_EST_lavly_perling }

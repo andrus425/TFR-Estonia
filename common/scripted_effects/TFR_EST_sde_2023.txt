@@ -1,0 +1,760 @@
+# Each focus applies its reward inside a persistent once-only guard.
+TFR_EST_sde_2023_reward_new_mandate = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
+    add_political_power = 50
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_defence_commitment = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 115 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_readiness_delta value = 5 }
+TFR_EST_change_readiness = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_military_empty
+            add_idea = TFR_EST_sde_2023_defence_commitment_military_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_military_army_org_factor_var = 0.04 }
+        add_to_variable = { TFR_EST_military_supply_consumption_factor_var = -0.03 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_air_defence = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 100 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_military_empty
+            add_idea = TFR_EST_sde_2023_air_defence_military_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_military_army_defence_factor_var = 0.05 }
+        add_to_variable = { TFR_EST_military_attrition_var = -0.025 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_reserve_muster = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 55 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_readiness_delta value = 6 }
+TFR_EST_change_readiness = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_military_empty
+            add_idea = TFR_EST_sde_2023_reserve_muster_military_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_military_mobilization_speed_var = 0.2 }
+        add_to_variable = { TFR_EST_military_training_time_army_factor_var = -0.05 }
+    }
+    set_country_flag = TFR_EST_reserve_plan
+custom_effect_tooltip = TFR_EST_reserve_plan_tt
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_kaitseliit_instructors = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 60 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_military_empty
+            add_idea = TFR_EST_sde_2023_kaitseliit_instructors_military_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_military_training_time_army_factor_var = -0.04 }
+        add_to_variable = { TFR_EST_military_dig_in_speed_factor_var = 0.1 }
+    }
+    army_experience = 10
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_allied_reception = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 80 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_readiness_delta value = 4 }
+TFR_EST_change_readiness = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_military_empty
+            add_idea = TFR_EST_sde_2023_allied_reception_military_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_military_supply_consumption_factor_var = -0.05 }
+        add_to_variable = { TFR_EST_military_army_org_factor_var = 0.025 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_civil_protection = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 65 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
+    set_temp_variable = { var = TFR_EST_readiness_delta value = 5 }
+TFR_EST_change_readiness = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_military_empty
+            add_idea = TFR_EST_sde_2023_civil_protection_military_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_military_attrition_var = -0.025 }
+        add_to_variable = { TFR_EST_military_army_defence_factor_var = 0.025 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_industrial_guarantees = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 45 }
+TFR_EST_spend_budget = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_sde_2023_industrial_guarantees_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_production_factory_efficiency_gain_factor_var = 0.035 }
+    }
+    set_country_flag = TFR_EST_procurement_plan
+custom_effect_tooltip = TFR_EST_procurement_plan_tt
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_ammunition_workshop = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 140 }
+TFR_EST_spend_budget = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_sde_2023_ammunition_workshop_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_industrial_capacity_factory_var = 0.04 }
+    }
+    set_country_flag = TFR_EST_sde_2023_ammunition_factory_pending
+custom_effect_tooltip = TFR_EST_sde_2023_factory_tt
+hidden_effect = { TFR_EST_sde_2023_grant_industry = yes }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_maintenance_workshop = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 115 }
+TFR_EST_spend_budget = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_sde_2023_maintenance_workshop_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_production_factory_max_efficiency_factor_var = 0.04 }
+    }
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_military_empty
+            add_idea = TFR_EST_sde_2023_maintenance_workshop_military_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_military_attrition_var = -0.025 }
+    }
+    set_country_flag = TFR_EST_sde_2023_maintenance_factory_pending
+custom_effect_tooltip = TFR_EST_sde_2023_factory_tt
+hidden_effect = { TFR_EST_sde_2023_grant_industry = yes }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_regional_jobs = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 85 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_sde_2023_regional_jobs_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_industrial_capacity_factory_var = 0.035 }
+        add_to_variable = { TFR_EST_economy_production_factory_efficiency_gain_factor_var = 0.025 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_applied_research = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 80 }
+TFR_EST_spend_budget = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_sde_2023_applied_research_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_research_speed_factor_var = 0.04 }
+        add_to_variable = { TFR_EST_economy_production_factory_max_efficiency_factor_var = 0.03 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_ultrafast_internet = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 45 }
+TFR_EST_spend_budget = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_sde_2023_ultrafast_internet_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_production_speed_buildings_factor_var = 0.035 }
+        add_to_variable = { TFR_EST_economy_production_factory_efficiency_gain_factor_var = 0.025 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_renewable_contracts = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 85 }
+TFR_EST_spend_budget = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_sde_2023_renewable_contracts_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_industrial_capacity_factory_var = 0.04 }
+        add_to_variable = { TFR_EST_economy_local_resources_factor_var = 0.05 }
+    }
+    custom_effect_tooltip = TFR_EST_sde_2023_renewable_contracts_energy_tt
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_grid_connection = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 65 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_readiness_delta value = 2 }
+TFR_EST_change_readiness = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_sde_2023_grid_connection_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_industrial_capacity_factory_var = 0.03 }
+        add_to_variable = { TFR_EST_economy_production_speed_buildings_factor_var = 0.03 }
+    }
+    custom_effect_tooltip = TFR_EST_sde_2023_grid_connection_energy_tt
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_renovation = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 85 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_sde_2023_renovation_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_production_speed_buildings_factor_var = 0.04 }
+        add_to_variable = { TFR_EST_economy_consumer_goods_factor_var = -0.015 }
+    }
+    custom_effect_tooltip = TFR_EST_sde_2023_renovation_energy_tt
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_strategic_reserves = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 65 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_readiness_delta value = 3 }
+TFR_EST_change_readiness = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_sde_2023_strategic_reserves_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_industrial_capacity_factory_var = 0.03 }
+        add_to_variable = { TFR_EST_economy_local_resources_factor_var = 0.025 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_energy_cooperatives = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 35 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_sde_2023_energy_cooperatives_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_consumer_goods_factor_var = -0.015 }
+        add_to_variable = { TFR_EST_economy_production_factory_efficiency_gain_factor_var = 0.025 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_district_heating = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 60 }
+TFR_EST_spend_budget = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_sde_2023_district_heating_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_industrial_capacity_factory_var = 0.025 }
+        add_to_variable = { TFR_EST_economy_production_factory_max_efficiency_factor_var = 0.025 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_progressive_tax = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 20 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 2 }
+TFR_EST_change_cohesion = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_sde_2023_progressive_tax_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_production_factory_max_efficiency_factor_var = 0.025 }
+    }
+    set_temp_variable = { var = income_var_temp value = 0.055 }
+add_income_with_inflation = yes
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_minimum_wage = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 75 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_sde_2023_minimum_wage_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_consumer_goods_factor_var = -0.02 }
+        add_to_variable = { TFR_EST_economy_industrial_capacity_factory_var = 0.025 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_collective_bargaining = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 25 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_sde_2023_collective_bargaining_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_production_factory_max_efficiency_factor_var = 0.035 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_learning_leave = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 50 }
+TFR_EST_spend_budget = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_sde_2023_learning_leave_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_research_speed_factor_var = 0.035 }
+        add_to_variable = { TFR_EST_economy_production_factory_efficiency_gain_factor_var = 0.03 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_child_benefit = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 80 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_sde_2023_child_benefit_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_consumer_goods_factor_var = -0.02 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_rental_homes = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 95 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_sde_2023_rental_homes_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_production_speed_buildings_factor_var = 0.045 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_universal_health = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 85 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_sde_2023_universal_health_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_production_factory_max_efficiency_factor_var = 0.03 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_mental_health = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 45 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_sde_2023_mental_health_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_production_factory_efficiency_gain_factor_var = 0.03 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_pension_base = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 85 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_sde_2023_pension_base_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_consumer_goods_factor_var = -0.02 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_care_home = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 65 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_sde_2023_care_home_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_production_factory_max_efficiency_factor_var = 0.03 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_teacher_pay = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 80 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_sde_2023_teacher_pay_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_research_speed_factor_var = 0.045 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_inclusive_schools = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_budget_cost value = 60 }
+TFR_EST_spend_budget = yes
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 4 }
+TFR_EST_change_cohesion = yes
+    effect_tooltip = {
+        swap_ideas = {
+            remove_idea = TFR_EST_tooltip_economy_empty
+            add_idea = TFR_EST_sde_2023_inclusive_schools_economy_delta
+        }
+    }
+    hidden_effect = {
+        add_to_variable = { TFR_EST_economy_research_speed_factor_var = 0.035 }
+    }
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+TFR_EST_sde_2023_reward_account_to_parliament = {
+    hidden_effect = { TFR_EST_initialize_country_modifiers = yes }
+    set_temp_variable = { var = TFR_EST_cohesion_delta value = 3 }
+TFR_EST_change_cohesion = yes
+    set_country_flag = TFR_EST_sde_2023_programme_finished
+add_political_power = 75
+    hidden_effect = { TFR_EST_reconcile_energy_crisis = yes TFR_EST_refresh_country_modifiers = yes }
+}
+
+# Funded entitlements wait if all eligible states lack unlocked slots.
+# Delivery flags change only after construction in an owned-controlled state.
+TFR_EST_sde_2023_grant_industry = {
+    if = {
+        limit = { TFR_EST_independent_parliament = yes }
+        if = {
+            limit = {
+                has_country_flag = TFR_EST_sde_2023_ammunition_factory_pending
+                NOT = { has_country_flag = TFR_EST_sde_2023_ammunition_factory_granted }
+            }
+            13 = {
+                if = {
+                    limit = {
+                        is_owned_by = EST
+                        is_controlled_by = EST
+                        free_building_slots = { building = arms_factory size > 0 include_locked = no }
+                    }
+                    add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+                    EST = {
+                        set_country_flag = TFR_EST_sde_2023_ammunition_factory_granted
+                        clr_country_flag = TFR_EST_sde_2023_ammunition_factory_pending
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                has_country_flag = TFR_EST_sde_2023_ammunition_factory_pending
+                NOT = { has_country_flag = TFR_EST_sde_2023_ammunition_factory_granted }
+            }
+            191 = {
+                if = {
+                    limit = {
+                        is_owned_by = EST
+                        is_controlled_by = EST
+                        free_building_slots = { building = arms_factory size > 0 include_locked = no }
+                    }
+                    add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+                    EST = {
+                        set_country_flag = TFR_EST_sde_2023_ammunition_factory_granted
+                        clr_country_flag = TFR_EST_sde_2023_ammunition_factory_pending
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                has_country_flag = TFR_EST_sde_2023_ammunition_factory_pending
+                NOT = { has_country_flag = TFR_EST_sde_2023_ammunition_factory_granted }
+            }
+            1329 = {
+                if = {
+                    limit = {
+                        is_owned_by = EST
+                        is_controlled_by = EST
+                        free_building_slots = { building = arms_factory size > 0 include_locked = no }
+                    }
+                    add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+                    EST = {
+                        set_country_flag = TFR_EST_sde_2023_ammunition_factory_granted
+                        clr_country_flag = TFR_EST_sde_2023_ammunition_factory_pending
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                has_country_flag = TFR_EST_sde_2023_ammunition_factory_pending
+                NOT = { has_country_flag = TFR_EST_sde_2023_ammunition_factory_granted }
+            }
+            840 = {
+                if = {
+                    limit = {
+                        is_owned_by = EST
+                        is_controlled_by = EST
+                        free_building_slots = { building = arms_factory size > 0 include_locked = no }
+                    }
+                    add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+                    EST = {
+                        set_country_flag = TFR_EST_sde_2023_ammunition_factory_granted
+                        clr_country_flag = TFR_EST_sde_2023_ammunition_factory_pending
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                has_country_flag = TFR_EST_sde_2023_maintenance_factory_pending
+                NOT = { has_country_flag = TFR_EST_sde_2023_maintenance_factory_granted }
+            }
+            191 = {
+                if = {
+                    limit = {
+                        is_owned_by = EST
+                        is_controlled_by = EST
+                        free_building_slots = { building = arms_factory size > 0 include_locked = no }
+                    }
+                    add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+                    EST = {
+                        set_country_flag = TFR_EST_sde_2023_maintenance_factory_granted
+                        clr_country_flag = TFR_EST_sde_2023_maintenance_factory_pending
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                has_country_flag = TFR_EST_sde_2023_maintenance_factory_pending
+                NOT = { has_country_flag = TFR_EST_sde_2023_maintenance_factory_granted }
+            }
+            13 = {
+                if = {
+                    limit = {
+                        is_owned_by = EST
+                        is_controlled_by = EST
+                        free_building_slots = { building = arms_factory size > 0 include_locked = no }
+                    }
+                    add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+                    EST = {
+                        set_country_flag = TFR_EST_sde_2023_maintenance_factory_granted
+                        clr_country_flag = TFR_EST_sde_2023_maintenance_factory_pending
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                has_country_flag = TFR_EST_sde_2023_maintenance_factory_pending
+                NOT = { has_country_flag = TFR_EST_sde_2023_maintenance_factory_granted }
+            }
+            1329 = {
+                if = {
+                    limit = {
+                        is_owned_by = EST
+                        is_controlled_by = EST
+                        free_building_slots = { building = arms_factory size > 0 include_locked = no }
+                    }
+                    add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+                    EST = {
+                        set_country_flag = TFR_EST_sde_2023_maintenance_factory_granted
+                        clr_country_flag = TFR_EST_sde_2023_maintenance_factory_pending
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                has_country_flag = TFR_EST_sde_2023_maintenance_factory_pending
+                NOT = { has_country_flag = TFR_EST_sde_2023_maintenance_factory_granted }
+            }
+            840 = {
+                if = {
+                    limit = {
+                        is_owned_by = EST
+                        is_controlled_by = EST
+                        free_building_slots = { building = arms_factory size > 0 include_locked = no }
+                    }
+                    add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+                    EST = {
+                        set_country_flag = TFR_EST_sde_2023_maintenance_factory_granted
+                        clr_country_flag = TFR_EST_sde_2023_maintenance_factory_pending
+                    }
+                }
+            }
+        }
+    }
+}
+
+TFR_EST_sde_2023_tick = {
+    if = {
+        limit = { tag = EST has_country_flag = TFR_EST_initialized }
+        TFR_EST_sde_2023_grant_industry = yes
+    }
+}

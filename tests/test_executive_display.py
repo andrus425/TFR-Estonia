@@ -53,7 +53,7 @@ class ExecutiveDisplayAdapterTests(unittest.TestCase):
                          [shape(entry) for entry in retained])
         self.assertEqual([shape(entry) for entry in self.upstream if entry is not original],
                          [shape(entry) for entry in self.patched if entry is not patched])
-        self.assertEqual(len(additions), 11)
+        self.assertEqual(len(additions), 12)
         # The implementation only inserts content: all original selector text,
         # including portraits, date tests and other countries, survives exactly.
         for entry in original.children:
@@ -71,7 +71,7 @@ class ExecutiveDisplayAdapterTests(unittest.TestCase):
         current = patched.get("defined_text")
         extras = [entry for entry in current.entries if entry.key == "text" and
                   str(entry.value.get("localization_key", "")).startswith("TFR_EST_hog_")]
-        self.assertEqual(len(extras), 11)
+        self.assertEqual(len(extras), 12)
 
         def independent_shape(entry):
             value = (tuple(independent_shape(item) for item in entry.value.entries)
@@ -86,7 +86,7 @@ class ExecutiveDisplayAdapterTests(unittest.TestCase):
         selectors = [entry for entry in definition.children if entry.key == "text" and
                      (scalar(entry, "localization_key") or "").startswith("TFR_EST_hog_") and
                      scalar(entry, "localization_key") not in ("TFR_EST_hog_reform_michal", "TFR_EST_hog_ekre_martin",
-                                                               "TFR_EST_hog_centre_kiik", "TFR_EST_hog_centre_kolvart")]
+                                                               "TFR_EST_hog_centre_kiik", "TFR_EST_hog_centre_kolvart", "TFR_EST_hog_sde_laanemets")]
         self.assertEqual([scalar(entry, "localization_key") for entry in selectors],
                          [f"TFR_EST_hog_{party}" for party in ESTONIA_PARTIES])
         for party_id, entry in enumerate(selectors, 1):
@@ -111,7 +111,7 @@ class ExecutiveDisplayAdapterTests(unittest.TestCase):
                      (scalar(entry, "localization_key") or "").startswith("TFR_EST_hog_")]
         self.assertEqual([scalar(entry, "localization_key") for entry in selectors],
                          ["TFR_EST_hog_reform_michal", "TFR_EST_hog_ekre_martin",
-                          "TFR_EST_hog_centre_kiik", "TFR_EST_hog_centre_kolvart"] +
+                          "TFR_EST_hog_centre_kiik", "TFR_EST_hog_centre_kolvart", "TFR_EST_hog_sde_laanemets"] +
                          [f"TFR_EST_hog_{party}" for party in ESTONIA_PARTIES])
         trigger = child(selectors[0], "trigger")
         self.assertEqual([item.key for item in trigger.children],
@@ -165,7 +165,7 @@ class ExecutiveDisplayAdapterTests(unittest.TestCase):
         adapter = next(item for item in manifest["overrides"] if item["path"] == HOG_LOCALISATION_PATH)
         self.assertEqual(adapter["upstream_sha256"], hashlib.sha256(self.upstream_bytes).hexdigest())
         self.assertEqual(adapter["generated_sha256"], hashlib.sha256(generated).hexdigest())
-        self.assertEqual(len(adapter["changes"]), 11)
+        self.assertEqual(len(adapter["changes"]), 12)
         self.assertEqual(adapter["changes"], self.audit)
 
     def test_shared_gui_and_diplomacy_interface_are_inherited(self):

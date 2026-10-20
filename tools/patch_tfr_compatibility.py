@@ -177,6 +177,15 @@ def parent_patch(text: str, relative: str) -> tuple[str, list[dict]]:
                                f"        localization_key = TFR_EST_hog_centre_{leader}\n"
                                "    }\n")
             edits.append((pos, pos, centre_selector, f"Estonia head-of-government selector for Centre incumbent {leader}"))
+        laanemets_selector = ("\n    text = {\n"
+                             "        trigger = {\n"
+                             "            TFR_EST_constitutional_executive = yes\n"
+                             "            check_variable = { var = TFR_EST_pm_party value = 5 compare = equals }\n"
+                             "            has_country_flag = TFR_EST_pm_person_lauri_laanemets\n"
+                             "        }\n"
+                             "        localization_key = TFR_EST_hog_sde_laanemets\n"
+                             "    }\n")
+        edits.append((pos, pos, laanemets_selector, "Estonia head-of-government selector for incumbent Lauri Laanemets"))
         for party_id, party in enumerate(ESTONIA_PARTIES, 1):
             selector = ("\n    text = {\n"
                         "        trigger = {\n"

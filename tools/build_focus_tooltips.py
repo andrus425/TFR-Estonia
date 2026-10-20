@@ -31,6 +31,10 @@ def focus_rewards():
     from build_reform_2023 import POLICIES as reform_2023
     from build_ekre_2023 import POLICIES as ekre_2023
     from build_centre_2023 import POLICIES as centre_2023
+    from build_isamaa_2023 import POLICIES as isamaa_2023
+    from build_sde_2023 import POLICIES as sde_2023
+    from build_e200_2023 import POLICIES as e200_2023
+    from build_pp_2023 import POLICIES as pp_2023
     from focus_reward_model import OPENING_ECONOMIC, OPENING_MILITARY
 
     rewards = {}
@@ -39,7 +43,7 @@ def focus_rewards():
             "economy": tuple(OPENING_ECONOMIC.get(policy.suffix, ())),
             "military": tuple(OPENING_MILITARY.get(policy.suffix, ())),
         }
-    for route, policies in (("ratas", ratas), ("kallas", kallas), ("reform_2023", reform_2023), ("ekre_2023", ekre_2023), ("centre_2023", centre_2023)):
+    for route, policies in (("ratas", ratas), ("kallas", kallas), ("reform_2023", reform_2023), ("ekre_2023", ekre_2023), ("centre_2023", centre_2023), ("isamaa_2023", isamaa_2023), ("sde_2023", sde_2023), ("e200_2023", e200_2023), ("pp_2023", pp_2023)):
         for policy in policies:
             rewards[f"TFR_EST_{route}_{policy.suffix}"] = {
                 "economy": tuple(policy.economic),

@@ -31,7 +31,7 @@ guiTypes = {
  instantTextBoxType = { name = "TFR_EST_seats_isamaa" position = { x = 370 y = 238 } font = "VCR02_18" text = "TFR_EST_panel_seats_isamaa" maxWidth = 60 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_cabinet_isamaa" position = { x = 465 y = 238 } font = "VCR02_18" text = "TFR_EST_panel_cabinet_isamaa" maxWidth = 65 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_supply_isamaa" position = { x = 565 y = 238 } font = "VCR02_18" text = "TFR_EST_panel_supply_isamaa" maxWidth = 65 maxHeight = 25 format = left fixedsize = yes }
- instantTextBoxType = { name = "TFR_EST_party_sde" position = { x = 24 y = 265 } font = "VCR02_18" text = "TFR_EST_party_sde" maxWidth = 225 maxHeight = 25 format = left fixedsize = yes }
+ instantTextBoxType = { name = "TFR_EST_party_sde" position = { x = 24 y = 265 } font = "VCR02_18" text = "TFR_EST_party_sde" pdx_tooltip = "TFR_EST_sde_party_leader_tt" maxWidth = 225 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_poll_sde" position = { x = 265 y = 265 } font = "VCR02_18" text = "TFR_EST_panel_poll_sde" maxWidth = 80 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_seats_sde" position = { x = 370 y = 265 } font = "VCR02_18" text = "TFR_EST_panel_seats_sde" maxWidth = 60 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_cabinet_sde" position = { x = 465 y = 265 } font = "VCR02_18" text = "TFR_EST_panel_cabinet_sde" maxWidth = 65 maxHeight = 25 format = left fixedsize = yes }

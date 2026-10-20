@@ -82,7 +82,17 @@ ideas = { head_minister = {
  TFR_EST_pm_sde = {
   picture = TFR_EST_pm_sde
   allowed = { original_tag = EST }
-  visible = { TFR_EST_constitutional_executive = yes check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } }
+  visible = { TFR_EST_constitutional_executive = yes check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_pm_person_lauri_laanemets } }
+  available = { always = no }
+  allowed_to_remove = { always = no }
+  cost = 0
+  removal_cost = -1
+  modifier = { }
+ }
+ TFR_EST_pm_sde_laanemets = {
+  picture = TFR_EST_pm_sde_laanemets
+  allowed = { original_tag = EST }
+  visible = { TFR_EST_constitutional_executive = yes check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } has_country_flag = TFR_EST_pm_person_lauri_laanemets }
   available = { always = no }
   allowed_to_remove = { always = no }
   cost = 0

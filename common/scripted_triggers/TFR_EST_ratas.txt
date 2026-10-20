@@ -23,6 +23,10 @@ TFR_EST_show_legacy_domestic_tree = {
     NOT = { TFR_EST_reform_2023_branch_visible = yes }
     NOT = { TFR_EST_ekre_2023_branch_visible = yes }
     NOT = { TFR_EST_centre_2023_branch_visible = yes }
+    NOT = { TFR_EST_isamaa_2023_branch_visible = yes }
+    NOT = { TFR_EST_sde_2023_branch_visible = yes }
+    NOT = { TFR_EST_e200_2023_branch_visible = yes }
+    NOT = { TFR_EST_pp_2023_branch_visible = yes }
     OR = {
         NOT = { has_country_flag = TFR_EST_ratas_retained }
         has_country_flag = TFR_EST_ratas_mandate_ended

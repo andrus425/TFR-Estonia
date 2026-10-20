@@ -18,7 +18,7 @@ def read_script(relative):
 
 
 def reward_effect(focus_id):
-    for route in ("opening", "ratas", "kallas", "reform_2023", "ekre_2023", "centre_2023"):
+    for route in ("opening", "ratas", "kallas", "reform_2023", "ekre_2023", "centre_2023", "isamaa_2023", "sde_2023", "e200_2023", "pp_2023"):
         prefix = f"TFR_EST_{route}_"
         if focus_id.startswith(prefix):
             return prefix + "reward_" + focus_id[len(prefix):]
@@ -33,7 +33,7 @@ class FocusEffectPreviewTests(unittest.TestCase):
         cls.catalog = {entry.key: entry.value for entry in cls.country.entries}
         cls.dynamic = read_script("common/dynamic_modifiers/TFR_EST_country.txt")
         cls.focuses = {}
-        for route in ("opening", "ratas", "kallas", "reform_2023", "ekre_2023", "centre_2023"):
+        for route in ("opening", "ratas", "kallas", "reform_2023", "ekre_2023", "centre_2023", "isamaa_2023", "sde_2023", "e200_2023", "pp_2023"):
             tree = read_script(f"common/national_focus/TFR_EST_{route}.txt")
             cls.focuses.update({focus.get("id"): focus
                                 for focus in tree.all("shared_focus")})
@@ -47,7 +47,7 @@ class FocusEffectPreviewTests(unittest.TestCase):
     def test_only_country_ideas_and_the_expected_preview_definitions_exist(self):
         self.assertEqual([entry.key for entry in self.ideas.entries], ["country"])
         self.assertEqual(set(self.catalog), set(idea_definitions()))
-        self.assertEqual(len(focus_rewards()), 147)
+        self.assertEqual(len(focus_rewards()), 275)
         for ident, definition in self.catalog.items():
             with self.subTest(idea=ident):
                 self.assertEqual(set(entry.key for entry in definition.entries),
@@ -73,7 +73,7 @@ class FocusEffectPreviewTests(unittest.TestCase):
                 for field in fields:
                     self.assertEqual(dynamic.get(field), f"TFR_EST_{category}_{field}_var")
 
-    def test_all_147_real_reward_deltas_match_their_native_previews(self):
+    def test_all_275_real_reward_deltas_match_their_native_previews(self):
         # A nonzero saved baseline detects assignment/reset mistakes as well as
         # a wrong amount in either the preview or the persistent reward.
         bound_variables = {

@@ -1,5 +1,156 @@
 # Changelog
 
+## 20 October 2026 — Parempoolsed's alternative 2023 mandate
+
+- Add the seventh hidden 2023 election-victory programme: 32 focuses for a
+  validated Parempoolsed plurality, based on its contemporary election platform.
+  Require party formation, the current electoral mandate, a confirmed Perling
+  cabinet and 51 actual coalition seats; no coalition partner is forced and
+  supply-only support cannot replace the legislative majority.
+- Adapt the 3% defence agreement and separate allied reception, 10,000-person
+  civil reserve, private development finance, 3% research agreement, skilled
+  migration, reliable transition generation and nuclear oversight; state audits,
+  18% income tax and a three-average-wage social-tax cap; 70% teaching expenditure,
+  partial university tuition, targeted benefits and competitive care contracts.
+- Fund 1,750 million in one-off commitments. Savings, labour taxes, employee
+  benefits, earmarks, tuition and targeted assistance apply recurring income
+  changes of +0.040/−0.035/−0.015/+0.012/+0.008/+0.010 billion, net +0.020 before
+  inflation in TFR's base ledger. Expenditure cuts cost three cohesion; tuition
+  and targeted-benefit reforms each cost two. These changes do not automatically
+  balance the budget or create a nuclear reactor.
+- Keep five compact branches with ordinary internal prerequisites and player
+  choice between columns. Every focus lasts 35 days; the full 1,120-day
+  programme can finish on 11 May 2026 from an uninterrupted 17 April 2023 start.
+  Only the final parliamentary report requires all preceding policies.
+- Put defence funding, air-defence preparation and reserves at 70/105/140 total
+  focus-days along their branch. Two paid military-factory projects can finish
+  at 105/140 along the industry column without completing civilian branches or
+  the final report. Each delivers once in an owned, controlled Estonian core
+  with a free unlocked slot, retaining the entitlement if all states are full.
+- Integrate exact economic and military dynamic-modifier previews and native
+  budget costs. Renewable permits, grid connections and continuity capacity
+  fill the five shared Oil Crash slots in steps of two, one and two; equivalent
+  work across all nine government programmes counts once and full preparation
+  removes the actual parent spirit.
+- End the mandate on the next valid election, including another PP win; invalid
+  input preserves it. Retain reforms and paid entitlements through supported
+  occupation/restoration and keep Reform/Parempoolsed party ledgers separate.
+  Extend shared imports and reward sources from 243 to 275, prioritize PP's own
+  programme in its AI plan and preserve all 427 earlier focus descriptions.
+  Record sources in [the Parempoolsed source register](docs/PP_2023_SOURCES.md).
+
+## 20 October 2026 — Eesti 200's alternative 2023 mandate
+
+- Add a hidden 32-focus programme for a validated Eesti 200 plurality in 2023,
+  adapting its contemporary election platform to a hypothetical winning cabinet.
+  Retain the existing Kristina Kallas PM identity and require a confirmed
+  government with 51 actual coalition seats; no partner combination is forced.
+  Record sources and balance adaptations in
+  [the Eesti 200 source register](docs/E200_2023_SOURCES.md).
+- Cover the 3% defence proposal and Kalevipoja air-defence plan; domestic
+  defence suppliers, drone trials and the €100,000 VAT threshold; six-month
+  renewable permits and grid reservations; once-only data, electronic invoices,
+  budget review and personal health accounts; and education investment,
+  teacher careers, shared Estonian-language schools and e-university courses.
+- Fund 1,900 million in project commitments. Research incentives, simplified
+  companies, invoicing savings, budget review and health allowances apply
+  recurring income changes of −0.020/−0.010/+0.012/+0.025/−0.012 billion,
+  totaling −0.005 billion before inflation in TFR's base ledger; real programme
+  currency objectives are distinct from these game balance amounts.
+- Use compact five-column branches with meaningful internal prerequisites,
+  ordinary policies without date gates and a final report requiring every other
+  policy. All focuses take 35 days: the full 1,120-day programme can finish on
+  11 May 2026 from an uninterrupted 17 April 2023 start.
+- Put defence funding, air-defence preparation and reserve planning at 70, 105
+  and 140 total focus-days along their branch. Put the two military-factory
+  projects at 105/140 along the industrial column; civilian branches and the
+  final report do not block preparation for an early First European War.
+- Deliver each funded factory once in an owned, controlled Estonian core with
+  a free unlocked slot; retain pending projects when every qualifying state is
+  full and preserve ordinary paid recruitment and equipment procurement.
+- Apply rewards through the economy/military dynamic modifiers and native
+  numerical previews. Renewable permits, grid connections and renovation fill
+  the shared Oil Crash recovery slots in steps of two, one and two; equivalent
+  work across governments counts once and full preparation removes the actual
+  parent spirit.
+- End the mandate on the next valid election, including another Eesti 200 win.
+  Invalid ballots preserve it; completed reforms and funded entitlements survive
+  supported occupation/restoration. Extend shared imports and reward sources
+  from 211 to 243, prioritize Eesti 200's programme in its AI plan and preserve
+  all 395 previous focus descriptions.
+
+## 20 October 2026 — SDE's alternative 2023 mandate and leadership succession
+
+- Add a hidden 32-focus programme for a validated SDE plurality in 2023, based
+  on the contemporary party platform and the coalition actually negotiated
+  through parliament. Require a confirmed cabinet with 51 actual coalition seats;
+  supply-only partners cannot substitute for that legislative majority.
+- Adapt concrete proposals on progressive taxation, a negotiated €1,200 minimum
+  wage, collective agreements, learning leave, indexed €150 child benefits,
+  public rental housing, universal health insurance, mental health, pensions,
+  residential care, teacher pay and shared Estonian-language schooling. Record
+  sources and game adaptations in [the SDE source register](docs/SDE_2023_SOURCES.md).
+- Retain the compact five-column layout, meaningful prerequisites and choices
+  between branches. Every focus takes 35 days; the complete 1,120-day programme
+  can finish on 11 May 2026 from an uninterrupted 17 April 2023 start.
+- Make defence funding finishable after 70 total focus-days, air defence at 105,
+  reserves at 140 and two paid military-factory projects at 105/140 along their
+  respective branches. Delivery requires owned, controlled Estonian cores with
+  unlocked free slots; funded projects wait and never duplicate facilities or debt.
+- Apply economic and military dynamic modifiers, exact native reward previews
+  and parent-ledger costs. Commit 2,145 million in project funding and add 0.055
+  billion in recurring tax receipts before TFR inflation. Renewable contracts,
+  grid connections and renovation fill five shared Oil Crash recovery slots;
+  equivalent earlier preparation counts once and full recovery removes the spirit.
+- Hide legacy domestic branches during the mandate, retain relevant wartime
+  access and completed policies, and end the programme only on a later valid
+  election, including another SDE win. Invalid ballots preserve the mandate.
+- Replace Indrek Saar with Lauri Läänemets as SDE chair from 5 February 2022.
+  Record the career change on the first independent daily update; notification
+  does not offer a keep-Saar choice. Update an SDE premiership through the
+  authored handover while preserving unrelated governments, the presidency,
+  seats, coalition and election timetable. Preserve an outgoing Saar caretaker
+  until actual cabinet confirmation and retain the career through restoration.
+- Extend shared imports and reward-preview sources from 179 to 211, prioritize
+  SDE's elected programme in its AI plan and preserve all 363 previous focus
+  descriptions. Add programme, majority, lifecycle, guarded factory, mixed energy,
+  leadership and preservation regression coverage and manual campaign scenarios.
+
+## 20 October 2026 — Isamaa's alternative 2023 mandate
+
+- Add a hidden 32-focus programme for a validated Isamaa plurality in 2023,
+  using the contemporary party platform and the coalition actually negotiated
+  through parliament. Keep Seeder as Isamaa's existing PM identity and require
+  a confirmed cabinet with 51 actual coalition seats for legislation.
+- Adapt specific proposals for child-linked tax allowances, joint returns,
+  family housing and maintenance support, Estonian-language education, teachers,
+  research, regional lending and business allowances, district heating and
+  nuclear feasibility studies. Record the original platform and game adaptations
+  in [the Isamaa source register](docs/ISAMAA_2023_SOURCES.md).
+- Use the compact five-column layout with meaningful internal prerequisites,
+  choices between branches and a final report requiring the other 31 policies.
+  Every focus takes 35 days: 1,120 days altogether, allowing an uninterrupted
+  17 April 2023 start to finish on 11 May 2026.
+- Place defence funding immediately after the root and two paid military-factory
+  projects at 105 and 140 total focus-days. Deliver ammunition and maintenance
+  facilities only in owned, controlled Estonian cores with free unlocked slots;
+  retain funded entitlements until one-time delivery without duplicate charges.
+- Apply existing economic and military dynamic modifiers, native delta previews
+  and parent-ledger costs: 1,785 million in project-budget commitments plus
+  0.060 billion in combined recurring receipt reductions in TFR's base ledger
+  before inflation. Dispatchable
+  reserve, grid connection and renovation
+  share the existing five Oil Crash recovery slots, counting equivalent earlier
+  policies once and permitting complete removal of the parent crisis spirit.
+- Hide older generic domestic branches during the elected programme, preserve
+  relevant war/restoration access and end the mandate only on a later valid
+  election, including another Isamaa victory. Preserve completed policies and
+  funded projects across interruptions.
+- Extend shared imports and reward-preview sources from 147 to 179, prioritize
+  Isamaa's own elected programme in its AI plan, and preserve all 331 previous
+  focus descriptions. Add programme, majority, lifecycle, factory, energy and
+  preservation regression coverage and manual campaign scenarios.
+
 ## 19 October 2026 — Centre's 2023 mandate and leadership congress
 
 - Add a hidden 32-focus programme for a validated Centre plurality in 2023,

@@ -1,0 +1,14 @@
+# The first independent daily update on/after the historical congress date.
+# Opposition status and the identity of coalition partners do not block it.
+TFR_EST_sde_handover_eligible = {
+    TFR_EST_independent_parliament = yes
+    date > 2022.2.4
+    NOT = { has_country_flag = TFR_EST_laanemets_leads_sde }
+}
+
+TFR_EST_sde_handover_notice_eligible = {
+    TFR_EST_independent_parliament = yes
+    date > 2022.2.4
+    has_country_flag = TFR_EST_laanemets_leads_sde
+    NOT = { has_country_flag = TFR_EST_sde_handover_presented }
+}

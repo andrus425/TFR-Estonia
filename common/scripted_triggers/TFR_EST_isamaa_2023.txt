@@ -1,0 +1,55 @@
+# A Isamaa plurality in the validated 2023 ballot grants this mandate.
+TFR_EST_isamaa_2023_branch_visible = {
+    TFR_EST_independent_parliament = yes
+    has_country_flag = TFR_EST_isamaa_2023_mandate
+    has_country_flag = TFR_EST_isamaa_won_2023_election
+    NOT = { has_country_flag = TFR_EST_isamaa_2023_mandate_ended }
+    check_variable = { var = TFR_EST_mandate_party value = 4 compare = equals }
+}
+TFR_EST_isamaa_2023_governing = {
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_isamaa_2023_governing_tt
+        TFR_EST_isamaa_2023_branch_visible = yes
+        TFR_EST_coalition_majority = yes
+        TFR_EST_confirmed_cabinet = yes
+        check_variable = { var = TFR_EST_pm_party value = 4 compare = equals }
+        check_variable = { var = TFR_EST_mandate_party value = 4 compare = equals }
+        check_variable = { var = TFR_EST_coalition_isamaa value = 1 compare = equals }
+    }
+}
+TFR_EST_isamaa_2023_all_policies_done = {
+    custom_trigger_tooltip = {
+        tooltip = TFR_EST_isamaa_2023_all_policies_done_tt
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_new_mandate has_country_flag = TFR_EST_done_isamaa_2023_new_mandate }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_defence_commitment has_country_flag = TFR_EST_done_isamaa_2023_defence_commitment }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_air_defence has_country_flag = TFR_EST_done_isamaa_2023_air_defence }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_reserve_muster has_country_flag = TFR_EST_done_isamaa_2023_reserve_muster }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_kaitseliit_ranges has_country_flag = TFR_EST_done_isamaa_2023_kaitseliit_ranges }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_allied_reception has_country_flag = TFR_EST_done_isamaa_2023_allied_reception }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_civil_protection has_country_flag = TFR_EST_done_isamaa_2023_civil_protection }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_industrial_guarantees has_country_flag = TFR_EST_done_isamaa_2023_industrial_guarantees }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_ammunition_workshop has_country_flag = TFR_EST_done_isamaa_2023_ammunition_workshop }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_maintenance_workshop has_country_flag = TFR_EST_done_isamaa_2023_maintenance_workshop }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_regional_value_chains has_country_flag = TFR_EST_done_isamaa_2023_regional_value_chains }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_credit_register has_country_flag = TFR_EST_done_isamaa_2023_credit_register }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_expense_allowances has_country_flag = TFR_EST_done_isamaa_2023_expense_allowances }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_dispatchable_reserve has_country_flag = TFR_EST_done_isamaa_2023_dispatchable_reserve }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_grid_connection has_country_flag = TFR_EST_done_isamaa_2023_grid_connection }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_renovation has_country_flag = TFR_EST_done_isamaa_2023_renovation }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_district_heating has_country_flag = TFR_EST_done_isamaa_2023_district_heating }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_nuclear_studies has_country_flag = TFR_EST_done_isamaa_2023_nuclear_studies }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_universal_service has_country_flag = TFR_EST_done_isamaa_2023_universal_service }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_child_tax_allowance has_country_flag = TFR_EST_done_isamaa_2023_child_tax_allowance }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_joint_returns has_country_flag = TFR_EST_done_isamaa_2023_joint_returns }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_child_benefit has_country_flag = TFR_EST_done_isamaa_2023_child_benefit }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_large_family_homes has_country_flag = TFR_EST_done_isamaa_2023_large_family_homes }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_care_leave has_country_flag = TFR_EST_done_isamaa_2023_care_leave }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_maintenance_support has_country_flag = TFR_EST_done_isamaa_2023_maintenance_support }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_estonian_schools has_country_flag = TFR_EST_done_isamaa_2023_estonian_schools }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_teacher_pay has_country_flag = TFR_EST_done_isamaa_2023_teacher_pay }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_research_compact has_country_flag = TFR_EST_done_isamaa_2023_research_compact }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_rural_internet has_country_flag = TFR_EST_done_isamaa_2023_rural_internet }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_digital_baseline has_country_flag = TFR_EST_done_isamaa_2023_digital_baseline }
+        OR = { has_completed_focus = TFR_EST_isamaa_2023_home_care has_country_flag = TFR_EST_done_isamaa_2023_home_care }
+    }
+}

@@ -237,6 +237,7 @@ TFR_EST_suspend_ministers = {{
     TFR_EST_clear_pm_person_markers = yes
     clr_country_flag = TFR_EST_pm_person_tanel_kiik
     clr_country_flag = TFR_EST_pm_person_mihhail_kolvart
+    clr_country_flag = TFR_EST_pm_person_lauri_laanemets
     remove_ideas = {{
         {all_ids}
         TFR_EST_cabinet_formation
@@ -251,6 +252,7 @@ TFR_EST_reconcile_ministers = {{
         # Identify the actual PM before excluding any portfolio candidate.
         TFR_EST_reconcile_ekre_pm_identity = yes
         TFR_EST_reconcile_centre_pm_identity = yes
+        TFR_EST_reconcile_sde_pm_identity = yes
         if = {{
             limit = {{ NOT = {{ TFR_EST_independent_parliament = yes }} }}
             TFR_EST_suspend_ministers = yes

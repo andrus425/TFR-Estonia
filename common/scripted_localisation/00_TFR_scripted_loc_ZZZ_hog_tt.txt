@@ -1162,6 +1162,15 @@ defined_text = {
     text = {
         trigger = {
             TFR_EST_constitutional_executive = yes
+            check_variable = { var = TFR_EST_pm_party value = 5 compare = equals }
+            has_country_flag = TFR_EST_pm_person_lauri_laanemets
+        }
+        localization_key = TFR_EST_hog_sde_laanemets
+    }
+
+    text = {
+        trigger = {
+            TFR_EST_constitutional_executive = yes
             check_variable = { var = TFR_EST_pm_party value = 1 compare = equals }
         }
         localization_key = TFR_EST_hog_reform

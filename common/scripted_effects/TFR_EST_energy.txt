@@ -36,23 +36,23 @@ TFR_EST_reconcile_energy_crisis = {
         TFR_EST_migrate_energy_crisis_ledger = yes
         set_variable = { TFR_EST_energy_response_steps = 0 }
         if = {
-            limit = { OR = { has_country_flag = TFR_EST_done_ratas_lng_connection has_country_flag = TFR_EST_done_kallas_lng_connection has_country_flag = TFR_EST_done_reform_2023_grid_connection has_country_flag = TFR_EST_done_ekre_2023_narva_blocks has_country_flag = TFR_EST_done_centre_2023_power_reserves } }
+            limit = { OR = { has_country_flag = TFR_EST_done_ratas_lng_connection has_country_flag = TFR_EST_done_kallas_lng_connection has_country_flag = TFR_EST_done_reform_2023_grid_connection has_country_flag = TFR_EST_done_ekre_2023_narva_blocks has_country_flag = TFR_EST_done_centre_2023_power_reserves has_country_flag = TFR_EST_done_isamaa_2023_dispatchable_reserve has_country_flag = TFR_EST_done_sde_2023_renewable_contracts has_country_flag = TFR_EST_done_e200_2023_renewable_permits has_country_flag = TFR_EST_done_pp_2023_renewable_permits } }
             add_to_variable = { TFR_EST_energy_response_steps = 1 }
         }
         if = {
-            limit = { OR = { has_country_flag = TFR_EST_done_ratas_grid_synchronisation has_country_flag = TFR_EST_done_kallas_gas_reserve has_country_flag = TFR_EST_done_reform_2023_grid_connection has_country_flag = TFR_EST_done_ekre_2023_narva_blocks has_country_flag = TFR_EST_done_centre_2023_power_reserves } }
+            limit = { OR = { has_country_flag = TFR_EST_done_ratas_grid_synchronisation has_country_flag = TFR_EST_done_kallas_gas_reserve has_country_flag = TFR_EST_done_reform_2023_grid_connection has_country_flag = TFR_EST_done_ekre_2023_narva_blocks has_country_flag = TFR_EST_done_centre_2023_power_reserves has_country_flag = TFR_EST_done_isamaa_2023_dispatchable_reserve has_country_flag = TFR_EST_done_sde_2023_renewable_contracts has_country_flag = TFR_EST_done_e200_2023_renewable_permits has_country_flag = TFR_EST_done_pp_2023_renewable_permits } }
             add_to_variable = { TFR_EST_energy_response_steps = 1 }
         }
         if = {
-            limit = { OR = { has_country_flag = TFR_EST_done_ratas_renewable_chp has_country_flag = TFR_EST_done_kallas_energy_networks has_country_flag = TFR_EST_done_reform_2023_wind_permits has_country_flag = TFR_EST_done_ekre_2023_kiisa_reserve has_country_flag = TFR_EST_done_centre_2023_local_chp } }
+            limit = { OR = { has_country_flag = TFR_EST_done_ratas_renewable_chp has_country_flag = TFR_EST_done_kallas_energy_networks has_country_flag = TFR_EST_done_reform_2023_wind_permits has_country_flag = TFR_EST_done_ekre_2023_kiisa_reserve has_country_flag = TFR_EST_done_centre_2023_local_chp has_country_flag = TFR_EST_done_isamaa_2023_grid_connection has_country_flag = TFR_EST_done_sde_2023_grid_connection has_country_flag = TFR_EST_done_e200_2023_grid_connection has_country_flag = TFR_EST_done_pp_2023_grid_connection } }
             add_to_variable = { TFR_EST_energy_response_steps = 1 }
         }
         if = {
-            limit = { OR = { has_country_flag = TFR_EST_done_ratas_building_renovation has_country_flag = TFR_EST_done_kallas_energy_households has_country_flag = TFR_EST_done_reform_2023_renovation has_country_flag = TFR_EST_done_ekre_2023_regulated_power has_country_flag = TFR_EST_done_centre_2023_apartment_renovation } }
+            limit = { OR = { has_country_flag = TFR_EST_done_ratas_building_renovation has_country_flag = TFR_EST_done_kallas_energy_households has_country_flag = TFR_EST_done_reform_2023_renovation has_country_flag = TFR_EST_done_ekre_2023_regulated_power has_country_flag = TFR_EST_done_centre_2023_apartment_renovation has_country_flag = TFR_EST_done_isamaa_2023_renovation has_country_flag = TFR_EST_done_sde_2023_renovation has_country_flag = TFR_EST_done_e200_2023_renovation has_country_flag = TFR_EST_done_pp_2023_continuity_capacity } }
             add_to_variable = { TFR_EST_energy_response_steps = 1 }
         }
         if = {
-            limit = { OR = { has_country_flag = TFR_EST_done_ratas_network_charge_relief has_country_flag = TFR_EST_done_kallas_energy_networks has_country_flag = TFR_EST_done_reform_2023_renovation has_country_flag = TFR_EST_done_ekre_2023_regulated_power has_country_flag = TFR_EST_done_centre_2023_apartment_renovation } }
+            limit = { OR = { has_country_flag = TFR_EST_done_ratas_network_charge_relief has_country_flag = TFR_EST_done_kallas_energy_networks has_country_flag = TFR_EST_done_reform_2023_renovation has_country_flag = TFR_EST_done_ekre_2023_regulated_power has_country_flag = TFR_EST_done_centre_2023_apartment_renovation has_country_flag = TFR_EST_done_isamaa_2023_renovation has_country_flag = TFR_EST_done_sde_2023_renovation has_country_flag = TFR_EST_done_e200_2023_renovation has_country_flag = TFR_EST_done_pp_2023_continuity_capacity } }
             add_to_variable = { TFR_EST_energy_response_steps = 1 }
         }
         if = {

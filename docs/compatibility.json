@@ -2510,7 +2510,7 @@
     {
       "path": "common/scripted_localisation/00_TFR_scripted_loc_ZZZ_hog_tt.txt",
       "upstream_sha256": "388fd27ee4aee0062e84e22a56d6239d6b736b199590916e7ee79fd7079eeb60",
-      "generated_sha256": "c2f0a693a6a4c8c7f66b7223d3fc3a8f14951aaab92576e472997e8ed428bde0",
+      "generated_sha256": "da382a6a9533cd22b529033d4650cba419e1383d591d5db182a4fceedef129f8",
       "changes": [
         {
           "line": 1125,
@@ -2527,6 +2527,10 @@
         {
           "line": 1125,
           "reason": "Estonia head-of-government selector for Centre incumbent kolvart"
+        },
+        {
+          "line": 1125,
+          "reason": "Estonia head-of-government selector for incumbent Lauri Laanemets"
         },
         {
           "line": 1125,

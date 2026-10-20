@@ -1,0 +1,5 @@
+defined_text = {
+    name = TFR_EST_sde_party_leader
+    text = { trigger = { has_country_flag = TFR_EST_laanemets_leads_sde } localization_key = TFR_EST_lauri_laanemets }
+    text = { trigger = { always = yes } localization_key = TFR_EST_indrek_saar }
+}

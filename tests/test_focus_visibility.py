@@ -56,6 +56,10 @@ class FocusVisibilityTests(unittest.TestCase):
                 'TFR_EST_opening_assembly_ended',
                 'TFR_EST_ekre_2023_mandate', 'TFR_EST_ekre_2023_mandate_ended',
                 'TFR_EST_centre_2023_mandate', 'TFR_EST_centre_2023_mandate_ended',
+                'TFR_EST_isamaa_2023_mandate', 'TFR_EST_isamaa_2023_mandate_ended',
+                'TFR_EST_sde_2023_mandate', 'TFR_EST_sde_2023_mandate_ended',
+                'TFR_EST_e200_2023_mandate', 'TFR_EST_e200_2023_mandate_ended',
+                'TFR_EST_pp_2023_mandate', 'TFR_EST_pp_2023_mandate_ended',
             )),
         )
         for kind, field, changed in cases:

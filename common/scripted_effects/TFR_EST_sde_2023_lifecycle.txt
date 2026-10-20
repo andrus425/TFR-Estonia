@@ -1,0 +1,21 @@
+# Runs only after a valid election has committed its 101 seats and plurality.
+# A subsequent valid vote retires this programme even if SDE wins again.
+TFR_EST_note_sde_2023_election = {
+    if = {
+        limit = { has_country_flag = TFR_EST_sde_2023_mandate }
+        set_country_flag = TFR_EST_sde_2023_mandate_ended
+    }
+    if = {
+        limit = {
+            date > 2023.3.4
+            date < 2024.1.1
+            check_variable = { var = TFR_EST_mandate_party value = 5 compare = equals }
+            NOT = { has_country_flag = TFR_EST_postwar_election_pending }
+            NOT = { has_country_flag = TFR_EST_postwar_election_held }
+            NOT = { has_country_flag = TFR_EST_sde_won_2023_election }
+        }
+        set_country_flag = TFR_EST_sde_won_2023_election
+        set_country_flag = TFR_EST_sde_2023_mandate
+        clr_country_flag = TFR_EST_sde_2023_mandate_ended
+    }
+}

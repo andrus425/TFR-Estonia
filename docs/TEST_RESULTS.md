@@ -1,4 +1,4 @@
-# Validation results — 19 October 2026
+# Validation results — 20 October 2026
 
 This is an implemented **development build**, not a declaration that the public
 v1 campaign matrix has passed. The pinned parent is **The Fire Rises 1.0.9.1c**.
@@ -8,18 +8,23 @@ The installed executable reports **HOI4 Operation Postern 1.19.3.0.c01a**.
 
 | Check | Observed result |
 |---|---|
-| `tools/validate_mod.py` | 99 additive/override script files; 331 focuses, 61 events, 58 decisions, 1,730 English localization keys; **0 errors** |
-| `python -m unittest discover -s tests -v` | **492 tests passed**, including 500 randomized election allocations checked against an independent integer reference |
+| `tools/validate_mod.py` | 119 additive/override script files; 459 focuses, 62 events, 58 decisions, 2,268 English localization keys; **0 errors** |
+| `python -m unittest discover -s tests -q` | **655 tests passed** in 252.589 seconds, including 500 randomized election allocations checked against an independent integer reference |
 | `tools/test_occupation_compatibility.py` | **10 structural regression tests passed** |
-| `tools/patch_tfr_compatibility.py --check` | **11 reproducible overrides and 631 audited changes verified**: 620 settlement safeguards and eleven head-of-government selectors |
+| `tools/patch_tfr_compatibility.py --check` | **11 reproducible overrides and 632 audited changes verified**: 620 settlement safeguards and twelve head-of-government selectors |
 | `tools/native_script_interface.py --check` | **0 files with legacy argument-block interfaces** |
 | Opening and COVID generators | Eleven shared focuses, 22 focus localization keys, rewards/controller/events, the first-case bridge and their text reproduce exactly in `--check` mode |
 | Retained-Ratas generator | Twenty shared focuses, governing/visibility/completion triggers, rewards, local crisis controller, one notice and 63 English keys reproduce exactly in `--check` mode |
 | Kallas generator | Twenty shared focuses, governing/visibility/completion triggers, rewards, recovered-case bypasses and 60 English keys reproduce exactly in `--check` mode |
-| Energy and preview generators | Actual parent Oil Crash integration, old-penalty migration, 136 display-only preview definitions and 272 aliases reproduce exactly in `--check` mode |
+| Energy and preview generators | Actual parent Oil Crash integration, old-penalty migration, 260 display-only preview definitions and 520 aliases reproduce exactly in `--check` mode |
 | Reform 2023 generator | Thirty-two focuses, governing/visibility/completion triggers, guarded rewards, bounded factory delivery and 70 English keys reproduce exactly in `--check` mode |
 | EKRE 2023 generator | Thirty-two focuses, governing/visibility/completion triggers, paid factory projects, recurring income reductions and 70 English keys reproduce exactly in `--check` mode |
 | Centre 2023 generator | Thirty-two focuses, governing/visibility/completion triggers, two bounded paid factories, native debt/income helpers and English text reproduce exactly in `--check` mode |
+| Isamaa 2023 generator | Thirty-two focuses, governing/visibility/completion triggers, two bounded paid factories, visible debt/income helpers and 70 English keys reproduce exactly in `--check` mode |
+| SDE 2023 generator | Thirty-two focuses, governing/visibility/completion triggers, two bounded paid factories, visible debt/income helpers and 70 English keys reproduce exactly in `--check` mode |
+| Eesti 200 2023 generator | Thirty-two focuses, governing/visibility/completion triggers, two bounded paid factories, visible debt/income helpers and 70 English keys reproduce exactly in `--check` mode |
+| Parempoolsed 2023 generator | Thirty-two focuses, governing/visibility/completion triggers, two bounded paid factories, visible debt/income helpers and 70 English keys reproduce exactly in `--check` mode |
+| Saar–Läänemets generator | Automatic historical party succession, separate notification, persistent career/PM markers, caretaker protection and text reproduce exactly in `--check` mode |
 | Centre leadership generator | September congress, exactly two guarded successor choices, persistent party leadership, caretaker protection, locked PM identities and localization reproduce exactly in `--check` mode |
 | Kallas–Michal generator | Guarded, once-only succession controller, event and text reproduce exactly in `--check` mode |
 | Minister generator | 39 candidacies, 38 people, 35 party/portfolio combinations, 15 professional traits, lifecycle, timed discount, localization, portrait references and sourced register reproduce exactly in `--check` mode |
@@ -149,6 +154,226 @@ They cover guarded explicit and dynamic annexation, the retained anchor, partiti
 remainders, original non-Estonia annex actions, parent war flags and follow-up
 events, autonomy restrictions, once-per-mandate force cleanup, all seven occupation
 gates and repeat-safe repair. They do not execute combat or a live peace conference.
+
+## Parempoolsed's conditional 2023 programme
+
+The Parempoolsed programme contains 32 compact, 35-day focuses. A common mandate
+opens five six-policy columns with ordinary internal prerequisites and choices
+between columns. The final report requires all 31 preceding policy records.
+An uninterrupted 1,120-day programme starting on 17 April 2023 finishes on
+11 May 2026, leaving 235 days before 2027. Defence funding is reachable after
+70 total focus-days, air-defence preparation after 105 and reserve preparation
+after 140 along its branch. The industrial branch reaches the two paid military
+factories after 105 and 140 days. These are alternative paths through one focus
+queue; neither civilian completion nor the final report blocks them. Ordinary
+focuses have no date gates, and early war does not close independent content.
+
+The existing August 2022 formation makes Parempoolsed eligible without assigning
+it seats or a victory. A valid ordinary 2023 election must give party 7 the
+largest delegation to reveal the programme. Selection requires a confirmed
+Lavly Perling cabinet, the current Parempoolsed mandate and 51 actual coalition
+seats. Reform's separate ledger cannot contribute merely because it shares a
+generic ideology; supply agreements cannot replace coalition membership.
+Invalid, wrong-year and postwar ballots do not activate the programme. The next
+valid ballot retires it even if Parempoolsed wins again. Occupation hides the
+branch while retaining reforms and funded entitlements; restoration requires
+cabinet confirmation and schedules a new election.
+
+The 1,750 million in project commitments use the visible parent spending helper.
+Recurring adjustments for the supplementary budget, labour taxes, employee
+benefits, earmarks, university contributions and targeted support are +0.040,
+−0.035, −0.015, +0.012, +0.008 and +0.010 billion respectively, a net +0.020
+before inflation. These are gameplay balance amounts in TFR's base ledger,
+not historical euro conversions or a revenue forecast. Spending cuts cost
+three cohesion; university contributions and targeted support cost two each.
+Rewards update the two persistent country modifiers with exact native previews.
+Paid factories require owned, controlled Estonian cores with free unlocked
+slots; blocked delivery waits without duplicating a grant or charge.
+
+Renewable permitting, grid connections and dispatchable-capacity continuity
+contribute 2 + 1 + 2 to the five recovery slots shared by all nine government
+programmes. Equivalent projects count once; full preparation removes the
+actual parent Oil Crash spirit. Nuclear content prepares licensing and
+independent oversight without constructing a reactor. The primary programme
+chapters and gameplay adaptations are recorded in the
+[Parempoolsed register](PP_2023_SOURCES.md).
+
+Thirty-eight new tests cover legitimate formation and electoral entry, no
+forced seats or result, private party identity, actual coalition confirmation,
+invalid/wrong-year/postwar ballots, the next mandate, randomized full completion
+orders, exact budget/income values, bounded factory delivery with ownership,
+control and unlocked-slot checks, restoration with an 84-day invalid-ballot
+retry, all eight Parempoolsed energy combinations against mixed earlier
+preparations, AI order and reproducible BOM outputs. All 427 preceding focus
+descriptions are protected by captured hashes. Shared preview regressions
+compare all 275 reward sources. Source execution and graph arithmetic do not
+establish natural campaign scheduling, rendered layout or save serialization.
+
+## Eesti 200's conditional 2023 programme
+
+The Eesti 200 programme contains 32 compact, 35-day focuses. One mandate root
+opens five parallel six-policy branches, with ordinary prerequisites inside
+each branch. The final report requires all 31 preceding policy records. There
+are no ordinary focus date gates. An uninterrupted programme takes 1,120 days:
+17 April 2023 to 11 May 2026, leaving 235 days before 2027. Defence funding is
+reachable after 70 focus-days, air-defence preparation after 105 and reserve
+organization after 140 along that branch. Two military factories are reachable
+after 105 and 140 days along the industrial branch; civilian completion and
+the final report do not block these investments.
+
+A validated ordinary 2023 election must give Eesti 200 the largest delegation.
+The branch becomes visible during the caretaker handover, but focus selection
+requires a confirmed Eesti 200 PM, its electoral mandate and 51 actual coalition
+seats. Supply agreements do not substitute for coalition membership. Centre and
+Eesti 200 remain independent in the party ledger despite their shared generic
+ideology. The existing hypothetical Kristina Kallas premiership is retained.
+Invalid, wrong-year and postwar ballots cannot activate the programme; the next
+valid election retires it even if Eesti 200 wins again. Early war preserves an
+independent mandate. Occupation hides the programme, while restoration retains
+earned reforms and paid factory entitlements behind cabinet confirmation.
+
+The 1,900 million in project commitments and five recurring income adjustments
+use the parent's visible helpers. The respective adjustments are −0.020,
+−0.010, +0.012, +0.025 and −0.012 billion, a net −0.005 before inflation. These
+are gameplay balance amounts in TFR's base ledger, not conversions of the
+historical euro pledges. The two persistent country modifiers receive the
+authored buffs, and display-only previews show their exact deltas. Factory
+delivery requires an owned, controlled Estonian core and a free unlocked slot;
+blocked projects wait without duplicating deliveries or costs.
+
+Renewable permits, grid connections and renovation contribute 2 + 1 + 2 to
+the five shared recovery slots. Each equivalent slot counts once across all
+eight programmes, and full preparation removes the actual parent Oil Crash
+idea. Kalevipoja Dome is modelled as funded sites, crew preparation, communications
+and compatible procurement rather than an immediately completed national shield.
+The contemporary policy basis and gameplay adaptations are recorded in the
+[Eesti 200 register](E200_2023_SOURCES.md).
+
+Thirty-five new tests cover legitimate electoral entry from zero opening seats,
+invalid and wrong-year ballots, postwar exclusions, private party identity,
+confirmation and actual coalition seats, randomized full completion orders,
+bounded factories and delayed delivery, restoration with an 84-day invalid-vote
+retry, exact budget/income amounts, all eight energy-project combinations with
+mixed earlier histories, AI order and reproducible BOM outputs. All 395 earlier
+focus-description values are protected by captured hashes. The shared preview
+regressions now compare 243 reward sources. Source execution and graph arithmetic
+do not establish natural campaign scheduling, rendered focus layout or saved-game
+serialization.
+
+## SDE's conditional 2023 programme and historical party succession
+
+The Social Democratic programme contains 32 compact, 35-day focuses. A common
+root opens five parallel six-policy branches; the final report requires all
+31 other policy records. The full programme takes 1,120 days. An uninterrupted
+start on 17 April 2023 finishes on 11 May 2026, leaving 235 days before 2027.
+Defence funding takes 70 focus-days along its branch, air-defence preparation
+105 and reserves 140. The two paid military-factory projects take 105 and 140
+days along their industrial branch. Ordinary focuses retain prerequisites
+without calendar gates, and early military preparations do not require the
+civilian programme or final report.
+
+A valid ordinary 2023 ballot must give party 5 the largest delegation to reveal
+the programme. Selection requires a confirmed SDE-led cabinet and 51 actual
+coalition seats; confidence-and-supply votes cannot substitute for coalition
+members. No particular partner is forced. Invalid, wrong-year and postwar
+ballots cannot activate it. A subsequent valid vote retires this programme
+even after another SDE victory. Early war preserves the mandate; occupation
+suspends independent content while retaining earned reforms and paid projects.
+
+The programme's 2,145 million in project-budget commitments use the visible
+parent spending helper. Its upper income/dividend tax schedule contributes
+0.055 billion in recurring income before inflation through the parent's
+unchanged helper. These figures are gameplay balance values in TFR's base
+ledger, rather than historical euro conversions or a revenue forecast. Rewards
+update the two persistent country modifiers and show their exact native deltas.
+Energy measures contribute 2 + 1 + 2 to the five capped recovery slots shared
+with older programmes and remove the actual parent Oil Crash spirit. Funded
+factory entitlements require ownership, control and an unlocked slot, wait
+when delivery is impossible and cannot duplicate a grant or charge.
+
+Lauri Läänemets succeeds Indrek Saar on the first independent daily update
+from 5 February 2022. The controller applies this career change before queueing
+its informational event; delaying acknowledgement cannot preserve Saar as
+party chairman. Opposition and junior-partner transitions preserve another
+party's PM, the president, seats, polls, coalition, portfolio ministers and
+calendar. A confirmed SDE government adopts Läänemets; an outgoing Saar
+caretaker waits for actual cabinet confirmation. Career history and the
+caretaker guard survive occupation, while the current PM marker is cleaned up
+and repaired separately. Occupation delays independent political activity.
+
+All 363 previous focus-description values are protected by their captured
+hashes. Policy sources, historical leadership references and adaptations are
+recorded in [the SDE register](SDE_2023_SOURCES.md). Source and isolated native
+checks do not replace natural campaign, rendered interface or saved-game
+acceptance.
+
+Thirty-two new programme tests cover legitimate electoral entry, all six
+other winners, date and postwar exclusions, actual coalition seats, private
+party identity, randomized full completion orders, bounded paid factories,
+pending delivery and reconstructed saved state, exact parent budget/income
+amounts, all eight energy-project combinations against mixed older history,
+AI order and byte-reproducible BOM outputs. Native modifier previews now
+compare all 211 shared reward sources. Twenty-six handover tests cover the
+February 4/5 boundary, automatic application before acknowledgement, opposition
+and junior coalitions, confirmed SDE leadership, outgoing and incumbent
+caretakers through occupation, future cabinets, queue expiry/retry, foreign
+guards, once-only notices and locked PM displays. The existing executive,
+minister and Centre-leadership regressions also pass.
+
+## Isamaa's conditional 2023 programme
+
+Thirty-two Isamaa programme tests cover 32 compact, 35-day focuses. One root opens five
+parallel six-policy branches; the final report requires the preceding 31
+policies. A complete uninterrupted programme takes 1,120 days, finishing on
+11 May 2026 from a 17 April 2023 start. Defence funding is available after
+70 focus-days along its branch, air-defence preparation after 105, reserves
+after 140, and the two paid military factories after 105 and 140 along the
+industrial branch. Important preparation does not require civilian completion
+or the final report. Ordinary focuses have no start-date conditions.
+
+A valid ordinary 2023 election must give Isamaa the largest delegation to
+reveal the programme. Every focus then requires a confirmed Isamaa-led cabinet
+with 51 actual coalition seats; confidence-and-supply cannot replace them.
+No particular coalition partner is mandatory. The route retains Seeder's
+existing executive identity and the current president. A later valid vote
+ends this electoral programme even if Isamaa wins again, while invalid polling
+preserves it. Early war does not itself end the mandate; occupation suspends
+the programme and retains its earned policies and paid entitlements.
+
+The two funded factory projects require an owned, controlled Estonian state
+with an unlocked slot. Full states preserve the pending delivery; repeated
+reconciliation and reconstructed saved fixtures cannot duplicate a grant or
+charge the project again. Reserve and procurement preparations unlock the
+existing bounded decisions. No focus supplies free divisions or equipment.
+
+The programme uses native economic costs, exact previews for the two existing
+dynamic modifiers and three visible recurring-income reductions: -0.010,
+-0.035 and -0.015 billion before inflation. The programme's 1,785 million in
+budget commitments remains separate from those receipts. Energy measures
+contribute 2 + 1 + 2 to the same five OR-combined recovery slots used by older
+programmes, removing the actual parent Oil Crash spirit without double counting.
+
+The policy register maps the content to Isamaa's official 2023 programme and
+distinguishes proposals from gameplay adaptations. The factories are a bounded
+interpretation of its defence-industry objective; nuclear policy commissions
+studies rather than delivering a power station. All 331 previous focus
+description values remain protected by their captured hashes. Sources and
+funding choices are in [the Isamaa register](ISAMAA_2023_SOURCES.md). Tests
+execute the authored election callback and rewards, all six other election
+winners, invalid/wrong-year/postwar inputs, 50/51 coalition boundaries,
+factories with pending delivery and reconstructed saved state, exact debt and
+income helper amounts, and eight combinations of energy preparation against
+mixed histories across the five older programmes. Native modifier previews
+cover all 179 shared focus-reward sources. Source tests do not simulate natural
+campaign scheduling, save-file serialization or the rendered focus interface.
+
+The additional restoration regression exercises the real weekly controller.
+An Isamaa electoral mandate with 61 confidence seats cannot replace the
+outgoing Centre caretaker while the restoration ballot is pending. Day 77
+remains pending; invalid input at day 84 preserves the assembly and schedule;
+a valid ballot at day 91 ends the old programme, clears the restoration lock
+and permits Seeder's confirmation. It does not manually clear the production
+guard to obtain that result.
 
 ## Centre's conditional 2023 programme and September congress
 
@@ -364,6 +589,137 @@ Successful new electoral/scripted mandates clear outgoing metadata. No current
 route sets these future markers or changes its PM identity.
 
 ## Native engine observations
+
+The accepted Parempoolsed capture is
+`test-output/engine-estonia-qa-20261020-122521/`. It reached the frontend in
+approximately **297 seconds** (300 seconds including capture) and passed
+**all 181 native assertions**, including the previous 167. Fourteen new cases
+cover initial hiding, caretaker visibility without selection, a confirmed
+Perling cabinet alongside President Karis, actual coalition seats, precise
+military-variable changes, two real factory increments without repetition,
+parent Oil Crash tiers through 2 + 1 + 2 recovery, occupation hiding,
+restoration continuity and next-vote retirement.
+
+The fixture remains in a **2020 frontend snapshot**. It directly activates
+party eligibility and seeds the later mandate/caretaker state to exercise
+native effects. Natural August 2022 formation, legitimate 2023 electoral entry,
+randomized completion orders, the before-2027 schedule, delayed delivery and
+restoration-election retries are source-tested. Natural campaign scheduling,
+rendered focus layout and saved-game serialization remain manual checks.
+
+This capture contains **2,032 normalized unique error-log messages** and
+**zero Estonia-prefixed errors**. Relative to the pinned TFR-only and preceding
+Eesti 200 captures, nine additional messages name missing foreign nationalist
+medium flags (GBA, KHA, LBV, ORO, PAP, SID, SPM, TOS and VGE). They are the same
+foreign asset messages already recorded in the accepted 16 October alternatives
+capture, rather than new Parempoolsed script failures. No foreign asset repair
+is claimed. Reports are `test-output/pp2023-final-engine-comparison.json`,
+`test-output/pp2023-previous-engine-comparison.json` and
+`test-output/pp2023-known-foreign-assets-comparison.json`. The owned process
+stopped and the original `dlc_load.json` was verified restored byte-for-byte,
+SHA-256 `767273d70e42152253bd2ad672e68f6df0a5343ffcce44d5278e81c25eeae32a`.
+The temporary QA overlay is excluded from ordinary play and the package.
+
+The accepted Eesti 200 capture is
+`test-output/engine-estonia-qa-20261020-121156/`. It reached the frontend in
+approximately **296 seconds** (298 seconds including capture) and passed
+**all 167 native assertions**, including the previous 153. Fourteen new cases
+cover initial hiding, caretaker visibility without selection, a confirmed
+Eesti 200 cabinet alongside President Karis, the actual coalition-seat gate,
+precise military-variable changes, two real military-factory increments and
+repeat prevention, the parent's Oil Crash tiers through 2 + 1 + 2 mitigation,
+occupation hiding, restoration continuity and next-vote retirement.
+
+The fixture remains in a **2020 frontend snapshot** and explicitly seeds the
+later mandate and caretaker state for these effect tests. Legitimate 2023
+electoral entry, randomized completion order, the before-2027 schedule, delayed
+factory delivery and restored-election retries are covered by source tests.
+Natural election/focus scheduling, the rendered tree and saved-game serialization
+remain manual campaign checks.
+
+This capture contains **2,023 normalized unique error-log messages**, exactly
+matching the pinned TFR-only baseline: **zero new messages, zero removed messages
+and zero Estonia-prefixed errors**. Compared with the previous accepted SDE
+capture, eight previously documented foreign nationalist missing-flag messages
+recurred (GBA, KHA, LBV, ORO, PAP, SID, SPM and TOS); no new Estonia error or foreign
+asset fix is inferred from that load variation. Reports are
+`test-output/e2002023-final-engine-comparison.json` and
+`test-output/e2002023-previous-engine-comparison.json`. The owned process stopped
+and the original `dlc_load.json` was verified restored byte-for-byte, SHA-256
+`767273d70e42152253bd2ad672e68f6df0a5343ffcce44d5278e81c25eeae32a`.
+The temporary QA overlay is excluded from ordinary play and the package.
+
+The accepted SDE capture is
+`test-output/engine-estonia-qa-20261020-092235/`. It reached the frontend in
+approximately **170 seconds** and passed **all 153 native assertions**, including
+the previous 136. Its seventeen new cases cover initial programme hiding, the
+2020 handover date guard, seeded Läänemets PM identity alongside Karis,
+preservation of another party's PM, explicit caretaker gating, confirmed SDE
+government, actual coalition seats, precise military-variable deltas, two real
+factory increments and repeat prevention, the parent's energy tiers through
+2 + 1 + 2 recovery, occupation hiding, restoration continuity and next-vote
+retirement with persistent leadership history.
+
+The native fixture remains in a **2020 frontend snapshot**. It rejects the
+historical handover in 2020, then explicitly seeds the later career, mandate
+and caretaker state for effect tests. Actual February 4/5 scheduling, automatic
+succession before notification acknowledgement, player election entry and
+outgoing-Saar caretaker protection are source-tested. Natural campaign delivery,
+rendered UI and saved-game serialization remain manual acceptance cases.
+
+This capture and the accepted Isamaa build each contain **2,015 normalized
+unique error-log messages**: **zero new messages**, **zero removed messages**
+and **zero Estonia-prefixed errors**. The pinned TFR-only comparison also has
+zero new messages; its eight additional foreign missing-flag messages did not
+occur here, and no foreign asset fix is claimed. Reports are
+`test-output/sde2023-final-engine-comparison.json` and
+`test-output/sde2023-previous-engine-comparison.json`. The owned game process
+stopped and the original `dlc_load.json` was verified restored byte-for-byte.
+The temporary QA overlay is excluded from ordinary play and the package.
+
+The accepted Isamaa capture is
+`test-output/engine-estonia-qa-20261020-090920/`. It reached the frontend in
+approximately **172 seconds** and passed **all 136 native assertions**, including
+the previous 122. Its fourteen new cases cover initial hiding, explicitly seeded
+caretaker gating, confirmed Seeder alongside Karis, 50 actual coalition seats
+despite 90 confidence votes, exact military-variable deltas, two real factory
+increments and repeat prevention, the parent's energy tiers through 2 + 1 + 2
+recovery, occupation hiding, restoration continuity and next-vote retirement.
+
+The native fixture remains in a **2020 frontend snapshot** and explicitly seeds
+the 2023 mandate and caretaker state. Legitimate player election entry and
+pending restoration ballots are source-tested. This is not a natural 2023
+campaign, rendered focus-menu inspection or saved-game serialization test.
+
+The accepted capture and previous Centre build each contain **2,015 normalized
+unique messages**: **zero new messages**, **zero removed messages** and **zero
+Estonia-prefixed errors**. The pinned TFR-only comparison also has zero new
+messages; its eight additional foreign missing-flag messages did not occur in
+this capture, and no foreign asset fix is claimed. Reports are
+`test-output/isamaa2023-final-engine-comparison.json` and
+`test-output/isamaa2023-previous-engine-comparison.json`. The owned process was
+stopped and `dlc_load.json` was verified restored byte-for-byte. The QA overlay
+is excluded from the portable package.
+
+The first Isamaa capture, `test-output/engine-estonia-qa-20261020-085927/`,
+reached the frontend in approximately **242 seconds** but passed only **134 of
+136 assertions**. It is not an accepted run. The preceding Centre restoration
+fixture left its restoration-election flag pending. The separate Isamaa
+ordinary-election fixture failed to clear that test state, so the existing
+confirmation guard correctly kept the outgoing Centre caretaker. The Isamaa
+confirmation and later restoration assertions consequently expected the wrong
+PM. The QA setup now closes that earlier fixture's pending-election state
+before initializing its ordinary-election case. No gameplay guard, reward,
+appointment rule or election timetable was changed to make the test pass.
+
+The second capture, `test-output/engine-estonia-qa-20261020-090501/`, passed
+**135 of 136 assertions** in approximately **168 seconds**. The confirmation
+and restoration cases passed after that isolation fix. Its remaining caretaker
+assertion assumed player control, while frontend Estonia is AI-controlled and
+immediately confirms a majority after a valid vote. The isolated fixture now
+explicitly seeds a caretaker frame, matching the older programme QA blocks.
+Player entry and outgoing-PM continuity remain covered by source tests. This
+second run is also retained as a failed fixture run, not an accepted result.
 
 The Centre revision's accepted capture is
 `test-output/engine-estonia-qa-20261019-132419/`. It reached the frontend in

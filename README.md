@@ -4,7 +4,8 @@ An Estonia country expansion for **The Fire Rises 1.0.9.1c / Hearts of Iron IV 1
 
 This implementation includes the seven governing parties, a 101-seat Riigikogu,
 national cohesion and defense readiness, both European-war campaign stages,
-and playable occupation administrations. Start a **new 2020 campaign**; saves
+and playable occupation administrations. All seven parties have distinct hidden
+2023 election-victory programmes. Start a **new 2020 campaign**; saves
 created without the submod are not supported.
 
 ## Installation and first campaign
@@ -137,7 +138,7 @@ allows completion on 29 December 2022, with 66 days before the 5 March 2023 elec
 date. Delays caused by inactivity, lost coalition confidence or occupation consume
 that margin. The March 2023 election date and seat-allocation rules are unchanged.
 The next valid election ends this 2019 coalition programme, even if Centre wins
-again. Reform, EKRE and Centre victories in 2023 reveal their new mandate programmes;
+again. Reform, EKRE, Centre, Isamaa, SDE, Eesti 200 and Parempoolsed victories in 2023 reveal their new mandate programmes;
 other results open the applicable normal domestic programmes. While a historical
 government programme is active, the older party, economy and military branches remain
 hidden; relevant war and restoration branches can still appear when the world
@@ -184,7 +185,7 @@ the route does not force the real 2022 coalition collapse. Twenty focuses take
 **700 days**: a 26 January 2021 start allows completion on **27 December 2022**,
 68 days before 5 March 2023. A lost majority, occupation or player delay consumes
 that margin. The next valid election ends this programme even after another
-Reform victory. Reform, EKRE and Centre pluralities in 2023 open their new mandate
+Reform victory. Reform, EKRE, Centre, Isamaa, SDE, Eesti 200 and Parempoolsed pluralities in 2023 open their new mandate
 programmes; other results reveal the applicable broader domestic tree. Relevant
 war and restoration branches remain governed by the world state.
 
@@ -373,6 +374,252 @@ The selected leader persists across future Centre governments and supported
 occupation/restoration. Centre's 2023 victory path does not hold this defeat
 congress.
 
+## Isamaa wins in 2023: national resilience and family policy
+
+A validated Isamaa plurality in the 2023 election reveals a **32-focus
+programme** based on its contemporary election platform. This is a hypothetical
+Isamaa-led cabinet; the party did not win the historical election. The
+[Isamaa source register](docs/ISAMAA_2023_SOURCES.md) records the proposals and
+their game adaptations. The programme keeps **Helir-Valdor Seeder** as the
+party's existing PM identity and preserves the coalition negotiated in the
+parliament system. Focuses need a confirmed Isamaa PM and **51 actual coalition
+seats**; confidence-and-supply partners cannot replace that legislative majority.
+
+The compact layout has one root, five six-focus columns with internal
+prerequisites, and a final report requiring all 31 earlier policies. Choices
+between columns let the player prioritize preparation without completing all
+civilian policies first. All focuses take **35 days**, totaling **1,120 days**.
+An uninterrupted 17 April 2023 start can finish on **11 May 2026**, 235 days
+before 2027. Delayed confirmation, a lost majority or occupation consumes that
+margin. An early European war does not itself end the programme.
+
+The five policy branches cover:
+
+- Funded independent defence, integrated air-defence sites, reserve muster,
+  Kaitseliit training areas, allied reception and legally funded civil protection.
+- Defence-industry contracts, ammunition and maintenance workshops, regional
+  manufacturing, a positive credit register and updated business-expense allowances.
+- Dispatchable power reserves, secure grid connections, renovation, district
+  heating, nuclear feasibility studies and electricity universal-service support.
+- A €5,000 child-linked tax allowance, joint returns for spouses, €100 first-
+  and second-child benefits, large-family housing grants, care-leave protection
+  and €200 child-maintenance assistance.
+- Estonian-language schools, teachers' pay, public-private research cooperation,
+  rural broadband, maintained digital services and care at home.
+
+Defence funding opens immediately after the root and can finish after **70 total
+focus-days**. Ammunition and maintenance
+projects each provide **one paid military factory**, after **105 and 140 total
+focus-days** along their branch. Delivery requires an owned and controlled
+Estonian core with a free unlocked building slot. A funded project waits when
+no suitable slot exists, charges only once and cannot duplicate the factory on
+later ticks, reload or restoration. Reserve and domestic-procurement preparation
+use the existing bounded, paid decisions.
+
+Economic and military policies update the two persistent dynamic modifiers,
+with exact native previews and TFR-ledger costs. The full programme carries
+**1,785 million in project-budget commitments** before TFR's inflation adjustment.
+The child-linked tax
+allowance, joint returns and business-expense exemptions also reduce recurring
+receipts by **0.060 billion in TFR's base ledger before inflation**. These are
+gameplay balance values. Dispatchable generating reserve,
+grid connection and renovation fill the shared Oil Crash recovery slots in
+steps of **two, one and two**. Equivalent preparations by earlier cabinets count
+once, and all three can remove the parent crisis spirit. Older generic domestic
+branches stay hidden during this mandate, while relevant war and restoration
+content remains accessible. The next valid election ends the programme even if
+Isamaa wins again; invalid polling preserves it and enacted reforms remain saved.
+
+## SDE wins in 2023: social protection and credible defence
+
+A validated SDE plurality in the 2023 election reveals a **32-focus programme**
+based on the party's contemporary election platform. This represents a
+hypothetical SDE-led cabinet, using the coalition the player actually negotiates.
+The [SDE source register](docs/SDE_2023_SOURCES.md) distinguishes platform
+proposals from their TFR adaptations. Legislation requires a confirmed SDE
+prime minister and **51 actual coalition seats**; confidence-and-supply votes
+cannot replace that majority.
+
+The compact tree has a root, five six-focus policy columns with internal
+prerequisites, and an all-policy final report. The player can choose which
+column to prioritize. Every focus takes **35 days**, totaling **1,120 days**.
+An uninterrupted 17 April 2023 start finishes on **11 May 2026**, 235 days before
+2027. Delayed cabinet confirmation, a lost majority or occupation consumes this
+margin; the First European War starting early does not itself close the tree.
+
+The five branches cover:
+
+- Funded defence capabilities, layered air-defence preparation, reserve
+  mobilisation, Kaitseliit instructors, allied reception, shelters and sirens.
+- Domestic defence development, ammunition and maintenance workshops, regional
+  skilled jobs, applied research and unserved ultrafast-internet connections.
+- Renewable-power contracts, household grid connections up to 30 kW, inclusive
+  renovation grants, strategic reserves, energy cooperatives and district heating.
+- The proposed 28% upper income-tax band, negotiated steps toward a €1,200
+  minimum wage, collective bargaining, learning leave, a €150 child benefit
+  with indexation, and public rental housing.
+- Universal health-insurance access, community mental-health services, a funded
+  pension increase, affordable assessed residential care, teacher pay and shared
+  Estonian-language schooling.
+
+Defence funding opens directly after the root and can finish after **70 total
+focus-days** along its branch; air defence follows at **105**, reserves at **140**.
+The two industrial projects each provide **one paid military factory**, after
+**105 and 140 total focus-days** along the industrial column. They require an
+owned and controlled Estonian core with a free unlocked building slot. Funded
+projects wait for space and deliver once, without repeat charges. Existing paid
+procurement and reserve decisions remain the route to equipment and manpower.
+
+The programme uses the persistent economy and military dynamic modifiers,
+visible native delta previews and TFR budget helpers. Project commitments total
+**2,145 million**, and the tax package adds **0.055 billion in recurring receipts**
+in TFR's base ledger before inflation. These are gameplay balance values.
+Renewable contracts, grid connections and renovation fill the shared Oil Crash
+recovery slots in steps of **two, one and two**. Equivalent earlier preparations
+count once, and completing all three removes the actual parent crisis spirit.
+A later valid election ends the programme even after another SDE victory;
+invalid polling preserves it, and completed reforms and paid entitlements persist.
+
+SDE begins with **Indrek Saar** as party chair. From **5 February 2022**, the first
+independent daily update records **Lauri Läänemets** as his successor, matching
+[the party's leadership election](https://www.sotsid.ee/sotsiaaldemokraatide-uus-esimees-on-lauri-laanemets/).
+The party row shows the chair independently of the incumbent government. An SDE
+prime minister updates to Läänemets through the authored handover, while another
+party's prime minister, the president, parliamentary seats and coalition remain
+unchanged. An outgoing Saar caretaker remains until cabinet confirmation;
+occupation postpones independent leadership activity, and the selected career
+persists through restoration and later SDE governments. The notice acknowledges
+the succession and provides no option to keep Saar.
+
+## Eesti 200 wins in 2023: long-term reform and preparedness
+
+A validated Eesti 200 plurality in the 2023 election reveals a **32-focus
+programme** for a hypothetical Eesti 200-led cabinet. The
+[Eesti 200 source register](docs/E200_2023_SOURCES.md) records the contemporary
+platform and its TFR adaptations. The existing Kristina Kallas PM identity is
+retained for this alternate outcome; this does not identify her as the party's
+historical chair at the 2023 election. Focuses require a confirmed Eesti 200 PM,
+the current electoral mandate and **51 actual coalition seats**. The player
+negotiates the partners; confidence-and-supply votes cannot substitute.
+
+The compact tree has a root, five six-focus columns with internal prerequisites,
+and an all-policy final report. The player can choose which policy column to
+prioritize. All focuses take **35 days**, totaling **1,120 days**. An uninterrupted
+17 April 2023 start finishes on **11 May 2026**, 235 days before 2027. Delayed
+cabinet confirmation, majority loss or occupation consumes this margin; an
+early First European War does not itself close independent content.
+
+The five branches cover:
+
+- The proposed 3% defence commitment, the Kalevipoja air-defence programme,
+  assigned civilian crisis roles, Kaitseliit instruction, allied reception and
+  Tartu military/disaster-medicine training.
+- Domestic defence suppliers, ammunition and equipment-servicing workshops,
+  dual-use drone trials, business research incentives, simpler companies and
+  the proposed €100,000 VAT-registration threshold.
+- Six-month renewable-permit procedures, unused grid reservations, housing
+  renovation, storage and microgrids, offshore connections and a climate law.
+- Once-only state data, public electronic invoices, zero-based budget review,
+  personal health accounts with the proposed €1,200 employer allowance, care
+  coordinators and first-line mental-health services.
+- Investment toward the proposed €250 million annual education increase,
+  teacher careers toward the €3,000 salary objective, shared Estonian-language
+  schools, compulsory learning to eighteen, €6,000 student loans with longer
+  repayment, and the shared e-university platform.
+
+Defence funding can finish after **70 total focus-days** along its branch, air
+defence after **105**, and reserve preparation after **140**. The two industrial
+projects each provide **one paid military factory**, after **105 and 140 total
+focus-days** along their column. No civilian branch or final report blocks these
+preparations. Factories require an owned and controlled Estonian core with a
+free unlocked slot; funded projects wait for space and deliver once, without
+repeat charges. Normal paid recruitment and procurement remain necessary.
+
+Rewards use the persistent economic and military dynamic modifiers, native
+numerical previews and TFR's budget helpers. Project commitments total
+**1,900 million** in TFR's base ledger. The research incentive, business
+simplification, electronic-invoice savings, budget review and health allowance
+change recurring income by **−0.020, −0.010, +0.012, +0.025 and −0.012 billion**,
+respectively, for a net **−0.005 billion before inflation**. These are game
+balance values; the programme's real currency objectives above are policy
+sources rather than a conversion of game-ledger units.
+
+Renewable permits fill two shared
+Oil Crash recovery slots, grid connections one, and renovation two. Equivalent
+preparation by earlier cabinets counts once; full preparation removes the actual
+parent crisis spirit. A later valid election ends the programme even if Eesti
+200 wins again. Invalid input preserves it, while completed reforms and funded
+factory entitlements remain saved through occupation and restoration.
+
+## Parempoolsed wins in 2023: enterprise, a lean state and preparedness
+
+A validated Parempoolsed plurality in the 2023 election reveals a **32-focus
+programme** based on the party's own contemporary platform. The
+[Parempoolsed source register](docs/PP_2023_SOURCES.md) records the original
+programme and separates its proposals from funded TFR adaptations. Parempoolsed
+must already have formed, and a confirmed Lavly Perling government needs the
+current electoral mandate and **51 actual coalition seats**. Reform's seats and
+polling remain separate despite the parties sharing a generic ideology;
+confidence-and-supply votes cannot replace the governing majority.
+
+The compact tree has a root, five six-focus columns with ordinary prerequisites,
+and a final parliamentary report requiring all preceding policies. Players
+choose which branch to prioritize. Every focus takes **35 days**, for a total
+of **1,120 days**: an uninterrupted 17 April 2023 start finishes on **11 May
+2026**, 235 days before 2027. Ordinary focuses have no date gates, and an early
+First European War does not itself close independent content. Cabinet talks,
+majority loss or occupation can consume that completion margin.
+
+The five branches cover:
+
+- A cross-party 3% defence investment agreement, air-defence crews and
+  communications, broader service roles, a 10,000-person civilian reserve,
+  allied reception funded outside the baseline, and essential-service exercises.
+- Private suppliers' access to loan and equity capital, contracted ammunition
+  and military servicing capacity, the proposed 3% public-private research
+  agreement, university knowledge transfer and skilled-worker admission points.
+- Simpler planning for private renewable projects, offshore-wind connections,
+  dependable generation during the transition, independent nuclear licensing,
+  renovation procedures and timber use in public construction. The licensing
+  focus prepares rules and supervision; it does not build a reactor.
+- State expenditure and agency audits, a negative supplementary budget,
+  understandable public accounts, the proposed 18% income tax and social-tax
+  ceiling at three average wages, employee-benefit tax relief, and transparent
+  appropriations replacing discretionary political earmarks.
+- The proposed 70% teaching share of education spending, shared
+  Estonian-language schooling, vocational and adult retraining, partial
+  university tuition with student assistance, needs-based support, and more
+  competitive care contracts with less medical paperwork.
+
+Defence funding can finish after **70 total focus-days**, air-defence preparation
+after **105**, and reserves after **140** along the military branch. The two
+industrial projects each provide **one paid military factory**, finishable after
+**105 and 140 total focus-days** along their column. No civilian branch or final
+report blocks these preparations. Each project requires an owned and controlled
+Estonian core with a free unlocked slot; the funded entitlement waits when no
+slot qualifies and delivers once. Existing recruitment and equipment procurement
+remain paid and bounded.
+
+Project commitments total **1,750 million** in TFR's base ledger. The
+supplementary-budget savings, labour-tax changes, employee-benefit relief,
+removed earmarks, tuition contributions and targeted support respectively change
+recurring income by **+0.040, −0.035, −0.015, +0.012, +0.008 and +0.010 billion**:
+a net **+0.020 billion before inflation**. These are game-balance amounts,
+separate from the programme's real percentage objectives. The expenditure cuts
+cost three cohesion, and tuition and targeted benefits each cost two; the wider
+programme can rebuild trust, but these reforms do not automatically balance
+Estonia's budget.
+
+Renewable permits fill two shared Oil Crash recovery slots, grid connections
+one, and continuity capacity two. Equivalent earlier governments' work counts
+each slot once across all nine programmes; completing the preparations removes
+the actual parent crisis spirit. Rewards use the persistent economic and
+military modifiers with native numerical previews and TFR budget costs. The
+next valid election ends the programme even if Parempoolsed wins again; invalid
+input preserves it. Completed reforms and funded factory entitlements survive
+supported occupation and restoration. All **427 preceding focus descriptions**
+remain unchanged.
+
 ## Playing the political system
 
 - Each of Reform, Centre, EKRE, Isamaa, SDE, Eesti 200 and Parempoolsed has its own
@@ -474,7 +721,8 @@ industrial output, production efficiency, research, resources and consumer goods
 the military container supports combat, organization, mobilization, training,
 entrenchment, attrition and supply. Missing variables or modifiers are repaired
 without resetting saved adjustments. Opening, retained-Ratas, pre-election
-Kallas and the Reform/EKRE/Centre 2023 mandate bonuses use these containers. Older generic
+Kallas and the Reform/EKRE/Centre/Isamaa/SDE/Eesti 200/Parempoolsed 2023 mandate bonuses use these
+containers. Older generic
 programmes retain their current reward ideas pending their own content revision.
 
 Reserve authorization unlocks a Kaitseliit template and temporary training
@@ -527,6 +775,11 @@ python tools/build_reform_handover.py --check
 python tools/build_ekre_2023.py --check
 python tools/build_centre_2023.py --check
 python tools/build_centre_leadership.py --check
+python tools/build_isamaa_2023.py --check
+python tools/build_sde_2023.py --check
+python tools/build_sde_handover.py --check
+python tools/build_e200_2023.py --check
+python tools/build_pp_2023.py --check
 ```
 
 On this Codex host, Python is also available at:
@@ -566,6 +819,25 @@ localization and also supports `--check`. Its validated mandate and party-defeat
 history are maintained in `TFR_EST_centre_2023_lifecycle.txt`.
 `tools/build_centre_leadership.py` generates the guarded September congress,
 party-leader labels and persistent leadership helpers, with its own `--check`.
+`tools/build_isamaa_2023.py` generates Isamaa's elected programme, rewards and
+localization, with its own `--check`. Its validated mandate lifecycle is authored
+in `TFR_EST_isamaa_2023_lifecycle.txt`; its policies feed the same shared imports,
+party-first AI ordering, modifier previews and five energy-recovery slots.
+`tools/build_sde_2023.py` generates the alternative SDE programme, rewards and
+localization with `--check`; its validated election hook is authored in
+`TFR_EST_sde_2023_lifecycle.txt`. It uses the same shared imports, party-first AI,
+modifier previews and capped energy slots. `tools/build_sde_handover.py` generates
+the historical Saar–Läänemets career transition, notification and independent
+party-leader labels; it also supports `--check`.
+`tools/build_e200_2023.py` generates Eesti 200's alternative programme, rewards
+and localization, with `--check`. Its validated mandate lifecycle is authored in
+`TFR_EST_e200_2023_lifecycle.txt`; its policies feed the shared main-tree imports,
+party-first AI, modifier previews and five capped energy-recovery slots.
+
+`tools/build_pp_2023.py` generates Parempoolsed's alternative programme, rewards
+and localization, with `--check`. Its validated mandate lifecycle is authored in
+`TFR_EST_pp_2023_lifecycle.txt`; its policies feed the same main-tree imports,
+party-first AI, exact modifier previews and five capped energy-recovery slots.
 
 For a controlled startup parser check, close any existing HOI4 session and run:
 
@@ -623,7 +895,7 @@ The parent remains untouched. Shared-file overrides are necessary to stop
 destructive settlements **before** annexation occurs. Their upstream hashes and
 individual changes are recorded in `docs/compatibility.json`. The additional
 shared head-of-government localization adapter retains every upstream country
-selector and adds Estonia's seven party-ledger selectors. The shared GUI itself
+selector and adds Estonia's seven party selectors and persistent named PM successors. The shared GUI itself
 is inherited directly from TFR.
 
 After a TFR update, compare each overridden file against the new parent version,

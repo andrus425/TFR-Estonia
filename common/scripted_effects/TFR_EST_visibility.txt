@@ -31,6 +31,14 @@ TFR_EST_refresh_focus_visibility = {
         if = { limit = { has_country_flag = TFR_EST_ekre_2023_mandate_ended } add_to_temp_variable = { TFR_EST_visibility_late_signature = 16 } }
         if = { limit = { has_country_flag = TFR_EST_centre_2023_mandate } add_to_temp_variable = { TFR_EST_visibility_late_signature = 32 } }
         if = { limit = { has_country_flag = TFR_EST_centre_2023_mandate_ended } add_to_temp_variable = { TFR_EST_visibility_late_signature = 64 } }
+        if = { limit = { has_country_flag = TFR_EST_isamaa_2023_mandate } add_to_temp_variable = { TFR_EST_visibility_late_signature = 128 } }
+        if = { limit = { has_country_flag = TFR_EST_isamaa_2023_mandate_ended } add_to_temp_variable = { TFR_EST_visibility_late_signature = 256 } }
+        if = { limit = { has_country_flag = TFR_EST_sde_2023_mandate } add_to_temp_variable = { TFR_EST_visibility_late_signature = 512 } }
+        if = { limit = { has_country_flag = TFR_EST_sde_2023_mandate_ended } add_to_temp_variable = { TFR_EST_visibility_late_signature = 1024 } }
+        if = { limit = { has_country_flag = TFR_EST_e200_2023_mandate } add_to_temp_variable = { TFR_EST_visibility_late_signature = 2048 } }
+        if = { limit = { has_country_flag = TFR_EST_e200_2023_mandate_ended } add_to_temp_variable = { TFR_EST_visibility_late_signature = 4096 } }
+        if = { limit = { has_country_flag = TFR_EST_pp_2023_mandate } add_to_temp_variable = { TFR_EST_visibility_late_signature = 8192 } }
+        if = { limit = { has_country_flag = TFR_EST_pp_2023_mandate_ended } add_to_temp_variable = { TFR_EST_visibility_late_signature = 16384 } }
         if = {
             limit = {
                 OR = {

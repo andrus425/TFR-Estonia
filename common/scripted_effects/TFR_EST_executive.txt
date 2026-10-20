@@ -6,9 +6,10 @@ TFR_EST_hide_executive_display = {
     clr_country_flag = TFR_EST_pm_person_martin_helme
     clr_country_flag = TFR_EST_pm_person_tanel_kiik
     clr_country_flag = TFR_EST_pm_person_mihhail_kolvart
+    clr_country_flag = TFR_EST_pm_person_lauri_laanemets
     remove_ideas = {
         TFR_EST_pm_reform TFR_EST_pm_reform_michal TFR_EST_pm_centre TFR_EST_pm_centre_kiik TFR_EST_pm_centre_kolvart TFR_EST_pm_ekre TFR_EST_pm_ekre_martin
-        TFR_EST_pm_isamaa TFR_EST_pm_sde TFR_EST_pm_e200 TFR_EST_pm_pp
+        TFR_EST_pm_isamaa TFR_EST_pm_sde TFR_EST_pm_sde_laanemets TFR_EST_pm_e200 TFR_EST_pm_pp
     }
 }
 
@@ -83,6 +84,7 @@ TFR_EST_reconcile_executive_display = {
         TFR_EST_reconcile_reform_pm_identity = yes
         TFR_EST_reconcile_ekre_pm_identity = yes
         TFR_EST_reconcile_centre_pm_identity = yes
+        TFR_EST_reconcile_sde_pm_identity = yes
         if = {
             limit = { has_country_flag = TFR_EST_karis_president }
             if = {
@@ -106,7 +108,8 @@ TFR_EST_reconcile_executive_display = {
         if = { limit = { OR = { NOT = { check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } } has_country_flag = TFR_EST_martin_leads_ekre } } remove_ideas = TFR_EST_pm_ekre }
         if = { limit = { OR = { NOT = { check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } } NOT = { has_country_flag = TFR_EST_martin_leads_ekre } } } remove_ideas = TFR_EST_pm_ekre_martin }
         if = { limit = { NOT = { check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } } } remove_ideas = TFR_EST_pm_isamaa }
-        if = { limit = { NOT = { check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } } } remove_ideas = TFR_EST_pm_sde }
+        if = { limit = { OR = { NOT = { check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } } has_country_flag = TFR_EST_pm_person_lauri_laanemets } } remove_ideas = TFR_EST_pm_sde }
+        if = { limit = { OR = { NOT = { check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } } NOT = { has_country_flag = TFR_EST_pm_person_lauri_laanemets } } } remove_ideas = TFR_EST_pm_sde_laanemets }
         if = { limit = { NOT = { check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } } } remove_ideas = TFR_EST_pm_e200 }
         if = { limit = { NOT = { check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } } } remove_ideas = TFR_EST_pm_pp }
         if = { limit = { check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } NOT = { has_country_flag = TFR_EST_kallas_departed_for_europe } NOT = { has_idea = TFR_EST_pm_reform } } add_ideas = TFR_EST_pm_reform }
@@ -117,7 +120,8 @@ TFR_EST_reconcile_executive_display = {
         if = { limit = { check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } NOT = { has_country_flag = TFR_EST_martin_leads_ekre } NOT = { has_idea = TFR_EST_pm_ekre } } add_ideas = TFR_EST_pm_ekre }
         if = { limit = { check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } has_country_flag = TFR_EST_martin_leads_ekre NOT = { has_idea = TFR_EST_pm_ekre_martin } } add_ideas = TFR_EST_pm_ekre_martin }
         if = { limit = { check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } NOT = { has_idea = TFR_EST_pm_isamaa } } add_ideas = TFR_EST_pm_isamaa }
-        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_idea = TFR_EST_pm_sde } } add_ideas = TFR_EST_pm_sde }
+        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } NOT = { has_country_flag = TFR_EST_pm_person_lauri_laanemets } NOT = { has_idea = TFR_EST_pm_sde } } add_ideas = TFR_EST_pm_sde }
+        if = { limit = { check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } has_country_flag = TFR_EST_pm_person_lauri_laanemets NOT = { has_idea = TFR_EST_pm_sde_laanemets } } add_ideas = TFR_EST_pm_sde_laanemets }
         if = { limit = { check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } NOT = { has_idea = TFR_EST_pm_e200 } } add_ideas = TFR_EST_pm_e200 }
         if = { limit = { check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } NOT = { has_idea = TFR_EST_pm_pp } } add_ideas = TFR_EST_pm_pp }
     }

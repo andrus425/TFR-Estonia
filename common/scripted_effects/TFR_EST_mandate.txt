@@ -78,6 +78,10 @@ TFR_EST_assign_election_mandate = {
     TFR_EST_note_reform_2023_election = yes
     TFR_EST_note_ekre_2023_election = yes
     TFR_EST_note_centre_2023_election = yes
+    TFR_EST_note_isamaa_2023_election = yes
+    TFR_EST_note_sde_2023_election = yes
+    TFR_EST_note_e200_2023_election = yes
+    TFR_EST_note_pp_2023_election = yes
     # Keep outgoing ministers as caretakers during post-election negotiations.
     set_country_flag = TFR_EST_caretaker
     TFR_EST_clear_coalition = yes

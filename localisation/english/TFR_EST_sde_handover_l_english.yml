@@ -1,0 +1,11 @@
+﻿l_english:
+ TFR_EST_lauri_laanemets:0 "Lauri Läänemets"
+ TFR_EST_lauri_laanemets_desc:0 "Lauri Läänemets succeeds Indrek Saar as Social Democratic Party chairman after the February 2022 congress. His experience includes local government, parliamentary constitutional work and the Defence League. He leads the cabinet when the Social Democrats supply the confirmed prime minister; the president retains the constitutional head-of-state role."
+ TFR_EST_pm_sde_laanemets:0 "$TFR_EST_lauri_laanemets$"
+ TFR_EST_pm_sde_laanemets_desc:0 "Prime Minister: §H$TFR_EST_lauri_laanemets$§!\n[TFR_EST_hog_cabinet_status]\n\n$TFR_EST_lauri_laanemets_desc$"
+ TFR_EST_hog_sde_laanemets:0 "Prime Minister: §H$TFR_EST_lauri_laanemets$§!\n[TFR_EST_hog_cabinet_status]\n\n\n\n\n\n\n   £GFX_idea_TFR_EST_pm_sde_laanemets\n\n\n\n\n\n\n\n\n-------------------------------------\n§L$TFR_EST_lauri_laanemets_desc$§!"
+ TFR_EST_sde_handover_title:0 "Läänemets Leads the Social Democrats"
+ TFR_EST_sde_handover_desc:0 "The Social Democrats have elected Lauri Läänemets to succeed Indrek Saar as party chairman. The new leader places affordable housing, accessible services, higher wages and a fairer tax system at the centre of his programme.\n\nThe congress determines the party leadership and its future candidate for prime minister. Existing parliamentary seats and coalition agreements continue. Another party’s prime minister remains in office; an outgoing Social Democratic caretaker serves until parliamentary cabinet confirmation."
+ TFR_EST_sde_handover_option:0 "The party enters a new chapter."
+ TFR_EST_sde_handover_tt:0 "§YLauri Läänemets§! has succeeded §YIndrek Saar§! as Social Democratic Party chairman. Future Social Democratic governments are led by Läänemets. A confirmed Social Democratic cabinet changes prime minister; an outgoing caretaker awaits cabinet confirmation. Parliamentary seats, polls, ministers, coalition agreements and the election calendar are preserved."
+ TFR_EST_sde_party_leader_tt:0 "§YSocial Democratic Party chair: [TFR_EST_sde_party_leader]§!\nParty leadership is separate from the parliamentary mandate and the current prime minister."

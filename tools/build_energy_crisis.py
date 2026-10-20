@@ -31,6 +31,14 @@ EKRE_2023_SLOTS = ("narva_blocks", "narva_blocks", "kiisa_reserve", "regulated_p
 EKRE_2023_PROJECTS = tuple(dict.fromkeys(EKRE_2023_SLOTS))
 CENTRE_2023_SLOTS = ("power_reserves", "power_reserves", "local_chp", "apartment_renovation", "apartment_renovation")
 CENTRE_2023_PROJECTS = tuple(dict.fromkeys(CENTRE_2023_SLOTS))
+ISAMAA_2023_SLOTS = ("dispatchable_reserve", "dispatchable_reserve", "grid_connection", "renovation", "renovation")
+ISAMAA_2023_PROJECTS = tuple(dict.fromkeys(ISAMAA_2023_SLOTS))
+SDE_2023_SLOTS = ("renewable_contracts", "renewable_contracts", "grid_connection", "renovation", "renovation")
+SDE_2023_PROJECTS = tuple(dict.fromkeys(SDE_2023_SLOTS))
+E200_2023_SLOTS = ("renewable_permits", "renewable_permits", "grid_connection", "renovation", "renovation")
+E200_2023_PROJECTS = tuple(dict.fromkeys(E200_2023_SLOTS))
+PP_2023_SLOTS = ("renewable_permits", "renewable_permits", "grid_connection", "continuity_capacity", "continuity_capacity")
+PP_2023_PROJECTS = tuple(dict.fromkeys(PP_2023_SLOTS))
 
 
 def idea_cleanup(keep: str | None = None, indent: str = "        ") -> str:
@@ -79,9 +87,9 @@ TFR_EST_reconcile_energy_crisis = {
         TFR_EST_migrate_energy_crisis_ledger = yes
         set_variable = { TFR_EST_energy_response_steps = 0 }
 """
-    for (ratas, kallas), reform, ekre, centre in zip(SLOTS, REFORM_2023_SLOTS, EKRE_2023_SLOTS, CENTRE_2023_SLOTS):
+    for (ratas, kallas), reform, ekre, centre, isamaa, sde, e200, pp in zip(SLOTS, REFORM_2023_SLOTS, EKRE_2023_SLOTS, CENTRE_2023_SLOTS, ISAMAA_2023_SLOTS, SDE_2023_SLOTS, E200_2023_SLOTS, PP_2023_SLOTS):
         text += f"""        if = {{
-            limit = {{ OR = {{ has_country_flag = TFR_EST_done_ratas_{ratas} has_country_flag = TFR_EST_done_kallas_{kallas} has_country_flag = TFR_EST_done_reform_2023_{reform} has_country_flag = TFR_EST_done_ekre_2023_{ekre} has_country_flag = TFR_EST_done_centre_2023_{centre} }} }}
+            limit = {{ OR = {{ has_country_flag = TFR_EST_done_ratas_{ratas} has_country_flag = TFR_EST_done_kallas_{kallas} has_country_flag = TFR_EST_done_reform_2023_{reform} has_country_flag = TFR_EST_done_ekre_2023_{ekre} has_country_flag = TFR_EST_done_centre_2023_{centre} has_country_flag = TFR_EST_done_isamaa_2023_{isamaa} has_country_flag = TFR_EST_done_sde_2023_{sde} has_country_flag = TFR_EST_done_e200_2023_{e200} has_country_flag = TFR_EST_done_pp_2023_{pp} }} }}
             add_to_variable = {{ TFR_EST_energy_response_steps = 1 }}
         }}
 """

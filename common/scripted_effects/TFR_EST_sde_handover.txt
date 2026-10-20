@@ -1,0 +1,69 @@
+# Party career history and the incumbent PM are different records. A Saar
+# caretaker remains in office until an actual cabinet confirmation. Occupation
+# hides the current personal marker but retains both career and waiting state.
+TFR_EST_reconcile_sde_pm_identity = {
+    if = {
+        limit = {
+            TFR_EST_constitutional_executive = yes
+            check_variable = { var = TFR_EST_pm_party value = 5 compare = equals }
+        }
+        if = {
+            limit = { NOT = { has_country_flag = TFR_EST_caretaker } }
+            clr_country_flag = TFR_EST_sde_handover_waiting_confirmation
+        }
+        if = {
+            limit = { NOT = { has_country_flag = TFR_EST_sde_handover_waiting_confirmation } }
+            if = {
+                limit = { has_country_flag = TFR_EST_laanemets_leads_sde }
+                set_country_flag = TFR_EST_pm_person_lauri_laanemets
+            }
+            else = { clr_country_flag = TFR_EST_pm_person_lauri_laanemets }
+        }
+    }
+    else = {
+        clr_country_flag = TFR_EST_pm_person_lauri_laanemets
+        if = {
+            limit = { NOT = { check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } } }
+            clr_country_flag = TFR_EST_sde_handover_waiting_confirmation
+        }
+    }
+}
+
+# No player choice, event acknowledgement, election result or focus is required.
+# This effect deliberately does not change seats, polls, coalition membership,
+# ministers, the election timer, political power or the constitutional president.
+TFR_EST_complete_sde_handover = {
+    if = {
+        limit = { TFR_EST_sde_handover_eligible = yes }
+        set_country_flag = TFR_EST_laanemets_leads_sde
+        if = {
+            limit = {
+                check_variable = { var = TFR_EST_pm_party value = 5 compare = equals }
+                has_country_flag = TFR_EST_caretaker
+            }
+            set_country_flag = TFR_EST_sde_handover_waiting_confirmation
+        }
+        else = { clr_country_flag = TFR_EST_sde_handover_waiting_confirmation }
+        TFR_EST_reconcile_sde_pm_identity = yes
+        TFR_EST_reconcile_executive_display = yes
+    }
+}
+
+# Record the historical succession before queueing its optional notification.
+# An undelivered queue expires after two days and can retry after restoration.
+# A delivered notice stays delivered even when Estonia is occupied afterward.
+TFR_EST_sde_handover_tick = {
+    if = {
+        limit = { tag = EST has_country_flag = TFR_EST_initialized }
+        TFR_EST_complete_sde_handover = yes
+        if = {
+            limit = { TFR_EST_sde_handover_notice_eligible = yes }
+            if = {
+                limit = { NOT = { has_country_flag = TFR_EST_sde_handover_pending } }
+                set_country_flag = { flag = TFR_EST_sde_handover_pending days = 2 }
+                country_event = { id = tfr_estonia_sde_handover.1 hours = 1 }
+            }
+        }
+        else = { clr_country_flag = TFR_EST_sde_handover_pending }
+    }
+}

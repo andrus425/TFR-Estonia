@@ -98,10 +98,10 @@ class Ekre2023Tests(unittest.TestCase):
     def factories(self, r):
         return sum(state['buildings'].get('arms_factory', 0) for state in r.states.values())
 
-    def test_thirty_two_compact_shared_focuses_and_147_total_shared_imports(self):
+    def test_thirty_two_compact_shared_focuses_and_275_total_shared_imports(self):
         self.assertEqual(len(POLICIES), 32)
         self.assertEqual(len(self.focuses), 32)
-        self.assertEqual(len(self.main.all('shared_focus')), 147)
+        self.assertEqual(len(self.main.all('shared_focus')), 275)
         self.assertCountEqual([name for name in self.main.all('shared_focus')
                                if name.startswith(PREFIX)], self.focuses)
         positions = {(int(f.get('x')), int(f.get('y'))) for f in self.focuses.values()}
@@ -473,7 +473,7 @@ class Ekre2023Tests(unittest.TestCase):
         self.assertEqual(len(expected), 267)
         existing = {}
         for path in (ROOT / 'common/national_focus').glob('TFR_EST_*.txt'):
-            if path.name in ('TFR_EST_ekre_2023.txt', 'TFR_EST_centre_2023.txt'):
+            if path.name in ('TFR_EST_ekre_2023.txt', 'TFR_EST_centre_2023.txt', 'TFR_EST_isamaa_2023.txt', 'TFR_EST_sde_2023.txt', 'TFR_EST_e200_2023.txt', 'TFR_EST_pp_2023.txt'):
                 continue
             for _, entry in read_script(str(path.relative_to(ROOT))).walk():
                 if entry.key in ('focus', 'shared_focus') and hasattr(entry.value, 'get'):

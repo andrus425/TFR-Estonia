@@ -7,6 +7,10 @@ from build_kallas_continuation import POLICIES as KALLAS_POLICIES
 from build_reform_2023 import POLICIES as REFORM_2023_POLICIES, AI_ORDER as REFORM_2023_AI_ORDER
 from build_ekre_2023 import POLICIES as EKRE_2023_POLICIES, AI_ORDER as EKRE_2023_AI_ORDER
 from build_centre_2023 import POLICIES as CENTRE_2023_POLICIES, AI_ORDER as CENTRE_2023_AI_ORDER
+from build_isamaa_2023 import POLICIES as ISAMAA_2023_POLICIES, AI_ORDER as ISAMAA_2023_AI_ORDER
+from build_sde_2023 import POLICIES as SDE_2023_POLICIES, AI_ORDER as SDE_2023_AI_ORDER
+from build_e200_2023 import POLICIES as E200_2023_POLICIES, AI_ORDER as E200_2023_AI_ORDER
+from build_pp_2023 import POLICIES as PP_2023_POLICIES, AI_ORDER as PP_2023_AI_ORDER
 
 parser = argparse.ArgumentParser(description='Build Estonia normal content.')
 parser.add_argument('--focus-only', action='store_true', help='Update the tree, route AI, focus text and dependent decisions without rewriting events or reward ideas.')
@@ -300,7 +304,7 @@ focus_tree = {
     country = { factor = 0 modifier = { add = 100 original_tag = EST NOT = { has_country_flag = TFR_EST_occupied } } }
     default = no
     initial_show_position = { focus = TFR_EST_opening_kose_voobu }
-'''+''.join(f'    shared_focus = TFR_EST_opening_{policy.suffix}\n' for policy in POLICIES)+''.join(f'    shared_focus = TFR_EST_ratas_{policy.suffix}\n' for policy in RATAS_POLICIES)+''.join(f'    shared_focus = TFR_EST_kallas_{policy.suffix}\n' for policy in KALLAS_POLICIES)+''.join(f'    shared_focus = TFR_EST_reform_2023_{policy.suffix}\n' for policy in REFORM_2023_POLICIES)+''.join(f'    shared_focus = TFR_EST_ekre_2023_{policy.suffix}\n' for policy in EKRE_2023_POLICIES)+''.join(f'    shared_focus = TFR_EST_centre_2023_{policy.suffix}\n' for policy in CENTRE_2023_POLICIES)+''.join(f[1] for f in focuses)+'}\n'
+'''+''.join(f'    shared_focus = TFR_EST_opening_{policy.suffix}\n' for policy in POLICIES)+''.join(f'    shared_focus = TFR_EST_ratas_{policy.suffix}\n' for policy in RATAS_POLICIES)+''.join(f'    shared_focus = TFR_EST_kallas_{policy.suffix}\n' for policy in KALLAS_POLICIES)+''.join(f'    shared_focus = TFR_EST_reform_2023_{policy.suffix}\n' for policy in REFORM_2023_POLICIES)+''.join(f'    shared_focus = TFR_EST_ekre_2023_{policy.suffix}\n' for policy in EKRE_2023_POLICIES)+''.join(f'    shared_focus = TFR_EST_centre_2023_{policy.suffix}\n' for policy in CENTRE_2023_POLICIES)+''.join(f'    shared_focus = TFR_EST_isamaa_2023_{policy.suffix}\n' for policy in ISAMAA_2023_POLICIES)+''.join(f'    shared_focus = TFR_EST_sde_2023_{policy.suffix}\n' for policy in SDE_2023_POLICIES)+''.join(f'    shared_focus = TFR_EST_e200_2023_{policy.suffix}\n' for policy in E200_2023_POLICIES)+''.join(f'    shared_focus = TFR_EST_pp_2023_{policy.suffix}\n' for policy in PP_2023_POLICIES)+''.join(f[1] for f in focuses)+'}\n'
 
 ideas={
 'government_continuity':('Government Continuity','Secure communications, administrative backups and remote procedures keep government functioning when ordinary meetings are disrupted.','political_power_gain = 0.05'),
@@ -568,7 +572,7 @@ for suffix,pid,label in parties:
     shared_order=['reserve_register','logistics_audit','allied_liaison','kaitseliit_training','interoperability','reserve_training_exercise','industrial_survey','tallinn_industry']
     # Unavailable entries are skipped: reactive campaign content takes priority as soon as its stage opens.
     emergency_order=[node[0] for node in second]+[node[0] for node in first]+[node[0] for node in restoration]+[node[0] for node in post]+[node[0] for node in interwar]
-    elected_programmes = [('reform', REFORM_2023_AI_ORDER), ('ekre', EKRE_2023_AI_ORDER), ('centre', CENTRE_2023_AI_ORDER)]
+    elected_programmes = [('reform', REFORM_2023_AI_ORDER), ('ekre', EKRE_2023_AI_ORDER), ('centre', CENTRE_2023_AI_ORDER), ('isamaa', ISAMAA_2023_AI_ORDER), ('sde', SDE_2023_AI_ORDER), ('e200', E200_2023_AI_ORDER), ('pp', PP_2023_AI_ORDER)]
     elected_2023_order = [f'TFR_EST_{party}_2023_{node}'
                           for party, nodes in sorted(elected_programmes, key=lambda route: route[0] != suffix)
                           for node in nodes]

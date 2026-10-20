@@ -1,0 +1,21 @@
+# Runs only after committing a valid 101-seat assembly and its plurality.
+# Another valid vote retires this programme even if Parempoolsed wins again.
+TFR_EST_note_pp_2023_election = {
+    if = {
+        limit = { has_country_flag = TFR_EST_pp_2023_mandate }
+        set_country_flag = TFR_EST_pp_2023_mandate_ended
+    }
+    if = {
+        limit = {
+            date > 2023.3.4
+            date < 2024.1.1
+            check_variable = { var = TFR_EST_mandate_party value = 7 compare = equals }
+            NOT = { has_country_flag = TFR_EST_postwar_election_pending }
+            NOT = { has_country_flag = TFR_EST_postwar_election_held }
+            NOT = { has_country_flag = TFR_EST_pp_won_2023_election }
+        }
+        set_country_flag = TFR_EST_pp_won_2023_election
+        set_country_flag = TFR_EST_pp_2023_mandate
+        clr_country_flag = TFR_EST_pp_2023_mandate_ended
+    }
+}
