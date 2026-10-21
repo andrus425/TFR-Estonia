@@ -889,6 +889,16 @@ on territorial training. Its [preview sheet](docs/artwork/ratas/ratas-icons-prev
 full prompt/asset manifest are retained under `docs/artwork/ratas/`. Its generator
 maintains twenty base sprites and twenty matching shine variants. All textures
 use the same 170 × 150 canvas and transparent bottom 40 pixels.
+The twenty-focus Kallas Reform–Centre programme also has a complete matching
+set, with Reform yellow/gold and Centre emerald accents. Kallas appears on the
+formation and public-report icons; Kiik, Kersna and Laanet illustrate frontline
+vaccination, teacher pay and defence funding. Official period cabinet photos
+guided the minister likenesses; the reference photos remain outside the package.
+The [preview sheet](docs/artwork/kallas/kallas-icons-preview.png),
+[native-size sheet](docs/artwork/kallas/kallas-icons-native-size.png),
+[tree layout preview](docs/artwork/kallas/kallas-tree-preview.png), masters and
+exact prompts are in `docs/artwork/kallas/`. Its generator maintains twenty base
+and twenty shine sprites, using the same 170 × 150 RGBA/40-pixel-clearance format.
 No external photographs, music or copied TFR artwork are bundled.
 
 The content is implemented as a development build. Natural campaigns, rendered

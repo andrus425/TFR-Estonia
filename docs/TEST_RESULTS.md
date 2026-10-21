@@ -4,6 +4,24 @@ This is an implemented **development build**, not a declaration that the public
 v1 campaign matrix has passed. The pinned parent is **The Fire Rises 1.0.9.1c**.
 The installed executable reports **HOI4 Operation Postern 1.19.3.0.c01a**.
 
+## Kallas Reform–Centre artwork — 21 October 2026
+
+- All twenty dedicated PNG textures are 170 × 150 RGBA with meaningful alpha
+  and a fully transparent bottom 40 pixels. The enlarged/native-size contact
+  sheets and actual-layout tree preview were visually inspected.
+- The twenty focuses resolve to distinct base sprites and twenty corresponding
+  shine variants with matching masks. The Kallas generator passes `--check`.
+- `tools/validate_mod.py` parsed 122 mod files and reported 459 focuses, 62
+  events, 58 decisions, 2,268 localization keys and **zero errors**.
+- **46 existing tests passed** across Kallas continuation, Kallas crises and
+  focus presentation. Source preservation and sprite audits passed, along with
+  `git diff --check`.
+- Official cabinet photos were used as likeness references; originals remain
+  in the ignored cache. Generated masters, exact prompts, hashes and source
+  URLs are retained with the artwork. The tree preview is not an in-game
+  screenshot, and HOI4 was not launched for this artwork change. The broader
+  suite below retains its 20 October run.
+
 ## Ratas continuation artwork — 21 October 2026
 
 - All twenty dedicated textures are 170 × 150 RGBA PNGs with meaningful alpha

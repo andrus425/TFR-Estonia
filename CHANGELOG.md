@@ -1,5 +1,23 @@
 # Changelog
 
+## 21 October 2026 — Kallas Reform–Centre focus icons
+
+- Give all twenty focuses in the Reform–Centre branch after Ratas's resignation
+  dedicated TFR-style collage icons, using Reform yellow/gold and Centre green
+  according to political priority or the responsible cabinet portfolio.
+- Include Kallas on cabinet formation and the final report, Tanel Kiik on
+  frontline vaccination, Liina Kersna on teacher pay and Kalle Laanet on defence
+  funding. Use official period portraits as likeness references.
+- Generate twenty base and twenty shine sprites alongside the Kallas programme,
+  preserving all gameplay, focus coordinates, prerequisites and localization.
+- Retain masters, exact prompts, source references, asset hashes and three
+  review images in `docs/artwork/kallas/`. Export twenty 170 × 150 RGBA textures
+  with a fully transparent bottom 40 pixels. The runtime textures total 902,132
+  bytes; reference photographs are kept in the ignored cache.
+- Pass 46 existing Kallas continuation/crisis/presentation tests, generator
+  consistency, alpha clearance and static asset validation. The mod validator
+  reports zero errors; in-game rendering remains to be checked.
+
 ## 21 October 2026 — Ratas continuation focus icons
 
 - Give all twenty focuses in the retained-Ratas continuation their own TFR-style

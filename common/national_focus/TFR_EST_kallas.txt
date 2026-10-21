@@ -2,7 +2,7 @@
 
 shared_focus = {
     id = TFR_EST_kallas_govern_together
-    icon = GFX_goal_generic_national_unity
+    icon = GFX_goal_TFR_EST_kallas_govern_together
     x = 4
     y = 0
     cost = 5
@@ -25,7 +25,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_kallas_sick_pay
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_kallas_sick_pay
     x = 0
     y = 1
     cost = 5
@@ -50,7 +50,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_kallas_hospital_support
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_kallas_hospital_support
     x = 0
     y = 2
     cost = 5
@@ -75,7 +75,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_kallas_frontline_vaccination
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_kallas_frontline_vaccination
     x = 0
     y = 3
     cost = 5
@@ -100,7 +100,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_kallas_covid_certificates
-    icon = GFX_goal_generic_scientific_exchange
+    icon = GFX_goal_TFR_EST_kallas_covid_certificates
     x = 0
     y = 4
     cost = 5
@@ -124,7 +124,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_kallas_pension_twenty
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_kallas_pension_twenty
     x = 2
     y = 1
     cost = 5
@@ -148,7 +148,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_kallas_pension_tax_allowance
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_kallas_pension_tax_allowance
     x = 2
     y = 2
     cost = 5
@@ -172,7 +172,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_kallas_teacher_pay
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_kallas_teacher_pay
     x = 2
     y = 3
     cost = 5
@@ -196,7 +196,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_kallas_school_catch_up
-    icon = GFX_goal_generic_scientific_exchange
+    icon = GFX_goal_TFR_EST_kallas_school_catch_up
     x = 2
     y = 4
     cost = 5
@@ -220,7 +220,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_kallas_recovery_plan
-    icon = GFX_goal_generic_construct_infrastructure
+    icon = GFX_goal_TFR_EST_kallas_recovery_plan
     x = 4
     y = 1
     cost = 5
@@ -244,7 +244,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_kallas_enterprise_digital
-    icon = GFX_goal_generic_production
+    icon = GFX_goal_TFR_EST_kallas_enterprise_digital
     x = 4
     y = 2
     cost = 5
@@ -268,7 +268,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_kallas_rural_broadband
-    icon = GFX_goal_generic_scientific_exchange
+    icon = GFX_goal_TFR_EST_kallas_rural_broadband
     x = 4
     y = 3
     cost = 5
@@ -292,7 +292,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_kallas_mental_health
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_kallas_mental_health
     x = 4
     y = 4
     cost = 5
@@ -316,7 +316,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_kallas_energy_households
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_kallas_energy_households
     x = 6
     y = 1
     cost = 5
@@ -340,7 +340,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_kallas_energy_networks
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_kallas_energy_networks
     x = 6
     y = 2
     cost = 5
@@ -364,7 +364,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_kallas_gas_reserve
-    icon = GFX_goal_generic_oil_refinery
+    icon = GFX_goal_TFR_EST_kallas_gas_reserve
     x = 6
     y = 3
     cost = 5
@@ -388,7 +388,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_kallas_lng_connection
-    icon = GFX_goal_generic_construct_infrastructure
+    icon = GFX_goal_TFR_EST_kallas_lng_connection
     x = 6
     y = 4
     cost = 5
@@ -412,7 +412,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_kallas_defence_budget
-    icon = GFX_goal_generic_defence
+    icon = GFX_goal_TFR_EST_kallas_defence_budget
     x = 8
     y = 1
     cost = 5
@@ -436,7 +436,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_kallas_civil_protection
-    icon = GFX_goal_generic_national_unity
+    icon = GFX_goal_TFR_EST_kallas_civil_protection
     x = 8
     y = 2
     cost = 5
@@ -460,7 +460,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_kallas_account_to_voters
-    icon = GFX_goal_generic_national_unity
+    icon = GFX_goal_TFR_EST_kallas_account_to_voters
     x = 4
     y = 6
     cost = 5
