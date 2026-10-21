@@ -2,7 +2,7 @@
 
 shared_focus = {
     id = TFR_EST_ratas_renew_agreement
-    icon = GFX_goal_generic_national_unity
+    icon = GFX_goal_TFR_EST_ratas_renew_agreement
     x = 4
     y = 4
     cost = 5
@@ -26,7 +26,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_ratas_family_home_guarantees
-    icon = GFX_goal_generic_construct_civ_factory
+    icon = GFX_goal_TFR_EST_ratas_family_home_guarantees
     x = 0
     y = 5
     cost = 5
@@ -50,7 +50,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_ratas_child_tax_allowance
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_ratas_child_tax_allowance
     x = 0
     y = 6
     cost = 5
@@ -74,7 +74,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_ratas_home_care
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_ratas_home_care
     x = 0
     y = 7
     cost = 5
@@ -98,7 +98,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_ratas_state_jobs_counties
-    icon = GFX_goal_generic_political_pressure
+    icon = GFX_goal_TFR_EST_ratas_state_jobs_counties
     x = 2
     y = 5
     cost = 5
@@ -122,7 +122,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_ratas_rural_broadband
-    icon = GFX_goal_generic_scientific_exchange
+    icon = GFX_goal_TFR_EST_ratas_rural_broadband
     x = 2
     y = 6
     cost = 5
@@ -146,7 +146,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_ratas_industrial_parks
-    icon = GFX_goal_generic_construct_civ_factory
+    icon = GFX_goal_TFR_EST_ratas_industrial_parks
     x = 2
     y = 7
     cost = 5
@@ -170,7 +170,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_ratas_worker_retraining
-    icon = GFX_goal_generic_production
+    icon = GFX_goal_TFR_EST_ratas_worker_retraining
     x = 2
     y = 8
     cost = 5
@@ -194,7 +194,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_ratas_hospital_covid
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_ratas_hospital_covid
     x = 4
     y = 5
     cost = 5
@@ -219,7 +219,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_ratas_testing_tracing
-    icon = GFX_goal_generic_scientific_exchange
+    icon = GFX_goal_TFR_EST_ratas_testing_tracing
     x = 4
     y = 6
     cost = 5
@@ -244,7 +244,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_ratas_family_doctors
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_ratas_family_doctors
     x = 4
     y = 7
     cost = 5
@@ -268,7 +268,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_ratas_vaccinate_risk_groups
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_ratas_vaccinate_risk_groups
     x = 4
     y = 8
     cost = 5
@@ -293,7 +293,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_ratas_lng_connection
-    icon = GFX_goal_generic_oil_refinery
+    icon = GFX_goal_TFR_EST_ratas_lng_connection
     x = 6
     y = 5
     cost = 5
@@ -317,7 +317,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_ratas_grid_synchronisation
-    icon = GFX_goal_generic_construct_infrastructure
+    icon = GFX_goal_TFR_EST_ratas_grid_synchronisation
     x = 6
     y = 6
     cost = 5
@@ -341,7 +341,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_ratas_renewable_chp
-    icon = GFX_goal_generic_production
+    icon = GFX_goal_TFR_EST_ratas_renewable_chp
     x = 6
     y = 7
     cost = 5
@@ -365,7 +365,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_ratas_building_renovation
-    icon = GFX_goal_generic_construct_infrastructure
+    icon = GFX_goal_TFR_EST_ratas_building_renovation
     x = 6
     y = 8
     cost = 5
@@ -389,7 +389,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_ratas_network_charge_relief
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_ratas_network_charge_relief
     x = 6
     y = 9
     cost = 5
@@ -413,7 +413,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_ratas_police_reserve
-    icon = GFX_goal_generic_defence
+    icon = GFX_goal_TFR_EST_ratas_police_reserve
     x = 8
     y = 5
     cost = 5
@@ -437,7 +437,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_ratas_territorial_training
-    icon = GFX_goal_generic_army_doctrines
+    icon = GFX_goal_TFR_EST_ratas_territorial_training
     x = 8
     y = 6
     cost = 5
@@ -461,7 +461,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_ratas_account_to_voters
-    icon = GFX_goal_generic_national_unity
+    icon = GFX_goal_TFR_EST_ratas_account_to_voters
     x = 4
     y = 11
     cost = 5

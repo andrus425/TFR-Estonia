@@ -869,7 +869,27 @@ and the distinction between automated checks and in-game verification.
 The submod references installed TFR and base-game assets. The new prime ministers
 and some occupation administrators currently use existing **generic portraits**;
 they are named and scripted characters, but these are not custom likenesses.
-No external photographs, music or TFR artwork are bundled.
+The eleven opening focuses have original AI-generated TFR-style collage icons,
+with Centre emerald, Isamaa blue/gold and EKRE cornflower-blue accents. The
+Three Seas summit uses nonpartisan Estonian colors. Seeder, Ratas, Martin Helme
+and Kaljulaid appear in the relevant policy icons. Each runtime texture is a
+170 × 150 RGBA PNG with the bottom 40 pixels fully transparent for the label.
+The [preview sheet](docs/artwork/opening/opening-icons-preview.png),
+[native-size sheet](docs/artwork/opening/opening-icons-native-size.png),
+high-resolution masters and full generation prompts are retained under
+`docs/artwork/opening/`; `manifest.json` maps them to focus IDs and records
+party associations, export bounds and SHA-256 hashes. The opening generator
+also maintains all eleven base sprites and their TFR-style shine variants.
+The twenty-focus retained-Ratas continuation has a matching complete icon set,
+including Ratas on coalition renewal and the final public report, Seeder on
+child-based tax relief, Martin Helme on electricity-charge relief and Jüri Luik
+on territorial training. Its [preview sheet](docs/artwork/ratas/ratas-icons-preview.png),
+[native-size sheet](docs/artwork/ratas/ratas-icons-native-size.png),
+[tree layout preview](docs/artwork/ratas/ratas-tree-preview.png), masters and
+full prompt/asset manifest are retained under `docs/artwork/ratas/`. Its generator
+maintains twenty base sprites and twenty matching shine variants. All textures
+use the same 170 × 150 canvas and transparent bottom 40 pixels.
+No external photographs, music or copied TFR artwork are bundled.
 
 The content is implemented as a development build. Natural campaigns, rendered
 interface inspection, DLC combinations and balance testing are release gates

@@ -1,8 +1,42 @@
-# Validation results — 20 October 2026
+# Validation results — 21 October 2026
 
 This is an implemented **development build**, not a declaration that the public
 v1 campaign matrix has passed. The pinned parent is **The Fire Rises 1.0.9.1c**.
 The installed executable reports **HOI4 Operation Postern 1.19.3.0.c01a**.
+
+## Ratas continuation artwork — 21 October 2026
+
+- All twenty dedicated textures are 170 × 150 RGBA PNGs with meaningful alpha
+  and a fully transparent bottom 40 pixels. The enlarged/native-size review
+  sheets and tree layout preview were visually inspected.
+- The twenty focuses use twenty distinct base sprites and twenty matching shine
+  variants. The continuation generator reproduces those definitions in
+  `--check` mode; the opening generator also continues to pass `--check`.
+- `tools/validate_mod.py` parsed 121 mod files and reported 459 focuses, 62
+  events, 58 decisions, 2,268 localization keys and **zero errors**.
+- The 23 Ratas continuation, 26 Ratas crisis and 8 focus-presentation tests
+  passed: **57 tests**. `git diff --check` passed.
+- This is static and image validation. The layout preview uses the actual
+  focus coordinates/prerequisites but is not an in-game screenshot; the game
+  was not launched for this change. The broader suite below retains its
+  20 October run and was not rerun for these artwork changes.
+
+## Opening focus artwork — 21 October 2026
+
+- All eleven dedicated textures are 170 × 150 RGBA PNGs with meaningful
+  transparency and no nonzero alpha in the bottom 40 pixels. Both enlarged and
+  native-size contact sheets were visually inspected.
+- All eleven focus icons resolve to distinct registered base sprites, with
+  eleven matching shine sprites and per-icon animation masks. The shine overlay
+  resolves through the base game's existing DDS, following TFR's convention.
+- `tools/validate_mod.py` parsed 120 mod files and reported 459 focuses, 62
+  events, 58 decisions, 2,268 localization keys and **zero errors**.
+- The 35 opening-tree tests and 8 focus-presentation tests passed. Opening
+  content, opening story and focus-tooltip generators passed `--check`;
+  `git diff --check` passed.
+- This artwork change was checked through static parsing and image inspection;
+  the game was not launched for an in-game rendering check. The broader suite
+  results below retain their 20 October run; they were not rerun for this change.
 
 ## Automated source and behavior checks
 

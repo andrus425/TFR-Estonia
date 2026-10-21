@@ -1,5 +1,41 @@
 # Changelog
 
+## 21 October 2026 — Ratas continuation focus icons
+
+- Give all twenty focuses in the retained-Ratas continuation their own TFR-style
+  photographic collage icons, covering family support, county development,
+  healthcare, energy security, policing and territorial training.
+- Carry the opening set's party colors and portrait treatment into the branch:
+  Ratas on renewal and accountability, Seeder on child-based tax relief, Martin
+  Helme on electricity-charge relief and Jüri Luik on defence training.
+- Register twenty base sprites and twenty matching shine variants through the
+  continuation generator. Preserve gameplay, focus positions and localization.
+- Retain high-resolution masters, exact prompts, asset hashes, native/enlarged
+  review sheets and a tree layout preview in `docs/artwork/ratas/`. Export all
+  twenty textures at 170 × 150 RGBA with the bottom 40 pixels fully transparent.
+- Verify the generator, alpha clearance and texture references; 57 existing
+  continuation/crisis/presentation tests pass and the mod validator reports
+  zero errors. In-game rendering remains to be checked.
+
+## 21 October 2026 — Opening focus icons
+
+- Give all eleven opening focuses dedicated transparent collage icons matching
+  TFR's photographic cutouts, dark outlines, metallic highlights and party
+  colors: Centre emerald, Isamaa blue/gold, EKRE cornflower blue, and neutral
+  Estonian blue/cyan for the Three Seas summit.
+- Include Seeder on pension reform, Ratas on the COVID emergency, Martin Helme
+  on excise relief and the referendum bill, and Kaljulaid on the Tallinn summit.
+  Use workers, pensioners, schools, science equipment and infrastructure for
+  the other policies.
+- Export 170 × 150 RGBA game textures with 40 fully transparent bottom pixels;
+  retain high-resolution originals, prompts, hashes and two review sheets in
+  `docs/artwork/opening/`.
+- Generate eleven base sprite registrations and matching TFR shine variants
+  alongside the opening focus definitions. Existing gameplay and focus text
+  are unchanged. Validate all texture references, alpha clearance and generator
+  outputs; 43 existing opening/presentation tests pass and the mod validator
+  reports zero errors. In-game rendering remains to be checked.
+
 ## 20 October 2026 — Parempoolsed's alternative 2023 mandate
 
 - Add the seventh hidden 2023 election-victory programme: 32 focuses for a

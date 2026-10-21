@@ -4,7 +4,7 @@
 
 shared_focus = {
     id = TFR_EST_opening_pension_reform
-    icon = GFX_goal_generic_political_pressure
+    icon = GFX_goal_TFR_EST_opening_pension_reform
     x = 0
     y = 0
     cost = 5
@@ -27,7 +27,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_opening_teacher_pay
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_opening_teacher_pay
     x = 2
     y = 0
     cost = 5
@@ -50,7 +50,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_opening_covid_emergency
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_opening_covid_emergency
     x = 9
     y = 0
     cost = 5
@@ -75,7 +75,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_opening_pension_increase
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_opening_pension_increase
     x = 0
     y = 1
     cost = 5
@@ -99,7 +99,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_opening_wage_compensation
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_opening_wage_compensation
     x = 8
     y = 1
     cost = 5
@@ -123,7 +123,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_opening_excise_relief
-    icon = GFX_goal_generic_trade
+    icon = GFX_goal_TFR_EST_opening_excise_relief
     x = 10
     y = 1
     cost = 5
@@ -147,7 +147,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_opening_eastern_border
-    icon = GFX_goal_generic_defence
+    icon = GFX_goal_TFR_EST_opening_eastern_border
     x = 4
     y = 1
     cost = 5
@@ -171,7 +171,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_opening_kose_voobu
-    icon = GFX_goal_generic_construct_infrastructure
+    icon = GFX_goal_TFR_EST_opening_kose_voobu
     x = 5
     y = 0
     cost = 5
@@ -194,7 +194,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_opening_three_seas
-    icon = GFX_goal_generic_alliance
+    icon = GFX_goal_TFR_EST_opening_three_seas
     x = 6
     y = 1
     cost = 5
@@ -218,7 +218,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_opening_research_budget
-    icon = GFX_goal_generic_scientific_exchange
+    icon = GFX_goal_TFR_EST_opening_research_budget
     x = 2
     y = 1
     cost = 5
@@ -242,7 +242,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_opening_marriage_referendum
-    icon = GFX_goal_generic_national_unity
+    icon = GFX_goal_TFR_EST_opening_marriage_referendum
     x = 5
     y = 3
     cost = 5

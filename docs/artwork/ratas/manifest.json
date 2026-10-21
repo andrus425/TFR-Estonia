@@ -1,0 +1,555 @@
+{
+  "format": 1,
+  "created": "2026-10-21",
+  "generation_mode": "Built-in image_gen.imagegen",
+  "context": "Twenty-focus alternate-history continuation of the Centre-Isamaa-EKRE cabinet after Jüri Ratas decides to remain prime minister.",
+  "canvas": {
+    "width": 170,
+    "height": 150,
+    "artwork_max_y": 109,
+    "bottom_transparent_pixels": 40
+  },
+  "style": "Matches opening set and TFR photobash montages: photographic cutouts, dark contours, metallic bevels, party-colored rim lighting and genuine transparent alpha.",
+  "party_attribution": "Artistic association by political sponsorship or responsible portfolio. All policies belong to a shared coalition programme; these colors are not claims of exclusive party ownership. The retained premiership and its implementation are alternate history.",
+  "references": [
+    {
+      "role": "User-supplied size/style guide",
+      "file": "tfr_style_guide.png",
+      "constraints": "170 x 150 or 210 x 150; bottom 40 pixels blank"
+    },
+    {
+      "role": "Existing matching opening icon set and portrait edit sources",
+      "file": "../opening/manifest.json"
+    },
+    {
+      "role": "Policy context",
+      "file": "../../RATAS_CONTINUATION_SOURCES.md"
+    }
+  ],
+  "icons": [
+    {
+      "suffix": "renew_agreement",
+      "focus_id": "TFR_EST_ratas_renew_agreement",
+      "title": "Renew the Coalition Agreement",
+      "party": "Centre-led coalition",
+      "political_figure": "Jüri Ratas",
+      "source_generation_file": "exec-5d08cb16-9961-44d4-aa40-6612bf80b666.png",
+      "master": "masters/EST_ratas_renew_agreement.png",
+      "texture": "gfx/interface/goals/EST/EST_ratas_renew_agreement.png",
+      "sprite": "GFX_goal_TFR_EST_ratas_renew_agreement",
+      "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Create ONE compact, dense, irregular silhouette photobash collage in the exact TFR visual language: realistic photographic cutouts and highly polished game-icon compositing, NOT an illustration scene or flat vector. Dark charcoal/black 2px contour around each cutout, silver beveled edge highlights, dramatic contrast and colored rim lighting, restrained localized colored glow, dimensional metallic props, tiny textures kept bold and legible at 170px wide. No rectangular backing plate, no badge or shield enclosing the whole collage, no canvas border, no captions or watermarks, no decorative laurels. Aspect ratio 170:150. Main collage horizontally centered in the TOP 73 percent of canvas, fill almost all width, keep bottom 27 percent completely empty actual transparent alpha for the game's focus label; outside the cutout is also transparent, no checkerboard drawn. No text or lettering anywhere. All skin tones natural. Compose for sharp readable silhouette at tiny game UI scale. Edit this existing TFR icon into a NEW continuation focus icon. Preserve Jüri Ratas's exact face, hair, suit, green tie, portrait pose, photoreal cutout treatment and charcoal metallic edges. Remove the surgical mask, medical cross and virus completely. Replace all those right-side props with an open signed coalition agreement parchment, polished silver fountain pen and a firm handshake in front of Tallinn's Stenbock House. An emerald-green ribbon is dominant, with small cobalt-blue and gold coalition accents. Keep Estonian flag behind. Meaning: Ratas remains prime minister and renews the Centre-Isamaa-EKRE coalition agreement. No victory celebration or text; contract marks may be abstract nonlegible strokes. Same transparent silhouette and empty bottom label area.",
+      "edit_reference": "../opening/masters/EST_opening_covid_emergency.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "export_method": "Crop transparent padding at alpha > 1; fit inside 168 x 108 with Lanczos3; center on a transparent 170 x 150 canvas. Original master retained.",
+      "master_sha256": "3754325521346f545cdaf8d73f5faeaa9df44efbf14733b2b01c50070f4ff8da",
+      "texture_sha256": "9cc6815d19bdb6b0959cf8931f86b3b80f4fad678e78aae19ad5e5fb38cbfdc4",
+      "artwork_bounds": {
+        "left": 1,
+        "top": 3,
+        "width": 168,
+        "height": 103
+      },
+      "texture_bytes": 43427
+    },
+    {
+      "suffix": "family_home_guarantees",
+      "focus_id": "TFR_EST_ratas_family_home_guarantees",
+      "title": "Family Home Guarantees",
+      "party": "Isamaa",
+      "political_figure": null,
+      "source_generation_file": "exec-d633df82-35c1-4d24-8e32-eee28bc51ae0.png",
+      "master": "masters/EST_ratas_family_home_guarantees.png",
+      "texture": "gfx/interface/goals/EST/EST_ratas_family_home_guarantees.png",
+      "sprite": "GFX_goal_TFR_EST_ratas_family_home_guarantees",
+      "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Create ONE compact, dense, irregular silhouette photobash collage in the exact TFR visual language: realistic photographic cutouts and highly polished game-icon compositing, NOT an illustration scene or flat vector. Dark charcoal/black 2px contour around each cutout, silver beveled edge highlights, dramatic contrast and colored rim lighting, restrained localized colored glow, dimensional metallic props, tiny textures kept bold and legible at 170px wide. No rectangular backing plate, no badge or shield enclosing the whole collage, no canvas border, no captions or watermarks, no decorative laurels. Aspect ratio 170:150. Main collage horizontally centered in the TOP 73 percent of canvas, fill almost all width, keep bottom 27 percent completely empty actual transparent alpha for the game's focus label; outside the cutout is also transparent, no checkerboard drawn. No text or lettering anywhere. All skin tones natural. Compose for sharp readable silhouette at tiny game UI scale. Primary subject: realistic young Estonian family, two parents and a small child, in left foreground beside a small white gabled family house on right. An oversized polished silver house key and a folded home-loan guarantee document across the foreground, small brass euro coin. Restrained protective blue arc behind house, not a badge enclosing entire icon. Isamaa navy/cobalt rim lighting and restrained warm gold glints. Three main readable shapes family, house, key. Policy is public loan guarantees for viable family home purchases, not free homes. Natural faces, no letters or numbers.",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "export_method": "Crop transparent padding at alpha > 1; fit inside 168 x 108 with Lanczos3; center on a transparent 170 x 150 canvas. Original master retained.",
+      "master_sha256": "5811ffe8b176945a36f50815d3df359948983aec3e75e7a9293c4f85ee2f1fd6",
+      "texture_sha256": "bafa22249e9500f5528514c21fcead3d4fdd5061f82ba31b454499903c659afa",
+      "artwork_bounds": {
+        "left": 7,
+        "top": 1,
+        "width": 156,
+        "height": 108
+      },
+      "texture_bytes": 43380
+    },
+    {
+      "suffix": "child_tax_allowance",
+      "focus_id": "TFR_EST_ratas_child_tax_allowance",
+      "title": "Child-Based Tax Allowance",
+      "party": "Isamaa",
+      "political_figure": "Helir-Valdor Seeder",
+      "source_generation_file": "exec-56bab59c-7b53-438b-8bcc-ce68178597ab.png",
+      "master": "masters/EST_ratas_child_tax_allowance.png",
+      "texture": "gfx/interface/goals/EST/EST_ratas_child_tax_allowance.png",
+      "sprite": "GFX_goal_TFR_EST_ratas_child_tax_allowance",
+      "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Create ONE compact, dense, irregular silhouette photobash collage in the exact TFR visual language: realistic photographic cutouts and highly polished game-icon compositing, NOT an illustration scene or flat vector. Dark charcoal/black 2px contour around each cutout, silver beveled edge highlights, dramatic contrast and colored rim lighting, restrained localized colored glow, dimensional metallic props, tiny textures kept bold and legible at 170px wide. No rectangular backing plate, no badge or shield enclosing the whole collage, no canvas border, no captions or watermarks, no decorative laurels. Aspect ratio 170:150. Main collage horizontally centered in the TOP 73 percent of canvas, fill almost all width, keep bottom 27 percent completely empty actual transparent alpha for the game's focus label; outside the cutout is also transparent, no checkerboard drawn. No text or lettering anywhere. All skin tones natural. Compose for sharp readable silhouette at tiny game UI scale. Edit this existing TFR focus icon into a NEW family tax policy icon. Preserve Helir-Valdor Seeder's exact face, hair, beard, suit, portrait pose and photographic cutout style on left. Remove the columns, open padlock, pension parchment and current coins on right. Replace the entire prop group with a warmly lit realistic mother with child as a smaller cutout behind a silver tax ledger, a modest stack of euro coins and an elegant blue downward tax arrow. Maintain Isamaa deep navy/cobalt rim lighting with restrained gold. Retain the Estonian flag in back but no party slogans or readable text. Meaning: larger child-based income-tax allowance, ordinary working-family support. Keep transparent alpha background and empty bottom 27 percent label area.",
+      "edit_reference": "../opening/masters/EST_opening_pension_reform.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "export_method": "Crop transparent padding at alpha > 1; fit inside 168 x 108 with Lanczos3; center on a transparent 170 x 150 canvas. Original master retained.",
+      "master_sha256": "da2d4f37d281a28361cad124f559da0d7f6334993c9f97f071c26176a5e120ec",
+      "texture_sha256": "994b56ecd3339a0404102cd83f7131f16865e430776230a0101ddfac2f505358",
+      "artwork_bounds": {
+        "left": 2,
+        "top": 1,
+        "width": 166,
+        "height": 108
+      },
+      "texture_bytes": 45988
+    },
+    {
+      "suffix": "home_care",
+      "focus_id": "TFR_EST_ratas_home_care",
+      "title": "Home Nursing and Care",
+      "party": "Centre",
+      "political_figure": null,
+      "source_generation_file": "exec-10d26e3f-c4c1-4811-9b0e-0a0655ad37f4.png",
+      "master": "masters/EST_ratas_home_care.png",
+      "texture": "gfx/interface/goals/EST/EST_ratas_home_care.png",
+      "sprite": "GFX_goal_TFR_EST_ratas_home_care",
+      "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Create ONE compact, dense, irregular silhouette photobash collage in the exact TFR visual language: realistic photographic cutouts and highly polished game-icon compositing, NOT an illustration scene or flat vector. Dark charcoal/black 2px contour around each cutout, silver beveled edge highlights, dramatic contrast and colored rim lighting, restrained localized colored glow, dimensional metallic props, tiny textures kept bold and legible at 170px wide. No rectangular backing plate, no badge or shield enclosing the whole collage, no canvas border, no captions or watermarks, no decorative laurels. Aspect ratio 170:150. Main collage horizontally centered in the TOP 73 percent of canvas, fill almost all width, keep bottom 27 percent completely empty actual transparent alpha for the game's focus label; outside the cutout is also transparent, no checkerboard drawn. No text or lettering anywhere. All skin tones natural. Compose for sharp readable silhouette at tiny game UI scale. Primary subject: realistic friendly female home nurse in pale teal scrubs in left foreground gently supporting the hand of a dignified elderly Estonian woman seated at home on right. Behind them a small warm-lit gabled house cutout and dimensional silver medical cross. A stethoscope curves across foreground connecting the two figures. Centre Party emerald-green rim light with medical white and restrained warm window glow, natural skin. Three main readable shapes nurse, elderly woman, house-cross. Home nursing and municipal care services rather than an institution. No hospital bed or vaccine, no lettering.",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "export_method": "Crop transparent padding at alpha > 1; fit inside 168 x 108 with Lanczos3; center on a transparent 170 x 150 canvas. Original master retained.",
+      "master_sha256": "3c3b34d0828edc0c7e38891781c0438c21526d1a4c87d7f06dfc827446424602",
+      "texture_sha256": "0e92d8bb8d5d5bdb54eaf318e891d2a8ded58a065da0640e8aa0f7044c8a4a95",
+      "artwork_bounds": {
+        "left": 1,
+        "top": 3,
+        "width": 168,
+        "height": 103
+      },
+      "texture_bytes": 50457
+    },
+    {
+      "suffix": "state_jobs_counties",
+      "focus_id": "TFR_EST_ratas_state_jobs_counties",
+      "title": "State Jobs Beyond Tallinn",
+      "party": "Centre",
+      "political_figure": null,
+      "source_generation_file": "exec-6dc05ed8-f488-4598-bf70-f61a4fdd0104.png",
+      "master": "masters/EST_ratas_state_jobs_counties.png",
+      "texture": "gfx/interface/goals/EST/EST_ratas_state_jobs_counties.png",
+      "sprite": "GFX_goal_TFR_EST_ratas_state_jobs_counties",
+      "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Create ONE compact, dense, irregular silhouette photobash collage in the exact TFR visual language: realistic photographic cutouts and highly polished game-icon compositing, NOT an illustration scene or flat vector. Dark charcoal/black 2px contour around each cutout, silver beveled edge highlights, dramatic contrast and colored rim lighting, restrained localized colored glow, dimensional metallic props, tiny textures kept bold and legible at 170px wide. No rectangular backing plate, no badge or shield enclosing the whole collage, no canvas border, no captions or watermarks, no decorative laurels. Aspect ratio 170:150. Main collage horizontally centered in the TOP 73 percent of canvas, fill almost all width, keep bottom 27 percent completely empty actual transparent alpha for the game's focus label; outside the cutout is also transparent, no checkerboard drawn. No text or lettering anywhere. All skin tones natural. Compose for sharp readable silhouette at tiny game UI scale. Primary subject: oversized polished silver civil-service briefcase and an official paper dossier in foreground; behind, recognizable silhouette map of Estonia with three small county-town government office buildings connected by emerald outward arrows from a small Tallinn spire. Realistic timber-roofed county town facades, a modest desktop terminal. Centre Party emerald-green edge glow, slate silver and warm paper. Clear main masses briefcase, county offices, map. Read as relocating public-sector jobs from capital into counties; no crowd, no cash handouts. No labels, letters or numbers.",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "export_method": "Crop transparent padding at alpha > 1; fit inside 168 x 108 with Lanczos3; center on a transparent 170 x 150 canvas. Original master retained.",
+      "master_sha256": "d19fe8afc9fe591303992a1a2f0054012096347c6f500a95fa4fe6d080c796a9",
+      "texture_sha256": "1879f6ab67bdbdd45c43dbdafff87fb0eb3d7ccdbe3bce7c77795adfcefe42a0",
+      "artwork_bounds": {
+        "left": 9,
+        "top": 1,
+        "width": 151,
+        "height": 108
+      },
+      "texture_bytes": 37243
+    },
+    {
+      "suffix": "rural_broadband",
+      "focus_id": "TFR_EST_ratas_rural_broadband",
+      "title": "Last Mile of Rural Broadband",
+      "party": "Centre",
+      "political_figure": null,
+      "source_generation_file": "exec-f517b74b-df60-4f8f-852c-9f5fcd10bd3f.png",
+      "master": "masters/EST_ratas_rural_broadband.png",
+      "texture": "gfx/interface/goals/EST/EST_ratas_rural_broadband.png",
+      "sprite": "GFX_goal_TFR_EST_ratas_rural_broadband",
+      "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Create ONE compact, dense, irregular silhouette photobash collage in the exact TFR visual language: realistic photographic cutouts and highly polished game-icon compositing, NOT an illustration scene or flat vector. Dark charcoal/black 2px contour around each cutout, silver beveled edge highlights, dramatic contrast and colored rim lighting, restrained localized colored glow, dimensional metallic props, tiny textures kept bold and legible at 170px wide. No rectangular backing plate, no badge or shield enclosing the whole collage, no canvas border, no captions or watermarks, no decorative laurels. Aspect ratio 170:150. Main collage horizontally centered in the TOP 73 percent of canvas, fill almost all width, keep bottom 27 percent completely empty actual transparent alpha for the game's focus label; outside the cutout is also transparent, no checkerboard drawn. No text or lettering anywhere. All skin tones natural. Compose for sharp readable silhouette at tiny game UI scale. Primary subject: a large black fiber-optic cable connector and curved bundle of fine glowing optical fibers in foreground right; a rural Estonian timber farmhouse and small red-roofed village cutout on left, with a compact wireless router and silver laptop. Emerald light trail connects cable to farmhouse, two small pine trees behind; no rectangular landscape. Centre Party emerald-green and teal rim glow, silver highlights. Strong bold cable, farmhouse and laptop masses. Policy is fixed last-mile broadband to rural homes, no satellites or oversized city skyscrapers, no words.",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "export_method": "Crop transparent padding at alpha > 1; fit inside 168 x 108 with Lanczos3; center on a transparent 170 x 150 canvas. Original master retained.",
+      "master_sha256": "75c2765290bc529366d74bec155830db1567203e67af8bd7c7aba1413e85d612",
+      "texture_sha256": "0678ae251ccd36d81a30de02056a02f2ba42b46de74b1f5e2f6400841e9b66c9",
+      "artwork_bounds": {
+        "left": 1,
+        "top": 1,
+        "width": 168,
+        "height": 107
+      },
+      "texture_bytes": 43517
+    },
+    {
+      "suffix": "industrial_parks",
+      "focus_id": "TFR_EST_ratas_industrial_parks",
+      "title": "Regional Industrial Parks",
+      "party": "Centre",
+      "political_figure": null,
+      "source_generation_file": "exec-05b4907a-288b-4284-b195-d20587968ce2.png",
+      "master": "masters/EST_ratas_industrial_parks.png",
+      "texture": "gfx/interface/goals/EST/EST_ratas_industrial_parks.png",
+      "sprite": "GFX_goal_TFR_EST_ratas_industrial_parks",
+      "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Create ONE compact, dense, irregular silhouette photobash collage in the exact TFR visual language: realistic photographic cutouts and highly polished game-icon compositing, NOT an illustration scene or flat vector. Dark charcoal/black 2px contour around each cutout, silver beveled edge highlights, dramatic contrast and colored rim lighting, restrained localized colored glow, dimensional metallic props, tiny textures kept bold and legible at 170px wide. No rectangular backing plate, no badge or shield enclosing the whole collage, no canvas border, no captions or watermarks, no decorative laurels. Aspect ratio 170:150. Main collage horizontally centered in the TOP 73 percent of canvas, fill almost all width, keep bottom 27 percent completely empty actual transparent alpha for the game's focus label; outside the cutout is also transparent, no checkerboard drawn. No text or lettering anywhere. All skin tones natural. Compose for sharp readable silhouette at tiny game UI scale. Primary subject: compact group of modern low-rise industrial workshops and factory sheds prepared on a serviced industrial site; foreground a polished steel cogwheel, rolled blueprints, yellow construction hardhat and a small delivery truck. A small utility pipe and electric connector symbolize serviced access. Centre Party emerald-green edge light, slate metal, small yellow safety accents. Tight irregular collage, no surrounding landscape, smoke not dominant. Main shapes factory buildings, cogwheel/hardhat and blueprint. Regional production and employment development, no skyscrapers, no text.",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "export_method": "Crop transparent padding at alpha > 1; fit inside 168 x 108 with Lanczos3; center on a transparent 170 x 150 canvas. Original master retained.",
+      "master_sha256": "aba916966aa1f849dbf3a8337e3dd2c49843671e2ee94e8aae37ac4b6fbb6981",
+      "texture_sha256": "58ac58978d982b1246e6154ba9b78c536b75fcb4818b386231b0cd880f85dc6a",
+      "artwork_bounds": {
+        "left": 1,
+        "top": 6,
+        "width": 168,
+        "height": 97
+      },
+      "texture_bytes": 44028
+    },
+    {
+      "suffix": "worker_retraining",
+      "focus_id": "TFR_EST_ratas_worker_retraining",
+      "title": "Adult Worker Retraining",
+      "party": "Centre",
+      "political_figure": null,
+      "source_generation_file": "exec-dab1e1c3-2fcd-4cfa-baa5-888908c1695b.png",
+      "master": "masters/EST_ratas_worker_retraining.png",
+      "texture": "gfx/interface/goals/EST/EST_ratas_worker_retraining.png",
+      "sprite": "GFX_goal_TFR_EST_ratas_worker_retraining",
+      "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Create ONE compact, dense, irregular silhouette photobash collage in the exact TFR visual language: realistic photographic cutouts and highly polished game-icon compositing, NOT an illustration scene or flat vector. Dark charcoal/black 2px contour around each cutout, silver beveled edge highlights, dramatic contrast and colored rim lighting, restrained localized colored glow, dimensional metallic props, tiny textures kept bold and legible at 170px wide. No rectangular backing plate, no badge or shield enclosing the whole collage, no canvas border, no captions or watermarks, no decorative laurels. Aspect ratio 170:150. Main collage horizontally centered in the TOP 73 percent of canvas, fill almost all width, keep bottom 27 percent completely empty actual transparent alpha for the game's focus label; outside the cutout is also transparent, no checkerboard drawn. No text or lettering anywhere. All skin tones natural. Compose for sharp readable silhouette at tiny game UI scale. Primary subject: realistic Estonian adult worker age about40 in dark work jacket at left, holding a polished silver adjustable wrench; at right open technical-training manual, sturdy laptop with abstract green circuitry on screen, one metallic cogwheel and a small graduation cap. Natural determined expression, no politician likeness. Centre Party emerald-green rim lighting with silver machine highlights. A curved green forward arrow connects the manual to the wrench. Compact readable photobash emphasizing learning new technical and digital skills, no office stock-photo background, no words.",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "export_method": "Crop transparent padding at alpha > 1; fit inside 168 x 108 with Lanczos3; center on a transparent 170 x 150 canvas. Original master retained.",
+      "master_sha256": "41311d26f63707f8b664ef6d8496fa1e21ed4899175d1b6ec6a9721d5f93918b",
+      "texture_sha256": "0822f09598dfccd410dbc807fa00ed341fd2f852fe2b730597f6025ed6b91604",
+      "artwork_bounds": {
+        "left": 1,
+        "top": 2,
+        "width": 168,
+        "height": 105
+      },
+      "texture_bytes": 41484
+    },
+    {
+      "suffix": "hospital_covid",
+      "focus_id": "TFR_EST_ratas_hospital_covid",
+      "title": "County Hospital COVID Wards",
+      "party": "Centre",
+      "political_figure": null,
+      "source_generation_file": "exec-8f5ad3c1-611e-4d3e-b45a-bfc46cdfa764.png",
+      "master": "masters/EST_ratas_hospital_covid.png",
+      "texture": "gfx/interface/goals/EST/EST_ratas_hospital_covid.png",
+      "sprite": "GFX_goal_TFR_EST_ratas_hospital_covid",
+      "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Create ONE compact, dense, irregular silhouette photobash collage in the exact TFR visual language: realistic photographic cutouts and highly polished game-icon compositing, NOT an illustration scene or flat vector. Dark charcoal/black 2px contour around each cutout, silver beveled edge highlights, dramatic contrast and colored rim lighting, restrained localized colored glow, dimensional metallic props, tiny textures kept bold and legible at 170px wide. No rectangular backing plate, no badge or shield enclosing the whole collage, no canvas border, no captions or watermarks, no decorative laurels. Aspect ratio 170:150. Main collage horizontally centered in the TOP 73 percent of canvas, fill almost all width, keep bottom 27 percent completely empty actual transparent alpha for the game's focus label; outside the cutout is also transparent, no checkerboard drawn. No text or lettering anywhere. All skin tones natural. Compose for sharp readable silhouette at tiny game UI scale. Primary subject: a modern hospital isolation bed and large oxygen cylinder with regulator in foreground, a realistic masked medical worker in pale protective scrubs at left, county hospital facade and large polished silver medical cross behind. One small restrained red coronavirus particle near the oxygen equipment. Centre Party emerald-green and medical-white rim glow, cool blue bedding. Strong three shapes nurse, bed/oxygen, hospital cross. Policy is financing isolation wards, oxygen and staffing during2021 COVID outbreak. No syringe or vaccine here, no lettering, no full rectangular room.",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "export_method": "Crop transparent padding at alpha > 1; fit inside 168 x 108 with Lanczos3; center on a transparent 170 x 150 canvas. Original master retained.",
+      "master_sha256": "2bec8112840627275bf18742051e5fe5b98317d55077389d6980cde2ab914ffe",
+      "texture_sha256": "8f1de2929caf239a2bf56999299021827712a1af346cc63b7e8265f60898d35d",
+      "artwork_bounds": {
+        "left": 6,
+        "top": 1,
+        "width": 158,
+        "height": 108
+      },
+      "texture_bytes": 44839
+    },
+    {
+      "suffix": "testing_tracing",
+      "focus_id": "TFR_EST_ratas_testing_tracing",
+      "title": "Testing and Contact Tracing",
+      "party": "Centre",
+      "political_figure": null,
+      "source_generation_file": "exec-ee9bc3f8-24ab-4f8f-9d9f-cf5248585ba1.png",
+      "master": "masters/EST_ratas_testing_tracing.png",
+      "texture": "gfx/interface/goals/EST/EST_ratas_testing_tracing.png",
+      "sprite": "GFX_goal_TFR_EST_ratas_testing_tracing",
+      "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Create ONE compact, dense, irregular silhouette photobash collage in the exact TFR visual language: realistic photographic cutouts and highly polished game-icon compositing, NOT an illustration scene or flat vector. Dark charcoal/black 2px contour around each cutout, silver beveled edge highlights, dramatic contrast and colored rim lighting, restrained localized colored glow, dimensional metallic props, tiny textures kept bold and legible at 170px wide. No rectangular backing plate, no badge or shield enclosing the whole collage, no canvas border, no captions or watermarks, no decorative laurels. Aspect ratio 170:150. Main collage horizontally centered in the TOP 73 percent of canvas, fill almost all width, keep bottom 27 percent completely empty actual transparent alpha for the game's focus label; outside the cutout is also transparent, no checkerboard drawn. No text or lettering anywhere. All skin tones natural. Compose for sharp readable silhouette at tiny game UI scale. Primary subject: close-up realistic gloved hand holding a long swab over a transparent sample tube; silver laboratory tube rack and a compact microscope in front. Behind/right, a dark smartphone with an abstract emerald network of connected contact nodes, one magnifying glass surrounding a restrained red virus particle. Centre Party emerald-green and teal rim glow, white and silver highlights. The swab/tube, contact network and lab rack are the main readable masses. Testing plus prompt contact tracing, no personal names, QR codes or readable screen text, no syringes.",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "export_method": "Crop transparent padding at alpha > 1; fit inside 168 x 108 with Lanczos3; center on a transparent 170 x 150 canvas. Original master retained.",
+      "master_sha256": "4773250eb9f194c26347b3a15d633b1af384bd843546c6ed9aec2e5af51b9ba1",
+      "texture_sha256": "69c01d5f4931c8e54a5635e84d8fc5cc36d28703134c598c6fcbfbf6818329b8",
+      "artwork_bounds": {
+        "left": 8,
+        "top": 1,
+        "width": 154,
+        "height": 108
+      },
+      "texture_bytes": 42133
+    },
+    {
+      "suffix": "family_doctors",
+      "focus_id": "TFR_EST_ratas_family_doctors",
+      "title": "Evening and Weekend Doctors",
+      "party": "Centre",
+      "political_figure": null,
+      "source_generation_file": "exec-a7b6e690-2b57-4e09-9853-0fdf857f0124.png",
+      "master": "masters/EST_ratas_family_doctors.png",
+      "texture": "gfx/interface/goals/EST/EST_ratas_family_doctors.png",
+      "sprite": "GFX_goal_TFR_EST_ratas_family_doctors",
+      "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Create ONE compact, dense, irregular silhouette photobash collage in the exact TFR visual language: realistic photographic cutouts and highly polished game-icon compositing, NOT an illustration scene or flat vector. Dark charcoal/black 2px contour around each cutout, silver beveled edge highlights, dramatic contrast and colored rim lighting, restrained localized colored glow, dimensional metallic props, tiny textures kept bold and legible at 170px wide. No rectangular backing plate, no badge or shield enclosing the whole collage, no canvas border, no captions or watermarks, no decorative laurels. Aspect ratio 170:150. Main collage horizontally centered in the TOP 73 percent of canvas, fill almost all width, keep bottom 27 percent completely empty actual transparent alpha for the game's focus label; outside the cutout is also transparent, no checkerboard drawn. No text or lettering anywhere. All skin tones natural. Compose for sharp readable silhouette at tiny game UI scale. Primary subject: friendly realistic male Estonian family doctor in white coat, about50, natural greying hair and glasses, holding a stethoscope in left foreground. At right a large classic black doctor's bag with silver medical cross, polished analog clock showing evening with no numerals, and a small illuminated neighborhood clinic facade. Centre Party emerald-green rim glow, warm amber clinic windows, white coat and silver instruments. Read as primary-care access beyond normal working hours; no hospital ward, no vaccines or virus, no letters.",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "export_method": "Crop transparent padding at alpha > 1; fit inside 168 x 108 with Lanczos3; center on a transparent 170 x 150 canvas. Original master retained.",
+      "master_sha256": "0ec2f30cb907a7f18171a4f406d10cb8130d1dd9883ffce1fb22fdd44c048f55",
+      "texture_sha256": "2ce9013e6659e6b1f94c499177e013bbb93409eceb09584804b9bb87a88b1fd2",
+      "artwork_bounds": {
+        "left": 1,
+        "top": 2,
+        "width": 168,
+        "height": 105
+      },
+      "texture_bytes": 45583
+    },
+    {
+      "suffix": "vaccinate_risk_groups",
+      "focus_id": "TFR_EST_ratas_vaccinate_risk_groups",
+      "title": "Vaccinate Risk Groups",
+      "party": "Centre",
+      "political_figure": null,
+      "source_generation_file": "exec-83109cce-e7c5-451e-8a55-508a028cdc90.png",
+      "master": "masters/EST_ratas_vaccinate_risk_groups.png",
+      "texture": "gfx/interface/goals/EST/EST_ratas_vaccinate_risk_groups.png",
+      "sprite": "GFX_goal_TFR_EST_ratas_vaccinate_risk_groups",
+      "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Create ONE compact, dense, irregular silhouette photobash collage in the exact TFR visual language: realistic photographic cutouts and highly polished game-icon compositing, NOT an illustration scene or flat vector. Dark charcoal/black 2px contour around each cutout, silver beveled edge highlights, dramatic contrast and colored rim lighting, restrained localized colored glow, dimensional metallic props, tiny textures kept bold and legible at 170px wide. No rectangular backing plate, no badge or shield enclosing the whole collage, no canvas border, no captions or watermarks, no decorative laurels. Aspect ratio 170:150. Main collage horizontally centered in the TOP 73 percent of canvas, fill almost all width, keep bottom 27 percent completely empty actual transparent alpha for the game's focus label; outside the cutout is also transparent, no checkerboard drawn. No text or lettering anywhere. All skin tones natural. Compose for sharp readable silhouette at tiny game UI scale. Primary subject: oversized realistic sterile vaccine vial and capped medical syringe diagonally across right foreground, a protective silver medical cross and cold-chain insulated transport case behind. On left a dignified elderly Estonian couple as smaller realistic photographic busts, with a family doctor's gloved hand holding an appointment card. Centre Party emerald-green rim glow with cool ice-blue cold-chain highlights and natural warm faces. Main masses elderly couple, vial/syringe and medical cross. Symbolic2021 priority vaccination program, no injection into body, no promises or lettering, no labels.",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "export_method": "Crop transparent padding at alpha > 1; fit inside 168 x 108 with Lanczos3; center on a transparent 170 x 150 canvas. Original master retained.",
+      "master_sha256": "7fb4e2800e6677a5563819370148b7936e6adb7babf7f85fa9d161ac85eee140",
+      "texture_sha256": "1a1fa15e59462f5765d3bc96634182e355107b5c3f4b9dee372198b9d1c126fe",
+      "artwork_bounds": {
+        "left": 1,
+        "top": 5,
+        "width": 168,
+        "height": 99
+      },
+      "texture_bytes": 46810
+    },
+    {
+      "suffix": "lng_connection",
+      "focus_id": "TFR_EST_ratas_lng_connection",
+      "title": "Estonian LNG Connection",
+      "party": "Centre",
+      "political_figure": null,
+      "source_generation_file": "exec-fdb3e0e5-37e0-454f-a5ff-80f966b1d650.png",
+      "master": "masters/EST_ratas_lng_connection.png",
+      "texture": "gfx/interface/goals/EST/EST_ratas_lng_connection.png",
+      "sprite": "GFX_goal_TFR_EST_ratas_lng_connection",
+      "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Create ONE compact, dense, irregular silhouette photobash collage in the exact TFR visual language: realistic photographic cutouts and highly polished game-icon compositing, NOT an illustration scene or flat vector. Dark charcoal/black 2px contour around each cutout, silver beveled edge highlights, dramatic contrast and colored rim lighting, restrained localized colored glow, dimensional metallic props, tiny textures kept bold and legible at 170px wide. No rectangular backing plate, no badge or shield enclosing the whole collage, no canvas border, no captions or watermarks, no decorative laurels. Aspect ratio 170:150. Main collage horizontally centered in the TOP 73 percent of canvas, fill almost all width, keep bottom 27 percent completely empty actual transparent alpha for the game's focus label; outside the cutout is also transparent, no checkerboard drawn. No text or lettering anywhere. All skin tones natural. Compose for sharp readable silhouette at tiny game UI scale. Primary subject: realistic large silver LNG storage tank and blue-white LNG carrier ship in a tight maritime infrastructure collage; a large polished pipeline valve and coupling in foreground, rolled engineering blueprint and a small construction crane behind. Baltic port crane silhouette and subtle Estonian flag. Centre Party emerald-green rim light on tank and pipes with cool teal water reflection, no surrounding rectangular sea or sky. Main masses LNG tank, carrier bow, valve. Read as financing enabling studies and connection works, with blueprint and crane indicating a project, not a completed terminal. No text.",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "export_method": "Crop transparent padding at alpha > 1; fit inside 168 x 108 with Lanczos3; center on a transparent 170 x 150 canvas. Original master retained.",
+      "master_sha256": "1a006201f7b09f738dd0035bd8f5332ebe416f03cba7e5608a066bee207d10d9",
+      "texture_sha256": "b0e7d447fcc3fd017649fb367b5cb044d904e3eeeeee22baa2df2d9c26d7c705",
+      "artwork_bounds": {
+        "left": 1,
+        "top": 2,
+        "width": 168,
+        "height": 105
+      },
+      "texture_bytes": 50359
+    },
+    {
+      "suffix": "grid_synchronisation",
+      "focus_id": "TFR_EST_ratas_grid_synchronisation",
+      "title": "European Grid Synchronisation",
+      "party": "Centre",
+      "political_figure": null,
+      "source_generation_file": "exec-5ac1c581-46ae-4930-8315-5ebcb482a801.png",
+      "master": "masters/EST_ratas_grid_synchronisation.png",
+      "texture": "gfx/interface/goals/EST/EST_ratas_grid_synchronisation.png",
+      "sprite": "GFX_goal_TFR_EST_ratas_grid_synchronisation",
+      "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Create ONE compact, dense, irregular silhouette photobash collage in the exact TFR visual language: realistic photographic cutouts and highly polished game-icon compositing, NOT an illustration scene or flat vector. Dark charcoal/black 2px contour around each cutout, silver beveled edge highlights, dramatic contrast and colored rim lighting, restrained localized colored glow, dimensional metallic props, tiny textures kept bold and legible at 170px wide. No rectangular backing plate, no badge or shield enclosing the whole collage, no canvas border, no captions or watermarks, no decorative laurels. Aspect ratio 170:150. Main collage horizontally centered in the TOP 73 percent of canvas, fill almost all width, keep bottom 27 percent completely empty actual transparent alpha for the game's focus label; outside the cutout is also transparent, no checkerboard drawn. No text or lettering anywhere. All skin tones natural. Compose for sharp readable silhouette at tiny game UI scale. Primary subject: large polished silver electrical pylon and heavy ceramic power insulators in foreground, compact circuit-breaker equipment behind. On right a dark metallic silhouette map of Estonia and Baltic region linked by bright emerald power lines toward a small blue EU flag with gold stars. A rolled planning blueprint along bottom of collage. Centre Party emerald-green edge glow, silver metal, restrained EU blue/gold accents. Engineering integration and financing for European-grid synchronisation, not a lightning disaster. Tight clear silhouette no full landscape, no map labels or text.",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "export_method": "Crop transparent padding at alpha > 1; fit inside 168 x 108 with Lanczos3; center on a transparent 170 x 150 canvas. Original master retained.",
+      "master_sha256": "680862643cc51beca957bb3e830748fdc6ad223ca4e39ce4ba29af1270255ff2",
+      "texture_sha256": "43880f688e80cf3fe2f345a157ad2dd59ff7f89a4258935340806f72b60dd70b",
+      "artwork_bounds": {
+        "left": 1,
+        "top": 1,
+        "width": 168,
+        "height": 108
+      },
+      "texture_bytes": 44761
+    },
+    {
+      "suffix": "renewable_chp",
+      "focus_id": "TFR_EST_ratas_renewable_chp",
+      "title": "Renewable Heat and Power",
+      "party": "Centre",
+      "political_figure": null,
+      "source_generation_file": "exec-b270fc19-eb9b-4aae-baa5-a82b91946fd1.png",
+      "master": "masters/EST_ratas_renewable_chp.png",
+      "texture": "gfx/interface/goals/EST/EST_ratas_renewable_chp.png",
+      "sprite": "GFX_goal_TFR_EST_ratas_renewable_chp",
+      "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Create ONE compact, dense, irregular silhouette photobash collage in the exact TFR visual language: realistic photographic cutouts and highly polished game-icon compositing, NOT an illustration scene or flat vector. Dark charcoal/black 2px contour around each cutout, silver beveled edge highlights, dramatic contrast and colored rim lighting, restrained localized colored glow, dimensional metallic props, tiny textures kept bold and legible at 170px wide. No rectangular backing plate, no badge or shield enclosing the whole collage, no canvas border, no captions or watermarks, no decorative laurels. Aspect ratio 170:150. Main collage horizontally centered in the TOP 73 percent of canvas, fill almost all width, keep bottom 27 percent completely empty actual transparent alpha for the game's focus label; outside the cutout is also transparent, no checkerboard drawn. No text or lettering anywhere. All skin tones natural. Compose for sharp readable silhouette at tiny game UI scale. Primary subject: compact realistic biomass combined heat-and-power plant with a low silver turbine housing and small brick boilerhouse chimney; foreground oversized copper insulated district-heating pipe and polished electric turbine rotor, a handful of wood pellets with green leaves. One glowing green electricity bolt and warm orange heat-wave motif integrate behind props, a small Estonian town apartment block behind. Centre Party emerald-green rim glow with warm copper heat accents. Main shapes plant, hot-water pipe, turbine/wood fuel. Must show both heat and power using local renewable fuels, no windfarm as dominant subject, no words.",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "export_method": "Crop transparent padding at alpha > 1; fit inside 168 x 108 with Lanczos3; center on a transparent 170 x 150 canvas. Original master retained.",
+      "master_sha256": "ec4358ef0f257458578ad30586462bb891de0933fd66b55e0aa2302900ec6f26",
+      "texture_sha256": "8e7de3369cab59536412c172908b9f5c969d67d459d9b0ace28e7bda18d75bd2",
+      "artwork_bounds": {
+        "left": 1,
+        "top": 2,
+        "width": 168,
+        "height": 106
+      },
+      "texture_bytes": 44753
+    },
+    {
+      "suffix": "building_renovation",
+      "focus_id": "TFR_EST_ratas_building_renovation",
+      "title": "Renovation for Warm Homes",
+      "party": "Centre",
+      "political_figure": null,
+      "source_generation_file": "exec-d0441acd-4608-4e2c-9445-935df9c1121e.png",
+      "master": "masters/EST_ratas_building_renovation.png",
+      "texture": "gfx/interface/goals/EST/EST_ratas_building_renovation.png",
+      "sprite": "GFX_goal_TFR_EST_ratas_building_renovation",
+      "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Create ONE compact, dense, irregular silhouette photobash collage in the exact TFR visual language: realistic photographic cutouts and highly polished game-icon compositing, NOT an illustration scene or flat vector. Dark charcoal/black 2px contour around each cutout, silver beveled edge highlights, dramatic contrast and colored rim lighting, restrained localized colored glow, dimensional metallic props, tiny textures kept bold and legible at 170px wide. No rectangular backing plate, no badge or shield enclosing the whole collage, no canvas border, no captions or watermarks, no decorative laurels. Aspect ratio 170:150. Main collage horizontally centered in the TOP 73 percent of canvas, fill almost all width, keep bottom 27 percent completely empty actual transparent alpha for the game's focus label; outside the cutout is also transparent, no checkerboard drawn. No text or lettering anywhere. All skin tones natural. Compose for sharp readable silhouette at tiny game UI scale. Primary subject: compact realistic Estonian mid-rise apartment building under renovation, with one visible scaffolding edge and warm-lit windows; foreground a large cutaway slab of wall insulation, a silver trowel and rolled renovation blueprint, modest euro coin. A small thermometer and curving green energy-saving arrow support the message. Centre Party emerald-green rim lighting, warm amber windows, slate silver tools. Strong building, insulation and tool shapes. Policy is grants for apartment insulation and efficient heating outside Tallinn, not new luxury construction. No letters, numbers or banners.",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "export_method": "Crop transparent padding at alpha > 1; fit inside 168 x 108 with Lanczos3; center on a transparent 170 x 150 canvas. Original master retained.",
+      "master_sha256": "446a723a2305c2277645779f5ee84c6ad3cdfb80d3e811130e60896f00b95fa7",
+      "texture_sha256": "639b826bc58fc9a7c5e581b6f9615ba882f8c5f4f9b2de972c2efec00162001e",
+      "artwork_bounds": {
+        "left": 3,
+        "top": 1,
+        "width": 163,
+        "height": 108
+      },
+      "texture_bytes": 46079
+    },
+    {
+      "suffix": "network_charge_relief",
+      "focus_id": "TFR_EST_ratas_network_charge_relief",
+      "title": "Electricity Charge Relief",
+      "party": "EKRE",
+      "political_figure": "Martin Helme",
+      "source_generation_file": "exec-58365710-37d8-4ef7-8944-602c18a7358b.png",
+      "master": "masters/EST_ratas_network_charge_relief.png",
+      "texture": "gfx/interface/goals/EST/EST_ratas_network_charge_relief.png",
+      "sprite": "GFX_goal_TFR_EST_ratas_network_charge_relief",
+      "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Create ONE compact, dense, irregular silhouette photobash collage in the exact TFR visual language: realistic photographic cutouts and highly polished game-icon compositing, NOT an illustration scene or flat vector. Dark charcoal/black 2px contour around each cutout, silver beveled edge highlights, dramatic contrast and colored rim lighting, restrained localized colored glow, dimensional metallic props, tiny textures kept bold and legible at 170px wide. No rectangular backing plate, no badge or shield enclosing the whole collage, no canvas border, no captions or watermarks, no decorative laurels. Aspect ratio 170:150. Main collage horizontally centered in the TOP 73 percent of canvas, fill almost all width, keep bottom 27 percent completely empty actual transparent alpha for the game's focus label; outside the cutout is also transparent, no checkerboard drawn. No text or lettering anywhere. All skin tones natural. Compose for sharp readable silhouette at tiny game UI scale. Edit this existing TFR focus icon into a NEW electricity network-charge relief icon. Preserve Martin Helme's exact face, short brown hair, clean-shaven likeness, suit, pale blue tie, photographic portrait cutout and EKRE blue rim lighting. Remove diesel nozzle, fuel can and oil drop completely. Replace right props with a large metallic electricity meter, a short power-grid pylon, a folded household electricity bill with abstract lines but NO readable text, and a silver downward fee arrow over a euro coin. Keep cornflower and Estonian flag as small accents. EKRE cornflower/icy-blue rim glow and black/silver metal. This policy reduces network charges temporarily, distinctly from fuel excise. Transparent background and empty bottom label space.",
+      "edit_reference": "../opening/masters/EST_opening_excise_relief.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "export_method": "Crop transparent padding at alpha > 1; fit inside 168 x 108 with Lanczos3; center on a transparent 170 x 150 canvas. Original master retained.",
+      "master_sha256": "271829386a7d1b3eaa158e9dbe94abe9b3f7b7ac66e192ce1b6006dc7e064a84",
+      "texture_sha256": "5306f96a559c7bd1bc6ed36ce4a65e45d4760969cb4c4795aeb4ecb7d179b9e7",
+      "artwork_bounds": {
+        "left": 1,
+        "top": 1,
+        "width": 168,
+        "height": 107
+      },
+      "texture_bytes": 49277
+    },
+    {
+      "suffix": "police_reserve",
+      "focus_id": "TFR_EST_ratas_police_reserve",
+      "title": "Police and Border-Guard Reserve",
+      "party": "EKRE",
+      "political_figure": null,
+      "source_generation_file": "exec-b2dbca7a-d0b1-4c46-9100-9088398de1ba.png",
+      "master": "masters/EST_ratas_police_reserve.png",
+      "texture": "gfx/interface/goals/EST/EST_ratas_police_reserve.png",
+      "sprite": "GFX_goal_TFR_EST_ratas_police_reserve",
+      "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Create ONE compact, dense, irregular silhouette photobash collage in the exact TFR visual language: realistic photographic cutouts and highly polished game-icon compositing, NOT an illustration scene or flat vector. Dark charcoal/black 2px contour around each cutout, silver beveled edge highlights, dramatic contrast and colored rim lighting, restrained localized colored glow, dimensional metallic props, tiny textures kept bold and legible at 170px wide. No rectangular backing plate, no badge or shield enclosing the whole collage, no canvas border, no captions or watermarks, no decorative laurels. Aspect ratio 170:150. Main collage horizontally centered in the TOP 73 percent of canvas, fill almost all width, keep bottom 27 percent completely empty actual transparent alpha for the game's focus label; outside the cutout is also transparent, no checkerboard drawn. No text or lettering anywhere. All skin tones natural. Compose for sharp readable silhouette at tiny game UI scale. Primary subject: realistic Estonian police reservist in dark navy uniform and cap at left, and an olive-uniform border-guard reservist as a smaller supporting bust at right. Foreground a polished radio handset and silver police badge without lettering, blue-black-white border post behind. A compact recruitment dossier and training checklist with abstract marks convey organized lawful emergency reserve. EKRE cornflower/icy-blue rim lighting, black and silver accents. Strong police officer, guard/post and radio shapes, no army tank, no militarized riot scene, no pointed weapons, no text.",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "export_method": "Crop transparent padding at alpha > 1; fit inside 168 x 108 with Lanczos3; center on a transparent 170 x 150 canvas. Original master retained.",
+      "master_sha256": "f90cb778ba98919a69bcb0838485e97a140deaa9d7cc3c2e88fd0f3994c24963",
+      "texture_sha256": "3c96cff22c9a78f0be0581136ed5820d62dd2938ff2a1474702e5ac7d4abf70a",
+      "artwork_bounds": {
+        "left": 8,
+        "top": 1,
+        "width": 154,
+        "height": 108
+      },
+      "texture_bytes": 43012
+    },
+    {
+      "suffix": "territorial_training",
+      "focus_id": "TFR_EST_ratas_territorial_training",
+      "title": "Conscript and Kaitseliit Training",
+      "party": "Isamaa",
+      "political_figure": "Jüri Luik",
+      "source_generation_file": "exec-8ea20063-abf1-4e23-9a4c-ce8c750de71c.png",
+      "master": "masters/EST_ratas_territorial_training.png",
+      "texture": "gfx/interface/goals/EST/EST_ratas_territorial_training.png",
+      "sprite": "GFX_goal_TFR_EST_ratas_territorial_training",
+      "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Create ONE compact, dense, irregular silhouette photobash collage in the exact TFR visual language: realistic photographic cutouts and highly polished game-icon compositing, NOT an illustration scene or flat vector. Dark charcoal/black 2px contour around each cutout, silver beveled edge highlights, dramatic contrast and colored rim lighting, restrained localized colored glow, dimensional metallic props, tiny textures kept bold and legible at 170px wide. No rectangular backing plate, no badge or shield enclosing the whole collage, no canvas border, no captions or watermarks, no decorative laurels. Aspect ratio 170:150. Main collage horizontally centered in the TOP 73 percent of canvas, fill almost all width, keep bottom 27 percent completely empty actual transparent alpha for the game's focus label; outside the cutout is also transparent, no checkerboard drawn. No text or lettering anywhere. All skin tones natural. Compose for sharp readable silhouette at tiny game UI scale. Primary subject: recognizable Jüri Luik, Estonian defence minister around2020, middle-aged man with high balding forehead, closely cropped silver-grey hair at sides, light rimless glasses, pale complexion, oval face and clean-shaven chin; sober dark suit and blue tie, three-quarter bust in left foreground. Behind/right two small Estonian Defence League volunteers in olive field uniforms and helmets conducting a map briefing; foreground a silver compass over a folded terrain map, training target silhouette and small olive backpack. Isamaa deep navy/cobalt rim light with restrained warm gold glints and natural face tones. Read as training places and territorial readiness, no battle, no tank or weapons aimed at viewer. No readable insignia or text.",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "export_method": "Crop transparent padding at alpha > 1; fit inside 168 x 108 with Lanczos3; center on a transparent 170 x 150 canvas. Original master retained.",
+      "master_sha256": "a5ea273c54a41bc03b0cdd13c02fcfb9c8aab388cc71df9f6d9294440ac1ad22",
+      "texture_sha256": "a197ac0e5a789db4276a558c876b22a09d43cf1b45963f0fa05e190b8d7f94af",
+      "artwork_bounds": {
+        "left": 1,
+        "top": 3,
+        "width": 168,
+        "height": 103
+      },
+      "texture_bytes": 44654
+    },
+    {
+      "suffix": "account_to_voters",
+      "focus_id": "TFR_EST_ratas_account_to_voters",
+      "title": "Account for Coalition Promises",
+      "party": "Centre-led coalition",
+      "political_figure": "Jüri Ratas",
+      "source_generation_file": "exec-7e1303ab-eaee-4ebd-8fcf-88ff6434ed0a.png",
+      "master": "masters/EST_ratas_account_to_voters.png",
+      "texture": "gfx/interface/goals/EST/EST_ratas_account_to_voters.png",
+      "sprite": "GFX_goal_TFR_EST_ratas_account_to_voters",
+      "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Create ONE compact, dense, irregular silhouette photobash collage in the exact TFR visual language: realistic photographic cutouts and highly polished game-icon compositing, NOT an illustration scene or flat vector. Dark charcoal/black 2px contour around each cutout, silver beveled edge highlights, dramatic contrast and colored rim lighting, restrained localized colored glow, dimensional metallic props, tiny textures kept bold and legible at 170px wide. No rectangular backing plate, no badge or shield enclosing the whole collage, no canvas border, no captions or watermarks, no decorative laurels. Aspect ratio 170:150. Main collage horizontally centered in the TOP 73 percent of canvas, fill almost all width, keep bottom 27 percent completely empty actual transparent alpha for the game's focus label; outside the cutout is also transparent, no checkerboard drawn. No text or lettering anywhere. All skin tones natural. Compose for sharp readable silhouette at tiny game UI scale. Edit this existing TFR icon into the NEW final accountability-report focus. Preserve Jüri Ratas's exact face, short dark hair, clean-shaven likeness, dark suit, green tie and photographic cutout style on left. Remove ALL medical props, mask, cross and virus. Replace right props with a prominent open government report book with abstract rows, silver fountain pen and small parliamentary lectern with microphones before Estonia's pink Toompea Riigikogu facade. A small group of ordinary Estonian citizens appears behind the report at lower right. Emerald-green dominant rim glow plus restrained cobalt and gold coalition accents, Estonian flag. Meaning: government reports costs and achievements to parliament and voters; no ballot box or victory checkmark, no election win imagery, no readable text. Same transparent silhouette and empty bottom label area.",
+      "edit_reference": "../opening/masters/EST_opening_covid_emergency.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "export_method": "Crop transparent padding at alpha > 1; fit inside 168 x 108 with Lanczos3; center on a transparent 170 x 150 canvas. Original master retained.",
+      "master_sha256": "d4d49110e5e38a6e2d8816458ea70463c053de665d8342239548cc6eee2aeffd",
+      "texture_sha256": "e040dc0fb1a46b24025db7a19b5aafe2803de5a9ec49e88efda5689ecd451b6d",
+      "artwork_bounds": {
+        "left": 1,
+        "top": 3,
+        "width": 168,
+        "height": 104
+      },
+      "texture_bytes": 43093
+    }
+  ]
+}
