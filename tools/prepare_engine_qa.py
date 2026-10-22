@@ -9,6 +9,7 @@ not be invoked during country-history construction.
 from pathlib import Path
 import json
 import re
+from clausewitz import parse
 from native_script_interface import amount_call
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -805,6 +806,47 @@ path="{base.as_posix()}"
         check("pp2023_next_vote_ends_programme", "has_country_flag = TFR_EST_pp_2023_mandate_ended NOT = { TFR_EST_pp_2023_branch_visible = yes } has_idea = TFR_EST_pm_pp " + eq("TFR_EST_pm_party", 7)),
     ])
     assertions.extend(["pp2023_occupation_hides_programme", "pp2023_restoration_keeps_programme", "pp2023_next_vote_ends_programme"])
+    # Query the authored PM availability predicates in native scope, rather
+    # than merely checking the final idea set after a remove/readd could hide.
+    # Country-history fixtures do not advance the engine's daily scheduler.
+    pm_ideas = parse((ROOT / "common/ideas/TFR_EST_executive.txt").read_text(
+        encoding="utf-8-sig")).get("ideas").get("head_minister")
+    pm_eligibility = {}
+    for entry in pm_ideas.entries:
+        gate = entry.value.get("available")
+        assert len(gate.entries) == 1, entry.key
+        predicate = gate.entries[0]
+        assert isinstance(predicate.value, str), entry.key
+        pm_eligibility[entry.key] = f"{predicate.key} {predicate.op} {predicate.value}"
+    body.append("TFR_EST_hide_executive_display = yes\n")
+    for ident, eligible in pm_eligibility.items():
+        body.append(f"add_ideas = {ident}\n")
+        name = "pm_retention_eligible_" + ident.removeprefix("TFR_EST_pm_")
+        conditions = f"has_idea = {ident} {eligible} " + " ".join(
+            f"NOT = {{ {gate} }}" for other, gate in pm_eligibility.items()
+            if other != ident)
+        body.append(check(name, conditions))
+        assertions.append(name)
+        body.append(f"remove_ideas = {ident}\n")
+    name = "pm_retention_no_unappointed_candidates"
+    body.append(check(name, " ".join(f"NOT = {{ {gate} }}" for gate in pm_eligibility.values())))
+    assertions.append(name)
+    # Earlier succession fixtures intentionally retain their career history.
+    # Isolate the opening-Centre repair case from those later appointments.
+    body.append("clr_country_flag = TFR_EST_restoration_election\nclr_country_flag = TFR_EST_centre_leader_kiik\nclr_country_flag = TFR_EST_centre_leader_kolvart\nTFR_EST_initialize_parliament = yes\n")
+    for _ in range(5):
+        body.append("TFR_EST_parliament_tick = yes\n")
+    name = "pm_retention_repeated_parliament_repairs"
+    body.append(check(name, "has_idea = TFR_EST_pm_centre " + pm_eligibility["TFR_EST_pm_centre"] + " " + eq("TFR_EST_pm_party", 2)))
+    assertions.append(name)
+    body.append("TFR_EST_enter_caretaker = yes\nTFR_EST_reconcile_cabinet_leadership = yes\n")
+    name = "pm_retention_caretaker_still_eligible"
+    body.append(check(name, "has_country_flag = TFR_EST_caretaker has_idea = TFR_EST_pm_centre " + pm_eligibility["TFR_EST_pm_centre"]))
+    assertions.append(name)
+    body.append("remove_ideas = TFR_EST_pm_centre\nTFR_EST_reconcile_executive_display = yes\n")
+    name = "pm_retention_missing_incumbent_repaired"
+    body.append(check(name, "has_idea = TFR_EST_pm_centre " + pm_eligibility["TFR_EST_pm_centre"]))
+    assertions.append(name)
     body.append("log = \"TFR_EST_ENGINE_QA_END\"\n")
     source = (ROOT / "history/countries/EST - Estonia.txt").read_text(encoding="utf-8-sig")
     # Country history executes top-level commands independently. Keep native

@@ -77,7 +77,7 @@ class ExecutiveLifecycleTests(unittest.TestCase):
         ministers = parse((ROOT / 'common/ideas/TFR_EST_executive.txt').read_text()).get('ideas').get('head_minister')
         for entry in ministers.entries:
             idea = entry.value
-            self.assertEqual(idea.get('available').get('always'), 'no')
+            self.assertEqual(idea.get('available').get('has_idea'), entry.key)
             self.assertEqual(idea.get('allowed_to_remove').get('always'), 'no')
             self.assertEqual(idea.get('modifier').entries, [])
 

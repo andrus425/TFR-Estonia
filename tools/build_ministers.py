@@ -24,6 +24,16 @@ PM_PEOPLE = {"mart_helme": "ekre"}
 # Future authored leadership changes must identify the person explicitly.
 # Isamaa/EKRE having a PM does not make Reinsalu/Martin the incumbent by itself.
 NAMED_PM_PEOPLE = {"urmas_reinsalu": "isamaa", "martin_helme": "ekre"}
+# The head-minister slot needs a 62x67 icon; its shared tooltip retains a
+# separate 156x210 canvas so localisation spacing remains unchanged.
+PM_PORTRAITS = {
+    "reform": "kaja_kallas", "reform_michal": "kristen_michal",
+    "centre": "juri_ratas", "centre_kiik": "tanel_kiik",
+    "centre_kolvart": "mihhail_kolvart", "ekre": "mart_helme",
+    "ekre_martin": "martin_helme", "isamaa": "helir_valdor_seeder",
+    "sde": "indrek_saar", "sde_laanemets": "lauri_laanemets",
+    "e200": "kristina_kallas", "pp": "lavly_perling",
+}
 OPENING = ("urmas_reinsalu_foreign", "taavi_aas_economic", "mart_helme_interior", "raivo_aeg_intelligence", "juri_luik_defence")
 PROFILES = {
     "diplomat": ("Experienced Diplomat", {"opinion_gain_monthly_factor": .15, "trade_opinion_factor": .15}),
@@ -52,7 +62,6 @@ PERSON_PROFILES = {
     "tiit_naber": "diplomat", "kristjan_vanaselja": "enterprise", "siim_valmar_kiisler": "administration", "rainer_saks": "intelligence", "ilmar_raag": "territorial",
     "trivimi_velliste": "diplomat", "rene_kokk": "regional",
 }
-FEMALE_PEOPLE = {"marina_kaljurand", "katri_raik", "liisa_ly_pakosta"}
 
 
 def candidate_id(candidate):
@@ -279,10 +288,17 @@ TFR_EST_reconcile_ministers = {{
 
 
 def build_sprites():
-    out = ["# Existing TFR generic portraits; no third-party portrait assets redistributed.\nspriteTypes = {\n"]
-    for index, (person, candidates) in enumerate(people().items()):
-        portrait = f"politician_female{index % 3 + 1}.png" if person in FEMALE_PEOPLE else f"politician{index % 33 + 1}.png"
-        out.append(f'    spriteType = {{ name = "GFX_idea_TFR_EST_person_{person}" texturefile = "gfx/leaders/Europe/{portrait}" legacy_lazy_load = no }}\n')
+    out = ["# Individual 62x67 TFR-style minister icons. Sources: docs/artwork/ministers/README.md.\nspriteTypes = {\n"]
+    for person in people():
+        out.append(f'    spriteType = {{ name = "GFX_idea_TFR_EST_person_{person}" texturefile = "gfx/interface/ideas/EST/ministers/{person}.png" legacy_lazy_load = no }}\n')
+    return "".join(out) + "}\n"
+
+
+def build_executive_sprites():
+    out = ["# Small cabinet icons and separate full-size shared-tooltip portraits.\nspriteTypes = {\n"]
+    for suffix, person in PM_PORTRAITS.items():
+        out.append(f'    spriteType = {{ name = "GFX_idea_TFR_EST_pm_{suffix}" texturefile = "gfx/leaders/EST/ministers/{person}.png" legacy_lazy_load = no }}\n')
+        out.append(f'    spriteType = {{ name = "GFX_idea_TFR_EST_pm_{suffix}_icon" texturefile = "gfx/interface/ideas/EST/ministers/{person}.png" legacy_lazy_load = no }}\n')
     return "".join(out) + "}\n"
 
 
@@ -314,7 +330,7 @@ def build_register():
            "TFR's five editable portfolios are foreign, economic, interior, intelligence and defence (`theorist_minister`). Its economic slot covers fiscal and economic policy. Estonia has no separate cabinet-level intelligence ministry: these nominees represent political oversight and professional security experience. All intelligence appointments are inferences, including former intelligence directors.\n\n",
            "The opening appoints Urmas Reinsalu, Taavi Aas, Mart Helme, Raivo Aeg and Jüri Luik. Aeg's slot is an abstraction of his justice/security responsibilities. The [official cabinet register](https://www.valitsus.ee/vabariigi-valitsuse-50-koosseis) records the historical government.\n\n",
            "Appointments use the party ledger, require a confirmed independent cabinet and coalition membership, and cost 100 PP before modifiers. A valid election grants a 90-day, 80% appointment discount, normally reducing the price to 20 PP. Caretakers retain outgoing ministers but cannot appoint replacements. A confirmed coalition change removes outgoing parties' ministers; occupation clears all five portfolios and the discount. Portfolios vacated by the player are never automatically refilled.\n\n",
-           "Mart Helme has two possible portfolios; reciprocal exclusions permit only one. Both are blocked while he is PM. Jaak Madison and Alar Laneman preserve EKRE's alternatives. Trivimi Velliste and Rene Kokk provide alternatives if Reinsalu or Martin Helme becomes PM. Reinsalu remains appointable under Seeder and Martin under Mart; their parties supplying a PM does not identify them as that person. Once a confirmed EKRE government serves its 2023 mandate, Martin becomes prime minister and Rene Kokk remains eligible for the economic portfolio. Mart's foreign and interior candidacies then become available subject to their mutual office restriction. Portraits currently reuse TFR's generic European political portraits.\n\n",
+           "Mart Helme has two possible portfolios; reciprocal exclusions permit only one. Both are blocked while he is PM. Jaak Madison and Alar Laneman preserve EKRE's alternatives. Trivimi Velliste and Rene Kokk provide alternatives if Reinsalu or Martin Helme becomes PM. Reinsalu remains appointable under Seeder and Martin under Mart; their parties supplying a PM does not identify them as that person. Once a confirmed EKRE government serves its 2023 mandate, Martin becomes prime minister and Rene Kokk remains eligible for the economic portfolio. Mart's foreign and interior candidacies then become available subject to their mutual office restriction. Every nominee uses an individual 62×67 TFR-style minister icon generated from a photo reference; [artwork sources and prompts](artwork/ministers/README.md) record the provenance. Mart Helme shares the same portrait across both portfolios.\n\n",
            "The 2023 EKRE government records `TFR_EST_martin_leads_ekre` only after cabinet confirmation. This career history survives later elections and occupation, restores `TFR_EST_pm_person_martin_helme` while EKRE supplies the incumbent, and keeps Martin as the head of later EKRE governments. Future leadership events may set `TFR_EST_pm_person_urmas_reinsalu` or `TFR_EST_pm_person_martin_helme` after confirming the appropriate party's cabinet and updating its executive display. Minister eligibility excludes the named incumbent, and a Martin marker supersedes Mart's default personal exclusion. Reconciliation clears stale wrong-party markers; occupation clears both personal markers while preserving career history. A successful new electoral or scripted mandate clears outgoing personal markers, and reconciliation restores the recorded EKRE leader. Confidence recovery and caretaker continuity preserve the incumbent. Personal markers never change parties, seats or parliamentary mandates.\n\n",
            "After a valid Centre defeat in 2023, its September congress chooses Tanel Kiik or Mihhail Kõlvart as party leader. Neither is a portfolio nominee in this roster, so all five Centre portfolios retain eligible candidates. The choice does not replace another party's prime minister or alter portfolio appointments; an outgoing Ratas caretaker waits for cabinet confirmation. Selected party leadership survives future elections and occupation, while current Centre PM markers are cleared during occupation.\n\n",
            "| Party | Foreign | Economy | Interior | Intelligence | Defence |\n|---|---|---|---|---|---|\n"]
@@ -338,6 +354,7 @@ def outputs():
         "common/scripted_triggers/TFR_EST_ministers.txt": build_triggers(),
         "common/scripted_effects/TFR_EST_ministers.txt": build_effects(),
         "interface/TFR_EST_ministers.gfx": build_sprites(),
+        "interface/TFR_EST_executive.gfx": build_executive_sprites(),
         "localisation/english/TFR_EST_ministers_l_english.yml": build_localisation(),
         "docs/MINISTER_ROSTER.md": build_register(),
     }

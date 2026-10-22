@@ -19,6 +19,9 @@ PACKAGE_MANIFEST = "tfr-estonia/PACKAGE-MANIFEST.json"
 CONTENT_DIRS = {"common", "docs", "events", "gfx", "history", "interface", "localisation", "tests", "tools"}
 ROOT_FILES = {"README.md", "CHANGELOG.md", "thumbnail.png", ".gitattributes", ".gitignore"}
 EXCLUDED_DIRS = {".git", ".cache", "__pycache__", ".pytest_cache", "test-output", "dist", "logs"}
+# Source photos are local research inputs. Ship the generated artwork and
+# attribution register, rather than redistributing downloaded originals.
+RESEARCH_ONLY_PREFIXES = ("docs/artwork/ministers/references/",)
 FIXED_ZIP_DATE = (2020, 1, 1, 0, 0, 0)
 ABSOLUTE_PATH = re.compile(r'(?:[A-Za-z]:[\\/]|(?<!:)//|\\\\|"\s*/(?:Users|home|tmp|mnt|var)/)')
 
@@ -56,6 +59,8 @@ def package_entries(root: Path) -> tuple[dict[str, bytes], str]:
     }
     for path in sorted(root.rglob("*")):
         relative = path.relative_to(root)
+        if relative.as_posix().startswith(RESEARCH_ONLY_PREFIXES):
+            continue
         if any(part in EXCLUDED_DIRS for part in relative.parts):
             continue
         if path.is_symlink():

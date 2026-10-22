@@ -367,16 +367,19 @@ class CentreLeadershipTests(unittest.TestCase):
         self.assertIn('TFR_EST_centre_leader_kolvart', r.flags)
         self.assertIn(RESOLVED, r.flags)
 
-    def test_both_native_pm_ideas_remain_locked_and_use_existing_portraits(self):
+    def test_both_native_pm_ideas_remain_locked_and_use_individual_portraits(self):
         ideas = parse((ROOT / 'common/ideas/TFR_EST_executive.txt').read_text()).get('ideas').get('head_minister')
         sprites = parse((ROOT / 'interface/TFR_EST_executive.gfx').read_text()).get('spriteTypes')
         for leader in PEOPLE:
             idea = ideas.get('TFR_EST_pm_centre_' + leader)
-            self.assertEqual(idea.get('available').get('always'), 'no')
+            self.assertEqual(idea.get('available').get('has_idea'), 'TFR_EST_pm_centre_' + leader)
             self.assertEqual(idea.get('allowed_to_remove').get('always'), 'no')
             self.assertEqual(idea.get('modifier').entries, [])
             sprite = next(e.value for e in sprites.entries if e.value.get('name') == 'GFX_idea_TFR_EST_pm_centre_' + leader)
-            self.assertTrue(sprite.get('texturefile').startswith('gfx/leaders/Europe/'))
+            self.assertTrue(sprite.get('texturefile').startswith('gfx/leaders/EST/ministers/'))
+            icon = next(e.value for e in sprites.entries if e.value.get('name') == 'GFX_idea_TFR_EST_pm_centre_' + leader + '_icon')
+            self.assertTrue(icon.get('texturefile').startswith('gfx/interface/ideas/EST/ministers/'))
+            self.assertEqual(idea.get('picture'), 'TFR_EST_pm_centre_' + leader + '_icon')
 
     def test_reproducible_outputs_and_bom_localisation(self):
         for relative, content in outputs().items():

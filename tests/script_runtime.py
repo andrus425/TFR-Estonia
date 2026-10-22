@@ -35,6 +35,10 @@ class Runtime:
         self.flags = {"TFR_EST_initialized"}
         self.global_flags = set()
         self.ideas = set()
+        # Record actual membership changes. A remove/add cycle must remain
+        # observable even when a repair leaves the final idea set unchanged.
+        self.idea_additions = []
+        self.idea_removals = []
         self.dynamic = set()
         self.dynamic_additions = []
         self.dynamic_updates = 0
@@ -233,10 +237,17 @@ class Runtime:
             elif key in {"add_ideas", "remove_ideas"}:
                 refs = [x.key if x.op is None else x.value for x in value.entries] if isinstance(value, Block) else [value]
                 for ref in refs:
-                    if key == "add_ideas": self.ideas.add(ref)
-                    else: self.ideas.discard(ref)
+                    if key == "add_ideas" and ref not in self.ideas:
+                        self.ideas.add(ref)
+                        self.idea_additions.append(ref)
+                    elif key == "remove_ideas" and ref in self.ideas:
+                        self.ideas.remove(ref)
+                        self.idea_removals.append(ref)
             elif key == "add_timed_idea":
-                self.ideas.add(value.get("idea"))
+                ref = value.get("idea")
+                if ref not in self.ideas:
+                    self.ideas.add(ref)
+                    self.idea_additions.append(ref)
             elif key == "remove_dynamic_modifier":
                 self.dynamic.discard(value.get("modifier"))
             elif key == "add_dynamic_modifier":
@@ -266,8 +277,13 @@ class Runtime:
                 self.characters.append(value)
                 if key == "promote_character": self.leader = value.get("character") if isinstance(value, Block) else value
             elif key == "swap_ideas":
-                self.ideas.discard(value.get("remove_idea"))
-                self.ideas.add(value.get("add_idea"))
+                previous, replacement = value.get("remove_idea"), value.get("add_idea")
+                if previous in self.ideas:
+                    self.ideas.remove(previous)
+                    self.idea_removals.append(previous)
+                if replacement not in self.ideas:
+                    self.ideas.add(replacement)
+                    self.idea_additions.append(replacement)
             elif key == "set_politics":
                 self.politics.update({x.key: x.value for x in value.entries})
             elif key == "division_template": self.templates.append(value.get("name"))

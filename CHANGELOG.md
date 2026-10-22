@@ -1,5 +1,17 @@
 # Changelog
 
+## 22 October 2026 — Prime-minister retention
+
+- Replace permanently false appointment eligibility on all twelve scripted
+  prime-minister entries with an incumbent-only condition. An installed PM
+  remains valid while every unappointed alternative stays unavailable.
+- Retain the manual-removal lock, parliamentary mandates, caretaker continuity
+  and authored leader successions. Existing PM IDs and save variables are unchanged.
+- Track actual idea additions and removals in source regressions so an incumbent
+  being removed and re-added cannot pass through final-set equality alone.
+- Add native checks of all twelve authored eligibility predicates, locked
+  alternatives, repeated parliamentary repair, caretakers and missing-PM repair.
+
 ## 21 October 2026 — Kallas Reform–Centre focus icons
 
 - Give all twenty focuses in the Reform–Centre branch after Ratas's resignation

@@ -361,7 +361,7 @@ class SDEHandoverTests(unittest.TestCase):
     def test_laanemets_head_minister_is_locked_and_shows_actual_incumbent_only(self):
         ideas = parse((ROOT / 'common/ideas/TFR_EST_executive.txt').read_text(encoding='utf-8')).get('ideas').get('head_minister')
         definition = ideas.get(LAANEMETS)
-        self.assertEqual(definition.get('available').get('always'), 'no')
+        self.assertEqual(definition.get('available').get('has_idea'), LAANEMETS)
         self.assertEqual(definition.get('allowed_to_remove').get('always'), 'no')
         self.assertEqual(definition.get('modifier').entries, [])
         self.assertEqual(definition.get('removal_cost'), '-1')
@@ -372,7 +372,10 @@ class SDEHandoverTests(unittest.TestCase):
         self.assertFalse(r.condition(ideas.get(SAAR).get('visible')))
         sprites = parse((ROOT / 'interface/TFR_EST_executive.gfx').read_text(encoding='utf-8')).get('spriteTypes')
         sprite = next(e.value for e in sprites.entries if e.value.get('name') == 'GFX_idea_' + LAANEMETS)
-        self.assertTrue(sprite.get('texturefile').startswith('gfx/leaders/Europe/'))
+        self.assertTrue(sprite.get('texturefile').startswith('gfx/leaders/EST/ministers/'))
+        icon = next(e.value for e in sprites.entries if e.value.get('name') == 'GFX_idea_' + LAANEMETS + '_icon')
+        self.assertTrue(icon.get('texturefile').startswith('gfx/interface/ideas/EST/ministers/'))
+        self.assertEqual(definition.get('picture'), LAANEMETS + '_icon')
 
     def test_party_tooltip_and_decision_description_show_chair_in_opposition(self):
         gui = (ROOT / 'interface/TFR_EST_parliament.gui').read_text(encoding='utf-8')

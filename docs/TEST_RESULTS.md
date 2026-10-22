@@ -1,8 +1,57 @@
-# Validation results — 21 October 2026
+# Validation results — 22 October 2026
 
 This is an implemented **development build**, not a declaration that the public
 v1 campaign matrix has passed. The pinned parent is **The Fire Rises 1.0.9.1c**.
 The installed executable reports **HOI4 Operation Postern 1.19.3.0.c01a**.
+
+## Prime-minister retention — 22 October 2026
+
+All twelve head-minister entries previously declared `available = { always = no }`,
+including the installed incumbent. They now use `available = { has_idea = <self> }`:
+the installed PM remains eligible, every unappointed alternative is unavailable,
+and `allowed_to_remove = { always = no }` still prevents manual dismissal.
+No PM IDs, saved variables, cabinet mandates or leadership-successor rules change.
+
+The first two new regressions failed 24 subcases before the change: all twelve
+installed PMs failed their own availability and consequently were absent from
+the eligible set. All eight expanded retention tests now pass. They execute
+the authored daily and weekly callbacks plus cabinet/presidency repair with
+actual idea-mutation tracking, rather than relying on final-set equality.
+Every ordinary/successor PM and caretaker has zero incumbent additions/removals
+under repeated repair. Actual party transitions replace the PM exactly once;
+missing display entries repair once, and occupation/restoration remove and
+reinstate the saved PM once. All twelve manual-removal locks remain in force.
+
+The accepted full source run passed **663 tests in 143.991 seconds**. An initial
+663-test run exposed one remaining legacy minister test that required every PM,
+including the incumbent, to be unavailable. Its expectation now checks installed
+eligibility, unavailable replacements and the unchanged manual-removal lock;
+the complete suite then passed without gameplay changes.
+
+These source checks evaluate the authored eligibility and script chains. They
+do not emulate unspecified engine cancellation defaults or advance live game
+days. Native frontend checks query the actual eligibility predicates, run five
+parliamentary repairs, preserve a caretaker and repair a deliberately missing
+incumbent. A 30-day live-game and save/reload retention check remains in the
+manual matrix.
+
+The accepted native run is
+`test-output/engine-estonia-qa-20261022-141343/`: **197/197 assertions passed**,
+with frontend startup in approximately 275 seconds and capture complete in
+280 seconds. Sixteen new checks query all twelve PM availability blocks,
+reject every unappointed alternative, run repeated parliamentary repairs,
+retain a caretaker and restore a missing incumbent. The temporary fixture does
+not advance a natural campaign.
+
+There are **zero Estonia-prefixed errors** in the captured log. The older
+TFR-only comparison contains 127 additional and 70 absent diagnostics in this
+run; the prior development capture comparison contains 118 additional and
+70 absent diagnostics. The differences include DLC/store-backend availability
+and model/music/foreign-asset loading, so this is not a clean-log equivalence
+claim. Reports are `test-output/pm-retention-parent-comparison.json` and
+`test-output/pm-retention-previous-comparison.json`. The owned game process
+stopped, and the original playset was restored byte-for-byte (SHA-256
+`767273d70e42152253bd2ad672e68f6df0a5343ffcce44d5278e81c25eeae32a`).
 
 ## Kallas Reform–Centre artwork — 21 October 2026
 
@@ -60,8 +109,8 @@ The installed executable reports **HOI4 Operation Postern 1.19.3.0.c01a**.
 
 | Check | Observed result |
 |---|---|
-| `tools/validate_mod.py` | 119 additive/override script files; 459 focuses, 62 events, 58 decisions, 2,268 English localization keys; **0 errors** |
-| `python -m unittest discover -s tests -q` | **655 tests passed** in 252.589 seconds, including 500 randomized election allocations checked against an independent integer reference |
+| `tools/validate_mod.py` | 122 additive/override script files; 459 focuses, 62 events, 58 decisions, 2,268 English localization keys; **0 errors** |
+| `python -m unittest discover -s tests -q` | **663 tests passed** in 143.991 seconds, including 500 randomized election allocations checked against an independent integer reference |
 | `tools/test_occupation_compatibility.py` | **10 structural regression tests passed** |
 | `tools/patch_tfr_compatibility.py --check` | **11 reproducible overrides and 632 audited changes verified**: 620 settlement safeguards and twelve head-of-government selectors |
 | `tools/native_script_interface.py --check` | **0 files with legacy argument-block interfaces** |

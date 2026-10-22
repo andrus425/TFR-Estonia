@@ -190,7 +190,7 @@ class ReformHandoverTests(unittest.TestCase):
 
     def test_michal_is_a_locked_native_head_minister(self):
         definition = parse((ROOT / 'common/ideas/TFR_EST_executive.txt').read_text()).get('ideas').get('head_minister').get(MICHAL)
-        self.assertEqual(definition.get('available').get('always'), 'no')
+        self.assertEqual(definition.get('available').get('has_idea'), MICHAL)
         self.assertEqual(definition.get('allowed_to_remove').get('always'), 'no')
         self.assertEqual(definition.get('removal_cost'), '-1')
         self.assertEqual(definition.get('modifier').entries, [])

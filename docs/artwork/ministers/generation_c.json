@@ -1,0 +1,122 @@
+[
+  {
+    "person": "jaak_madison",
+    "name": "Jaak Madison",
+    "prompt": "Use case: style-transfer.\nAsset type: single TFR Hearts of Iron IV minister portrait icon, final vertical aspect ratio 62:67.\nInput images: Image 1 is the photo edit target and identity reference for Jaak Madison. Image 2 is the native TFR Heiko Maas icon, style reference only.\nPrimary request: Transform image 1 into a single TFR minister portrait icon matching image 2. Preserve Jaak Madison's recognizable facial likeness, hair, age, expression, eyewear if any, and clothing. Tight head-and-shoulders crop with the whole hair and chin inside and a large readable face. Desaturated photo-realistic painted/photo treatment, high-contrast facial planes, muted lavender-purple vignette background, delicate horizontal scanlines. Thin dark gunmetal beveled rectangular frame with silver-blue top and left highlights, subtle counterclockwise tilt about 4 degrees, soft dark shadow. The framed portrait fills almost the entire canvas, with only a small genuinely transparent outside margin. Keep the face large enough to read when reduced to 62x67 pixels.\nConstraints: One person only. No text, flags, symbols, badges, extra props or other people. Do not copy the style-reference person's face. Remove any source lapel symbol; preserve clothing otherwise. No sheet, collage, or multiple variants.",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a16350-f361-7f33-b9a2-70daaa5b9d68\\exec-ee299478-9418-441f-9915-d4793f5fc138.png",
+    "master_path": "docs/artwork/ministers/masters/jaak_madison.png",
+    "output_path": "gfx/interface/ideas/EST/ministers/jaak_madison.png",
+    "mode": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "person": "margus_tsahkna",
+    "name": "Margus Tsahkna",
+    "prompt": "Use case: style-transfer.\nAsset type: single TFR Hearts of Iron IV minister portrait icon, final vertical aspect ratio 62:67.\nInput images: Image 1 is the photo edit target and identity reference for Margus Tsahkna. Image 2 is the native TFR Heiko Maas icon, style reference only.\nPrimary request: Transform image 1 into a single TFR minister portrait icon matching image 2. Preserve Margus Tsahkna's recognizable facial likeness, hair, age, expression, eyewear if any, and clothing. Tight head-and-shoulders crop with the whole hair and chin inside and a large readable face. Desaturated photo-realistic painted/photo treatment, high-contrast facial planes, muted lavender-purple vignette background, delicate horizontal scanlines. Thin dark gunmetal beveled rectangular frame with silver-blue top and left highlights, subtle counterclockwise tilt about 4 degrees, soft dark shadow. The framed portrait fills almost the entire canvas, with only a small genuinely transparent outside margin. Keep the face large enough to read when reduced to 62x67 pixels.\nConstraints: One person only. No text, flags, symbols, badges, extra props or other people. Do not copy the style-reference person's face. Remove any source lapel symbol; preserve clothing otherwise. No sheet, collage, or multiple variants.",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a16350-f361-7f33-b9a2-70daaa5b9d68\\exec-272ce834-b3ec-4068-a05d-c614d0e79d14.png",
+    "master_path": "docs/artwork/ministers/masters/margus_tsahkna.png",
+    "output_path": "gfx/interface/ideas/EST/ministers/margus_tsahkna.png",
+    "mode": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "person": "tiit_riisalo",
+    "name": "Tiit Riisalo",
+    "prompt": "Use case: style-transfer.\nAsset type: single TFR Hearts of Iron IV minister portrait icon, final vertical aspect ratio 62:67.\nInput images: Image 1 is the photo edit target and identity reference for Tiit Riisalo. Image 2 is the native TFR Heiko Maas icon, style reference only.\nPrimary request: Transform image 1 into a single TFR minister portrait icon matching image 2. Preserve Tiit Riisalo's recognizable facial likeness, hair, age, expression, eyewear if any, and clothing. Tight head-and-shoulders crop with the whole hair and chin inside and a large readable face. Desaturated photo-realistic painted/photo treatment, high-contrast facial planes, muted lavender-purple vignette background, delicate horizontal scanlines. Thin dark gunmetal beveled rectangular frame with silver-blue top and left highlights, subtle counterclockwise tilt about 4 degrees, soft dark shadow. The framed portrait fills almost the entire canvas, with only a small genuinely transparent outside margin. Keep the face large enough to read when reduced to 62x67 pixels.\nConstraints: One person only. No text, flags, symbols, badges, extra props or other people. Do not copy the style-reference person's face. Remove any source lapel symbol; preserve clothing otherwise. No sheet, collage, or multiple variants.",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a16350-f361-7f33-b9a2-70daaa5b9d68\\exec-36cc382b-1df2-439b-8ce1-19d70b1dd659.png",
+    "master_path": "docs/artwork/ministers/masters/tiit_riisalo.png",
+    "output_path": "gfx/interface/ideas/EST/ministers/tiit_riisalo.png",
+    "mode": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "person": "igor_taro",
+    "name": "Igor Taro",
+    "prompt": "Use case: style-transfer.\nAsset type: single TFR Hearts of Iron IV minister portrait icon, final vertical aspect ratio 62:67.\nInput images: Image 1 is the photo edit target and identity reference for Igor Taro. Image 2 is the native TFR Heiko Maas icon, style reference only.\nPrimary request: Transform image 1 into a single TFR minister portrait icon matching image 2. Preserve Igor Taro's recognizable facial likeness, hair, age, expression, eyewear if any, and clothing. Tight head-and-shoulders crop with the whole hair and chin inside and a large readable face. Desaturated photo-realistic painted/photo treatment, high-contrast facial planes, muted lavender-purple vignette background, delicate horizontal scanlines. Thin dark gunmetal beveled rectangular frame with silver-blue top and left highlights, subtle counterclockwise tilt about 4 degrees, soft dark shadow. The framed portrait fills almost the entire canvas, with only a small genuinely transparent outside margin. Keep the face large enough to read when reduced to 62x67 pixels.\nConstraints: One person only. No text, flags, symbols, badges, extra props or other people. Do not copy the style-reference person's face. Remove any source lapel symbol; preserve clothing otherwise. No sheet, collage, or multiple variants.",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a16350-f361-7f33-b9a2-70daaa5b9d68\\exec-390f7588-ace8-4ffd-866a-da03e05245aa.png",
+    "master_path": "docs/artwork/ministers/masters/igor_taro.png",
+    "output_path": "gfx/interface/ideas/EST/ministers/igor_taro.png",
+    "mode": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "person": "liisa_ly_pakosta",
+    "name": "Liisa-Ly Pakosta",
+    "prompt": "Use case: style-transfer.\nAsset type: single TFR Hearts of Iron IV minister portrait icon, final vertical aspect ratio 62:67.\nInput images: Image 1 is the photo edit target and identity reference for Liisa-Ly Pakosta. Image 2 is the native TFR Heiko Maas icon, style reference only.\nPrimary request: Transform image 1 into a single TFR minister portrait icon matching image 2. Preserve Liisa-Ly Pakosta's recognizable facial likeness, hair, age, expression, eyewear if any, and clothing. Tight head-and-shoulders crop with the whole hair and chin inside and a large readable face. Desaturated photo-realistic painted/photo treatment, high-contrast facial planes, muted lavender-purple vignette background, delicate horizontal scanlines. Thin dark gunmetal beveled rectangular frame with silver-blue top and left highlights, subtle counterclockwise tilt about 4 degrees, soft dark shadow. The framed portrait fills almost the entire canvas, with only a small genuinely transparent outside margin. Keep the face large enough to read when reduced to 62x67 pixels.\nConstraints: One person only. No text, flags, symbols, badges, extra props or other people. Do not copy the style-reference person's face. Remove any source lapel symbol; preserve clothing otherwise. No sheet, collage, or multiple variants.",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a16350-f361-7f33-b9a2-70daaa5b9d68\\exec-76222e3a-38f5-46bb-9041-ca81c56ab807.png",
+    "master_path": "docs/artwork/ministers/masters/liisa_ly_pakosta.png",
+    "output_path": "gfx/interface/ideas/EST/ministers/liisa_ly_pakosta.png",
+    "mode": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "person": "kalev_stoicescu",
+    "name": "Kalev Stoicescu",
+    "prompt": "Use case: style-transfer.\nAsset type: single TFR Hearts of Iron IV minister portrait icon, final vertical aspect ratio 62:67.\nInput images: Image 1 is the photo edit target and identity reference for Kalev Stoicescu. Image 2 is the native TFR Heiko Maas icon, style reference only.\nPrimary request: Transform image 1 into a single TFR minister portrait icon matching image 2. Preserve Kalev Stoicescu's recognizable facial likeness, hair, age, expression, eyewear if any, and clothing. Tight head-and-shoulders crop with the whole hair and chin inside and a large readable face. Desaturated photo-realistic painted/photo treatment, high-contrast facial planes, muted lavender-purple vignette background, delicate horizontal scanlines. Thin dark gunmetal beveled rectangular frame with silver-blue top and left highlights, subtle counterclockwise tilt about 4 degrees, soft dark shadow. The framed portrait fills almost the entire canvas, with only a small genuinely transparent outside margin. Keep the face large enough to read when reduced to 62x67 pixels.\nConstraints: One person only. No text, flags, symbols, badges, extra props or other people. Do not copy the style-reference person's face. Remove any source lapel symbol; preserve clothing otherwise. No sheet, collage, or multiple variants.",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a16350-f361-7f33-b9a2-70daaa5b9d68\\exec-3e271731-f706-4fe7-8889-bfb36b104b04.png",
+    "master_path": "docs/artwork/ministers/masters/kalev_stoicescu.png",
+    "output_path": "gfx/interface/ideas/EST/ministers/kalev_stoicescu.png",
+    "mode": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "person": "tiit_naber",
+    "name": "Tiit Naber",
+    "prompt": "Use case: style-transfer.\nAsset type: single TFR Hearts of Iron IV minister portrait icon, final vertical aspect ratio 62:67.\nInput images: Image 1 is the photo edit target and identity reference for Tiit Naber. Image 2 is the native TFR Heiko Maas icon, style reference only.\nPrimary request: Transform image 1 into a single TFR minister portrait icon matching image 2. Preserve Tiit Naber's recognizable facial likeness, hair, age, expression, eyewear if any, and clothing. Tight head-and-shoulders crop with the whole hair and chin inside and a large readable face. Desaturated photo-realistic painted/photo treatment, high-contrast facial planes, muted lavender-purple vignette background, delicate horizontal scanlines. Thin dark gunmetal beveled rectangular frame with silver-blue top and left highlights, subtle counterclockwise tilt about 4 degrees, soft dark shadow. The framed portrait fills almost the entire canvas, with only a small genuinely transparent outside margin. Keep the face large enough to read when reduced to 62x67 pixels.\nConstraints: One person only. No text, flags, symbols, badges, extra props or other people. Do not copy the style-reference person's face. Remove any source lapel symbol; preserve clothing otherwise. No sheet, collage, or multiple variants.",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a16350-f361-7f33-b9a2-70daaa5b9d68\\exec-aae3f862-1e4e-42ce-bdff-d46d9d5212db.png",
+    "master_path": "docs/artwork/ministers/masters/tiit_naber.png",
+    "output_path": "gfx/interface/ideas/EST/ministers/tiit_naber.png",
+    "mode": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "person": "kristjan_vanaselja",
+    "name": "Kristjan Vanaselja",
+    "prompt": "Use case: style-transfer.\nAsset type: single TFR Hearts of Iron IV minister portrait icon, final vertical aspect ratio 62:67.\nInput images: Image 1 is the photo edit target and identity reference for Kristjan Vanaselja. Image 2 is the native TFR Heiko Maas icon, style reference only.\nPrimary request: Transform image 1 into a single TFR minister portrait icon matching image 2. Preserve Kristjan Vanaselja's recognizable facial likeness, hair, age, expression, eyewear if any, and clothing. Tight head-and-shoulders crop with the whole hair and chin inside and a large readable face. Desaturated photo-realistic painted/photo treatment, high-contrast facial planes, muted lavender-purple vignette background, delicate horizontal scanlines. Thin dark gunmetal beveled rectangular frame with silver-blue top and left highlights, subtle counterclockwise tilt about 4 degrees, soft dark shadow. The framed portrait fills almost the entire canvas, with only a small genuinely transparent outside margin. Keep the face large enough to read when reduced to 62x67 pixels.\nConstraints: One person only. No text, flags, symbols, badges, extra props or other people. Do not copy the style-reference person's face. Remove any source lapel symbol; preserve clothing otherwise. No sheet, collage, or multiple variants.",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a16350-f361-7f33-b9a2-70daaa5b9d68\\exec-6b227779-1331-4de7-b5ee-60a2abc076ba.png",
+    "master_path": "docs/artwork/ministers/masters/kristjan_vanaselja.png",
+    "output_path": "gfx/interface/ideas/EST/ministers/kristjan_vanaselja.png",
+    "mode": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "person": "rainer_saks",
+    "name": "Rainer Saks",
+    "prompt": "Use case: style-transfer.\nAsset type: single TFR Hearts of Iron IV minister portrait icon, final vertical aspect ratio 62:67.\nInput images: Image 1 is the photo edit target and identity reference for Rainer Saks. Image 2 is the native TFR Heiko Maas icon, style reference only.\nPrimary request: Transform image 1 into a single TFR minister portrait icon matching image 2. Preserve Rainer Saks's recognizable facial likeness, hair, age, expression, eyewear if any, and clothing. Tight head-and-shoulders crop with the whole hair and chin inside and a large readable face. Desaturated photo-realistic painted/photo treatment, high-contrast facial planes, muted lavender-purple vignette background, delicate horizontal scanlines. Thin dark gunmetal beveled rectangular frame with silver-blue top and left highlights, subtle counterclockwise tilt about 4 degrees, soft dark shadow. The framed portrait fills almost the entire canvas, with only a small genuinely transparent outside margin. Keep the face large enough to read when reduced to 62x67 pixels.\nConstraints: One person only. No text, flags, symbols, badges, extra props or other people. Do not copy the style-reference person's face. Remove any source lapel symbol; preserve clothing otherwise. No sheet, collage, or multiple variants.",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a16350-f361-7f33-b9a2-70daaa5b9d68\\exec-8bdca16c-5469-44a0-bc88-716215491125.png",
+    "master_path": "docs/artwork/ministers/masters/rainer_saks.png",
+    "output_path": "gfx/interface/ideas/EST/ministers/rainer_saks.png",
+    "mode": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "person": "siim_valmar_kiisler",
+    "name": "Siim-Valmar Kiisler",
+    "prompt": "Use case: style-transfer.\nAsset type: single TFR Hearts of Iron IV minister portrait icon, final vertical aspect ratio 62:67.\nInput images: Image 1 is the photo edit target and identity reference for Siim-Valmar Kiisler. Image 2 is the native TFR Heiko Maas icon, style reference only.\nPrimary request: Transform image 1 into a single TFR minister portrait icon matching image 2. Preserve Siim-Valmar Kiisler's recognizable facial likeness, hair, age, expression, eyewear if any, and clothing. Tight head-and-shoulders crop with the whole hair and chin inside and a large readable face. Desaturated photo-realistic painted/photo treatment, high-contrast facial planes, muted lavender-purple vignette background, delicate horizontal scanlines. Thin dark gunmetal beveled rectangular frame with silver-blue top and left highlights, subtle counterclockwise tilt about 4 degrees, soft dark shadow. The framed portrait fills almost the entire canvas, with only a small genuinely transparent outside margin. Keep the face large enough to read when reduced to 62x67 pixels.\nConstraints: One person only. No text, flags, symbols, badges, extra props or other people. Do not copy the style-reference person's face. Remove any source lapel symbol; preserve clothing otherwise. No sheet, collage, or multiple variants.",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a16350-f361-7f33-b9a2-70daaa5b9d68\\exec-d72b57a7-c159-4479-b90d-fa3f6f9fc3a5.png",
+    "master_path": "docs/artwork/ministers/masters/siim_valmar_kiisler.png",
+    "output_path": "gfx/interface/ideas/EST/ministers/siim_valmar_kiisler.png",
+    "mode": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "person": "ilmar_raag",
+    "name": "Ilmar Raag",
+    "prompt": "Use case: style-transfer.\nAsset type: single TFR Hearts of Iron IV minister portrait icon, final vertical aspect ratio 62:67.\nInput images: Image 1 is the photo edit target and identity reference for Ilmar Raag. Image 2 is the native TFR Heiko Maas icon, style reference only.\nPrimary request: Transform image 1 into a single TFR minister portrait icon matching image 2. Preserve Ilmar Raag's recognizable facial likeness, hair, age, expression, eyewear if any, and clothing. Tight head-and-shoulders crop with the whole hair and chin inside and a large readable face. Desaturated photo-realistic painted/photo treatment, high-contrast facial planes, muted lavender-purple vignette background, delicate horizontal scanlines. Thin dark gunmetal beveled rectangular frame with silver-blue top and left highlights, subtle counterclockwise tilt about 4 degrees, soft dark shadow. The framed portrait fills almost the entire canvas, with only a small genuinely transparent outside margin. Keep the face large enough to read when reduced to 62x67 pixels.\nConstraints: One person only. No text, flags, symbols, badges, extra props or other people. Do not copy the style-reference person's face. Remove any source lapel symbol; preserve clothing otherwise. No sheet, collage, or multiple variants.",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a16350-f361-7f33-b9a2-70daaa5b9d68\\exec-d2b694d1-0da4-48c9-824e-696eb8460bf7.png",
+    "master_path": "docs/artwork/ministers/masters/ilmar_raag.png",
+    "output_path": "gfx/interface/ideas/EST/ministers/ilmar_raag.png",
+    "mode": "built-in image_gen",
+    "transparent_background": true
+  },
+  {
+    "person": "rene_kokk",
+    "name": "Rene Kokk",
+    "prompt": "Use case: style-transfer.\nAsset type: single TFR Hearts of Iron IV minister portrait icon, final vertical aspect ratio 62:67.\nInput images: Image 1 is the photo edit target and identity reference for Rene Kokk. Image 2 is the native TFR Heiko Maas icon, style reference only.\nPrimary request: Transform image 1 into a single TFR minister portrait icon matching image 2. Preserve Rene Kokk's recognizable facial likeness, hair, age, expression, eyewear if any, and clothing. Tight head-and-shoulders crop with the whole hair and chin inside and a large readable face. Desaturated photo-realistic painted/photo treatment, high-contrast facial planes, muted lavender-purple vignette background, delicate horizontal scanlines. Thin dark gunmetal beveled rectangular frame with silver-blue top and left highlights, subtle counterclockwise tilt about 4 degrees, soft dark shadow. The framed portrait fills almost the entire canvas, with only a small genuinely transparent outside margin. Keep the face large enough to read when reduced to 62x67 pixels.\nConstraints: One person only. No text, flags, symbols, badges, extra props or other people. Do not copy the style-reference person's face. Remove any source lapel symbol; preserve clothing otherwise. No sheet, collage, or multiple variants.",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a16350-f361-7f33-b9a2-70daaa5b9d68\\exec-a7859f65-96e7-493a-9d0b-c9f977eab609.png",
+    "master_path": "docs/artwork/ministers/masters/rene_kokk.png",
+    "output_path": "gfx/interface/ideas/EST/ministers/rene_kokk.png",
+    "mode": "built-in image_gen",
+    "transparent_background": true
+  }
+]

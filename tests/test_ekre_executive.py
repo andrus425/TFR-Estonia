@@ -245,7 +245,7 @@ class EkreExecutiveTests(unittest.TestCase):
     def test_native_martin_idea_cannot_be_appointed_or_removed_by_player(self):
         ideas = parse((ROOT / 'common/ideas/TFR_EST_executive.txt').read_text()).get('ideas').get('head_minister')
         idea = ideas.get(MARTIN)
-        self.assertEqual(idea.get('available').get('always'), 'no')
+        self.assertEqual(idea.get('available').get('has_idea'), MARTIN)
         self.assertEqual(idea.get('allowed_to_remove').get('always'), 'no')
         self.assertEqual(idea.get('removal_cost'), '-1')
         self.assertEqual(idea.get('modifier').entries, [])

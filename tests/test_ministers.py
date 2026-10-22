@@ -482,7 +482,9 @@ class MinisterTests(unittest.TestCase):
         r = self.runtime()
         self.assertEqual(len(executives.entries), 12)
         for entry in executives.entries:
-            self.assertFalse(r.condition(entry.value.get('available')))
+            # The installed incumbent remains valid; every replacement is
+            # unavailable and even the incumbent cannot be manually removed.
+            self.assertEqual(r.condition(entry.value.get('available')), entry.key in r.ideas)
             self.assertFalse(r.condition(entry.value.get('allowed_to_remove')))
         self.assertNotIn('head_minister', {self.slots[self.candidate_id(c)] for c in self.candidates})
 

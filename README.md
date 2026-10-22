@@ -28,6 +28,12 @@ The existing succession event installs Alar Karis; caretaker cabinets retain
 their incumbent prime minister. Occupation suspends this constitutional display
 and restoration reinstates the saved presidency and cabinet ledger.
 
+Prime-minister entries remain eligible while installed, including during
+caretaker government. Unappointed alternatives and manual dismissal stay
+locked; only the parliamentary and story scripts change the incumbent. The
+retention fix keeps the existing PM IDs and saved ledger, so an existing
+submod campaign can continue after restarting HOI4 to load the updated files.
+
 ## The 2020 coalition opening
 
 The initial focus screen contains ten policy focuses in **four short branches**,
@@ -700,7 +706,10 @@ player choices are never overwritten by daily repair.
 The [candidate register](docs/MINISTER_ROSTER.md) records the complete roster and
 primary sources. It distinguishes historical portfolio holders from inferred
 appointments and later-party recruitment in the alternate timeline. Minister
-portraits currently use TFR's generic European political portraits.
+portraits use individual **62 × 67 pixel TFR-style icons**, generated from photo
+references with the native tilted metal frame, purple background and muted
+portrait treatment. The [artwork register](docs/artwork/ministers/README.md)
+records the photo sources, credits and generation prompts.
 
 ## Cohesion, defense and the economy
 
@@ -802,8 +811,11 @@ text and dependent decisions without rewriting unrelated event/idea files.
 `tools/build_energy_crisis.py` generates the parent Oil Crash integration and
 safe migration of the earlier custom penalty. Both generators support `--check`.
 `tools/build_ministers.py` builds the native cabinet candidates, traits,
-eligibility, lifecycle helpers, portraits, localization and sourced roster from
+eligibility, lifecycle helpers, portrait sprite mappings, localization and sourced roster from
 the two `tools/minister_roster_*.json` research files; it also supports `--check`.
+`tools/export_minister_artwork.ps1` exports the saved imagegen masters as 62 × 67
+cabinet icons and separate 156 × 210 prime-minister tooltip images; `-Check`
+verifies dimensions, transparency and readable portrait centers without writing.
 `tools/build_reform_2023.py` generates the elected 2023 programme, rewards and
 localization. `tools/build_reform_handover.py` generates the Kallas–Michal event
 and guarded career transition. Both support `--check`. Election scheduling and
@@ -866,9 +878,12 @@ and the distinction between automated checks and in-game verification.
 
 ## Assets and release status
 
-The submod references installed TFR and base-game assets. The new prime ministers
-and some occupation administrators currently use existing **generic portraits**;
-they are named and scripted characters, but these are not custom likenesses.
+The submod references installed TFR and base-game assets. All 38 portfolio
+nominees and all 12 prime-minister displays now use individual TFR-style artwork
+for **48 distinct people**, with shared portraits for people who can hold either
+office. Some occupation administrators still use generic leader portraits.
+The [minister artwork register](docs/artwork/ministers/README.md) contains source
+credits and prompts. Downloaded research photos are excluded from release ZIPs.
 The eleven opening focuses have original AI-generated TFR-style collage icons,
 with Centre emerald, Isamaa blue/gold and EKRE cornflower-blue accents. The
 Three Seas summit uses nonpartisan Estonian colors. Seeder, Ratas, Martin Helme

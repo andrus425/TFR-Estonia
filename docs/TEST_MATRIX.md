@@ -7,6 +7,8 @@ to the parent-only baseline. Completion is not implied by the presence of script
 | Scenario | Required observation |
 |---|---|
 | Player EST / AI Russia | Kaljulaid main portrait, Ratas head-minister/HoG tooltip, 57-seat coalition, 101 total seats, working tree, no no-content warning, EU/NATO/economy retained |
+| Prime-minister retention | Advance at least 30 live days with each base/successor PM and an outgoing caretaker; the installed PM remains in the head-minister slot without repeated dismissal/appointment notifications; other PMs and manual dismissal stay locked |
+| Retention after reload | Continue an existing submod save after restarting HOI4 with the fix; a missing incumbent is repaired, then remains stable through daily/weekly updates, a valid succession and occupation/restoration |
 | Opening screen | Four short branches, six terminal policies and final referendum below; all later programme and war branches hidden; all opening focuses take 35 nominal days |
 | Opening choices | Pension reform, teacher pay and highway roots selectable from Jan 1 with valid coalition; children require their parent; highway and COVID children are sibling choices; different valid branch orders preserve rewards and final access; ordinary policies have no date gates |
 | Domestic COVID | Clean Estonia cannot select the emergency focus; each of TFR's five case tiers permits it; world news and a response flag alone do not; first-case event arrives independently from Feb 27, preserves existing severity, queues once and cannot reinfect after recovery; from 2023 cleanup removes only the bridge's unchanged owned lowest tier after the mandatory response focus is complete; delayed completion retains focus access |

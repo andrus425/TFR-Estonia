@@ -1,0 +1,112 @@
+[
+  {
+    "person": "urmas_paet",
+    "name": "Urmas Paet",
+    "prompt": "Use case: style-transfer. Asset type: a single The Fire Rises (Hearts of Iron IV) minister portrait icon, downsampled to 62 by 67 pixels in the game.\nInput image 1 is the identity/photo reference for Urmas Paet; image 2 is the exact TFR minister icon style/composition reference. Transform image 1 into ONE portrait icon in the style of image 2. Preserve Urmas Paet's recognizable face, hair, age, gender, expression, eyewear if present, and formal clothing. Close head-and-shoulders crop, face large and readable, entire hair and chin inside the picture.\nMatch the second image: desaturated photo-realistic painted/photo treatment, gently darkened high contrast facial planes, muted lavender-purple vignette behind the head, delicate horizontal scanline texture, dark gunmetal beveled rectangular photo frame with silver-blue top/left highlights, subtle counterclockwise tilt (~4 degrees), dark soft shadow. Frame fills nearly the whole canvas with only a small transparent margin. Compact vertical icon proportion 62:67. Keep the frame thin, like the reference, leaving the face large. Outside the frame genuinely transparent. No letters, names, symbols, flags, seals, extra people, decorative objects, or text. Do not copy the face from image 2.",
+    "tool": "built-in image_gen",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a1634f-75a7-7b31-a8bc-6632c574a52c\\exec-67ead80d-a7fd-4e36-8d0d-431593e7f3fd.png",
+    "master": "docs/artwork/ministers/masters/urmas_paet.png",
+    "final": "gfx/interface/ideas/EST/ministers/urmas_paet.png",
+    "transparent_background": true
+  },
+  {
+    "person": "kaja_kallas",
+    "name": "Kaja Kallas",
+    "prompt": "Use case: style-transfer. Asset type: a single The Fire Rises (Hearts of Iron IV) minister portrait icon, downsampled to 62 by 67 pixels in the game.\nInput image 1 is the identity/photo reference for Kaja Kallas; image 2 is the exact TFR minister icon style/composition reference. Transform image 1 into ONE portrait icon in the style of image 2. Preserve Kaja Kallas's recognizable face, hair, age, gender, expression, eyewear if present, and formal clothing. Close head-and-shoulders crop, face large and readable, entire hair and chin inside the picture.\nMatch the second image: desaturated photo-realistic painted/photo treatment, gently darkened high contrast facial planes, muted lavender-purple vignette behind the head, delicate horizontal scanline texture, dark gunmetal beveled rectangular photo frame with silver-blue top/left highlights, subtle counterclockwise tilt (~4 degrees), dark soft shadow. Frame fills nearly the whole canvas with only a small transparent margin. Compact vertical icon proportion 62:67. Keep the frame thin, like the reference, leaving the face large. Outside the frame genuinely transparent. No letters, names, symbols, flags, seals, extra people, decorative objects, or text. Do not copy the face from image 2.\nIf a source shows a microphone, podium, or outdoor overcoat, replace those with a plain dark formal jacket, white shirt and appropriate tie; keep the face and identifying features.",
+    "tool": "built-in image_gen",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a1634f-75a7-7b31-a8bc-6632c574a52c\\exec-c948b064-45d8-416a-b179-085baf26e14d.png",
+    "master": "docs/artwork/ministers/masters/kaja_kallas.png",
+    "final": "gfx/interface/ideas/EST/ministers/kaja_kallas.png",
+    "transparent_background": true
+  },
+  {
+    "person": "juri_ratas",
+    "name": "Jüri Ratas",
+    "prompt": "Use case: style-transfer. Asset type: a single The Fire Rises (Hearts of Iron IV) minister portrait icon, downsampled to 62 by 67 pixels in the game.\nInput image 1 is the identity/photo reference for Jüri Ratas; image 2 is the exact TFR minister icon style/composition reference. Transform image 1 into ONE portrait icon in the style of image 2. Preserve Jüri Ratas's recognizable face, hair, age, gender, expression, eyewear if present, and formal clothing. Close head-and-shoulders crop, face large and readable, entire hair and chin inside the picture.\nMatch the second image: desaturated photo-realistic painted/photo treatment, gently darkened high contrast facial planes, muted lavender-purple vignette behind the head, delicate horizontal scanline texture, dark gunmetal beveled rectangular photo frame with silver-blue top/left highlights, subtle counterclockwise tilt (~4 degrees), dark soft shadow. Frame fills nearly the whole canvas with only a small transparent margin. Compact vertical icon proportion 62:67. Keep the frame thin, like the reference, leaving the face large. Outside the frame genuinely transparent. No letters, names, symbols, flags, seals, extra people, decorative objects, or text. Do not copy the face from image 2.\nIf a source shows a microphone, podium, or outdoor overcoat, replace those with a plain dark formal jacket, white shirt and appropriate tie; keep the face and identifying features.",
+    "tool": "built-in image_gen",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a1634f-75a7-7b31-a8bc-6632c574a52c\\exec-a4e3a536-85f4-463b-89fc-c9d50934071e.png",
+    "master": "docs/artwork/ministers/masters/juri_ratas.png",
+    "final": "gfx/interface/ideas/EST/ministers/juri_ratas.png",
+    "transparent_background": true
+  },
+  {
+    "person": "kristen_michal",
+    "name": "Kristen Michal",
+    "prompt": "Use case: style-transfer. Asset type: a single The Fire Rises (Hearts of Iron IV) minister portrait icon, downsampled to 62 by 67 pixels in the game.\nInput image 1 is the identity/photo reference for Kristen Michal; image 2 is the exact TFR minister icon style/composition reference. Transform image 1 into ONE portrait icon in the style of image 2. Preserve Kristen Michal's recognizable face, hair, age, gender, expression, eyewear if present, and formal clothing. Close head-and-shoulders crop, face large and readable, entire hair and chin inside the picture.\nMatch the second image: desaturated photo-realistic painted/photo treatment, gently darkened high contrast facial planes, muted lavender-purple vignette behind the head, delicate horizontal scanline texture, dark gunmetal beveled rectangular photo frame with silver-blue top/left highlights, subtle counterclockwise tilt (~4 degrees), dark soft shadow. Frame fills nearly the whole canvas with only a small transparent margin. Compact vertical icon proportion 62:67. Keep the frame thin, like the reference, leaving the face large. Outside the frame genuinely transparent. No letters, names, symbols, flags, seals, extra people, decorative objects, or text. Do not copy the face from image 2.\nIf a source shows a microphone, podium, or outdoor overcoat, replace those with a plain dark formal jacket, white shirt and appropriate tie; keep the face and identifying features.",
+    "tool": "built-in image_gen",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a1634f-75a7-7b31-a8bc-6632c574a52c\\exec-06e8ed73-957d-40dd-a07f-37784869a7e4.png",
+    "master": "docs/artwork/ministers/masters/kristen_michal.png",
+    "final": "gfx/interface/ideas/EST/ministers/kristen_michal.png",
+    "transparent_background": true
+  },
+  {
+    "person": "tanel_kiik",
+    "name": "Tanel Kiik",
+    "prompt": "Use case: style-transfer. Asset type: a single The Fire Rises (Hearts of Iron IV) minister portrait icon, downsampled to 62 by 67 pixels in the game.\nInput image 1 is the identity/photo reference for Tanel Kiik; image 2 is the exact TFR minister icon style/composition reference. Transform image 1 into ONE portrait icon in the style of image 2. Preserve Tanel Kiik's recognizable face, hair, age, gender, expression, eyewear if present, and formal clothing. Close head-and-shoulders crop, face large and readable, entire hair and chin inside the picture.\nMatch the second image: desaturated photo-realistic painted/photo treatment, gently darkened high contrast facial planes, muted lavender-purple vignette behind the head, delicate horizontal scanline texture, dark gunmetal beveled rectangular photo frame with silver-blue top/left highlights, subtle counterclockwise tilt (~4 degrees), dark soft shadow. Frame fills nearly the whole canvas with only a small transparent margin. Compact vertical icon proportion 62:67. Keep the frame thin, like the reference, leaving the face large. Outside the frame genuinely transparent. No letters, names, symbols, flags, seals, extra people, decorative objects, or text. Do not copy the face from image 2.\nIf a source shows a microphone, podium, or outdoor overcoat, replace those with a plain dark formal jacket, white shirt and appropriate tie; keep the face and identifying features.",
+    "tool": "built-in image_gen",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a1634f-75a7-7b31-a8bc-6632c574a52c\\exec-5ff0dc5d-cf7a-49ed-b824-c034060cd34d.png",
+    "master": "docs/artwork/ministers/masters/tanel_kiik.png",
+    "final": "gfx/interface/ideas/EST/ministers/tanel_kiik.png",
+    "transparent_background": true
+  },
+  {
+    "person": "mihhail_kolvart",
+    "name": "Mihhail Kõlvart",
+    "prompt": "Use case: style-transfer. Asset type: a single The Fire Rises (Hearts of Iron IV) minister portrait icon, downsampled to 62 by 67 pixels in the game.\nInput image 1 is the identity/photo reference for Mihhail Kõlvart; image 2 is the exact TFR minister icon style/composition reference. Transform image 1 into ONE portrait icon in the style of image 2. Preserve Mihhail Kõlvart's recognizable face, hair, age, gender, expression, eyewear if present, and formal clothing. Close head-and-shoulders crop, face large and readable, entire hair and chin inside the picture.\nMatch the second image: desaturated photo-realistic painted/photo treatment, gently darkened high contrast facial planes, muted lavender-purple vignette behind the head, delicate horizontal scanline texture, dark gunmetal beveled rectangular photo frame with silver-blue top/left highlights, subtle counterclockwise tilt (~4 degrees), dark soft shadow. Frame fills nearly the whole canvas with only a small transparent margin. Compact vertical icon proportion 62:67. Keep the frame thin, like the reference, leaving the face large. Outside the frame genuinely transparent. No letters, names, symbols, flags, seals, extra people, decorative objects, or text. Do not copy the face from image 2.\nIf a source shows a microphone, podium, or outdoor overcoat, replace those with a plain dark formal jacket, white shirt and appropriate tie; keep the face and identifying features.",
+    "tool": "built-in image_gen",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a1634f-75a7-7b31-a8bc-6632c574a52c\\exec-5806ca12-ca76-4e88-a78c-a9839d8b2902.png",
+    "master": "docs/artwork/ministers/masters/mihhail_kolvart.png",
+    "final": "gfx/interface/ideas/EST/ministers/mihhail_kolvart.png",
+    "transparent_background": true
+  },
+  {
+    "person": "helir_valdor_seeder",
+    "name": "Helir-Valdor Seeder",
+    "prompt": "Use case: style-transfer. Asset type: a single The Fire Rises (Hearts of Iron IV) minister portrait icon, downsampled to 62 by 67 pixels in the game.\nInput image 1 is the identity/photo reference for Helir-Valdor Seeder; image 2 is the exact TFR minister icon style/composition reference. Transform image 1 into ONE portrait icon in the style of image 2. Preserve Helir-Valdor Seeder's recognizable face, hair, age, gender, expression, eyewear if present, and formal clothing. Close head-and-shoulders crop, face large and readable, entire hair and chin inside the picture.\nMatch the second image: desaturated photo-realistic painted/photo treatment, gently darkened high contrast facial planes, muted lavender-purple vignette behind the head, delicate horizontal scanline texture, dark gunmetal beveled rectangular photo frame with silver-blue top/left highlights, subtle counterclockwise tilt (~4 degrees), dark soft shadow. Frame fills nearly the whole canvas with only a small transparent margin. Compact vertical icon proportion 62:67. Keep the frame thin, like the reference, leaving the face large. Outside the frame genuinely transparent. No letters, names, symbols, flags, seals, extra people, decorative objects, or text. Do not copy the face from image 2.\nIf a source shows a microphone, podium, lanyard or outdoor overcoat, remove those, retaining appropriate plain formal jacket or blouse; for men use a plain dark suit, white shirt and tie. Keep the face and identifying features.",
+    "tool": "built-in image_gen",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a1634f-75a7-7b31-a8bc-6632c574a52c\\exec-fbf921fe-45c1-4077-be7d-ee43ff93c07e.png",
+    "master": "docs/artwork/ministers/masters/helir_valdor_seeder.png",
+    "final": "gfx/interface/ideas/EST/ministers/helir_valdor_seeder.png",
+    "transparent_background": true
+  },
+  {
+    "person": "indrek_saar",
+    "name": "Indrek Saar",
+    "prompt": "Use case: style-transfer. Asset type: a single The Fire Rises (Hearts of Iron IV) minister portrait icon, downsampled to 62 by 67 pixels in the game.\nInput image 1 is the identity/photo reference for Indrek Saar; image 2 is the exact TFR minister icon style/composition reference. Transform image 1 into ONE portrait icon in the style of image 2. Preserve Indrek Saar's recognizable face, hair, age, gender, expression, eyewear if present, and formal clothing. Close head-and-shoulders crop, face large and readable, entire hair and chin inside the picture.\nMatch the second image: desaturated photo-realistic painted/photo treatment, gently darkened high contrast facial planes, muted lavender-purple vignette behind the head, delicate horizontal scanline texture, dark gunmetal beveled rectangular photo frame with silver-blue top/left highlights, subtle counterclockwise tilt (~4 degrees), dark soft shadow. Frame fills nearly the whole canvas with only a small transparent margin. Compact vertical icon proportion 62:67. Keep the frame thin, like the reference, leaving the face large. Outside the frame genuinely transparent. No letters, names, symbols, flags, seals, extra people, decorative objects, or text. Do not copy the face from image 2.\nIf a source shows a microphone, podium, lanyard or outdoor overcoat, remove those, retaining appropriate plain formal jacket or blouse; for men use a plain dark suit, white shirt and tie. Keep the face and identifying features.",
+    "tool": "built-in image_gen",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a1634f-75a7-7b31-a8bc-6632c574a52c\\exec-c80339fb-2dd9-4a46-bee1-035f8d074266.png",
+    "master": "docs/artwork/ministers/masters/indrek_saar.png",
+    "final": "gfx/interface/ideas/EST/ministers/indrek_saar.png",
+    "transparent_background": true
+  },
+  {
+    "person": "kristina_kallas",
+    "name": "Kristina Kallas",
+    "prompt": "Use case: style-transfer. Asset type: a single The Fire Rises (Hearts of Iron IV) minister portrait icon, downsampled to 62 by 67 pixels in the game.\nInput image 1 is the identity/photo reference for Kristina Kallas; image 2 is the exact TFR minister icon style/composition reference. Transform image 1 into ONE portrait icon in the style of image 2. Preserve Kristina Kallas's recognizable face, hair, age, gender, expression, eyewear if present, and formal clothing. Close head-and-shoulders crop, face large and readable, entire hair and chin inside the picture.\nMatch the second image: desaturated photo-realistic painted/photo treatment, gently darkened high contrast facial planes, muted lavender-purple vignette behind the head, delicate horizontal scanline texture, dark gunmetal beveled rectangular photo frame with silver-blue top/left highlights, subtle counterclockwise tilt (~4 degrees), dark soft shadow. Frame fills nearly the whole canvas with only a small transparent margin. Compact vertical icon proportion 62:67. Keep the frame thin, like the reference, leaving the face large. Outside the frame genuinely transparent. No letters, names, symbols, flags, seals, extra people, decorative objects, or text. Do not copy the face from image 2.\nIf a source shows a microphone, podium, lanyard or outdoor overcoat, remove those, retaining appropriate plain formal jacket or blouse; for men use a plain dark suit, white shirt and tie. Keep the face and identifying features.",
+    "tool": "built-in image_gen",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a1634f-75a7-7b31-a8bc-6632c574a52c\\exec-a54f7a7e-6a26-4aa0-8b3b-800495dca280.png",
+    "master": "docs/artwork/ministers/masters/kristina_kallas.png",
+    "final": "gfx/interface/ideas/EST/ministers/kristina_kallas.png",
+    "transparent_background": true
+  },
+  {
+    "person": "lavly_perling",
+    "name": "Lavly Perling",
+    "prompt": "Use case: style-transfer. Asset type: a single The Fire Rises (Hearts of Iron IV) minister portrait icon, downsampled to 62 by 67 pixels in the game.\nInput image 1 is the identity/photo reference for Lavly Perling; image 2 is the exact TFR minister icon style/composition reference. Transform image 1 into ONE portrait icon in the style of image 2. Preserve Lavly Perling's recognizable face, hair, age, gender, expression, eyewear if present, and formal clothing. Close head-and-shoulders crop, face large and readable, entire hair and chin inside the picture.\nMatch the second image: desaturated photo-realistic painted/photo treatment, gently darkened high contrast facial planes, muted lavender-purple vignette behind the head, delicate horizontal scanline texture, dark gunmetal beveled rectangular photo frame with silver-blue top/left highlights, subtle counterclockwise tilt (~4 degrees), dark soft shadow. Frame fills nearly the whole canvas with only a small transparent margin. Compact vertical icon proportion 62:67. Keep the frame thin, like the reference, leaving the face large. Outside the frame genuinely transparent. No letters, names, symbols, flags, seals, extra people, decorative objects, or text. Do not copy the face from image 2.\nIf a source shows a microphone, podium, lanyard or outdoor overcoat, remove those, retaining appropriate plain formal jacket or blouse; for men use a plain dark suit, white shirt and tie. Keep the face and identifying features.",
+    "tool": "built-in image_gen",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a1634f-75a7-7b31-a8bc-6632c574a52c\\exec-3e1088eb-a774-471a-8868-9addf470d5c9.png",
+    "master": "docs/artwork/ministers/masters/lavly_perling.png",
+    "final": "gfx/interface/ideas/EST/ministers/lavly_perling.png",
+    "transparent_background": true
+  },
+  {
+    "person": "lauri_laanemets",
+    "name": "Lauri Läänemets",
+    "prompt": "Use case: style-transfer. Asset type: a single The Fire Rises (Hearts of Iron IV) minister portrait icon, downsampled to 62 by 67 pixels in the game.\nInput image 1 is the identity/photo reference for Lauri Läänemets; image 2 is the exact TFR minister icon style/composition reference. Transform image 1 into ONE portrait icon in the style of image 2. Preserve Lauri Läänemets's recognizable face, hair, age, gender, expression, eyewear if present, and formal clothing. Close head-and-shoulders crop, face large and readable, entire hair and chin inside the picture.\nMatch the second image: desaturated photo-realistic painted/photo treatment, gently darkened high contrast facial planes, muted lavender-purple vignette behind the head, delicate horizontal scanline texture, dark gunmetal beveled rectangular photo frame with silver-blue top/left highlights, subtle counterclockwise tilt (~4 degrees), dark soft shadow. Frame fills nearly the whole canvas with only a small transparent margin. Compact vertical icon proportion 62:67. Keep the frame thin, like the reference, leaving the face large. Outside the frame genuinely transparent. No letters, names, symbols, flags, seals, extra people, decorative objects, or text. Do not copy the face from image 2.\nIf a source shows a microphone, podium, lanyard or outdoor overcoat, remove those, retaining appropriate plain formal jacket or blouse; for men use a plain dark suit, white shirt and tie. Keep the face and identifying features.",
+    "tool": "built-in image_gen",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a1634f-75a7-7b31-a8bc-6632c574a52c\\exec-ed6e5e29-d899-41b7-90a7-a0075fae521a.png",
+    "master": "docs/artwork/ministers/masters/lauri_laanemets.png",
+    "final": "gfx/interface/ideas/EST/ministers/lauri_laanemets.png",
+    "transparent_background": true
+  }
+]

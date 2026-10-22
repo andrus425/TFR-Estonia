@@ -1,0 +1,146 @@
+[
+  {
+    "person": "jurgen_ligi",
+    "prompt": "Use case: style-transfer. Asset type: Hearts of Iron IV The Fire Rises minister portrait icon. Primary request: Transform photo image 1 into a single TFR minister portrait icon matching native Heiko Maas image 2. Input images: image 1 is the identity/photo edit target; image 2 is style and frame reference only. Preserve the person's recognizable likeness, hair, age, expression and eyewear; retain formal clothing, or use a sober dark suit and shirt if source is casual. Tight head-and-shoulders crop, whole hair and chin inside, face large and easy to recognize at 62x67px. Desaturated photorealistic painted/photo treatment, high-contrast facial planes, muted lavender-purple vignette background inside the frame and delicate horizontal scanlines. Thin dark gunmetal beveled rectangular frame with silver-blue top and left highlights, subtle counterclockwise tilt about 4 degrees, soft dark shadow. Frame nearly fills the vertical canvas with a small actual transparent outside margin. Vertical aspect ratio 62:67. No text, flags, symbols, other people, watermark or captions. Do not copy the style reference person's face. Preserve identity of image 1. Subject: Jürgen Ligi.",
+    "tool": "built-in image_gen",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a1634f-cef5-7df1-85fb-f3bea64a62c9\\exec-49d7e353-33d4-4a1a-9f24-c862236c1b9d.png",
+    "master": "docs/artwork/ministers/masters/jurgen_ligi.png",
+    "final": "gfx/interface/ideas/EST/ministers/jurgen_ligi.png",
+    "size": [
+      62,
+      67
+    ]
+  },
+  {
+    "person": "hanno_pevkur",
+    "prompt": "Use case: style-transfer. Asset type: Hearts of Iron IV The Fire Rises minister portrait icon. Primary request: Transform photo image 1 into a single TFR minister portrait icon matching native Heiko Maas image 2. Input images: image 1 is the identity/photo edit target; image 2 is style and frame reference only. Preserve the person's recognizable likeness, hair, age, expression and eyewear; retain formal clothing, or use a sober dark suit and shirt if source is casual. Tight head-and-shoulders crop, whole hair and chin inside, face large and easy to recognize at 62x67px. Desaturated photorealistic painted/photo treatment, high-contrast facial planes, muted lavender-purple vignette background inside the frame and delicate horizontal scanlines. Thin dark gunmetal beveled rectangular frame with silver-blue top and left highlights, subtle counterclockwise tilt about 4 degrees, soft dark shadow. Frame nearly fills the vertical canvas with a small actual transparent outside margin. Vertical aspect ratio 62:67. No text, flags, symbols, other people, watermark or captions. Do not copy the style reference person's face. Preserve identity of image 1. Subject: Hanno Pevkur.",
+    "tool": "built-in image_gen",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a1634f-cef5-7df1-85fb-f3bea64a62c9\\exec-f6164e9b-7c56-4f02-8aa5-b0ef046e85b7.png",
+    "master": "docs/artwork/ministers/masters/hanno_pevkur.png",
+    "final": "gfx/interface/ideas/EST/ministers/hanno_pevkur.png",
+    "size": [
+      62,
+      67
+    ]
+  },
+  {
+    "person": "eerik_niiles_kross",
+    "prompt": "Use case: style-transfer. Asset type: Hearts of Iron IV The Fire Rises minister portrait icon. Primary request: Transform photo image 1 into a single TFR minister portrait icon matching native Heiko Maas image 2. Input images: image 1 is the identity/photo edit target; image 2 is style and frame reference only. Preserve the person's recognizable likeness, hair, age, expression and eyewear; retain formal clothing, or use a sober dark suit and shirt if source is casual. Tight head-and-shoulders crop, whole hair and chin inside, face large and easy to recognize at 62x67px. Desaturated photorealistic painted/photo treatment, high-contrast facial planes, muted lavender-purple vignette background inside the frame and delicate horizontal scanlines. Thin dark gunmetal beveled rectangular frame with silver-blue top and left highlights, subtle counterclockwise tilt about 4 degrees, soft dark shadow. Frame nearly fills the vertical canvas with a small actual transparent outside margin. Vertical aspect ratio 62:67. No text, flags, symbols, other people, watermark or captions. Do not copy the style reference person's face. Preserve identity of image 1. Subject: Eerik-Niiles Kross.",
+    "tool": "built-in image_gen",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a1634f-cef5-7df1-85fb-f3bea64a62c9\\exec-cf8dfe71-1627-4813-a8bd-fe8914937ac6.png",
+    "master": "docs/artwork/ministers/masters/eerik_niiles_kross.png",
+    "final": "gfx/interface/ideas/EST/ministers/eerik_niiles_kross.png",
+    "size": [
+      62,
+      67
+    ]
+  },
+  {
+    "person": "kalle_laanet",
+    "prompt": "Use case: style-transfer. Asset type: Hearts of Iron IV The Fire Rises minister portrait icon. Primary request: Transform photo image 1 into a single TFR minister portrait icon matching native Heiko Maas image 2. Input images: image 1 is the identity/photo edit target; image 2 is style and frame reference only. Preserve the person's recognizable likeness, hair, age, expression and eyewear; retain formal clothing, or use a sober dark suit and shirt if source is casual. Tight head-and-shoulders crop, whole hair and chin inside, face large and easy to recognize at 62x67px. Desaturated photorealistic painted/photo treatment, high-contrast facial planes, muted lavender-purple vignette background inside the frame and delicate horizontal scanlines. Thin dark gunmetal beveled rectangular frame with silver-blue top and left highlights, subtle counterclockwise tilt about 4 degrees, soft dark shadow. Frame nearly fills the vertical canvas with a small actual transparent outside margin. Vertical aspect ratio 62:67. No text, flags, symbols, other people, watermark or captions. Do not copy the style reference person's face. Preserve identity of image 1. Subject: Kalle Laanet.",
+    "tool": "built-in image_gen",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a1634f-cef5-7df1-85fb-f3bea64a62c9\\exec-a2d9917d-6015-4fcd-9ad2-5eecd334fc04.png",
+    "master": "docs/artwork/ministers/masters/kalle_laanet.png",
+    "final": "gfx/interface/ideas/EST/ministers/kalle_laanet.png",
+    "size": [
+      62,
+      67
+    ]
+  },
+  {
+    "person": "enn_eesmaa",
+    "prompt": "Use case: style-transfer. Asset type: Hearts of Iron IV The Fire Rises minister portrait icon. Primary request: Transform photo image 1 into a single TFR minister portrait icon matching native Heiko Maas image 2. Input images: image 1 is the identity/photo edit target; image 2 is style and frame reference only. Preserve the person's recognizable likeness, hair, age, expression and eyewear; retain formal clothing, or use a sober dark suit and shirt if source is casual. Tight head-and-shoulders crop, whole hair and chin inside, face large and easy to recognize at 62x67px. Desaturated photorealistic painted/photo treatment, high-contrast facial planes, muted lavender-purple vignette background inside the frame and delicate horizontal scanlines. Thin dark gunmetal beveled rectangular frame with silver-blue top and left highlights, subtle counterclockwise tilt about 4 degrees, soft dark shadow. Frame nearly fills the vertical canvas with a small actual transparent outside margin. Vertical aspect ratio 62:67. No text, flags, symbols, other people, watermark or captions. Do not copy the style reference person's face. Preserve identity of image 1. Subject: Enn Eesmaa.",
+    "tool": "built-in image_gen",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a1634f-cef5-7df1-85fb-f3bea64a62c9\\exec-81299ef1-cbb5-4ae7-a517-22aa65ed5965.png",
+    "master": "docs/artwork/ministers/masters/enn_eesmaa.png",
+    "final": "gfx/interface/ideas/EST/ministers/enn_eesmaa.png",
+    "size": [
+      62,
+      67
+    ]
+  },
+  {
+    "person": "taavi_aas",
+    "prompt": "Use case: style-transfer. Asset type: Hearts of Iron IV The Fire Rises minister portrait icon. Primary request: Transform photo image 1 into a single TFR minister portrait icon matching native Heiko Maas image 2. Input images: image 1 is the identity/photo edit target; image 2 is style and frame reference only. Preserve the person's recognizable likeness, hair, age, expression and eyewear; retain formal clothing, or use a sober dark suit and shirt if source is casual. Tight head-and-shoulders crop, whole hair and chin inside, face large and easy to recognize at 62x67px. Desaturated photorealistic painted/photo treatment, high-contrast facial planes, muted lavender-purple vignette background inside the frame and delicate horizontal scanlines. Thin dark gunmetal beveled rectangular frame with silver-blue top and left highlights, subtle counterclockwise tilt about 4 degrees, soft dark shadow. Frame nearly fills the vertical canvas with a small actual transparent outside margin. Vertical aspect ratio 62:67. No text, flags, symbols, other people, watermark or captions. Do not copy the style reference person's face. Preserve identity of image 1. Subject: Taavi Aas. Remove the podium, microphone, lanyard and original event background; keep the moustache and low-sitting glasses.",
+    "tool": "built-in image_gen",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a1634f-cef5-7df1-85fb-f3bea64a62c9\\exec-25f7dacc-4441-4f9a-a2bc-587fa154b3a8.png",
+    "master": "docs/artwork/ministers/masters/taavi_aas.png",
+    "final": "gfx/interface/ideas/EST/ministers/taavi_aas.png",
+    "size": [
+      62,
+      67
+    ]
+  },
+  {
+    "person": "jaak_aab",
+    "prompt": "Use case: style-transfer. Asset type: Hearts of Iron IV The Fire Rises minister portrait icon. Primary request: Transform photo image 1 into a single TFR minister portrait icon matching native Heiko Maas image 2. Input images: image 1 is the identity/photo edit target; image 2 is style and frame reference only. Preserve the person's recognizable likeness, hair, age, expression and eyewear; retain formal clothing, or use a sober dark suit and shirt if source is casual. Tight head-and-shoulders crop, whole hair and chin inside, face large and easy to recognize at 62x67px. Desaturated photorealistic painted/photo treatment, high-contrast facial planes, muted lavender-purple vignette background inside the frame and delicate horizontal scanlines. Thin dark gunmetal beveled rectangular frame with silver-blue top and left highlights, subtle counterclockwise tilt about 4 degrees, soft dark shadow. Frame nearly fills the vertical canvas with a small actual transparent outside margin. Vertical aspect ratio 62:67. No text, flags, symbols, other people, watermark or captions. Do not copy the style reference person's face. Preserve identity of image 1. Subject: Jaak Aab.",
+    "tool": "built-in image_gen",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a1634f-cef5-7df1-85fb-f3bea64a62c9\\exec-0980072f-d4ef-41f0-90a5-19bcee82b459.png",
+    "master": "docs/artwork/ministers/masters/jaak_aab.png",
+    "final": "gfx/interface/ideas/EST/ministers/jaak_aab.png",
+    "size": [
+      62,
+      67
+    ]
+  },
+  {
+    "person": "kalle_klandorf",
+    "prompt": "Use case: style-transfer. Asset type: Hearts of Iron IV The Fire Rises minister portrait icon. Primary request: Transform photo image 1 into a single TFR minister portrait icon matching native Heiko Maas image 2. Input images: image 1 is the identity/photo edit target; image 2 is style and frame reference only. Preserve the person's recognizable likeness, hair, age, expression and eyewear; retain formal clothing, or use a sober dark suit and shirt if source is casual. Tight head-and-shoulders crop, whole hair and chin inside, face large and easy to recognize at 62x67px. Desaturated photorealistic painted/photo treatment, high-contrast facial planes, muted lavender-purple vignette background inside the frame and delicate horizontal scanlines. Thin dark gunmetal beveled rectangular frame with silver-blue top and left highlights, subtle counterclockwise tilt about 4 degrees, soft dark shadow. Frame nearly fills the vertical canvas with a small actual transparent outside margin. Vertical aspect ratio 62:67. No text, flags, symbols, other people, watermark or captions. Do not copy the style reference person's face. Preserve identity of image 1. Subject: Kalle Klandorf. Preserve bald scalp, grey moustache and metal-rim glasses exactly, change black casual shirt to formal dark suit, pale shirt and subdued dark tie.",
+    "tool": "built-in image_gen",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a1634f-cef5-7df1-85fb-f3bea64a62c9\\exec-da4b8e8d-2acd-4c7d-b10b-e124410e4858.png",
+    "master": "docs/artwork/ministers/masters/kalle_klandorf.png",
+    "final": "gfx/interface/ideas/EST/ministers/kalle_klandorf.png",
+    "size": [
+      62,
+      67
+    ]
+  },
+  {
+    "person": "tiit_terik",
+    "prompt": "Use case: style-transfer. Asset type: Hearts of Iron IV The Fire Rises minister portrait icon. Primary request: Transform photo image 1 into a single TFR minister portrait icon matching native Heiko Maas image 2. Input images: image 1 is the identity/photo edit target; image 2 is style and frame reference only. Preserve the person's recognizable likeness, hair, age, expression and eyewear; retain formal clothing, or use a sober dark suit and shirt if source is casual. Tight head-and-shoulders crop, whole hair and chin inside, face large and easy to recognize at 62x67px. Desaturated photorealistic painted/photo treatment, high-contrast facial planes, muted lavender-purple vignette background inside the frame and delicate horizontal scanlines. Thin dark gunmetal beveled rectangular frame with silver-blue top and left highlights, subtle counterclockwise tilt about 4 degrees, soft dark shadow. Frame nearly fills the vertical canvas with a small actual transparent outside margin. Vertical aspect ratio 62:67. No text, flags, symbols, other people, watermark or captions. Do not copy the style reference person's face. Preserve identity of image 1. Subject: Tiit Terik.",
+    "tool": "built-in image_gen",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a1634f-cef5-7df1-85fb-f3bea64a62c9\\exec-f5e1a7c9-ec10-4b15-b6bd-3b9d72be68a7.png",
+    "master": "docs/artwork/ministers/masters/tiit_terik.png",
+    "final": "gfx/interface/ideas/EST/ministers/tiit_terik.png",
+    "size": [
+      62,
+      67
+    ]
+  },
+  {
+    "person": "urmas_reinsalu",
+    "prompt": "Use case: style-transfer. Asset type: Hearts of Iron IV The Fire Rises minister portrait icon. Primary request: Transform photo image 1 into a single TFR minister portrait icon matching native Heiko Maas image 2. Input images: image 1 is the identity/photo edit target; image 2 is style and frame reference only. Preserve the person's recognizable likeness, hair, age, expression and eyewear; retain formal clothing, or use a sober dark suit and shirt if source is casual. Tight head-and-shoulders crop, whole hair and chin inside, face large and easy to recognize at 62x67px. Desaturated photorealistic painted/photo treatment, high-contrast facial planes, muted lavender-purple vignette background inside the frame and delicate horizontal scanlines. Thin dark gunmetal beveled rectangular frame with silver-blue top and left highlights, subtle counterclockwise tilt about 4 degrees, soft dark shadow. Frame nearly fills the vertical canvas with a small actual transparent outside margin. Vertical aspect ratio 62:67. No text, flags, symbols, other people, watermark or captions. Do not copy the style reference person's face. Preserve identity of image 1. Subject: Urmas Reinsalu. Preserve his short dark salt-and-pepper hair and close beard, remove the lanyard, camera, people and outdoor background.",
+    "tool": "built-in image_gen",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a1634f-cef5-7df1-85fb-f3bea64a62c9\\exec-fae19f89-6270-41a6-89ae-55ccfd1945ef.png",
+    "master": "docs/artwork/ministers/masters/urmas_reinsalu.png",
+    "final": "gfx/interface/ideas/EST/ministers/urmas_reinsalu.png",
+    "size": [
+      62,
+      67
+    ]
+  },
+  {
+    "person": "sven_sester",
+    "prompt": "Use case: style-transfer. Asset type: Hearts of Iron IV The Fire Rises minister portrait icon. Primary request: Transform photo image 1 into a single TFR minister portrait icon matching native Heiko Maas image 2. Input images: image 1 is the identity/photo edit target; image 2 is style and frame reference only. Preserve the person's recognizable likeness, hair, age, expression and eyewear; retain formal clothing, or use a sober dark suit and shirt if source is casual. Tight head-and-shoulders crop, whole hair and chin inside, face large and easy to recognize at 62x67px. Desaturated photorealistic painted/photo treatment, high-contrast facial planes, muted lavender-purple vignette background inside the frame and delicate horizontal scanlines. Thin dark gunmetal beveled rectangular frame with silver-blue top and left highlights, subtle counterclockwise tilt about 4 degrees, soft dark shadow. Frame nearly fills the vertical canvas with a small actual transparent outside margin. Vertical aspect ratio 62:67. No text, flags, symbols, other people, watermark or captions. Do not copy the style reference person's face. Preserve identity of image 1. Subject: Sven Sester.",
+    "tool": "built-in image_gen",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a1634f-cef5-7df1-85fb-f3bea64a62c9\\exec-1adafccc-c6ff-47c2-a915-c3cf65d6a2fa.png",
+    "master": "docs/artwork/ministers/masters/sven_sester.png",
+    "final": "gfx/interface/ideas/EST/ministers/sven_sester.png",
+    "size": [
+      62,
+      67
+    ]
+  },
+  {
+    "person": "marko_pomerants",
+    "prompt": "Use case: style-transfer. Asset type: Hearts of Iron IV The Fire Rises minister portrait icon. Primary request: Transform photo image 1 into a single TFR minister portrait icon matching native Heiko Maas image 2. Input images: image 1 is the identity/photo edit target; image 2 is style and frame reference only. Preserve the person's recognizable likeness, hair, age, expression and eyewear; retain formal clothing, or use a sober dark suit and shirt if source is casual. Tight head-and-shoulders crop, whole hair and chin inside, face large and easy to recognize at 62x67px. Desaturated photorealistic painted/photo treatment, high-contrast facial planes, muted lavender-purple vignette background inside the frame and delicate horizontal scanlines. Thin dark gunmetal beveled rectangular frame with silver-blue top and left highlights, subtle counterclockwise tilt about 4 degrees, soft dark shadow. Frame nearly fills the vertical canvas with a small actual transparent outside margin. Vertical aspect ratio 62:67. No text, flags, symbols, other people, watermark or captions. Do not copy the style reference person's face. Preserve identity of image 1. Subject: Marko Pomerants.",
+    "tool": "built-in image_gen",
+    "generated_path": "C:\\Users\\Sten\\.codex\\generated_images\\01a1634f-cef5-7df1-85fb-f3bea64a62c9\\exec-07b36ba4-37b5-411e-b7bb-e06a120be884.png",
+    "master": "docs/artwork/ministers/masters/marko_pomerants.png",
+    "final": "gfx/interface/ideas/EST/ministers/marko_pomerants.png",
+    "size": [
+      62,
+      67
+    ]
+  }
+]
