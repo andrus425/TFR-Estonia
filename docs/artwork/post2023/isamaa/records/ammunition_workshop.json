@@ -1,0 +1,19 @@
+{
+  "party": "isamaa",
+  "asset_id": "ammunition_workshop",
+  "source_generation_file": "exec-ad72b427-e5f0-443d-88b1-098bbdc366aa.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "2df26d931c29e9392a8b56013b43401d825ba058b1a89240e112ae0fcca8ac94",
+  "texture_sha256": "2424edcdacd48076fb972cd773549a14b4762b9c2a44920f54ba262e7014dccf",
+  "texture_bytes": 42119,
+  "artwork_bounds": {
+    "left": 9,
+    "top": 1,
+    "width": 151,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "transport",
+  "source_generation_file": "exec-f719f153-c599-48a4-8932-69f4b6a48b33.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "296ca156ea041911a5902453649ec2a25045e1db85e30827a0dfabe889442314",
+  "texture_sha256": "9eb694702cf67543ac2bdc0d643033a7f9b6e3c64a362623df47ce156da40e27",
+  "texture_bytes": 49126,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 1,
+    "width": 168,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

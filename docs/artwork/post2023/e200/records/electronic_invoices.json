@@ -1,0 +1,19 @@
+{
+  "party": "e200",
+  "asset_id": "electronic_invoices",
+  "source_generation_file": "exec-4f4bb9a4-7df6-4d7d-9f19-d87c91f94c5f.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "a22de4f1ee132927018bc161791245ac8d5a4bfd6d7364abcb29fe4e30a6db70",
+  "texture_sha256": "2373817fbdfebd60d64d47c11bf546751a1a406d8ad8988b2f0f3e2d8282773d",
+  "texture_bytes": 41412,
+  "artwork_bounds": {
+    "left": 2,
+    "top": 1,
+    "width": 165,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

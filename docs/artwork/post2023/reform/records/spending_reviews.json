@@ -1,0 +1,19 @@
+{
+  "party": "reform",
+  "asset_id": "spending_reviews",
+  "source_generation_file": "exec-92dec529-ec44-4c6c-b361-cc30707afe51.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "c1b5bfd2adcb7faaf3672f9de33af0ffa191a973bf51f5b6b95cf0e33d7a4600",
+  "texture_sha256": "e5b4c3f5b40db774417bf9302c98e684b5429ad4ad830b2002feea3fae8e918d",
+  "texture_bytes": 45908,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 1,
+    "width": 168,
+    "height": 107
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

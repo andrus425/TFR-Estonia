@@ -1,0 +1,19 @@
+{
+  "party": "e200",
+  "asset_id": "teacher_careers",
+  "source_generation_file": "exec-59786ef0-e1a2-4b16-ac11-7b5b4fe398af.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "6dc858c9df9bf48687bf1f67758152c2d8d578a05fdc691ccb5f30e60df8ff60",
+  "texture_sha256": "7095c90efc8d5f5ac17cea4b54da680c4cdfa056e45cf113f5a963edf1499c5a",
+  "texture_bytes": 43466,
+  "artwork_bounds": {
+    "left": 7,
+    "top": 1,
+    "width": 156,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

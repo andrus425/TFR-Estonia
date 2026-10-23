@@ -46,6 +46,33 @@ class PortablePackageTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "absolute path"):
             package_mod.portable_descriptors(descriptor)
 
+    def test_ideology_reference_sheets_are_excluded_and_generated_art_is_retained(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.fixture(root)
+            references = (
+                "docs/artwork/ideology/references/tfr_ideology_style_sheet.png",
+                "docs/artwork/ideology/references/estonia_party_leaders_a.jpg",
+                "docs/artwork/ideology/references/nested/photo.jpg",
+                "docs/artwork/ministers/references/kaja_kallas.jpg",
+            )
+            generated = (
+                "docs/artwork/ideology/masters/reform_kallas.png",
+                "gfx/interface/ideologies/EST/reform_kallas.png",
+                "docs/artwork/ideology/manifest.json",
+                "docs/artwork/ideology/leader_reference_sources.json",
+                "docs/artwork/ideology/contact_sheet_1x.png",
+            )
+            for relative in references + generated:
+                path = root / relative
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(relative.encode("utf-8"))
+            entries, _ = package_mod.package_entries(root)
+            for relative in references:
+                self.assertNotIn(f"tfr-estonia/{relative}", entries)
+            for relative in generated:
+                self.assertEqual(entries[f"tfr-estonia/{relative}"], relative.encode("utf-8"))
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,19 @@
+{
+  "party": "pp",
+  "asset_id": "patient_choice",
+  "source_generation_file": "exec-d24772e3-d682-4ee3-a2aa-428fbeccdfe3.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "5d12636c886e0817bf36d5cd8efa4d66a04cc2cf2ab3632ddd98ce7d43ad8be0",
+  "texture_sha256": "011c364cc0c701ecde58417490b7ff07069637324fe50d48535cc724be1c9a88",
+  "texture_bytes": 44578,
+  "artwork_bounds": {
+    "left": 6,
+    "top": 1,
+    "width": 157,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

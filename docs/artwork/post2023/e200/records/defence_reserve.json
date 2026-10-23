@@ -1,0 +1,19 @@
+{
+  "party": "e200",
+  "asset_id": "defence_reserve",
+  "source_generation_file": "exec-4d28d6d7-a0e0-4e2f-97ed-be6f3bf97464.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "5e0411e2d482e1a2089b1224bcdcffb132029c4f0e5c44c3d64b9d650a9ec1b9",
+  "texture_sha256": "0acf86fc7798e9efae78b7e551f8d4bbfcb99370257a2f02e73c7258c298943e",
+  "texture_bytes": 43038,
+  "artwork_bounds": {
+    "left": 11,
+    "top": 1,
+    "width": 148,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

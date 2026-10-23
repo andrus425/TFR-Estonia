@@ -1,0 +1,19 @@
+{
+  "party": "reform",
+  "asset_id": "enterprise_digital",
+  "source_generation_file": "exec-0079d7c1-25ba-4ddc-a8c4-f8cb2401c258.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "3e926a71f02685b991b523c9f4dfbedf76f6324a2280c94a3bad043cd53e082b",
+  "texture_sha256": "3f1fcd43ff87e978ae5cc1a3d10048ef8cce183f01dba68a695d0f34c64d4b7c",
+  "texture_bytes": 45652,
+  "artwork_bounds": {
+    "left": 12,
+    "top": 1,
+    "width": 145,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

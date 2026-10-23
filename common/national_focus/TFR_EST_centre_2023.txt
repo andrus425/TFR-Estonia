@@ -2,7 +2,7 @@
 
 shared_focus = {
     id = TFR_EST_centre_2023_new_mandate
-    icon = GFX_goal_generic_national_unity
+    icon = GFX_goal_TFR_EST_centre_2023_new_mandate
     x = 4
     y = 0
     cost = 5
@@ -25,7 +25,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_defence_commitment
-    icon = GFX_goal_generic_defence
+    icon = GFX_goal_TFR_EST_centre_2023_defence_commitment
     x = 0
     y = 1
     cost = 5
@@ -49,7 +49,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_air_defence
-    icon = GFX_goal_generic_air_fighter
+    icon = GFX_goal_TFR_EST_centre_2023_air_defence
     x = 0
     y = 2
     cost = 5
@@ -73,7 +73,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_reserve_expertise
-    icon = GFX_goal_generic_army_doctrines
+    icon = GFX_goal_TFR_EST_centre_2023_reserve_expertise
     x = 0
     y = 3
     cost = 5
@@ -97,7 +97,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_allied_basing
-    icon = GFX_goal_generic_construct_military
+    icon = GFX_goal_TFR_EST_centre_2023_allied_basing
     x = 0
     y = 4
     cost = 5
@@ -121,7 +121,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_community_training
-    icon = GFX_goal_generic_army_doctrines
+    icon = GFX_goal_TFR_EST_centre_2023_community_training
     x = 0
     y = 5
     cost = 5
@@ -145,7 +145,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_civil_continuity
-    icon = GFX_goal_generic_national_unity
+    icon = GFX_goal_TFR_EST_centre_2023_civil_continuity
     x = 0
     y = 6
     cost = 5
@@ -169,7 +169,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_industrial_guarantees
-    icon = GFX_goal_generic_small_arms
+    icon = GFX_goal_TFR_EST_centre_2023_industrial_guarantees
     x = 2
     y = 1
     cost = 5
@@ -193,7 +193,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_ammunition_workshop
-    icon = GFX_goal_generic_construct_mil_factory
+    icon = GFX_goal_TFR_EST_centre_2023_ammunition_workshop
     x = 2
     y = 2
     cost = 5
@@ -217,7 +217,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_maintenance_workshop
-    icon = GFX_goal_generic_production
+    icon = GFX_goal_TFR_EST_centre_2023_maintenance_workshop
     x = 2
     y = 3
     cost = 5
@@ -241,7 +241,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_ida_viru_innovation
-    icon = GFX_goal_generic_scientific_exchange
+    icon = GFX_goal_TFR_EST_centre_2023_ida_viru_innovation
     x = 2
     y = 4
     cost = 5
@@ -265,7 +265,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_regional_jobs
-    icon = GFX_goal_generic_construct_civ_factory
+    icon = GFX_goal_TFR_EST_centre_2023_regional_jobs
     x = 2
     y = 5
     cost = 5
@@ -289,7 +289,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_construction_orders
-    icon = GFX_goal_generic_construct_infrastructure
+    icon = GFX_goal_TFR_EST_centre_2023_construction_orders
     x = 2
     y = 6
     cost = 5
@@ -313,7 +313,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_power_reserves
-    icon = GFX_goal_generic_oil_refinery
+    icon = GFX_goal_TFR_EST_centre_2023_power_reserves
     x = 4
     y = 1
     cost = 5
@@ -337,7 +337,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_local_chp
-    icon = GFX_goal_generic_production
+    icon = GFX_goal_TFR_EST_centre_2023_local_chp
     x = 4
     y = 2
     cost = 5
@@ -361,7 +361,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_apartment_renovation
-    icon = GFX_goal_generic_construct_civ_factory
+    icon = GFX_goal_TFR_EST_centre_2023_apartment_renovation
     x = 4
     y = 3
     cost = 5
@@ -385,7 +385,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_weatherproof_grid
-    icon = GFX_goal_generic_construct_infrastructure
+    icon = GFX_goal_TFR_EST_centre_2023_weatherproof_grid
     x = 4
     y = 4
     cost = 5
@@ -409,7 +409,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_rural_broadband
-    icon = GFX_goal_generic_scientific_exchange
+    icon = GFX_goal_TFR_EST_centre_2023_rural_broadband
     x = 4
     y = 5
     cost = 5
@@ -433,7 +433,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_energy_cooperatives
-    icon = GFX_goal_generic_oil_refinery
+    icon = GFX_goal_TFR_EST_centre_2023_energy_cooperatives
     x = 4
     y = 6
     cost = 5
@@ -457,7 +457,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_progressive_income_tax
-    icon = GFX_goal_generic_political_pressure
+    icon = GFX_goal_TFR_EST_centre_2023_progressive_income_tax
     x = 6
     y = 1
     cost = 5
@@ -481,7 +481,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_minimum_tax_allowance
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_centre_2023_minimum_tax_allowance
     x = 6
     y = 2
     cost = 5
@@ -505,7 +505,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_food_vat
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_centre_2023_food_vat
     x = 6
     y = 3
     cost = 5
@@ -529,7 +529,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_prescription_vat
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_centre_2023_prescription_vat
     x = 6
     y = 4
     cost = 5
@@ -553,7 +553,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_pension_fifty
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_centre_2023_pension_fifty
     x = 6
     y = 5
     cost = 5
@@ -577,7 +577,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_home_care
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_centre_2023_home_care
     x = 6
     y = 6
     cost = 5
@@ -601,7 +601,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_county_hospitals
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_centre_2023_county_hospitals
     x = 8
     y = 1
     cost = 5
@@ -625,7 +625,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_second_day_sick_pay
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_centre_2023_second_day_sick_pay
     x = 8
     y = 2
     cost = 5
@@ -649,7 +649,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_free_kindergarten
-    icon = GFX_goal_generic_consumer_goods
+    icon = GFX_goal_TFR_EST_centre_2023_free_kindergarten
     x = 8
     y = 3
     cost = 5
@@ -673,7 +673,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_teacher_pay
-    icon = GFX_goal_generic_scientific_exchange
+    icon = GFX_goal_TFR_EST_centre_2023_teacher_pay
     x = 8
     y = 4
     cost = 5
@@ -697,7 +697,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_language_courses
-    icon = GFX_goal_generic_scientific_exchange
+    icon = GFX_goal_TFR_EST_centre_2023_language_courses
     x = 8
     y = 5
     cost = 5
@@ -721,7 +721,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_minorities_council
-    icon = GFX_goal_generic_national_unity
+    icon = GFX_goal_TFR_EST_centre_2023_minorities_council
     x = 8
     y = 6
     cost = 5
@@ -745,7 +745,7 @@ shared_focus = {
 
 shared_focus = {
     id = TFR_EST_centre_2023_account_to_parliament
-    icon = GFX_goal_generic_national_unity
+    icon = GFX_goal_TFR_EST_centre_2023_account_to_parliament
     x = 4
     y = 8
     cost = 5

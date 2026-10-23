@@ -1,0 +1,334 @@
+{
+  "brands": [
+    {
+      "party": "EKRE",
+      "symbol": "Blue cornflower, radial eight-lobed blossom of serrated petals; white and black supporting colors",
+      "color_sampled_from_official_png": "#0077BD",
+      "source_page": "https://www.ekre.ee/sumboolika/",
+      "image_url": "https://ekre.ee/wp-content/uploads/2015/07/ekre-logo-300px.png",
+      "local_reference": ".cache/ideology_references/ekre_2015_logo.png",
+      "cached_files": [
+        ".cache/post2023-references/ekre_2015_logo.png"
+      ]
+    },
+    {
+      "party": "Centre",
+      "symbol": "White four-leaf clover over an emerald green capital K. Leaves have alternate diagonal green/white striped halves",
+      "color_sampled_from_official_png": "#007B5E",
+      "source_page": "https://keskerakond.ee/erakonnast/meediale/",
+      "image_url": "https://keskerakond.ee/wp-content/uploads/2024/09/cropped-keskerakond-K-logo.png",
+      "local_reference": ".cache/ideology_references/centre_logo.png",
+      "context_note": "Standard party green; 2023 campaign used a brighter green, optional alternate at https://riigikogu.keskerakond.ee/",
+      "cached_files": [
+        ".cache/post2023-references/centre_logo.png"
+      ]
+    },
+    {
+      "party": "Isamaa",
+      "symbol": "Angular hollow eight-pointed octagram star, white on bright cyan blue",
+      "color_from_official_site_css": "#00AEEF",
+      "official_cmyk": "100/15/0/0",
+      "source_page": "https://isamaa.ee/",
+      "official_logo_pdf": "https://isamaa.ee/iwp/wp-content/uploads/2018/12/Isamaa-logo-1.pdf",
+      "image_url": "https://isamaa.ee/iwp/wp-content/uploads/2018/06/Isamaa-150px.png",
+      "local_reference": ".cache/ideology_references/isamaa_2018_logo.png",
+      "cached_files": [
+        ".cache/post2023-references/isamaa_2018_logo.png"
+      ]
+    },
+    {
+      "party": "Reform",
+      "symbol": "Deep ultramarine stylized squirrel in profile facing right, with immense sweeping curled tail; saturated yellow field",
+      "colors_sampled_from_official_png": [
+        "#FFE200",
+        "#010199"
+      ],
+      "source_page": "https://reform.ee/",
+      "campaign_source": "https://reform.ee/riigikogu-valimised-2023/kampaania/",
+      "image_url": "https://reform.ee/wp-content/uploads/2021/11/RE_profiil_logod_orav.png",
+      "local_reference": ".cache/ideology_references/reform_2021_orav.png",
+      "cached_files": [
+        ".cache/post2023-references/reform_2021_orav.png"
+      ]
+    },
+    {
+      "party": "SDE",
+      "symbol": "Red geometric angular rose blossom, superficially tulip shaped, with small dark-green stem; red and white identity",
+      "color_sampled_from_official_png": "#E10600",
+      "source_page": "https://www.sotsid.ee/",
+      "image_url": "https://www.sotsid.ee/wp-content/uploads/2017/07/logo17-sde-rbg.png",
+      "local_reference": ".cache/ideology_references/sde_2017_logo.png",
+      "cached_files": [
+        ".cache/post2023-references/sde_2017_logo.png"
+      ]
+    },
+    {
+      "party": "Eesti 200",
+      "symbol": "Indigo purple EESTI wordmark above three joined tilted rectangles containing reversed-out 2 0 0",
+      "color_from_party_svg": "#2F2A95",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Eesti_200_Logo.svg",
+      "source_credit": "Eesti 200 original logo, dated 2021 and uploaded March 2023 from the official eesti200.ee website",
+      "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Eesti_200_Logo.svg/960px-Eesti_200_Logo.svg.png",
+      "local_reference": ".cache/ideology_references/eesti200_2021_logo.png",
+      "context_note": "Current 2025 website has a different blue logo. Use the party's 2021-2023 logo for the mod's period.",
+      "cached_files": [
+        ".cache/post2023-references/eesti200_2021_logo.png"
+      ]
+    },
+    {
+      "party": "Parempoolsed",
+      "symbol": "Two adjacent rounded right-pointing triangles, like a fast-forward symbol; orange on charcoal gray or white on orange",
+      "colors_from_official_2023_guide": [
+        "#FF6100",
+        "#3C3C3C",
+        "#EAEAEA"
+      ],
+      "source_page": "https://parempoolsed.ee/stiiliraamat/",
+      "image_urls": [
+        "https://parempoolsed.ee/wp-content/uploads/2023/03/PP-colors-1024x230.png",
+        "https://parempoolsed.ee/wp-content/uploads/2023/03/PP-logos-1024x230.png"
+      ],
+      "local_references": [
+        ".cache/ideology_references/parempoolsed_colors.png",
+        ".cache/ideology_references/parempoolsed_logos.png"
+      ],
+      "cached_files": [
+        ".cache/post2023-references/parempoolsed_colors.png",
+        ".cache/post2023-references/parempoolsed_logos.png"
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "person": "mart_helme",
+      "name": "Mart Helme",
+      "reference_path": "docs/artwork/ministers/references/mart_helme.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:RK_Mart_Helme.jpg",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/RK_Mart_Helme.jpg/960px-RK_Mart_Helme.jpg",
+      "author": "Erik Peinar",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2015-03-30",
+      "cached_file": ".cache/post2023-references/mart_helme.jpg"
+    },
+    {
+      "person": "martin_helme",
+      "name": "Martin Helme",
+      "reference_path": "docs/artwork/ministers/references/martin_helme.jpg",
+      "source_page_url": "https://valitsus.ee/vabariigi-valitsuse-50-koosseis",
+      "direct_image_url": "https://valitsus.ee/sites/default/files/2020-11/Helme.jpg",
+      "author": "Renee Altrov / Riigikantselei",
+      "license": "Reference only; rights retained by institution/photographer",
+      "license_url": null,
+      "date": "Not stated",
+      "cached_file": ".cache/post2023-references/martin_helme.jpg"
+    },
+    {
+      "person": "juri_ratas",
+      "name": "Jüri Ratas",
+      "reference_path": "docs/artwork/ministers/references/juri_ratas.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:J%C3%BCri_Ratas_2017-05-25_(cropped).jpg",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/36/J%C3%BCri_Ratas_2017-05-25_%28cropped%29.jpg",
+      "author": "2017 Estonian Presidency of the Council of the European Union",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2017-05-25 06:20",
+      "cached_file": ".cache/post2023-references/juri_ratas.jpg"
+    },
+    {
+      "person": "tanel_kiik",
+      "name": "Tanel Kiik",
+      "reference_path": "docs/artwork/ministers/references/tanel_kiik.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Tanel_Kiik_(crop).jpg",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Tanel_Kiik_%28crop%29.jpg",
+      "author": "Renee Altrov",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2021-01-25 12:14:45",
+      "cached_file": ".cache/post2023-references/tanel_kiik.jpg"
+    },
+    {
+      "person": "mihhail_kolvart",
+      "name": "Mihhail Kõlvart",
+      "reference_path": "docs/artwork/ministers/references/mihhail_kolvart.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Mihhail_K%C3%B5lvart_P%C3%A4tsi_monumendi_avamisel._2022_(cropped).jpg",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Mihhail_K%C3%B5lvart_P%C3%A4tsi_monumendi_avamisel._2022_%28cropped%29.jpg",
+      "author": "Jaan Künnap",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-10-21 14:18:41",
+      "cached_file": ".cache/post2023-references/mihhail_kolvart.jpg"
+    },
+    {
+      "person": "helir_valdor_seeder",
+      "name": "Helir-Valdor Seeder",
+      "reference_path": "docs/artwork/ministers/references/helir_valdor_seeder.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Helir-Valdor_Seeder_2016.jpg",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Helir-Valdor_Seeder_2016.jpg",
+      "author": "Saeima",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "date": "2016-10-28 11:20",
+      "cached_file": ".cache/post2023-references/helir_valdor_seeder.jpg"
+    },
+    {
+      "person": "urmas_reinsalu",
+      "name": "Urmas Reinsalu",
+      "reference_path": "docs/artwork/ministers/references/urmas_reinsalu.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Urmas_Reinsalu.jpg",
+      "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Urmas_Reinsalu.jpg/960px-Urmas_Reinsalu.jpg",
+      "author": "EU2017EE Estonian Presidency",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2017-07-06 13:59:33",
+      "cached_file": ".cache/post2023-references/urmas_reinsalu.jpg"
+    },
+    {
+      "person": "kaja_kallas",
+      "name": "Kaja Kallas",
+      "reference_path": "docs/artwork/ministers/references/kaja_kallas.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Kaja_Kallas_(crop).jpg",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Kaja_Kallas_%28crop%29.jpg",
+      "author": "Renee Altrov",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "Taken on 25 January 2021",
+      "cached_file": ".cache/post2023-references/kaja_kallas.jpg"
+    },
+    {
+      "person": "kristen_michal",
+      "name": "Kristen Michal",
+      "reference_path": "docs/artwork/ministers/references/kristen_michal.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Kristen_Michal_2023_(cropped).jpg",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Kristen_Michal_2023_%28cropped%29.jpg",
+      "author": "Alexandros Michailidis - Council of the European Union",
+      "license": "Attribution",
+      "license_url": null,
+      "date": "2023-12-18",
+      "cached_file": ".cache/post2023-references/kristen_michal.jpg"
+    },
+    {
+      "person": "indrek_saar",
+      "name": "Indrek Saar",
+      "reference_path": "docs/artwork/ministers/references/indrek_saar.jpg",
+      "source_page_url": "https://www.riigikogu.ee/riigikogu/riigikogu-liikmed/58378026-b797-4bf2-89fc-31a73d9219b3/saadik/",
+      "direct_image_url": "https://www.riigikogu.ee/wp-content/uploads/ems-media/7e2e09a7-8d29-4e83-9b28-ce30b38a95d9.jpg",
+      "author": "Chancellery of the Riigikogu",
+      "license": "Not stated on retrieved profile; retained as visual reference",
+      "license_url": "",
+      "date": "XIV Riigikogu profile, 2019-2023",
+      "cached_file": ".cache/post2023-references/indrek_saar.jpg"
+    },
+    {
+      "person": "lauri_laanemets",
+      "name": "Lauri Läänemets",
+      "reference_path": "docs/artwork/ministers/references/lauri_laanemets.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Lauri_L%C3%A4%C3%A4nemets_at_the_Opinion_Festival_2022_in_Paide,_Estonia_(cropped).jpg",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Lauri_L%C3%A4%C3%A4nemets_at_the_Opinion_Festival_2022_in_Paide%2C_Estonia_%28cropped%29.jpg",
+      "author": "Sillerkiil",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2022-08-13 12:10:04",
+      "cached_file": ".cache/post2023-references/lauri_laanemets.jpg"
+    },
+    {
+      "person": "kristina_kallas",
+      "name": "Kristina Kallas",
+      "reference_path": "docs/artwork/ministers/references/kristina_kallas.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Kristina_Kallas_KF_(cropped).jpg",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Kristina_Kallas_KF_%28cropped%29.jpg",
+      "author": "Metsavend",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "date": "2018-11-06 15:04:19",
+      "cached_file": ".cache/post2023-references/kristina_kallas.jpg"
+    },
+    {
+      "person": "margus_tsahkna",
+      "name": "Margus Tsahkna",
+      "reference_path": "docs/artwork/ministers/references/margus_tsahkna.jpg",
+      "source_page_url": "https://www.valitsus.ee/peaminister-ministrid/valisminister-margus-tsahkna",
+      "direct_image_url": "https://www.valitsus.ee/sites/default/files/2023-04/Tsahkna.JPG",
+      "author": "Government of Estonia",
+      "license": "Not stated on retrieved profile; retained as visual reference",
+      "license_url": "",
+      "date": "Not stated",
+      "cached_file": ".cache/post2023-references/margus_tsahkna.jpg"
+    },
+    {
+      "person": "lavly_perling",
+      "name": "Lavly Perling",
+      "reference_path": "docs/artwork/ministers/references/lavly_perling.jpg",
+      "source_page_url": "https://commons.wikimedia.org/wiki/File:Lavly_Perling_2021-10-14_(cropped).jpg",
+      "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Lavly_Perling_2021-10-14_%28cropped%29.jpg",
+      "author": "Estonian Foreign Ministry",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "date": "2021-10-14",
+      "cached_file": ".cache/post2023-references/lavly_perling.jpg"
+    },
+    {
+      "person": "lauri_hussar",
+      "name": "Lauri Hussar",
+      "cached_file": ".cache/post2023-references/lauri_hussar.jpg",
+      "source_page_url": "https://www.riigikogu.ee/riigikogu/riigikogu-liikmed/64c0141f-371b-4520-8a50-09e65231f775/lauri-hussar/",
+      "direct_image_url": "https://www.riigikogu.ee/wp-content/uploads/ems-media/8fe9ef9a-0932-4c0f-88cf-83c482f587b8.jpg",
+      "author": "Chancellery of the Riigikogu",
+      "date": "Current XV Riigikogu profile; supplementary likeness reference only",
+      "role_note": "Historical party chair at March 2023 election; mod retains Kristina Kallas as alternate PM candidate"
+    }
+  ],
+  "historical_context": [
+    {
+      "party": "Reform",
+      "mod_pm": "Kaja Kallas, with scripted continuation under Kristen Michal",
+      "source_doc": "docs/REFORM_2023_SOURCES.md",
+      "primary_period_source": "https://reform.ee/riigikogu-valimised-2023/kampaania/",
+      "note": "Party source explicitly says data at 5 March 2023 and identifies PM Kaja Kallas."
+    },
+    {
+      "party": "Centre",
+      "mod_pm": "Jüri Ratas for initial March victory; conditional successors Tanel Kiik / Mihhail Kõlvart",
+      "source_doc": "docs/CENTRE_2023_SOURCES.md",
+      "primary_period_source": "https://www.riigikogu.ee/wpcms/wp-content/uploads/2023/06/101-l%C3%BChielulugu-2023.pdf",
+      "note": "2023 official biography identifies Ratas as Centre chair. Current party profile alone cannot establish 2023 affiliation."
+    },
+    {
+      "party": "EKRE",
+      "mod_pm": "Martin Helme",
+      "source_doc": "docs/EKRE_2023_SOURCES.md",
+      "primary_period_source": "https://ekre.ee/ekre-kongress-valis-uue-juhatuse-ja-volikogu-2/",
+      "note": "Dated 10 June 2023; Martin Helme chair, Mart Helme deputy."
+    },
+    {
+      "party": "Isamaa",
+      "mod_pm": "Helir-Valdor Seeder",
+      "source_doc": "docs/ISAMAA_2023_SOURCES.md",
+      "primary_period_source": "https://isamaa.ee/rk23/yldnimekiri/",
+      "note": "2023 party list ranks Seeder first and Reinsalu third. Mod explicitly retains Seeder without handover."
+    },
+    {
+      "party": "SDE",
+      "mod_pm": "Lauri Läänemets",
+      "source_doc": "docs/SDE_2023_SOURCES.md",
+      "primary_period_source": "https://www.sotsid.ee/sotsiaaldemokraatide-valimisprogrammi-fookuses-on-inimeste-toimetulek/",
+      "note": "Dated 14 January 2023; explicitly identifies Läänemets as chair."
+    },
+    {
+      "party": "Eesti 200",
+      "mod_pm": "Kristina Kallas (alternate existing game identity)",
+      "source_doc": "docs/E200_2023_SOURCES.md",
+      "primary_period_source": "https://www.riigikogu.ee/wpcms/wp-content/uploads/2023/06/101-l%C3%BChielulugu-2023.pdf",
+      "note": "Historical March 2023 chair was Lauri Hussar. Mod source expressly preserves Kristina Kallas as hypothetical PM. Use indigo period logo; current site logo URL belongs to 2025/08."
+    },
+    {
+      "party": "Parempoolsed",
+      "mod_pm": "Lavly Perling",
+      "source_doc": "docs/PP_2023_SOURCES.md",
+      "primary_period_source": "https://parempoolsed.ee/riigikogu-valimised-2023/",
+      "note": "2023 campaign index explicitly identifies Lavly Perling as party chair."
+    }
+  ],
+  "research_checked": "2026-10-23",
+  "technical_note": "Reference sheets merely arrange unchanged original logos and likeness photos for imagegen inputs. Downloaded Hussar reference is supplementary and its current date is not a claim about 2023 portrait capture."
+}

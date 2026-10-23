@@ -20,9 +20,11 @@ composition, then technically resized with .NET System.Drawing.
 - [Game-size contact sheet](contact_sheet_1x.png) and [2× contact sheet](contact_sheet_2x.png).
 
 `tools/build_ministers.py` generates both minister sprite registers. Head-minister
-ideas select the `_icon` sprites; existing shared tooltip strings keep their
-original sprite names, which now point to the larger canvas. Appointment and
-cabinet logic are unaffected.
+ideas select the `_icon` sprites. Both these aliases and the direct
+`GFX_idea_TFR_EST_pm_*` sprites use the 62 × 67 icons, since the cabinet can
+resolve a direct idea-ID sprite before its explicit picture alias. Shared
+tooltips use separate `GFX_TFR_EST_hog_portrait_*` sprites for the 156 × 210
+canvases. Appointment and cabinet logic are unaffected.
 
 Run `./tools/export_minister_artwork.ps1` to export saved masters and refresh the
 contact sheets. Run it with `-Check` to decode and verify every runtime PNG,
@@ -56,6 +58,15 @@ the release inputs include the artwork and credits and exclude original photos.
 The full Python suite passed 663 tests, `build_ministers.py --check` passed, and
 `validate_mod.py` reported zero errors. Contact sheets were visually reviewed at
 native and 2× size. A running-game visual inspection was not performed.
+
+On 23 October 2026, the reported oversized prime-minister cabinet icon was
+traced to the direct idea-ID sprite resolving the large tooltip image. All
+twelve direct sprites now use 62 × 67 icons, and tooltip localization uses the
+separate portrait namespace. Both lookup paths and all tooltip PNG dimensions
+are covered by regressions. The 104 relevant display, minister and leadership
+tests and all four affected generator checks pass; the mod validator reports
+zero errors. The correction still requires visual confirmation after restarting
+the game and loading the existing save.
 
 The table records the photo used for each likeness, rather than claiming the
 generated icon is an original historical photograph. Source dates vary; the

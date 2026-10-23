@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "trunk_roads",
+  "source_generation_file": "exec-8c605dcf-b8de-4b78-aa7a-7787c4df7a99.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "4a5c2fdf531d09dcb00b3a4a588181a0cd0ab9215bd68a66d28bfb081c92dd8d",
+  "texture_sha256": "6dd7fd6a97c2fba25f837448fa629909d5f73734c392fa40641a7d8f660b1754",
+  "texture_bytes": 47940,
+  "artwork_bounds": {
+    "left": 2,
+    "top": 1,
+    "width": 165,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

@@ -1,0 +1,19 @@
+{
+  "party": "reform",
+  "asset_id": "ida_viru_teachers",
+  "source_generation_file": "exec-3b414f69-6895-47ca-9ef9-b5965b0a191e.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "262a91e3c93e5c7b8745a898bb6036a1786a7f13d97e43c011c086c2ac88ecdd",
+  "texture_sha256": "252ca69854fa7e03f9f4d17af490c1c8039b2195a1a644251e6e0fabf2738c1e",
+  "texture_bytes": 46384,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 7,
+    "width": 168,
+    "height": 96
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

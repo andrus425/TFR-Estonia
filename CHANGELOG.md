@@ -1,5 +1,49 @@
 # Changelog
 
+## 23 October 2026 — Unique post-election focus icons
+
+- Give all 224 focuses across the seven post-2023 government programmes their
+  own separately generated TFR-style collage icons, 32 per tree. Every focus
+  uses a distinct composition and texture.
+- Apply the coalition leader's palette throughout each tree: Reform yellow,
+  EKRE blue, Centre emerald, Isamaa cyan, SDE red, period Eesti 200 purple and
+  Parempoolsed orange. Include selected leader portraits and referenced party
+  emblems, following the mod's authored alternate governments.
+- Generate 224 base sprites and 224 TFR shine variants from a one-to-one asset
+  catalog. Reject shared focus assignments and duplicate runtime texture hashes.
+- Export 170 × 150 RGBA PNGs with 40 transparent bottom pixels. Retain original
+  masters, exact built-in imagegen prompts, reference credits, per-image hashes
+  and seven icon/tree review pairs under `docs/artwork/post2023/`.
+- Pass all seven generator consistency checks, the 224-image export audit and
+  the complete 678-test source suite. Static mod validation reports zero errors;
+  in-game rendering and UI-scale inspection remain manual acceptance checks.
+
+## 23 October 2026 — Party ideology icons
+
+- Add twelve separately generated ideology icons for EKRE, Centre, Isamaa,
+  Reform, SDE, Eesti 200 and Parempoolsed. Each combines a referenced leader
+  likeness, party palette and emblem in TFR's compact metallic collage style.
+- Support Mart/Martin Helme, Ratas/Kiik/Kõlvart, Kallas/Michal and
+  Saar/Läänemets variants using existing leadership and incumbent flags.
+- Display the serving PM's icon in Estonia's diplomacy view and each party
+  chair's icon in its Riigikogu row, preserving outgoing caretaker identities.
+  Add the interface through isolated scripted GUI files without parent-file
+  overrides, new ideologies or gameplay changes.
+- Export transparent 66 × 68 RGBA PNGs; retain full-resolution masters, exact
+  built-in imagegen prompts, source credits and native/4× review sheets under
+  `docs/artwork/ideology/`. Exclude research sheets and source photos from ZIPs.
+
+## 23 October 2026 — Prime-minister icon size
+
+- Point all twelve direct prime-minister idea sprites at the 62 × 67 cabinet
+  icons. The direct idea name could select the 156 × 210 tooltip portrait even
+  when the idea specified the small picture alias, causing the government row
+  to overlap Economic Laws.
+- Give the larger tooltip portraits separate sprite names and update both
+  authored and generated tooltip references. Preserve the artwork and save IDs.
+- Add regressions that check actual PNG dimensions for both cabinet lookup
+  paths and keep every large tooltip in a separate sprite namespace.
+
 ## 22 October 2026 — Prime-minister retention
 
 - Replace permanently false appointment eligibility on all twelve scripted

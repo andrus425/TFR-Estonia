@@ -1,0 +1,19 @@
+{
+  "party": "pp",
+  "asset_id": "common_learning",
+  "source_generation_file": "exec-5015d562-cf3d-493e-b5ce-fa9d558a2b4b.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "06995158d7f8d5c5425b0c108f3d924f5f50e0f0068aa94f32878ed7707b64b7",
+  "texture_sha256": "0095fa4e9d849a818979357975cd566833a0f594c5e8fa4ac5b263d6557597e9",
+  "texture_bytes": 42309,
+  "artwork_bounds": {
+    "left": 10,
+    "top": 1,
+    "width": 150,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

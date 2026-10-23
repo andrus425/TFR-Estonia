@@ -1,0 +1,19 @@
+{
+  "party": "sde",
+  "asset_id": "inclusive_schools_policy",
+  "source_generation_file": "exec-bd5e67c5-0eaf-41d3-83fc-5a88ccc30252.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "a220cd090e4705f61eafd9d30caf8c78b36a22a3ef24a9b279eafa4fe9bdd3d0",
+  "texture_sha256": "099f9e5ed4c4fe94d0fab123c8b77701b76bddbdcc31187a1be804397b9947c0",
+  "texture_bytes": 42995,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 3,
+    "width": 168,
+    "height": 104
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

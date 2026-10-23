@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "food_reserves",
+  "source_generation_file": "exec-08e25ecf-a1f6-43e7-b0b2-6e293722536f.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "bb6df094fbdcbc0da11aa9ddab2fe76463b7636f84130806b503cdc5ea049458",
+  "texture_sha256": "8c6ec093b82355fa90565fdee5daef24c6f6b51559fa9b17ca4431776312d2b9",
+  "texture_bytes": 41894,
+  "artwork_bounds": {
+    "left": 12,
+    "top": 1,
+    "width": 145,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

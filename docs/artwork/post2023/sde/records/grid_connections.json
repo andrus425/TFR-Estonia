@@ -1,0 +1,19 @@
+{
+  "party": "sde",
+  "asset_id": "grid_connections",
+  "source_generation_file": "exec-2311cad9-b7fe-4f3b-a59f-4ad43ba0c585.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "72db8959dc0eb4f945ea31c0154cf4453cb2d089b0b1e1a4c10305807b6f0dab",
+  "texture_sha256": "4bd43a37cb3116c7ca7e98d3b901fbfb0e944137e77704df9d4df0135eef9c33",
+  "texture_bytes": 47662,
+  "artwork_bounds": {
+    "left": 3,
+    "top": 1,
+    "width": 163,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

@@ -1,0 +1,19 @@
+{
+  "party": "e200",
+  "asset_id": "climate_permits",
+  "source_generation_file": "exec-4620f7c3-b813-46dd-a4d6-fc4e8087f12e.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "df90f35faa35c21b9c121967e8166255e3f9893adbe3ec13d6603baa30a7b072",
+  "texture_sha256": "e6374bf99948e54a6e37241bd341babd34001cc9d245c36c348a0bbd71d42043",
+  "texture_bytes": 37688,
+  "artwork_bounds": {
+    "left": 10,
+    "top": 1,
+    "width": 150,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

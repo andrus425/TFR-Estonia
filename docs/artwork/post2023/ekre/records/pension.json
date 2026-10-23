@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "pension",
+  "source_generation_file": "exec-866600cf-3db1-4bc4-b962-9e51709e98f4.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "4a86957d270089c87e86c120d36b1f511ad1a7225668acbd6e19f6790659b074",
+  "texture_sha256": "d39d776d4b9d836e020d4423bd492ffd7fef97167ddbfd59bb23cecc350dd080",
+  "texture_bytes": 39823,
+  "artwork_bounds": {
+    "left": 18,
+    "top": 1,
+    "width": 133,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

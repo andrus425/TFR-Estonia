@@ -1,0 +1,19 @@
+{
+  "party": "centre",
+  "asset_id": "county_hospitals",
+  "source_generation_file": "exec-dd7e0acb-0d51-456f-a5ff-ef51fe68156b.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "8dddbf96bffcdf79c35829979fffecd6f5b398e18f60a61924b91a5973269539",
+  "texture_sha256": "ee12d65e33397abd7df6ac9ca99ec3d36ac1f62711b3ee619b134d83a462b0d1",
+  "texture_bytes": 43005,
+  "artwork_bounds": {
+    "left": 8,
+    "top": 1,
+    "width": 153,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

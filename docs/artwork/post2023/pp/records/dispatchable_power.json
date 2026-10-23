@@ -1,0 +1,19 @@
+{
+  "party": "pp",
+  "asset_id": "dispatchable_power",
+  "source_generation_file": "exec-680adab6-4fe9-4ba9-8b5f-731ec57ffd60.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "4ebaf068259ed3b82c64e140f8e0ba8fe4ef280910c4b8ea8a132a87f3dc022f",
+  "texture_sha256": "209540786d17b99e91c2f8f15928708c72cf1d93ebc52d7207d18893ae40a8fd",
+  "texture_bytes": 43651,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 3,
+    "width": 168,
+    "height": 104
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

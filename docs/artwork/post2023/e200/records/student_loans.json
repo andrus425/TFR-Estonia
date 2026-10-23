@@ -1,0 +1,19 @@
+{
+  "party": "e200",
+  "asset_id": "student_loans",
+  "source_generation_file": "exec-329f3aaf-2885-45da-bbb9-a6aaa346159d.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "8f011d4fc732645f2b041b5740853cf4edb666f76020f5a683b99841636412c0",
+  "texture_sha256": "b00b4522cddadcdbe7580b2a1e8f125c6dc5d8a7f2b5184d5684d7feb5eeb4fa",
+  "texture_bytes": 36061,
+  "artwork_bounds": {
+    "left": 13,
+    "top": 1,
+    "width": 144,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

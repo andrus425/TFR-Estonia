@@ -1,0 +1,19 @@
+{
+  "party": "reform",
+  "asset_id": "research_one_percent",
+  "source_generation_file": "exec-bbe79423-58ed-4be6-99d5-ee8012af67cf.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "8b4db13181b7189d0636e5ed9b19f1f316f1273887c9fc1c63a4ad963c4432e0",
+  "texture_sha256": "d59f2456ada9ac0dc2362b464f6e9ab79fefc34820b23a70d49720dc4e20ebf1",
+  "texture_bytes": 45018,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 1,
+    "width": 168,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

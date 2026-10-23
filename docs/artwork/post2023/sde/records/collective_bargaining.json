@@ -1,0 +1,19 @@
+{
+  "party": "sde",
+  "asset_id": "collective_bargaining",
+  "source_generation_file": "exec-b9667b19-4e63-41b3-96a5-42acb8dce0f8.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "413a7ffe127b2342c52d3913bf21be1de572751de21d52c665f9cec230b3c0de",
+  "texture_sha256": "7f817a67e9a796cdc6965ba938793588dfcec82dc9c2754851fd94064534fc6c",
+  "texture_bytes": 36943,
+  "artwork_bounds": {
+    "left": 10,
+    "top": 1,
+    "width": 150,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

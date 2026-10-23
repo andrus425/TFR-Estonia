@@ -1,0 +1,19 @@
+{
+  "party": "reform",
+  "asset_id": "grid",
+  "source_generation_file": "exec-32b535ca-58f5-40b5-af67-85222debc13e.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "f04f772da613406790cef7c9feaa39700bb3d57b8ad198cdcf192d475a189d65",
+  "texture_sha256": "cbaa417358073ac02f81bec536238f2e1e07d501ed0d6ee36cc604dc93e9f7ec",
+  "texture_bytes": 34610,
+  "artwork_bounds": {
+    "left": 23,
+    "top": 1,
+    "width": 123,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

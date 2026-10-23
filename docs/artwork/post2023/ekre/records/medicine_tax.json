@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "medicine_tax",
+  "source_generation_file": "exec-1a2f1037-8add-41c3-995d-1c806b391e1c.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "9a9418d7933af33525fe8906020d3dcd805b510691077b625981c85b38305636",
+  "texture_sha256": "d292081b96425a11d141a0278929a9bc57b75f4d51a34580610157d8d7c8ea14",
+  "texture_bytes": 47541,
+  "artwork_bounds": {
+    "left": 6,
+    "top": 1,
+    "width": 157,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

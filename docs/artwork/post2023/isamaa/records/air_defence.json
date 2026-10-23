@@ -1,0 +1,19 @@
+{
+  "party": "isamaa",
+  "asset_id": "air_defence",
+  "source_generation_file": "exec-b4a43a62-c44d-4a41-a083-b11aea6dba69.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "ca73abbadf04ff73b2ce737b3792322cb3757fa842a7f9e8d51f67ff8a1e1f70",
+  "texture_sha256": "7d6933ba16623054b6eb1e51bfbb83dab48fc78288cdce22bf6659cd0487ef50",
+  "texture_bytes": 42565,
+  "artwork_bounds": {
+    "left": 8,
+    "top": 1,
+    "width": 154,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

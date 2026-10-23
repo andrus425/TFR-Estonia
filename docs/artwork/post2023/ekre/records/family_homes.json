@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "family_homes",
+  "source_generation_file": "exec-798b2ae2-af0a-4905-ba1c-b45ba86aaa48.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "cb45a57c7794ac7dea34748d10fafa0e3344f4cc23dc93f557bfbc3a664f3f8b",
+  "texture_sha256": "d7992ee17686c4093287c5f09d5f5c60f69888da380bb4f42d7fcf528712ccf1",
+  "texture_bytes": 40239,
+  "artwork_bounds": {
+    "left": 14,
+    "top": 1,
+    "width": 142,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

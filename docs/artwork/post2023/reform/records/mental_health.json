@@ -1,0 +1,19 @@
+{
+  "party": "reform",
+  "asset_id": "mental_health",
+  "source_generation_file": "exec-0ffd2dd4-baf6-4098-a48e-54329150a0c2.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "5f2e9e2abfc40179f65de87d08634bda1c746a195437b0b6f5aec119eb0264b8",
+  "texture_sha256": "ab27e6550c0a58232b0a7de53acb27d6c10e6df8565fa73391ceb354f9eb2a2f",
+  "texture_bytes": 50587,
+  "artwork_bounds": {
+    "left": 4,
+    "top": 1,
+    "width": 161,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

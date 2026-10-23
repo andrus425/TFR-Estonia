@@ -1,0 +1,19 @@
+{
+  "party": "isamaa",
+  "asset_id": "mandate",
+  "source_generation_file": "exec-753e83df-ea2f-47ed-b2b6-092ee924777b.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "300fbdcd6a5c4020ad92cfa27896548be35dbc25130b1c65f883d22ba90b7e2b",
+  "texture_sha256": "f3edc28f1e2f751709f5e208b5cc412c3755fd8112a497cc7dfb4f0b5ccad4f5",
+  "texture_bytes": 39654,
+  "artwork_bounds": {
+    "left": 17,
+    "top": 1,
+    "width": 135,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

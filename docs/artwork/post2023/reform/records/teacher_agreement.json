@@ -1,0 +1,19 @@
+{
+  "party": "reform",
+  "asset_id": "teacher_agreement",
+  "source_generation_file": "exec-3b743110-e7a2-4fb7-a27a-cf4bf88aa33d.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "350975ebd0d24906d7b6e66263fdca295161a431d007fbf8986677c86a286a94",
+  "texture_sha256": "0ebf13b6b0addfcbd5ae3a25b3df1dc6c4027356f39f6e6315d1b03faea22b71",
+  "texture_bytes": 44291,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 2,
+    "width": 168,
+    "height": 105
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

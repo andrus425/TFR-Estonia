@@ -297,8 +297,11 @@ def build_sprites():
 def build_executive_sprites():
     out = ["# Small cabinet icons and separate full-size shared-tooltip portraits.\nspriteTypes = {\n"]
     for suffix, person in PM_PORTRAITS.items():
-        out.append(f'    spriteType = {{ name = "GFX_idea_TFR_EST_pm_{suffix}" texturefile = "gfx/leaders/EST/ministers/{person}.png" legacy_lazy_load = no }}\n')
+        # TFR resolves the direct idea-ID sprite in the cabinet, even when the
+        # idea has an explicit picture alias. Both names must use the small PNG.
+        out.append(f'    spriteType = {{ name = "GFX_idea_TFR_EST_pm_{suffix}" texturefile = "gfx/interface/ideas/EST/ministers/{person}.png" legacy_lazy_load = no }}\n')
         out.append(f'    spriteType = {{ name = "GFX_idea_TFR_EST_pm_{suffix}_icon" texturefile = "gfx/interface/ideas/EST/ministers/{person}.png" legacy_lazy_load = no }}\n')
+        out.append(f'    spriteType = {{ name = "GFX_TFR_EST_hog_portrait_{suffix}" texturefile = "gfx/leaders/EST/ministers/{person}.png" legacy_lazy_load = no }}\n')
     return "".join(out) + "}\n"
 
 

@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "presidential_election_bill",
+  "source_generation_file": "exec-863982cc-ab81-49d2-8103-05555455034c.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "311d747a6b9d642937c027b037f586483fc27e2f167b93212567a524e5065e23",
+  "texture_sha256": "50366f45ca5be0e99e09f1aeefb98e24a1b60c314c2d826c66df4a8dbe790fee",
+  "texture_bytes": 48198,
+  "artwork_bounds": {
+    "left": 3,
+    "top": 1,
+    "width": 164,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

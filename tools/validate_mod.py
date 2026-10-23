@@ -202,8 +202,16 @@ def validate(tfr, game):
                     character = e.value.get("character") if isinstance(e.value, Block) else e.value
                     if character_roles.get(character, 0) > 1 and (not isinstance(e.value, Block) or e.value.get("ideology") is None):
                         errors.append(f"{rel}:{e.line}: multi-role character {character} needs explicit promotion ideology")
-            if e.key == "localization_key" and isinstance(e.value, str) and e.value not in loc:
-                errors.append(f"{rel}:{e.line}: missing scripted localization {e.value}")
+            if e.key == "localization_key" and isinstance(e.value, str):
+                # Scripted GUI image properties consume defined_text results as
+                # sprite names. Validate these against the effective graphics
+                # catalog, rather than accepting every GFX_ literal or requiring
+                # a dummy localisation entry for an existing image.
+                if e.value.startswith("GFX_"):
+                    if e.value not in sprites:
+                        errors.append(f"{rel}:{e.line}: missing scripted image sprite {e.value}")
+                elif e.value not in loc:
+                    errors.append(f"{rel}:{e.line}: missing scripted localization {e.value}")
             if e.key in {"has_idea", "remove_ideas", "add_ideas"}:
                 refs = [x.key if x.op is None else x.value for x in e.value.entries] if isinstance(e.value, Block) else [e.value]
                 for ref in refs:

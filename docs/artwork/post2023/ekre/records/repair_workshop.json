@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "repair_workshop",
+  "source_generation_file": "exec-92a1e2e5-61c1-408e-940d-d83e3673dd63.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "cc2e3f2eeff004738a309f568f0b2c42294064419d91af745c6713d19472b0d8",
+  "texture_sha256": "1aab752cab5ed1f30d658767cee848ca82b33a043c99d609f6c85a5ece19145f",
+  "texture_bytes": 44222,
+  "artwork_bounds": {
+    "left": 9,
+    "top": 1,
+    "width": 152,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

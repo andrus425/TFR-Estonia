@@ -1,0 +1,19 @@
+{
+  "party": "pp",
+  "asset_id": "nuclear_framework",
+  "source_generation_file": "exec-5a362015-9cd5-43cc-957d-070253b5f6a8.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "8ccca59c42753bf42ce5d61fdef556052e2d93d5ce73382d956583fde3810085",
+  "texture_sha256": "ce93b378706bb370c1aea3170f747647cbeeb4781a087b807125478f75964634",
+  "texture_bytes": 35785,
+  "artwork_bounds": {
+    "left": 12,
+    "top": 1,
+    "width": 146,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

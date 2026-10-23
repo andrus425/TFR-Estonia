@@ -1,0 +1,19 @@
+{
+  "party": "centre",
+  "asset_id": "community_training",
+  "source_generation_file": "exec-231a5981-2dc8-4c4c-a816-034916318609.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "96ec16d37ee1e966701e52d532b83a751047bd9857850c251bf5bc2a33389481",
+  "texture_sha256": "53b19078fcdbd6c7a08a534668b72b249c4d7b605e7813accffaa85aba6f7558",
+  "texture_bytes": 42201,
+  "artwork_bounds": {
+    "left": 2,
+    "top": 1,
+    "width": 166,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

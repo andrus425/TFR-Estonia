@@ -1,0 +1,19 @@
+{
+  "party": "centre",
+  "asset_id": "regional_jobs_policy",
+  "source_generation_file": "exec-58cc5229-1dab-4b84-bc6e-46cb2f7f1414.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "19769633885191059e21a81c92859676ecc6fa741e7a82c58297c1166e9ac537",
+  "texture_sha256": "548339389334db4aa421509cf3ae1076eaa860201cc1348df92857d1edb3bc7e",
+  "texture_bytes": 41826,
+  "artwork_bounds": {
+    "left": 7,
+    "top": 1,
+    "width": 156,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

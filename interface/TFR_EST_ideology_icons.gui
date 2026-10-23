@@ -1,0 +1,32 @@
+guiTypes = {
+    containerWindowType = {
+        name = "TFR_EST_diplomacy_ideology_container"
+        position = { x = 158 y = 0 }
+        size = { width = 66 height = 68 }
+        clipping = yes
+        # The upper panel has a translucent bottom edge. Recreate the outer
+        # 550 px country's tiled background under it, aligned with country_info
+        # at y=50. Its 256 px height keeps its lower border outside this crop.
+        containerWindowType = {
+            name = "TFR_EST_diplomacy_ideology_outer_backdrop"
+            position = { x = -158 y = -50 }
+            size = { width = 550 height = 256 }
+            background = { name = "Background" spriteType = "GFX_tiled_bg" }
+        }
+        # Repaint precisely the native icon's background before the transparent
+        # party artwork. The parent panel starts at 139,-4, relative to this same
+        # selected-country anchor. No shared interface file needs an override.
+        iconType = {
+            name = "TFR_EST_diplomacy_ideology_backdrop"
+            position = { x = -19 y = -4 }
+            spriteType = "GFX_diplo_upper_win_bg"
+            alwaystransparent = yes
+        }
+        iconType = {
+            name = "TFR_EST_diplomacy_ideology_image"
+            position = { x = 0 y = 0 }
+            spriteType = "GFX_TFR_EST_ideology_centre_ratas"
+            pdx_tooltip = "TFR_EST_ruling_ideology_icon_tt"
+        }
+    }
+}

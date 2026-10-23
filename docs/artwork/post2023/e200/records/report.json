@@ -1,0 +1,19 @@
+{
+  "party": "e200",
+  "asset_id": "report",
+  "source_generation_file": "exec-1b8740d4-f819-4241-a69f-c8d990dcce70.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "be32f14b1ffb2d0d3d5802a6836c1865f07ac584882b1e735a4c75ca44b583ac",
+  "texture_sha256": "aed56254e252a111b31237f16378cc1276d8bbea00d6b45a21838509b40a6e3f",
+  "texture_bytes": 48642,
+  "artwork_bounds": {
+    "left": 4,
+    "top": 1,
+    "width": 162,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

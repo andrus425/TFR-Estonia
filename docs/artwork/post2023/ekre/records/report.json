@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "report",
+  "source_generation_file": "exec-330a80b7-73c5-41ea-a336-8a7dcdf1feab.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "61171d823e023ff18683f4e6b516a7852de3c3416e7edcc8bd15e9b9949f7946",
+  "texture_sha256": "099844edbd5acfa0a4fe5b9d89b7f25f490c69d5ffeb4876bdc049ae71d75726",
+  "texture_bytes": 38117,
+  "artwork_bounds": {
+    "left": 18,
+    "top": 1,
+    "width": 134,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

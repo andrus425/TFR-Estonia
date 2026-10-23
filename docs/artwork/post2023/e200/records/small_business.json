@@ -1,0 +1,19 @@
+{
+  "party": "e200",
+  "asset_id": "small_business",
+  "source_generation_file": "exec-6cb3e0ef-f027-44ea-8709-c1977957a957.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "defa34b29a3f228e792e4b5daed8432f77e7ec31e99f2ef884ab3112d6dc2e5c",
+  "texture_sha256": "0d325837f1a98b7ec93cbbcae0966e80ed747ba6b4a9f509d5c1c11f9a2c99c3",
+  "texture_bytes": 47493,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 2,
+    "width": 168,
+    "height": 106
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

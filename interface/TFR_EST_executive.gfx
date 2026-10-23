@@ -1,27 +1,39 @@
 # Small cabinet icons and separate full-size shared-tooltip portraits.
 spriteTypes = {
-    spriteType = { name = "GFX_idea_TFR_EST_pm_reform" texturefile = "gfx/leaders/EST/ministers/kaja_kallas.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_pm_reform" texturefile = "gfx/interface/ideas/EST/ministers/kaja_kallas.png" legacy_lazy_load = no }
     spriteType = { name = "GFX_idea_TFR_EST_pm_reform_icon" texturefile = "gfx/interface/ideas/EST/ministers/kaja_kallas.png" legacy_lazy_load = no }
-    spriteType = { name = "GFX_idea_TFR_EST_pm_reform_michal" texturefile = "gfx/leaders/EST/ministers/kristen_michal.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_TFR_EST_hog_portrait_reform" texturefile = "gfx/leaders/EST/ministers/kaja_kallas.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_pm_reform_michal" texturefile = "gfx/interface/ideas/EST/ministers/kristen_michal.png" legacy_lazy_load = no }
     spriteType = { name = "GFX_idea_TFR_EST_pm_reform_michal_icon" texturefile = "gfx/interface/ideas/EST/ministers/kristen_michal.png" legacy_lazy_load = no }
-    spriteType = { name = "GFX_idea_TFR_EST_pm_centre" texturefile = "gfx/leaders/EST/ministers/juri_ratas.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_TFR_EST_hog_portrait_reform_michal" texturefile = "gfx/leaders/EST/ministers/kristen_michal.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_pm_centre" texturefile = "gfx/interface/ideas/EST/ministers/juri_ratas.png" legacy_lazy_load = no }
     spriteType = { name = "GFX_idea_TFR_EST_pm_centre_icon" texturefile = "gfx/interface/ideas/EST/ministers/juri_ratas.png" legacy_lazy_load = no }
-    spriteType = { name = "GFX_idea_TFR_EST_pm_centre_kiik" texturefile = "gfx/leaders/EST/ministers/tanel_kiik.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_TFR_EST_hog_portrait_centre" texturefile = "gfx/leaders/EST/ministers/juri_ratas.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_pm_centre_kiik" texturefile = "gfx/interface/ideas/EST/ministers/tanel_kiik.png" legacy_lazy_load = no }
     spriteType = { name = "GFX_idea_TFR_EST_pm_centre_kiik_icon" texturefile = "gfx/interface/ideas/EST/ministers/tanel_kiik.png" legacy_lazy_load = no }
-    spriteType = { name = "GFX_idea_TFR_EST_pm_centre_kolvart" texturefile = "gfx/leaders/EST/ministers/mihhail_kolvart.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_TFR_EST_hog_portrait_centre_kiik" texturefile = "gfx/leaders/EST/ministers/tanel_kiik.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_pm_centre_kolvart" texturefile = "gfx/interface/ideas/EST/ministers/mihhail_kolvart.png" legacy_lazy_load = no }
     spriteType = { name = "GFX_idea_TFR_EST_pm_centre_kolvart_icon" texturefile = "gfx/interface/ideas/EST/ministers/mihhail_kolvart.png" legacy_lazy_load = no }
-    spriteType = { name = "GFX_idea_TFR_EST_pm_ekre" texturefile = "gfx/leaders/EST/ministers/mart_helme.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_TFR_EST_hog_portrait_centre_kolvart" texturefile = "gfx/leaders/EST/ministers/mihhail_kolvart.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_pm_ekre" texturefile = "gfx/interface/ideas/EST/ministers/mart_helme.png" legacy_lazy_load = no }
     spriteType = { name = "GFX_idea_TFR_EST_pm_ekre_icon" texturefile = "gfx/interface/ideas/EST/ministers/mart_helme.png" legacy_lazy_load = no }
-    spriteType = { name = "GFX_idea_TFR_EST_pm_ekre_martin" texturefile = "gfx/leaders/EST/ministers/martin_helme.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_TFR_EST_hog_portrait_ekre" texturefile = "gfx/leaders/EST/ministers/mart_helme.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_pm_ekre_martin" texturefile = "gfx/interface/ideas/EST/ministers/martin_helme.png" legacy_lazy_load = no }
     spriteType = { name = "GFX_idea_TFR_EST_pm_ekre_martin_icon" texturefile = "gfx/interface/ideas/EST/ministers/martin_helme.png" legacy_lazy_load = no }
-    spriteType = { name = "GFX_idea_TFR_EST_pm_isamaa" texturefile = "gfx/leaders/EST/ministers/helir_valdor_seeder.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_TFR_EST_hog_portrait_ekre_martin" texturefile = "gfx/leaders/EST/ministers/martin_helme.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_pm_isamaa" texturefile = "gfx/interface/ideas/EST/ministers/helir_valdor_seeder.png" legacy_lazy_load = no }
     spriteType = { name = "GFX_idea_TFR_EST_pm_isamaa_icon" texturefile = "gfx/interface/ideas/EST/ministers/helir_valdor_seeder.png" legacy_lazy_load = no }
-    spriteType = { name = "GFX_idea_TFR_EST_pm_sde" texturefile = "gfx/leaders/EST/ministers/indrek_saar.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_TFR_EST_hog_portrait_isamaa" texturefile = "gfx/leaders/EST/ministers/helir_valdor_seeder.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_pm_sde" texturefile = "gfx/interface/ideas/EST/ministers/indrek_saar.png" legacy_lazy_load = no }
     spriteType = { name = "GFX_idea_TFR_EST_pm_sde_icon" texturefile = "gfx/interface/ideas/EST/ministers/indrek_saar.png" legacy_lazy_load = no }
-    spriteType = { name = "GFX_idea_TFR_EST_pm_sde_laanemets" texturefile = "gfx/leaders/EST/ministers/lauri_laanemets.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_TFR_EST_hog_portrait_sde" texturefile = "gfx/leaders/EST/ministers/indrek_saar.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_pm_sde_laanemets" texturefile = "gfx/interface/ideas/EST/ministers/lauri_laanemets.png" legacy_lazy_load = no }
     spriteType = { name = "GFX_idea_TFR_EST_pm_sde_laanemets_icon" texturefile = "gfx/interface/ideas/EST/ministers/lauri_laanemets.png" legacy_lazy_load = no }
-    spriteType = { name = "GFX_idea_TFR_EST_pm_e200" texturefile = "gfx/leaders/EST/ministers/kristina_kallas.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_TFR_EST_hog_portrait_sde_laanemets" texturefile = "gfx/leaders/EST/ministers/lauri_laanemets.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_pm_e200" texturefile = "gfx/interface/ideas/EST/ministers/kristina_kallas.png" legacy_lazy_load = no }
     spriteType = { name = "GFX_idea_TFR_EST_pm_e200_icon" texturefile = "gfx/interface/ideas/EST/ministers/kristina_kallas.png" legacy_lazy_load = no }
-    spriteType = { name = "GFX_idea_TFR_EST_pm_pp" texturefile = "gfx/leaders/EST/ministers/lavly_perling.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_TFR_EST_hog_portrait_e200" texturefile = "gfx/leaders/EST/ministers/kristina_kallas.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_idea_TFR_EST_pm_pp" texturefile = "gfx/interface/ideas/EST/ministers/lavly_perling.png" legacy_lazy_load = no }
     spriteType = { name = "GFX_idea_TFR_EST_pm_pp_icon" texturefile = "gfx/interface/ideas/EST/ministers/lavly_perling.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_TFR_EST_hog_portrait_pp" texturefile = "gfx/leaders/EST/ministers/lavly_perling.png" legacy_lazy_load = no }
 }

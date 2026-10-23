@@ -1,0 +1,19 @@
+{
+  "party": "sde",
+  "asset_id": "mental_health",
+  "source_generation_file": "exec-f230eb31-1aa0-4c90-aaa4-3db91b305d45.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "fdc46463e090b6444db628942b6e047a809f7d231f583134b5b4bb62d890d8b2",
+  "texture_sha256": "e9452b1019e026827d23db1afdfe07b80d592cd3cb3d7fe1c9d02d98d8b3c918",
+  "texture_bytes": 39539,
+  "artwork_bounds": {
+    "left": 6,
+    "top": 1,
+    "width": 158,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

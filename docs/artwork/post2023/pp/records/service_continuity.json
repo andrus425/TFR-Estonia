@@ -1,0 +1,19 @@
+{
+  "party": "pp",
+  "asset_id": "service_continuity",
+  "source_generation_file": "exec-d2c75f7f-8f09-4e0a-b5b8-243ad03b42f4.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "56af0f696681c6d21fa76f3e9a4f7756db537ce62359a2f691ff3b3d6ea3f242",
+  "texture_sha256": "ab5bb2f3133d7086f4e0b9c8bbb948b2278a65ee000a37513f237fbb729daf0d",
+  "texture_bytes": 38712,
+  "artwork_bounds": {
+    "left": 6,
+    "top": 1,
+    "width": 158,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

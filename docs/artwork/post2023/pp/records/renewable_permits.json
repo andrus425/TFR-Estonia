@@ -1,0 +1,19 @@
+{
+  "party": "pp",
+  "asset_id": "renewable_permits",
+  "source_generation_file": "exec-13f9f0a9-14ec-47eb-96c5-f9e825a3e453.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "2ba61700243dbeb9dd8f68c5c3d9d1cdea3625c4dabe2ba4bc420253c16185db",
+  "texture_sha256": "3b02a914271de36b5b4db9919b272c1595a240577aa11bd26cca67acd9b56c54",
+  "texture_bytes": 40085,
+  "artwork_bounds": {
+    "left": 7,
+    "top": 1,
+    "width": 156,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

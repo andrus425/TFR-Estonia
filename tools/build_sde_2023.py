@@ -13,6 +13,7 @@ from pathlib import Path
 from build_ratas_continuation import Policy
 from focus_reward_model import concise_trigger, modifier_reward
 from native_script_interface import amount_call
+from post2023_focus_art import build_focus_sprites, focus_sprite
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -185,7 +186,7 @@ def build_focuses() -> str:
         out.append(f"""
 shared_focus = {{
     id = {PREFIX}{p.suffix}
-    icon = GFX_goal_generic_{p.icon}
+    icon = {focus_sprite("sde", p.suffix)}
     x = {p.x}
     y = {p.y}
     cost = 5
@@ -313,6 +314,7 @@ def build_localisation() -> str:
 def outputs() -> dict[str, str]:
     return {
         "common/national_focus/TFR_EST_sde_2023.txt": build_focuses(),
+        "interface/TFR_EST_sde_2023_focus_icons.gfx": build_focus_sprites(POLICIES, "sde", "build_sde_2023.py"),
         "common/scripted_triggers/TFR_EST_sde_2023.txt": build_triggers(),
         "common/scripted_effects/TFR_EST_sde_2023.txt": build_effects(),
         "localisation/english/TFR_EST_sde_2023_l_english.yml": build_localisation(),

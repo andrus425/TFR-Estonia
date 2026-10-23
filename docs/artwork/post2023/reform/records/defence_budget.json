@@ -1,0 +1,19 @@
+{
+  "party": "reform",
+  "asset_id": "defence_budget",
+  "source_generation_file": "exec-3b0d7d23-65b4-4c51-9bb4-f4057a700b9d.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "eceb48a9c0a7ccdfaf77218172c2f23a8e0e9c59bb052911abe3cd550f937301",
+  "texture_sha256": "b8402654067d3bdf6a184e0575ee000d146a364cb34e7121793f164662647fb6",
+  "texture_bytes": 42686,
+  "artwork_bounds": {
+    "left": 13,
+    "top": 1,
+    "width": 143,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

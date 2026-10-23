@@ -1,0 +1,19 @@
+{
+  "party": "centre",
+  "asset_id": "income_tax",
+  "source_generation_file": "exec-a6f960c9-ec8f-45cc-9f19-905f9fe51c1e.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "f6f6e6edcf7b1b3087be8a64a5ee4248f707d851d407ca4a50a29284d864e001",
+  "texture_sha256": "cca3b261fc3da74fdfac4542a3a857c0f5cd40c95ae910bf572f555aa5d41f01",
+  "texture_bytes": 43640,
+  "artwork_bounds": {
+    "left": 8,
+    "top": 1,
+    "width": 154,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

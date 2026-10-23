@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "constitutional_review",
+  "source_generation_file": "exec-7cb54469-1710-41f7-9525-303fde842ace.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "1e223e2e694f96bd1184f0b3fcf9325f2ffd798296f2e8e8871c2e789bb7be93",
+  "texture_sha256": "7aa05487ff802195e9fb9034e0f07dee9b0ec4b09e906ab66120263a06c8ba9f",
+  "texture_bytes": 38869,
+  "artwork_bounds": {
+    "left": 15,
+    "top": 1,
+    "width": 139,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

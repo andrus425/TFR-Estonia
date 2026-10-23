@@ -1,0 +1,19 @@
+{
+  "party": "e200",
+  "asset_id": "kaitseliit_instructors",
+  "source_generation_file": "exec-f27b2e23-0304-4ee6-bf36-f18ca9834ef2.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "11a9c407e2fc390278c1784d7f20459c14361bc9fb38b38e13adda534108fc96",
+  "texture_sha256": "d9e6f7310a3a8e6b6b50ec7d2874f9415ec6375084a2c649c118e80963257460",
+  "texture_bytes": 42226,
+  "artwork_bounds": {
+    "left": 9,
+    "top": 1,
+    "width": 152,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

@@ -1,0 +1,19 @@
+{
+  "party": "e200",
+  "asset_id": "learning_to_eighteen",
+  "source_generation_file": "exec-d1bfa519-0f92-45b8-9a85-4ce592e95fd4.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "8a34b612b3710c5b7abf4d17795352586b96d8e82d093e3e43cdd74799442290",
+  "texture_sha256": "58b1d8f373cb72b13895adc3bb4f00a84e29f961c4e411843d7bf54f94048ab3",
+  "texture_bytes": 42490,
+  "artwork_bounds": {
+    "left": 10,
+    "top": 1,
+    "width": 149,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

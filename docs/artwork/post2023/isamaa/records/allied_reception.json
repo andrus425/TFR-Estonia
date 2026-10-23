@@ -1,0 +1,19 @@
+{
+  "party": "isamaa",
+  "asset_id": "allied_reception",
+  "source_generation_file": "exec-c15fb1ca-76b0-42e9-a706-2910d2bc2df9.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "5ed2338e3c99a6d67be5b5d78ddcdcfc9c62fbf3d23db56481ba1d384461065e",
+  "texture_sha256": "a970ff4929a16dbbe4e46d3bce2cceb117f2835f211ce452ddd5589fa89daa05",
+  "texture_bytes": 41062,
+  "artwork_bounds": {
+    "left": 9,
+    "top": 1,
+    "width": 151,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

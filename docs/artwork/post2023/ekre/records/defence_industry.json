@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "defence_industry",
+  "source_generation_file": "exec-043dfe57-3c32-421a-9f28-f0dae214e05e.png",
+  "master_size": {
+    "width": 1336,
+    "height": 1177
+  },
+  "master_sha256": "4bcfd5c377375fdcb36ba2ce094ecc955043acec85bfe7bf90752dcef64ec91e",
+  "texture_sha256": "6ffffd034f2da535fd93b5226d95cd04d697eee03f5bfd9ae40c3e062dedac07",
+  "texture_bytes": 48042,
+  "artwork_bounds": {
+    "left": 3,
+    "top": 1,
+    "width": 163,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

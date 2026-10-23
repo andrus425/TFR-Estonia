@@ -1,0 +1,19 @@
+{
+  "party": "sde",
+  "asset_id": "pensions_care",
+  "source_generation_file": "exec-ebd9c28d-855b-4bab-b21d-593a1abbf8f2.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "d215959ec4499d602ef9e8b8a81080f129d0ec2f939d845d39509859be6c52e8",
+  "texture_sha256": "ca34aa6cc03eb9bfc0039f8b90094b4858c11a9bd16a9117de3c926a4172f19c",
+  "texture_bytes": 48586,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 1,
+    "width": 168,
+    "height": 107
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

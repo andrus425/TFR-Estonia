@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "mandate",
+  "source_generation_file": "exec-46960339-0db1-472e-b21b-e12d292e243a.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "29122f8badfda7b4ee44b155cb82c71d03c95151a2c0e9b98e329d1367217e55",
+  "texture_sha256": "a1152695b8e489eb75f9a9a081ce01dac3205a38b31acf7968df3f28be5a26a8",
+  "texture_bytes": 46312,
+  "artwork_bounds": {
+    "left": 9,
+    "top": 1,
+    "width": 152,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

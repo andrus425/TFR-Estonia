@@ -1,0 +1,19 @@
+{
+  "party": "sde",
+  "asset_id": "universal_health",
+  "source_generation_file": "exec-8e5578fd-6c7c-4db5-9dbf-bc505acb784f.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "23846866fbee1d1534b0540ae7e850558b1c9e5d88be0fda27a3b3fc874f216e",
+  "texture_sha256": "56743a36adf9c7a9a5ffb4b695d733d34e1f7f8d42194e1e5f2a987f25a3f5b0",
+  "texture_bytes": 49001,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 2,
+    "width": 168,
+    "height": 105
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

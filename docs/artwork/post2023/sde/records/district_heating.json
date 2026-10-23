@@ -1,0 +1,19 @@
+{
+  "party": "sde",
+  "asset_id": "district_heating",
+  "source_generation_file": "exec-4f2b4c29-237d-409c-830d-fbb1be0dd930.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "4b05b9141729827b4ce5f84b0cbe5d9b3ece451d705c702f105d25c6049f64e2",
+  "texture_sha256": "7ae688fa41700ebc5180db6e0f0b8a20af7e4dcfd3104a02a12ce94d3a5dd7cb",
+  "texture_bytes": 37823,
+  "artwork_bounds": {
+    "left": 7,
+    "top": 1,
+    "width": 155,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

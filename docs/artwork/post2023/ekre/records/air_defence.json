@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "air_defence",
+  "source_generation_file": "exec-5293bde9-cfab-465d-a96e-69dbff1714ed.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "7c37310480abcd51b9c57f439b3a7f11f6a23a94c6b6045b19d3b205023074c8",
+  "texture_sha256": "acdebd79265558f5e6a0f2c074bb7d2b65657d4381b73a7f5fbd1cf5765b503d",
+  "texture_bytes": 46036,
+  "artwork_bounds": {
+    "left": 4,
+    "top": 1,
+    "width": 162,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "kiisa_reserve",
+  "source_generation_file": "exec-45895ae0-08a2-48b4-a279-dad4c1a13a25.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "ad66a6db8a4c423f5aa77cb2a14f16f667e1867e4a8afeba6a6b8c3f4824b22d",
+  "texture_sha256": "f2fcfb0cbdb939f9c5e274aeda477afc0b5628695864191bebda3abe84da017b",
+  "texture_bytes": 43736,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 1,
+    "width": 167,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

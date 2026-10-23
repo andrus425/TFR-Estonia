@@ -1,0 +1,19 @@
+{
+  "party": "centre",
+  "asset_id": "air_defence",
+  "source_generation_file": "exec-539bb797-eb75-4c61-8c6b-fc60da8c96cc.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "89afd7e400f469b868d808c913d7c9d59a84d31dd7a7d69e870d86bc796cc36c",
+  "texture_sha256": "2548d5488b0f60815ff72fc94691af74d35722b48edde598e53dbbd0e7483c04",
+  "texture_bytes": 44128,
+  "artwork_bounds": {
+    "left": 4,
+    "top": 1,
+    "width": 162,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

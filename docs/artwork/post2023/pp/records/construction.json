@@ -1,0 +1,19 @@
+{
+  "party": "pp",
+  "asset_id": "construction",
+  "source_generation_file": "exec-ab133eff-fbd8-4111-a0e2-f3927d6324ce.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "905da6bc0627db3019e077e543b97e72cfac54cd66bff6df13ad1d116184e522",
+  "texture_sha256": "b3fc0b9de0118f6b44524ad55daf94b693facffb6755fb621192191dac7fdc50",
+  "texture_bytes": 47284,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 1,
+    "width": 168,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

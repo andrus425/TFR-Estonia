@@ -1,0 +1,19 @@
+{
+  "party": "isamaa",
+  "asset_id": "kaitseliit_ranges",
+  "source_generation_file": "exec-5da1b871-6745-4bad-bab4-bd35a2a44c9a.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "7d1737d0194d796a8606436c9e7a77d7e617c25548a607dcb21d745ca9d73a80",
+  "texture_sha256": "ef9235a5e31471886f47eb388da03fd2e9d225a405d530b77db679eb80e9abd3",
+  "texture_bytes": 47263,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 3,
+    "width": 168,
+    "height": 103
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

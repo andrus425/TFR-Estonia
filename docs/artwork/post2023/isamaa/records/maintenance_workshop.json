@@ -1,0 +1,19 @@
+{
+  "party": "isamaa",
+  "asset_id": "maintenance_workshop",
+  "source_generation_file": "exec-ccd60181-afb3-4884-bf77-399a8d061fb9.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "10ea1a5954dd8d8b09f5bf5507937076420698c4371e965e282aa049124c1597",
+  "texture_sha256": "13cb62494bd52423d1e73a152741b8fe3107ad777c5bab9017ee0434855cc672",
+  "texture_bytes": 38565,
+  "artwork_bounds": {
+    "left": 9,
+    "top": 1,
+    "width": 152,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

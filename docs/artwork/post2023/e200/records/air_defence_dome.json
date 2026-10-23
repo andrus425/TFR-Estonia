@@ -1,0 +1,19 @@
+{
+  "party": "e200",
+  "asset_id": "air_defence_dome",
+  "source_generation_file": "exec-69ced900-ba79-4a9b-b72a-313b237ebd50.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "275bcbd0f952433278a1f559505fe0c391bf11507c4416022e06bb30870b26f5",
+  "texture_sha256": "37afdc79c1f963ad9178a3daf01368a59bcaa8751be3a4469164c8772128dc32",
+  "texture_bytes": 40709,
+  "artwork_bounds": {
+    "left": 7,
+    "top": 1,
+    "width": 156,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

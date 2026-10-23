@@ -884,6 +884,16 @@ for **48 distinct people**, with shared portraits for people who can hold either
 office. Some occupation administrators still use generic leader portraits.
 The [minister artwork register](docs/artwork/ministers/README.md) contains source
 credits and prompts. Downloaded research photos are excluded from release ZIPs.
+All seven parties also have original TFR-inspired ideology artwork: twelve
+leader variants combine recognizable portraits, party colors and party symbols
+in transparent 66 × 68 PNGs. The diplomacy icon follows the serving prime
+minister, including caretakers; seven smaller icons in the Riigikogu ledger
+follow each party's leadership, including changes in opposition. The
+[ideology artwork register](docs/artwork/ideology/README.md) records the supported
+leaders, source credits, exact imagegen prompts and export procedure. Review the
+[native-size sheet](docs/artwork/ideology/contact_sheet_1x.png) or
+[4× sheet](docs/artwork/ideology/contact_sheet_4x.png). The integration adds no
+ideologies or gameplay effects and leaves parent TFR interface files inherited.
 The eleven opening focuses have original AI-generated TFR-style collage icons,
 with Centre emerald, Isamaa blue/gold and EKRE cornflower-blue accents. The
 Three Seas summit uses nonpartisan Estonian colors. Seeder, Ratas, Martin Helme
@@ -914,6 +924,16 @@ The [preview sheet](docs/artwork/kallas/kallas-icons-preview.png),
 [tree layout preview](docs/artwork/kallas/kallas-tree-preview.png), masters and
 exact prompts are in `docs/artwork/kallas/`. Its generator maintains twenty base
 and twenty shine sprites, using the same 170 × 150 RGBA/40-pixel-clearance format.
+The seven post-2023 government programmes each have 32 separately generated
+icons: 224 unique textures and 224 matching base/shine sprite pairs. Every focus
+has its own composition. The coalition leader's palette runs through each tree,
+with selected leader portraits and party emblems. The
+[seven-government overview](docs/artwork/post2023/seven-governments-preview.png)
+and [artwork guide](docs/artwork/post2023/README.md) link all seven icon sheets and
+tree previews. Exact built-in imagegen prompts, original masters, reference
+credits and one-to-one focus mappings are retained in `docs/artwork/post2023/`.
+The generators reject shared artwork assignments; the export check also rejects
+duplicate texture hashes and verifies the transparent label space.
 No external photographs, music or copied TFR artwork are bundled.
 
 The content is implemented as a development build. Natural campaigns, rendered

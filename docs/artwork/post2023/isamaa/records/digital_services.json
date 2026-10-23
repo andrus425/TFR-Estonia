@@ -1,0 +1,19 @@
+{
+  "party": "isamaa",
+  "asset_id": "digital_services",
+  "source_generation_file": "exec-a12aa774-3f35-4467-8840-afcfa7bd3931.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "bc27afebdc624c435c23859b4cd8f6569ecc6e5dc642e98a6dd71d7c43f6df2a",
+  "texture_sha256": "bcdbf5be2d674bd31cf19c585889ddbdae23345a1286eae8fd2af1e4803d4ab4",
+  "texture_bytes": 43671,
+  "artwork_bounds": {
+    "left": 9,
+    "top": 1,
+    "width": 151,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

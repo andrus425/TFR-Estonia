@@ -1,0 +1,19 @@
+{
+  "party": "pp",
+  "asset_id": "civil_continuity",
+  "source_generation_file": "exec-f0d069e1-816a-436f-8e65-4c4c0e2505d9.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "665f5d59bdeaa6be0f5c21e44f757f7665f9228f2874b3b29d4b8f0df3065457",
+  "texture_sha256": "f87e975f91441c3ccd4f4c2fd7f631a247cd902e3c226fe003788f903648f2d8",
+  "texture_bytes": 44724,
+  "artwork_bounds": {
+    "left": 9,
+    "top": 1,
+    "width": 152,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

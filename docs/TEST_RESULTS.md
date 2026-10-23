@@ -1,8 +1,69 @@
-# Validation results — 22 October 2026
+# Validation results — 23 October 2026
 
 This is an implemented **development build**, not a declaration that the public
 v1 campaign matrix has passed. The pinned parent is **The Fire Rises 1.0.9.1c**.
 The installed executable reports **HOI4 Operation Postern 1.19.3.0.c01a**.
+
+## Unique post-2023 focus artwork — 23 October 2026
+
+- All seven government programmes have **32 separately generated icons each**,
+  covering **224 focuses with 224 distinct texture paths and SHA-256 hashes**.
+  Each focus has a base sprite and its own matching TFR shine variant. The
+  catalog and programme helper enforce exactly one focus per artwork asset.
+- Every selected runtime PNG is **170 × 150 RGBA**, with all bottom 40 rows
+  fully transparent. The 224 textures total **9,753,402 bytes**. The mechanical
+  export check verifies master/texture hashes, dimensions, alpha clearance,
+  exact focus assignments and byte-identical exports from all retained masters.
+- All 224 icons were reviewed at native size. Six targeted revisions corrected
+  currency, a foreign document crest, prominent Isamaa emblems and an invented
+  tax percentage. Their original masters, runtime drafts and metadata are
+  preserved alongside exact edit prompts. All seven icon sheets and tree
+  previews were generated; prerequisite references resolve to their actual nodes.
+- All seven programme generators pass `--check`. The full source suite passed
+  **678 tests in 246.810 seconds** after the complete artwork integration. This
+  resolves the generator-consistency failures observed during the earlier
+  concurrent 674-test ideology run recorded below. The accepted log is the
+  ignored local `test-output/post2023-full-suite.log`.
+- `tools/validate_mod.py` parsed **133 files**, covering 459 focuses, 62 events,
+  58 decisions and 2,276 localization keys, with **zero errors**. Its only note
+  is the existing reminder to check the compatibility manifest before release.
+  `git diff --check` passes. The local validator report is
+  `test-output/post2023-asset-validation.json`.
+- These checks cover source integration and exported artwork. Rendered in-game
+  focus icons, shine animation and UI scaling remain manual acceptance checks.
+
+Prompts, selected masters, refinement history, reference credits and the complete
+one-to-one mapping are in [the post-2023 artwork guide](artwork/post2023/README.md).
+
+## Party ideology artwork — 23 October 2026
+
+- Twelve separately generated masters cover all seven parties and their five
+  supported successor variants. Every runtime PNG is 66 × 68 RGBA, decodes
+  successfully, has transparent outside corners and matches the saved master
+  after transparent-margin trimming, proportional resizing and padding.
+  The runtime textures total **135,232 bytes**. Native-size and 4× contact
+  sheets were visually reviewed for recognizable faces, symbols and colors.
+- Eight ideology integration tests pass, covering distinct artwork for parties
+  sharing native ideologies, every successor, opposition changes, caretakers,
+  selected-country restrictions, seven parliament bindings and exact inherited
+  diplomacy background coordinates. Four sprite-selector validator regressions
+  and three packaging tests also pass: **15 focused tests passed**.
+- `tools/validate_mod.py` reports **zero errors** after export. The compatibility
+  check confirms all eleven pinned parent overrides and 632 audited protections
+  remain reproducible. `git diff --check` passes.
+- The broader source run executed **674 tests in 127.829 seconds** and reported
+  eight failed subcases and six errors in unrelated 2023 focus-art generator
+  consistency checks. Other focus-art changes appeared in the shared checkout
+  during this run: authored focus icons still differed from generator output,
+  and six new focus sprite registers were missing at their check time. This is
+  not recorded as a passing full-suite run. No ideology selection, image export
+  or packaging check failed in the final targeted run.
+- The UI bindings match the installed TFR scripted-image pattern and geometry.
+  A running-game visual check of layering, tooltip placement and UI scaling was
+  not performed. The contact sheets are asset previews, not game screenshots.
+
+Prompts, source attribution, runtime mappings and asset hashes are retained in
+[the ideology artwork register](artwork/ideology/README.md).
 
 ## Prime-minister retention — 22 October 2026
 

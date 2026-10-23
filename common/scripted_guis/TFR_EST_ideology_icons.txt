@@ -1,0 +1,16 @@
+scripted_gui = {
+    TFR_EST_diplomacy_ideology_icon = {
+        context_type = selected_country_context
+        parent_window_token = selected_country_view_diplomacy
+        window_name = "TFR_EST_diplomacy_ideology_container"
+        visible = {
+            TFR_EST_constitutional_executive = yes
+            has_country_flag = TFR_EST_initialized
+            check_variable = { var = TFR_EST_pm_party value = 1 compare = greater_than_or_equals }
+            check_variable = { var = TFR_EST_pm_party value = 7 compare = less_than_or_equals }
+        }
+        properties = {
+            TFR_EST_diplomacy_ideology_image = { image = "[TFR_EST_ruling_ideology_icon]" }
+        }
+    }
+}

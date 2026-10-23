@@ -1,0 +1,1077 @@
+{
+  "format": 1,
+  "created": "2026-10-23",
+  "generation_mode": "Built-in image_gen.imagegen",
+  "context": "2023 SDE coalition-led focus tree; palette follows leader party for every policy. Every focus has a unique, separately generated composition and texture.",
+  "canvas": {
+    "width": 170,
+    "height": 150,
+    "bottom_transparent_pixels": 40
+  },
+  "brand": {
+    "name": "SDE",
+    "color": "#E10600",
+    "palette": "saturated social-democratic red #E10600, charcoal and polished silver",
+    "symbol": "the authentic angular red rose with a small green stem",
+    "leader": "Lauri Läänemets"
+  },
+  "icons": [
+    {
+      "asset_id": "mandate",
+      "title": "A Social Democratic Parliamentary Mandate",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Lauri Läänemets, SDE rose emblem, coalition agreement and Riigikogu",
+      "political_figure": "Lauri Läänemets",
+      "focus_ids": [
+        "TFR_EST_sde_2023_new_mandate"
+      ],
+      "focus_suffixes": [
+        "new_mandate"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_mandate.png",
+      "master": "masters/EST_sde_2023_mandate.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Input image is a reference sheet only: select the named political figure(s) and authentic party symbol from it; preserve recognizable face, hair and mark geometry. Replace the sheet completely with ONE unified TFR icon, no other sheet faces or labels. Coalition leader party: SDE. Entire icon lighting palette: saturated social-democratic red #E10600, charcoal and polished silver. Keep this party palette even for policies shared with other parties. Primary subjects: Lauri Läänemets, SDE rose emblem, coalition agreement and Riigikogu. Include a clearly recognizable small dimensional rendition of the authentic angular red rose with a small green stem as part of the collage. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-bffd799f-413b-4e26-85d2-5596b165026f.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "a5985fe379ac729d65600f1faa275de534f99575f800d1092ebcfc79d256fb48",
+      "texture_sha256": "e73e5b5ca07d83f6a8833d8fcc514967d7be5c43cf63b1745a330fb1910cbdf9",
+      "texture_bytes": 45989,
+      "artwork_bounds": {
+        "left": 8,
+        "top": 1,
+        "width": 154,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "defence_reserve",
+      "title": "Finance the Critical Defence Capabilities",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Reservist helmet, instructor map, field radio and defence funding ledger",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_defence_commitment"
+      ],
+      "focus_suffixes": [
+        "defence_commitment"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_defence_reserve.png",
+      "master": "masters/EST_sde_2023_defence_reserve.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: SDE. Entire icon lighting palette: saturated social-democratic red #E10600, charcoal and polished silver. Keep this party palette even for policies shared with other parties. Primary subjects: Reservist helmet, instructor map, field radio and defence funding ledger. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-233bcdd5-1ecf-453e-8af0-4e26edd5f642.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "1dc362fb68bb07cbf60409e681cc7af0bc4601f6fce873e728baa64e9f0dfa78",
+      "texture_sha256": "7102ab1911206986ed3cc4fba7ae98fecd7ae94780b306ce65c20d79d555cfeb",
+      "texture_bytes": 40487,
+      "artwork_bounds": {
+        "left": 8,
+        "top": 1,
+        "width": 154,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "air_defence",
+      "title": "Prepare Layered Air-Defence Procurement",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Missile launcher, radar and protective arc over Estonia",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_air_defence"
+      ],
+      "focus_suffixes": [
+        "air_defence"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_air_defence.png",
+      "master": "masters/EST_sde_2023_air_defence.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: SDE. Entire icon lighting palette: saturated social-democratic red #E10600, charcoal and polished silver. Keep this party palette even for policies shared with other parties. Primary subjects: Missile launcher, radar and protective arc over Estonia. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-c3b70461-40d1-448e-bd2d-46bd0270d44e.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "dadbf36ba170deee8360a4c85fa42649f803781010edb4d2b58a4f75ebcef190",
+      "texture_sha256": "1164f275f4409478a9038d8779108d6f77b6cf04e9ed32d15daa7c38c55df119",
+      "texture_bytes": 41802,
+      "artwork_bounds": {
+        "left": 1,
+        "top": 5,
+        "width": 168,
+        "height": 99
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "allied_reception",
+      "title": "Prepare Reception Facilities for Allied Forces",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Military transport, stockpile crates and reception hangar",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_allied_reception"
+      ],
+      "focus_suffixes": [
+        "allied_reception"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_allied_reception.png",
+      "master": "masters/EST_sde_2023_allied_reception.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: SDE. Entire icon lighting palette: saturated social-democratic red #E10600, charcoal and polished silver. Keep this party palette even for policies shared with other parties. Primary subjects: Military transport, stockpile crates and reception hangar. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-8dd7c0e2-972c-4e01-910d-53ad93808a92.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "c5b538aec9502e1d6e11a473071eef3f59ed54edce78c8e72490f1eb3603c95b",
+      "texture_sha256": "36b5ded75161b510cb3dca0dbf95fad1ee824123f59cae719986160c7e8fdd58",
+      "texture_bytes": 41514,
+      "artwork_bounds": {
+        "left": 8,
+        "top": 1,
+        "width": 153,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "civil_protection",
+      "title": "Fund Shelters, Sirens and Community Training",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Shelter door, warning siren and community rescue volunteers",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_civil_protection"
+      ],
+      "focus_suffixes": [
+        "civil_protection"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_civil_protection.png",
+      "master": "masters/EST_sde_2023_civil_protection.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: SDE. Entire icon lighting palette: saturated social-democratic red #E10600, charcoal and polished silver. Keep this party palette even for policies shared with other parties. Primary subjects: Shelter door, warning siren and community rescue volunteers. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-74fc1aec-a6ee-46ae-9ad7-4e7d3f1dfb92.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "570b21796eaca8ee0599d4bf3df6702e1da547d6c05fef0f05d4841a792387c6",
+      "texture_sha256": "3325d4942c6669dd7d5cceed222d3c0c62d1b76673a94201879b803e21edfc87",
+      "texture_bytes": 40687,
+      "artwork_bounds": {
+        "left": 12,
+        "top": 1,
+        "width": 145,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "defence_industry",
+      "title": "Back Joint Defence-Industry Development",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Ammunition shells, workshop machine and repair tools before factory",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_industrial_guarantees"
+      ],
+      "focus_suffixes": [
+        "industrial_guarantees"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_defence_industry.png",
+      "master": "masters/EST_sde_2023_defence_industry.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: SDE. Entire icon lighting palette: saturated social-democratic red #E10600, charcoal and polished silver. Keep this party palette even for policies shared with other parties. Primary subjects: Ammunition shells, workshop machine and repair tools before factory. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-35133bec-af0e-4735-9d84-b7e1b83c1794.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "f0a162a91cbeaec9f855021ea6fc1541a428bd8c631f7f7105b458d9239fcdd3",
+      "texture_sha256": "c2fdff594eb5863b6ffb8508da29b8d112e067ae7e1edcf33c131e2b56a01a20",
+      "texture_bytes": 41663,
+      "artwork_bounds": {
+        "left": 10,
+        "top": 1,
+        "width": 150,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "regional_jobs",
+      "title": "Launch the Regional Skilled-Jobs Investment Round",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Regional factory, skilled worker and investment contract",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_regional_jobs"
+      ],
+      "focus_suffixes": [
+        "regional_jobs"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_regional_jobs.png",
+      "master": "masters/EST_sde_2023_regional_jobs.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: SDE. Entire icon lighting palette: saturated social-democratic red #E10600, charcoal and polished silver. Keep this party palette even for policies shared with other parties. Primary subjects: Regional factory, skilled worker and investment contract. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-e30c21a7-d67f-46bd-9d62-0fecc0f015e1.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "df69a8e3d343c875b5b2b9134e98bdd6409c8fbf72936d596e4b45da5b58a751",
+      "texture_sha256": "6c26790b3d8fa9f4471d464bcbd5adb678acfea6fc1270602b1abd97711f4acf",
+      "texture_bytes": 43305,
+      "artwork_bounds": {
+        "left": 1,
+        "top": 3,
+        "width": 168,
+        "height": 103
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "research",
+      "title": "Fund Applied Research and Industrial Automation",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Microscope, robotic arm and applied-research laboratory",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_applied_research"
+      ],
+      "focus_suffixes": [
+        "applied_research"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_research.png",
+      "master": "masters/EST_sde_2023_research.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: SDE. Entire icon lighting palette: saturated social-democratic red #E10600, charcoal and polished silver. Keep this party palette even for policies shared with other parties. Primary subjects: Microscope, robotic arm and applied-research laboratory. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-57b0b65e-a6ff-471a-8c2a-42ef3dbef07e.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "b4423477a57404aa40fb4889c865f83f9f975930f89284eb99d6dab33bbfb8a7",
+      "texture_sha256": "b4427931f419baab8406fb9e6fb99def7c130752436d9db3ae35328d90aba7e1",
+      "texture_bytes": 42705,
+      "artwork_bounds": {
+        "left": 12,
+        "top": 1,
+        "width": 146,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "broadband",
+      "title": "Tender the Unserved Broadband Connections",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Fibre-optic cable, country house and network router",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_ultrafast_internet"
+      ],
+      "focus_suffixes": [
+        "ultrafast_internet"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_broadband.png",
+      "master": "masters/EST_sde_2023_broadband.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: SDE. Entire icon lighting palette: saturated social-democratic red #E10600, charcoal and polished silver. Keep this party palette even for policies shared with other parties. Primary subjects: Fibre-optic cable, country house and network router. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-ec36e1db-f584-48e2-9103-15db4bb6c4e6.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "29b3bdfd9da32e732b08204c180e381dd17d5a27cfedbba4e7f87179f6d8994b",
+      "texture_sha256": "12ea45718038bc0450b11fed4d26052099076b189888d3f299cadcdc79024789",
+      "texture_bytes": 49920,
+      "artwork_bounds": {
+        "left": 1,
+        "top": 4,
+        "width": 168,
+        "height": 101
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "community_renewables",
+      "title": "Finance Assessed Renewable-Power Projects",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Wind turbine, solar panels, community houses and cooperative handshake",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_renewable_contracts"
+      ],
+      "focus_suffixes": [
+        "renewable_contracts"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_community_renewables.png",
+      "master": "masters/EST_sde_2023_community_renewables.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: SDE. Entire icon lighting palette: saturated social-democratic red #E10600, charcoal and polished silver. Keep this party palette even for policies shared with other parties. Primary subjects: Wind turbine, solar panels, community houses and cooperative handshake. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-7776d050-51c5-458e-83d7-2138a1826de4.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "eb3f1e9955da8e98f30cf20361cce5395300028ae08d10ccec44f967eb3729ff",
+      "texture_sha256": "e6763a13a4a050573f594cf9442af74f31bbe71050241c9eef0f8fba024d308d",
+      "texture_bytes": 35973,
+      "artwork_bounds": {
+        "left": 6,
+        "top": 1,
+        "width": 158,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "grid_connections",
+      "title": "Fund Thirty-Kilowatt Household Grid Connections",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Electricity pole, household meter and coiled power cable",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_grid_connection"
+      ],
+      "focus_suffixes": [
+        "grid_connection"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_grid_connections.png",
+      "master": "masters/EST_sde_2023_grid_connections.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: SDE. Entire icon lighting palette: saturated social-democratic red #E10600, charcoal and polished silver. Keep this party palette even for policies shared with other parties. Primary subjects: Electricity pole, household meter and coiled power cable. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-2311cad9-b7fe-4f3b-a59f-4ad43ba0c585.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "72db8959dc0eb4f945ea31c0154cf4453cb2d089b0b1e1a4c10305807b6f0dab",
+      "texture_sha256": "4bd43a37cb3116c7ca7e98d3b901fbfb0e944137e77704df9d4df0135eef9c33",
+      "texture_bytes": 47662,
+      "artwork_bounds": {
+        "left": 3,
+        "top": 1,
+        "width": 163,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "renovation",
+      "title": "Open the Inclusive Energy-Renovation Grant Round",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Apartment building, insulation, scaffold and radiator",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_renovation"
+      ],
+      "focus_suffixes": [
+        "renovation"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_renovation.png",
+      "master": "masters/EST_sde_2023_renovation.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: SDE. Entire icon lighting palette: saturated social-democratic red #E10600, charcoal and polished silver. Keep this party palette even for policies shared with other parties. Primary subjects: Apartment building, insulation, scaffold and radiator. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-f245b6bc-a32e-4556-957f-448f5d031a29.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "019eb39390cd37302f4aab92ba2fee3872930484ca0ff53f1373856e5331ae6a",
+      "texture_sha256": "4e354c4630fc36831ea1921612f89244cf6df7303ed317d419b3c45dd7ea1cc1",
+      "texture_bytes": 44815,
+      "artwork_bounds": {
+        "left": 6,
+        "top": 1,
+        "width": 157,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "energy_reserves",
+      "title": "Contract Strategic Energy Reserves and Storage",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "District-heating pipes, thermal storage tank and backup generator",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_strategic_reserves"
+      ],
+      "focus_suffixes": [
+        "strategic_reserves"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_energy_reserves.png",
+      "master": "masters/EST_sde_2023_energy_reserves.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: SDE. Entire icon lighting palette: saturated social-democratic red #E10600, charcoal and polished silver. Keep this party palette even for policies shared with other parties. Primary subjects: District-heating pipes, thermal storage tank and backup generator. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-5a72cc5e-0f48-4de1-ad5c-06e3ce1032bf.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "10f9fa7c9902fb7c6e6e814de71242dd6f11a8b8b8207382efd0082f589e7a5d",
+      "texture_sha256": "fa2cf991122ec7fc1a1c8596e7c145aa0e66b37ea71b507c6f9a95692658bda0",
+      "texture_bytes": 46479,
+      "artwork_bounds": {
+        "left": 1,
+        "top": 2,
+        "width": 168,
+        "height": 105
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "progressive_tax",
+      "title": "Legislate the Twenty-Eight-Percent Upper Tax Band",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Tax ledger, stepped income columns and euro coins",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_progressive_tax"
+      ],
+      "focus_suffixes": [
+        "progressive_tax"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_progressive_tax.png",
+      "master": "masters/EST_sde_2023_progressive_tax.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: SDE. Entire icon lighting palette: saturated social-democratic red #E10600, charcoal and polished silver. Keep this party palette even for policies shared with other parties. Primary subjects: Tax ledger, stepped income columns and euro coins. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-574a6415-ebdc-4b84-8596-a63990bdf349.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "958156a897178deef276ea77d5728ac036510a5f3be42ef497d07a84c6912d4a",
+      "texture_sha256": "b8588d71fb4e681cf6a52cde1f8ed0da70f6ebbd06f6a66e3bdd388b1616a6c5",
+      "texture_bytes": 46770,
+      "artwork_bounds": {
+        "left": 2,
+        "top": 1,
+        "width": 166,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "workers_agreement",
+      "title": "Agree the Steps toward a Twelve-Hundred-Euro Minimum Wage",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Lauri Läänemets, workers handshake, wage packet, agreement and study book",
+      "political_figure": "Lauri Läänemets",
+      "focus_ids": [
+        "TFR_EST_sde_2023_minimum_wage"
+      ],
+      "focus_suffixes": [
+        "minimum_wage"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_workers_agreement.png",
+      "master": "masters/EST_sde_2023_workers_agreement.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Input image is a reference sheet only: select the named political figure(s) and authentic party symbol from it; preserve recognizable face, hair and mark geometry. Replace the sheet completely with ONE unified TFR icon, no other sheet faces or labels. Coalition leader party: SDE. Entire icon lighting palette: saturated social-democratic red #E10600, charcoal and polished silver. Keep this party palette even for policies shared with other parties. Primary subjects: Lauri Läänemets, workers handshake, wage packet, agreement and study book. Include a clearly recognizable small dimensional rendition of the authentic angular red rose with a small green stem as part of the collage. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-3e4fe771-c2eb-4adb-8f9a-23d2b70f1c66.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "bb134d1ca072b7ac735bdf7220ce3888d065b7251077e601e1b4dfedbe47cf41",
+      "texture_sha256": "e96261858a3c13e5fecedd55f853bf69f3b1ac41568972e11242074728d7c256",
+      "texture_bytes": 43882,
+      "artwork_bounds": {
+        "left": 6,
+        "top": 1,
+        "width": 158,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "family_housing",
+      "title": "Fund the Indexed Hundred-and-Fifty-Euro Child Benefit",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Parent and child, public apartment building and benefit coins",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_child_benefit"
+      ],
+      "focus_suffixes": [
+        "child_benefit"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_family_housing.png",
+      "master": "masters/EST_sde_2023_family_housing.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: SDE. Entire icon lighting palette: saturated social-democratic red #E10600, charcoal and polished silver. Keep this party palette even for policies shared with other parties. Primary subjects: Parent and child, public apartment building and benefit coins. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-2efc4e0b-87d9-4492-a136-d9ab52b76cd8.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "89faa159bbff574dffc94b3124fcbe97ad3f14ed888a10e1fbff2b64f4c67116",
+      "texture_sha256": "680c06547e3d92a3bf1873e821bd9f6ea81af69398e5933d53b857fe722cb18e",
+      "texture_bytes": 43727,
+      "artwork_bounds": {
+        "left": 10,
+        "top": 1,
+        "width": 150,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "universal_health",
+      "title": "Finance Universal Health-Insurance Access",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Family doctor, health-insurance card and supportive hands",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_universal_health"
+      ],
+      "focus_suffixes": [
+        "universal_health"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_universal_health.png",
+      "master": "masters/EST_sde_2023_universal_health.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: SDE. Entire icon lighting palette: saturated social-democratic red #E10600, charcoal and polished silver. Keep this party palette even for policies shared with other parties. Primary subjects: Family doctor, health-insurance card and supportive hands. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-8e5578fd-6c7c-4db5-9dbf-bc505acb784f.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "23846866fbee1d1534b0540ae7e850558b1c9e5d88be0fda27a3b3fc874f216e",
+      "texture_sha256": "56743a36adf9c7a9a5ffb4b695d733d34e1f7f8d42194e1e5f2a987f25a3f5b0",
+      "texture_bytes": 49001,
+      "artwork_bounds": {
+        "left": 1,
+        "top": 2,
+        "width": 168,
+        "height": 105
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "pensions_care",
+      "title": "Fund a Step toward the Pension Objective",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Elderly couple, care-home facade and pension ledger",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_pension_base"
+      ],
+      "focus_suffixes": [
+        "pension_base"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_pensions_care.png",
+      "master": "masters/EST_sde_2023_pensions_care.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: SDE. Entire icon lighting palette: saturated social-democratic red #E10600, charcoal and polished silver. Keep this party palette even for policies shared with other parties. Primary subjects: Elderly couple, care-home facade and pension ledger. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-ebd9c28d-855b-4bab-b21d-593a1abbf8f2.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "d215959ec4499d602ef9e8b8a81080f129d0ec2f939d845d39509859be6c52e8",
+      "texture_sha256": "ca34aa6cc03eb9bfc0039f8b90094b4858c11a9bd16a9117de3c926a4172f19c",
+      "texture_bytes": 48586,
+      "artwork_bounds": {
+        "left": 1,
+        "top": 1,
+        "width": 168,
+        "height": 107
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "inclusive_schools",
+      "title": "Fund the Teachers' Salary and Career Agreement",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Teacher, mixed classroom, open Estonian textbook and wage packet",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_teacher_pay"
+      ],
+      "focus_suffixes": [
+        "teacher_pay"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_inclusive_schools.png",
+      "master": "masters/EST_sde_2023_inclusive_schools.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: SDE. Entire icon lighting palette: saturated social-democratic red #E10600, charcoal and polished silver. Keep this party palette even for policies shared with other parties. Primary subjects: Teacher, mixed classroom, open Estonian textbook and wage packet. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-6cdbfe9b-856b-4c03-8959-bccf6b08831b.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "0fd7768df1632342e326f4eb87cb571440d47643dc4d48c45c406814ec420da0",
+      "texture_sha256": "eb8bc3da7d7d612ccc8f2bdf4115ab77a7a8af8a2a356a08158ea4af3981db2b",
+      "texture_bytes": 42487,
+      "artwork_bounds": {
+        "left": 9,
+        "top": 1,
+        "width": 151,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "report",
+      "title": "Present the Social Democratic Government's Accounts",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Lauri Läänemets, rose emblem and government accounts at Riigikogu",
+      "political_figure": "Lauri Läänemets",
+      "focus_ids": [
+        "TFR_EST_sde_2023_account_to_parliament"
+      ],
+      "focus_suffixes": [
+        "account_to_parliament"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_report.png",
+      "master": "masters/EST_sde_2023_report.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Input image is a reference sheet only: select the named political figure(s) and authentic party symbol from it; preserve recognizable face, hair and mark geometry. Replace the sheet completely with ONE unified TFR icon, no other sheet faces or labels. Coalition leader party: SDE. Entire icon lighting palette: saturated social-democratic red #E10600, charcoal and polished silver. Keep this party palette even for policies shared with other parties. Primary subjects: Lauri Läänemets, rose emblem and government accounts at Riigikogu. Include a clearly recognizable small dimensional rendition of the authentic angular red rose with a small green stem as part of the collage. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-0e49f0f6-b0fc-48b9-8542-394fa5acb4e1.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "469e07273a029df38552b6e7d862958f2e5f9e0cb2dc76f787bd4fa1eb950675",
+      "texture_sha256": "04c3262f001c5dd0fe2c8f0a5f555b5672aa2dd25431ce0c8bbae2887432f476",
+      "texture_bytes": 47451,
+      "artwork_bounds": {
+        "left": 3,
+        "top": 1,
+        "width": 163,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "reserve_muster",
+      "title": "Reorganise Rapid Reserve Mobilisation",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Reorganise Rapid Reserve Mobilisation",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_reserve_muster"
+      ],
+      "focus_suffixes": [
+        "reserve_muster"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_reserve_muster.png",
+      "master": "masters/EST_sde_2023_reserve_muster.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: SDE. Color palette: saturated social-democratic red #E10600, charcoal and polished silver. Exact focus subject: Reorganise Rapid Reserve Mobilisation. Policy context: Audit call-up assignments with employers and commanders. Exercises will test whether the existing reserve structure can assemble and sustain its units in time. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-cc55b051-beff-4477-9814-b0aafb0c5fa3.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "6d7628d26dd65b8356f43b64d9537f3daa735dd0746902802578b3ccdb8734de",
+      "texture_sha256": "76816a48bf91686c893e94bb64509a39337310f037ba5d22c16584d3318c5ade",
+      "texture_bytes": 40599,
+      "artwork_bounds": {
+        "left": 10,
+        "top": 1,
+        "width": 149,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "kaitseliit_instructors",
+      "title": "Resource Kaitseliit Instructors and Volunteers",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Resource Kaitseliit Instructors and Volunteers",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_kaitseliit_instructors"
+      ],
+      "focus_suffixes": [
+        "kaitseliit_instructors"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_kaitseliit_instructors.png",
+      "master": "masters/EST_sde_2023_kaitseliit_instructors.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: SDE. Color palette: saturated social-democratic red #E10600, charcoal and polished silver. Exact focus subject: Resource Kaitseliit Instructors and Volunteers. Policy context: Commission additional training sessions and inspected equipment maintenance. Volunteer defence needs predictable instruction and workable arrangements with civilian employment. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-58087260-dabf-433d-ad98-238386e9e074.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "b704e8526173d61ab17b6c42421eede97cec8b5ee8578b93c17522f1b1180ba1",
+      "texture_sha256": "13734fb5d9f110a5063fdb0ed878703629d1bd78a4997d3b364256fa9b229e15",
+      "texture_bytes": 47415,
+      "artwork_bounds": {
+        "left": 1,
+        "top": 2,
+        "width": 168,
+        "height": 105
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "ammunition_workshop",
+      "title": "Finance an Ammunition Manufacturing Workshop",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Finance an Ammunition Manufacturing Workshop",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_ammunition_workshop"
+      ],
+      "focus_suffixes": [
+        "ammunition_workshop"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_ammunition_workshop.png",
+      "master": "masters/EST_sde_2023_ammunition_workshop.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: SDE. Color palette: saturated social-democratic red #E10600, charcoal and polished silver. Exact focus subject: Finance an Ammunition Manufacturing Workshop. Policy context: Purchase a limited production facility and qualify its suppliers. Its output still depends on workers, materials and ordinary production orders. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-9959b4dc-ea50-4d59-847a-14a2d1756ada.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "bbc28da898d75c89297098c90f4e58caaace5df94718e9ccac38a93a7b80e62f",
+      "texture_sha256": "3cc4f01b2f16120c973fcd41fd7c2f00b190eac62b2c09501308f64fc3787695",
+      "texture_bytes": 36687,
+      "artwork_bounds": {
+        "left": 17,
+        "top": 1,
+        "width": 135,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "maintenance_workshop",
+      "title": "Finance Military Equipment Servicing Capacity",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Finance Military Equipment Servicing Capacity",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_maintenance_workshop"
+      ],
+      "focus_suffixes": [
+        "maintenance_workshop"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_maintenance_workshop.png",
+      "master": "masters/EST_sde_2023_maintenance_workshop.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: SDE. Color palette: saturated social-democratic red #E10600, charcoal and polished silver. Exact focus subject: Finance Military Equipment Servicing Capacity. Policy context: Fund an overhaul workshop and replacement-component tooling. This investment adds capacity for the equipment Estonia can actually afford to procure. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-6b9c5a6b-2b6d-4c24-a43d-904e17aba66a.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "7029c315ab04e4e929116cb14520297fec6842b423381375af830e5a5af7b47b",
+      "texture_sha256": "c549d931bbb05c4d0afd84a07dd6e02c074161b675d6d5b036b72ef0fcda28d8",
+      "texture_bytes": 42613,
+      "artwork_bounds": {
+        "left": 5,
+        "top": 1,
+        "width": 160,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "energy_cooperatives",
+      "title": "Support Community Energy Cooperatives",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Support Community Energy Cooperatives",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_energy_cooperatives"
+      ],
+      "focus_suffixes": [
+        "energy_cooperatives"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_energy_cooperatives.png",
+      "master": "masters/EST_sde_2023_energy_cooperatives.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: SDE. Color palette: saturated social-democratic red #E10600, charcoal and polished silver. Exact focus subject: Support Community Energy Cooperatives. Policy context: Provide technical assistance and accountable finance for viable shared projects. Members receive clear contracts covering ownership, maintenance and their share of the risks. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-42c62c08-d46c-4c24-8cd6-5ed9fef25fcd.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "6f8e6c41d5ece0058b00b09950acaf129c3d7556ff60b00b734b900888799df7",
+      "texture_sha256": "cb9abbb04c5d5dd461a8688be6ab9584cdeb451940c2ff8ad7f62113c7fd71d1",
+      "texture_bytes": 33436,
+      "artwork_bounds": {
+        "left": 14,
+        "top": 1,
+        "width": 142,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "district_heating",
+      "title": "Modernise District Heating with Reserve Capacity",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Modernise District Heating with Reserve Capacity",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_district_heating"
+      ],
+      "focus_suffixes": [
+        "district_heating"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_district_heating.png",
+      "master": "masters/EST_sde_2023_district_heating.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: SDE. Color palette: saturated social-democratic red #E10600, charcoal and polished silver. Exact focus subject: Modernise District Heating with Reserve Capacity. Policy context: Tender heat-network upgrades against verified demand. Councils must preserve a workable fallback while replacing inefficient equipment and pipes. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-4f2b4c29-237d-409c-830d-fbb1be0dd930.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "4b05b9141729827b4ce5f84b0cbe5d9b3ece451d705c702f105d25c6049f64e2",
+      "texture_sha256": "7ae688fa41700ebc5180db6e0f0b8a20af7e4dcfd3104a02a12ce94d3a5dd7cb",
+      "texture_bytes": 37823,
+      "artwork_bounds": {
+        "left": 7,
+        "top": 1,
+        "width": 155,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "collective_bargaining",
+      "title": "Extend Sectoral Collective Bargaining",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Extend Sectoral Collective Bargaining",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_collective_bargaining"
+      ],
+      "focus_suffixes": [
+        "collective_bargaining"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_collective_bargaining.png",
+      "master": "masters/EST_sde_2023_collective_bargaining.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: SDE. Color palette: saturated social-democratic red #E10600, charcoal and polished silver. Exact focus subject: Extend Sectoral Collective Bargaining. Policy context: Resource mediation and enforcement so agreements can operate beyond the strongest workplaces. Publish coverage and compliance data with unions and employers. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-b9667b19-4e63-41b3-96a5-42acb8dce0f8.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "413a7ffe127b2342c52d3913bf21be1de572751de21d52c665f9cec230b3c0de",
+      "texture_sha256": "7f817a67e9a796cdc6965ba938793588dfcec82dc9c2754851fd94064534fc6c",
+      "texture_bytes": 36943,
+      "artwork_bounds": {
+        "left": 10,
+        "top": 1,
+        "width": 150,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "learning_leave",
+      "title": "Fund Working-Time Study and Career Changes",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Fund Working-Time Study and Career Changes",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_learning_leave"
+      ],
+      "focus_suffixes": [
+        "learning_leave"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_learning_leave.png",
+      "master": "masters/EST_sde_2023_learning_leave.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: SDE. Color palette: saturated social-democratic red #E10600, charcoal and polished silver. Exact focus subject: Fund Working-Time Study and Career Changes. Policy context: Open assessed training places and agree study arrangements with employers. Public support follows completed learning and practical opportunities to change occupation. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-9acc9fc4-4d71-4529-9c8e-1c2b52a7e673.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "0e9a46cf7f0cb388a3985959b8ca2d647403db10f101d67e65fb5ef36ef35026",
+      "texture_sha256": "21787958588ac0761ea08e2c069b3a496042d6645374533fc11638264b723df7",
+      "texture_bytes": 44612,
+      "artwork_bounds": {
+        "left": 4,
+        "top": 1,
+        "width": 162,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "rental_homes",
+      "title": "Commission the First Public Rental-Housing Tranche",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Commission the First Public Rental-Housing Tranche",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_rental_homes"
+      ],
+      "focus_suffixes": [
+        "rental_homes"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_rental_homes.png",
+      "master": "masters/EST_sde_2023_rental_homes.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: SDE. Color palette: saturated social-democratic red #E10600, charcoal and polished silver. Exact focus subject: Commission the First Public Rental-Housing Tranche. Policy context: Assess sites, construction costs and long-term management before awarding the first projects. Housing providers remain accountable for upkeep and access. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-3fc75c6c-11d9-415b-bee1-0f612a2efdfa.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "5ea91f581448b4acaa9c8f437bf0e32fa60e43bb7b80da7e1298e0d660d41d49",
+      "texture_sha256": "747046f4e0f8e389824ffe00881568e8618d229fd4cbc0e34cf9eef479402299",
+      "texture_bytes": 41391,
+      "artwork_bounds": {
+        "left": 4,
+        "top": 1,
+        "width": 161,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "mental_health",
+      "title": "Commission Community Mental-Health Services",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Commission Community Mental-Health Services",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_mental_health"
+      ],
+      "focus_suffixes": [
+        "mental_health"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_mental_health.png",
+      "master": "masters/EST_sde_2023_mental_health.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: SDE. Color palette: saturated social-democratic red #E10600, charcoal and polished silver. Exact focus subject: Commission Community Mental-Health Services. Policy context: Train and contract staff for accessible referrals, prioritising children and young people. Review waiting times and coordination with schools and primary care. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-f230eb31-1aa0-4c90-aaa4-3db91b305d45.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "fdc46463e090b6444db628942b6e047a809f7d231f583134b5b4bb62d890d8b2",
+      "texture_sha256": "e9452b1019e026827d23db1afdfe07b80d592cd3cb3d7fe1c9d02d98d8b3c918",
+      "texture_bytes": 39539,
+      "artwork_bounds": {
+        "left": 6,
+        "top": 1,
+        "width": 158,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "care_home",
+      "title": "Make Assessed Residential Care Affordable on a Pension",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Make Assessed Residential Care Affordable on a Pension",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_care_home"
+      ],
+      "focus_suffixes": [
+        "care_home"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_care_home.png",
+      "master": "masters/EST_sde_2023_care_home.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: SDE. Color palette: saturated social-democratic red #E10600, charcoal and polished silver. Exact focus subject: Make Assessed Residential Care Affordable on a Pension. Policy context: Contract places against care-quality and staffing standards. Councils must explain assessed needs, fees and the public contribution to each family. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-76983852-d3e5-4c79-a1b9-fc05a70051f5.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "6f5b2fdcce31f7fa48156f71ef270584593755dfbfc80343f12441ced590356f",
+      "texture_sha256": "b21e73a5f1718e97303d9a1949458e4f0ad09abbcd18fcac78e54c09ae3e0940",
+      "texture_bytes": 43059,
+      "artwork_bounds": {
+        "left": 9,
+        "top": 1,
+        "width": 152,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "inclusive_schools_policy",
+      "title": "Resource Shared Estonian-Language Schooling",
+      "party": "sde",
+      "party_name": "SDE",
+      "color": "#E10600",
+      "motif": "Resource Shared Estonian-Language Schooling",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_sde_2023_inclusive_schools"
+      ],
+      "focus_suffixes": [
+        "inclusive_schools"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_sde_2023_inclusive_schools_policy.png",
+      "master": "masters/EST_sde_2023_inclusive_schools_policy.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: SDE. Color palette: saturated social-democratic red #E10600, charcoal and polished silver. Exact focus subject: Resource Shared Estonian-Language Schooling. Policy context: Provide trained language staff, learning materials and specialist support. Schools need practical help to teach children from different home-language backgrounds together. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-bd5e67c5-0eaf-41d3-83fc-5a88ccc30252.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "a220cd090e4705f61eafd9d30caf8c78b36a22a3ef24a9b279eafa4fe9bdd3d0",
+      "texture_sha256": "099f9e5ed4c4fe94d0fab123c8b77701b76bddbdcc31187a1be804397b9947c0",
+      "texture_bytes": 42995,
+      "artwork_bounds": {
+        "left": 1,
+        "top": 3,
+        "width": 168,
+        "height": 104
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    }
+  ],
+  "unique_per_focus": true
+}

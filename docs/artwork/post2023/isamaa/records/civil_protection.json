@@ -1,0 +1,19 @@
+{
+  "party": "isamaa",
+  "asset_id": "civil_protection",
+  "source_generation_file": "exec-7aaf9a21-48f0-40c3-977b-c7fe74aad14d.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "e530fba93109495f36be0073cfe6b677ace25caff4e5488e680508a196575b34",
+  "texture_sha256": "e6741db1fd868ad2e4eca50f2cea0b044748b8f4dacf18f7133958c970a918ad",
+  "texture_bytes": 46790,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 2,
+    "width": 168,
+    "height": 106
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

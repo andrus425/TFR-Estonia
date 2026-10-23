@@ -1,0 +1,19 @@
+{
+  "party": "sde",
+  "asset_id": "energy_reserves",
+  "source_generation_file": "exec-5a72cc5e-0f48-4de1-ad5c-06e3ce1032bf.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "10f9fa7c9902fb7c6e6e814de71242dd6f11a8b8b8207382efd0082f589e7a5d",
+  "texture_sha256": "fa2cf991122ec7fc1a1c8596e7c145aa0e66b37ea71b507c6f9a95692658bda0",
+  "texture_bytes": 46479,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 2,
+    "width": 168,
+    "height": 105
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

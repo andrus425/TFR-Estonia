@@ -1,0 +1,19 @@
+{
+  "party": "isamaa",
+  "asset_id": "teacher_pay",
+  "source_generation_file": "exec-5f0dbe50-455e-4cba-b507-8a0f21f91631.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "2ed253b31fd5bf8afe0458a47c48851b07d674efb3bdf816af6d64f33f721be0",
+  "texture_sha256": "9c521b61ca6814bf8bb1fd0ad2e810b09389b557e95c90066f032785fa9f701a",
+  "texture_bytes": 35413,
+  "artwork_bounds": {
+    "left": 16,
+    "top": 1,
+    "width": 138,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

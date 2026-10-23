@@ -1,0 +1,19 @@
+{
+  "party": "pp",
+  "asset_id": "supplementary_budget",
+  "source_generation_file": "exec-9dc41526-bdfc-442b-8151-a44be40053da.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "dfe228151e926cf3fd195e19b7e8c7415178c00a97f2ade8b834d0703ea149c3",
+  "texture_sha256": "8790be4a93c324a44fa17d1de263b4f3d260c47d9915284a1ab018ba328f846f",
+  "texture_bytes": 43773,
+  "artwork_bounds": {
+    "left": 8,
+    "top": 1,
+    "width": 154,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

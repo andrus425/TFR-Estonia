@@ -1,0 +1,19 @@
+{
+  "party": "e200",
+  "asset_id": "climate_law",
+  "source_generation_file": "exec-c337f219-128e-4776-add3-db80f9b2c21b.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "2a532c5545fe87eb108de6753bd8fe94a56b77fa3d9e2bbbb3ccdbd2a97b4276",
+  "texture_sha256": "bea2e1e2d465afde38c5df62b7c6d349b88ab5c0c8d4523eebb3c05294c32a1f",
+  "texture_bytes": 37980,
+  "artwork_bounds": {
+    "left": 4,
+    "top": 1,
+    "width": 161,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

@@ -1,0 +1,19 @@
+{
+  "party": "sde",
+  "asset_id": "learning_leave",
+  "source_generation_file": "exec-9acc9fc4-4d71-4529-9c8e-1c2b52a7e673.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "0e9a46cf7f0cb388a3985959b8ca2d647403db10f101d67e65fb5ef36ef35026",
+  "texture_sha256": "21787958588ac0761ea08e2c069b3a496042d6645374533fc11638264b723df7",
+  "texture_bytes": 44612,
+  "artwork_bounds": {
+    "left": 4,
+    "top": 1,
+    "width": 162,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

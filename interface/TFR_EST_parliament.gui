@@ -11,37 +11,44 @@ guiTypes = {
  instantTextBoxType = { name = "TFR_EST_title" position = { x = 24 y = 18 } font = "VCR02_20" text = "TFR_EST_panel_title" maxWidth = 650 maxHeight = 30 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_cabinet" position = { x = 24 y = 55 } font = "VCR02_18" text = "TFR_EST_panel_cabinet" maxWidth = 650 maxHeight = 64 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_header" position = { x = 24 y = 125 } font = "VCR02_18" text = "TFR_EST_panel_header" maxWidth = 655 maxHeight = 25 format = left fixedsize = yes }
- instantTextBoxType = { name = "TFR_EST_party_reform" position = { x = 24 y = 157 } font = "VCR02_18" text = "TFR_EST_party_reform" maxWidth = 225 maxHeight = 25 format = left fixedsize = yes }
+ iconType = { name = "TFR_EST_ideology_reform" position = { x = 24 y = 156 } spriteType = "GFX_TFR_EST_ideology_reform_kallas" scale = 0.34 pdx_tooltip = "TFR_EST_ideology_party_reform_tt" }
+ instantTextBoxType = { name = "TFR_EST_party_reform" position = { x = 55 y = 157 } font = "VCR02_18" text = "TFR_EST_party_reform" maxWidth = 194 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_poll_reform" position = { x = 265 y = 157 } font = "VCR02_18" text = "TFR_EST_panel_poll_reform" maxWidth = 80 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_seats_reform" position = { x = 370 y = 157 } font = "VCR02_18" text = "TFR_EST_panel_seats_reform" maxWidth = 60 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_cabinet_reform" position = { x = 465 y = 157 } font = "VCR02_18" text = "TFR_EST_panel_cabinet_reform" maxWidth = 65 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_supply_reform" position = { x = 565 y = 157 } font = "VCR02_18" text = "TFR_EST_panel_supply_reform" maxWidth = 65 maxHeight = 25 format = left fixedsize = yes }
- instantTextBoxType = { name = "TFR_EST_party_centre" position = { x = 24 y = 184 } font = "VCR02_18" text = "TFR_EST_party_centre" pdx_tooltip = "TFR_EST_centre_party_leader_tt" maxWidth = 225 maxHeight = 25 format = left fixedsize = yes }
+ iconType = { name = "TFR_EST_ideology_centre" position = { x = 24 y = 183 } spriteType = "GFX_TFR_EST_ideology_centre_ratas" scale = 0.34 pdx_tooltip = "TFR_EST_ideology_party_centre_tt" }
+ instantTextBoxType = { name = "TFR_EST_party_centre" position = { x = 55 y = 184 } font = "VCR02_18" text = "TFR_EST_party_centre" pdx_tooltip = "TFR_EST_centre_party_leader_tt" maxWidth = 194 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_poll_centre" position = { x = 265 y = 184 } font = "VCR02_18" text = "TFR_EST_panel_poll_centre" maxWidth = 80 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_seats_centre" position = { x = 370 y = 184 } font = "VCR02_18" text = "TFR_EST_panel_seats_centre" maxWidth = 60 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_cabinet_centre" position = { x = 465 y = 184 } font = "VCR02_18" text = "TFR_EST_panel_cabinet_centre" maxWidth = 65 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_supply_centre" position = { x = 565 y = 184 } font = "VCR02_18" text = "TFR_EST_panel_supply_centre" maxWidth = 65 maxHeight = 25 format = left fixedsize = yes }
- instantTextBoxType = { name = "TFR_EST_party_ekre" position = { x = 24 y = 211 } font = "VCR02_18" text = "TFR_EST_party_ekre" maxWidth = 225 maxHeight = 25 format = left fixedsize = yes }
+ iconType = { name = "TFR_EST_ideology_ekre" position = { x = 24 y = 210 } spriteType = "GFX_TFR_EST_ideology_ekre_mart" scale = 0.34 pdx_tooltip = "TFR_EST_ideology_party_ekre_tt" }
+ instantTextBoxType = { name = "TFR_EST_party_ekre" position = { x = 55 y = 211 } font = "VCR02_18" text = "TFR_EST_party_ekre" maxWidth = 194 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_poll_ekre" position = { x = 265 y = 211 } font = "VCR02_18" text = "TFR_EST_panel_poll_ekre" maxWidth = 80 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_seats_ekre" position = { x = 370 y = 211 } font = "VCR02_18" text = "TFR_EST_panel_seats_ekre" maxWidth = 60 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_cabinet_ekre" position = { x = 465 y = 211 } font = "VCR02_18" text = "TFR_EST_panel_cabinet_ekre" maxWidth = 65 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_supply_ekre" position = { x = 565 y = 211 } font = "VCR02_18" text = "TFR_EST_panel_supply_ekre" maxWidth = 65 maxHeight = 25 format = left fixedsize = yes }
- instantTextBoxType = { name = "TFR_EST_party_isamaa" position = { x = 24 y = 238 } font = "VCR02_18" text = "TFR_EST_party_isamaa" maxWidth = 225 maxHeight = 25 format = left fixedsize = yes }
+ iconType = { name = "TFR_EST_ideology_isamaa" position = { x = 24 y = 237 } spriteType = "GFX_TFR_EST_ideology_isamaa_seeder" scale = 0.34 pdx_tooltip = "TFR_EST_ideology_party_isamaa_tt" }
+ instantTextBoxType = { name = "TFR_EST_party_isamaa" position = { x = 55 y = 238 } font = "VCR02_18" text = "TFR_EST_party_isamaa" maxWidth = 194 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_poll_isamaa" position = { x = 265 y = 238 } font = "VCR02_18" text = "TFR_EST_panel_poll_isamaa" maxWidth = 80 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_seats_isamaa" position = { x = 370 y = 238 } font = "VCR02_18" text = "TFR_EST_panel_seats_isamaa" maxWidth = 60 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_cabinet_isamaa" position = { x = 465 y = 238 } font = "VCR02_18" text = "TFR_EST_panel_cabinet_isamaa" maxWidth = 65 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_supply_isamaa" position = { x = 565 y = 238 } font = "VCR02_18" text = "TFR_EST_panel_supply_isamaa" maxWidth = 65 maxHeight = 25 format = left fixedsize = yes }
- instantTextBoxType = { name = "TFR_EST_party_sde" position = { x = 24 y = 265 } font = "VCR02_18" text = "TFR_EST_party_sde" pdx_tooltip = "TFR_EST_sde_party_leader_tt" maxWidth = 225 maxHeight = 25 format = left fixedsize = yes }
+ iconType = { name = "TFR_EST_ideology_sde" position = { x = 24 y = 264 } spriteType = "GFX_TFR_EST_ideology_sde_saar" scale = 0.34 pdx_tooltip = "TFR_EST_ideology_party_sde_tt" }
+ instantTextBoxType = { name = "TFR_EST_party_sde" position = { x = 55 y = 265 } font = "VCR02_18" text = "TFR_EST_party_sde" pdx_tooltip = "TFR_EST_sde_party_leader_tt" maxWidth = 194 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_poll_sde" position = { x = 265 y = 265 } font = "VCR02_18" text = "TFR_EST_panel_poll_sde" maxWidth = 80 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_seats_sde" position = { x = 370 y = 265 } font = "VCR02_18" text = "TFR_EST_panel_seats_sde" maxWidth = 60 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_cabinet_sde" position = { x = 465 y = 265 } font = "VCR02_18" text = "TFR_EST_panel_cabinet_sde" maxWidth = 65 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_supply_sde" position = { x = 565 y = 265 } font = "VCR02_18" text = "TFR_EST_panel_supply_sde" maxWidth = 65 maxHeight = 25 format = left fixedsize = yes }
- instantTextBoxType = { name = "TFR_EST_party_e200" position = { x = 24 y = 292 } font = "VCR02_18" text = "TFR_EST_party_e200" maxWidth = 225 maxHeight = 25 format = left fixedsize = yes }
+ iconType = { name = "TFR_EST_ideology_e200" position = { x = 24 y = 291 } spriteType = "GFX_TFR_EST_ideology_e200_kallas" scale = 0.34 pdx_tooltip = "TFR_EST_ideology_party_e200_tt" }
+ instantTextBoxType = { name = "TFR_EST_party_e200" position = { x = 55 y = 292 } font = "VCR02_18" text = "TFR_EST_party_e200" maxWidth = 194 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_poll_e200" position = { x = 265 y = 292 } font = "VCR02_18" text = "TFR_EST_panel_poll_e200" maxWidth = 80 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_seats_e200" position = { x = 370 y = 292 } font = "VCR02_18" text = "TFR_EST_panel_seats_e200" maxWidth = 60 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_cabinet_e200" position = { x = 465 y = 292 } font = "VCR02_18" text = "TFR_EST_panel_cabinet_e200" maxWidth = 65 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_supply_e200" position = { x = 565 y = 292 } font = "VCR02_18" text = "TFR_EST_panel_supply_e200" maxWidth = 65 maxHeight = 25 format = left fixedsize = yes }
- instantTextBoxType = { name = "TFR_EST_party_pp" position = { x = 24 y = 319 } font = "VCR02_18" text = "TFR_EST_party_pp" maxWidth = 225 maxHeight = 25 format = left fixedsize = yes }
+ iconType = { name = "TFR_EST_ideology_pp" position = { x = 24 y = 318 } spriteType = "GFX_TFR_EST_ideology_pp_perling" scale = 0.34 pdx_tooltip = "TFR_EST_ideology_party_pp_tt" }
+ instantTextBoxType = { name = "TFR_EST_party_pp" position = { x = 55 y = 319 } font = "VCR02_18" text = "TFR_EST_party_pp" maxWidth = 194 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_poll_pp" position = { x = 265 y = 319 } font = "VCR02_18" text = "TFR_EST_panel_poll_pp" maxWidth = 80 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_seats_pp" position = { x = 370 y = 319 } font = "VCR02_18" text = "TFR_EST_panel_seats_pp" maxWidth = 60 maxHeight = 25 format = left fixedsize = yes }
  instantTextBoxType = { name = "TFR_EST_cabinet_pp" position = { x = 465 y = 319 } font = "VCR02_18" text = "TFR_EST_panel_cabinet_pp" maxWidth = 65 maxHeight = 25 format = left fixedsize = yes }

@@ -1,0 +1,19 @@
+{
+  "party": "e200",
+  "asset_id": "storage",
+  "source_generation_file": "exec-493f4c6c-c937-4baa-ae26-713ae1c51b80.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "0e4b868c67fd866d4223b7876bc3f5d391560071a8baf6bc4b05a8a253976b7d",
+  "texture_sha256": "b3762dfc07240e14d3d97833691f790972a98cbc26b3ff2251d927df1dc6482a",
+  "texture_bytes": 47574,
+  "artwork_bounds": {
+    "left": 2,
+    "top": 1,
+    "width": 166,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

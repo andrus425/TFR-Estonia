@@ -1,0 +1,19 @@
+{
+  "party": "centre",
+  "asset_id": "reserve_expertise",
+  "source_generation_file": "exec-18be2938-d6ff-4a87-bb1c-d66d149e9112.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "75384d0c9f6f75488b903ed143a81592e5b34bd1db97e10c88d3d07a98deb088",
+  "texture_sha256": "1dfb602b9468d7804a7c58b7ec039dd3af6db4a155ded2444cb620e3871311ef",
+  "texture_bytes": 39323,
+  "artwork_bounds": {
+    "left": 8,
+    "top": 1,
+    "width": 154,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

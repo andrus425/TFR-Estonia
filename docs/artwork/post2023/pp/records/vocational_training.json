@@ -1,0 +1,19 @@
+{
+  "party": "pp",
+  "asset_id": "vocational_training",
+  "source_generation_file": "exec-2872e72c-3aae-42b8-b37c-ca39706a5bc4.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "6d70052df138c86db1593db059dd227cbe5bdc0fd91f26007d169b6b38c28a2c",
+  "texture_sha256": "31889870225ab664fc3225ac2bb5c6960fce261644dd9d9ef6021fb25404829d",
+  "texture_bytes": 40262,
+  "artwork_bounds": {
+    "left": 11,
+    "top": 1,
+    "width": 147,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

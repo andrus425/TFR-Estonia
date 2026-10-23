@@ -1,0 +1,19 @@
+{
+  "party": "isamaa",
+  "asset_id": "family_tax",
+  "source_generation_file": "exec-2559b20c-df03-43b8-8ab2-501833b34dbf.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "a3609a68815b4cba7ca4a7d625225e4f6c4490cfbbfec26019202d446151eb9e",
+  "texture_sha256": "55b71cd2e8b5db8ea14b48867d55f9e4970fc6ec6a10deb6f08d69b2e6e38907",
+  "texture_bytes": 48708,
+  "artwork_bounds": {
+    "left": 4,
+    "top": 1,
+    "width": 162,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

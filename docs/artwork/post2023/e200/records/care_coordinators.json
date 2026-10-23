@@ -1,0 +1,19 @@
+{
+  "party": "e200",
+  "asset_id": "care_coordinators",
+  "source_generation_file": "exec-99aee0eb-00cb-4a72-ae72-6b1dc7199d0d.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "1e86733d24cda2dd89ad8ce8c11f6e433fea30fc9c2f660c0f4be0b41388e0fa",
+  "texture_sha256": "c82160743acfdc7cec4c9bcc8b147db4cfbf779dbe2cad59e65c3aa1e20c7371",
+  "texture_bytes": 43900,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 3,
+    "width": 168,
+    "height": 104
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

@@ -1,0 +1,19 @@
+{
+  "party": "reform",
+  "asset_id": "public_finance",
+  "source_generation_file": "exec-7e0bbfd8-77fe-4db6-9054-3da42685bf3f.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "48674d94afd37aac4d9a2ee610ca31d4120a4b4863aa174f229b38a70d296db8",
+  "texture_sha256": "9af6f5ed0cbb1e4efa113e02e19e6ea47e059494c0e9ed6981c882ef1d69235d",
+  "texture_bytes": 41660,
+  "artwork_bounds": {
+    "left": 14,
+    "top": 1,
+    "width": 142,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

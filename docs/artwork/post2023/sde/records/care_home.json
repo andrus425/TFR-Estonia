@@ -1,0 +1,19 @@
+{
+  "party": "sde",
+  "asset_id": "care_home",
+  "source_generation_file": "exec-76983852-d3e5-4c79-a1b9-fc05a70051f5.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "6f5b2fdcce31f7fa48156f71ef270584593755dfbfc80343f12441ced590356f",
+  "texture_sha256": "b21e73a5f1718e97303d9a1949458e4f0ad09abbcd18fcac78e54c09ae3e0940",
+  "texture_bytes": 43059,
+  "artwork_bounds": {
+    "left": 9,
+    "top": 1,
+    "width": 152,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

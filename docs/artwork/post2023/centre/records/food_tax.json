@@ -1,0 +1,19 @@
+{
+  "party": "centre",
+  "asset_id": "food_tax",
+  "source_generation_file": "exec-9824cf5e-c39a-416c-b0e7-28d080bb8aa4.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "1182cd103e6cb67ddce8a4d5d1ab94ac703f591fd18471896b7e4b9e65ee680c",
+  "texture_sha256": "6d49a69701bbf93c235908edca1243e4abef460fcb06bb928908bebcfbda7965",
+  "texture_bytes": 42191,
+  "artwork_bounds": {
+    "left": 13,
+    "top": 1,
+    "width": 144,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

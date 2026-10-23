@@ -1,0 +1,19 @@
+{
+  "party": "reform",
+  "asset_id": "report",
+  "source_generation_file": "exec-73a22147-6255-4c9d-9916-8fc38d0614dd.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "badd7c7957faeb6accea7eb11e1281df7bb161ed6c9634dcd7267a113503b4af",
+  "texture_sha256": "28f4ebd88dd8e75c653d1a8fb4022b4dcddf53dafb70b206984da909c0946854",
+  "texture_bytes": 39230,
+  "artwork_bounds": {
+    "left": 9,
+    "top": 1,
+    "width": 151,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

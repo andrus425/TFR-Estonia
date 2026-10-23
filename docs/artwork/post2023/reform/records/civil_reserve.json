@@ -1,0 +1,19 @@
+{
+  "party": "reform",
+  "asset_id": "civil_reserve",
+  "source_generation_file": "exec-b2ee0be7-5cf8-4d5b-8eed-ffcd4b298604.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "df801bd9837d44264f91065f4761b79d0a587c5a52052596a66fe828bd3a096e",
+  "texture_sha256": "c0740f5f9f0e7326ec935480f82d562cf689024e52aaf54f275fece0d0bd7ff6",
+  "texture_bytes": 46387,
+  "artwork_bounds": {
+    "left": 10,
+    "top": 1,
+    "width": 150,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

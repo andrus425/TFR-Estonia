@@ -1,0 +1,19 @@
+{
+  "party": "centre",
+  "asset_id": "renovation",
+  "source_generation_file": "exec-d555785b-d448-41e0-9381-802aef467358.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "a382d260bbea5c5ff710b1089a8beddbf73f3c1e44d3b26095657c39e9790b10",
+  "texture_sha256": "739488f7466c28b3404a420d907b682b73ee420bd3c1103391fa2ba0621111d9",
+  "texture_bytes": 40196,
+  "artwork_bounds": {
+    "left": 11,
+    "top": 1,
+    "width": 147,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

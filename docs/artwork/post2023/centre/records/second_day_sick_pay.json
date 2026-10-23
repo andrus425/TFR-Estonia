@@ -1,0 +1,19 @@
+{
+  "party": "centre",
+  "asset_id": "second_day_sick_pay",
+  "source_generation_file": "exec-49c4b55d-4a5e-42cd-8fc0-694e39b9d2f4.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "46ec1a3df9fa33ac44bbe2b35a85da224664028bbb86c58559cca96d7b2b3d5e",
+  "texture_sha256": "0b60efb5c59b8cb49f1f4c01c7fddf5f4c367bb0817fbeef703d450027cc7b9b",
+  "texture_bytes": 46937,
+  "artwork_bounds": {
+    "left": 2,
+    "top": 1,
+    "width": 165,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "estonian_school",
+  "source_generation_file": "exec-57b1313b-4a0e-419f-b562-738f108ffc85.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "85ea9899abb293feef1f3f4b434b3b844e12ecea13d932335f28bbd8bc65ed44",
+  "texture_sha256": "2c16815210cab49033d2f7ca302400c958c69c4a2da959fe57317f933ddb6a1a",
+  "texture_bytes": 41542,
+  "artwork_bounds": {
+    "left": 13,
+    "top": 1,
+    "width": 144,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

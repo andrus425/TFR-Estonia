@@ -1,0 +1,19 @@
+{
+  "party": "e200",
+  "asset_id": "interconnectors",
+  "source_generation_file": "exec-1ad3ae71-e881-4690-98b2-3fbe9ea4c799.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "f2db8be7564f48c3253d0a0cfe439fe02517b83fa2d653656a2b140c5e86b0d8",
+  "texture_sha256": "0da794cd387b3b66de0a7aafcc22195e03493018f660469bc9b27d1953db7083",
+  "texture_bytes": 43457,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 1,
+    "width": 167,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

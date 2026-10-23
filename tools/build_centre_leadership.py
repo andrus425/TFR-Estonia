@@ -163,7 +163,7 @@ country_event = {
         title = 'Tanel Kiik' if leader == 'kiik' else 'Mihhail Kõlvart'
         loc[f'TFR_EST_pm_centre_{leader}'] = f'$TFR_EST_{person}$'
         loc[f'TFR_EST_pm_centre_{leader}_desc'] = f'Prime Minister: §H$TFR_EST_{person}$§!\n[TFR_EST_hog_cabinet_status]\n\n$TFR_EST_{person}_desc$'
-        loc[f'TFR_EST_hog_centre_{leader}'] = f'Prime Minister: §H$TFR_EST_{person}$§!\n[TFR_EST_hog_cabinet_status]\n\n\n\n\n\n\n   £GFX_idea_TFR_EST_pm_centre_{leader}\n\n\n\n\n\n\n\n\n-------------------------------------\n§L$TFR_EST_{person}_desc$§!'
+        loc[f'TFR_EST_hog_centre_{leader}'] = f'Prime Minister: §H$TFR_EST_{person}$§!\n[TFR_EST_hog_cabinet_status]\n\n\n\n\n\n\n   £GFX_TFR_EST_hog_portrait_centre_{leader}\n\n\n\n\n\n\n\n\n-------------------------------------\n§L$TFR_EST_{person}_desc$§!'
         loc[f'TFR_EST_centre_congress_{leader}_tt'] = f"§Y{title}§! becomes Centre's party leader and future candidate for prime minister. Preserve parliamentary seats, polls, coalition agreements, portfolio ministers and the election calendar. Another party's prime minister stays in office. An outgoing Centre caretaker stays until cabinet confirmation; a confirmed Centre-led government adopts its new party leader."
     localization = 'l_english:\n' + ''.join(f' {key}:0 {json.dumps(value, ensure_ascii=False)}\n' for key, value in loc.items())
     party_name = '''defined_text = {

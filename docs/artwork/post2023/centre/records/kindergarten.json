@@ -1,0 +1,19 @@
+{
+  "party": "centre",
+  "asset_id": "kindergarten",
+  "source_generation_file": "exec-bd984ce0-fa81-40c0-a94a-6a1db4cc3356.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "21da9ddaecd6d9d68e52bc534497735d9e164f40bb605be69097d636257fb177",
+  "texture_sha256": "92abab1ab6048ae96038655ce77b62a73891e0a82ab5478077019fc9ab5781f2",
+  "texture_bytes": 47012,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 5,
+    "width": 168,
+    "height": 99
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

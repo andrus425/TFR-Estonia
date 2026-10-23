@@ -1,0 +1,19 @@
+{
+  "party": "e200",
+  "asset_id": "reserve_muster",
+  "source_generation_file": "exec-24f1be77-ea8d-45a5-add9-9669678ef5a8.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "f77960e9131a1ebaad62d76cfc80db95c470927da9f95d6c04e1fb313e9b1983",
+  "texture_sha256": "590acf8c705514c4830dc8aa27d870eba11c3dc9682e381d29133bec6e4ddb4d",
+  "texture_bytes": 47867,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 1,
+    "width": 167,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

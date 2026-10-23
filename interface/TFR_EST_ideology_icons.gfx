@@ -1,0 +1,16 @@
+# Party emblems use TFR's 66 x 68 ideology-icon canvas.
+# Selection lives in TFR_EST_ideology_icons.txt, independently of the president.
+spriteTypes = {
+    spriteType = { name = "GFX_TFR_EST_ideology_reform_kallas" texturefile = "gfx/interface/ideologies/EST/reform_kallas.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_TFR_EST_ideology_reform_michal" texturefile = "gfx/interface/ideologies/EST/reform_michal.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_TFR_EST_ideology_centre_ratas" texturefile = "gfx/interface/ideologies/EST/centre_ratas.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_TFR_EST_ideology_centre_kiik" texturefile = "gfx/interface/ideologies/EST/centre_kiik.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_TFR_EST_ideology_centre_kolvart" texturefile = "gfx/interface/ideologies/EST/centre_kolvart.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_TFR_EST_ideology_ekre_mart" texturefile = "gfx/interface/ideologies/EST/ekre_mart.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_TFR_EST_ideology_ekre_martin" texturefile = "gfx/interface/ideologies/EST/ekre_martin.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_TFR_EST_ideology_isamaa_seeder" texturefile = "gfx/interface/ideologies/EST/isamaa_seeder.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_TFR_EST_ideology_sde_saar" texturefile = "gfx/interface/ideologies/EST/sde_saar.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_TFR_EST_ideology_sde_laanemets" texturefile = "gfx/interface/ideologies/EST/sde_laanemets.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_TFR_EST_ideology_e200_kallas" texturefile = "gfx/interface/ideologies/EST/e200_kallas.png" legacy_lazy_load = no }
+    spriteType = { name = "GFX_TFR_EST_ideology_pp_perling" texturefile = "gfx/interface/ideologies/EST/pp_perling.png" legacy_lazy_load = no }
+}

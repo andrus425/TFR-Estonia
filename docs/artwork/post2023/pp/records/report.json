@@ -1,0 +1,19 @@
+{
+  "party": "pp",
+  "asset_id": "report",
+  "source_generation_file": "exec-3c0d067d-8bbc-4a92-9407-84a951764bf6.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "085a4fc2326a4bfcaf8e93fe5bb1ddfe4afd9252d55f37f22e624b68a8ffcdb1",
+  "texture_sha256": "0a7b87e6a0c0e0b7bfedf0f39e95f2e51733d1852dff27e4dc5384fbd68245ea",
+  "texture_bytes": 46369,
+  "artwork_bounds": {
+    "left": 6,
+    "top": 1,
+    "width": 157,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

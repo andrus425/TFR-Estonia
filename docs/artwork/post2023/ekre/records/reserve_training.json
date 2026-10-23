@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "reserve_training",
+  "source_generation_file": "exec-2a0dbae3-5c5f-43b2-9ffa-e8ff21f015ea.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "0f9221413a05af38d59926f4bd8b0a28466be399a7fc81860f751da061f7ab86",
+  "texture_sha256": "ec90166bc268102c9af372b37ad6b0525675ec4a8bbc1b3888894df9ddc254fc",
+  "texture_bytes": 44752,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 5,
+    "width": 168,
+    "height": 99
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

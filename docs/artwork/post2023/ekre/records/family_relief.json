@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "family_relief",
+  "source_generation_file": "exec-b5edfbdc-74a8-46c4-99af-201d3a911f9a.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "49a5dd05c6884036e57ad5f98a3573c186cf7e20579465d606cb5056a4caa63b",
+  "texture_sha256": "331457f4991ead8b3393746884acf6f7980a83fcb1911a3ccd416f36c8327872",
+  "texture_bytes": 43584,
+  "artwork_bounds": {
+    "left": 9,
+    "top": 1,
+    "width": 151,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

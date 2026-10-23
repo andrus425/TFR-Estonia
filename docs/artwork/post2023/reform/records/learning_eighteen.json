@@ -1,0 +1,19 @@
+{
+  "party": "reform",
+  "asset_id": "learning_eighteen",
+  "source_generation_file": "exec-957a4176-6184-4da2-9235-28e26c88087a.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "ea7d4bf8deb350d9021e28d58ecc9efaca81736b3c21da1c5b82aa61ccba27e0",
+  "texture_sha256": "35dfa660aa423b826db9597d228957cc33c010fce507e929c4081bf48f40d94d",
+  "texture_bytes": 47472,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 2,
+    "width": 168,
+    "height": 105
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

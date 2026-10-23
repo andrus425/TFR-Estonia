@@ -1,0 +1,19 @@
+{
+  "party": "isamaa",
+  "asset_id": "research",
+  "source_generation_file": "exec-b3458b04-cd5e-4e44-96fa-60c77ad29d1f.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "5df85feb5ca26a7e31cccd263452f5324b3d06bc9a0507e1574e1c949fe9302d",
+  "texture_sha256": "fa5004bdc4b86aa546f4ffc8fa60a2759a388b4dd4d95d9d999e935fa23f75af",
+  "texture_bytes": 47576,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 2,
+    "width": 168,
+    "height": 106
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

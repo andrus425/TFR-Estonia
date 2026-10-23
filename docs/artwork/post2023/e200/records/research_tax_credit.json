@@ -1,0 +1,19 @@
+{
+  "party": "e200",
+  "asset_id": "research_tax_credit",
+  "source_generation_file": "exec-390b37b9-b462-475d-a1e0-6cb40d5fcf37.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "2e5d352a5298179faad27ff405fd3f34524742c57e53e87af8ed888038bd1543",
+  "texture_sha256": "2c57d92e2f80bc8551b8f52adf35c1cd0fcf21619957f6907730e17e353353e0",
+  "texture_bytes": 44918,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 3,
+    "width": 168,
+    "height": 104
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

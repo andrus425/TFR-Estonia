@@ -1,0 +1,19 @@
+{
+  "party": "sde",
+  "asset_id": "defence_industry",
+  "source_generation_file": "exec-35133bec-af0e-4735-9d84-b7e1b83c1794.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "f0a162a91cbeaec9f855021ea6fc1541a428bd8c631f7f7105b458d9239fcdd3",
+  "texture_sha256": "c2fdff594eb5863b6ffb8508da29b8d112e067ae7e1edcf33c131e2b56a01a20",
+  "texture_bytes": 41663,
+  "artwork_bounds": {
+    "left": 10,
+    "top": 1,
+    "width": 150,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

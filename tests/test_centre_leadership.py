@@ -375,7 +375,7 @@ class CentreLeadershipTests(unittest.TestCase):
             self.assertEqual(idea.get('available').get('has_idea'), 'TFR_EST_pm_centre_' + leader)
             self.assertEqual(idea.get('allowed_to_remove').get('always'), 'no')
             self.assertEqual(idea.get('modifier').entries, [])
-            sprite = next(e.value for e in sprites.entries if e.value.get('name') == 'GFX_idea_TFR_EST_pm_centre_' + leader)
+            sprite = next(e.value for e in sprites.entries if e.value.get('name') == 'GFX_TFR_EST_hog_portrait_centre_' + leader)
             self.assertTrue(sprite.get('texturefile').startswith('gfx/leaders/EST/ministers/'))
             icon = next(e.value for e in sprites.entries if e.value.get('name') == 'GFX_idea_TFR_EST_pm_centre_' + leader + '_icon')
             self.assertTrue(icon.get('texturefile').startswith('gfx/interface/ideas/EST/ministers/'))

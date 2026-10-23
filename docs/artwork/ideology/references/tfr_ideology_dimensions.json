@@ -1,0 +1,74 @@
+[
+  {
+    "texture": "gfx/interface/ideologies/conservative_baltic.png",
+    "width": 66,
+    "height": 68,
+    "mode": "RGBA"
+  },
+  {
+    "texture": "gfx/interface/ideologies/market_liberal_baltic.png",
+    "width": 66,
+    "height": 68,
+    "mode": "RGBA"
+  },
+  {
+    "texture": "gfx/interface/ideologies/social_liberal_baltic.png",
+    "width": 66,
+    "height": 68,
+    "mode": "RGBA"
+  },
+  {
+    "texture": "gfx/interface/ideologies/christian_democracy.png",
+    "width": 66,
+    "height": 68,
+    "mode": "RGBA"
+  },
+  {
+    "texture": "gfx/interface/ideologies/neoliberalism.png",
+    "width": 66,
+    "height": 68,
+    "mode": "RGBA"
+  },
+  {
+    "texture": "gfx/interface/ideologies/centrist.png",
+    "width": 66,
+    "height": 68,
+    "mode": "RGBA"
+  },
+  {
+    "texture": "gfx/interface/ideologies/social_democracy_ARG.png",
+    "width": 66,
+    "height": 68,
+    "mode": "RGBA"
+  },
+  {
+    "texture": "gfx/interface/ideologies/social_democracy_TUR.png",
+    "width": 66,
+    "height": 68,
+    "mode": "RGBA"
+  },
+  {
+    "texture": "gfx/interface/ideologies/social_democrat_group.png",
+    "width": 66,
+    "height": 68,
+    "mode": "RGBA"
+  },
+  {
+    "texture": "gfx/interface/ideologies/ultra_conservatism_ENG.png",
+    "width": 66,
+    "height": 68,
+    "mode": "RGBA"
+  },
+  {
+    "texture": "gfx/interface/ideologies/neoliberalism_UKR.png",
+    "width": 66,
+    "height": 68,
+    "mode": "RGBA"
+  },
+  {
+    "texture": "gfx/interface/ideologies/christian_conservatism.png",
+    "width": 66,
+    "height": 68,
+    "mode": "RGBA"
+  }
+]

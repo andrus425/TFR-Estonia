@@ -1,0 +1,19 @@
+{
+  "party": "centre",
+  "asset_id": "education",
+  "source_generation_file": "exec-347d6f86-e037-487d-af77-935b1bbc6ad4.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "6fce755c49f1d0efda64d5b6c7b9c48b03d2ef2a8d79427a8216725fa49c715e",
+  "texture_sha256": "a55bd074cf6e3a8420d35f2bd7d333a99daf889f7032481fa63b945409e59cbc",
+  "texture_bytes": 36281,
+  "artwork_bounds": {
+    "left": 15,
+    "top": 1,
+    "width": 140,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

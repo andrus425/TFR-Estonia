@@ -1,0 +1,19 @@
+{
+  "party": "sde",
+  "asset_id": "civil_protection",
+  "source_generation_file": "exec-74fc1aec-a6ee-46ae-9ad7-4e7d3f1dfb92.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "570b21796eaca8ee0599d4bf3df6702e1da547d6c05fef0f05d4841a792387c6",
+  "texture_sha256": "3325d4942c6669dd7d5cceed222d3c0c62d1b76673a94201879b803e21edfc87",
+  "texture_bytes": 40687,
+  "artwork_bounds": {
+    "left": 12,
+    "top": 1,
+    "width": 145,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "citizens_initiative",
+  "source_generation_file": "exec-eb013818-3e9d-49ac-81ba-bc99a9d28c8b.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "a3634db1b799f3b90506e870e11efb7924e2350d0f1fb61dd2adea3064c0037e",
+  "texture_sha256": "5284f7ac3c427141ce5b319d2a34e472b01216d8d784a0fc8e3082aaba205dad",
+  "texture_bytes": 38412,
+  "artwork_bounds": {
+    "left": 8,
+    "top": 1,
+    "width": 153,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

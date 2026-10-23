@@ -1,0 +1,19 @@
+{
+  "party": "sde",
+  "asset_id": "mandate",
+  "source_generation_file": "exec-bffd799f-413b-4e26-85d2-5596b165026f.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "a5985fe379ac729d65600f1faa275de534f99575f800d1092ebcfc79d256fb48",
+  "texture_sha256": "e73e5b5ca07d83f6a8833d8fcc514967d7be5c43cf63b1745a330fb1910cbdf9",
+  "texture_bytes": 45989,
+  "artwork_bounds": {
+    "left": 8,
+    "top": 1,
+    "width": 154,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

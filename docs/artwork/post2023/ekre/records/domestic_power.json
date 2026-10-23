@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "domestic_power",
+  "source_generation_file": "exec-b2650506-104b-46f9-88fc-06676696ca93.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "677d9a2d158e6b27a606ac2c3b573667c8cdd63a1613eede15f0c0f577d1534d",
+  "texture_sha256": "20c1e0de5000057c67c3641197e0e6b7f52a19773b241a1614574c74644cfc30",
+  "texture_bytes": 41679,
+  "artwork_bounds": {
+    "left": 14,
+    "top": 1,
+    "width": 142,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

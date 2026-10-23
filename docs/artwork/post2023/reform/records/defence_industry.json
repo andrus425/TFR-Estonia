@@ -1,0 +1,19 @@
+{
+  "party": "reform",
+  "asset_id": "defence_industry",
+  "source_generation_file": "exec-83f710d8-5f5e-4c5a-bd20-fab042b5d1b3.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "2d6036e2ed866d26eb7ca39ddaaf1cb50fa75c02d0368ab0f22a8463db0bd852",
+  "texture_sha256": "8ee4e96477b14c564cc28b4d370557755f8797a4a48c3a92b4371c621687e637",
+  "texture_bytes": 49041,
+  "artwork_bounds": {
+    "left": 4,
+    "top": 1,
+    "width": 161,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

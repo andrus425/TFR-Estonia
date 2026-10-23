@@ -1,0 +1,19 @@
+{
+  "party": "pp",
+  "asset_id": "timber_construction",
+  "source_generation_file": "exec-aa459c51-7b86-41c7-bd09-01b273af63a2.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "7560c3d197940ab6b3d54d2a9f86bf96bc1921fc0cd2c885bbbda36d5f9ceb45",
+  "texture_sha256": "47fce5401c7c4a91f7e5767d94e117a13cf29207a45d2f72fd6c0b93b957fec9",
+  "texture_bytes": 39231,
+  "artwork_bounds": {
+    "left": 8,
+    "top": 1,
+    "width": 154,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

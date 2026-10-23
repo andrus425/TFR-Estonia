@@ -1,0 +1,19 @@
+{
+  "party": "centre",
+  "asset_id": "energy_cooperatives",
+  "source_generation_file": "exec-266ace34-c12c-404a-a633-bb98266d0c57.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "506adc03e8b29e10d17b8db5609f24b75ead09d003beb1fac8a15e3443695463",
+  "texture_sha256": "9bcff36978238c652336572f1417f643e335654df0db58a53ec25a6ebf1f8591",
+  "texture_bytes": 37530,
+  "artwork_bounds": {
+    "left": 6,
+    "top": 1,
+    "width": 158,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

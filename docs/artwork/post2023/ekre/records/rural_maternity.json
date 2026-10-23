@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "rural_maternity",
+  "source_generation_file": "exec-f48c1b90-5b91-4a7c-98ec-5b8bfd6d77b3.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "7abd3a61b6a745b800ec380d7bc06b0fa1cb21e916f58f8d75c3a655fd0dbf3c",
+  "texture_sha256": "e0fc250b80862fd30fb6d7b1bd20aa899fb26f1e067a82bf435c6edd2e6ca73e",
+  "texture_bytes": 45983,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 2,
+    "width": 168,
+    "height": 106
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

@@ -1,0 +1,19 @@
+{
+  "party": "centre",
+  "asset_id": "broadband",
+  "source_generation_file": "exec-21702340-28e5-4b2b-9506-b7b8eaa3adcb.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "4d59679111d31b250478e0fd6a61282783593b28e816ffbdfdfdb1ddeff80343",
+  "texture_sha256": "6292735cb7fafae6cd49f27f1f48d7f1f2c86383080f598c6539c3a3aeb186a7",
+  "texture_bytes": 50103,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 6,
+    "width": 168,
+    "height": 98
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

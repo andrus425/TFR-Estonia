@@ -1,0 +1,1077 @@
+{
+  "format": 1,
+  "created": "2026-10-23",
+  "generation_mode": "Built-in image_gen.imagegen",
+  "context": "2023 Eesti 200 coalition-led focus tree; palette follows leader party for every policy. Every focus has a unique, separately generated composition and texture.",
+  "canvas": {
+    "width": 170,
+    "height": 150,
+    "bottom_transparent_pixels": 40
+  },
+  "brand": {
+    "name": "Eesti 200",
+    "color": "#2F2A95",
+    "palette": "period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal",
+    "symbol": "the authentic period mark of three joined slanted blocks with the cutout numerals 200",
+    "leader": "Kristina Kallas"
+  },
+  "icons": [
+    {
+      "asset_id": "mandate",
+      "title": "An Eesti 200 Long-Term Parliamentary Mandate",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Kristina Kallas, Eesti 200 emblem, coalition agreement and Riigikogu",
+      "political_figure": "Kristina Kallas",
+      "focus_ids": [
+        "TFR_EST_e200_2023_new_mandate"
+      ],
+      "focus_suffixes": [
+        "new_mandate"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_mandate.png",
+      "master": "masters/EST_e200_2023_mandate.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Input image is a reference sheet only: select the named political figure(s) and authentic party symbol from it; preserve recognizable face, hair and mark geometry. Replace the sheet completely with ONE unified TFR icon, no other sheet faces or labels. Coalition leader party: Eesti 200. Entire icon lighting palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Keep this party palette even for policies shared with other parties. Primary subjects: Kristina Kallas, Eesti 200 emblem, coalition agreement and Riigikogu. Include a clearly recognizable small dimensional rendition of the authentic period mark of three joined slanted blocks with the cutout numerals 200 as part of the collage. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-2e41f995-586e-45d2-b515-a42b1feab883.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "3013d2ae510ecfefad3e72295bb4651bc38cef531334366ef90631387932c732",
+      "texture_sha256": "c987f4a83fc4a253baaa01c8bc69edcbdf359e7ff1d9cd19624df02d1a9cb40a",
+      "texture_bytes": 49994,
+      "artwork_bounds": {
+        "left": 3,
+        "top": 1,
+        "width": 163,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "defence_reserve",
+      "title": "Fund the Three-Percent Defence Commitment",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Reservist helmet, instructor, civilian crisis-role map and defence funding ledger",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_defence_commitment"
+      ],
+      "focus_suffixes": [
+        "defence_commitment"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_defence_reserve.png",
+      "master": "masters/EST_e200_2023_defence_reserve.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Eesti 200. Entire icon lighting palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Keep this party palette even for policies shared with other parties. Primary subjects: Reservist helmet, instructor, civilian crisis-role map and defence funding ledger. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-4d28d6d7-a0e0-4e2f-97ed-be6f3bf97464.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "5e0411e2d482e1a2089b1224bcdcffb132029c4f0e5c44c3d64b9d650a9ec1b9",
+      "texture_sha256": "0acf86fc7798e9efae78b7e551f8d4bbfcb99370257a2f02e73c7258c298943e",
+      "texture_bytes": 43038,
+      "artwork_bounds": {
+        "left": 11,
+        "top": 1,
+        "width": 148,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "air_defence_dome",
+      "title": "Prepare the Kalevipoja Air-Defence Dome",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Radar, anti-air missile and layered protective dome over Estonia",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_air_defence"
+      ],
+      "focus_suffixes": [
+        "air_defence"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_air_defence_dome.png",
+      "master": "masters/EST_e200_2023_air_defence_dome.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Eesti 200. Entire icon lighting palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Keep this party palette even for policies shared with other parties. Primary subjects: Radar, anti-air missile and layered protective dome over Estonia. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-69ced900-ba79-4a9b-b72a-313b237ebd50.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "275bcbd0f952433278a1f559505fe0c391bf11507c4416022e06bb30870b26f5",
+      "texture_sha256": "37afdc79c1f963ad9178a3daf01368a59bcaa8751be3a4469164c8772128dc32",
+      "texture_bytes": 40709,
+      "artwork_bounds": {
+        "left": 7,
+        "top": 1,
+        "width": 156,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "allied_reception",
+      "title": "Prepare Sustained Allied Reception",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Military transport, supply crates and sustained reception facilities",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_allied_reception"
+      ],
+      "focus_suffixes": [
+        "allied_reception"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_allied_reception.png",
+      "master": "masters/EST_e200_2023_allied_reception.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Eesti 200. Entire icon lighting palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Keep this party palette even for policies shared with other parties. Primary subjects: Military transport, supply crates and sustained reception facilities. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-09f3af2a-10b2-4c81-9a37-fb3705565599.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "c6ee90f4fb6062bd4889330c1725333539d981fcc1b1e094f2c8d6737b23ef96",
+      "texture_sha256": "51912e9f2571e9bb596246dbd211cde582d215a398668b396acef623e2b765a8",
+      "texture_bytes": 48153,
+      "artwork_bounds": {
+        "left": 8,
+        "top": 1,
+        "width": 154,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "civil_reserve",
+      "title": "Establish Civil Reserves and Tartu Disaster-Medicine Training",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Rescue volunteer, disaster-medicine bag, emergency radio and hospital",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_civil_reserve"
+      ],
+      "focus_suffixes": [
+        "civil_reserve"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_civil_reserve.png",
+      "master": "masters/EST_e200_2023_civil_reserve.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Eesti 200. Entire icon lighting palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Keep this party palette even for policies shared with other parties. Primary subjects: Rescue volunteer, disaster-medicine bag, emergency radio and hospital. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-185b3564-ad3f-49c8-9ce8-274e46dd185e.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "9ed39c8d97bb0b244b69d760bd3ce7def3b5b8ea6eb1255bb192a6cab4b54a22",
+      "texture_sha256": "be1cdd8bec825ffaee86d46e2b6d8972cbacc071957858fad137b9cbb31da166",
+      "texture_bytes": 42351,
+      "artwork_bounds": {
+        "left": 12,
+        "top": 1,
+        "width": 146,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "defence_industry",
+      "title": "Capitalize Domestic Defence-Industry Projects",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Ammunition shells, machining tools, component gears and factory",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_industrial_guarantees"
+      ],
+      "focus_suffixes": [
+        "industrial_guarantees"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_defence_industry.png",
+      "master": "masters/EST_e200_2023_defence_industry.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Eesti 200. Entire icon lighting palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Keep this party palette even for policies shared with other parties. Primary subjects: Ammunition shells, machining tools, component gears and factory. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-8b45b75d-6a08-4271-89ca-514273e9e172.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "f2031bcb142aa7535f18048a349cd93be5ba3d8ff8a118ce049bb3bca9eef797",
+      "texture_sha256": "6862bd6fd961f759cdfeeb77457811d0457498e80998afbdc45a68498f2d0343",
+      "texture_bytes": 44369,
+      "artwork_bounds": {
+        "left": 5,
+        "top": 1,
+        "width": 160,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "drone_research",
+      "title": "Commission Dual-Use Drone Development Trials",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Dual-use quadcopter, laboratory bench and research investment document",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_drone_development"
+      ],
+      "focus_suffixes": [
+        "drone_development"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_drone_research.png",
+      "master": "masters/EST_e200_2023_drone_research.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Eesti 200. Entire icon lighting palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Keep this party palette even for policies shared with other parties. Primary subjects: Dual-use quadcopter, laboratory bench and research investment document. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-0ac4cfc2-ea3c-41e8-a20f-72fd1a7a6de5.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "0646a48c12fa0e8c33e9fdb72317846310f70253d6bc74aacf2cf2e18bed2f73",
+      "texture_sha256": "ccc85043b84940b9a777974cd8401c3ee5681f5cb2d62cf04ea9bd4156285c52",
+      "texture_bytes": 38763,
+      "artwork_bounds": {
+        "left": 8,
+        "top": 1,
+        "width": 153,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "small_business",
+      "title": "Simplify Small Companies and Raise the VAT Threshold",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Small enterprise facade, simple registration document and euro coins",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_simplified_business"
+      ],
+      "focus_suffixes": [
+        "simplified_business"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_small_business.png",
+      "master": "masters/EST_e200_2023_small_business.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Eesti 200. Entire icon lighting palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Keep this party palette even for policies shared with other parties. Primary subjects: Small enterprise facade, simple registration document and euro coins. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-6cb3e0ef-f027-44ea-8709-c1977957a957.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "defa34b29a3f228e792e4b5daed8432f77e7ec31e99f2ef884ab3112d6dc2e5c",
+      "texture_sha256": "0d325837f1a98b7ec93cbbcae0966e80ed747ba6b4a9f509d5c1c11f9a2c99c3",
+      "texture_bytes": 47493,
+      "artwork_bounds": {
+        "left": 1,
+        "top": 2,
+        "width": 168,
+        "height": 106
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "climate_permits",
+      "title": "Create the Six-Month Renewable-Permit Procedure",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Wind turbine, permit document, environmental leaf and procurement clipboard",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_renewable_permits"
+      ],
+      "focus_suffixes": [
+        "renewable_permits"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_climate_permits.png",
+      "master": "masters/EST_e200_2023_climate_permits.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Eesti 200. Entire icon lighting palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Keep this party palette even for policies shared with other parties. Primary subjects: Wind turbine, permit document, environmental leaf and procurement clipboard. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-4620f7c3-b813-46dd-a4d6-fc4e8087f12e.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "df90f35faa35c21b9c121967e8166255e3f9893adbe3ec13d6603baa30a7b072",
+      "texture_sha256": "e6374bf99948e54a6e37241bd341babd34001cc9d245c36c348a0bbd71d42043",
+      "texture_bytes": 37688,
+      "artwork_bounds": {
+        "left": 10,
+        "top": 1,
+        "width": 150,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "grid_interconnectors",
+      "title": "Release Unused Grid Reservations and Fund Connections",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Offshore wind turbine, power cable, transmission tower and Baltic grid map",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_grid_connection"
+      ],
+      "focus_suffixes": [
+        "grid_connection"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_grid_interconnectors.png",
+      "master": "masters/EST_e200_2023_grid_interconnectors.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Eesti 200. Entire icon lighting palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Keep this party palette even for policies shared with other parties. Primary subjects: Offshore wind turbine, power cable, transmission tower and Baltic grid map. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-e2d20db4-b4bf-4e12-a53f-61dd121aed13.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "b5e51717fe320edd024e1b056d218beda172bcd889d96867ae862282de2e2365",
+      "texture_sha256": "9c034d29f2e616df59ecffdb2b048396cd980dbad9a590561da86e92a79620ce",
+      "texture_bytes": 42045,
+      "artwork_bounds": {
+        "left": 10,
+        "top": 1,
+        "width": 149,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "renovation",
+      "title": "Expand the Residential Energy-Renovation Programme",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Apartment block, insulation panels and radiator",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_renovation"
+      ],
+      "focus_suffixes": [
+        "renovation"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_renovation.png",
+      "master": "masters/EST_e200_2023_renovation.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Eesti 200. Entire icon lighting palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Keep this party palette even for policies shared with other parties. Primary subjects: Apartment block, insulation panels and radiator. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-85c259d7-db9c-4d39-ba20-73702cc48b2c.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "13dd063da438e1cbdb79508903c43595fdeaafa7e277ac14d00fd0159ebf31c2",
+      "texture_sha256": "e2868f6a71ef1df270ca893c4ee80322fa108c8bd65b183f71c1829e9cd7cbed",
+      "texture_bytes": 36478,
+      "artwork_bounds": {
+        "left": 18,
+        "top": 1,
+        "width": 133,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "storage",
+      "title": "Offer Assessed Guarantees for Storage and Microgrids",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Battery modules, microgrid houses and investment guarantee",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_storage_guarantees"
+      ],
+      "focus_suffixes": [
+        "storage_guarantees"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_storage.png",
+      "master": "masters/EST_e200_2023_storage.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Eesti 200. Entire icon lighting palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Keep this party palette even for policies shared with other parties. Primary subjects: Battery modules, microgrid houses and investment guarantee. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-493f4c6c-c937-4baa-ae26-713ae1c51b80.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "0e4b868c67fd866d4223b7876bc3f5d391560071a8baf6bc4b05a8a253976b7d",
+      "texture_sha256": "b3762dfc07240e14d3d97833691f790972a98cbc26b3ff2251d927df1dc6482a",
+      "texture_bytes": 47574,
+      "artwork_bounds": {
+        "left": 2,
+        "top": 1,
+        "width": 166,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "digital_state",
+      "title": "Enact the Once-Only Data Submission Rule",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Linked database servers, single data submission and electronic invoice",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_once_only_data"
+      ],
+      "focus_suffixes": [
+        "once_only_data"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_digital_state.png",
+      "master": "masters/EST_e200_2023_digital_state.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Eesti 200. Entire icon lighting palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Keep this party palette even for policies shared with other parties. Primary subjects: Linked database servers, single data submission and electronic invoice. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-a8025e35-accf-4b66-94ce-d3f5e4ca4f19.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "dbb799b08ed14b015f8e8058d572d5e5f8db809e2f12f6a0918fc02a4acb7eb8",
+      "texture_sha256": "36afd69ef6865e02caf1cace0ad38d8a3b9f69a919916f81e6fc5d6c1fee0cea",
+      "texture_bytes": 46447,
+      "artwork_bounds": {
+        "left": 1,
+        "top": 3,
+        "width": 168,
+        "height": 103
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "zero_budget",
+      "title": "Rebuild Expenditure through the Zero-Based Budget Review",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Open expenditure ledger, calculator and magnifying glass",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_zero_budget_review"
+      ],
+      "focus_suffixes": [
+        "zero_budget_review"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_zero_budget.png",
+      "master": "masters/EST_e200_2023_zero_budget.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Eesti 200. Entire icon lighting palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Keep this party palette even for policies shared with other parties. Primary subjects: Open expenditure ledger, calculator and magnifying glass. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-349d8270-8186-458e-9372-3954bd0056ca.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "42dac0408003b301530781fec32645807a5f18dccb4be501f3af7867cb5f0480",
+      "texture_sha256": "00c937604154844a8b5b153f2351264f933cd8911660da7e97a7704a5bce5239",
+      "texture_bytes": 49352,
+      "artwork_bounds": {
+        "left": 1,
+        "top": 2,
+        "width": 168,
+        "height": 106
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "health_care",
+      "title": "Launch Personal Health Accounts and the Employer Allowance",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Personal health-account card, care coordinator, doctor and supportive hands",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_health_accounts"
+      ],
+      "focus_suffixes": [
+        "health_accounts"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_health_care.png",
+      "master": "masters/EST_e200_2023_health_care.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Eesti 200. Entire icon lighting palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Keep this party palette even for policies shared with other parties. Primary subjects: Personal health-account card, care coordinator, doctor and supportive hands. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-6e237d8c-05a0-4ad6-87ac-7926ddd84bff.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "860cd637ba2b13b88807a10627e4482d051e0a2c52328dc4a25fca70ea474cf7",
+      "texture_sha256": "74e5a91c1b7e91a924eaa8f0b89e0ababcf148c54b9392711ab7d691889d320c",
+      "texture_bytes": 42086,
+      "artwork_bounds": {
+        "left": 7,
+        "top": 1,
+        "width": 155,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "common_school",
+      "title": "Start the Additional Education Investment Programme",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "School facade, open Estonian textbook and pupils continuing study",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_education_investment"
+      ],
+      "focus_suffixes": [
+        "education_investment"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_common_school.png",
+      "master": "masters/EST_e200_2023_common_school.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Eesti 200. Entire icon lighting palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Keep this party palette even for policies shared with other parties. Primary subjects: School facade, open Estonian textbook and pupils continuing study. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-ce43c868-90eb-4cef-ae1f-f6d287fcb3c3.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "a6fb017802e9d251f65fabd7f9fd4aec3d4a5d05e5971e1cc9ca875ed4071710",
+      "texture_sha256": "06c2e12eecb633e1d6d285bddced20e0491005728898426847ba2ba033bb361c",
+      "texture_bytes": 43884,
+      "artwork_bounds": {
+        "left": 6,
+        "top": 1,
+        "width": 158,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "teacher_careers",
+      "title": "Fund Teacher Careers toward the Three-Thousand-Euro Objective",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Kristina Kallas, teacher at chalkboard, career ladder and wage packet",
+      "political_figure": "Kristina Kallas",
+      "focus_ids": [
+        "TFR_EST_e200_2023_teacher_careers"
+      ],
+      "focus_suffixes": [
+        "teacher_careers"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_teacher_careers.png",
+      "master": "masters/EST_e200_2023_teacher_careers.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Input image is a reference sheet only: select the named political figure(s) and authentic party symbol from it; preserve recognizable face, hair and mark geometry. Replace the sheet completely with ONE unified TFR icon, no other sheet faces or labels. Coalition leader party: Eesti 200. Entire icon lighting palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Keep this party palette even for policies shared with other parties. Primary subjects: Kristina Kallas, teacher at chalkboard, career ladder and wage packet. Include a clearly recognizable small dimensional rendition of the authentic period mark of three joined slanted blocks with the cutout numerals 200 as part of the collage. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-59786ef0-e1a2-4b16-ac11-7b5b4fe398af.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "6dc858c9df9bf48687bf1f67758152c2d8d578a05fdc691ccb5f30e60df8ff60",
+      "texture_sha256": "7095c90efc8d5f5ac17cea4b54da680c4cdfa056e45cf113f5a963edf1499c5a",
+      "texture_bytes": 43466,
+      "artwork_bounds": {
+        "left": 7,
+        "top": 1,
+        "width": 156,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "student_loans",
+      "title": "Reform Six-Thousand-Euro Student Loans and Repayment",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Graduation cap, university student, loan document and euro coins",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_student_loans"
+      ],
+      "focus_suffixes": [
+        "student_loans"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_student_loans.png",
+      "master": "masters/EST_e200_2023_student_loans.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Eesti 200. Entire icon lighting palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Keep this party palette even for policies shared with other parties. Primary subjects: Graduation cap, university student, loan document and euro coins. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-329f3aaf-2885-45da-bbb9-a6aaa346159d.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "8f011d4fc732645f2b041b5740853cf4edb666f76020f5a683b99841636412c0",
+      "texture_sha256": "b00b4522cddadcdbe7580b2a1e8f125c6dc5d8a7f2b5184d5684d7feb5eeb4fa",
+      "texture_bytes": 36061,
+      "artwork_bounds": {
+        "left": 13,
+        "top": 1,
+        "width": 144,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "e_university",
+      "title": "Launch the Shared Estonian e-University Platform",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "University facade, laptop, lecture screen and linked digital nodes",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_e_university"
+      ],
+      "focus_suffixes": [
+        "e_university"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_e_university.png",
+      "master": "masters/EST_e200_2023_e_university.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Eesti 200. Entire icon lighting palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Keep this party palette even for policies shared with other parties. Primary subjects: University facade, laptop, lecture screen and linked digital nodes. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-d7013fc3-1994-4fb8-a0ab-b30f856a702a.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "ced0296e3ed3d7b91c0e67b81b2fc4e2d24d9930c014f0b368edc164cd10a639",
+      "texture_sha256": "c21649322b889555ab6fe1d7a5d6123b1633197310f73ddfde8c64270bad7500",
+      "texture_bytes": 39254,
+      "artwork_bounds": {
+        "left": 9,
+        "top": 1,
+        "width": 151,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "report",
+      "title": "Present the Eesti 200 Government's Accounts",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Kristina Kallas, Eesti 200 emblem and government accounts at Riigikogu",
+      "political_figure": "Kristina Kallas",
+      "focus_ids": [
+        "TFR_EST_e200_2023_account_to_parliament"
+      ],
+      "focus_suffixes": [
+        "account_to_parliament"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_report.png",
+      "master": "masters/EST_e200_2023_report.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Input image is a reference sheet only: select the named political figure(s) and authentic party symbol from it; preserve recognizable face, hair and mark geometry. Replace the sheet completely with ONE unified TFR icon, no other sheet faces or labels. Coalition leader party: Eesti 200. Entire icon lighting palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Keep this party palette even for policies shared with other parties. Primary subjects: Kristina Kallas, Eesti 200 emblem and government accounts at Riigikogu. Include a clearly recognizable small dimensional rendition of the authentic period mark of three joined slanted blocks with the cutout numerals 200 as part of the collage. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-1b8740d4-f819-4241-a69f-c8d990dcce70.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "be32f14b1ffb2d0d3d5802a6836c1865f07ac584882b1e735a4c75ca44b583ac",
+      "texture_sha256": "aed56254e252a111b31237f16378cc1276d8bbea00d6b45a21838509b40a6e3f",
+      "texture_bytes": 48642,
+      "artwork_bounds": {
+        "left": 4,
+        "top": 1,
+        "width": 162,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "reserve_muster",
+      "title": "Assign Every Citizen a Crisis Role",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Assign Every Citizen a Crisis Role",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_reserve_muster"
+      ],
+      "focus_suffixes": [
+        "reserve_muster"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_reserve_muster.png",
+      "master": "masters/EST_e200_2023_reserve_muster.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: Eesti 200. Color palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Exact focus subject: Assign Every Citizen a Crisis Role. Policy context: Test the reserve call-up lists and coordinate civilian responsibilities with employers and councils. Exercises must reveal which plans can actually assemble and sustain the existing units. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-24f1be77-ea8d-45a5-add9-9669678ef5a8.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "f77960e9131a1ebaad62d76cfc80db95c470927da9f95d6c04e1fb313e9b1983",
+      "texture_sha256": "590acf8c705514c4830dc8aa27d870eba11c3dc9682e381d29133bec6e4ddb4d",
+      "texture_bytes": 47867,
+      "artwork_bounds": {
+        "left": 1,
+        "top": 1,
+        "width": 167,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "kaitseliit_instructors",
+      "title": "Fund Kaitseliit Instructors and Civil-Protection Training",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Fund Kaitseliit Instructors and Civil-Protection Training",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_kaitseliit_instructors"
+      ],
+      "focus_suffixes": [
+        "kaitseliit_instructors"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_kaitseliit_instructors.png",
+      "master": "masters/EST_e200_2023_kaitseliit_instructors.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: Eesti 200. Color palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Exact focus subject: Fund Kaitseliit Instructors and Civil-Protection Training. Policy context: Commission professional instruction for volunteers in military and civilian emergencies. Inspect equipment upkeep and realistic arrangements for participants with civilian jobs. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-f27b2e23-0304-4ee6-bf36-f18ca9834ef2.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "11a9c407e2fc390278c1784d7f20459c14361bc9fb38b38e13adda534108fc96",
+      "texture_sha256": "d9e6f7310a3a8e6b6b50ec7d2874f9415ec6375084a2c649c118e80963257460",
+      "texture_bytes": 42226,
+      "artwork_bounds": {
+        "left": 9,
+        "top": 1,
+        "width": 152,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "ammunition_workshop",
+      "title": "Finance Domestic Ammunition Manufacturing",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Finance Domestic Ammunition Manufacturing",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_ammunition_workshop"
+      ],
+      "focus_suffixes": [
+        "ammunition_workshop"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_ammunition_workshop.png",
+      "master": "masters/EST_e200_2023_ammunition_workshop.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: Eesti 200. Color palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Exact focus subject: Finance Domestic Ammunition Manufacturing. Policy context: Purchase a limited production facility and qualify its suppliers. Manufacturing still needs workers, materials and ordinary production orders. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-d44aaf06-f3eb-47a1-9568-ba1606e829a3.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "4496dab2c56f3be3c1696e7a887699b1c91842eb12f66b3558c204d3f5dde4dd",
+      "texture_sha256": "5c7f72c0365565e11f1bfce69f261622752e146229335fe8e4a8bc42cefa9e7e",
+      "texture_bytes": 44225,
+      "artwork_bounds": {
+        "left": 5,
+        "top": 1,
+        "width": 159,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "maintenance_workshop",
+      "title": "Equip a Defence Servicing and Components Workshop",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Equip a Defence Servicing and Components Workshop",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_maintenance_workshop"
+      ],
+      "focus_suffixes": [
+        "maintenance_workshop"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_maintenance_workshop.png",
+      "master": "masters/EST_e200_2023_maintenance_workshop.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: Eesti 200. Color palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Exact focus subject: Equip a Defence Servicing and Components Workshop. Policy context: Finance overhaul tooling and domestic component supply alongside the production programme. This is capacity for equipment Estonia can procure and maintain. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-14bbc644-e9be-4b4e-b555-dc8563bc60e9.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "ddb31fce26580763dc0a1bbdba1a16fddd57a84267c0da81df50b2d20aed8f8f",
+      "texture_sha256": "195e342e474d8987d54dff5ba7552ad67f277eb1930c2caa17377a3efbb82109",
+      "texture_bytes": 45268,
+      "artwork_bounds": {
+        "left": 1,
+        "top": 1,
+        "width": 167,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "research_tax_credit",
+      "title": "Introduce the Business Research Tax Incentive",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Introduce the Business Research Tax Incentive",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_research_tax_credit"
+      ],
+      "focus_suffixes": [
+        "research_tax_credit"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_research_tax_credit.png",
+      "master": "masters/EST_e200_2023_research_tax_credit.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: Eesti 200. Color palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Exact focus subject: Introduce the Business Research Tax Incentive. Policy context: Publish eligible research costs and audit rules for the proposed incentive. Its recurring revenue cost enters the public ledger alongside the industrial benefit. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-390b37b9-b462-475d-a1e0-6cb40d5fcf37.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "2e5d352a5298179faad27ff405fd3f34524742c57e53e87af8ed888038bd1543",
+      "texture_sha256": "2c57d92e2f80bc8551b8f52adf35c1cd0fcf21619957f6907730e17e353353e0",
+      "texture_bytes": 44918,
+      "artwork_bounds": {
+        "left": 1,
+        "top": 3,
+        "width": 168,
+        "height": 104
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "climate_law",
+      "title": "Legislate the Climate Framework and Procurement Criteria",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Legislate the Climate Framework and Procurement Criteria",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_climate_law"
+      ],
+      "focus_suffixes": [
+        "climate_law"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_climate_law.png",
+      "master": "masters/EST_e200_2023_climate_law.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: Eesti 200. Color palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Exact focus subject: Legislate the Climate Framework and Procurement Criteria. Policy context: Publish consistent environmental duties and measurable procurement standards. Firms need dependable rules and transparent assessments when planning investment. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-c337f219-128e-4776-add3-db80f9b2c21b.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "2a532c5545fe87eb108de6753bd8fe94a56b77fa3d9e2bbbb3ccdbd2a97b4276",
+      "texture_sha256": "bea2e1e2d465afde38c5df62b7c6d349b88ab5c0c8d4523eebb3c05294c32a1f",
+      "texture_bytes": 37980,
+      "artwork_bounds": {
+        "left": 4,
+        "top": 1,
+        "width": 161,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "interconnectors",
+      "title": "Design the Offshore Grid and Interconnector Programme",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Design the Offshore Grid and Interconnector Programme",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_interconnectors"
+      ],
+      "focus_suffixes": [
+        "interconnectors"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_interconnectors.png",
+      "master": "masters/EST_e200_2023_interconnectors.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: Eesti 200. Color palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Exact focus subject: Design the Offshore Grid and Interconnector Programme. Policy context: Commission surveys, permits and technical agreements for stronger Baltic links. Design work advances the programme without pretending that every proposed cable is already built. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-1ad3ae71-e881-4690-98b2-3fbe9ea4c799.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "f2db8be7564f48c3253d0a0cfe439fe02517b83fa2d653656a2b140c5e86b0d8",
+      "texture_sha256": "0da794cd387b3b66de0a7aafcc22195e03493018f660469bc9b27d1953db7083",
+      "texture_bytes": 43457,
+      "artwork_bounds": {
+        "left": 1,
+        "top": 1,
+        "width": 167,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "electronic_invoices",
+      "title": "Complete Public-Sector Electronic Invoicing",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Complete Public-Sector Electronic Invoicing",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_electronic_invoices"
+      ],
+      "focus_suffixes": [
+        "electronic_invoices"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_electronic_invoices.png",
+      "master": "masters/EST_e200_2023_electronic_invoices.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: Eesti 200. Color palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Exact focus subject: Complete Public-Sector Electronic Invoicing. Policy context: Migrate procurement payments to compatible machine-readable invoices. Audited administrative savings receive an explicit public-ledger balance amount. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-4f4bb9a4-7df6-4d7d-9f19-d87c91f94c5f.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "a22de4f1ee132927018bc161791245ac8d5a4bfd6d7364abcb29fe4e30a6db70",
+      "texture_sha256": "2373817fbdfebd60d64d47c11bf546751a1a406d8ad8988b2f0f3e2d8282773d",
+      "texture_bytes": 41412,
+      "artwork_bounds": {
+        "left": 2,
+        "top": 1,
+        "width": 165,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "care_coordinators",
+      "title": "Place Health and Care Coordinators in Primary Care",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Place Health and Care Coordinators in Primary Care",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_care_coordinators"
+      ],
+      "focus_suffixes": [
+        "care_coordinators"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_care_coordinators.png",
+      "master": "masters/EST_e200_2023_care_coordinators.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: Eesti 200. Color palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Exact focus subject: Place Health and Care Coordinators in Primary Care. Policy context: Commission coordinators and interoperable case records across health and social services. Patients receive a practical route through services instead of disconnected referrals. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-99aee0eb-00cb-4a72-ae72-6b1dc7199d0d.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "1e86733d24cda2dd89ad8ce8c11f6e433fea30fc9c2f660c0f4be0b41388e0fa",
+      "texture_sha256": "c82160743acfdc7cec4c9bcc8b147db4cfbf779dbe2cad59e65c3aa1e20c7371",
+      "texture_bytes": 43900,
+      "artwork_bounds": {
+        "left": 1,
+        "top": 3,
+        "width": 168,
+        "height": 104
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "mental_health",
+      "title": "Fund Prevention and First-Line Mental-Health Services",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Fund Prevention and First-Line Mental-Health Services",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_mental_health"
+      ],
+      "focus_suffixes": [
+        "mental_health"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_mental_health.png",
+      "master": "masters/EST_e200_2023_mental_health.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: Eesti 200. Color palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Exact focus subject: Fund Prevention and First-Line Mental-Health Services. Policy context: Finance assessed prevention programmes, school support and primary-care referrals. Service contracts include trained staff, access standards and regular outcome reviews. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-2e72e725-ca19-4df2-9087-52f4106bd9bb.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "09d697e0bab6eea3c85620e07184cea9328f2080eb27db8977520688d677cfb9",
+      "texture_sha256": "3588b78e763290a792ab6715a271006bbf01a147c054572d55f3798ceae29fd4",
+      "texture_bytes": 39791,
+      "artwork_bounds": {
+        "left": 9,
+        "top": 1,
+        "width": 151,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "common_school_policy",
+      "title": "Finance the Shared Estonian-Language School Transition",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Finance the Shared Estonian-Language School Transition",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_common_school"
+      ],
+      "focus_suffixes": [
+        "common_school"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_common_school_policy.png",
+      "master": "masters/EST_e200_2023_common_school_policy.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: Eesti 200. Color palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Exact focus subject: Finance the Shared Estonian-Language School Transition. Policy context: Provide language staff, learning materials and school support, including the Ida-Viru school-turnaround programme. Regional plans must support children with different home languages. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-c9a5f4ac-386b-4044-af4c-ed08e9fb9880.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "029edc5000029a4fe333a6aa58e30a6014c648ae7e66345583df9d39ade89100",
+      "texture_sha256": "f4d6ba74ef6bd3b9f293ecb41bd97b8771cf9fbb7f0ba6b11fe5acfa6ddb2dcb",
+      "texture_bytes": 46889,
+      "artwork_bounds": {
+        "left": 1,
+        "top": 2,
+        "width": 168,
+        "height": 106
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "learning_to_eighteen",
+      "title": "Extend Compulsory Learning to Eighteen",
+      "party": "e200",
+      "party_name": "Eesti 200",
+      "color": "#2F2A95",
+      "motif": "Extend Compulsory Learning to Eighteen",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_e200_2023_learning_to_eighteen"
+      ],
+      "focus_suffixes": [
+        "learning_to_eighteen"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_e200_2023_learning_to_eighteen.png",
+      "master": "masters/EST_e200_2023_learning_to_eighteen.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: Eesti 200. Color palette: period indigo-purple #2F2A95, lilac rim highlights, charcoal and silver; not teal. Exact focus subject: Extend Compulsory Learning to Eighteen. Policy context: Resource flexible study and workplace-learning routes for young people after basic school. The new obligation requires suitable places and practical support for completion. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-d1bfa519-0f92-45b8-9a85-4ce592e95fd4.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "8a34b612b3710c5b7abf4d17795352586b96d8e82d093e3e43cdd74799442290",
+      "texture_sha256": "58b1d8f373cb72b13895adc3bb4f00a84e29f961c4e411843d7bf54f94048ab3",
+      "texture_bytes": 42490,
+      "artwork_bounds": {
+        "left": 10,
+        "top": 1,
+        "width": 149,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    }
+  ],
+  "unique_per_focus": true
+}

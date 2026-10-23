@@ -1,0 +1,19 @@
+{
+  "party": "isamaa",
+  "asset_id": "domestic_power",
+  "source_generation_file": "exec-3ef35fad-8a35-45e4-b6c6-5b3c8fc5548f.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "c7599395407d969f873890ffaed0528f7c20e532468bf088bf957c80f2148e16",
+  "texture_sha256": "561157508c1255f88ffb7462daa5abf89f727df329e424c7d8b845a194fb31d9",
+  "texture_bytes": 39264,
+  "artwork_bounds": {
+    "left": 6,
+    "top": 1,
+    "width": 157,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

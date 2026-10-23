@@ -1,0 +1,19 @@
+{
+  "party": "pp",
+  "asset_id": "mandate",
+  "source_generation_file": "exec-3d1787eb-90e5-457f-88cd-fe06a57d93b5.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "2bd9f7940fe6d191f35bc472f15de788ccd30b1746d083cf7e0065cdbc037c99",
+  "texture_sha256": "efa7b97f0cf9fab5c7f09807c822c7edb0cdcdeb881d0ea6dee8945d1ce4a941",
+  "texture_bytes": 49337,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 1,
+    "width": 168,
+    "height": 107
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

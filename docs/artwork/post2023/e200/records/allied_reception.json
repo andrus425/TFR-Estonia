@@ -1,0 +1,19 @@
+{
+  "party": "e200",
+  "asset_id": "allied_reception",
+  "source_generation_file": "exec-09f3af2a-10b2-4c81-9a37-fb3705565599.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "c6ee90f4fb6062bd4889330c1725333539d981fcc1b1e094f2c8d6737b23ef96",
+  "texture_sha256": "51912e9f2571e9bb596246dbd211cde582d215a398668b396acef623e2b765a8",
+  "texture_bytes": 48153,
+  "artwork_bounds": {
+    "left": 8,
+    "top": 1,
+    "width": 154,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

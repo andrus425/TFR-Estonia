@@ -5,6 +5,8 @@ GUI rendering and presidential/cabinet lifecycle checks are separate tests.
 """
 import hashlib
 import json
+import re
+import struct
 from pathlib import Path
 import sys
 import unittest
@@ -172,6 +174,47 @@ class ExecutiveDisplayAdapterTests(unittest.TestCase):
         self.assertFalse((ROOT / "common/scripted_guis/TFR_hog_gui.txt").exists())
         self.assertFalse((ROOT / "interface/countrydiplomacyview.gui").exists())
         self.assertFalse((ROOT / "localisation/english/TFR_hog_l_english.yml").exists())
+
+
+class ExecutivePortraitSizeTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.ideas = clausewitz_parse((ROOT / 'common/ideas/TFR_EST_executive.txt').read_text(
+            encoding='utf-8-sig')).get('ideas').get('head_minister')
+        sprites = clausewitz_parse((ROOT / 'interface/TFR_EST_executive.gfx').read_text(
+            encoding='utf-8-sig')).get('spriteTypes')
+        cls.sprites = {entry.value.get('name'): entry.value.get('texturefile')
+                       for entry in sprites.entries}
+        cls.tooltip_lines = {}
+        for path in (ROOT / 'localisation/english').glob('TFR_EST_*_l_english.yml'):
+            for line in path.read_text(encoding='utf-8-sig').splitlines():
+                match = re.match(r'\s*(TFR_EST_hog_[\w]+):\d*\s+"', line)
+                if match:
+                    cls.tooltip_lines[match.group(1)] = line
+
+    def dimensions(self, sprite):
+        data = (ROOT / self.sprites[sprite]).read_bytes()
+        self.assertEqual(data[:8], b'\x89PNG\r\n\x1a\n')
+        return struct.unpack('>II', data[16:24])
+
+    def test_idea_id_and_explicit_picture_both_resolve_to_cabinet_size(self):
+        # The direct idea-ID sprite must also be small: the cabinet can resolve
+        # it before the explicit picture alias, as the oversized Ratas bug did.
+        self.assertEqual(len(self.ideas.entries), 12)
+        for idea in self.ideas.entries:
+            with self.subTest(idea=idea.key):
+                self.assertEqual(self.dimensions('GFX_idea_' + idea.key), (62, 67))
+                self.assertEqual(self.dimensions('GFX_idea_' + idea.value.get('picture')), (62, 67))
+
+    def test_large_tooltip_portraits_have_separate_non_idea_sprite_names(self):
+        for idea in self.ideas.entries:
+            suffix = idea.key.removeprefix('TFR_EST_pm_')
+            portrait = 'GFX_TFR_EST_hog_portrait_' + suffix
+            with self.subTest(idea=idea.key):
+                self.assertEqual(self.dimensions(portrait), (156, 210))
+                line = self.tooltip_lines['TFR_EST_hog_' + suffix]
+                self.assertIn('£' + portrait + r'\n', line)
+                self.assertNotIn('£GFX_idea_TFR_EST_pm_', line)
 
 
 if __name__ == "__main__":

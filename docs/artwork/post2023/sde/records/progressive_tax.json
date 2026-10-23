@@ -1,0 +1,19 @@
+{
+  "party": "sde",
+  "asset_id": "progressive_tax",
+  "source_generation_file": "exec-574a6415-ebdc-4b84-8596-a63990bdf349.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "958156a897178deef276ea77d5728ac036510a5f3be42ef497d07a84c6912d4a",
+  "texture_sha256": "b8588d71fb4e681cf6a52cde1f8ed0da70f6ebbd06f6a66e3bdd388b1616a6c5",
+  "texture_bytes": 46770,
+  "artwork_bounds": {
+    "left": 2,
+    "top": 1,
+    "width": 166,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

@@ -1,0 +1,19 @@
+{
+  "party": "sde",
+  "asset_id": "report",
+  "source_generation_file": "exec-0e49f0f6-b0fc-48b9-8542-394fa5acb4e1.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "469e07273a029df38552b6e7d862958f2e5f9e0cb2dc76f787bd4fa1eb950675",
+  "texture_sha256": "04c3262f001c5dd0fe2c8f0a5f555b5672aa2dd25431ce0c8bbae2887432f476",
+  "texture_bytes": 47451,
+  "artwork_bounds": {
+    "left": 3,
+    "top": 1,
+    "width": 163,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

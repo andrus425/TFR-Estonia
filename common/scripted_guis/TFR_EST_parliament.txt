@@ -3,6 +3,15 @@ scripted_gui = {
  context_type = player_context
  window_name = "TFR_EST_parliament_window"
  visible = { TFR_EST_independent_parliament = yes has_country_flag = TFR_EST_parliament_open }
+ properties = {
+ TFR_EST_ideology_reform = { image = "[TFR_EST_ideology_icon_reform]" }
+ TFR_EST_ideology_centre = { image = "[TFR_EST_ideology_icon_centre]" }
+ TFR_EST_ideology_ekre = { image = "[TFR_EST_ideology_icon_ekre]" }
+ TFR_EST_ideology_isamaa = { image = "[TFR_EST_ideology_icon_isamaa]" }
+ TFR_EST_ideology_sde = { image = "[TFR_EST_ideology_icon_sde]" }
+ TFR_EST_ideology_e200 = { image = "[TFR_EST_ideology_icon_e200]" }
+ TFR_EST_ideology_pp = { image = "[TFR_EST_ideology_icon_pp]" }
+ }
  effects = { TFR_EST_close_click = { clr_country_flag = TFR_EST_parliament_open } }
  }
 }

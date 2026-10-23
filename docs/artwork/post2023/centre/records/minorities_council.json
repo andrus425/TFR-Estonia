@@ -1,0 +1,19 @@
+{
+  "party": "centre",
+  "asset_id": "minorities_council",
+  "source_generation_file": "exec-29387eb3-660f-4965-a717-88c84d183daf.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "4ed6c2c8dc770a8f10233cd30f3e88d7e4cac88187079f6c10edb0bbe386a73b",
+  "texture_sha256": "43588eac4eb05cb7f8fb806a791374060655fee7a0de22ecc6123a0937ebe9e7",
+  "texture_bytes": 43417,
+  "artwork_bounds": {
+    "left": 10,
+    "top": 1,
+    "width": 150,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

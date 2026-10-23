@@ -1,0 +1,19 @@
+{
+  "party": "e200",
+  "asset_id": "maintenance_workshop",
+  "source_generation_file": "exec-14bbc644-e9be-4b4e-b555-dc8563bc60e9.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "ddb31fce26580763dc0a1bbdba1a16fddd57a84267c0da81df50b2d20aed8f8f",
+  "texture_sha256": "195e342e474d8987d54dff5ba7552ad67f277eb1930c2caa17377a3efbb82109",
+  "texture_bytes": 45268,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 1,
+    "width": 167,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

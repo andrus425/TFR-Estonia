@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "defence_reserves",
+  "source_generation_file": "exec-a223e0da-8d8f-4673-a378-3642eee13168.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "4c165cd6d9055ee18507dcedd9b1877987f13f4ba80e77566bf52a8ab0b7a75f",
+  "texture_sha256": "e6dcb1063bb9f1917375af4801a84bd44d44e13a33a90f1a634e98611f2524c1",
+  "texture_bytes": 45321,
+  "artwork_bounds": {
+    "left": 7,
+    "top": 1,
+    "width": 156,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

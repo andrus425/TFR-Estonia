@@ -1,0 +1,19 @@
+{
+  "party": "pp",
+  "asset_id": "teachers",
+  "source_generation_file": "exec-2655b9a7-297a-41ea-979a-3862f25b69d5.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "9d525b7d4d6cde8620fbc3c32362f4efa8aa8ed7526a8afbba105ff6f8584040",
+  "texture_sha256": "634506de685fcf95b8be9dcffd227a7c992df64e4b51e09215ef182aa7e25d2e",
+  "texture_bytes": 48822,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 1,
+    "width": 168,
+    "height": 107
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

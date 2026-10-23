@@ -1,0 +1,19 @@
+{
+  "party": "e200",
+  "asset_id": "health_care",
+  "source_generation_file": "exec-6e237d8c-05a0-4ad6-87ac-7926ddd84bff.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "860cd637ba2b13b88807a10627e4482d051e0a2c52328dc4a25fca70ea474cf7",
+  "texture_sha256": "74e5a91c1b7e91a924eaa8f0b89e0ababcf148c54b9392711ab7d691889d320c",
+  "texture_bytes": 42086,
+  "artwork_bounds": {
+    "left": 7,
+    "top": 1,
+    "width": 155,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

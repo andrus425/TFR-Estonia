@@ -1,0 +1,19 @@
+{
+  "party": "sde",
+  "asset_id": "regional_jobs",
+  "source_generation_file": "exec-e30c21a7-d67f-46bd-9d62-0fecc0f015e1.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "df69a8e3d343c875b5b2b9134e98bdd6409c8fbf72936d596e4b45da5b58a751",
+  "texture_sha256": "6c26790b3d8fa9f4471d464bcbd5adb678acfea6fc1270602b1abd97711f4acf",
+  "texture_bytes": 43305,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 3,
+    "width": 168,
+    "height": 103
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

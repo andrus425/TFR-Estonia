@@ -1,0 +1,19 @@
+{
+  "party": "centre",
+  "asset_id": "allied_basing",
+  "source_generation_file": "exec-a0c57d7f-f13d-4336-8685-2a2f9aadfeb4.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "a76f718d5dd99c7d580d9d2e44ab9299450a36b04a9e11222b1bb624c915464f",
+  "texture_sha256": "09944447dd933ba5ff975c02aef2c5d48e91103bbed1391092f337dfb48ad885",
+  "texture_bytes": 44177,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 2,
+    "width": 168,
+    "height": 106
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

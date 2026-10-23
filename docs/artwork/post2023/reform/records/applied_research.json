@@ -1,0 +1,19 @@
+{
+  "party": "reform",
+  "asset_id": "applied_research",
+  "source_generation_file": "exec-9d913094-f797-43fb-8faa-34cd49942bec.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "97b84e34464eeba79ef5be7aecfbe176b615652cfc1586691bfc56b888aac132",
+  "texture_sha256": "cc2b9fd09bb125e12a19efaeb81f2341a66be8da13dcf5b3efc20d8a5997ecab",
+  "texture_bytes": 44145,
+  "artwork_bounds": {
+    "left": 2,
+    "top": 1,
+    "width": 165,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

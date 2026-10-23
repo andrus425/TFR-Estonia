@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "coastal_defence",
+  "source_generation_file": "exec-3bd69f16-0132-42b2-97a3-ef584af75ede.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "ae283b03cbe2b18d9f157c9c6d21319a5fdbe800093ee463638d9a2898c2161c",
+  "texture_sha256": "a6eae5f428fdcef0fc3656de3272442aa6ed83a60be6b938075ad9a54f5133f4",
+  "texture_bytes": 45327,
+  "artwork_bounds": {
+    "left": 10,
+    "top": 1,
+    "width": 149,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

@@ -1,0 +1,19 @@
+{
+  "party": "centre",
+  "asset_id": "community_energy",
+  "source_generation_file": "exec-dd76343e-4168-4c09-bfa1-bf5b5f4dc3a5.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "dcb6dc05388420fb8a058279764ac1d8e36587696ddd9efe7ce46c8034bc117c",
+  "texture_sha256": "b28c12ea5dbe861a2751743eb3ca206a17fd8f95591de26b8fdd9b52eb8e62df",
+  "texture_bytes": 36695,
+  "artwork_bounds": {
+    "left": 13,
+    "top": 1,
+    "width": 144,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

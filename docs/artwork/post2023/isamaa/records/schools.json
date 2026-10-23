@@ -1,0 +1,19 @@
+{
+  "party": "isamaa",
+  "asset_id": "schools",
+  "source_generation_file": "exec-80a9e128-0e81-4aa8-8aaf-4afa1ad906e1.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "d0cfa6eb1f9f388d367b8f592789883f5cd53a03f49d361322b72122b1015b71",
+  "texture_sha256": "3efdaa616fb1fc61b3f1ffde174be9f239bb4ff2bddabfb82ff646bcd757d631",
+  "texture_bytes": 46710,
+  "artwork_bounds": {
+    "left": 9,
+    "top": 1,
+    "width": 152,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

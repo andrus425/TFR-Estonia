@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "student_loan_relief",
+  "source_generation_file": "exec-b0f076a2-1d82-49dc-97f7-98b0b82581e8.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "393ad72fa02b39c26880090b338fb9667ad1644531b779c871c12b06d594ef58",
+  "texture_sha256": "1a0bf2ad7568e02112467683f0f85436a7c5cfa7b9fe3067d4d618cd47e50f41",
+  "texture_bytes": 44692,
+  "artwork_bounds": {
+    "left": 5,
+    "top": 1,
+    "width": 159,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

@@ -1,0 +1,19 @@
+{
+  "party": "reform",
+  "asset_id": "renovation",
+  "source_generation_file": "exec-2da98dd0-5d60-44c4-82c1-819f0821dfb0.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "30331633da8bb065dbbdf5c8fbba3a81f24f4afe78f7c948b51acb8d5f22295b",
+  "texture_sha256": "33a7431b880d448881c4c00996c433c22d4b104dfe3d4312ea9e7ab8550a5569",
+  "texture_bytes": 45709,
+  "artwork_bounds": {
+    "left": 8,
+    "top": 1,
+    "width": 154,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

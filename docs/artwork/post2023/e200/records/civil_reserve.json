@@ -1,0 +1,19 @@
+{
+  "party": "e200",
+  "asset_id": "civil_reserve",
+  "source_generation_file": "exec-185b3564-ad3f-49c8-9ce8-274e46dd185e.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "9ed39c8d97bb0b244b69d760bd3ce7def3b5b8ea6eb1255bb192a6cab4b54a22",
+  "texture_sha256": "be1cdd8bec825ffaee86d46e2b6d8972cbacc071957858fad137b9cbb31da166",
+  "texture_bytes": 42351,
+  "artwork_bounds": {
+    "left": 12,
+    "top": 1,
+    "width": 146,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

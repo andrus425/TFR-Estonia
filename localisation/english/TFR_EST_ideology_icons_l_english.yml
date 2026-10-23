@@ -1,0 +1,9 @@
+﻿l_english:
+ TFR_EST_ruling_ideology_icon_tt:0 "§YRuling party§!\n[TFR_EST_ideology_ruling_party]\nPrime Minister: §H[TFR_EST_pm_name]§!\n[TFR_EST_hog_cabinet_status]"
+ TFR_EST_ideology_party_reform_tt:0 "§Y$TFR_EST_party_reform$§!\nParty leader: §H[TFR_EST_ideology_leader_reform]§!"
+ TFR_EST_ideology_party_centre_tt:0 "§Y$TFR_EST_party_centre$§!\nParty leader: §H[TFR_EST_centre_party_leader]§!"
+ TFR_EST_ideology_party_ekre_tt:0 "§Y$TFR_EST_party_ekre$§!\nParty leader: §H[TFR_EST_ideology_leader_ekre]§!"
+ TFR_EST_ideology_party_isamaa_tt:0 "§Y$TFR_EST_party_isamaa$§!\nParty leader: §H$TFR_EST_helir_valdor_seeder$§!"
+ TFR_EST_ideology_party_sde_tt:0 "§Y$TFR_EST_party_sde$§!\nParty leader: §H[TFR_EST_sde_party_leader]§!"
+ TFR_EST_ideology_party_e200_tt:0 "§Y$TFR_EST_party_e200$§!\nParty leader: §H$TFR_EST_kristina_kallas$§!"
+ TFR_EST_ideology_party_pp_tt:0 "§Y$TFR_EST_party_pp$§!\nParty leader: §H$TFR_EST_lavly_perling$§!"

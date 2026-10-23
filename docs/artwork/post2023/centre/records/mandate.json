@@ -1,0 +1,19 @@
+{
+  "party": "centre",
+  "asset_id": "mandate",
+  "source_generation_file": "exec-b77f16d8-3a95-4b6a-81c8-1eeb741966d5.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "ad80e26680a283751db4e119f2bedc63e37409c3199b74e8e37a5a199930754b",
+  "texture_sha256": "e823e111c452d2dbb92eaeace511decacfe939009f85c83a42eab43fb2361add",
+  "texture_bytes": 44061,
+  "artwork_bounds": {
+    "left": 13,
+    "top": 1,
+    "width": 144,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

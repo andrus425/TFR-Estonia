@@ -1,0 +1,19 @@
+{
+  "party": "isamaa",
+  "asset_id": "home_care",
+  "source_generation_file": "exec-f6a0b89f-bc20-42ff-9f14-01c34e08e83d.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "60e52dc610005449fe118da12249e94e7590eb06b156912f79ad2180e95ea20a",
+  "texture_sha256": "7bd677db5599b1b5e6549eae5e3432befa31dde682d13983cdbb4a3a52e3a627",
+  "texture_bytes": 46225,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 3,
+    "width": 168,
+    "height": 104
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

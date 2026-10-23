@@ -1,0 +1,19 @@
+{
+  "party": "isamaa",
+  "asset_id": "energy_networks",
+  "source_generation_file": "exec-bc1e2176-6a3c-4f5b-8639-a5f3344c195e.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "aadbf057afecded58b993b70e1edf0a2ee44f8bb7e82a54aa5d7860ab4e59d87",
+  "texture_sha256": "a1d2f25a06fa3b9241b2407984a7516ada2a97790def1084c6b2ddb6cc082a8b",
+  "texture_bytes": 39418,
+  "artwork_bounds": {
+    "left": 8,
+    "top": 1,
+    "width": 154,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

@@ -1,0 +1,19 @@
+{
+  "party": "sde",
+  "asset_id": "research",
+  "source_generation_file": "exec-57b0b65e-a6ff-471a-8c2a-42ef3dbef07e.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "b4423477a57404aa40fb4889c865f83f9f975930f89284eb99d6dab33bbfb8a7",
+  "texture_sha256": "b4427931f419baab8406fb9e6fb99def7c130752436d9db3ae35328d90aba7e1",
+  "texture_bytes": 42705,
+  "artwork_bounds": {
+    "left": 12,
+    "top": 1,
+    "width": 146,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

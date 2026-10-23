@@ -1,0 +1,19 @@
+{
+  "party": "centre",
+  "asset_id": "language_courses",
+  "source_generation_file": "exec-c910dc8f-4035-4f33-bed9-7959f8165e24.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "a74a3954e19d861f3852cd95bcadcc239a6d8d7fce97e453d34387471dded5a1",
+  "texture_sha256": "bdc8f67ca6c812bbfc13066128e2ef9bdc95c491b19fbd6137d2183bcf98df48",
+  "texture_bytes": 45917,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 1,
+    "width": 168,
+    "height": 107
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

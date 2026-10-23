@@ -1,0 +1,77 @@
+[
+  {
+    "party": "EKRE",
+    "symbol": "Blue cornflower, radial eight-lobed blossom of serrated petals; white and black supporting colors",
+    "color_sampled_from_official_png": "#0077BD",
+    "source_page": "https://www.ekre.ee/sumboolika/",
+    "image_url": "https://ekre.ee/wp-content/uploads/2015/07/ekre-logo-300px.png",
+    "local_reference": ".cache/ideology_references/ekre_2015_logo.png"
+  },
+  {
+    "party": "Centre",
+    "symbol": "White four-leaf clover over an emerald green capital K. Leaves have alternate diagonal green/white striped halves",
+    "color_sampled_from_official_png": "#007B5E",
+    "source_page": "https://keskerakond.ee/erakonnast/meediale/",
+    "image_url": "https://keskerakond.ee/wp-content/uploads/2024/09/cropped-keskerakond-K-logo.png",
+    "local_reference": ".cache/ideology_references/centre_logo.png",
+    "context_note": "Standard party green; 2023 campaign used a brighter green, optional alternate at https://riigikogu.keskerakond.ee/"
+  },
+  {
+    "party": "Isamaa",
+    "symbol": "Angular hollow eight-pointed octagram star, white on bright cyan blue",
+    "color_from_official_site_css": "#00AEEF",
+    "official_cmyk": "100/15/0/0",
+    "source_page": "https://isamaa.ee/",
+    "official_logo_pdf": "https://isamaa.ee/iwp/wp-content/uploads/2018/12/Isamaa-logo-1.pdf",
+    "image_url": "https://isamaa.ee/iwp/wp-content/uploads/2018/06/Isamaa-150px.png",
+    "local_reference": ".cache/ideology_references/isamaa_2018_logo.png"
+  },
+  {
+    "party": "Reform",
+    "symbol": "Deep ultramarine stylized squirrel in profile facing right, with immense sweeping curled tail; saturated yellow field",
+    "colors_sampled_from_official_png": [
+      "#FFE200",
+      "#010199"
+    ],
+    "source_page": "https://reform.ee/",
+    "campaign_source": "https://reform.ee/riigikogu-valimised-2023/kampaania/",
+    "image_url": "https://reform.ee/wp-content/uploads/2021/11/RE_profiil_logod_orav.png",
+    "local_reference": ".cache/ideology_references/reform_2021_orav.png"
+  },
+  {
+    "party": "SDE",
+    "symbol": "Red geometric angular rose blossom, superficially tulip shaped, with small dark-green stem; red and white identity",
+    "color_sampled_from_official_png": "#E10600",
+    "source_page": "https://www.sotsid.ee/",
+    "image_url": "https://www.sotsid.ee/wp-content/uploads/2017/07/logo17-sde-rbg.png",
+    "local_reference": ".cache/ideology_references/sde_2017_logo.png"
+  },
+  {
+    "party": "Eesti 200",
+    "symbol": "Indigo purple EESTI wordmark above three joined tilted rectangles containing reversed-out 2 0 0",
+    "color_from_party_svg": "#2F2A95",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Eesti_200_Logo.svg",
+    "source_credit": "Eesti 200 original logo, dated 2021 and uploaded March 2023 from the official eesti200.ee website",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Eesti_200_Logo.svg/960px-Eesti_200_Logo.svg.png",
+    "local_reference": ".cache/ideology_references/eesti200_2021_logo.png",
+    "context_note": "Current 2025 website has a different blue logo. Use the party's 2021-2023 logo for the mod's period."
+  },
+  {
+    "party": "Parempoolsed",
+    "symbol": "Two adjacent rounded right-pointing triangles, like a fast-forward symbol; orange on charcoal gray or white on orange",
+    "colors_from_official_2023_guide": [
+      "#FF6100",
+      "#3C3C3C",
+      "#EAEAEA"
+    ],
+    "source_page": "https://parempoolsed.ee/stiiliraamat/",
+    "image_urls": [
+      "https://parempoolsed.ee/wp-content/uploads/2023/03/PP-colors-1024x230.png",
+      "https://parempoolsed.ee/wp-content/uploads/2023/03/PP-logos-1024x230.png"
+    ],
+    "local_references": [
+      ".cache/ideology_references/parempoolsed_colors.png",
+      ".cache/ideology_references/parempoolsed_logos.png"
+    ]
+  }
+]

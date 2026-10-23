@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "parliament",
+  "source_generation_file": "exec-fa02bd01-bba0-46a3-aca1-a628ec8d9028.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "f31025b1fa0bdebc92113bdfd1d90693d113361d2b08fcead4838b28c05ebb53",
+  "texture_sha256": "1d1c5d951d13ecccf1e9882c93ddcd6ac9671d2e263a32a658cef722160f50ed",
+  "texture_bytes": 37862,
+  "artwork_bounds": {
+    "left": 11,
+    "top": 1,
+    "width": 147,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

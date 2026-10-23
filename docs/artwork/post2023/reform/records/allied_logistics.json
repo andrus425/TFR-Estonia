@@ -1,0 +1,19 @@
+{
+  "party": "reform",
+  "asset_id": "allied_logistics",
+  "source_generation_file": "exec-d5b70f61-7708-4756-9157-641885d52fcd.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "3b6367b9522402c1ceda43f936de6d4e8da345d28febacb86e0d708470bb2d58",
+  "texture_sha256": "ec13319b2cd46de27f6ffa171cdc4f290abe687723495b3f427ae1f4287c4cfe",
+  "texture_bytes": 47519,
+  "artwork_bounds": {
+    "left": 5,
+    "top": 1,
+    "width": 159,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

@@ -1,0 +1,19 @@
+{
+  "party": "isamaa",
+  "asset_id": "renovation",
+  "source_generation_file": "exec-a9366503-b23c-4c6a-b18c-e9164882b474.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "8fe7eb4076c560521d79a45b284d1df93044ded336f691e7dfe367f32fc4e928",
+  "texture_sha256": "3b6de7c3f8e430f1fc864a8ee582b4f80ed122b3e0f54e66410fa30a4ea6c161",
+  "texture_bytes": 46937,
+  "artwork_bounds": {
+    "left": 8,
+    "top": 1,
+    "width": 153,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

@@ -1,0 +1,19 @@
+{
+  "party": "pp",
+  "asset_id": "fringe_benefits",
+  "source_generation_file": "exec-6664e474-a963-496f-9c5c-c234e6146d2c.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "4904e814e95b25c18772bb9755b22ef77ed3fa9ed3a83f7a7c550d8f670b89fe",
+  "texture_sha256": "075ce0cce0862501a812c7bba8a7a3d19f977f5183fe109729e702002ec1b7c1",
+  "texture_bytes": 45248,
+  "artwork_bounds": {
+    "left": 4,
+    "top": 1,
+    "width": 161,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

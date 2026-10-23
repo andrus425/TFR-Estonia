@@ -1,0 +1,19 @@
+{
+  "party": "pp",
+  "asset_id": "ammunition_workshop",
+  "source_generation_file": "exec-b6501e1c-c70a-467a-9d21-1a55a335b752.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "6ebb0a80d70a1c444d0c96d199ecb978e6d49434efca4c5a664aaeb3a241d807",
+  "texture_sha256": "216e0a1fb0967e5d766f7607d43c3433d6fd1be54b2bbdcef33b9ab219594a3d",
+  "texture_bytes": 37069,
+  "artwork_bounds": {
+    "left": 13,
+    "top": 1,
+    "width": 143,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

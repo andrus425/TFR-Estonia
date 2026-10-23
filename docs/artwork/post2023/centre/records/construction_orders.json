@@ -1,0 +1,19 @@
+{
+  "party": "centre",
+  "asset_id": "construction_orders",
+  "source_generation_file": "exec-711dc6a4-1ceb-4246-b31b-b8e4012882b5.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "9a450c00de3890f3634a2f173e869cdcaeb7d98690e7c361ca8f349c9bb7d6a0",
+  "texture_sha256": "61b6d6e4ebbaade24456ba50692fa72629425bb4186e65f1f033b0108ae38c5f",
+  "texture_bytes": 41305,
+  "artwork_bounds": {
+    "left": 4,
+    "top": 1,
+    "width": 162,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

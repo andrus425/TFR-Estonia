@@ -1,0 +1,19 @@
+{
+  "party": "isamaa",
+  "asset_id": "defence_industry",
+  "source_generation_file": "exec-b38fab2e-feb4-4c79-9941-1240c02d6651.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "6b2cf9d08d67ee713c40cbf84aa4fd5fa7b24c3767f2ec4635078a82bfae08bc",
+  "texture_sha256": "ebda9fe52ac9c7f1eeef766acb416b04ac839f85f34cc46898b35801b8a6e564",
+  "texture_bytes": 46699,
+  "artwork_bounds": {
+    "left": 5,
+    "top": 1,
+    "width": 159,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

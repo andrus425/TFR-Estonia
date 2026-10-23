@@ -1,0 +1,19 @@
+{
+  "party": "ekre",
+  "asset_id": "local_health",
+  "source_generation_file": "exec-db0eaf79-b153-40ee-bfb9-2a2cd4ba2734.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "53a899af7d06a1aea5aba631a1009a1772cac338e0db51ed989dbfcdd49e7422",
+  "texture_sha256": "d177d2c671aaf92bd1971161c2b9955ed79775f54f36db58d664734e4204b521",
+  "texture_bytes": 51553,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 2,
+    "width": 168,
+    "height": 105
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

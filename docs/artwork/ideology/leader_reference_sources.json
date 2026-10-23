@@ -1,0 +1,134 @@
+[
+  {
+    "person": "mart_helme",
+    "name": "Mart Helme",
+    "reference_path": "docs/artwork/ministers/references/mart_helme.jpg",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:RK_Mart_Helme.jpg",
+    "direct_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/RK_Mart_Helme.jpg/960px-RK_Mart_Helme.jpg",
+    "author": "Erik Peinar",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2015-03-30"
+  },
+  {
+    "person": "martin_helme",
+    "name": "Martin Helme",
+    "reference_path": "docs/artwork/ministers/references/martin_helme.jpg",
+    "source_page_url": "https://valitsus.ee/vabariigi-valitsuse-50-koosseis",
+    "direct_image_url": "https://valitsus.ee/sites/default/files/2020-11/Helme.jpg",
+    "author": "Renee Altrov / Riigikantselei",
+    "license": "Reference only; rights retained by institution/photographer",
+    "license_url": null,
+    "date": "Not stated"
+  },
+  {
+    "person": "juri_ratas",
+    "name": "Jüri Ratas",
+    "reference_path": "docs/artwork/ministers/references/juri_ratas.jpg",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:J%C3%BCri_Ratas_2017-05-25_(cropped).jpg",
+    "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/36/J%C3%BCri_Ratas_2017-05-25_%28cropped%29.jpg",
+    "author": "2017 Estonian Presidency of the Council of the European Union",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "date": "2017-05-25 06:20"
+  },
+  {
+    "person": "tanel_kiik",
+    "name": "Tanel Kiik",
+    "reference_path": "docs/artwork/ministers/references/tanel_kiik.jpg",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Tanel_Kiik_(crop).jpg",
+    "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Tanel_Kiik_%28crop%29.jpg",
+    "author": "Renee Altrov",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2021-01-25 12:14:45"
+  },
+  {
+    "person": "mihhail_kolvart",
+    "name": "Mihhail Kõlvart",
+    "reference_path": "docs/artwork/ministers/references/mihhail_kolvart.jpg",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Mihhail_K%C3%B5lvart_P%C3%A4tsi_monumendi_avamisel._2022_(cropped).jpg",
+    "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Mihhail_K%C3%B5lvart_P%C3%A4tsi_monumendi_avamisel._2022_%28cropped%29.jpg",
+    "author": "Jaan Künnap",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2022-10-21 14:18:41"
+  },
+  {
+    "person": "helir_valdor_seeder",
+    "name": "Helir-Valdor Seeder",
+    "reference_path": "docs/artwork/ministers/references/helir_valdor_seeder.jpg",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Helir-Valdor_Seeder_2016.jpg",
+    "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Helir-Valdor_Seeder_2016.jpg",
+    "author": "Saeima",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "date": "2016-10-28 11:20"
+  },
+  {
+    "person": "kaja_kallas",
+    "name": "Kaja Kallas",
+    "reference_path": "docs/artwork/ministers/references/kaja_kallas.jpg",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Kaja_Kallas_(crop).jpg",
+    "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Kaja_Kallas_%28crop%29.jpg",
+    "author": "Renee Altrov",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "Taken on 25 January 2021"
+  },
+  {
+    "person": "kristen_michal",
+    "name": "Kristen Michal",
+    "reference_path": "docs/artwork/ministers/references/kristen_michal.jpg",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Kristen_Michal_2023_(cropped).jpg",
+    "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Kristen_Michal_2023_%28cropped%29.jpg",
+    "author": "Alexandros Michailidis - Council of the European Union",
+    "license": "Attribution",
+    "license_url": null,
+    "date": "2023-12-18"
+  },
+  {
+    "person": "indrek_saar",
+    "name": "Indrek Saar",
+    "reference_path": "docs/artwork/ministers/references/indrek_saar.jpg",
+    "source_page_url": "https://www.riigikogu.ee/riigikogu/riigikogu-liikmed/58378026-b797-4bf2-89fc-31a73d9219b3/saadik/",
+    "direct_image_url": "https://www.riigikogu.ee/wp-content/uploads/ems-media/7e2e09a7-8d29-4e83-9b28-ce30b38a95d9.jpg",
+    "author": "Chancellery of the Riigikogu",
+    "license": "Not stated on retrieved profile; retained as visual reference",
+    "license_url": "",
+    "date": "XIV Riigikogu profile, 2019-2023"
+  },
+  {
+    "person": "lauri_laanemets",
+    "name": "Lauri Läänemets",
+    "reference_path": "docs/artwork/ministers/references/lauri_laanemets.jpg",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Lauri_L%C3%A4%C3%A4nemets_at_the_Opinion_Festival_2022_in_Paide,_Estonia_(cropped).jpg",
+    "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Lauri_L%C3%A4%C3%A4nemets_at_the_Opinion_Festival_2022_in_Paide%2C_Estonia_%28cropped%29.jpg",
+    "author": "Sillerkiil",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2022-08-13 12:10:04"
+  },
+  {
+    "person": "kristina_kallas",
+    "name": "Kristina Kallas",
+    "reference_path": "docs/artwork/ministers/references/kristina_kallas.jpg",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Kristina_Kallas_KF_(cropped).jpg",
+    "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Kristina_Kallas_KF_%28cropped%29.jpg",
+    "author": "Metsavend",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2018-11-06 15:04:19"
+  },
+  {
+    "person": "lavly_perling",
+    "name": "Lavly Perling",
+    "reference_path": "docs/artwork/ministers/references/lavly_perling.jpg",
+    "source_page_url": "https://commons.wikimedia.org/wiki/File:Lavly_Perling_2021-10-14_(cropped).jpg",
+    "direct_image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Lavly_Perling_2021-10-14_%28cropped%29.jpg",
+    "author": "Estonian Foreign Ministry",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "date": "2021-10-14"
+  }
+]

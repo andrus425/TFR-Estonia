@@ -1,0 +1,19 @@
+{
+  "party": "reform",
+  "asset_id": "schools",
+  "source_generation_file": "exec-229e11c1-e803-473e-b9e7-f2225d34c2c1.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "80c5ee2b02428037a04574cf2c6aed644b7bd9fc5365f53a47ff8a6ed33dc54c",
+  "texture_sha256": "2347d1627844a0c641c5fc5e882bad6dd309777a8c1acb7d409f226c9d2e21db",
+  "texture_bytes": 45681,
+  "artwork_bounds": {
+    "left": 8,
+    "top": 1,
+    "width": 153,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

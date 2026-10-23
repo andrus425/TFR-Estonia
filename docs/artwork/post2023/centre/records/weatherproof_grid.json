@@ -1,0 +1,19 @@
+{
+  "party": "centre",
+  "asset_id": "weatherproof_grid",
+  "source_generation_file": "exec-54113572-803f-40e1-92e7-05e55ea60642.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "a35818e7724fc9a4cf3a2fec211438e16d90c80074c23e9e8156e6d14a9555b6",
+  "texture_sha256": "4b899669eeaf62095a1292e6809d5f663555c623af49b7d4d23d94bf068fa619",
+  "texture_bytes": 42715,
+  "artwork_bounds": {
+    "left": 9,
+    "top": 1,
+    "width": 151,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

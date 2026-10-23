@@ -1,0 +1,19 @@
+{
+  "party": "isamaa",
+  "asset_id": "district_heating",
+  "source_generation_file": "exec-cc80d2d6-23aa-4b43-ab0c-9de96bb108a8.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "f5774dc32143742d1520805c834b9a208c2d4c2c1803de23c52fc9033052c0e3",
+  "texture_sha256": "d40f939a68be34bdcdb5eaee14a429a14d3ac0d0ac8680330f2f435b752a72b8",
+  "texture_bytes": 46169,
+  "artwork_bounds": {
+    "left": 2,
+    "top": 1,
+    "width": 166,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

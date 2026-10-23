@@ -1,0 +1,19 @@
+{
+  "party": "e200",
+  "asset_id": "grid_interconnectors",
+  "source_generation_file": "exec-e2d20db4-b4bf-4e12-a53f-61dd121aed13.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "b5e51717fe320edd024e1b056d218beda172bcd889d96867ae862282de2e2365",
+  "texture_sha256": "9c034d29f2e616df59ecffdb2b048396cd980dbad9a590561da86e92a79620ce",
+  "texture_bytes": 42045,
+  "artwork_bounds": {
+    "left": 10,
+    "top": 1,
+    "width": 149,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

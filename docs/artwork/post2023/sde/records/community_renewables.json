@@ -1,0 +1,19 @@
+{
+  "party": "sde",
+  "asset_id": "community_renewables",
+  "source_generation_file": "exec-7776d050-51c5-458e-83d7-2138a1826de4.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "eb3f1e9955da8e98f30cf20361cce5395300028ae08d10ccec44f967eb3729ff",
+  "texture_sha256": "e6763a13a4a050573f594cf9442af74f31bbe71050241c9eef0f8fba024d308d",
+  "texture_bytes": 35973,
+  "artwork_bounds": {
+    "left": 6,
+    "top": 1,
+    "width": 158,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

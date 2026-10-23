@@ -1,0 +1,75 @@
+# Parliament icons follow party office, including leadership changes in opposition.
+defined_text = {
+    name = TFR_EST_ideology_icon_reform
+    text = { trigger = { has_country_flag = TFR_EST_kallas_departed_for_europe } localization_key = "GFX_TFR_EST_ideology_reform_michal" }
+    text = { trigger = { always = yes } localization_key = "GFX_TFR_EST_ideology_reform_kallas" }
+}
+defined_text = {
+    name = TFR_EST_ideology_icon_centre
+    text = { trigger = { has_country_flag = TFR_EST_centre_leader_kiik } localization_key = "GFX_TFR_EST_ideology_centre_kiik" }
+    text = { trigger = { has_country_flag = TFR_EST_centre_leader_kolvart } localization_key = "GFX_TFR_EST_ideology_centre_kolvart" }
+    text = { trigger = { always = yes } localization_key = "GFX_TFR_EST_ideology_centre_ratas" }
+}
+defined_text = {
+    name = TFR_EST_ideology_icon_ekre
+    text = { trigger = { has_country_flag = TFR_EST_martin_leads_ekre } localization_key = "GFX_TFR_EST_ideology_ekre_martin" }
+    text = { trigger = { always = yes } localization_key = "GFX_TFR_EST_ideology_ekre_mart" }
+}
+defined_text = {
+    name = TFR_EST_ideology_icon_isamaa
+    text = { trigger = { always = yes } localization_key = "GFX_TFR_EST_ideology_isamaa_seeder" }
+}
+defined_text = {
+    name = TFR_EST_ideology_icon_sde
+    text = { trigger = { has_country_flag = TFR_EST_laanemets_leads_sde } localization_key = "GFX_TFR_EST_ideology_sde_laanemets" }
+    text = { trigger = { always = yes } localization_key = "GFX_TFR_EST_ideology_sde_saar" }
+}
+defined_text = {
+    name = TFR_EST_ideology_icon_e200
+    text = { trigger = { always = yes } localization_key = "GFX_TFR_EST_ideology_e200_kallas" }
+}
+defined_text = {
+    name = TFR_EST_ideology_icon_pp
+    text = { trigger = { always = yes } localization_key = "GFX_TFR_EST_ideology_pp_perling" }
+}
+
+# Diplomacy represents the incumbent cabinet. Centre and SDE can elect a new
+# party chair while their outgoing caretaker PM remains in office.
+defined_text = {
+    name = TFR_EST_ruling_ideology_icon
+    text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } has_country_flag = TFR_EST_kallas_departed_for_europe } localization_key = "GFX_TFR_EST_ideology_reform_michal" }
+    text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } } localization_key = "GFX_TFR_EST_ideology_reform_kallas" }
+    text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } has_country_flag = TFR_EST_pm_person_tanel_kiik } localization_key = "GFX_TFR_EST_ideology_centre_kiik" }
+    text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } has_country_flag = TFR_EST_pm_person_mihhail_kolvart } localization_key = "GFX_TFR_EST_ideology_centre_kolvart" }
+    text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } } localization_key = "GFX_TFR_EST_ideology_centre_ratas" }
+    text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } has_country_flag = TFR_EST_martin_leads_ekre } localization_key = "GFX_TFR_EST_ideology_ekre_martin" }
+    text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } } localization_key = "GFX_TFR_EST_ideology_ekre_mart" }
+    text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } } localization_key = "GFX_TFR_EST_ideology_isamaa_seeder" }
+    text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } has_country_flag = TFR_EST_pm_person_lauri_laanemets } localization_key = "GFX_TFR_EST_ideology_sde_laanemets" }
+    text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } } localization_key = "GFX_TFR_EST_ideology_sde_saar" }
+    text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } } localization_key = "GFX_TFR_EST_ideology_e200_kallas" }
+    text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } } localization_key = "GFX_TFR_EST_ideology_pp_perling" }
+    text = { trigger = { always = yes } localization_key = "GFX_TFR_EST_ideology_centre_ratas" }
+}
+
+defined_text = {
+    name = TFR_EST_ideology_leader_reform
+    text = { trigger = { has_country_flag = TFR_EST_kallas_departed_for_europe } localization_key = TFR_EST_kristen_michal }
+    text = { trigger = { always = yes } localization_key = TFR_EST_kaja_kallas }
+}
+defined_text = {
+    name = TFR_EST_ideology_leader_ekre
+    text = { trigger = { has_country_flag = TFR_EST_martin_leads_ekre } localization_key = TFR_EST_martin_helme }
+    text = { trigger = { always = yes } localization_key = TFR_EST_mart_helme }
+}
+defined_text = {
+    name = TFR_EST_ideology_ruling_party
+    text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 1 compare = equals } } localization_key = TFR_EST_party_reform }
+    text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 2 compare = equals } } localization_key = TFR_EST_party_centre }
+    text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 3 compare = equals } } localization_key = TFR_EST_party_ekre }
+    text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 4 compare = equals } } localization_key = TFR_EST_party_isamaa }
+    text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 5 compare = equals } } localization_key = TFR_EST_party_sde }
+    text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 6 compare = equals } } localization_key = TFR_EST_party_e200 }
+    text = { trigger = { check_variable = { var = TFR_EST_pm_party value = 7 compare = equals } } localization_key = TFR_EST_party_pp }
+    text = { trigger = { always = yes } localization_key = TFR_EST_pm_unconfirmed }
+}

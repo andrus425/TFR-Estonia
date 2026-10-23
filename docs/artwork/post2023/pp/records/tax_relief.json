@@ -1,0 +1,19 @@
+{
+  "party": "pp",
+  "asset_id": "tax_relief",
+  "source_generation_file": "exec-99ab3025-7840-481d-a9e8-2cd665fe6778.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "a3473617c24f00f64bbb1fc937e0366d32e6129358475f7ee7556052dfb7d5be",
+  "texture_sha256": "0bf77e3b279a790cbcd2c4078e4f0c2c9a5df02a564fe61d2e5d3c397355cf49",
+  "texture_bytes": 43366,
+  "artwork_bounds": {
+    "left": 10,
+    "top": 1,
+    "width": 150,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

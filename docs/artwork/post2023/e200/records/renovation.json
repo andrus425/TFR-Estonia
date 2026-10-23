@@ -1,0 +1,19 @@
+{
+  "party": "e200",
+  "asset_id": "renovation",
+  "source_generation_file": "exec-85c259d7-db9c-4d39-ba20-73702cc48b2c.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "13dd063da438e1cbdb79508903c43595fdeaafa7e277ac14d00fd0159ebf31c2",
+  "texture_sha256": "e2868f6a71ef1df270ca893c4ee80322fa108c8bd65b183f71c1829e9cd7cbed",
+  "texture_bytes": 36478,
+  "artwork_bounds": {
+    "left": 18,
+    "top": 1,
+    "width": 133,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

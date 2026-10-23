@@ -1,0 +1,19 @@
+{
+  "party": "e200",
+  "asset_id": "common_school",
+  "source_generation_file": "exec-ce43c868-90eb-4cef-ae1f-f6d287fcb3c3.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "a6fb017802e9d251f65fabd7f9fd4aec3d4a5d05e5971e1cc9ca875ed4071710",
+  "texture_sha256": "06c2e12eecb633e1d6d285bddced20e0491005728898426847ba2ba033bb361c",
+  "texture_bytes": 43884,
+  "artwork_bounds": {
+    "left": 6,
+    "top": 1,
+    "width": 158,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

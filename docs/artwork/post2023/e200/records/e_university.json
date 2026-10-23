@@ -1,0 +1,19 @@
+{
+  "party": "e200",
+  "asset_id": "e_university",
+  "source_generation_file": "exec-d7013fc3-1994-4fb8-a0ab-b30f856a702a.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "ced0296e3ed3d7b91c0e67b81b2fc4e2d24d9930c014f0b368edc164cd10a639",
+  "texture_sha256": "c21649322b889555ab6fe1d7a5d6123b1633197310f73ddfde8c64270bad7500",
+  "texture_bytes": 39254,
+  "artwork_bounds": {
+    "left": 9,
+    "top": 1,
+    "width": 151,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

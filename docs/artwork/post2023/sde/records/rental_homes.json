@@ -1,0 +1,19 @@
+{
+  "party": "sde",
+  "asset_id": "rental_homes",
+  "source_generation_file": "exec-3fc75c6c-11d9-415b-bee1-0f612a2efdfa.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "5ea91f581448b4acaa9c8f437bf0e32fa60e43bb7b80da7e1298e0d660d41d49",
+  "texture_sha256": "747046f4e0f8e389824ffe00881568e8618d229fd4cbc0e34cf9eef479402299",
+  "texture_bytes": 41391,
+  "artwork_bounds": {
+    "left": 4,
+    "top": 1,
+    "width": 161,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

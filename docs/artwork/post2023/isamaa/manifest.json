@@ -1,0 +1,1143 @@
+{
+  "format": 1,
+  "created": "2026-10-23",
+  "generation_mode": "Built-in image_gen.imagegen",
+  "context": "2023 Isamaa coalition-led focus tree; palette follows leader party for every policy. Every focus has a unique, separately generated composition and texture.",
+  "canvas": {
+    "width": 170,
+    "height": 150,
+    "bottom_transparent_pixels": 40
+  },
+  "brand": {
+    "name": "Isamaa",
+    "color": "#00AEEF",
+    "palette": "bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold",
+    "symbol": "the authentic hollow angular eight-pointed octagram star",
+    "leader": "Helir-Valdor Seeder"
+  },
+  "icons": [
+    {
+      "asset_id": "mandate",
+      "title": "An Isamaa-Led Parliamentary Mandate",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Helir-Valdor Seeder, Isamaa star emblem, agreement and Riigikogu",
+      "political_figure": "Helir-Valdor Seeder",
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_new_mandate"
+      ],
+      "focus_suffixes": [
+        "new_mandate"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_mandate.png",
+      "master": "masters/EST_isamaa_2023_mandate.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Input image is a reference sheet only: select the named political figure(s) and authentic party symbol from it; preserve recognizable face, hair and mark geometry. Replace the sheet completely with ONE unified TFR icon, no other sheet faces or labels. Coalition leader party: Isamaa. Entire icon lighting palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Keep this party palette even for policies shared with other parties. Primary subjects: Helir-Valdor Seeder, Isamaa star emblem, agreement and Riigikogu. Include a clearly recognizable small dimensional rendition of the authentic hollow angular eight-pointed octagram star as part of the collage. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-753e83df-ea2f-47ed-b2b6-092ee924777b.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "300fbdcd6a5c4020ad92cfa27896548be35dbc25130b1c65f883d22ba90b7e2b",
+      "texture_sha256": "f3edc28f1e2f751709f5e208b5cc412c3755fd8112a497cc7dfb4f0b5ccad4f5",
+      "texture_bytes": 39654,
+      "artwork_bounds": {
+        "left": 17,
+        "top": 1,
+        "width": 135,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "defence_reserve",
+      "title": "Fund the Independent Defence Establishment",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Reservist helmet, Kaitseliit training target, defence map and budget ledger",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_defence_commitment"
+      ],
+      "focus_suffixes": [
+        "defence_commitment"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_defence_reserve.png",
+      "master": "masters/EST_isamaa_2023_defence_reserve.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Isamaa. Entire icon lighting palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Keep this party palette even for policies shared with other parties. Primary subjects: Reservist helmet, Kaitseliit training target, defence map and budget ledger. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-cfb38e88-352e-418e-b5f6-3cb638338263.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "fc2e117785eff4da7280252113e0ce67965a3fc0bb22aad6b5576b21c1894884",
+      "texture_sha256": "7c7e0158f385c8a258ff70000d61f8c980632eabf9186bd97f839df45fdc1006",
+      "texture_bytes": 45994,
+      "artwork_bounds": {
+        "left": 7,
+        "top": 1,
+        "width": 156,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "air_defence",
+      "title": "Prepare Integrated Air Defence Sites",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Radar dish, integrated air-defence launcher and Estonia shield",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_air_defence"
+      ],
+      "focus_suffixes": [
+        "air_defence"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_air_defence.png",
+      "master": "masters/EST_isamaa_2023_air_defence.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Isamaa. Entire icon lighting palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Keep this party palette even for policies shared with other parties. Primary subjects: Radar dish, integrated air-defence launcher and Estonia shield. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-b4a43a62-c44d-4a41-a083-b11aea6dba69.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "ca73abbadf04ff73b2ce737b3792322cb3757fa842a7f9e8d51f67ff8a1e1f70",
+      "texture_sha256": "7d6933ba16623054b6eb1e51bfbb83dab48fc78288cdce22bf6659cd0487ef50",
+      "texture_bytes": 42565,
+      "artwork_bounds": {
+        "left": 8,
+        "top": 1,
+        "width": 154,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "allied_reception",
+      "title": "Prepare Allied Reception and Prepositioned Stores",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Allied reception hangar, military transport and stockpile crates",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_allied_reception"
+      ],
+      "focus_suffixes": [
+        "allied_reception"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_allied_reception.png",
+      "master": "masters/EST_isamaa_2023_allied_reception.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Isamaa. Entire icon lighting palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Keep this party palette even for policies shared with other parties. Primary subjects: Allied reception hangar, military transport and stockpile crates. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-c15fb1ca-76b0-42e9-a706-2910d2bc2df9.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "5ed2338e3c99a6d67be5b5d78ddcdcfc9c62fbf3d23db56481ba1d384461065e",
+      "texture_sha256": "a970ff4929a16dbbe4e46d3bce2cceb117f2835f211ce452ddd5589fa89daa05",
+      "texture_bytes": 41062,
+      "artwork_bounds": {
+        "left": 9,
+        "top": 1,
+        "width": 151,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "civil_protection",
+      "title": "Give Civil Protection a Funded Legal Basis",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Shelter, siren, emergency radio and legal document",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_civil_protection"
+      ],
+      "focus_suffixes": [
+        "civil_protection"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_civil_protection.png",
+      "master": "masters/EST_isamaa_2023_civil_protection.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Isamaa. Entire icon lighting palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Keep this party palette even for policies shared with other parties. Primary subjects: Shelter, siren, emergency radio and legal document. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-7aaf9a21-48f0-40c3-977b-c7fe74aad14d.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "e530fba93109495f36be0073cfe6b677ace25caff4e5488e680508a196575b34",
+      "texture_sha256": "e6741db1fd868ad2e4eca50f2cea0b044748b8f4dacf18f7133958c970a918ad",
+      "texture_bytes": 46790,
+      "artwork_bounds": {
+        "left": 1,
+        "top": 2,
+        "width": 168,
+        "height": 106
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "defence_industry",
+      "title": "Back Defence-Industry Development Contracts",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Ammunition shells, repair tools, industrial gear and factory",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_industrial_guarantees"
+      ],
+      "focus_suffixes": [
+        "industrial_guarantees"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_defence_industry.png",
+      "master": "masters/EST_isamaa_2023_defence_industry.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Isamaa. Entire icon lighting palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Keep this party palette even for policies shared with other parties. Primary subjects: Ammunition shells, repair tools, industrial gear and factory. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-b38fab2e-feb4-4c79-9941-1240c02d6651.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "6b2cf9d08d67ee713c40cbf84aa4fd5fa7b24c3767f2ec4635078a82bfae08bc",
+      "texture_sha256": "ebda9fe52ac9c7f1eeef766acb416b04ac839f85f34cc46898b35801b8a6e564",
+      "texture_bytes": 46699,
+      "artwork_bounds": {
+        "left": 5,
+        "top": 1,
+        "width": 159,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "regional_industry",
+      "title": "Finance Regional Manufacturing Partnerships",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Regional factory, timber/material inputs and partnership handshake",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_regional_value_chains"
+      ],
+      "focus_suffixes": [
+        "regional_value_chains"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_regional_industry.png",
+      "master": "masters/EST_isamaa_2023_regional_industry.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Isamaa. Entire icon lighting palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Keep this party palette even for policies shared with other parties. Primary subjects: Regional factory, timber/material inputs and partnership handshake. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-a03600a8-985c-467f-a0ca-a9a8238fd65a.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "29c993a5fdcc1b0df9b481cd83315467e6641d2a3055f649116847e2de5609e4",
+      "texture_sha256": "7c2cb39d4cee40e63a34255b25fb0c33b6151bf80b4693a89fd7e52bef7b4114",
+      "texture_bytes": 46438,
+      "artwork_bounds": {
+        "left": 1,
+        "top": 6,
+        "width": 168,
+        "height": 97
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "business_finance",
+      "title": "Establish a Positive Credit Register",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Credit ledger, checked business expenses and euro coins",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_credit_register"
+      ],
+      "focus_suffixes": [
+        "credit_register"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_business_finance.png",
+      "master": "masters/EST_isamaa_2023_business_finance.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Isamaa. Entire icon lighting palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Keep this party palette even for policies shared with other parties. Primary subjects: Credit ledger, checked business expenses and euro coins. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-697f20d5-a1e3-4e42-b15b-74eacb9b81e6.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "54d154dade38f4ca94636a05efe22685bc4a3580d6ec82af273e1390e1d1df69",
+      "texture_sha256": "8ecc3469300fec6b3a68387d169edb56ea4664a59fe0d9d697ebcd478a1c8d2d",
+      "texture_bytes": 42995,
+      "artwork_bounds": {
+        "left": 11,
+        "top": 1,
+        "width": 147,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "domestic_power",
+      "title": "Contract Dispatchable Domestic Power Reserves",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Dispatchable power station, electricity meter and domestic supply shield",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_dispatchable_reserve"
+      ],
+      "focus_suffixes": [
+        "dispatchable_reserve"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_domestic_power.png",
+      "master": "masters/EST_isamaa_2023_domestic_power.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Isamaa. Entire icon lighting palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Keep this party palette even for policies shared with other parties. Primary subjects: Dispatchable power station, electricity meter and domestic supply shield. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-3ef35fad-8a35-45e4-b6c6-5b3c8fc5548f.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "c7599395407d969f873890ffaed0528f7c20e532468bf088bf957c80f2148e16",
+      "texture_sha256": "561157508c1255f88ffb7462daa5abf89f727df329e424c7d8b845a194fb31d9",
+      "texture_bytes": 39264,
+      "artwork_bounds": {
+        "left": 6,
+        "top": 1,
+        "width": 157,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "energy_networks",
+      "title": "Finance Secure Grid Connections",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Transmission tower, connected homes and district-heating pipes",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_grid_connection"
+      ],
+      "focus_suffixes": [
+        "grid_connection"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_energy_networks.png",
+      "master": "masters/EST_isamaa_2023_energy_networks.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Isamaa. Entire icon lighting palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Keep this party palette even for policies shared with other parties. Primary subjects: Transmission tower, connected homes and district-heating pipes. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-bc1e2176-6a3c-4f5b-8639-a5f3344c195e.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "aadbf057afecded58b993b70e1edf0a2ee44f8bb7e82a54aa5d7860ab4e59d87",
+      "texture_sha256": "a1d2f25a06fa3b9241b2407984a7516ada2a97790def1084c6b2ddb6cc082a8b",
+      "texture_bytes": 39418,
+      "artwork_bounds": {
+        "left": 8,
+        "top": 1,
+        "width": 154,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "renovation",
+      "title": "Standardise and Fund Energy-Saving Renovation",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Apartment-block cutaway, insulation and radiator",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_renovation"
+      ],
+      "focus_suffixes": [
+        "renovation"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_renovation.png",
+      "master": "masters/EST_isamaa_2023_renovation.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Isamaa. Entire icon lighting palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Keep this party palette even for policies shared with other parties. Primary subjects: Apartment-block cutaway, insulation and radiator. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-a9366503-b23c-4c6a-b18c-e9164882b474.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "8fe7eb4076c560521d79a45b284d1df93044ded336f691e7dfe367f32fc4e928",
+      "texture_sha256": "3b6de7c3f8e430f1fc864a8ee582b4f80ed122b3e0f54e66410fa30a4ea6c161",
+      "texture_bytes": 46937,
+      "artwork_bounds": {
+        "left": 8,
+        "top": 1,
+        "width": 153,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "nuclear_studies",
+      "title": "Commission the Nuclear Feasibility and Safety Studies",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Reactor cutaway, atom, safety clipboard and engineer tools",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_nuclear_studies"
+      ],
+      "focus_suffixes": [
+        "nuclear_studies"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_nuclear_studies.png",
+      "master": "masters/EST_isamaa_2023_nuclear_studies.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Isamaa. Entire icon lighting palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Keep this party palette even for policies shared with other parties. Primary subjects: Reactor cutaway, atom, safety clipboard and engineer tools. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-e6b269bf-3127-4751-98a3-f701336d9842.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "a2669d500e90b33a5695cb971284010078257615bf8139425aac2ef594e44c78",
+      "texture_sha256": "ca527c5df33181adf3e78178bcfd02fd675364492cd30a13d141af5dd2dc6edb",
+      "texture_bytes": 45672,
+      "artwork_bounds": {
+        "left": 7,
+        "top": 1,
+        "width": 155,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "family_tax",
+      "title": "Legislate the Five-Thousand-Euro Child Allowance",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Helir-Valdor Seeder, parents and child, joint tax return and coins",
+      "political_figure": "Helir-Valdor Seeder",
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_child_tax_allowance"
+      ],
+      "focus_suffixes": [
+        "child_tax_allowance"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_family_tax.png",
+      "master": "masters/EST_isamaa_2023_family_tax.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Input image is a reference sheet only: select the named political figure(s) and authentic party symbol from it; preserve recognizable face, hair and mark geometry. Replace the sheet completely with ONE unified TFR icon, no other sheet faces or labels. Coalition leader party: Isamaa. Entire icon lighting palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Keep this party palette even for policies shared with other parties. Primary subjects: Helir-Valdor Seeder, parents and child, joint tax return and coins. Include a clearly recognizable small dimensional rendition of the authentic hollow angular eight-pointed octagram star as part of the collage. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-2559b20c-df03-43b8-8ab2-501833b34dbf.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "a3609a68815b4cba7ca4a7d625225e4f6c4490cfbbfec26019202d446151eb9e",
+      "texture_sha256": "55b71cd2e8b5db8ea14b48867d55f9e4970fc6ec6a10deb6f08d69b2e6e38907",
+      "texture_bytes": 48708,
+      "artwork_bounds": {
+        "left": 4,
+        "top": 1,
+        "width": 162,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "family_benefits",
+      "title": "Fund Equal Hundred-Euro Child Benefits",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Parent holding infant, protected family hands and benefit ledger",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_child_benefit"
+      ],
+      "focus_suffixes": [
+        "child_benefit"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_family_benefits.png",
+      "master": "masters/EST_isamaa_2023_family_benefits.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Isamaa. Entire icon lighting palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Keep this party palette even for policies shared with other parties. Primary subjects: Parent holding infant, protected family hands and benefit ledger. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-eabdc2e3-c1c8-4315-8930-89a4355105bd.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "7c637e5ce9539b029844113a6034f0dc8375f64842c1dae527469150ae13a41c",
+      "texture_sha256": "cdfbf18ce6a02f84db3fa25f438d968647e2b318600d6bd568c3cf69859803d5",
+      "texture_bytes": 43424,
+      "artwork_bounds": {
+        "left": 9,
+        "top": 1,
+        "width": 151,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "family_homes",
+      "title": "Launch the Large-Family Housing Grant Round",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Large family, house facade, key and grant document",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_large_family_homes"
+      ],
+      "focus_suffixes": [
+        "large_family_homes"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_family_homes.png",
+      "master": "masters/EST_isamaa_2023_family_homes.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Isamaa. Entire icon lighting palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Keep this party palette even for policies shared with other parties. Primary subjects: Large family, house facade, key and grant document. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-587faea0-9738-47c7-a87f-11bc8e4bae56.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "968f0a5c26bf6eeb9a87debd505ad40edf7c0c11f3e2d25bcf0721b20d67ab78",
+      "texture_sha256": "e0f86b1fc870f6a629efa24213360817514cc05db09488ad601b64a0547722b3",
+      "texture_bytes": 46773,
+      "artwork_bounds": {
+        "left": 5,
+        "top": 1,
+        "width": 159,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "schools",
+      "title": "Resource the Estonian-Language School Transition",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Teacher, open Estonian textbook, classroom and wage packet",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_estonian_schools"
+      ],
+      "focus_suffixes": [
+        "estonian_schools"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_schools.png",
+      "master": "masters/EST_isamaa_2023_schools.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Isamaa. Entire icon lighting palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Keep this party palette even for policies shared with other parties. Primary subjects: Teacher, open Estonian textbook, classroom and wage packet. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-80a9e128-0e81-4aa8-8aaf-4afa1ad906e1.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "d0cfa6eb1f9f388d367b8f592789883f5cd53a03f49d361322b72122b1015b71",
+      "texture_sha256": "3efdaa616fb1fc61b3f1ffde174be9f239bb4ff2bddabfb82ff646bcd757d631",
+      "texture_bytes": 46710,
+      "artwork_bounds": {
+        "left": 9,
+        "top": 1,
+        "width": 152,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "research",
+      "title": "Agree the Public-Private Research Funding Compact",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Microscope, laboratory, university and public-private handshake",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_research_compact"
+      ],
+      "focus_suffixes": [
+        "research_compact"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_research.png",
+      "master": "masters/EST_isamaa_2023_research.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Isamaa. Entire icon lighting palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Keep this party palette even for policies shared with other parties. Primary subjects: Microscope, laboratory, university and public-private handshake. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-b3458b04-cd5e-4e44-96fa-60c77ad29d1f.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "5df85feb5ca26a7e31cccd263452f5324b3d06bc9a0507e1574e1c949fe9302d",
+      "texture_sha256": "fa5004bdc4b86aa546f4ffc8fa60a2759a388b4dd4d95d9d999e935fa23f75af",
+      "texture_bytes": 47576,
+      "artwork_bounds": {
+        "left": 1,
+        "top": 2,
+        "width": 168,
+        "height": 106
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "digital_services",
+      "title": "Fund Reliable Rural Broadband Connections",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Rural home, fibre-optic cable, server and secure service portal",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_rural_internet"
+      ],
+      "focus_suffixes": [
+        "rural_internet"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_digital_services.png",
+      "master": "masters/EST_isamaa_2023_digital_services.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Isamaa. Entire icon lighting palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Keep this party palette even for policies shared with other parties. Primary subjects: Rural home, fibre-optic cable, server and secure service portal. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-a12aa774-3f35-4467-8840-afcfa7bd3931.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "bc27afebdc624c435c23859b4cd8f6569ecc6e5dc642e98a6dd71d7c43f6df2a",
+      "texture_sha256": "bcdbf5be2d674bd31cf19c585889ddbdae23345a1286eae8fd2af1e4803d4ab4",
+      "texture_bytes": 43671,
+      "artwork_bounds": {
+        "left": 9,
+        "top": 1,
+        "width": 151,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "home_care",
+      "title": "Expand Financed Home-Care Services",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Elderly person, visiting home-care nurse and medical bag",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_home_care"
+      ],
+      "focus_suffixes": [
+        "home_care"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_home_care.png",
+      "master": "masters/EST_isamaa_2023_home_care.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate a new object-led policy collage; no named politician needed. Coalition leader party: Isamaa. Entire icon lighting palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Keep this party palette even for policies shared with other parties. Primary subjects: Elderly person, visiting home-care nurse and medical bag. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-f6a0b89f-bc20-42ff-9f14-01c34e08e83d.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "60e52dc610005449fe118da12249e94e7590eb06b156912f79ad2180e95ea20a",
+      "texture_sha256": "7bd677db5599b1b5e6549eae5e3432befa31dde682d13983cdbb4a3a52e3a627",
+      "texture_bytes": 46225,
+      "artwork_bounds": {
+        "left": 1,
+        "top": 3,
+        "width": 168,
+        "height": 104
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "report",
+      "title": "Present the Isamaa Government's Accounts",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Helir-Valdor Seeder, star emblem and government accounts at Riigikogu",
+      "political_figure": "Helir-Valdor Seeder",
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_account_to_parliament"
+      ],
+      "focus_suffixes": [
+        "account_to_parliament"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_report.png",
+      "master": "masters/EST_isamaa_2023_report.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Input image is a reference sheet only: select the named political figure(s) and authentic party symbol from it; preserve recognizable face, hair and mark geometry. Replace the sheet completely with ONE unified TFR icon, no other sheet faces or labels. Coalition leader party: Isamaa. Entire icon lighting palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Keep this party palette even for policies shared with other parties. Primary subjects: Helir-Valdor Seeder, star emblem and government accounts at Riigikogu. Include a clearly recognizable small dimensional rendition of the authentic hollow angular eight-pointed octagram star as part of the collage. Use credible contemporary Estonian props. Show preparation, funding and administration where appropriate; no fantasy completed megaproject, victory claim or free equipment. All other flags, if any, are secondary to the party palette.",
+      "source_generation_file": "exec-f7d28738-4ae2-451b-bf25-048fbe6011ae.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "3f75a811631a413330efcec40628cda9d3bd59b09766bc8fc6b73c51c0eba4aa",
+      "texture_sha256": "e720407a0d4ddfb000dc4e77c467644eea5ef63c33831c6b140edfc8b1453f68",
+      "texture_bytes": 42036,
+      "artwork_bounds": {
+        "left": 3,
+        "top": 1,
+        "width": 163,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "reserve_muster",
+      "title": "Rehearse the Reserve Mobilisation System",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Rehearse the Reserve Mobilisation System",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_reserve_muster"
+      ],
+      "focus_suffixes": [
+        "reserve_muster"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_reserve_muster.png",
+      "master": "masters/EST_isamaa_2023_reserve_muster.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: Isamaa. Color palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Exact focus subject: Rehearse the Reserve Mobilisation System. Policy context: Check call-up records, employers' arrangements and unit stores through scheduled exercises. A reliable muster makes existing formations more usable when warning time is short. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-b898e107-2196-45da-b533-f21e8a046066.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "8fb09355202bb108f9bd9c218496237875e4a6c692db257006eb8239f66d2822",
+      "texture_sha256": "07223af6f054331798bae32cd2bc19e18b086b3542839667b71012fb69ababd4",
+      "texture_bytes": 45410,
+      "artwork_bounds": {
+        "left": 5,
+        "top": 1,
+        "width": 160,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "kaitseliit_ranges",
+      "title": "Build Kaitseliit Training and Range Capacity",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Build Kaitseliit Training and Range Capacity",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_kaitseliit_ranges"
+      ],
+      "focus_suffixes": [
+        "kaitseliit_ranges"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_kaitseliit_ranges.png",
+      "master": "masters/EST_isamaa_2023_kaitseliit_ranges.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: Isamaa. Color palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Exact focus subject: Build Kaitseliit Training and Range Capacity. Policy context: Finance instructors and safe range access with local agreements. Territorial units need frequent practice and practical facilities to improve their small-unit work. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-5da1b871-6745-4bad-bab4-bd35a2a44c9a.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "7d1737d0194d796a8606436c9e7a77d7e617c25548a607dcb21d745ca9d73a80",
+      "texture_sha256": "ef9235a5e31471886f47eb388da03fd2e9d225a405d530b77db679eb80e9abd3",
+      "texture_bytes": 47263,
+      "artwork_bounds": {
+        "left": 1,
+        "top": 3,
+        "width": 168,
+        "height": 103
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "ammunition_workshop",
+      "title": "Finance an Ammunition Production Workshop",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Finance an Ammunition Production Workshop",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_ammunition_workshop"
+      ],
+      "focus_suffixes": [
+        "ammunition_workshop"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_ammunition_workshop.png",
+      "master": "masters/EST_isamaa_2023_ammunition_workshop.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: Isamaa. Color palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Exact focus subject: Finance an Ammunition Production Workshop. Policy context: Pay for a limited production facility and its supplier qualification. The workshop adds industrial capacity; completed ammunition still comes through normal production or paid procurement. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-ad72b427-e5f0-443d-88b1-098bbdc366aa.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "2df26d931c29e9392a8b56013b43401d825ba058b1a89240e112ae0fcca8ac94",
+      "texture_sha256": "2424edcdacd48076fb972cd773549a14b4762b9c2a44920f54ba262e7014dccf",
+      "texture_bytes": 42119,
+      "artwork_bounds": {
+        "left": 9,
+        "top": 1,
+        "width": 151,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "maintenance_workshop",
+      "title": "Finance an Equipment Maintenance Workshop",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Finance an Equipment Maintenance Workshop",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_maintenance_workshop"
+      ],
+      "focus_suffixes": [
+        "maintenance_workshop"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_maintenance_workshop.png",
+      "master": "masters/EST_isamaa_2023_maintenance_workshop.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: Isamaa. Color palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Exact focus subject: Finance an Equipment Maintenance Workshop. Policy context: Fund a second facility for overhaul work and replacement components. Sustainable servicing turns purchases into a usable force without awarding free equipment. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-ccd60181-afb3-4884-bf77-399a8d061fb9.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "10ea1a5954dd8d8b09f5bf5507937076420698c4371e965e282aa049124c1597",
+      "texture_sha256": "13cb62494bd52423d1e73a152741b8fe3107ad777c5bab9017ee0434855cc672",
+      "texture_bytes": 38565,
+      "artwork_bounds": {
+        "left": 9,
+        "top": 1,
+        "width": 152,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "expense_allowances",
+      "title": "Update the Fixed Business-Expense Allowances",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Update the Fixed Business-Expense Allowances",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_expense_allowances"
+      ],
+      "focus_suffixes": [
+        "expense_allowances"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_expense_allowances.png",
+      "master": "masters/EST_isamaa_2023_expense_allowances.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: Isamaa. Color palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Exact focus subject: Update the Fixed Business-Expense Allowances. Policy context: Legislate revised travel and work-expense exemptions with clear payroll instructions. Record the revenue reduction alongside simpler administration for employers. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-eb6d17af-3dc9-4cb8-a1d4-d821e3d4bcc8.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "dac41baf350478c79d7b0a0df2d998e28cf66b524a85810023e3d573d8a26117",
+      "texture_sha256": "4e930f1bd7ebf46bdc0e9a79e27f0126c08dee8bb313b0b2579e7418e453d017",
+      "texture_bytes": 44513,
+      "artwork_bounds": {
+        "left": 3,
+        "top": 1,
+        "width": 163,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "universal_service",
+      "title": "Fund the Extended Electricity Universal Service",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Fund the Extended Electricity Universal Service",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_universal_service"
+      ],
+      "focus_suffixes": [
+        "universal_service"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_universal_service.png",
+      "master": "masters/EST_isamaa_2023_universal_service.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: Isamaa. Color palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Exact focus subject: Fund the Extended Electricity Universal Service. Policy context: Budget a defined support tranche for eligible households and smaller consumers. Publish the contract terms and review the public liability as market conditions change. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-ee7667d0-00e7-4ce1-a09e-4848c8ef583e.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "0992017b0392755f7cd3bf2fcbbad1bbeaf33677f8c1e29a1af9065779176c43",
+      "texture_sha256": "9014fa90013756f5a85b17cc75688ae65abdf9024927660369577106d5307dc0",
+      "texture_bytes": 39818,
+      "artwork_bounds": {
+        "left": 9,
+        "top": 1,
+        "width": 152,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "district_heating",
+      "title": "Modernise District-Heating Networks",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Modernise District-Heating Networks",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_district_heating"
+      ],
+      "focus_suffixes": [
+        "district_heating"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_district_heating.png",
+      "master": "masters/EST_isamaa_2023_district_heating.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: Isamaa. Color palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Exact focus subject: Modernise District-Heating Networks. Policy context: Tender viable pipe replacement and heating connections with municipalities. Review heat demand and maintenance before committing to each project. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-cc80d2d6-23aa-4b43-ab0c-9de96bb108a8.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "f5774dc32143742d1520805c834b9a208c2d4c2c1803de23c52fc9033052c0e3",
+      "texture_sha256": "d40f939a68be34bdcdb5eaee14a429a14d3ac0d0ac8680330f2f435b752a72b8",
+      "texture_bytes": 46169,
+      "artwork_bounds": {
+        "left": 2,
+        "top": 1,
+        "width": 166,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "joint_returns",
+      "title": "Permit Joint Income-Tax Returns for Spouses",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Permit Joint Income-Tax Returns for Spouses",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_joint_returns"
+      ],
+      "focus_suffixes": [
+        "joint_returns"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_joint_returns.png",
+      "master": "masters/EST_isamaa_2023_joint_returns_v2.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: Isamaa. Color palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Exact focus subject: Permit Joint Income-Tax Returns for Spouses. Policy context: Update tax administration and the rules for joint declarations. Explain eligibility and the resulting public cost before the first filing period. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-d6e8aabb-fc0b-48f9-827c-c3f5050d656f.png",
+      "previous_drafts": [
+        {
+          "master": "masters/EST_isamaa_2023_joint_returns.png",
+          "texture": "drafts/EST_isamaa_2023_joint_returns_v1.png",
+          "export": {
+            "party": "isamaa",
+            "asset_id": "joint_returns",
+            "source_generation_file": "exec-e1ebdcb9-d94f-4c78-8f77-ce5cc519d4ed.png",
+            "master_size": {
+              "width": 1335,
+              "height": 1178
+            },
+            "master_sha256": "8138843de4f963b1b7042eb9228d705e82281343b06d27803efc6e7d6b83b2bd",
+            "texture_sha256": "5d3005ec2402c8e67c37d608396947fbb505c0a674cd3a4b8b7e0450749ead71",
+            "texture_bytes": 39261,
+            "artwork_bounds": {
+              "left": 8,
+              "top": 1,
+              "width": 154,
+              "height": 108
+            },
+            "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+          }
+        }
+      ],
+      "refinements": [
+        {
+          "edit_prompt": "Use case: precise-object-edit. Image 1 is the existing completed transparent TFR national focus icon and the edit target. Image 2 is a reference sheet; use ONLY the authentic white angular Isamaa logo geometry on its left, ignoring the text and portraits. Replace ONLY the large prominent filled decorative blue star in Image 1 with Isamaa's authentic hollow eight-point angular octagram matching the logo in Image 2. The symbol is a thick continuous white/silver angular eight-pointed star OUTLINE around a clearly open hollow dark-blue central eight-point cutout. It has eight straight sharp outer points and eight concave inner corners, uniform broad arms, and no spokes, leaf petals, filled center, compass shading, or extra rays. Render that exact logo outline as a polished three-dimensional silver/white metallic emblem with cyan #00AEEF edge light, positioned and sized where the original large star stands. Preserve the couple seen from behind embracing, tax-return papers, two pens, calculator, coin stacks, Estonian flags and government building exactly. Keep all other artwork, subject positions, original silhouette, composition, photographic photobash style, black contours, cyan-blue Isamaa palette and natural skin tones unchanged. Preserve the original aspect ratio and genuinely transparent background including empty lower label space. Do not introduce new text, people, panels or other symbols, and do not crop, zoom or redesign the icon.",
+          "reference_master": "masters/EST_isamaa_2023_joint_returns.png",
+          "master": "masters/EST_isamaa_2023_joint_returns_v2.png",
+          "source_generation_file": "exec-d6e8aabb-fc0b-48f9-827c-c3f5050d656f.png"
+        }
+      ],
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "5ff51ad1d9a22d9251138c93c6af01c9225cd0d9bb6606d2c60f17c1d9287009",
+      "texture_sha256": "9619454e956b669aea4cbeb956ddd6401bccc2a0d2e4b6cb7669900636cabe92",
+      "texture_bytes": 38428,
+      "artwork_bounds": {
+        "left": 8,
+        "top": 1,
+        "width": 153,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "care_leave",
+      "title": "Protect Care Benefits after Parental Leave",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Protect Care Benefits after Parental Leave",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_care_leave"
+      ],
+      "focus_suffixes": [
+        "care_leave"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_care_leave.png",
+      "master": "masters/EST_isamaa_2023_care_leave_v2.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: Isamaa. Color palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Exact focus subject: Protect Care Benefits after Parental Leave. Policy context: Fund revised care-benefit calculations for parents returning to work. Clear employer guidance helps families respond when a child falls ill. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-7b3b7114-b8e2-4323-b2b1-f532925803d8.png",
+      "previous_drafts": [
+        {
+          "master": "masters/EST_isamaa_2023_care_leave.png",
+          "texture": "drafts/EST_isamaa_2023_care_leave_v1.png",
+          "export": {
+            "party": "isamaa",
+            "asset_id": "care_leave",
+            "source_generation_file": "exec-13dc9ad9-2595-44c2-8173-06b3a26a8ad3.png",
+            "master_size": {
+              "width": 1335,
+              "height": 1178
+            },
+            "master_sha256": "9ac510a3c79ce74f33bdf69f7e1c34ffa8a1b0d65f94e27667917a503f841891",
+            "texture_sha256": "07a3f724886560acab8f6749b4ab041b8ce7732c536e671b3ca2ad9138904117",
+            "texture_bytes": 40640,
+            "artwork_bounds": {
+              "left": 12,
+              "top": 1,
+              "width": 145,
+              "height": 108
+            },
+            "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+          }
+        }
+      ],
+      "refinements": [
+        {
+          "edit_prompt": "Use case: precise-object-edit. Image 1 is the existing completed transparent TFR national focus icon and the edit target. Image 2 is a reference sheet; use ONLY the authentic white angular Isamaa logo geometry on its left, ignoring the text and portraits. Replace ONLY the large prominent filled decorative blue star in Image 1 with Isamaa's authentic hollow eight-point angular octagram matching the logo in Image 2. The symbol is a thick continuous white/silver angular eight-pointed star OUTLINE around a clearly open hollow dark-blue central eight-point cutout. It has eight straight sharp outer points and eight concave inner corners, uniform broad arms, and no spokes, leaf petals, filled center, compass shading, or extra rays. Render that exact logo outline as a polished three-dimensional silver/white metallic emblem with cyan #00AEEF edge light, positioned and sized where the original large star stands. Preserve the mother cradling her sick child and teddy bear, document clipboard, laptop, office building, medicine bottle, tissues, thermometer, blanket and bag exactly. Keep all other artwork, subject positions, original silhouette, composition, photographic photobash style, black contours, cyan-blue Isamaa palette and natural skin tones unchanged. Preserve the original aspect ratio and genuinely transparent background including empty lower label space. Do not introduce new text, people, panels or other symbols, and do not crop, zoom or redesign the icon.",
+          "reference_master": "masters/EST_isamaa_2023_care_leave.png",
+          "master": "masters/EST_isamaa_2023_care_leave_v2.png",
+          "source_generation_file": "exec-7b3b7114-b8e2-4323-b2b1-f532925803d8.png"
+        }
+      ],
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "facef80d385e3c88e6d2fc9cadd7fcb79905674ea9e5e4cdbc26ba35a91f5089",
+      "texture_sha256": "0c38a42b991c4e4843bb85bd5c1ad1dd8a657307843ca342283b19c9b334aff5",
+      "texture_bytes": 39570,
+      "artwork_bounds": {
+        "left": 11,
+        "top": 1,
+        "width": 147,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "maintenance_support",
+      "title": "Raise Child Maintenance Assistance to Two Hundred Euros",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Raise Child Maintenance Assistance to Two Hundred Euros",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_maintenance_support"
+      ],
+      "focus_suffixes": [
+        "maintenance_support"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_maintenance_support.png",
+      "master": "masters/EST_isamaa_2023_maintenance_support.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: Isamaa. Color palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Exact focus subject: Raise Child Maintenance Assistance to Two Hundred Euros. Policy context: Finance the proposed assistance ceiling and strengthen recovery from liable parents. Coordinate claims so children receive support without unnecessary administrative delay. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-1ea91cc3-bcc7-4340-9fba-6cdc01bb4484.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "efff77a600ab8c1760d6bc97334d7ce1a28ac1fa6ac40b71d092ecb0c5b7510a",
+      "texture_sha256": "2a16d184009d8ce34fd0955a6ef80c24de1f0240db2e417d68bb0865ace231a5",
+      "texture_bytes": 33145,
+      "artwork_bounds": {
+        "left": 15,
+        "top": 1,
+        "width": 140,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "teacher_pay",
+      "title": "Fund Steps toward the Teachers' Pay Objective",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Fund Steps toward the Teachers' Pay Objective",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_teacher_pay"
+      ],
+      "focus_suffixes": [
+        "teacher_pay"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_teacher_pay.png",
+      "master": "masters/EST_isamaa_2023_teacher_pay.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: Isamaa. Color palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Exact focus subject: Fund Steps toward the Teachers' Pay Objective. Policy context: Negotiate funded salary steps and training places with school owners. Publish progress toward the proposed minimum rather than declaring every staffing problem solved. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-5f0dbe50-455e-4cba-b507-8a0f21f91631.png",
+      "master_size": {
+        "width": 1334,
+        "height": 1179
+      },
+      "master_sha256": "2ed253b31fd5bf8afe0458a47c48851b07d674efb3bdf816af6d64f33f721be0",
+      "texture_sha256": "9c521b61ca6814bf8bb1fd0ad2e810b09389b557e95c90066f032785fa9f701a",
+      "texture_bytes": 35413,
+      "artwork_bounds": {
+        "left": 16,
+        "top": 1,
+        "width": 138,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    },
+    {
+      "asset_id": "digital_baseline",
+      "title": "Guarantee Core Digital-Service Maintenance Funding",
+      "party": "isamaa",
+      "party_name": "Isamaa",
+      "color": "#00AEEF",
+      "motif": "Guarantee Core Digital-Service Maintenance Funding",
+      "political_figure": null,
+      "focus_ids": [
+        "TFR_EST_isamaa_2023_digital_baseline"
+      ],
+      "focus_suffixes": [
+        "digital_baseline"
+      ],
+      "texture": "gfx/interface/goals/EST/EST_isamaa_2023_digital_baseline.png",
+      "master": "masters/EST_isamaa_2023_digital_baseline.png",
+      "prompt": "Use case: stylized-concept. Asset type: one Hearts of Iron IV The Fire Rises national focus icon, production transparent PNG. Compact dense irregular photobash collage: realistic photographic cutouts, strong charcoal contours, polished silver bevel highlights, dramatic contrast, dimensional metallic props and vivid party-colored rim lighting. Match the established TFR focus icons, not a flat vector drawing, poster or full scene. Compose as three main readable masses at tiny 170px game scale. Canvas aspect170:150; art fills width in the TOP73percent, bottom27percent completely transparent for game label. Genuine alpha outside all cutouts; no background rectangle, border, generic enclosing badge, watermark, captions, slogans, or decorative laurels. No readable text except intrinsic geometry of a requested actual party mark. Natural skin tones. Generate one entirely new object-led policy collage for this specific focus. Coalition leader party: Isamaa. Color palette: bright cyan-blue #00AEEF rim light, deep navy shadows and restrained silver/gold. Exact focus subject: Guarantee Core Digital-Service Maintenance Funding. Policy context: Budget security updates, continuity exercises and simpler data submission. Agencies must maintain the services already in use alongside new development. Choose three dominant concrete props that express this policy. Give it a distinct composition and silhouette; other policies in this set have separate icons, so do not repeat a generic arrangement. Do not add a named politician unless the policy itself names one. No slogans, labels or readable figures. All symbols and lighting follow only this coalition leader party.",
+      "source_generation_file": "exec-cf02bf6d-d14b-4cc4-8c98-050061fc834e.png",
+      "master_size": {
+        "width": 1335,
+        "height": 1178
+      },
+      "master_sha256": "f5290a3fd5f2f224c3f09a42bced563de898dfd6d11ac2ff94b4c6dc4e73a28e",
+      "texture_sha256": "dfa90d0f8566d6fd66c4eb7e1f807851ffcdcda5d06d84220c1ceeffb628298f",
+      "texture_bytes": 47305,
+      "artwork_bounds": {
+        "left": 3,
+        "top": 1,
+        "width": 164,
+        "height": 108
+      },
+      "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+    }
+  ],
+  "unique_per_focus": true
+}

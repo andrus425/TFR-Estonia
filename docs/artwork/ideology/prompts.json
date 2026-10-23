@@ -1,0 +1,196 @@
+[
+  {
+    "id": "ekre_mart",
+    "mode": "built-in image_gen",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises ideology icon, production transparent PNG. Generate exactly ONE compact almost-square icon, aspect 66:68, composed for readability when downscaled to 66x68 pixels. Input image 1 is a TFR ideology STYLE REFERENCE SHEET ONLY: match the portrait-based icons social_democracy_ARG and social_democracy_TUR and the metallic party-logo collage treatment; do not copy sheet labels, layout, faces or symbols. Input image 2 is the named leader's facial identity reference only, preserve recognizable likeness. Build a dense silhouette with a large realistic photo-painted head-and-shoulders leader bust occupying the left/center, a large dimensional party symbol at lower right, a small flowing party-colored banner behind, restrained charcoal-gunmetal backplate and silver beveled edge highlights, dark outline and subtle shadow. Party-tinted lighting, high contrast, crisp bold details, limited components. Nearly fill canvas leaving about 4 percent transparent margin. Actual transparent outside alpha, including all corners. No enclosing rectangle, no medal or ornate laurel wreath, no background scene, no writing, captions, letters, numbers or watermark. Face must be large and legible. Subject: Mart Helme, the older broad-faced balding man in image 2; formal dark suit. EKRE palette: cornflower blue, icy white and black with silver highlights. Party symbol: prominent blue cornflower with jagged blue petals and dark center; small Estonian blue-black-white fabric ribbon behind. Tinted steel-blue portrait matching the source likeness.",
+    "references": [
+      "docs/artwork/ideology/references/tfr_ideology_style_sheet.png",
+      "docs/artwork/ministers/references/mart_helme.jpg"
+    ],
+    "reference_roles": [
+      "TFR style sheet reference only",
+      "Named leader facial identity reference"
+    ],
+    "master": "docs/artwork/ideology/masters/ekre_mart.png"
+  },
+  {
+    "id": "ekre_martin",
+    "mode": "built-in image_gen",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises ideology icon, production transparent PNG. Generate exactly ONE compact almost-square icon, aspect 66:68, composed for readability when downscaled to 66x68 pixels. Input image 1 is a TFR ideology STYLE REFERENCE SHEET ONLY: match the portrait-based icons social_democracy_ARG and social_democracy_TUR and the metallic party-logo collage treatment; do not copy sheet labels, layout, faces or symbols. Input image 2 is the named leader's facial identity reference only, preserve recognizable likeness. Build a dense silhouette with a large realistic photo-painted head-and-shoulders leader bust occupying the left/center, a large dimensional party symbol at lower right, a small flowing party-colored banner behind, restrained charcoal-gunmetal backplate and silver beveled edge highlights, dark outline and subtle shadow. Party-tinted lighting, high contrast, crisp bold details, limited components. Nearly fill canvas leaving about 4 percent transparent margin. Actual transparent outside alpha, including all corners. No enclosing rectangle, no medal or ornate laurel wreath, no background scene, no writing, captions, letters, numbers or watermark. Face must be large and legible. Subject: Martin Helme, middle-aged man with neatly side-parted brown hair, narrow face and clean-shaven appearance in image 2; formal dark suit. EKRE palette: cornflower blue, icy white and black with silver highlights. Party symbol: prominent blue cornflower with jagged blue petals and dark center; small Estonian blue-black-white fabric ribbon behind. Tinted steel-blue portrait matching the source likeness. He is Martin, not older balding Mart Helme.",
+    "references": [
+      "docs/artwork/ideology/references/tfr_ideology_style_sheet.png",
+      "docs/artwork/ministers/references/martin_helme.jpg"
+    ],
+    "reference_roles": [
+      "TFR style sheet reference only",
+      "Named leader facial identity reference"
+    ],
+    "master": "docs/artwork/ideology/masters/ekre_martin.png"
+  },
+  {
+    "id": "centre_ratas",
+    "mode": "built-in image_gen",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises ideology icon, production transparent PNG. Generate exactly ONE compact almost-square icon, aspect 66:68, composed for readability when downscaled to 66x68 pixels. Input image 1 is a TFR ideology STYLE REFERENCE SHEET ONLY: match the portrait-based icons social_democracy_ARG and social_democracy_TUR and the metallic party-logo collage treatment; do not copy sheet labels, layout, faces or symbols. Input image 2 is the named leader's facial identity reference only, preserve recognizable likeness. Build a dense silhouette with a large realistic photo-painted head-and-shoulders leader bust occupying the left/center, a large dimensional party symbol at lower right, a small flowing party-colored banner behind, restrained charcoal-gunmetal backplate and silver beveled edge highlights, dark outline and subtle shadow. Party-tinted lighting, high contrast, crisp bold details, limited components. Nearly fill canvas leaving about 4 percent transparent margin. Actual transparent outside alpha, including all corners. No enclosing rectangle, no medal or ornate laurel wreath, no background scene, no writing, captions, letters, numbers or watermark. Face must be large and legible. Subject: Jüri Ratas, short dark-haired clean-shaven broad-faced man in image 2, formal dark suit. Centre Party / Keskerakond palette: rich emerald green, white and charcoal with silver accents. Party symbol: bold white four-leaf clover, four rounded heart-shaped leaves, rendered as raised silver-white enamel on a small green roundel at lower right. Flowing emerald party banner behind. Restrained green-tinted portrait lighting, preserve identity.",
+    "references": [
+      "docs/artwork/ideology/references/tfr_ideology_style_sheet.png",
+      "docs/artwork/ministers/references/juri_ratas.jpg"
+    ],
+    "reference_roles": [
+      "TFR style sheet reference only",
+      "Named leader facial identity reference"
+    ],
+    "master": "docs/artwork/ideology/masters/centre_ratas.png"
+  },
+  {
+    "id": "centre_kiik",
+    "mode": "built-in image_gen",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises ideology icon, production transparent PNG. Generate exactly ONE compact almost-square icon, aspect 66:68, composed for readability when downscaled to 66x68 pixels. Input image 1 is a TFR ideology STYLE REFERENCE SHEET ONLY: match the portrait-based icons social_democracy_ARG and social_democracy_TUR and the metallic party-logo collage treatment; do not copy sheet labels, layout, faces or symbols. Input image 2 is the named leader's facial identity reference only, preserve recognizable likeness. Build a dense silhouette with a large realistic photo-painted head-and-shoulders leader bust occupying the left/center, a large dimensional party symbol at lower right, a small flowing party-colored banner behind, restrained charcoal-gunmetal backplate and silver beveled edge highlights, dark outline and subtle shadow. Party-tinted lighting, high contrast, crisp bold details, limited components. Nearly fill canvas leaving about 4 percent transparent margin. Actual transparent outside alpha, including all corners. No enclosing rectangle, no medal or ornate laurel wreath, no background scene, no writing, captions, letters, numbers or watermark. Face must be large and legible. Subject: Tanel Kiik, young clean-shaven man with distinctive thick curly light-brown hair in image 2, dark suit. Centre Party palette: rich emerald green #007B5E, white and charcoal with silver accents. Party symbol: bold white four-leaf clover, four rounded heart-shaped leaves, rendered as raised silver-white enamel on a small green roundel at lower right. Flowing green-and-white party banner behind. Green portrait rim light. Preserve his curly hair and youthful face.",
+    "references": [
+      "docs/artwork/ideology/references/tfr_ideology_style_sheet.png",
+      "docs/artwork/ministers/references/tanel_kiik.jpg"
+    ],
+    "reference_roles": [
+      "TFR style sheet reference only",
+      "Named leader facial identity reference"
+    ],
+    "master": "docs/artwork/ideology/masters/centre_kiik.png"
+  },
+  {
+    "id": "centre_kolvart",
+    "mode": "built-in image_gen",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises ideology icon, production transparent PNG. Generate exactly ONE compact almost-square icon, aspect 66:68, composed for readability when downscaled to 66x68 pixels. Input image 1 is a TFR ideology STYLE REFERENCE SHEET ONLY: match the portrait-based icons social_democracy_ARG and social_democracy_TUR and the metallic party-logo collage treatment; do not copy sheet labels, layout, faces or symbols. Input image 2 is the named leader's facial identity reference only, preserve recognizable likeness. Build a dense silhouette with a large realistic photo-painted head-and-shoulders leader bust occupying the left/center, a large dimensional party symbol at lower right, a small flowing party-colored banner behind, restrained charcoal-gunmetal backplate and silver beveled edge highlights, dark outline and subtle shadow. Party-tinted lighting, high contrast, crisp bold details, limited components. Nearly fill canvas leaving about 4 percent transparent margin. Actual transparent outside alpha, including all corners. No enclosing rectangle, no medal or ornate laurel wreath, no background scene, no writing, captions, letters, numbers or watermark. Face must be large and legible. Subject: Mihhail Kõlvart, short straight dark-brown hair, distinctive slightly East Asian facial features and clean-shaven face from image 2, formal dark suit. Centre Party palette rich emerald green #007B5E, white and charcoal, silver accents. Party symbol bold white four-leaf clover, four rounded heart-shaped leaves, rendered as raised silver-white enamel on a small green roundel at lower right. Flowing green-and-white party banner behind. Restrained green portrait rim light. Exclude microphone from identity photo.",
+    "references": [
+      "docs/artwork/ideology/references/tfr_ideology_style_sheet.png",
+      "docs/artwork/ministers/references/mihhail_kolvart.jpg"
+    ],
+    "reference_roles": [
+      "TFR style sheet reference only",
+      "Named leader facial identity reference"
+    ],
+    "master": "docs/artwork/ideology/masters/centre_kolvart.png"
+  },
+  {
+    "id": "isamaa_seeder",
+    "mode": "built-in image_gen",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises ideology icon, production transparent PNG. Generate exactly ONE compact almost-square icon, aspect 66:68, composed for readability when downscaled to 66x68 pixels. Input image 1 is a TFR ideology STYLE REFERENCE SHEET ONLY: match the portrait-based icons social_democracy_ARG and social_democracy_TUR and the metallic party-logo collage treatment; do not copy sheet labels, layout, faces or symbols. Input image 2 is the named leader's facial identity reference only, preserve recognizable likeness. Build a dense silhouette with a large realistic photo-painted head-and-shoulders leader bust occupying the left/center, a large dimensional party symbol at lower right, a small flowing party-colored banner behind, restrained charcoal-gunmetal backplate and silver beveled edge highlights, dark outline and subtle shadow. Party-tinted lighting, high contrast, crisp bold details, limited components. Nearly fill canvas leaving about 4 percent transparent margin. Actual transparent outside alpha, including all corners. No enclosing rectangle, no medal or ornate laurel wreath, no background scene, no writing, captions, letters, numbers or watermark. Face must be large and legible. Subject: Helir-Valdor Seeder, bald middle-aged man with closely trimmed dark stubble in image 2, formal dark suit. Isamaa party palette: bright cyan blue #00AEEF and white, steel silver and charcoal accents. Image 3 is party symbol reference ONLY: use the angular hollow EIGHT-POINTED STAR octagram at its upper right, with black/empty central octagonal hole; omit the wordmark. Render this exact star silhouette as large white-silver enamel with cyan edge at lower right, blue-white fabric banner behind. Preserve his recognizable bald head and short stubble; no unrelated religious crosses.",
+    "references": [
+      "docs/artwork/ideology/references/tfr_ideology_style_sheet.png",
+      "docs/artwork/ministers/references/helir_valdor_seeder.jpg",
+      ".cache/ideology_references/isamaa_2018_logo.png"
+    ],
+    "reference_roles": [
+      "TFR style sheet reference only",
+      "Named leader facial identity reference",
+      "Party symbol reference only"
+    ],
+    "master": "docs/artwork/ideology/masters/isamaa_seeder.png"
+  },
+  {
+    "id": "reform_kallas",
+    "mode": "built-in image_gen",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises ideology icon, production transparent PNG. Generate exactly ONE compact almost-square icon, aspect 66:68, composed for readability when downscaled to 66x68 pixels. Input image 1 is a TFR ideology STYLE REFERENCE SHEET ONLY: match the portrait-based icons social_democracy_ARG and social_democracy_TUR and the metallic party-logo collage treatment; do not copy sheet labels, layout, faces or symbols. Input image 2 is the named leader's facial identity reference only, preserve recognizable likeness. Build a dense silhouette with a large realistic photo-painted head-and-shoulders leader bust occupying the left/center, a large dimensional party symbol at lower right, a small flowing party-colored banner behind, restrained charcoal-gunmetal backplate and silver beveled edge highlights, dark outline and subtle shadow. Party-tinted lighting, high contrast, crisp bold details, limited components. Nearly fill canvas leaving about 4 percent transparent margin. Actual transparent outside alpha, including all corners. No enclosing rectangle, no medal or ornate laurel wreath, no background scene, no writing, captions, letters, numbers or watermark. Face must be large and legible. Subject: Kaja Kallas, woman with straight shoulder-length honey-blonde hair, light eyes and long oval face from image 2, formal navy blazer. Reform Party palette saturated YELLOW #FFE200 and deep ultramarine BLUE #010199 with silver metallic accents. Image 3 is exact squirrel symbol reference: deep-blue stylized leaping squirrel profile facing right with huge curling sweeping tail; reproduce silhouette as large blue-enamel metallic symbol at lower right on a small yellow roundel. A yellow-and-blue flowing banner behind; strong yellow party accents, no green. Preserve her identity and blonde hair.",
+    "references": [
+      "docs/artwork/ideology/references/tfr_ideology_style_sheet.png",
+      "docs/artwork/ministers/references/kaja_kallas.jpg",
+      ".cache/ideology_references/reform_2021_orav.png"
+    ],
+    "reference_roles": [
+      "TFR style sheet reference only",
+      "Named leader facial identity reference",
+      "Party symbol reference only"
+    ],
+    "master": "docs/artwork/ideology/masters/reform_kallas.png"
+  },
+  {
+    "id": "reform_michal",
+    "mode": "built-in image_gen",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises ideology icon, production transparent PNG. Generate exactly ONE compact almost-square icon, aspect 66:68, composed for readability when downscaled to 66x68 pixels. Input image 1 is a TFR ideology STYLE REFERENCE SHEET ONLY: match the portrait-based icons social_democracy_ARG and social_democracy_TUR and the metallic party-logo collage treatment; do not copy sheet labels, layout, faces or symbols. Input image 2 is the named leader's facial identity reference only, preserve recognizable likeness. Build a dense silhouette with a large realistic photo-painted head-and-shoulders leader bust occupying the left/center, a large dimensional party symbol at lower right, a small flowing party-colored banner behind, restrained charcoal-gunmetal backplate and silver beveled edge highlights, dark outline and subtle shadow. Party-tinted lighting, high contrast, crisp bold details, limited components. Nearly fill canvas leaving about 4 percent transparent margin. Actual transparent outside alpha, including all corners. No enclosing rectangle, no medal or ornate laurel wreath, no background scene, no writing, captions, letters, numbers or watermark. Face must be large and legible. Subject: Kristen Michal, clean-shaven man with short fair-brown hair and distinctive thick black rounded glasses in image 2, formal navy suit, white shirt. Reform Party palette saturated YELLOW #FFE200 and deep ultramarine BLUE #010199 with silver metallic accents. Image 3 is exact squirrel symbol reference: deep-blue stylized leaping squirrel profile facing right with huge curling sweeping tail; reproduce silhouette as large blue-enamel metallic symbol at lower right on a small yellow roundel. A yellow-and-blue flowing banner behind; strong yellow party accents, no green. Preserve his recognizable glasses and face.",
+    "references": [
+      "docs/artwork/ideology/references/tfr_ideology_style_sheet.png",
+      "docs/artwork/ministers/references/kristen_michal.jpg",
+      ".cache/ideology_references/reform_2021_orav.png"
+    ],
+    "reference_roles": [
+      "TFR style sheet reference only",
+      "Named leader facial identity reference",
+      "Party symbol reference only"
+    ],
+    "master": "docs/artwork/ideology/masters/reform_michal.png"
+  },
+  {
+    "id": "sde_saar",
+    "mode": "built-in image_gen",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises ideology icon, production transparent PNG. Generate exactly ONE compact almost-square icon, aspect 66:68, composed for readability when downscaled to 66x68 pixels. Input image 1 is a TFR ideology STYLE REFERENCE SHEET ONLY: match the portrait-based icons social_democracy_ARG and social_democracy_TUR and the metallic party-logo collage treatment; do not copy sheet labels, layout, faces or symbols. Input image 2 is the named leader's facial identity reference only, preserve recognizable likeness. Build a dense silhouette with a large realistic photo-painted head-and-shoulders leader bust occupying the left/center, a large dimensional party symbol at lower right, a small flowing party-colored banner behind, restrained charcoal-gunmetal backplate and silver beveled edge highlights, dark outline and subtle shadow. Party-tinted lighting, high contrast, crisp bold details, limited components. Nearly fill canvas leaving about 4 percent transparent margin. Actual transparent outside alpha, including all corners. No enclosing rectangle, no medal or ornate laurel wreath, no background scene, no writing, captions, letters, numbers or watermark. Face must be large and legible. Subject: Indrek Saar, middle-aged man with medium-length swept-back dark hair, receding hairline and small goatee in image 2, dark suit, white shirt and red tie. Social Democratic Party SDE palette strong RED #E10600, white and charcoal with silver accents. Image 3 is symbol reference only: the red ANGULAR GEOMETRIC ROSE/TULIP blossom at the left, crown of pointed folded petals and a small dark green stem; do not copy its wordmark. Render that symbol large at lower right in red enamel with silver bevel, a red-and-white flowing banner behind. Red portrait rim lighting. Preserve his long hair and goatee. No text.",
+    "references": [
+      "docs/artwork/ideology/references/tfr_ideology_style_sheet.png",
+      "docs/artwork/ministers/references/indrek_saar.jpg",
+      ".cache/ideology_references/sde_2017_logo.png"
+    ],
+    "reference_roles": [
+      "TFR style sheet reference only",
+      "Named leader facial identity reference",
+      "Party symbol reference only"
+    ],
+    "master": "docs/artwork/ideology/masters/sde_saar.png"
+  },
+  {
+    "id": "sde_laanemets",
+    "mode": "built-in image_gen",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises ideology icon, production transparent PNG. Generate exactly ONE compact almost-square icon, aspect 66:68, composed for readability when downscaled to 66x68 pixels. Input image 1 is a TFR ideology STYLE REFERENCE SHEET ONLY: match the portrait-based icons social_democracy_ARG and social_democracy_TUR and the metallic party-logo collage treatment; do not copy sheet labels, layout, faces or symbols. Input image 2 is the named leader's facial identity reference only, preserve recognizable likeness. Build a dense silhouette with a large realistic photo-painted head-and-shoulders leader bust occupying the left/center, a large dimensional party symbol at lower right, a small flowing party-colored banner behind, restrained charcoal-gunmetal backplate and silver beveled edge highlights, dark outline and subtle shadow. Party-tinted lighting, high contrast, crisp bold details, limited components. Nearly fill canvas leaving about 4 percent transparent margin. Actual transparent outside alpha, including all corners. No enclosing rectangle, no medal or ornate laurel wreath, no background scene, no writing, captions, letters, numbers or watermark. Face must be large and legible. Subject: Lauri Läänemets, middle-aged clean-shaven man with short close-cropped dark hair, broad face and light eyes from image 2; use formal charcoal suit, white shirt and red tie. SDE Social Democratic Party palette strong RED #E10600, white and charcoal with silver accents. Image 3 is symbol reference only: red ANGULAR GEOMETRIC ROSE/TULIP at left, crown of pointed folded petals with small dark-green stem; omit wordmark. Render symbol large in red enamel with silver bevel at lower right; red-and-white flowing banner behind. Red portrait rim lighting. Preserve this face and short hair, he does not have Indrek Saar's goatee or long hair.",
+    "references": [
+      "docs/artwork/ideology/references/tfr_ideology_style_sheet.png",
+      "docs/artwork/ministers/references/lauri_laanemets.jpg",
+      ".cache/ideology_references/sde_2017_logo.png"
+    ],
+    "reference_roles": [
+      "TFR style sheet reference only",
+      "Named leader facial identity reference",
+      "Party symbol reference only"
+    ],
+    "master": "docs/artwork/ideology/masters/sde_laanemets.png"
+  },
+  {
+    "id": "e200_kallas",
+    "mode": "built-in image_gen",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises ideology icon, production transparent PNG. Generate exactly ONE compact almost-square icon, aspect 66:68, composed for readability when downscaled to 66x68 pixels. Input image 1 is a TFR ideology STYLE REFERENCE SHEET ONLY: match the portrait-based icons social_democracy_ARG and social_democracy_TUR and the metallic party-logo collage treatment; do not copy sheet labels, layout, faces or symbols. Input image 2 is the named leader's facial identity reference only, preserve recognizable likeness. Build a dense silhouette with a large realistic photo-painted head-and-shoulders leader bust occupying the left/center, a large dimensional party symbol at lower right, a small flowing party-colored banner behind, restrained charcoal-gunmetal backplate and silver beveled edge highlights, dark outline and subtle shadow. Party-tinted lighting, high contrast, crisp bold details, limited components. Nearly fill canvas leaving about 4 percent transparent margin. Actual transparent outside alpha, including all corners. No enclosing rectangle, no medal or ornate laurel wreath, no background scene, no writing, captions, letters, numbers or watermark. Face must be large and legible. Subject: Kristina Kallas, Estonian woman with short straight asymmetrical side-parted blonde bob from image 2, dark formal blazer; exclude microphone. Eesti 200 HISTORICAL 2021-2023 palette INDIGO PURPLE #2F2A95 and white with steel silver highlights. Input3 is party-logo reference ONLY: use its THREE JOINED SLANTED RECTANGULAR TABS with bold white digits '200' across them, as a single chunky raised indigo-and-silver emblem at lower right. Omit EESTI wordmark. Exception to no numbers: exactly '200' inside the emblem, legible and correct, no other text. Flowing deep indigo-purple and white banner behind; no cyan or modern 2025 blue branding. Large likeness portrait with purple rim lighting.",
+    "references": [
+      "docs/artwork/ideology/references/tfr_ideology_style_sheet.png",
+      "docs/artwork/ministers/references/kristina_kallas.jpg",
+      ".cache/ideology_references/eesti200_2021_logo.png"
+    ],
+    "reference_roles": [
+      "TFR style sheet reference only",
+      "Named leader facial identity reference",
+      "Party symbol reference only"
+    ],
+    "master": "docs/artwork/ideology/masters/e200_kallas.png"
+  },
+  {
+    "id": "pp_perling",
+    "mode": "built-in image_gen",
+    "transparent_background": true,
+    "prompt": "Use case: stylized-concept. Asset type: Hearts of Iron IV The Fire Rises ideology icon, production transparent PNG. Generate exactly ONE compact almost-square icon, aspect 66:68, composed for readability when downscaled to 66x68 pixels. Input image 1 is a TFR ideology STYLE REFERENCE SHEET ONLY: match the portrait-based icons social_democracy_ARG and social_democracy_TUR and the metallic party-logo collage treatment; do not copy sheet labels, layout, faces or symbols. Input image 2 is the named leader's facial identity reference only, preserve recognizable likeness. Build a dense silhouette with a large realistic photo-painted head-and-shoulders leader bust occupying the left/center, a large dimensional party symbol at lower right, a small flowing party-colored banner behind, restrained charcoal-gunmetal backplate and silver beveled edge highlights, dark outline and subtle shadow. Party-tinted lighting, high contrast, crisp bold details, limited components. Nearly fill canvas leaving about 4 percent transparent margin. Actual transparent outside alpha, including all corners. No enclosing rectangle, no medal or ornate laurel wreath, no background scene, no writing, captions, letters, numbers or watermark. Face must be large and legible. Subject: Lavly Perling, woman with chin-length side-parted light brown/copper bob haircut and broad face from image 2; charcoal formal blazer, exclude microphone. Parempoolsed palette vivid ORANGE #FF6100, charcoal #3C3C3C and pale gray #EAEAEA. Input3 shows correct party-symbol reference ONLY: TWO ADJACENT ROUNDED RIGHT-POINTING TRIANGLES, like fast-forward, orange enamel with silver bevel at lower right on small charcoal roundel; no lettering from reference. Flowing orange-and-charcoal party banner behind. Orange portrait rim lighting. Preserve her identity and copper bob haircut.",
+    "references": [
+      "docs/artwork/ideology/references/tfr_ideology_style_sheet.png",
+      "docs/artwork/ministers/references/lavly_perling.jpg",
+      ".cache/ideology_references/parempoolsed_logos.png"
+    ],
+    "reference_roles": [
+      "TFR style sheet reference only",
+      "Named leader facial identity reference",
+      "Party symbol reference only"
+    ],
+    "master": "docs/artwork/ideology/masters/pp_perling.png"
+  }
+]

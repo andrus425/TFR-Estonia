@@ -1,0 +1,19 @@
+{
+  "party": "pp",
+  "asset_id": "no_earmarks",
+  "source_generation_file": "exec-c056558a-e948-436e-a1d2-411aa69d1716.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "83b37c360849a69eb01bc38160852cb03a9de0cd01d7b0b50b6881fcf278cb67",
+  "texture_sha256": "277e19495a73fd45639f7b4f4a6e3c73f26f278d924143aefbe11f6c0864d5bc",
+  "texture_bytes": 48391,
+  "artwork_bounds": {
+    "left": 1,
+    "top": 1,
+    "width": 167,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

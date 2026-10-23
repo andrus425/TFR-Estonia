@@ -1,0 +1,19 @@
+{
+  "party": "reform",
+  "asset_id": "care",
+  "source_generation_file": "exec-c51eb302-6208-4ae8-a05e-c3294db4caf5.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "765c3a59e059274c99e2e2b0edbfa3055be485bfa060576753efe2611e638eac",
+  "texture_sha256": "14276996aa6c2f740607a426b7f3e742f01020db5d64d630d276480f0135ed17",
+  "texture_bytes": 50252,
+  "artwork_bounds": {
+    "left": 3,
+    "top": 1,
+    "width": 163,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

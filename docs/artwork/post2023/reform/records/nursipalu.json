@@ -1,0 +1,19 @@
+{
+  "party": "reform",
+  "asset_id": "nursipalu",
+  "source_generation_file": "exec-0666a243-8e2c-4c6a-924f-ccb4dc4a5aab.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "77f95862327dfc57a5d40221510c24c284befb40c96382d340824174c588bec4",
+  "texture_sha256": "6ac240bce6925b8ef7eade0576b11d73174aa7b530183ff36c4c9f2634d1c03b",
+  "texture_bytes": 44633,
+  "artwork_bounds": {
+    "left": 3,
+    "top": 1,
+    "width": 163,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

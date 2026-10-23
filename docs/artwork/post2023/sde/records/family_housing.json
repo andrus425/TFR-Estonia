@@ -1,0 +1,19 @@
+{
+  "party": "sde",
+  "asset_id": "family_housing",
+  "source_generation_file": "exec-2efc4e0b-87d9-4492-a136-d9ab52b76cd8.png",
+  "master_size": {
+    "width": 1334,
+    "height": 1179
+  },
+  "master_sha256": "89faa159bbff574dffc94b3124fcbe97ad3f14ed888a10e1fbff2b64f4c67116",
+  "texture_sha256": "680c06547e3d92a3bf1873e821bd9f6ea81af69398e5933d53b857fe722cb18e",
+  "texture_bytes": 43727,
+  "artwork_bounds": {
+    "left": 10,
+    "top": 1,
+    "width": 150,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}

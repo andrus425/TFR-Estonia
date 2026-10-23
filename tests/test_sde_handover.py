@@ -371,7 +371,7 @@ class SDEHandoverTests(unittest.TestCase):
         self.assertTrue(r.condition(definition.get('visible')))
         self.assertFalse(r.condition(ideas.get(SAAR).get('visible')))
         sprites = parse((ROOT / 'interface/TFR_EST_executive.gfx').read_text(encoding='utf-8')).get('spriteTypes')
-        sprite = next(e.value for e in sprites.entries if e.value.get('name') == 'GFX_idea_' + LAANEMETS)
+        sprite = next(e.value for e in sprites.entries if e.value.get('name') == 'GFX_TFR_EST_hog_portrait_sde_laanemets')
         self.assertTrue(sprite.get('texturefile').startswith('gfx/leaders/EST/ministers/'))
         icon = next(e.value for e in sprites.entries if e.value.get('name') == 'GFX_idea_' + LAANEMETS + '_icon')
         self.assertTrue(icon.get('texturefile').startswith('gfx/interface/ideas/EST/ministers/'))

@@ -1,0 +1,19 @@
+{
+  "party": "reform",
+  "asset_id": "defence_line",
+  "source_generation_file": "exec-e1494adb-a346-4888-a3f6-7e08dd4e2614.png",
+  "master_size": {
+    "width": 1335,
+    "height": 1178
+  },
+  "master_sha256": "153f299eb74c3b86b86280f7a4ff869d31ae1e4386b6a32fb3fd03cd6e97a3db",
+  "texture_sha256": "85d89e4b5ec8a1bc4939e48a8c8c89c0584cd28ead5666255ce60fe9cc96d048",
+  "texture_bytes": 46045,
+  "artwork_bounds": {
+    "left": 8,
+    "top": 1,
+    "width": 154,
+    "height": 108
+  },
+  "export_method": "Trim transparent padding at alpha >1; Lanczos3 fit168x108; center on transparent170x150, bottom40pixels alpha0."
+}
